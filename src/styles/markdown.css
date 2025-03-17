@@ -1,0 +1,75 @@
+.markdown-content {
+  @apply text-gray-800 dark:text-gray-200 leading-relaxed;
+}
+
+/* Headings */
+.markdown-content h1 {
+  @apply text-3xl font-bold text-gray-900 dark:text-white mt-8 mb-4;
+}
+
+.markdown-content h2 {
+  @apply text-2xl font-semibold text-gray-900 dark:text-white mt-6 mb-4;
+}
+
+.markdown-content h3 {
+  @apply text-xl font-semibold text-gray-900 dark:text-white mt-5 mb-3;
+}
+
+/* Paragraphs and Lists */
+.markdown-content p {
+  @apply mb-4 text-base leading-7;
+}
+
+.markdown-content ul {
+  @apply mb-4 ml-6 space-y-2;
+}
+
+.markdown-content li {
+  @apply relative pl-2;
+}
+
+.markdown-content ul > li::before {
+  @apply absolute left-[-1rem] text-primary dark:text-primary/80;
+  content: "•";
+}
+
+/* Blockquotes */
+.markdown-content blockquote {
+  @apply pl-4 border-l-4 border-primary/30 dark:border-primary/50 italic my-4 text-gray-700 dark:text-gray-300;
+}
+
+/* Code blocks */
+.markdown-content pre {
+  @apply bg-gray-100 dark:bg-gray-800 p-4 rounded-lg my-4 overflow-x-auto;
+}
+
+.markdown-content code {
+  @apply bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded text-sm font-mono;
+}
+
+/* Tables */
+.markdown-content table {
+  @apply w-full my-4 border-collapse;
+}
+
+.markdown-content th {
+  @apply bg-gray-100 dark:bg-gray-800 px-4 py-2 text-left font-semibold border-b dark:border-gray-700;
+}
+
+.markdown-content td {
+  @apply px-4 py-2 border-b dark:border-gray-700;
+}
+
+/* Links */
+.markdown-content a {
+  @apply text-primary hover:text-primary/90 underline;
+}
+
+/* Emphasis */
+.markdown-content strong {
+  @apply font-semibold text-gray-900 dark:text-white;
+}
+
+.markdown-content em {
+  @apply italic;
+}

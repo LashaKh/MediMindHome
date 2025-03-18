@@ -19,7 +19,6 @@ export async function insertNote(userId: string) {
       user_id: userId,
       title: 'Untitled Note',
       content: '',
-      tags: [],
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString()
     })
@@ -43,9 +42,10 @@ export async function updateNoteRecord(id: string, updates: Partial<Note>) {
     updateData.content = updates.content;
   }
 
-  if (updates.tags !== undefined) {
-    updateData.tags = updates.tags;
-  }
+  // Temporarily remove tags update until database schema is updated
+  // if (updates.tags !== undefined) {
+  //   updateData.tags = updates.tags;
+  // }
 
   const { error } = await supabase
     .from('notes')

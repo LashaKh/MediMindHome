@@ -76,7 +76,8 @@ export const useChatStore = create<ChatState>((set, get) => ({
       const aiResponse = await fetchAIResponse(content, sessionId);
       
       const metadata = {
-        imageAnalysis: aiResponse.imageAnalysis
+        imageAnalysis: aiResponse.imageAnalysis,
+        sources: aiResponse.sources
       };
 
       // Add AI message to database

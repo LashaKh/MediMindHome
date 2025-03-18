@@ -3,6 +3,8 @@ import { Message } from '../../../types/chat';
 import { MessageBubble } from '../MessageBubble';
 import { LoadingSpinner } from '../../common/LoadingSpinner';
 import { useChatStore } from '../../../store/useChatStore';
+import { Bot } from 'lucide-react';
+import clsx from 'clsx';
 
 interface MessageListProps {
   messages: Message[];
@@ -20,15 +22,32 @@ export const MessageList: React.FC<MessageListProps> = ({ messages, loading, err
     }
   }, [messages, streamingMessage?.content]);
 
+  const isEmpty = messages.length === 0 && !streamingMessage;
+
   return (
     <div className="h-full overflow-y-auto scrollbar-thin">
-      <div className="flex flex-col p-4 space-y-4">
-        {messages.map((message) => (
-          <MessageBubble key={message.id} message={message} />
-        ))}
-        
-        {streamingMessage && (
-          <MessageBubble message={streamingMessage} />
+      <div className={clsx(
+        "flex flex-col p-4",
+        isEmpty ? "h-full items-center justify-center" : "space-y-1"
+      )}>
+        {isEmpty ? (
+          <div className="text-center max-w-md mx-auto">
+            <div className="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center">
+              <Bot className="w-8 h-8 text-primary" />
+            </div>
+            <h2 className="text-xl font-semibold mb-2 text-gray-700 dark:text-gray-300">Ask MediMind AI Assistant</h2>
+            <p className="text-gray-500 dark:text-gray-400">Type your first message below to start a conversation</p>
+          </div>
+        ) : (
+          <>
+            {messages.map((message) => (
+              <MessageBubble key={message.id} message={message} />
+            ))}
+            
+            {streamingMessage && (
+              <MessageBubble message={streamingMessage} />
+            )}
+          </>
         )}
         
         {loading && (
@@ -43,7 +62,7 @@ export const MessageList: React.FC<MessageListProps> = ({ messages, loading, err
           </div>
         )}
 
-        <div ref={messagesEndRef} />
+        <div ref={messagesEndRef} className="h-4" />
       </div>
     </div>
   );

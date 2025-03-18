@@ -9,7 +9,7 @@ interface MessageContentProps {
 export const MessageContent: React.FC<MessageContentProps> = ({ message }) => {
   if (message.type === 'user') {
     return (
-      <p className="whitespace-pre-wrap break-words text-gray-700 dark:text-gray-200">
+      <p className="whitespace-pre-wrap break-words text-sm text-gray-800 dark:text-gray-200 font-medium">
         {message.content}
       </p>
     );

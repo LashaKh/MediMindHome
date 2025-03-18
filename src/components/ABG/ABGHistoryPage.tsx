@@ -974,16 +974,12 @@ const ABGHistoryPage: React.FC = () => {
                     
                     <div>
                       <h4 className="text-lg font-semibold mb-4">Interpretation</h4>
-                      <div className="bg-gray-50 dark:bg-gray-900/50 rounded-lg p-4">
-                        <p className="whitespace-pre-wrap text-gray-700 dark:text-gray-300">
-                          {results.find(r => r.id === selectedResult)?.interpretation
-                            ?.replace(/\*\*/g, '')
-                            .replace(/##/g, '')
-                            .replace(/###/g, '')
-                            .replace(/<span.*?>/g, '')
-                            .replace(/<\/span>/g, '')}
-                        </p>
-                      </div>
+                      {results.find(r => r.id === selectedResult)?.interpretation && (
+                        <ABGResultDisplay 
+                          content={results.find(r => r.id === selectedResult)!.interpretation!}
+                          showExportOptions={false}
+                        />
+                      )}
                       
                       {/* Add Generate Recommendations button if no action plan exists */}
                       {!results.find(r => r.id === selectedResult)?.action_plan && (

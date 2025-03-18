@@ -2,7 +2,7 @@ import React from 'react';
 import { format } from 'date-fns';
 import { Bot, User, Image as ImageIcon } from 'lucide-react';
 import { Message } from '../../../types/chat';
-import { formatAIResponse, sanitizeHTML } from '../../../utils/messageFormatter';
+import { formatAIResponse } from '../../../utils/messageFormatter';
 import { MessageContent } from './MessageContent';
 import clsx from 'clsx';
 
@@ -17,8 +17,10 @@ export const MessageBubble: React.FC<MessageBubbleProps> = ({ message }) => {
   return (
     <div
       className={clsx(
-        'flex gap-3 p-4 animate-fade-in',
-        isAI ? 'bg-gray-50 dark:bg-gray-800' : 'bg-white dark:bg-gray-900'
+        'flex gap-3 animate-fade-in',
+        isAI 
+          ? 'bg-gray-50 dark:bg-gray-800 p-4' 
+          : 'bg-blue-50 dark:bg-gray-800/50 py-2 px-3 mb-1 rounded-lg mx-4 border-l-4 border-blue-200 dark:border-blue-900' // Distinctive styling for user messages
       )}
     >
       <div className="flex-shrink-0">
@@ -27,21 +29,35 @@ export const MessageBubble: React.FC<MessageBubbleProps> = ({ message }) => {
             <Bot className="w-5 h-5" />
           </div>
         ) : (
-          <div className="w-8 h-8 rounded-full bg-secondary text-white flex items-center justify-center">
-            <User className="w-5 h-5" />
+          <div className="w-5 h-5 rounded-full bg-blue-400 text-white flex items-center justify-center">
+            <User className="w-3 h-3" />
           </div>
         )}
       </div>
       
-      <div className="flex-1 space-y-2 min-w-0">
-        <div className="flex items-center justify-between">
-          <span className="font-medium">
-            {isAI ? 'MediMind AI' : 'You'}
-          </span>
-          <span className="text-sm text-gray-500">
-            {format(message.timestamp, 'HH:mm')}
-          </span>
-        </div>
+      <div className={clsx(
+        "flex-1 space-y-1 min-w-0",
+        !isAI && "max-w-[80%]" // Further limit width of user messages
+      )}>
+        {!isAI ? (
+          <div className="flex items-center justify-between mb-0.5">
+            <span className="text-xs font-medium text-blue-600 dark:text-blue-400">
+              You
+            </span>
+            <span className="text-xs text-gray-400">
+              {format(message.timestamp, 'HH:mm')}
+            </span>
+          </div>
+        ) : (
+          <div className="flex items-center justify-between">
+            <span className="font-medium">
+              MediMind AI
+            </span>
+            <span className="text-xs text-gray-500">
+              {format(message.timestamp, 'HH:mm')}
+            </span>
+          </div>
+        )}
         
         {message.imageUrl && (
           <div className="relative group">
@@ -54,10 +70,7 @@ export const MessageBubble: React.FC<MessageBubbleProps> = ({ message }) => {
           </div>
         )}
 
-        <MessageContent 
-          content={isAI ? formatAIResponse(message.content) : message.content}
-          isAI={isAI}
-        />
+        <MessageContent message={message} />
         
         {message.metadata?.imageAnalysis && (
           <div className="mt-2 p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg text-sm">

@@ -102,13 +102,17 @@ export const NoteEditor: React.FC = () => {
   };
 
   const handleAddTag = (tag: string) => {
+    if (localNote.tags.includes(tag)) return;
+    
     const updatedTags = [...localNote.tags, tag];
+    
     setLocalNote(prev => ({ ...prev, tags: updatedTags }));
     debouncedUpdate({ tags: updatedTags });
   };
 
   const handleRemoveTag = (tagToRemove: string) => {
     const updatedTags = localNote.tags.filter(tag => tag !== tagToRemove);
+    
     setLocalNote(prev => ({ ...prev, tags: updatedTags }));
     debouncedUpdate({ tags: updatedTags });
   };

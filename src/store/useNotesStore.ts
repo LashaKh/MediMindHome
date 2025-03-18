@@ -9,6 +9,7 @@ import {
   deleteNoteRecord 
 } from './notes/queries';
 import { mapNoteFromDB } from './notes/mappers';
+import type { Note } from '../types/notes';
 
 export const useNotesStore = create<NotesState>((set, get) => ({
   notes: [],
@@ -23,16 +24,46 @@ export const useNotesStore = create<NotesState>((set, get) => ({
 
     try {
       set({ loading: true, error: null });
-      const data = await insertNote(user.id);
-      const newNote = mapNoteFromDB(data);
-      
-      set(state => ({
-        notes: [newNote, ...state.notes],
-        selectedNoteId: newNote.id,
-        selectedNote: newNote,
-        loading: false
-      }));
-      return newNote.id;
+
+      // Try to insert the note using the standard function
+      try {
+        const data = await insertNote(user.id);
+        const newNote = mapNoteFromDB(data);
+        
+        set(state => ({
+          notes: [newNote, ...state.notes],
+          selectedNoteId: newNote.id,
+          selectedNote: newNote,
+          loading: false
+        }));
+        
+        return newNote.id;
+      } catch (insertError) {
+        console.error('Error inserting note:', insertError);
+        
+        // Generate a local note only as a fallback
+        const tempId = crypto.randomUUID();
+        const createdAt = new Date();
+        const tempNote: Note = {
+          id: tempId,
+          title: 'Untitled Note',
+          content: '',
+          tags: [],
+          createdAt,
+          updatedAt: createdAt,
+          userId: user.id
+        };
+        
+        set(state => ({
+          notes: [tempNote, ...state.notes],
+          selectedNoteId: tempNote.id,
+          selectedNote: tempNote,
+          loading: false,
+          error: 'Note created locally only. Some features may be limited.'
+        }));
+        
+        return tempNote.id;
+      }
     } catch (error) {
       set({ 
         error: error instanceof Error ? error.message : 'Failed to create note',

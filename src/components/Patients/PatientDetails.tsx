@@ -336,7 +336,7 @@ export const PatientDetails: React.FC = () => {
   return (
     <div className="min-h-[calc(100vh-4rem)] bg-gray-50 dark:bg-gray-900">
       {/* Header */}
-      <div className="sticky top-16 z-30 bg-white dark:bg-gray-800 border-b dark:border-gray-700">
+      <div className="sticky top-0 z-30 bg-white dark:bg-gray-800 border-b dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-4">
@@ -384,7 +384,7 @@ export const PatientDetails: React.FC = () => {
       {/* The content should be directly in the page layout */}
       
       {/* Navigation Tabs */}
-      <div className="sticky top-32 z-20 bg-gray-50 dark:bg-gray-900 border-b dark:border-gray-700 shadow-sm">
+      <div className="sticky top-16 z-20 bg-gray-50 dark:bg-gray-900 border-b dark:border-gray-700 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-6 gap-1 p-2">
             <button

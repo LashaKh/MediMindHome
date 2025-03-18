@@ -33,13 +33,13 @@ export const SideMenu: React.FC<SideMenuProps> = ({
   }, [isMobile]);
 
   const menuItems = [
-    { icon: Users, label: t('sidebar.patientTable'), path: '/patients' },
-    { icon: User, label: t('sidebar.myPatients'), path: '/my-patients' },
-    { icon: MessageSquare, label: t('sidebar.aiChatbot'), path: '/chat' },
-    { icon: Droplets, label: t('sidebar.bgAnalysis'), path: '/bg-analysis' },
-    { icon: Activity, label: t('sidebar.ecgAnalysis'), path: '/ecg-analysis' },
-    { icon: StickyNote, label: t('sidebar.notes'), path: '/notes' },
-    { icon: FileText, label: t('sidebar.medivoice'), path: '/medivoice-transcriber' }
+    { icon: Users, label: "Patients", path: '/patients' },
+    { icon: User, label: "My Patients", path: '/my-patients' },
+    { icon: MessageSquare, label: "AI Chatbot", path: '/chat' },
+    { icon: Droplets, label: "BG Analysis", path: '/bg-analysis' },
+    { icon: Activity, label: "ECG Analysis", path: '/ecg-analysis' },
+    { icon: StickyNote, label: "Notes", path: '/notes' },
+    { icon: FileText, label: "MediVoice", path: '/medivoice-transcriber' }
   ];
 
   if (isMobile && !isExpanded) {

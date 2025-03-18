@@ -6,8 +6,8 @@ export interface NotesState {
   selectedNote: Note | null;
   loading: boolean;
   error: string | null;
-  createNote: () => Promise<void>;
-  loadNotes: () => Promise<void>;
+  createNote: () => Promise<string | undefined>;
+  loadNotes: () => Promise<(() => void) | undefined>;
   selectNote: (id: string) => void;
   updateNote: (id: string, updates: Partial<Note>) => Promise<void>;
   deleteNote: (id: string) => Promise<void>;

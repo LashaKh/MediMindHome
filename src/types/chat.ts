@@ -25,5 +25,6 @@ export interface Message {
     aiModel?: string;
     tokens?: number;
     imageAnalysis?: string;
+    sources?: any[];
   };
 }

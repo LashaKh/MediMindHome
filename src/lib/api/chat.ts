@@ -51,8 +51,13 @@ export async function fetchAIResponse(
     }
 
     const data = await response.json();
+    
+    // Extract sources if they exist in the response
+    const sources = data.sourceDocuments || data.sources || [];
+    
     return { 
       text: data.text || '',
+      sources: sources,
       imageAnalysis: imageAnalysis || undefined
     };
   } catch (error) {

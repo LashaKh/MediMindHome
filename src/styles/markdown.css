@@ -76,7 +76,7 @@
 
 /* Reset margins for inline markdown */
 .markdown-content.inline {
-  @apply inline;
+  display: inline;
 }
 
 .markdown-content.inline p {
@@ -98,7 +98,7 @@
 
 /* Fix for markdown content inside key points and tags */
 span .markdown-content {
-  @apply inline;
+  display: inline;
 }
 
 span .markdown-content p {

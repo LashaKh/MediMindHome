@@ -7,6 +7,18 @@
   NODE_VERSION = "20"
 
 [[redirects]]
+  from = "/api/exa/search"
+  to = "/.netlify/functions/exa-search"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/perplexity/chat/completions"
+  to = "/.netlify/functions/perplexity-chat"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200

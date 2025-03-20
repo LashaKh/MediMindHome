@@ -17,6 +17,8 @@ import { LanguageProvider } from './contexts/LanguageContext';
 import { MediVoiceTranscriber } from './components/MediVoice/MediVoiceTranscriber';
 import { MyPatientsPage } from './components/Patients/MyPatients/MyPatientsPage';
 import { MyPatientDetails } from './components/Patients/MyPatients/MyPatientDetails';
+import MediSearchPage from './components/MediSearch/MediSearchPage';
+import { SimpleTest } from './components/MediSearch';
 
 function App() {
   return (
@@ -103,6 +105,10 @@ function App() {
             <Route path="/medivoice-transcriber" element={
               <PrivateRoute><MediVoiceTranscriber /></PrivateRoute>
             } />
+            <Route path="/medisearch" element={
+              <PrivateRoute><MediSearchPage /></PrivateRoute>
+            } />
+            <Route path="/simple-test" element={<SimpleTest />} />
           </Routes>
         </MainLayout>
       </LanguageProvider>

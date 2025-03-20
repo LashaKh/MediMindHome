@@ -6,6 +6,35 @@ export default defineConfig({
   server: {
     hmr: {
       overlay: false
+    },
+    proxy: {
+      '/api/brave': {
+        target: 'https://api.search.brave.com',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/brave/, ''),
+        headers: {
+          'Accept': 'application/json',
+          'Accept-Encoding': 'gzip'
+        }
+      },
+      '/api/exa': {
+        target: 'https://api.exa.ai',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/exa/, ''),
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
+      },
+      '/api/perplexity': {
+        target: 'https://api.perplexity.ai',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/perplexity/, ''),
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
+      }
     }
   },
   build: {
@@ -42,6 +71,9 @@ export default defineConfig({
   define: {
     // Explicitly define environment variables for StackBlitz
     'process.env.VITE_SUPABASE_URL': JSON.stringify(process.env.VITE_SUPABASE_URL),
-    'process.env.VITE_SUPABASE_ANON_KEY': JSON.stringify(process.env.VITE_SUPABASE_ANON_KEY)
+    'process.env.VITE_SUPABASE_ANON_KEY': JSON.stringify(process.env.VITE_SUPABASE_ANON_KEY),
+    'process.env.VITE_BRAVE_API_KEY': JSON.stringify(process.env.VITE_BRAVE_API_KEY),
+    'process.env.VITE_EXA_API_KEY': JSON.stringify(process.env.VITE_EXA_API_KEY),
+    'process.env.VITE_PERPLEXITY_API_KEY': JSON.stringify(process.env.VITE_PERPLEXITY_API_KEY)
   }
 });

@@ -73,3 +73,40 @@
 .markdown-content em {
   @apply italic;
 }
+
+/* Reset margins for inline markdown */
+.markdown-content.inline {
+  @apply inline;
+}
+
+.markdown-content.inline p {
+  @apply inline m-0;
+}
+
+.markdown-content.inline strong {
+  @apply font-semibold;
+}
+
+/* Adjust card content styling */
+.line-clamp-2 .markdown-content {
+  @apply overflow-hidden;
+}
+
+.line-clamp-2 .markdown-content p {
+  @apply m-0 line-clamp-2;
+}
+
+/* Fix for markdown content inside key points and tags */
+span .markdown-content {
+  @apply inline;
+}
+
+span .markdown-content p {
+  @apply inline m-0;
+}
+
+/* Card-specific styling */
+.card-abstract .markdown-content strong,
+.card-abstract .markdown-content b {
+  @apply font-semibold;
+}

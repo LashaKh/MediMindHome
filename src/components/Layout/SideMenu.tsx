@@ -11,7 +11,8 @@ import {
   ChevronLeft, 
   ChevronRight, 
   Menu,
-  Droplets 
+  Droplets,
+  Search
 } from 'lucide-react';
 import { useTranslation } from '../../hooks/useTranslation';
 
@@ -38,6 +39,7 @@ export const SideMenu: React.FC<SideMenuProps> = ({
     { icon: MessageSquare, label: "AI Chatbot", path: '/chat' },
     { icon: Droplets, label: "BG Analysis", path: '/bg-analysis' },
     { icon: Activity, label: "ECG Analysis", path: '/ecg-analysis' },
+    { icon: Search, label: "Medi Search", path: '/medisearch' },
     { icon: StickyNote, label: "Notes", path: '/notes' },
     { icon: FileText, label: "MediVoice", path: '/medivoice-transcriber' }
   ];

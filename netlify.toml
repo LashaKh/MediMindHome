@@ -6,6 +6,14 @@
 [build.environment]
   NODE_VERSION = "20"
 
+# Handle OPTIONS requests for CORS preflight
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/cors-handler"
+  status = 200
+  force = true
+  conditions = {Methods = ["OPTIONS"]}
+
 [[redirects]]
   from = "/api/exa/search"
   to = "/.netlify/functions/exa-search"

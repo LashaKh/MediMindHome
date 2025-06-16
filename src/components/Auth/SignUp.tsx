@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../../store/useAuthStore';
 import { LoadingSpinner } from '../common/LoadingSpinner';
+import { useTranslation } from '../../hooks/useTranslation';
 
 export const SignUp: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -9,12 +10,13 @@ export const SignUp: React.FC = () => {
   const [password, setPassword] = useState('');
   const { signUp, loading, error } = useAuthStore();
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       await signUp(email, password, name);
-      navigate('/patients');
+      navigate('/');
     } catch (err) {
       // Error is handled by the store
     }
@@ -25,7 +27,7 @@ export const SignUp: React.FC = () => {
       <div className="w-full max-w-md space-y-8">
         <div>
           <h2 className="text-center text-3xl font-bold tracking-tight text-white">
-            Create your account
+            {t('auth.signUp')}
           </h2>
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
@@ -87,7 +89,7 @@ export const SignUp: React.FC = () => {
               disabled={loading}
               className="group relative flex w-full justify-center rounded-md bg-primary px-3 py-2 text-sm font-semibold text-white hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:opacity-50"
             >
-              {loading ? <LoadingSpinner /> : 'Sign up'}
+              {loading ? <LoadingSpinner /> : t('auth.signUp')}
             </button>
           </div>
 
@@ -96,7 +98,7 @@ export const SignUp: React.FC = () => {
               to="/signin"
               className="font-medium text-white hover:text-gray-200 dark:text-blue-400 dark:hover:text-blue-300"
             >
-              Already have an account? Sign in
+              Already have an account? {t('auth.signIn')}
             </Link>
           </div>
         </form>

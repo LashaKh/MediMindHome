@@ -59,8 +59,7 @@ export default defineConfig({
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom'],
           ui: ['lucide-react', 'framer-motion', 'clsx'],
-          supabase: ['@supabase/supabase-js'],
-          markdown: ['react-markdown', 'marked', 'dompurify']
+          supabase: ['@supabase/supabase-js']
         },
         assetFileNames: 'assets/[name].[hash].[ext]',
         chunkFileNames: 'assets/[name].[hash].js',

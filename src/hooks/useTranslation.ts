@@ -1,48 +1,51 @@
 import { useCallback } from 'react';
-import { useLanguageStore } from '../store/useLanguageStore';
 import en from '../i18n/translations/en';
 import ka from '../i18n/translations/ka';
+import ru from '../i18n/translations/ru';
 import type { Language } from '../types/i18n';
 
 const translations = {
   en,
-  ka
+  ka,
+  ru
 };
 
 export const useTranslation = () => {
-  const { currentLanguage, setLanguage } = useLanguageStore();
-
-  const t = useCallback((key: string, params?: Record<string, string>) => {
+  // Force English language - always use 'en' regardless of store state
+  const forcedLanguage: Language = 'en';
+  
+  const t = useCallback((key: string, options?: { [key: string]: any }): string => {
+    if (!key) return '';
+    
+    // Always use English translations
+    let value: any = translations[forcedLanguage];
+    
     const keys = key.split('.');
-    let value = translations[currentLanguage];
-
     for (const k of keys) {
       value = value?.[k];
-      if (!value) break;
+      if (value === undefined) break;
     }
-
-    if (!value) {
-      console.warn(`Translation missing for key: ${key} in language: ${currentLanguage}`);
-      value = translations.en;
-      for (const k of keys) {
-        value = value?.[k];
-        if (!value) break;
-      }
+    
+    if (value === undefined) {
+      console.warn(`Translation missing for key: ${key} in language: ${forcedLanguage}`);
+      return key;
     }
-
-    if (params && typeof value === 'string') {
-      return Object.entries(params).reduce(
-        (acc, [key, val]) => acc.replace(`{{${key}}}`, val),
-        value
-      );
+    
+    if (typeof value === 'string' && options) {
+      return value.replace(/\{\{(\w+)\}\}/g, (match, key) => {
+        return options[key] || match;
+      });
     }
+    
+    return String(value);
+  }, [forcedLanguage]); // Use forcedLanguage instead of currentLanguage
 
-    return value || key;
-  }, [currentLanguage]);
-
+  // Keep the language change handler for compatibility, but it won't actually change anything
   const handleLanguageChange = useCallback((newLanguage: Language) => {
-    setLanguage(newLanguage);
-  }, [setLanguage]);
+    // Do nothing - language is forced to English
+    console.log('Language switching is disabled - using English only');
+  }, []);
 
-  return { t, handleLanguageChange, currentLanguage };
+  // Return forcedLanguage instead of currentLanguage
+  return { t, handleLanguageChange, currentLanguage: forcedLanguage };
 };

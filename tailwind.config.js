@@ -20,7 +20,8 @@ export default {
         dark: '#1a1b1e'
       },
       backgroundImage: {
-        'grid-white': 'linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px)'
+        'grid-white': 'linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px)',
+        'gradient-conic': 'conic-gradient(var(--conic-position), var(--tw-gradient-stops))'
       },
       animation: {
         'fade-in': 'fadeIn 0.3s ease-in-out',

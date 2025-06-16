@@ -6,6 +6,10 @@ export const SUPPORTED_LANGUAGES = {
   ka: {
     code: 'ka',
     name: 'ქართული'
+  },
+  ru: {
+    code: 'ru',
+    name: 'Русский'
   }
 } as const;
 
@@ -21,6 +25,11 @@ export const DATE_FORMATS = {
     short: 'dd.MM.yyyy',
     long: 'd MMMM, yyyy',
     time: 'HH:mm'
+  },
+  ru: {
+    short: 'dd.MM.yyyy',
+    long: 'd MMMM yyyy',
+    time: 'HH:mm'
   }
 };
 
@@ -34,5 +43,10 @@ export const NUMBER_FORMATS = {
     decimal: ',',
     thousands: ' ',
     currency: 'GEL'
+  },
+  ru: {
+    decimal: ',',
+    thousands: ' ',
+    currency: 'RUB'
   }
 };

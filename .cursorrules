@@ -1,0 +1,53 @@
+# MediMind Project Rules
+
+## Project Structure
+- React components stored in `src/components/`
+- Pages/routes defined in `src/pages/`
+- Global state managed with Zustand in `src/store/`
+- Custom hooks in `src/hooks/`
+- Types defined in `src/types/`
+- Utility functions in `src/utils/`
+- Context providers in `src/contexts/`
+
+## Code Style
+- TypeScript for type safety
+- Tailwind CSS for styling
+- Functional components preferred over class components
+- Custom hooks for reusable logic
+- Component files named with PascalCase
+- Utility files named with camelCase
+- Import order: React, external libraries, internal modules, styles
+- Prefer destructuring for props and state
+
+## Database
+- Supabase used for backend services
+- Tables follow snake_case naming convention
+- Foreign key relationships defined in migrations
+- Row-level security policies for data access control
+
+## State Management
+- Zustand for global application state
+- React Context for component tree state sharing
+- Local state for component-specific state
+- Optimistic UI updates for better user experience
+
+## UI Components
+- Headless UI for accessible component primitives
+- TipTap for rich text editing
+- Framer Motion for animations
+- Lucide React for icons
+- Recharts for data visualization
+
+## Security Practices
+- Environment variables for sensitive information
+- Supabase RLS policies for data protection
+- Client-side validation complemented by server-side validation
+- Sanitize user input to prevent XSS
+- Proper authentication and authorization checks
+
+## Performance Considerations
+- Memoization for expensive computations
+- Lazy loading for routes and heavy components
+- Pagination for large datasets
+- Debounce for frequent user interactions
+- Optimize re-renders using React.memo and useMemo where appropriate 

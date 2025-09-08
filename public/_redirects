@@ -1,1 +1,6 @@
+# Redirect /central to your MediMind Central platform
+/central/* https://your-medimind-central-site.netlify.app/:splat 200
+/central https://your-medimind-central-site.netlify.app/ 200
+
+# Catch-all for SPA routing (keep this last)
 /* /index.html 200

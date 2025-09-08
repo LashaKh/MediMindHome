@@ -131,27 +131,6 @@ export const LampHeroSection: React.FC = () => {
           </motion.button>
         </motion.div>
 
-        {/* Stats */}
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-28 max-w-4xl mx-auto"
-          initial={{ y: 30, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.1, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-cyan-400">{t('hero.stats.availability')}</div>
-            <div className="text-gray-300 mt-2">{t('hero.stats.availabilityDesc')}</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-cyan-400">{t('hero.stats.speed')}</div>
-            <div className="text-gray-300 mt-2">{t('hero.stats.speedDesc')}</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-cyan-400">{t('hero.stats.compliance')}</div>
-            <div className="text-gray-300 mt-2">{t('hero.stats.complianceDesc')}</div>
-          </div>
-        </motion.div>
       </div>
     </LampContainer>
   );

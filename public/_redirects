@@ -1,6 +1,10 @@
-# Redirect /central to your MediMind Central platform
-/central/* https://your-medimind-central-site.netlify.app/:splat 200
-/central https://your-medimind-central-site.netlify.app/ 200
+# Proxy /expert to MediMind Expert platform
+/expert/* https://medimind-expert.netlify.app/:splat 200
+/expert https://medimind-expert.netlify.app/ 200
+
+# Proxy /central to MediMind Central platform
+/central/* https://your-medimind-central-domain.netlify.app/:splat 200
+/central https://your-medimind-central-domain.netlify.app/ 200
 
 # Catch-all for SPA routing (keep this last)
 /* /index.html 200

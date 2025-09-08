@@ -1,6 +1,6 @@
 export default {
   common: {
-    aiAssistant: 'AI Medical Assistant',
+    aiAssistant: 'AI Medical Co-pilot',
     save: 'Save',
     delete: 'Delete',
     cancel: 'Cancel'
@@ -32,7 +32,7 @@ export default {
     },
     stats: {
       availability: '24/7',
-      availabilityDesc: 'AI Medical Assistant',
+      availabilityDesc: 'AI Medical Co-pilot',
       speed: 'Instant',
       speedDesc: 'Clinical Insights',
       compliance: '100%',
@@ -151,7 +151,7 @@ export default {
     },
     expert: {
       title: 'MediMind Expert',
-      subtitle: 'Personal AI Medical Assistant',
+      subtitle: 'Personal AI Medical Co-pilot',
       price: '$15/month',
       description: 'Specialized AI assistant with domain-specific medical knowledge, perfect for individual physicians who need instant access to medical expertise and decision support.',
       target: 'Individual Physicians & Specialists',

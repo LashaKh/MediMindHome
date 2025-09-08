@@ -123,7 +123,7 @@ export const ProblemsSection: React.FC = () => {
   };
 
   return (
-    <section className="relative py-32 bg-gradient-to-b from-white via-gray-50/50 to-white dark:from-dark-primary dark:via-dark-secondary/80 dark:to-dark-primary overflow-hidden">
+    <section className="relative py-32 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-grid-white/[0.02] dark:bg-grid-white/[0.08] bg-[size:80px]" />

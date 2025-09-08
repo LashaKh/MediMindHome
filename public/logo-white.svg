@@ -1,0 +1,43 @@
+<svg width="400" height="120" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- White Gradient -->
+    <linearGradient id="whiteGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    
+    <!-- Icon Background Gradient (Subtle) -->
+    <linearGradient id="iconGradientWhite" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#e2e8f0" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Circle for Icon -->
+  <circle cx="40" cy="60" r="30" fill="url(#iconGradientWhite)" stroke="white" stroke-width="2"/>
+  
+  <!-- Exact Lucide Stethoscope Icon -->
+  <g transform="translate(28, 48)" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Exact paths from Lucide -->
+    <path d="M11 2v2M5 2v2m0-1H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"/>
+    <path d="M8 15a6 6 0 0 0 12 0v-3"/>
+    <circle cx="20" cy="10" r="2"/>
+  </g>
+  
+  <!-- Sparkles -->
+  <g transform="translate(55, 25)">
+    <path d="M9.663 17h4.673M12 12.663v4.674m-4.38-2.82l5.41 5.41m0-5.41l-5.41 5.41" 
+          stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  
+  <!-- Main Text -->
+  <text x="90" y="55" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="white">
+    MediMind
+  </text>
+  
+  <!-- Tagline -->
+  <text x="90" y="80" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#e2e8f0">
+    AI Medical Co-pilot
+  </text>
+</svg> 

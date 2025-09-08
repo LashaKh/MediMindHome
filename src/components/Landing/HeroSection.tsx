@@ -160,7 +160,7 @@ export const HeroSection: React.FC = () => {
           >
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-accent">24/7</div>
-              <div className="text-white/80 mt-2">AI Medical Assistant</div>
+              <div className="text-white/80 mt-2">AI Medical Co-pilot</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-accent">Instant</div>

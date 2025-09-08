@@ -4,8 +4,10 @@ import type { Database } from '../types/supabase';
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
-if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error('Missing required Supabase environment variables');
-}
+// Create a null client if environment variables are missing (for landing page only)
+export const supabase = (!supabaseUrl || !supabaseAnonKey) 
+  ? null 
+  : createClient<Database>(supabaseUrl, supabaseAnonKey);
 
-export const supabase = createClient<Database>(supabaseUrl, supabaseAnonKey);
+// Helper to check if Supabase is available
+export const isSupabaseEnabled = () => supabase !== null;

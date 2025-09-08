@@ -9,7 +9,7 @@ import { MigrationNotice } from './components/MigrationNotice';
 import { useMigrationNotice } from './hooks/useMigrationNotice';
 
 function App() {
-  const { isOpen, closeNotice } = useMigrationNotice();
+  const { isOpen } = useMigrationNotice();
 
   return (
     <Router>
@@ -21,7 +21,7 @@ function App() {
             <Route path="/signup" element={<SignUp />} />
           </Routes>
         </MainLayout>
-        <MigrationNotice isOpen={isOpen} onClose={closeNotice} />
+        <MigrationNotice isOpen={isOpen} />
       </LanguageProvider>
     </Router>
   );

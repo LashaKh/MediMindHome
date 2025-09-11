@@ -123,7 +123,7 @@ export const ProblemsSection: React.FC = () => {
   };
 
   return (
-    <section className="relative py-32 overflow-hidden">
+    <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 overflow-hidden bg-white dark:bg-gray-900">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-grid-white/[0.02] dark:bg-grid-white/[0.08] bg-[size:80px]" />
@@ -148,7 +148,7 @@ export const ProblemsSection: React.FC = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Enhanced Header */}
         <motion.div
-          className="text-center max-w-5xl mx-auto mb-24"
+          className="text-center max-w-5xl mx-auto mb-12 sm:mb-16 md:mb-20 lg:mb-24"
           initial={{ y: 60, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, ease: "easeOut" }}
@@ -165,10 +165,10 @@ export const ProblemsSection: React.FC = () => {
             {t('problems.badge')}
           </motion.div>
           
-          <h2 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-8 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 md:mb-8 leading-tight">
             {t('problems.title')}
             <motion.span 
-              className="block bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent mt-2"
+              className="block text-primary dark:text-accent mt-2 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text dark:text-transparent"
               initial={{ backgroundPosition: "0% 50%" }}
               animate={{ backgroundPosition: "100% 50%" }}
               transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
@@ -178,7 +178,7 @@ export const ProblemsSection: React.FC = () => {
           </h2>
           
           <motion.p 
-            className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-4xl mx-auto"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-4xl mx-auto px-4 sm:px-6"
             initial={{ y: 30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -190,7 +190,7 @@ export const ProblemsSection: React.FC = () => {
 
         {/* Enhanced Problems Grid */}
         <motion.div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-32"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-16 sm:mb-20 md:mb-24 lg:mb-32"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -202,7 +202,7 @@ export const ProblemsSection: React.FC = () => {
               variants={itemVariants}
               className="group relative"
             >
-              <div className="relative overflow-hidden rounded-3xl bg-white dark:bg-dark-secondary/50 backdrop-blur-sm p-8 shadow-xl border border-gray-100 dark:border-accent/10 hover:shadow-2xl dark:hover:shadow-primary/20 transition-all duration-700 hover:-translate-y-3 h-full group-hover:border-primary/20 dark:group-hover:border-accent/30">
+              <div className="relative overflow-hidden rounded-3xl bg-white dark:bg-dark-secondary/50 backdrop-blur-sm p-6 sm:p-8 shadow-xl border border-gray-100 dark:border-accent/10 hover:shadow-2xl dark:hover:shadow-primary/20 transition-all duration-700 hover:-translate-y-3 h-full group-hover:border-primary/20 dark:group-hover:border-accent/30">
                 {/* Animated background gradient */}
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 dark:from-primary/10 dark:to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"
@@ -210,18 +210,18 @@ export const ProblemsSection: React.FC = () => {
                 />
                 
                 <div className="relative z-10">
-                  <div className="flex items-start gap-6 mb-6">
+                  <div className="flex items-start gap-4 sm:gap-6 mb-4 sm:mb-6">
                     <motion.div 
-                      className="flex-shrink-0 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-secondary text-white shadow-lg"
+                      className="flex-shrink-0 inline-flex h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-secondary text-white shadow-lg"
                       whileHover={{ scale: 1.1, rotate: 5 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <problem.icon className="h-8 w-8" />
+                      <problem.icon className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8" />
                     </motion.div>
                     
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
-                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-primary dark:group-hover:text-accent transition-colors duration-300">
+                        <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-white group-hover:text-primary dark:group-hover:text-accent transition-colors duration-300">
                           {problem.title}
                         </h3>
                         <span className={`px-2 py-1 rounded-full text-xs font-semibold ${
@@ -233,15 +233,15 @@ export const ProblemsSection: React.FC = () => {
                         </span>
                       </div>
                       
-                      <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
+                      <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm sm:text-base md:text-lg">
                         {problem.description}
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-between p-4 bg-gradient-to-r from-gray-50 to-gray-100 dark:from-dark-primary/50 dark:to-dark-secondary/50 rounded-xl">
+                  <div className="flex items-center justify-between p-3 sm:p-4 bg-gradient-to-r from-gray-50 to-gray-100 dark:from-dark-primary/50 dark:to-dark-secondary/50 rounded-xl">
                     <div>
-                      <div className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                      <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                         {problem.stat}
                       </div>
                       <div className="text-sm font-medium text-gray-500 dark:text-gray-400 mt-1">
@@ -263,7 +263,7 @@ export const ProblemsSection: React.FC = () => {
 
         {/* Enhanced Solutions Preview */}
         <motion.div
-          className="text-center max-w-5xl mx-auto mb-20"
+          className="text-center max-w-5xl mx-auto mb-12 sm:mb-16 md:mb-20"
           initial={{ y: 60, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, ease: "easeOut" }}
@@ -280,20 +280,20 @@ export const ProblemsSection: React.FC = () => {
             {t('problems.solutions.title')}
           </motion.div>
 
-          <h3 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-8 leading-tight">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 md:mb-8 leading-tight">
             <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
               {t('problems.solutions.subtitle')}
             </span>
           </h3>
           
-          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed px-4 sm:px-6">
             {t('problems.solutions.description')}
           </p>
         </motion.div>
 
         {/* Enhanced Solutions Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -305,7 +305,7 @@ export const ProblemsSection: React.FC = () => {
               variants={itemVariants}
               className="group text-center"
             >
-              <div className="relative overflow-hidden rounded-2xl bg-white dark:bg-dark-secondary/40 backdrop-blur-sm p-8 shadow-xl border border-gray-100 dark:border-accent/10 hover:shadow-2xl dark:hover:shadow-accent/20 transition-all duration-500 hover:-translate-y-2 group-hover:border-primary/20 dark:group-hover:border-accent/30 h-full">
+              <div className="relative overflow-hidden rounded-2xl bg-white dark:bg-dark-secondary/40 backdrop-blur-sm p-6 sm:p-8 shadow-xl border border-gray-100 dark:border-accent/10 hover:shadow-2xl dark:hover:shadow-accent/20 transition-all duration-500 hover:-translate-y-2 group-hover:border-primary/20 dark:group-hover:border-accent/30 h-full">
                 {/* Animated background */}
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5 dark:from-primary/10 dark:via-secondary/10 dark:to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"
@@ -317,8 +317,8 @@ export const ProblemsSection: React.FC = () => {
                     whileHover={{ scale: 1.1, y: -5 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary via-secondary to-accent text-white shadow-lg mx-auto">
-                      <solution.icon className="h-8 w-8" />
+                    <div className="inline-flex h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary via-secondary to-accent text-white shadow-lg mx-auto">
+                      <solution.icon className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8" />
                     </div>
                   </motion.div>
                   
@@ -326,12 +326,12 @@ export const ProblemsSection: React.FC = () => {
                     <span className="inline-block px-3 py-1 rounded-full bg-gradient-to-r from-primary/10 to-accent/10 text-primary dark:text-accent text-xs font-semibold mb-3">
                       {solution.feature}
                     </span>
-                    <h4 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary dark:group-hover:text-accent transition-colors duration-300 mb-4">
+                    <h4 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary dark:group-hover:text-accent transition-colors duration-300 mb-3 sm:mb-4">
                       {solution.title}
                     </h4>
                   </div>
                   
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed mb-4 sm:mb-6">
                     {solution.description}
                   </p>
 

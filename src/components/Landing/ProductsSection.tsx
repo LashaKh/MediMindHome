@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { 
   Building2, 
   User, 
@@ -10,6 +11,7 @@ import {
 import { BackgroundCells } from '../ui/background-ripple-effect';
 
 export const ProductsSection: React.FC = () => {
+  const navigate = useNavigate();
 
   const products = [
     {
@@ -47,7 +49,7 @@ export const ProductsSection: React.FC = () => {
 
 
   return (
-    <section className="relative py-24 overflow-hidden">
+    <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 overflow-hidden">
       {/* Background with Ripple Effect */}
       <div className="absolute inset-0">
         <BackgroundCells className="bg-gradient-to-b from-white to-gray-50 dark:from-primary dark:to-secondary h-full" />
@@ -57,7 +59,7 @@ export const ProductsSection: React.FC = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-40">
         {/* Header */}
         <motion.div
-          className="text-center max-w-5xl mx-auto mb-16"
+          className="text-center max-w-5xl mx-auto mb-8 sm:mb-12 md:mb-16 py-4"
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -68,18 +70,18 @@ export const ProductsSection: React.FC = () => {
             <span className="text-accent font-semibold text-sm">Modern Healthcare</span>
           </div>
           
-          <h2 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-black dark:text-white mb-4 sm:mb-6 leading-tight">
             AI Platform
           </h2>
           
-          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-200 leading-relaxed max-w-4xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-900 dark:text-gray-200 leading-relaxed max-w-4xl mx-auto px-2 sm:px-4">
             Choose the perfect MediMind solution for your practice. From hospital systems to individual physician workflows, we have the AI tools to transform your healthcare delivery.
           </p>
         </motion.div>
 
         {/* Premium Product Cards */}
-        <div className="max-w-7xl mx-auto mb-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
+        <div className="max-w-7xl mx-auto mb-12 sm:mb-16 md:mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 items-stretch">
             {products.map((product, index) => (
               <motion.div
                 key={product.id}
@@ -107,9 +109,9 @@ export const ProductsSection: React.FC = () => {
                       : 'from-slate-500 via-slate-600 to-blue-500'
                   }`} />
 
-                  <div className="relative p-10 flex flex-col h-full">
+                  <div className="relative p-6 sm:p-8 lg:p-10 flex flex-col h-full">
                     {/* Header Section */}
-                    <div className="flex items-start gap-6 mb-8">
+                    <div className="flex items-start gap-4 sm:gap-6 mb-6 sm:mb-8">
                       <motion.div 
                         className={`relative p-4 rounded-2xl shadow-lg ${
                           index === 0 
@@ -131,24 +133,24 @@ export const ProductsSection: React.FC = () => {
                       
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-2">
-                          <h3 className="text-3xl font-bold text-gray-900 dark:text-white">{product.title}</h3>
+                          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">{product.title}</h3>
                           <span className={`px-3 py-1 text-xs font-bold rounded-full text-white shadow-sm ${
                             index === 0 ? 'bg-blue-600' : 'bg-slate-600'
                           }`}>
                             {index === 0 ? 'Enterprise' : 'Professional'}
                           </span>
                         </div>
-                        <p className="text-lg text-gray-600 dark:text-gray-400">{product.subtitle}</p>
+                        <p className="text-sm sm:text-base lg:text-lg text-gray-600 dark:text-gray-400">{product.subtitle}</p>
                       </div>
                     </div>
 
                     {/* Enhanced Description */}
-                    <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed mb-8 font-medium">
+                    <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base lg:text-lg leading-relaxed mb-6 sm:mb-8 font-medium">
                       {product.description}
                     </p>
 
                     {/* Premium Features */}
-                    <div className="space-y-4 mb-10 flex-grow">
+                    <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 lg:mb-10 flex-grow">
                       <h4 className="font-semibold text-gray-900 dark:text-white flex items-center gap-2">
                         <Sparkles className="w-5 h-5 text-cyan-500" />
                         Key Capabilities
@@ -158,14 +160,14 @@ export const ProductsSection: React.FC = () => {
                         {product.features.map((feature, featureIndex) => (
                           <motion.div
                             key={featureIndex}
-                            className="flex items-center gap-4 p-3 rounded-lg bg-gradient-to-r from-gray-50/50 to-transparent dark:from-slate-800/30 dark:to-transparent border border-gray-200/30 dark:border-slate-700/20 hover:border-gray-300/50 dark:hover:border-slate-600/40 transition-colors duration-300"
+                            className="flex items-center gap-3 sm:gap-4 p-2 sm:p-3 rounded-lg bg-gradient-to-r from-gray-50/50 to-transparent dark:from-slate-800/30 dark:to-transparent border border-gray-200/30 dark:border-slate-700/20 hover:border-gray-300/50 dark:hover:border-slate-600/40 transition-colors duration-300"
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ delay: featureIndex * 0.08 + 0.2, duration: 0.5 }}
                             viewport={{ once: true }}
                           >
                             <div className={`w-2 h-2 rounded-full ${index === 0 ? 'bg-blue-500' : 'bg-slate-500'}`} />
-                            <span className="text-gray-700 dark:text-gray-300 font-medium">{feature}</span>
+                            <span className="text-sm sm:text-base text-gray-700 dark:text-gray-300 font-medium">{feature}</span>
                           </motion.div>
                         ))}
                       </div>
@@ -177,14 +179,14 @@ export const ProductsSection: React.FC = () => {
                       <motion.button
                         onClick={() => {
                           if (index === 0) {
-                            // Enterprise Demo - could go to a different page
-                            window.open('https://medimind.md/central', '_blank');
+                            // Enterprise Demo - navigate to our demo request form
+                            navigate('/request-demo');
                           } else {
                             // Start Free Trial - navigate to expert page
                             window.open('https://medimind.md/expert', '_blank');
                           }
                         }}
-                        className={`group relative w-full p-6 rounded-2xl font-bold text-lg text-white shadow-xl overflow-hidden mb-6 ${
+                        className={`group relative w-full p-4 sm:p-5 lg:p-6 rounded-2xl font-bold text-base sm:text-lg text-white shadow-xl overflow-hidden mb-4 sm:mb-6 ${
                           index === 0 
                             ? 'bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800' 
                             : 'bg-gradient-to-r from-slate-600 via-slate-700 to-slate-800'
@@ -202,14 +204,14 @@ export const ProductsSection: React.FC = () => {
                         
                         <div className="relative flex items-center justify-center gap-3">
                           {product.cta}
-                          <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
+                          <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-1 transition-transform duration-300" />
                         </div>
                       </motion.button>
 
                       {/* Trust Badge */}
                       <div className="text-center">
-                        <div className="inline-flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-                          <CheckCircle className="w-4 h-4" />
+                        <div className="inline-flex items-center gap-2 text-xs sm:text-sm text-gray-500 dark:text-gray-400">
+                          <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4" />
                           <span>HIPAA Compliant & SOC 2 Certified</span>
                         </div>
                       </div>

@@ -89,7 +89,7 @@ export const FeaturesSection: React.FC = () => {
   };
 
   return (
-    <section className="relative py-32 overflow-hidden">
+    <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 overflow-hidden">
       {/* Enhanced Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-white to-gray-50 dark:from-dark-secondary dark:via-dark-primary dark:to-dark-secondary" />
@@ -117,7 +117,7 @@ export const FeaturesSection: React.FC = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Enhanced Header */}
         <motion.div
-          className="text-center max-w-6xl mx-auto mb-24"
+          className="text-center max-w-6xl mx-auto mb-12 sm:mb-16 md:mb-20 lg:mb-24"
           initial={{ y: 60, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, ease: "easeOut" }}
@@ -134,7 +134,7 @@ export const FeaturesSection: React.FC = () => {
             {t('features.badge')}
           </motion.div>
 
-          <h3 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-8 leading-tight">
+          <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 md:mb-8 leading-tight">
             <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
               {t('features.title')}
             </span>
@@ -142,7 +142,7 @@ export const FeaturesSection: React.FC = () => {
           </h3>
           
           <motion.p 
-            className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-5xl mx-auto"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-5xl mx-auto px-4 sm:px-6"
             initial={{ y: 30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -157,7 +157,7 @@ export const FeaturesSection: React.FC = () => {
 
         {/* Enhanced Competitive Advantages Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16 md:mb-20 lg:mb-24"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -169,7 +169,7 @@ export const FeaturesSection: React.FC = () => {
               variants={itemVariants}
               className="group relative"
             >
-              <div className="relative overflow-hidden rounded-3xl bg-white dark:bg-dark-secondary/40 backdrop-blur-sm p-8 shadow-xl border border-gray-100 dark:border-accent/10 hover:shadow-2xl dark:hover:shadow-primary/20 transition-all duration-700 hover:-translate-y-3 h-full group-hover:border-primary/20 dark:group-hover:border-accent/30">
+              <div className="relative overflow-hidden rounded-3xl bg-white dark:bg-dark-secondary/40 backdrop-blur-sm p-6 sm:p-8 shadow-xl border border-gray-100 dark:border-accent/10 hover:shadow-2xl dark:hover:shadow-primary/20 transition-all duration-700 hover:-translate-y-3 h-full group-hover:border-primary/20 dark:group-hover:border-accent/30">
                 {/* Animated background gradient */}
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5 dark:from-primary/10 dark:via-secondary/10 dark:to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"
@@ -195,18 +195,18 @@ export const FeaturesSection: React.FC = () => {
                     whileHover={{ scale: 1.1, y: -5 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary via-secondary to-accent text-white shadow-lg">
-                      <advantage.icon className="h-8 w-8" />
+                    <div className="inline-flex h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary via-secondary to-accent text-white shadow-lg">
+                      <advantage.icon className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8" />
                     </div>
                   </motion.div>
                   
                   {/* Content */}
                   <div className="mb-6">
-                    <h4 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-primary dark:group-hover:text-accent transition-colors duration-300 mb-4">
+                    <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-white group-hover:text-primary dark:group-hover:text-accent transition-colors duration-300 mb-3 sm:mb-4">
                       {advantage.title}
                     </h4>
                     
-                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+                    <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed mb-4 sm:mb-6">
                       {advantage.description}
                     </p>
                   </div>
@@ -223,7 +223,7 @@ export const FeaturesSection: React.FC = () => {
                         viewport={{ once: true }}
                       >
                         <div className="w-2 h-2 rounded-full bg-gradient-to-r from-primary to-secondary" />
-                        <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
+                        <span className="text-xs sm:text-sm font-medium text-gray-500 dark:text-gray-400">
                           {detail}
                         </span>
                       </motion.div>
@@ -237,7 +237,7 @@ export const FeaturesSection: React.FC = () => {
 
         {/* Enhanced Statistics Section */}
         <motion.div
-          className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white via-gray-50 to-white dark:from-dark-primary dark:via-dark-secondary dark:to-dark-primary p-16 shadow-2xl border border-gray-200 dark:border-accent/20"
+          className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white via-gray-50 to-white dark:from-dark-primary dark:via-dark-secondary dark:to-dark-primary p-8 sm:p-12 md:p-16 shadow-2xl border border-gray-200 dark:border-accent/20"
           initial={{ y: 60, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, ease: "easeOut" }}
@@ -325,27 +325,6 @@ export const FeaturesSection: React.FC = () => {
               ))}
             </div>
 
-            {/* Call to Action */}
-            <motion.div
-              className="text-center mt-12 pt-8 border-t border-gray-200 dark:border-accent/20"
-              initial={{ y: 30, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-                Experience the difference our competitive advantages make in real-world healthcare scenarios.
-              </p>
-              
-              <motion.button
-                className="group inline-flex items-center gap-3 px-8 py-4 text-lg font-semibold text-primary dark:text-accent border-2 border-primary/30 dark:border-accent/30 rounded-2xl hover:border-primary dark:hover:border-accent hover:bg-primary/5 dark:hover:bg-accent/5 transition-all duration-300"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Explore Our Solutions
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </motion.button>
-            </motion.div>
           </div>
         </motion.div>
       </div>

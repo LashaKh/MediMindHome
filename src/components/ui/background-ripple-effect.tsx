@@ -43,7 +43,7 @@ const BackgroundCellCore = () => {
       onMouseMove={handleMouseMove}
       className="h-full absolute inset-0"
     >
-      <div className="absolute h-[20rem] inset-y-0 overflow-hidden">
+      <div className="absolute h-[26rem] inset-y-0 overflow-hidden">
         <div className="absolute h-full w-full pointer-events-none -bottom-2 z-40 bg-primary [mask-image:linear-gradient(to_bottom,transparent,black)] dark:bg-primary" />
         <div
           className="absolute inset-0 z-20 bg-transparent"

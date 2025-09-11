@@ -36,8 +36,7 @@ export const CTASection: React.FC = () => {
   };
 
   const handleScheduleDemo = () => {
-    // This would typically open a calendar booking system
-    window.location.href = 'mailto:demo@medimind.ai?subject=Schedule MediMind Demo';
+    navigate('/request-demo');
   };
 
   const benefits = [

@@ -2,18 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { 
   Users, 
-  Clock, 
-  Shield, 
-  Activity,
   Database,
   Sparkles,
   Target,
-  Star,
   Award,
-  TrendingUp,
   Zap,
-  Brain,
-  ArrowRight
+  Brain
 } from 'lucide-react';
 import { useTranslation } from '../../hooks/useTranslation';
 
@@ -235,98 +229,6 @@ export const FeaturesSection: React.FC = () => {
           ))}
         </motion.div>
 
-        {/* Enhanced Statistics Section */}
-        <motion.div
-          className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white via-gray-50 to-white dark:from-dark-primary dark:via-dark-secondary dark:to-dark-primary p-8 sm:p-12 md:p-16 shadow-2xl border border-gray-200 dark:border-accent/20"
-          initial={{ y: 60, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
-          {/* Background Effects */}
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-grid-white/[0.02] dark:bg-grid-white/[0.08] bg-[size:60px]" />
-            <motion.div 
-              className="absolute top-5 left-1/4 w-40 h-40 rounded-full bg-gradient-to-br from-primary/10 to-secondary/10 blur-2xl"
-              animate={{ 
-                scale: [1, 1.2, 1],
-                opacity: [0.3, 0.6, 0.3],
-              }}
-              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-            />
-            <motion.div 
-              className="absolute bottom-5 right-1/3 w-32 h-32 rounded-full bg-gradient-to-br from-accent/10 to-primary/10 blur-2xl"
-              animate={{ 
-                scale: [1.2, 1, 1.2],
-                opacity: [0.6, 0.3, 0.6],
-              }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            />
-          </div>
-
-          <div className="relative z-10">
-            <div className="text-center mb-12">
-              <motion.div
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-accent/10 to-primary/10 border border-accent/20 dark:border-accent/30 text-primary dark:text-accent text-sm font-semibold mb-6"
-                initial={{ scale: 0.8, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                <TrendingUp className="w-4 h-4" />
-                Performance Metrics
-              </motion.div>
-
-              <h4 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-                Proven <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Excellence</span>
-              </h4>
-              
-              <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto">
-                Industry-leading performance metrics that demonstrate our commitment to exceptional healthcare AI solutions.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {[
-                { icon: Activity, value: "99.9%", label: "Accuracy Rate", color: "from-green-500 to-emerald-500" },
-                { icon: Clock, value: "<3s", label: "Response Time", color: "from-blue-500 to-cyan-500" },
-                { icon: Shield, value: "100%", label: "HIPAA Compliant", color: "from-purple-500 to-violet-500" },
-                { icon: Users, value: "24/7", label: "Availability", color: "from-orange-500 to-red-500" }
-              ].map((stat, index) => (
-                <motion.div
-                  key={index}
-                  className="text-center group"
-                  initial={{ y: 30, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <motion.div
-                    className="inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-secondary text-white shadow-xl mb-4 group-hover:scale-110 transition-transform duration-300"
-                    whileHover={{ rotate: 5 }}
-                  >
-                    <stat.icon className="h-10 w-10" />
-                  </motion.div>
-                  
-                  <motion.div 
-                    className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2"
-                    initial={{ scale: 0.5, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
-                    viewport={{ once: true }}
-                  >
-                    {stat.value}
-                  </motion.div>
-                  
-                  <div className="text-gray-600 dark:text-gray-400 font-semibold text-lg">
-                    {stat.label}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-          </div>
-        </motion.div>
       </div>
     </section>
   );

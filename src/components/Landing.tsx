@@ -2,7 +2,9 @@ import React from 'react';
 import { LampHeroSection } from './Landing/LampHeroSection';
 import { ProductsSection } from './Landing/ProductsSection';
 import { ProblemsSection } from './Landing/ProblemsSection';
+import { ArchitectureSection } from './Landing/ArchitectureSection';
 import { FeaturesSection } from './Landing/FeaturesSection';
+import { GitaGrantSection } from './Landing/GitaGrantSection';
 
 export const Landing: React.FC = () => {
   return (
@@ -14,8 +16,14 @@ export const Landing: React.FC = () => {
       <div id="problems">
         <ProblemsSection />
       </div>
+      <div id="architecture">
+        <ArchitectureSection />
+      </div>
       <div id="features">
         <FeaturesSection />
+      </div>
+      <div id="gita-grant">
+        <GitaGrantSection />
       </div>
     </div>
   );

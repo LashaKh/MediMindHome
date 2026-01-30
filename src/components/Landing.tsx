@@ -23,7 +23,7 @@ export const Landing: React.FC = () => {
         <FeaturesSection />
       </div>
       <div id="gita-grant">
-        <GitaGrantSection />
+        {/* <GitaGrantSection /> */}
       </div>
     </div>
   );

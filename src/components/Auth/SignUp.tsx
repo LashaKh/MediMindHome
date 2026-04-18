@@ -96,7 +96,7 @@ export const SignUp: React.FC = () => {
           <div className="text-sm text-center">
             <Link
               to="/signin"
-              className="font-medium text-white hover:text-gray-200 dark:text-blue-400 dark:hover:text-blue-300"
+              className="font-medium text-white hover:text-light-accent dark:text-accent dark:hover:text-light-accent"
             >
               Already have an account? {t('auth.signIn')}
             </Link>

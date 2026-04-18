@@ -3,21 +3,21 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '../../utils/cn';
 
 const badgeVariants = cva(
-  "inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2",
+  'inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-navy',
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/80",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        destructive: "bg-red-500 text-white hover:bg-red-600",
-        outline: "text-foreground border border-input hover:bg-accent hover:text-accent-foreground",
-        success: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
-        warning: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200",
-        info: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
+        default: 'bg-accent/15 text-accent border border-accent/30',
+        secondary: 'bg-secondary/15 text-light-accent border border-secondary/30',
+        outline: 'border border-surface-border text-text-muted hover:bg-surface-hover',
+        success: 'bg-success/15 text-success border border-success/30',
+        warning: 'bg-warning/15 text-warning border border-warning/30',
+        info: 'bg-accent/15 text-accent border border-accent/30',
+        destructive: 'bg-error/15 text-error border border-error/30',
       },
     },
     defaultVariants: {
-      variant: "default",
+      variant: 'default',
     },
   }
 );
@@ -27,7 +27,5 @@ export interface BadgeProps
     VariantProps<typeof badgeVariants> {}
 
 export function Badge({ className, variant, ...props }: BadgeProps) {
-  return (
-    <div className={cn(badgeVariants({ variant, className }))} {...props} />
-  );
-} 
+  return <div className={cn(badgeVariants({ variant, className }))} {...props} />;
+}

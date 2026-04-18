@@ -1,30 +1,29 @@
 import React from 'react';
 import { LampHeroSection } from './Landing/LampHeroSection';
-import { ProductsSection } from './Landing/ProductsSection';
-import { ProblemsSection } from './Landing/ProblemsSection';
-import { ArchitectureSection } from './Landing/ArchitectureSection';
-import { FeaturesSection } from './Landing/FeaturesSection';
-import { GitaGrantSection } from './Landing/GitaGrantSection';
+import { PlatformPillarsSection } from './Landing/PlatformPillarsSection';
+import { AISubstrateSection } from './Landing/AISubstrateSection';
+import { RecognitionSection } from './Landing/RecognitionSection';
+import { StandardsSection } from './Landing/StandardsSection';
+import { FinalCTASection } from './Landing/FinalCTASection';
 
+/**
+ * Lean landing page — 6 sections.
+ *
+ * Hero → Platform (9 pillars at a glance) → AI demo → Trust/proof → Standards → CTA
+ *
+ * Other sections (SafetySection, ComplianceMoatSection, TeamSection,
+ * MilestonesSection, AmbitionSection) remain in the codebase but are not
+ * rendered. Re-import here if a deep-dive page is ever wanted.
+ */
 export const Landing: React.FC = () => {
   return (
-    <div className="w-full bg-gradient-to-b from-slate-950 via-slate-900/95 via-slate-800/90 via-slate-700/80 via-slate-600/70 via-slate-500/60 via-slate-400/50 via-slate-300/40 via-slate-200/30 via-slate-100/20 to-white">
+    <div className="w-full bg-surface-page text-text">
       <LampHeroSection />
-      <div id="products">
-        <ProductsSection />
-      </div>
-      <div id="problems">
-        <ProblemsSection />
-      </div>
-      <div id="architecture">
-        <ArchitectureSection />
-      </div>
-      <div id="features">
-        <FeaturesSection />
-      </div>
-      <div id="gita-grant">
-        {/* <GitaGrantSection /> */}
-      </div>
+      <PlatformPillarsSection />
+      <AISubstrateSection />
+      <RecognitionSection />
+      <StandardsSection />
+      <FinalCTASection />
     </div>
   );
 };

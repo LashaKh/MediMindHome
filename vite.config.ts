@@ -52,7 +52,6 @@ export default defineConfig({
     outDir: 'dist',
     sourcemap: false,
     target: 'esnext',
-    chunkSizeWarningLimit: 2000,
     rollupOptions: {
       output: {
         compact: true,

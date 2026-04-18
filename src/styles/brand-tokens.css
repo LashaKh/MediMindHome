@@ -1,0 +1,107 @@
+/* ============================================================
+   MediMind — Color Tokens (CSS Custom Properties)
+   ============================================================
+   Single source of truth for all brand colors.
+   Mirrors /packages/app/src/emr/styles/theme.css in the codebase.
+   Import once in your app's root stylesheet, then use
+   var(--emr-primary) etc. throughout.
+
+   Version: 1.0
+   Last updated: 2026-04-18
+   ============================================================ */
+
+:root {
+  /* ─── Brand Core (Blue) ─── */
+  --emr-primary:        #1a365d;  /* Deep navy — primary brand */
+  --emr-secondary:      #2b6cb0;  /* Medium blue */
+  --emr-accent:         #3182ce;  /* Bright blue */
+  --emr-light-accent:   #bee3f8;  /* Very light blue */
+
+  /* ─── Brand Gradients ─── */
+  --emr-gradient-primary:    linear-gradient(135deg, #1a365d 0%, #2b6cb0 50%, #3182ce 100%);
+  --emr-gradient-secondary:  linear-gradient(135deg, #2b6cb0 0%, #3182ce 50%, #3182ce 100%);
+  --emr-gradient-section:    linear-gradient(135deg, #2b6cb0 0%, #3182ce 100%);
+
+  /* ─── Semantic — Success ─── */
+  --emr-success:        #38a169;
+  --emr-success-light:  #48bb78;
+  --emr-success-bg:     #c6f6d5;
+  --emr-gradient-success: linear-gradient(135deg, #38a169 0%, #48bb78 100%);
+
+  /* ─── Semantic — Warning ─── */
+  --emr-warning:        #dd6b20;
+  --emr-warning-light:  #ed8936;
+  --emr-warning-bg:     #feebc8;
+  --emr-gradient-warning: linear-gradient(135deg, #dd6b20 0%, #ed8936 100%);
+
+  /* ─── Semantic — Error ─── */
+  --emr-error:          #e53e3e;
+  --emr-error-light:    #fc8181;
+  --emr-error-bg:       #fed7d7;
+  --emr-gradient-error: linear-gradient(135deg, #e53935 0%, #d32f2f 100%);
+
+  /* ─── Semantic — Info ─── */
+  --emr-info:           #3182ce;
+
+  /* ─── Text (Light Mode) ─── */
+  --emr-text-primary:   #1f2937;
+  --emr-text-secondary: #6b7280;
+  --emr-text-tertiary:  #9ca3af;
+  --emr-text-inverse:   #ffffff;
+
+  /* ─── Surface / Background (Light Mode) ─── */
+  --emr-bg-page:        #ffffff;
+  --emr-bg-card:        #ffffff;
+  --emr-bg-modal:       #ffffff;
+  --emr-bg-input:       #ffffff;
+  --emr-bg-hover:       #f7fafc;
+  --emr-bg-section:     #f8f9fa;
+  --emr-bg-stat-card:   #edf2f9;
+
+  /* ─── Borders ─── */
+  --emr-border-color:   #e5e7eb;
+  --emr-border-default: #e5e7eb;
+  --emr-border-subtle:  #f1f5f9;
+
+  /* ─── Status Colors (encounter lifecycle) ─── */
+  --emr-status-pending:     #ed8936;
+  --emr-status-in-progress: #3182ce;
+  --emr-status-completed:   #38a169;
+  --emr-status-cancelled:   #94a3b8;
+  --emr-status-failed:      #e53e3e;
+  --emr-status-draft:       #9ca3af;
+}
+
+/* ============================================================
+   DARK MODE — same semantic names, flipped values.
+   Triggered by the `dark` class on <html>, written by
+   src/hooks/useTheme.ts. Do NOT hardcode dark hex values
+   elsewhere in the codebase.
+   ============================================================ */
+
+:root.dark {
+  /* ─── Text (Dark Mode) ─── */
+  --emr-text-primary:   #f1f5f9;
+  --emr-text-secondary: #cbd5e1;
+  --emr-text-tertiary:  #94a3b8;
+  --emr-text-inverse:   #0f172a;
+
+  /* ─── Surface / Background (Dark Mode) ─── */
+  --emr-bg-page:        #0f172a;
+  --emr-bg-card:        #1e293b;
+  --emr-bg-modal:       #1e293b;
+  --emr-bg-input:       #0f172a;
+  --emr-bg-hover:       #334155;
+  --emr-bg-section:     #1e293b;
+  --emr-bg-stat-card:   #1e293b;
+
+  /* ─── Borders (Dark Mode) ─── */
+  --emr-border-color:   #334155;
+  --emr-border-default: #334155;
+  --emr-border-subtle:  #1e293b;
+
+  /* ─── Gradients (Dark Mode) ─── */
+  --emr-gradient-primary:   linear-gradient(135deg, #334155 0%, #475569 50%, #64748b 100%);
+  --emr-gradient-secondary: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+  --emr-gradient-success:   linear-gradient(135deg, #276749 0%, #38a169 50%, #48bb78 100%);
+}

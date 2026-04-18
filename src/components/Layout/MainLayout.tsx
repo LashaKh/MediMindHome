@@ -8,12 +8,10 @@ interface MainLayoutProps {
 
 export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <div className="min-h-screen flex flex-col bg-surface-page text-text">
       <Header />
-      <div className="flex-1 overflow-hidden mt-16">
-        <main className="flex-1 transition-all duration-200 overflow-hidden w-full">
-          {children}
-        </main>
+      <div className="flex-1 mt-16 sm:mt-18 md:mt-20">
+        <main className="flex-1 w-full">{children}</main>
       </div>
       <Footer />
     </div>

@@ -1,0 +1,39 @@
+{
+  "name": "MediMind",
+  "short_name": "MediMind",
+  "description": "The AI-Native Hospital OS",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0f172a",
+  "theme_color": "#1a365d",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["medical", "productivity", "health"],
+  "icons": [
+    {
+      "src": "/android-chrome-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/android-chrome-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/maskable-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/maskable-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

@@ -5,21 +5,18 @@ import { Landing } from './components/Landing';
 import { SignIn } from './components/Auth/SignIn';
 import { SignUp } from './components/Auth/SignUp';
 import { RequestDemo } from './components/Demo/RequestDemo';
-import { LanguageProvider } from './contexts/LanguageContext';
 
 function App() {
   return (
     <Router>
-      <LanguageProvider>
-        <MainLayout>
-          <Routes>
-            <Route path="/" element={<Landing />} />
-            <Route path="/signin" element={<SignIn />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="/request-demo" element={<RequestDemo />} />
-          </Routes>
-        </MainLayout>
-      </LanguageProvider>
+      <MainLayout>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/request-demo" element={<RequestDemo />} />
+        </Routes>
+      </MainLayout>
     </Router>
   );
 }

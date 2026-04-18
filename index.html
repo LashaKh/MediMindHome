@@ -2,12 +2,44 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MediMind - AI Medical Co-pilot</title>
-    <meta name="description" content="MediMind - Your advanced AI medical assistant for enhanced clinical decision-making" />
+
+    <!-- Favicons + PWA -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon-180.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
     <meta name="theme-color" content="#1a365d" />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <title>MediMind — The AI-Native Hospital OS</title>
+    <meta name="description" content="One of the first FHIR-native, AI-native hospital operating systems. The whole hospital — EMR, ambient scribe, command center, lab, pharmacy, revenue cycle, government reporting, research, HR, and inventory — built by doctors, for doctors. Live in Georgian hospitals." />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="MediMind — The AI-Native Hospital OS" />
+    <meta property="og:description" content="The whole hospital. One AI-native platform. Built by doctors. Live in Georgian hospitals. Contracted with a 25-hospital chain. Awarded Innovative Startup status by the Government of Georgia." />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:site_name" content="MediMind" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="MediMind — The AI-Native Hospital OS" />
+    <meta name="twitter:description" content="The whole hospital. One AI-native platform. From bedside to billing — built by doctors, for doctors." />
+    <meta name="twitter:image" content="/twitter-card.png" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "MediMind",
+        "description": "The AI-Native Hospital OS",
+        "url": "https://medimind.ge"
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

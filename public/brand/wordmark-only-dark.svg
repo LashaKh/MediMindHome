@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 90" role="img" aria-label="MediMind">
+  <title>MediMind</title>
+  <defs>
+    <linearGradient id="mindGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3182ce"/>
+      <stop offset="100%" stop-color="#bee3f8"/>
+    </linearGradient>
+  </defs>
+  <text x="200" y="68" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="68" font-weight="800" letter-spacing="-3.4">
+    <tspan fill="#e2e8f0">Medi</tspan><tspan fill="url(#mindGrad)">Mind</tspan>
+  </text>
+</svg>

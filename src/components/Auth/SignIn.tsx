@@ -80,7 +80,7 @@ export const SignIn: React.FC = () => {
           <div className="text-sm text-center">
             <Link
               to="/signup"
-              className="font-medium text-white hover:text-gray-200 dark:text-blue-400 dark:hover:text-blue-300"
+              className="font-medium text-white hover:text-light-accent dark:text-accent dark:hover:text-light-accent"
             >
               Don't have an account? {t('auth.signUp')}
             </Link>

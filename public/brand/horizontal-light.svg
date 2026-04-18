@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 80" role="img" aria-label="MediMind — The AI-Native Hospital OS">
+  <title>MediMind</title>
+  <defs>
+    <linearGradient id="iconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a365d"/>
+      <stop offset="50%" stop-color="#2b6cb0"/>
+      <stop offset="100%" stop-color="#3182ce"/>
+    </linearGradient>
+    <linearGradient id="mindGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2b6cb0"/>
+      <stop offset="100%" stop-color="#3182ce"/>
+    </linearGradient>
+  </defs>
+  <!-- Icon: 56×49 visual content — height matches wordmark cap-height for 1:1 proportion -->
+  <rect x="8" y="16" width="56" height="9" rx="2" fill="url(#iconGrad)"/>
+  <rect x="8" y="29" width="56" height="9" rx="2" fill="url(#iconGrad)" opacity="0.78"/>
+  <rect x="8" y="42" width="56" height="9" rx="2" fill="url(#iconGrad)" opacity="0.55"/>
+  <rect x="8" y="55" width="56" height="9" rx="2" fill="url(#iconGrad)" opacity="0.32"/>
+  <!-- Wordmark: baseline aligned with icon bottom, cap-top aligned with icon top -->
+  <text x="80" y="63" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="68" font-weight="800" letter-spacing="-3.4">
+    <tspan fill="#1a365d">Medi</tspan><tspan fill="url(#mindGrad)">Mind</tspan>
+  </text>
+</svg>

@@ -191,7 +191,7 @@ export const RequestDemo: React.FC = () => {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-blue-900 dark:to-indigo-900 flex items-center justify-center py-12 px-4">
+      <div className="min-h-screen bg-gradient-to-br from-surface-page via-secondary/15 to-surface-page flex items-center justify-center py-12 px-4">
         <motion.div
           className="max-w-2xl mx-auto text-center"
           initial={{ opacity: 0, scale: 0.8 }}
@@ -215,21 +215,21 @@ export const RequestDemo: React.FC = () => {
               We've received your demo request and a member of our healthcare AI team will contact you within 24 hours to schedule your personalized demonstration.
             </p>
             
-            <div className="bg-blue-50 dark:bg-blue-900/30 rounded-2xl p-6 mb-8">
+            <div className="bg-accent/10 rounded-2xl p-6 mb-8">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
                 What happens next?
               </h3>
               <ul className="text-left space-y-2 text-gray-700 dark:text-gray-300">
                 <li className="flex items-start gap-3">
-                  <Clock className="h-5 w-5 text-blue-500 mt-0.5 flex-shrink-0" />
+                  <Clock className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
                   Our team will review your requirements and prepare a customized demo
                 </li>
                 <li className="flex items-start gap-3">
-                  <Phone className="h-5 w-5 text-blue-500 mt-0.5 flex-shrink-0" />
+                  <Phone className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
                   We'll contact you within 24 hours to schedule your demo
                 </li>
                 <li className="flex items-start gap-3">
-                  <Stethoscope className="h-5 w-5 text-blue-500 mt-0.5 flex-shrink-0" />
+                  <Stethoscope className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
                   Experience how MediMind can transform your healthcare practice
                 </li>
               </ul>
@@ -251,12 +251,12 @@ export const RequestDemo: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-blue-900 dark:to-indigo-900 py-12 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-surface-page via-secondary/15 to-surface-page py-12 px-4">
       {/* Background Effects */}
       <div className="fixed inset-0">
         <div className="absolute inset-0 bg-grid-white/[0.02] dark:bg-grid-white/[0.05] bg-[size:100px]" />
         <motion.div 
-          className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full bg-blue-400/20 dark:bg-blue-600/30 blur-3xl"
+          className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full bg-accent/25 blur-3xl"
           animate={{ 
             scale: [1, 1.2, 1],
             x: [0, 50, 0],
@@ -265,7 +265,7 @@ export const RequestDemo: React.FC = () => {
           transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div 
-          className="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-indigo-400/20 dark:bg-indigo-600/30 blur-3xl"
+          className="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-secondary/30 blur-3xl"
           animate={{ 
             scale: [1.2, 1, 1.2],
             x: [0, -50, 0],
@@ -283,7 +283,7 @@ export const RequestDemo: React.FC = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-900/30 rounded-full text-blue-600 dark:text-blue-400 font-medium mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/15 rounded-full text-accent font-medium mb-6">
             <Sparkles className="h-4 w-4" />
             Enterprise Demo Request
           </div>
@@ -311,7 +311,7 @@ export const RequestDemo: React.FC = () => {
                 <div key={i} className="flex items-center flex-1">
                   <div className={`h-3 rounded-full flex-1 ${
                     i + 1 <= currentStep 
-                      ? 'bg-gradient-to-r from-blue-500 to-indigo-600' 
+                      ? 'brand-gradient' 
                       : 'bg-gray-200 dark:bg-gray-600'
                   }`} />
                   {i < totalSteps - 1 && <div className="w-2" />}
@@ -322,7 +322,7 @@ export const RequestDemo: React.FC = () => {
               {['Personal', 'Company', 'Healthcare'].map((label, i) => (
                 <div key={i} className={`text-sm font-medium ${
                   i + 1 <= currentStep 
-                    ? 'text-blue-600 dark:text-blue-400' 
+                    ? 'text-accent' 
                     : 'text-gray-400 dark:text-gray-500'
                 }`}>
                   {label}
@@ -350,7 +350,7 @@ export const RequestDemo: React.FC = () => {
                   transition={{ duration: 0.3 }}
                 >
                   <div className="flex items-center gap-3 mb-8">
-                    <div className="h-12 w-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center">
+                    <div className="h-12 w-12 brand-gradient rounded-xl flex items-center justify-center">
                       <User className="h-6 w-6 text-white" />
                     </div>
                     <div>
@@ -375,8 +375,8 @@ export const RequestDemo: React.FC = () => {
                         className={`w-full px-4 py-3 rounded-xl border ${
                           errors.firstName 
                             ? 'border-red-300 focus:border-red-500' 
-                            : 'border-gray-200 dark:border-gray-600 focus:border-blue-500'
-                        } bg-white/50 dark:bg-gray-700/50 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-colors`}
+                            : 'border-gray-200 dark:border-gray-600 focus:border-accent'
+                        } bg-white/50 dark:bg-gray-700/50 focus:outline-none focus:ring-2 focus:ring-accent/30 transition-colors`}
                         placeholder="Enter your first name"
                       />
                       {errors.firstName && (
@@ -395,8 +395,8 @@ export const RequestDemo: React.FC = () => {
                         className={`w-full px-4 py-3 rounded-xl border ${
                           errors.lastName 
                             ? 'border-red-300 focus:border-red-500' 
-                            : 'border-gray-200 dark:border-gray-600 focus:border-blue-500'
-                        } bg-white/50 dark:bg-gray-700/50 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-colors`}
+                            : 'border-gray-200 dark:border-gray-600 focus:border-accent'
+                        } bg-white/50 dark:bg-gray-700/50 focus:outline-none focus:ring-2 focus:ring-accent/30 transition-colors`}
                         placeholder="Enter your last name"
                       />
                       {errors.lastName && (
@@ -417,8 +417,8 @@ export const RequestDemo: React.FC = () => {
                           className={`w-full pl-12 pr-4 py-3 rounded-xl border ${
                             errors.email 
                               ? 'border-red-300 focus:border-red-500' 
-                              : 'border-gray-200 dark:border-gray-600 focus:border-blue-500'
-                          } bg-white/50 dark:bg-gray-700/50 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-colors`}
+                              : 'border-gray-200 dark:border-gray-600 focus:border-accent'
+                          } bg-white/50 dark:bg-gray-700/50 focus:outline-none focus:ring-2 focus:ring-accent/30 transition-colors`}
                           placeholder="Enter your work email"
                         />
                       </div>
@@ -440,8 +440,8 @@ export const RequestDemo: React.FC = () => {
                           className={`w-full pl-12 pr-4 py-3 rounded-xl border ${
                             errors.phone 
                               ? 'border-red-300 focus:border-red-500' 
-                              : 'border-gray-200 dark:border-gray-600 focus:border-blue-500'
-                          } bg-white/50 dark:bg-gray-700/50 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-colors`}
+                              : 'border-gray-200 dark:border-gray-600 focus:border-accent'
+                          } bg-white/50 dark:bg-gray-700/50 focus:outline-none focus:ring-2 focus:ring-accent/30 transition-colors`}
                           placeholder="+1 (555) 123-4567"
                         />
                       </div>
@@ -462,7 +462,7 @@ export const RequestDemo: React.FC = () => {
                   transition={{ duration: 0.3 }}
                 >
                   <div className="flex items-center gap-3 mb-8">
-                    <div className="h-12 w-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center">
+                    <div className="h-12 w-12 brand-gradient rounded-xl flex items-center justify-center">
                       <Building2 className="h-6 w-6 text-white" />
                     </div>
                     <div>
@@ -487,8 +487,8 @@ export const RequestDemo: React.FC = () => {
                         className={`w-full px-4 py-3 rounded-xl border ${
                           errors.companyName 
                             ? 'border-red-300 focus:border-red-500' 
-                            : 'border-gray-200 dark:border-gray-600 focus:border-blue-500'
-                        } bg-white/50 dark:bg-gray-700/50 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-colors`}
+                            : 'border-gray-200 dark:border-gray-600 focus:border-accent'
+                        } bg-white/50 dark:bg-gray-700/50 focus:outline-none focus:ring-2 focus:ring-accent/30 transition-colors`}
                         placeholder="Enter your company name"
                       />
                       {errors.companyName && (
@@ -508,8 +508,8 @@ export const RequestDemo: React.FC = () => {
                           className={`w-full pl-12 pr-4 py-3 rounded-xl border ${
                             errors.companySize 
                               ? 'border-red-300 focus:border-red-500' 
-                              : 'border-gray-200 dark:border-gray-600 focus:border-blue-500'
-                          } bg-white/50 dark:bg-gray-700/50 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-colors appearance-none`}
+                              : 'border-gray-200 dark:border-gray-600 focus:border-accent'
+                          } bg-white/50 dark:bg-gray-700/50 focus:outline-none focus:ring-2 focus:ring-accent/30 transition-colors appearance-none`}
                         >
                           <option value="">Select company size</option>
                           {companySizeOptions.map(option => (
@@ -534,8 +534,8 @@ export const RequestDemo: React.FC = () => {
                         className={`w-full px-4 py-3 rounded-xl border ${
                           errors.industry 
                             ? 'border-red-300 focus:border-red-500' 
-                            : 'border-gray-200 dark:border-gray-600 focus:border-blue-500'
-                        } bg-white/50 dark:bg-gray-700/50 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-colors appearance-none`}
+                            : 'border-gray-200 dark:border-gray-600 focus:border-accent'
+                        } bg-white/50 dark:bg-gray-700/50 focus:outline-none focus:ring-2 focus:ring-accent/30 transition-colors appearance-none`}
                       >
                         <option value="">Select industry</option>
                         {industryOptions.map(option => (
@@ -560,8 +560,8 @@ export const RequestDemo: React.FC = () => {
                         className={`w-full px-4 py-3 rounded-xl border ${
                           errors.jobTitle 
                             ? 'border-red-300 focus:border-red-500' 
-                            : 'border-gray-200 dark:border-gray-600 focus:border-blue-500'
-                        } bg-white/50 dark:bg-gray-700/50 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-colors`}
+                            : 'border-gray-200 dark:border-gray-600 focus:border-accent'
+                        } bg-white/50 dark:bg-gray-700/50 focus:outline-none focus:ring-2 focus:ring-accent/30 transition-colors`}
                         placeholder="e.g., Chief Medical Officer, IT Director, Practice Manager"
                       />
                       {errors.jobTitle && (
@@ -581,7 +581,7 @@ export const RequestDemo: React.FC = () => {
                   transition={{ duration: 0.3 }}
                 >
                   <div className="flex items-center gap-3 mb-8">
-                    <div className="h-12 w-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center">
+                    <div className="h-12 w-12 brand-gradient rounded-xl flex items-center justify-center">
                       <Activity className="h-6 w-6 text-white" />
                     </div>
                     <div>
@@ -605,8 +605,8 @@ export const RequestDemo: React.FC = () => {
                         className={`w-full px-4 py-3 rounded-xl border ${
                           errors.facilityType 
                             ? 'border-red-300 focus:border-red-500' 
-                            : 'border-gray-200 dark:border-gray-600 focus:border-blue-500'
-                        } bg-white/50 dark:bg-gray-700/50 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-colors appearance-none`}
+                            : 'border-gray-200 dark:border-gray-600 focus:border-accent'
+                        } bg-white/50 dark:bg-gray-700/50 focus:outline-none focus:ring-2 focus:ring-accent/30 transition-colors appearance-none`}
                       >
                         <option value="">Select facility type</option>
                         {facilityTypeOptions.map(option => (
@@ -631,8 +631,8 @@ export const RequestDemo: React.FC = () => {
                         className={`w-full px-4 py-3 rounded-xl border ${
                           errors.numberOfProviders 
                             ? 'border-red-300 focus:border-red-500' 
-                            : 'border-gray-200 dark:border-gray-600 focus:border-blue-500'
-                        } bg-white/50 dark:bg-gray-700/50 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-colors`}
+                            : 'border-gray-200 dark:border-gray-600 focus:border-accent'
+                        } bg-white/50 dark:bg-gray-700/50 focus:outline-none focus:ring-2 focus:ring-accent/30 transition-colors`}
                         placeholder="e.g., 15"
                         min="1"
                       />
@@ -649,7 +649,7 @@ export const RequestDemo: React.FC = () => {
                         type="text"
                         value={formData.currentEHR}
                         onChange={(e) => handleInputChange('currentEHR', e.target.value)}
-                        className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 focus:border-blue-500 bg-white/50 dark:bg-gray-700/50 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-colors"
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 focus:border-accent bg-white/50 dark:bg-gray-700/50 focus:outline-none focus:ring-2 focus:ring-accent/30 transition-colors"
                         placeholder="e.g., Epic, Cerner, Allscripts, or 'None'"
                       />
                     </div>

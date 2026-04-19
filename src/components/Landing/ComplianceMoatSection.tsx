@@ -6,26 +6,26 @@ import { GradientHeading } from '../ui/gradient-heading';
 
 const flow = [
   { icon: Building, label: 'EMR Encounter', sub: 'Inpatient · Day Hospital · ED · Planned Ambulatory' },
-  { icon: Repeat, label: 'Mapping', sub: 'Encounter → MOH XML schema · Classifier lookup · Validation' },
-  { icon: Landmark, label: 'MOH + RS.GE', sub: 'Dual API submission · Status tracking · Retry queue' },
+  { icon: Repeat, label: 'Mapping', sub: 'Encounter → government XML schema · Classifier lookup · Validation' },
+  { icon: Landmark, label: 'Government Submission', sub: 'Dual API submission · Status tracking · Retry queue' },
 ];
 
 const proof = [
   '4 case-type XML schemas auto-selected from encounter context (Inpatient, Day Hospital, Emergency Ambulatory, Planned Ambulatory)',
   '7 government classifiers auto-sync on a 30-day cadence — medical specialties, care levels, personnel types, blood components, transportation, hospitalization, plus 2,000+ medical items as FHIR CodeSystem resources',
-  'Dual-API submission — same XML payload to RS.GE (Revenue Service, billing) and MOH (national EHR surveillance, quality reporting); status tracked separately per API',
+  'Dual-API submission — same XML payload to the revenue service (billing) and the health authority (national EHR surveillance, quality reporting); status tracked separately per API',
   'Submission retry queue with exponential backoff, manual retry button, full status dashboard (pending / submitted / failed / updated), XML preview + validation before submit',
-  'ePrescription verification against MOH government registry — flags prescriptions not registered, prevents billing if validation fails',
+  'ePrescription verification against the government registry — flags prescriptions not registered, prevents billing if validation fails',
 ];
 
 export const ComplianceMoatSection: React.FC = () => {
   return (
-    <SectionShell id="compliance" variant="dark" ambient className="border-t border-white/5">
+    <SectionShell id="compliance" variant="dark" ambient className="border-t border-surface-border">
       <GradientHeading
         eyebrow={{ icon: FileCheck2, label: 'The Moat', tone: 'light' }}
         title="The integration"
         highlight="nobody else has done."
-        subhead="Submitting to Georgia's MOH and RS.GE isn't a feature — it's a 6–12 month engineering investment in regulatory expertise. We did it. It's why hospitals sign with us."
+        subhead="Submitting to a country's health ministry and revenue service isn't a feature — it's a 6–12 month engineering investment in regulatory expertise. We did it. It's why hospitals sign with us."
       />
 
       {/* Flow diagram */}
@@ -40,13 +40,13 @@ export const ComplianceMoatSection: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.12 }}
-                  className="flex flex-col items-center text-center rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm"
+                  className="flex flex-col items-center text-center rounded-2xl border border-surface-border bg-surface-card/60 p-6 backdrop-blur-sm"
                 >
                   <div className="inline-flex rounded-2xl bg-gradient-to-br from-accent/30 to-secondary/20 p-3 ring-1 ring-accent/30">
-                    <Icon className="h-6 w-6 text-light-accent" />
+                    <Icon className="h-6 w-6 text-secondary dark:text-light-accent" />
                   </div>
-                  <h3 className="mt-3 text-base sm:text-lg font-semibold text-white">{step.label}</h3>
-                  <p className="mt-1.5 text-xs sm:text-sm text-slate-300/85 leading-snug max-w-xs">{step.sub}</p>
+                  <h3 className="mt-3 text-base sm:text-lg font-semibold text-text">{step.label}</h3>
+                  <p className="mt-1.5 text-xs sm:text-sm text-text-muted leading-snug max-w-xs">{step.sub}</p>
                 </motion.div>
                 {i < flow.length - 1 && (
                   <div className="flex items-center justify-center text-accent/50">
@@ -66,19 +66,19 @@ export const ComplianceMoatSection: React.FC = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.3 }}
-        className="mt-12 sm:mt-14 mx-auto max-w-4xl rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8 backdrop-blur-sm"
+        className="mt-12 sm:mt-14 mx-auto max-w-4xl rounded-2xl border border-surface-border bg-surface-card/60 p-6 sm:p-8 backdrop-blur-sm"
       >
         <ul className="space-y-3">
           {proof.map((p) => (
             <li key={p} className="flex items-start gap-3">
               <span className="mt-1.5 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
-              <span className="text-sm sm:text-base text-slate-200/95 leading-relaxed">{p}</span>
+              <span className="text-sm sm:text-base text-text-muted leading-relaxed">{p}</span>
             </li>
           ))}
         </ul>
 
-        <div className="mt-6 border-t border-white/10 pt-5">
-          <p className="text-sm sm:text-base italic text-slate-300/90">
+        <div className="mt-6 border-t border-surface-border pt-5">
+          <p className="text-sm sm:text-base italic text-text-muted">
             “This is not a feature you can build in a sprint. It's the reason a 25-hospital chain signed with us in April 2026.”
           </p>
         </div>

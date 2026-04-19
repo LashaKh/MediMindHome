@@ -25,9 +25,9 @@ export interface IntegrationCategory {
 
 export const integrations: IntegrationCategory[] = [
   { id: 'labs', title: 'Labs', partners: ['HealthGorilla', 'Regional LIS systems'] },
-  { id: 'erx', title: 'e-Prescribing', partners: ['DoseSpot', 'Georgia MOH ePrescription'] },
+  { id: 'erx', title: 'e-Prescribing', partners: ['DoseSpot', 'Government ePrescription'] },
   { id: 'pacs', title: 'PACS / Imaging', partners: ['Orthanc', 'Cornerstone.js DICOM viewer'] },
   { id: 'telehealth', title: 'Telehealth', partners: ['LiveKit (WebRTC)'] },
   { id: 'wearables', title: 'Wearables', partners: ['Fitbit', 'Withings', 'Apple Health'] },
-  { id: 'government', title: 'Government', partners: ['Georgia MOH EHR', 'RS.GE Revenue Service', 'MOH Classifier Sync'] },
+  { id: 'government', title: 'Government', partners: ['Ministry of Health', 'Revenue Service', 'Classifier Sync'] },
 ];

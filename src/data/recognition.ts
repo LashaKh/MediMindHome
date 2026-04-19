@@ -1,4 +1,4 @@
-import { Award, Banknote, HeartPulse, Handshake, Stethoscope } from 'lucide-react';
+import { Award, Banknote, Handshake, Stethoscope } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 export interface RecognitionTile {
@@ -24,12 +24,6 @@ export const recognitionTiles: RecognitionTile[] = [
     icon: Banknote,
     title: 'GITA Grant — 150,000 GEL',
     body: "Awarded September 2025 by Georgia's Innovation and Technology Agency.",
-  },
-  {
-    id: 'healthycore',
-    icon: HeartPulse,
-    title: 'Live at Research Hospital Healthycore',
-    body: 'Active production implementation since February 2026.',
   },
   {
     id: 'chain-contract',

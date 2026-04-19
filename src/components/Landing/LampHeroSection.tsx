@@ -1,11 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight, Building2, FileCheck, Award } from 'lucide-react';
+import { ArrowRight, FileCheck, Award } from 'lucide-react';
 import { LampContainer } from '../ui/lamp';
 
 const trustChips = [
-  { icon: Building2, label: 'Live at Research Hospital Healthycore' },
   { icon: FileCheck, label: 'Contracted with 25-hospital chain' },
   { icon: Award, label: '“Innovative Startup” status — Government of Georgia' },
 ];
@@ -32,9 +31,9 @@ export const LampHeroSection: React.FC = () => {
           viewport={{ once: true }}
           className="bg-gradient-to-br from-slate-900 via-slate-700 to-slate-500 dark:from-white dark:via-slate-100 dark:to-slate-400 bg-clip-text text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-transparent leading-[1.05] mb-6 sm:mb-8"
         >
-          The whole hospital.
+          One hospital.
           <br />
-          <span className="brand-gradient-text">One AI-native platform.</span>
+          <span className="brand-gradient-text">One operating system.</span>
         </motion.h1>
 
         {/* Subhead — one line */}
@@ -45,7 +44,7 @@ export const LampHeroSection: React.FC = () => {
           viewport={{ once: true }}
           className="text-base sm:text-lg md:text-xl text-text-muted leading-relaxed max-w-2xl mx-auto mb-8 sm:mb-10"
         >
-          From bedside to billing — every clinical, operational, and financial workflow in one FHIR-native platform, built by doctors.
+          One of the first hospital operating systems built ground-up on FHIR R4 — every clinical, operational, and financial workflow in a single codebase, a single login, a single data model. Built by doctors. Live in Georgia.
         </motion.p>
 
         {/* Trust chips */}
@@ -93,7 +92,7 @@ export const LampHeroSection: React.FC = () => {
             whileHover={{ scale: 1.03, y: -1 }}
             whileTap={{ scale: 0.97 }}
           >
-            See the platform
+            See the operating system
           </motion.button>
         </motion.div>
       </div>

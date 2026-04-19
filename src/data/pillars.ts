@@ -48,7 +48,7 @@ export const pillars: Pillar[] = [
       'Three-way medication reconciliation at admission and discharge',
       'Care Plans with multi-disciplinary goal tracking and patient-notification audit',
       'Care Coordination Task Inbox with WebSocket real-time updates + 30s polling fallback',
-      'Discharge with Georgian MOH disposition codes and disease-outcome classification',
+      'Discharge with government disposition codes and disease-outcome classification',
     ],
     modules: [
       'Patient Card',
@@ -122,7 +122,7 @@ export const pillars: Pillar[] = [
     icon: Pill,
     accent: accentClasses.navy,
     features: [
-      'e-Prescribing via DoseSpot (retail pharmacies) AND Georgian MOH ePrescription (government registry)',
+      'e-Prescribing via DoseSpot (retail pharmacies) AND direct submission to national government registry',
       'MAR with barcode 5-rights verification — wrong patient/drug/dose/route/time = red alert, cannot proceed',
       'PRN dose enforcement is fail-closed on network failure — block the dose, do not retry. Safety > availability.',
       '4-tier interaction alerts: hard-stop (override requires permission), override-with-reason, acknowledge, info',
@@ -133,7 +133,7 @@ export const pillars: Pillar[] = [
     ],
     modules: [
       'e-Prescribing (DoseSpot)',
-      'MOH ePrescription',
+      'Government ePrescription',
       'MAR with Barcode 5-Rights',
       'Pharmacy Verification Queue',
       'Drug-Allergy / DDI Engine',
@@ -199,7 +199,7 @@ export const pillars: Pillar[] = [
   {
     id: 'revenue-compliance',
     name: 'Revenue Cycle & Government',
-    tagline: 'Submit to MOH. Get paid. Pass the audit.',
+    tagline: 'Submit to regulators. Get paid. Pass the audit.',
     icon: Wallet,
     accent: accentClasses.navy,
     features: [
@@ -208,7 +208,7 @@ export const pillars: Pillar[] = [
       'A/R Aging by 30/60/90/120+ buckets, DSO trend, Collection Rate vs benchmark, Payer Mix concentration risk',
       'Claims Kanban (Draft → Ready → Submitted → In-Review → Paid/Partial/Denied/Appealed → Closed)',
       'Pre-Authorization wizard: auto-fill from chart, real-time eligibility, patient-cost predictor',
-      'Direct submission to Georgian MOH EHR + RS.GE Revenue Service — 4 case-type XML schemas, retry queue, XML preview',
+      'Direct submission to national health authority + revenue service — 4 case-type XML schemas, retry queue, XML preview',
       'Government classifier auto-sync (medical specialties, care levels, personnel types, blood components, transport, hospitalization, 2000+ medical items) on 30-day cadence',
     ],
     modules: [
@@ -218,8 +218,8 @@ export const pillars: Pillar[] = [
       'Denial Management',
       'Claims Kanban',
       'Pre-Authorization Wizard',
-      'MOH EHR Submission',
-      'RS.GE Revenue Service',
+      'Health Authority Submission',
+      'Revenue Service Integration',
       'Classifier Sync',
       'ePrescription Verification',
     ],

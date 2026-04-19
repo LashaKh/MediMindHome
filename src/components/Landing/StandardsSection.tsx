@@ -6,15 +6,16 @@ import { GradientHeading } from '../ui/gradient-heading';
 
 const standards = ['FHIR R4', 'HL7 v2.x', 'DICOM', 'SMART on FHIR', 'ICD-10', 'LOINC', 'RxNorm', 'CPT'];
 
-const partners = ['HealthGorilla', 'DoseSpot', 'Orthanc', 'LiveKit', 'Fitbit', 'Withings', 'Apple Health', 'Georgia MOH', 'RS.GE'];
+const partners = ['HealthGorilla', 'DoseSpot', 'Orthanc', 'LiveKit', 'Fitbit', 'Withings', 'Apple Health', 'Ministry of Health', 'Revenue Service'];
 
 export const StandardsSection: React.FC = () => {
   return (
     <SectionShell id="standards" variant="dark" ambient className="border-t border-surface-border">
       <GradientHeading
-        eyebrow={{ icon: ShieldCheck, label: 'Standards & integrations', tone: 'accent' }}
+        eyebrow={{ icon: ShieldCheck, label: 'Ground-up on FHIR R4', tone: 'accent' }}
         title="Built on what the world"
         highlight="already runs on."
+        subhead="FHIR R4 is our storage primitive — not an API layer, not a translation module. Your data is native FHIR from the first write."
       />
 
       {/* Standards strip */}

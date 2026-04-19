@@ -7,7 +7,7 @@ import { founders, advisors } from '../../data/team';
 
 export const TeamSection: React.FC = () => {
   return (
-    <SectionShell id="team" variant="gradient" ambient className="border-t border-white/5">
+    <SectionShell id="team" variant="gradient" ambient className="border-t border-surface-border">
       <GradientHeading
         eyebrow={{ icon: Stethoscope, label: 'Built by Doctors', tone: 'accent' }}
         title="We are doctors."
@@ -21,7 +21,7 @@ export const TeamSection: React.FC = () => {
         transition={{ duration: 0.5, delay: 0.1 }}
         className="mt-8 mx-auto max-w-3xl text-center"
       >
-        <p className="text-base sm:text-lg text-slate-300/90 leading-relaxed">
+        <p className="text-base sm:text-lg text-text-muted leading-relaxed">
           MediMind exists because we lived the problem. As physicians, we watched our colleagues spend more time on documentation than on patients. We watched critical lab values get buried in twelve disconnected systems. We watched patients arrive better-informed by ChatGPT than by us. We didn't pivot into healthcare from another industry — we pivoted out of clinical practice to fix it.
         </p>
         <p className="mt-5 text-sm sm:text-base text-accent font-medium">
@@ -38,14 +38,14 @@ export const TeamSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.5, delay: i * 0.08 }}
-            className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm text-center"
+            className="rounded-2xl border border-surface-border bg-surface-card/60 p-6 backdrop-blur-sm text-center"
           >
             <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-accent/40 to-secondary/40 text-2xl font-bold text-white ring-1 ring-accent/30">
               {f.initials}
             </div>
-            <h3 className="text-lg font-semibold text-white">{f.name}</h3>
+            <h3 className="text-lg font-semibold text-text">{f.name}</h3>
             <p className="mt-1 text-sm text-accent font-medium">{f.role}</p>
-            <p className="mt-1 text-xs text-slate-400">{f.credential}</p>
+            <p className="mt-1 text-xs text-text-subtle">{f.credential}</p>
           </motion.div>
         ))}
       </div>
@@ -59,17 +59,17 @@ export const TeamSection: React.FC = () => {
         className="mt-10 sm:mt-12"
       >
         <div className="flex items-center justify-center gap-2 mb-5">
-          <Users className="h-4 w-4 text-light-accent" />
-          <span className="text-xs font-semibold uppercase tracking-wider text-light-accent">Advisory Board</span>
+          <Users className="h-4 w-4 text-secondary dark:text-light-accent" />
+          <span className="text-xs font-semibold uppercase tracking-wider text-secondary dark:text-light-accent">Advisory Board</span>
         </div>
         <div className="flex flex-wrap justify-center gap-3">
           {advisors.map((a) => (
             <div
               key={a.id}
-              className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300"
+              className="rounded-full border border-surface-border bg-surface-card/60 px-4 py-2 text-sm text-text-muted"
             >
-              <span className="font-medium text-slate-200">{a.name}</span>
-              <span className="text-slate-500"> · {a.affiliation}</span>
+              <span className="font-medium text-text">{a.name}</span>
+              <span className="text-text-subtle"> · {a.affiliation}</span>
             </div>
           ))}
         </div>

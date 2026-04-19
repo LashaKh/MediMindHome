@@ -45,23 +45,23 @@
 
   /* ─── Text (Light Mode) ─── */
   --emr-text-primary:   #1f2937;
-  --emr-text-secondary: #6b7280;
-  --emr-text-tertiary:  #9ca3af;
+  --emr-text-secondary: #475569;
+  --emr-text-tertiary:  #64748b;
   --emr-text-inverse:   #ffffff;
 
   /* ─── Surface / Background (Light Mode) ─── */
   --emr-bg-page:        #ffffff;
-  --emr-bg-card:        #ffffff;
+  --emr-bg-card:        #f1f5f9;
   --emr-bg-modal:       #ffffff;
   --emr-bg-input:       #ffffff;
-  --emr-bg-hover:       #f7fafc;
-  --emr-bg-section:     #f8f9fa;
+  --emr-bg-hover:       #e2e8f0;
+  --emr-bg-section:     #eef2f7;
   --emr-bg-stat-card:   #edf2f9;
 
   /* ─── Borders ─── */
-  --emr-border-color:   #e5e7eb;
-  --emr-border-default: #e5e7eb;
-  --emr-border-subtle:  #f1f5f9;
+  --emr-border-color:   #cbd5e1;
+  --emr-border-default: #cbd5e1;
+  --emr-border-subtle:  #e2e8f0;
 
   /* ─── Status Colors (encounter lifecycle) ─── */
   --emr-status-pending:     #ed8936;

@@ -8,7 +8,7 @@ import { cn } from '../../utils/cn';
 
 export const MilestonesSection: React.FC = () => {
   return (
-    <SectionShell id="milestones" variant="dark" ambient className="border-t border-white/5">
+    <SectionShell id="milestones" variant="dark" ambient className="border-t border-surface-border">
       <GradientHeading
         eyebrow={{ icon: CalendarClock, label: 'Progress', tone: 'accent' }}
         title="Twelve months from idea"
@@ -36,22 +36,22 @@ export const MilestonesSection: React.FC = () => {
                 <span
                   className={cn(
                     'absolute left-3 sm:left-1/2 top-1.5 sm:top-1/2 -translate-y-1/2 sm:-translate-x-1/2 inline-flex h-6 w-6 items-center justify-center rounded-full ring-4 ring-surface-page',
-                    m.highlight ? 'bg-accent text-navy' : 'bg-slate-700 text-slate-300'
+                    m.highlight ? 'bg-accent text-navy' : 'bg-surface-hover text-text-subtle'
                   )}
                 >
-                  {m.highlight ? <Star className="h-3 w-3" /> : <span className="block h-2 w-2 rounded-full bg-slate-400" />}
+                  {m.highlight ? <Star className="h-3 w-3" /> : <span className="block h-2 w-2 rounded-full bg-text-subtle/60" />}
                 </span>
 
                 <div className={cn('sm:col-start-1', !isLeft && 'sm:col-start-2')}>
                   <div
                     className={cn(
-                      'rounded-2xl border bg-white/[0.03] p-5 sm:p-6 backdrop-blur-sm',
-                      m.highlight ? 'border-accent/30 bg-accent/5' : 'border-white/10'
+                      'rounded-2xl border bg-surface-card/60 p-5 sm:p-6 backdrop-blur-sm',
+                      m.highlight ? 'border-accent/30 bg-accent/5' : 'border-surface-border'
                     )}
                   >
                     <div className="text-xs font-semibold uppercase tracking-wider text-accent">{m.date}</div>
-                    <h3 className="mt-1.5 text-base sm:text-lg font-semibold text-white leading-snug">{m.label}</h3>
-                    <p className="mt-2 text-sm text-slate-300/85 leading-relaxed">{m.detail}</p>
+                    <h3 className="mt-1.5 text-base sm:text-lg font-semibold text-text leading-snug">{m.label}</h3>
+                    <p className="mt-2 text-sm text-text-muted leading-relaxed">{m.detail}</p>
                   </div>
                 </div>
               </motion.li>

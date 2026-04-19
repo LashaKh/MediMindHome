@@ -26,7 +26,7 @@ const stages = [
     id: 'persist',
     icon: Database,
     title: 'Persist',
-    caption: 'Composable FHIR. Provenance logged. Form 100/ა drafted in parallel. Ready to submit to MOH.',
+    caption: 'Composable FHIR. Provenance logged. Government reporting form drafted in parallel. Ready to submit.',
   },
 ] as const;
 
@@ -110,7 +110,7 @@ const FhirJson: React.FC = () => {
                 { "reference": "Condition/E11.9" }] }
   ],
   "extension": [{
-    "url": "moh-form-100",
+    "url": "gov-reporting-form",
     "valueReference": { "reference": "DocumentReference/f100-…" }
   }]
 }`;

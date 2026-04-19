@@ -9,9 +9,9 @@ export const AISubstrateSection: React.FC = () => {
     <SectionShell id="ai" variant="dark" ambient className="border-t border-surface-border">
       <GradientHeading
         eyebrow={{ icon: Sparkles, label: 'See the AI work', tone: 'navy' }}
-        title="AI in every workflow,"
-        highlight="not in a chatbot."
-        subhead="Voice in. Structured FHIR out. ICD-10 codes generated. Government form drafted in parallel. Watch a single MediScribe encounter end-to-end."
+        title="AI in every capability,"
+        highlight="not a chatbot on top."
+        subhead="AI sits inside every capability — ambient scribe, drug-interaction hard-stops, appeals drafting, pathway engine, coordinator copilot. Here's one encounter end-to-end: voice in, structured FHIR out, ICD-10 codes generated, government form drafted in parallel."
       />
 
       <div className="mt-12 sm:mt-14">

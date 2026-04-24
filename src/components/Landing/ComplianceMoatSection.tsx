@@ -10,14 +10,6 @@ const flow = [
   { icon: Landmark, label: 'Government Submission', sub: 'Dual API submission · Status tracking · Retry queue' },
 ];
 
-const proof = [
-  '4 case-type XML schemas auto-selected from encounter context (Inpatient, Day Hospital, Emergency Ambulatory, Planned Ambulatory)',
-  '7 government classifiers auto-sync on a 30-day cadence — medical specialties, care levels, personnel types, blood components, transportation, hospitalization, plus 2,000+ medical items as FHIR CodeSystem resources',
-  'Dual-API submission — same XML payload to the revenue service (billing) and the health authority (national EHR surveillance, quality reporting); status tracked separately per API',
-  'Submission retry queue with exponential backoff, manual retry button, full status dashboard (pending / submitted / failed / updated), XML preview + validation before submit',
-  'ePrescription verification against the government registry — flags prescriptions not registered, prevents billing if validation fails',
-];
-
 export const ComplianceMoatSection: React.FC = () => {
   return (
     <SectionShell id="compliance" variant="dark" ambient className="border-t border-surface-border">
@@ -60,29 +52,6 @@ export const ComplianceMoatSection: React.FC = () => {
         </div>
       </div>
 
-      {/* Proof bullets */}
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-        className="mt-12 sm:mt-14 mx-auto max-w-4xl rounded-2xl border border-surface-border bg-surface-card/60 p-6 sm:p-8 backdrop-blur-sm"
-      >
-        <ul className="space-y-3">
-          {proof.map((p) => (
-            <li key={p} className="flex items-start gap-3">
-              <span className="mt-1.5 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
-              <span className="text-sm sm:text-base text-text-muted leading-relaxed">{p}</span>
-            </li>
-          ))}
-        </ul>
-
-        <div className="mt-6 border-t border-surface-border pt-5">
-          <p className="text-sm sm:text-base italic text-text-muted">
-            “This is not a feature you can build in a sprint. It's the reason a 25-hospital chain signed with us in April 2026.”
-          </p>
-        </div>
-      </motion.div>
     </SectionShell>
   );
 };

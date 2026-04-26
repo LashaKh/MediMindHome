@@ -56,7 +56,7 @@ Deno.serve(async (req) => {
     // Look up invite
     const { data: invite } = await supabase
       .from("investor_invites")
-      .select("token, full_name, first_name, active")
+      .select("token, full_name, first_name, password, active")
       .eq("token", token)
       .maybeSingle();
 
@@ -70,7 +70,8 @@ Deno.serve(async (req) => {
     }
 
     const matches =
-      password.trim().toLowerCase() === invite.first_name.trim().toLowerCase();
+      password.trim().toLowerCase() ===
+      String(invite.password ?? "").trim().toLowerCase();
 
     if (!matches) {
       await supabase.from("investor_events").insert({

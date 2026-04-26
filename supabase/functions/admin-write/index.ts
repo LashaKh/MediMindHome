@@ -40,6 +40,15 @@ function generateToken(firstName: string): string {
   return `${slug || "guest"}-${suffix}`;
 }
 
+// Password format: FirstName + UPPER(first letter of surname).
+// "Lasha Khoshtaria" -> "LashaK"; single-word names use the first word.
+function generatePassword(fullName: string): string {
+  const parts = fullName.trim().split(/\s+/).filter(Boolean);
+  if (parts.length === 0) return "guest";
+  if (parts.length === 1) return parts[0];
+  return `${parts[0]}${parts[parts.length - 1][0].toUpperCase()}`;
+}
+
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
@@ -76,6 +85,8 @@ Deno.serve(async (req) => {
         token = generateToken(first_name);
       }
 
+      const password = generatePassword(full_name);
+
       const { data, error } = await supabase
         .from("investor_invites")
         .insert({
@@ -85,7 +96,44 @@ Deno.serve(async (req) => {
           organization: body.organization ?? null,
           email: body.email ?? null,
           notes: body.notes ?? null,
+          password,
         })
+        .select()
+        .single();
+      if (error) throw error;
+      return json({ ok: true, invite: data }, 200);
+    }
+
+    if (body.action === "regenerate_password") {
+      if (!body.token) return json({ error: "token required" }, 400);
+      const { data: existing } = await supabase
+        .from("investor_invites")
+        .select("full_name")
+        .eq("token", body.token)
+        .maybeSingle();
+      if (!existing) return json({ error: "not_found" }, 404);
+
+      const password = generatePassword(existing.full_name);
+      const { data, error } = await supabase
+        .from("investor_invites")
+        .update({ password })
+        .eq("token", body.token)
+        .select()
+        .single();
+      if (error) throw error;
+      return json({ ok: true, invite: data }, 200);
+    }
+
+    if (body.action === "update_password") {
+      if (!body.token) return json({ error: "token required" }, 400);
+      const password = String(body.password ?? "").trim();
+      if (password.length < 4 || password.length > 64) {
+        return json({ error: "password_length" }, 400);
+      }
+      const { data, error } = await supabase
+        .from("investor_invites")
+        .update({ password })
+        .eq("token", body.token)
         .select()
         .single();
       if (error) throw error;

@@ -21,6 +21,7 @@ interface Invite {
   notes: string | null;
   created_at: string;
   active: boolean;
+  password: string;
 }
 
 interface InvestorEvent {
@@ -254,12 +255,25 @@ const DetailPanel: React.FC<{
 }> = ({ invite, events, summary, jwt, onChange }) => {
   const briefingUrl = `${window.location.origin}/briefing/${invite.token}`;
   const [copied, setCopied] = useState(false);
+  const [pwdCopied, setPwdCopied] = useState(false);
+  const [editingPwd, setEditingPwd] = useState(false);
+  const [pwdDraft, setPwdDraft] = useState(invite.password);
+  const [pwdError, setPwdError] = useState<string | null>(null);
+  const [pwdBusy, setPwdBusy] = useState(false);
 
   const copyUrl = async () => {
     try {
       await navigator.clipboard.writeText(briefingUrl);
       setCopied(true);
       setTimeout(() => setCopied(false), 1500);
+    } catch { /* */ }
+  };
+
+  const copyPassword = async () => {
+    try {
+      await navigator.clipboard.writeText(invite.password);
+      setPwdCopied(true);
+      setTimeout(() => setPwdCopied(false), 1500);
     } catch { /* */ }
   };
 
@@ -270,6 +284,71 @@ const DetailPanel: React.FC<{
       body: JSON.stringify({ action: "toggle_active", token: invite.token }),
     });
     onChange();
+  };
+
+  const regeneratePassword = async () => {
+    setPwdBusy(true);
+    setPwdError(null);
+    try {
+      const res = await fetch(ADMIN_WRITE_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${jwt}` },
+        body: JSON.stringify({ action: "regenerate_password", token: invite.token }),
+      });
+      const json = await res.json();
+      if (!json.ok) {
+        setPwdError(json.error ?? "Failed to regenerate");
+      } else {
+        onChange();
+      }
+    } catch {
+      setPwdError("Network error");
+    } finally {
+      setPwdBusy(false);
+    }
+  };
+
+  const startEditPassword = () => {
+    setPwdDraft(invite.password);
+    setPwdError(null);
+    setEditingPwd(true);
+  };
+
+  const cancelEditPassword = () => {
+    setEditingPwd(false);
+    setPwdError(null);
+  };
+
+  const savePassword = async () => {
+    const value = pwdDraft.trim();
+    if (value.length < 4 || value.length > 64) {
+      setPwdError("Password must be 4-64 characters.");
+      return;
+    }
+    setPwdBusy(true);
+    setPwdError(null);
+    try {
+      const res = await fetch(ADMIN_WRITE_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${jwt}` },
+        body: JSON.stringify({
+          action: "update_password",
+          token: invite.token,
+          password: value,
+        }),
+      });
+      const json = await res.json();
+      if (!json.ok) {
+        setPwdError(json.error === "password_length" ? "Password must be 4-64 characters." : (json.error ?? "Failed to save"));
+      } else {
+        setEditingPwd(false);
+        onChange();
+      }
+    } catch {
+      setPwdError("Network error");
+    } finally {
+      setPwdBusy(false);
+    }
   };
 
   const maxDwell = summary?.top_slides[0]?.dwell ?? 1;
@@ -284,6 +363,60 @@ const DetailPanel: React.FC<{
         <button className="adm-btn" onClick={toggleActive}>
           {invite.active ? "Revoke" : "Reactivate"}
         </button>
+      </div>
+
+      <div className="adm-detail-actions">
+        <div className="adm-url-box" style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace" }}>
+          <span style={{ color: "var(--ink-faded)", marginRight: 8, fontSize: 12, letterSpacing: "0.06em" }}>PASSWORD</span>
+          {editingPwd ? (
+            <input
+              type="text"
+              value={pwdDraft}
+              onChange={(e) => setPwdDraft(e.target.value)}
+              autoFocus
+              disabled={pwdBusy}
+              style={{
+                background: "transparent",
+                border: "1px solid var(--accent)",
+                borderRadius: 4,
+                color: "inherit",
+                font: "inherit",
+                padding: "2px 6px",
+                outline: "none",
+                width: "calc(100% - 100px)",
+              }}
+            />
+          ) : (
+            <strong style={{ color: "#bee3f8" }}>{invite.password}</strong>
+          )}
+          {pwdError && (
+            <span style={{ color: "var(--error, #f87171)", marginLeft: 10, fontSize: 12 }}>
+              {pwdError}
+            </span>
+          )}
+        </div>
+        {editingPwd ? (
+          <>
+            <button className="adm-btn adm-btn-primary" onClick={savePassword} disabled={pwdBusy}>
+              {pwdBusy ? "Saving…" : "Save"}
+            </button>
+            <button className="adm-btn" onClick={cancelEditPassword} disabled={pwdBusy}>
+              Cancel
+            </button>
+          </>
+        ) : (
+          <>
+            <button className="adm-btn" onClick={copyPassword}>
+              {pwdCopied ? "✓ Copied" : "Copy"}
+            </button>
+            <button className="adm-btn" onClick={startEditPassword} disabled={pwdBusy}>
+              Edit
+            </button>
+            <button className="adm-btn" onClick={regeneratePassword} disabled={pwdBusy} title="Reset to FirstName + first letter of surname">
+              {pwdBusy ? "…" : "Regenerate"}
+            </button>
+          </>
+        )}
       </div>
 
       <div>
@@ -345,6 +478,7 @@ const AddInviteModal: React.FC<{
   const [error, setError] = useState<string | null>(null);
   const [createdUrl, setCreatedUrl] = useState<string | null>(null);
   const [createdName, setCreatedName] = useState<string | null>(null);
+  const [createdPassword, setCreatedPassword] = useState<string | null>(null);
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -367,6 +501,7 @@ const AddInviteModal: React.FC<{
       if (json.ok && json.invite) {
         setCreatedUrl(`${window.location.origin}/briefing/${json.invite.token}`);
         setCreatedName(json.invite.first_name);
+        setCreatedPassword(json.invite.password ?? null);
         onCreated();
       } else {
         setError(json.error ?? "Failed to create");
@@ -384,11 +519,17 @@ const AddInviteModal: React.FC<{
         <div className="adm-modal" onClick={(e) => e.stopPropagation()}>
           <h2>Invite created.</h2>
           <p className="adm-modal-sub">
-            Send this URL to {fullName}. Their access password is their first name (<strong style={{ color: "#bee3f8" }}>{createdName}</strong>).
+            Send this URL and password to {fullName}. They'll use the password to unlock the briefing.
           </p>
           <div className="adm-success-box">
             <div className="label">Briefing URL</div>
             <div className="url">{createdUrl}</div>
+          </div>
+          <div className="adm-success-box" style={{ marginTop: 10 }}>
+            <div className="label">Password</div>
+            <div className="url" style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace" }}>
+              <strong style={{ color: "#bee3f8" }}>{createdPassword ?? createdName}</strong>
+            </div>
           </div>
           <div className="adm-form-actions">
             <button
@@ -411,8 +552,10 @@ const AddInviteModal: React.FC<{
       <div className="adm-modal" onClick={(e) => e.stopPropagation()}>
         <h2>Add invitee</h2>
         <p className="adm-modal-sub">
-          Generates a unique briefing URL. The investor will use their first name
-          as the password to enter.
+          Generates a unique briefing URL and password. The password is
+          auto-generated as <em>FirstName + first letter of surname</em>
+          (e.g., "Lasha Khoshtaria" → <code style={{ color: "#bee3f8" }}>LashaK</code>),
+          and you can edit it later from the row's detail panel.
         </p>
         <form onSubmit={submit}>
           <div className="adm-form-row">

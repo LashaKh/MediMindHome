@@ -5,10 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <script>
-    // Access guard — /briefing/[token] gateway sets sessionStorage["mm_briefing_access"]
-    // on successful login. Local file:// and ?print-pdf are exempted (PDF export).
-    // Without a valid session, bounce to /briefing (the "invitation required" page),
-    // NOT the public landing page — keeps briefing context.
+    // Access guard — gateway sets sessionStorage["mm_briefing_access"] on success.
+    // Local file:// previews (offline PDF export, etc.) and ?print-pdf are exempted.
     (function () {
       try {
         if (location.protocol === 'file:') return;
@@ -5453,15 +5451,81 @@
        decorative absolute-positioned background art hidden.
        ═════════════════════════════════════════════════════════════ */
     @media (max-width: 768px) {
-      html, body { font-size: 16px; }
+      html, body { font-size: 16px; overflow: hidden; }
       .reveal .controls { display: none !important; }
       .reveal .progress { z-index: 50; height: 4px; bottom: 0; }
 
-      /* Slide inner — drop the giant desktop padding */
+      /* Bypass Reveal's transform-scale layout entirely on mobile.
+         Each slide becomes a 100vh full-bleed scrollable container.
+         Reveal still drives left/right navigation; vertical scrolling
+         is native browser scroll within the active slide. */
+      .reveal {
+        width: 100% !important;
+        height: 100vh !important;
+        height: 100dvh !important;
+        position: fixed;
+        top: 0; left: 0;
+        overflow: hidden;
+      }
+      .reveal .slides {
+        width: 100% !important;
+        height: 100% !important;
+        top: 0 !important;
+        left: 0 !important;
+        transform: none !important;
+        zoom: 1 !important;
+        perspective: none !important;
+        overflow: visible !important;
+      }
+      .reveal .slides > section,
+      .reveal .slides > section.stack {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100vh !important;
+        height: 100dvh !important;
+        max-height: 100dvh !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        transform: translate3d(0, 0, 0) !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        -webkit-overflow-scrolling: touch;
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        font-size: inherit !important;
+      }
+      .reveal .slides > section.past {
+        transform: translate3d(-100%, 0, 0) !important;
+        pointer-events: none !important;
+        visibility: hidden !important;
+      }
+      .reveal .slides > section.future {
+        transform: translate3d(100%, 0, 0) !important;
+        pointer-events: none !important;
+        visibility: hidden !important;
+      }
+      .reveal .slides > section.present {
+        transform: translate3d(0, 0, 0) !important;
+        z-index: 2;
+      }
+
+      /* Slide inner — proper padding, allow content to flow naturally */
       .slide-inner {
-        padding: 18px 14px 26px !important;
-        box-sizing: border-box;
-        max-width: 100%;
+        padding: 22px 16px 32px !important;
+        box-sizing: border-box !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 100% !important;
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: none !important;
       }
 
       /* Brand footer — hide on mobile, too cluttering with limited screen.
@@ -5504,7 +5568,10 @@
         line-height: 1.45 !important;
       }
 
-      /* Universal grid collapse — every multi-column grid stacks */
+      /* Universal grid collapse — every multi-column grid stacks.
+         NOTE: .cat-row-names is INTENTIONALLY excluded — it's a wrapping
+         flex of pill-chips (Abridge, Suki, etc.) that should stay
+         horizontal even on mobile. */
       .bm-tiers,
       .gw-stops,
       .gw-cards,
@@ -5513,7 +5580,6 @@
       .ambition-cards,
       .cs2-grid,
       .cat-terrain,
-      .cat-row-names,
       .stages-grid,
       .timeline-row,
       .investing-grid,
@@ -5524,14 +5590,44 @@
       .terms-layout,
       .terms-grid,
       .flow-steps,
-      .gallery-grid {
+      .gallery-grid,
+      .arch-wrapper,
+      .perks-grid {
         display: grid !important;
         grid-template-columns: 1fr !important;
         gap: 14px !important;
+        width: 100% !important;
+        padding-left: 0 !important;
       }
+      /* Vendor name pills — keep them as wrapping horizontal chips */
+      .cat-row-names {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        gap: 6px 10px !important;
+        justify-content: flex-start !important;
+      }
+      .cat-row-names .cat-name {
+        flex: 0 0 auto !important;
+        width: auto !important;
+      }
+      /* Architecture scene — let SVG fill width */
+      .arch-scene { width: 100% !important; height: auto !important; }
       /* Decorative horizontal rails — hide on mobile (no horizontal axis) */
       .prog-track-rail,
-      .progress-year-2025::after { display: none !important; }
+      .prog-phase-line,
+      .progress-year-2025::after,
+      .gw-span-line,
+      .cat-gap-line { display: none !important; }
+      /* Span chip on Georgia Window — allow wrapping if needed */
+      .gw-span-chip {
+        white-space: normal !important;
+        text-align: center !important;
+        font-size: 0.55em !important;
+        padding: 8px 14px !important;
+        line-height: 1.3 !important;
+      }
+      .gw-span { padding: 8px 0 !important; }
 
       /* SVG / image auto-scale */
       svg { max-width: 100%; height: auto; }
@@ -5568,21 +5664,31 @@
       .cover .tagline { font-size: 1.4em !important; max-width: 100% !important; }
       .cover .tagline-line { line-height: 1.2 !important; }
 
-      /* Hook (problem) slide — keep statements stacked & readable */
+      /* Hook (problem) slide — proper padding so the border bar isn't
+         flush at viewport edge, headline shrinks to fit viewport. */
+      .hook-slide .slide-inner {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        padding: 28px 18px !important;
+      }
       .hook-slide .hook-statement {
-        padding: 0 !important;
+        padding: 0 0 0 14px !important;
         margin: 0 !important;
+        max-width: 100% !important;
       }
       .hook-slide .hook-headline,
       .hook-slide h2.hook-headline {
         font-size: clamp(1.05rem, 4.4vw, 1.35rem) !important;
-        line-height: 1.25 !important;
+        line-height: 1.3 !important;
+        margin: 0 !important;
       }
       .hook-slide .hook-numeral {
-        font-size: 2.2rem !important;
-        opacity: 0.12 !important;
+        font-size: 1.6rem !important;
+        opacity: 0.1 !important;
+        right: 0 !important;
       }
-      .hook-slide .hook-divider { margin: 18px 0 !important; }
+      .hook-slide .hook-divider { margin: 16px 0 !important; }
 
       /* Founder & advisor cards on Team slide — stack photo over text */
       .founder-card,
@@ -5691,12 +5797,11 @@
       .advisor-card {
         padding: 14px !important;
       }
-      .cat-team-photo,
-      .founder-photo,
-      .advisor-photo {
+      /* NOTE: founder/advisor photo sizing is set above (140px) — do NOT override here */
+      .cat-team-photo {
         aspect-ratio: 1 / 1 !important;
-        width: 100% !important;
-        max-width: 240px !important;
+        width: 140px !important;
+        max-width: 140px !important;
       }
 
       /* Progress / Timeline slide */
@@ -5721,7 +5826,37 @@
 
       /* Hide presenter notes on mobile (just in case they aren't already) */
       aside.notes { display: none !important; }
+
+      /* Mobile transparent nav arrows — fixed to viewport edges, above slide content */
+      .mobile-nav {
+        display: flex !important;
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 100;
+        width: 44px;
+        height: 64px;
+        align-items: center;
+        justify-content: center;
+        background: rgba(15, 23, 42, 0.28);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        color: rgba(255, 255, 255, 0.92);
+        cursor: pointer;
+        padding: 0;
+        -webkit-tap-highlight-color: transparent;
+        transition: background 0.15s ease, opacity 0.15s ease;
+      }
+      .mobile-nav:active { background: rgba(15, 23, 42, 0.5); }
+      .mobile-nav-prev { left: 0; border-radius: 0 10px 10px 0; }
+      .mobile-nav-next { right: 0; border-radius: 10px 0 0 10px; }
+      /* Hide arrows on dark divider slides where the contrast flips */
+      .reveal .slides > section.divider-slide.present ~ * .mobile-nav,
+      .reveal .slides > section.cover.present ~ * .mobile-nav { opacity: 0.7; }
     }
+    /* Default: hide nav arrows on desktop */
+    .mobile-nav { display: none; }
 
     /* Tighter still for small phones (≤ 480px) */
     @media (max-width: 480px) {
@@ -7078,6 +7213,14 @@
     </div>
   </div>
 
+  <!-- Mobile-only transparent nav arrows -->
+  <button class="mobile-nav mobile-nav-prev" type="button" aria-label="Previous slide" onclick="Reveal.prev()">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+  </button>
+  <button class="mobile-nav mobile-nav-next" type="button" aria-label="Next slide" onclick="Reveal.next()">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+  </button>
+
   <!-- Click-to-expand lightbox for gallery screenshots -->
   <div class="gallery-lightbox" id="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Expanded screenshot">
     <button class="gallery-lightbox-close" type="button" aria-label="Close" onclick="closeGalleryLightbox()">×</button>
@@ -7097,17 +7240,18 @@
       controls: !__isMobileDeck,
       progress: true,
       slideNumber: false,
-      transition: 'slide',
-      transitionSpeed: 'default',
-      backgroundTransition: 'fade',
+      transition: __isMobileDeck ? 'none' : 'slide',
+      transitionSpeed: 'fast',
+      backgroundTransition: 'none',
       keyboard: true,
       overview: !__isMobileDeck,
       touch: true,
       center: false,
-      ...(__isMobileDeck
-        ? { width: 380, height: 760, margin: 0, minScale: 0.5, maxScale: 1.5 }
-        : { width: 1280, height: 720, margin: 0, minScale: 0.2, maxScale: 2.0 }
-      )
+      width: 1280,
+      height: 720,
+      margin: 0,
+      minScale: 0.2,
+      maxScale: 2.0
     });
 
     // Brand footer is now inlined directly in each section's HTML — see <a class="brand-footer"> tags.
@@ -7165,126 +7309,6 @@
           closeGalleryLightbox();
         }
       }, true);
-    })();
-  </script>
-
-  <!-- ═══════════════════════════════════════════════════════════════════
-       INVESTOR ACTIVITY TRACKING
-       Sends events to Supabase Edge Function 'track-event'.
-       Token is read from sessionStorage (set by /briefing/:token gate).
-       ═══════════════════════════════════════════════════════════════════ -->
-  <script>
-    (function () {
-      var TRACK_URL = 'https://kvsqtolsjggpyvdtdpss.supabase.co/functions/v1/track-event';
-      var token = null;
-      try { token = sessionStorage.getItem('mm_briefing_token'); } catch (e) {}
-      if (!token) return; // No token → no tracking (e.g., print-pdf, file:// preview)
-
-      // Map of slide index → human-readable label. Index follows Reveal's order.
-      // Mirrors the .slide-label text inside each <section>.
-      var SLIDE_LABELS = {
-        0:  'Cover',
-        1:  '01 PROBLEM',
-        2:  '02 SOLUTION',
-        3:  '03 CATEGORY',
-        4:  '04 COMPETITION',
-        5:  '05 GEORGIA WINDOW',
-        6:  '06 BUSINESS MODEL',
-        7:  '07 AMBITION',
-        8:  '08 TEAM',
-        9:  '09 PROGRESS MADE',
-        10: '10 THE ASK',
-        11: '11 WHAT YOU’RE INVESTING IN',
-        12: 'A1 APPENDIX · PLATFORM',
-        13: 'A2 APPENDIX · PLATFORM',
-        14: 'A3 APPENDIX · PLATFORM',
-        15: 'A4 APPENDIX · PLATFORM',
-        16: 'Appendix',
-      };
-
-      function getLabel(idx) {
-        if (SLIDE_LABELS[idx]) return SLIDE_LABELS[idx];
-        // Fallback: try to read .slide-label text from current slide DOM
-        try {
-          var sec = (Reveal.getSlides && Reveal.getSlides()[idx]) || null;
-          var el  = sec && sec.querySelector('.slide-label');
-          if (el) return (el.innerText || '').trim().replace(/\s+/g, ' ').slice(0, 60);
-        } catch (e) {}
-        return 'slide_' + idx;
-      }
-
-      // Async fire-and-forget (used during normal navigation)
-      function track(eventType, metadata) {
-        try {
-          fetch(TRACK_URL, {
-            method: 'POST',
-            keepalive: true,
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ token: token, event_type: eventType, metadata: metadata || null }),
-          }).catch(function(){});
-        } catch (e) {}
-      }
-
-      // Reliable shipping on tab close (sendBeacon survives unload)
-      function trackBeacon(eventType, metadata) {
-        try {
-          var blob = new Blob(
-            [JSON.stringify({ token: token, event_type: eventType, metadata: metadata || null })],
-            { type: 'application/json' }
-          );
-          navigator.sendBeacon(TRACK_URL, blob);
-        } catch (e) {}
-      }
-
-      var currentSlideIndex = -1;
-      var currentSlideEnterTime = 0;
-      var deckStartTime = Date.now();
-
-      function flushCurrentSlide(useBeacon) {
-        if (currentSlideIndex < 0) return;
-        var dwell = Math.round((Date.now() - currentSlideEnterTime) / 1000);
-        // Cap at 10 minutes per slide to avoid skewed dwell from idle tabs
-        if (dwell > 600) dwell = 600;
-        var payload = {
-          slide_index: currentSlideIndex,
-          slide_label: getLabel(currentSlideIndex),
-          dwell_seconds: dwell,
-        };
-        if (useBeacon) trackBeacon('slide_view', payload);
-        else track('slide_view', payload);
-      }
-
-      function startSlide(idx) {
-        currentSlideIndex = idx;
-        currentSlideEnterTime = Date.now();
-      }
-
-      // Wait for Reveal to be available (it's loaded after this script in some cases)
-      function waitForReveal(cb) {
-        if (typeof Reveal !== 'undefined' && Reveal.on) return cb();
-        setTimeout(function () { waitForReveal(cb); }, 80);
-      }
-
-      waitForReveal(function () {
-        Reveal.on('ready', function (e) {
-          var idx = e.indexh || 0;
-          startSlide(idx);
-          track('deck_opened', { first_slide_index: idx });
-        });
-
-        Reveal.on('slidechanged', function (e) {
-          flushCurrentSlide(false);  // record dwell on the slide we are leaving
-          startSlide(e.indexh || 0);
-        });
-      });
-
-      // On tab close / nav-away: flush last slide + record deck_closed via sendBeacon
-      window.addEventListener('pagehide', function () {
-        flushCurrentSlide(true);
-        var totalDwell = Math.round((Date.now() - deckStartTime) / 1000);
-        if (totalDwell > 7200) totalDwell = 7200; // 2-hour cap
-        trackBeacon('deck_closed', { total_dwell_seconds: totalDwell });
-      });
     })();
   </script>
 </body>

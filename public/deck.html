@@ -5827,33 +5827,57 @@
       /* Hide presenter notes on mobile (just in case they aren't already) */
       aside.notes { display: none !important; }
 
-      /* Mobile transparent nav arrows — fixed to viewport edges, above slide content */
+      /* Mobile nav arrows — bottom corners, seamless (no box, just chevrons) */
       .mobile-nav {
         display: flex !important;
         position: fixed;
-        top: 50%;
-        transform: translateY(-50%);
+        bottom: 12px;
         z-index: 100;
-        width: 44px;
-        height: 64px;
+        width: 36px;
+        height: 36px;
         align-items: center;
         justify-content: center;
-        background: rgba(15, 23, 42, 0.28);
-        backdrop-filter: blur(6px);
-        -webkit-backdrop-filter: blur(6px);
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        color: rgba(255, 255, 255, 0.92);
+        background: transparent;
+        border: 0;
+        color: var(--emr-primary, #1a365d);
+        opacity: 0.42;
         cursor: pointer;
         padding: 0;
         -webkit-tap-highlight-color: transparent;
-        transition: background 0.15s ease, opacity 0.15s ease;
+        transition: opacity 0.15s ease, transform 0.12s ease;
+        filter: drop-shadow(0 1px 2px rgba(255,255,255,0.85));
       }
-      .mobile-nav:active { background: rgba(15, 23, 42, 0.5); }
-      .mobile-nav-prev { left: 0; border-radius: 0 10px 10px 0; }
-      .mobile-nav-next { right: 0; border-radius: 10px 0 0 10px; }
-      /* Hide arrows on dark divider slides where the contrast flips */
-      .reveal .slides > section.divider-slide.present ~ * .mobile-nav,
-      .reveal .slides > section.cover.present ~ * .mobile-nav { opacity: 0.7; }
+      .mobile-nav:active { opacity: 0.95; transform: scale(0.92); }
+      .mobile-nav-prev { left: 8px; }
+      .mobile-nav-next { right: 8px; }
+      .mobile-nav svg { width: 28px; height: 28px; }
+      /* On dark backgrounds (cover, dividers, hook), flip to white */
+      .reveal:has(> .slides > section.cover.present) ~ .mobile-nav,
+      .reveal:has(> .slides > section.divider-slide.present) ~ .mobile-nav,
+      .reveal:has(> .slides > section.hook-slide.present) ~ .mobile-nav {
+        color: rgba(255,255,255,0.95);
+        filter: drop-shadow(0 1px 2px rgba(0,0,0,0.4));
+      }
+
+      /* Ask slide — stack the funds-bar segments vertically on mobile so
+         labels like "MediMind OS · $90K" stay fully readable */
+      .funds-row { flex-direction: column !important; gap: 12px !important; align-items: stretch !important; }
+      .funds-row .funds-bar {
+        flex-direction: column !important;
+        height: auto !important;
+        gap: 6px !important;
+        background: transparent !important;
+        box-shadow: none !important;
+      }
+      .funds-segment {
+        width: 100% !important;
+        height: 32px !important;
+        border-radius: 8px !important;
+        font-size: 0.78em !important;
+        justify-content: flex-start !important;
+        padding: 0 14px !important;
+      }
+      .funds-runway-inline { align-self: flex-start !important; }
     }
     /* Default: hide nav arrows on desktop */
     .mobile-nav { display: none; }

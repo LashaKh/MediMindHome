@@ -5696,20 +5696,33 @@
         flex-direction: column !important;
         align-items: center !important;
         text-align: center !important;
-        gap: 10px !important;
+        gap: 12px !important;
+        padding: 18px 16px !important;
       }
       .founder-card > *,
       .advisor-card > * { width: 100% !important; }
       .founder-photo,
       .advisor-photo,
       .cat-team-photo {
-        width: 140px !important;
-        height: 140px !important;
-        max-width: 140px !important;
+        width: 120px !important;
+        height: 120px !important;
+        max-width: 120px !important;
+        min-width: 120px !important;
+        min-height: 120px !important;
         aspect-ratio: 1 / 1 !important;
         margin: 0 auto !important;
         flex: 0 0 auto !important;
+        object-fit: cover !important;
+        object-position: center 30% !important;
+        display: block !important;
       }
+      .founder-info,
+      .advisor-card { text-align: center !important; }
+      .founder-info .role,
+      .founder-info h4,
+      .founder-info .bio,
+      .founder-info .chip-row { text-align: center !important; justify-content: center !important; }
+      .founder-info .chip-row { display: flex !important; flex-wrap: wrap !important; gap: 6px !important; justify-content: center !important; }
 
       /* Progress / Timeline — make sure rows stack vertically, no horizontal scroll */
       .prog-slide [class*="-row"],

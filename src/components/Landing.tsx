@@ -6,9 +6,6 @@ import { AnatomySection } from './Landing/AnatomySection';
 import { AISubstrateSection } from './Landing/AISubstrateSection';
 import { SafetySection } from './Landing/SafetySection';
 import { RecognitionSection } from './Landing/RecognitionSection';
-import { ComplianceMoatSection } from './Landing/ComplianceMoatSection';
-import { MilestonesSection } from './Landing/MilestonesSection';
-import { StandardsSection } from './Landing/StandardsSection';
 import { FinalCTASection } from './Landing/FinalCTASection';
 
 /**
@@ -16,8 +13,7 @@ import { FinalCTASection } from './Landing/FinalCTASection';
  *
  * Narrative arc (aligned with positioning doc):
  *   Hero → Pain (forty systems) → Capabilities (9 pillars) → Anatomy (5 layers)
- *        → AI demo → Safety (AI works, people decide) → Recognition
- *        → Moat (government integration) → Milestones → Standards → CTA
+ *        → AI demo → Safety (AI works, people decide) → Recognition → CTA
  *
  * TeamSection and AmbitionSection remain in the codebase but are not
  * rendered — re-enable once founders are named and ambition copy is
@@ -33,9 +29,6 @@ export const Landing: React.FC = () => {
       <AISubstrateSection />
       <SafetySection />
       <RecognitionSection />
-      <ComplianceMoatSection />
-      <MilestonesSection />
-      <StandardsSection />
       <FinalCTASection />
     </div>
   );

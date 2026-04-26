@@ -1,0 +1,42 @@
+# Netlify config for MediMind Landing Page (medimind.md)
+# Hosts: landing site, /briefing/[token] gateway, /admin dashboard, /deck.html static deck.
+
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+# ─── Long cache on stable hashed assets (Vite emits content-hashed files) ───
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# ─── Long cache on deck assets (logos, screenshots, team photos) ───
+[[headers]]
+  for = "/deck-assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# ─── Never cache the deck itself (we update it during the round) ───
+[[headers]]
+  for = "/deck.html"
+  [headers.values]
+    Cache-Control = "no-store, must-revalidate"
+    X-Robots-Tag  = "noindex, nofollow"
+
+# ─── Briefing & admin routes are private — never indexed ───
+[[headers]]
+  for = "/briefing/*"
+  [headers.values]
+    X-Robots-Tag  = "noindex, nofollow"
+
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag  = "noindex, nofollow"
+
+# ─── HTML shell: revalidate every load so SPA bundle hashes are fresh ───
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "no-store, must-revalidate"

@@ -5699,6 +5699,26 @@
         gap: 14px !important;
         padding: 16px 14px !important;
       }
+      /* Hide the absolutely-positioned "Co-Founder" badge on mobile —
+         the role line "CO-FOUNDER · CLINICAL · PRODUCT" already says it,
+         and the badge sits exactly where the name renders in row layout. */
+      .founder-badge { display: none !important; }
+      /* Give the name a small breathing space and make sure the role
+         line below it has clear separation */
+      .founder-info h4 {
+        margin: 0 0 4px !important;
+        font-size: 1.02em !important;
+        line-height: 1.2 !important;
+      }
+      .founder-info .role {
+        margin: 0 0 8px !important;
+        font-size: 0.66em !important;
+      }
+      .founder-info .bio {
+        margin: 0 0 8px !important;
+        font-size: 0.82em !important;
+        line-height: 1.4 !important;
+      }
       .founder-photo,
       .advisor-photo,
       .cat-team-photo {

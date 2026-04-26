@@ -5,6 +5,7 @@ import { SignIn } from './components/Auth/SignIn';
 import { SignUp } from './components/Auth/SignUp';
 import { RequestDemo } from './components/Demo/RequestDemo';
 import { BriefingGate } from './pages/BriefingGate';
+import { BriefingLocked } from './pages/BriefingLocked';
 import { AdminLogin } from './pages/AdminLogin';
 import { AdminDashboard } from './pages/AdminDashboard';
 
@@ -22,6 +23,7 @@ function App() {
     <Router>
       <Routes>
         {/* Standalone routes — no header/footer chrome */}
+        <Route path="/briefing" element={<BriefingLocked />} />
         <Route path="/briefing/:token" element={<BriefingGate />} />
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />

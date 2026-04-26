@@ -7,13 +7,15 @@
   <script>
     // Access guard — /briefing/[token] gateway sets sessionStorage["mm_briefing_access"]
     // on successful login. Local file:// and ?print-pdf are exempted (PDF export).
+    // Without a valid session, bounce to /briefing (the "invitation required" page),
+    // NOT the public landing page — keeps briefing context.
     (function () {
       try {
         if (location.protocol === 'file:') return;
         if (location.search.indexOf('print-pdf') !== -1) return;
         if (sessionStorage.getItem('mm_briefing_access')) return;
-        location.replace('/');
-      } catch (e) { location.replace('/'); }
+        location.replace('/briefing');
+      } catch (e) { location.replace('/briefing'); }
     })();
   </script>
 

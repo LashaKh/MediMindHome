@@ -5690,39 +5690,48 @@
       }
       .hook-slide .hook-divider { margin: 16px 0 !important; }
 
-      /* Founder & advisor cards on Team slide — stack photo over text */
+      /* Founder & advisor cards — photo on the LEFT, text on the right (row layout) */
       .founder-card,
       .advisor-card {
-        flex-direction: column !important;
+        flex-direction: row !important;
         align-items: center !important;
-        text-align: center !important;
-        gap: 12px !important;
-        padding: 18px 16px !important;
+        text-align: left !important;
+        gap: 14px !important;
+        padding: 16px 14px !important;
       }
-      .founder-card > *,
-      .advisor-card > * { width: 100% !important; }
       .founder-photo,
       .advisor-photo,
       .cat-team-photo {
-        width: 120px !important;
-        height: 120px !important;
-        max-width: 120px !important;
-        min-width: 120px !important;
-        min-height: 120px !important;
+        width: 88px !important;
+        height: 88px !important;
+        max-width: 88px !important;
+        min-width: 88px !important;
+        min-height: 88px !important;
         aspect-ratio: 1 / 1 !important;
-        margin: 0 auto !important;
-        flex: 0 0 auto !important;
+        margin: 0 !important;
+        flex: 0 0 88px !important;
         object-fit: cover !important;
         object-position: center 30% !important;
         display: block !important;
       }
       .founder-info,
-      .advisor-card { text-align: center !important; }
-      .founder-info .role,
+      .advisor-info {
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+        text-align: left !important;
+      }
       .founder-info h4,
-      .founder-info .bio,
-      .founder-info .chip-row { text-align: center !important; justify-content: center !important; }
-      .founder-info .chip-row { display: flex !important; flex-wrap: wrap !important; gap: 6px !important; justify-content: center !important; }
+      .advisor-card h5 { text-align: left !important; }
+      .founder-info .role,
+      .advisor-card .role-small { text-align: left !important; }
+      .founder-info .bio { text-align: left !important; }
+      .founder-info .chip-row,
+      .advisor-card .chip-row {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+        justify-content: flex-start !important;
+      }
 
       /* Progress / Timeline — make sure rows stack vertically, no horizontal scroll */
       .prog-slide [class*="-row"],

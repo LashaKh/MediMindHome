@@ -6,6 +6,7 @@ import "./BriefingGate.css";
 const DECK_URL = "/deck.html";
 const SESSION_KEY = "mm_briefing_access";
 const TOKEN_KEY = "mm_briefing_token";
+const NAME_KEY = "mm_briefing_name";
 
 export const BriefingGate: React.FC = () => {
   const { token = "" } = useParams<{ token: string }>();
@@ -90,6 +91,9 @@ export const BriefingGate: React.FC = () => {
       try {
         sessionStorage.setItem(SESSION_KEY, "1");
         sessionStorage.setItem(TOKEN_KEY, token);
+        if (result.full_name) {
+          sessionStorage.setItem(NAME_KEY, result.full_name);
+        }
       } catch {/* ignore */}
       // Brief delay so the success state is perceivable
       setTimeout(() => {
@@ -153,9 +157,6 @@ export const BriefingGate: React.FC = () => {
               <span className="round-window-pulse" aria-hidden="true" />
               <div className="round-window-body">
                 <div className="round-window-label">Pre-seed · open round</div>
-                <div className="round-window-headline">
-                  Round closes in <strong>14 days</strong> — decision window for invited partners.
-                </div>
                 <div className="round-window-note">
                   $200K target · YC-standard SAFE · briefing access expires after the window.
                 </div>

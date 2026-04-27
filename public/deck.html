@@ -7,10 +7,18 @@
   <script>
     // Access guard — gateway sets sessionStorage["mm_briefing_access"] on success.
     // Local file:// previews (offline PDF export, etc.) and ?print-pdf are exempted.
+    // ?preview=1 also bypasses the guard for local/admin preview; combine with
+    // ?name=Some%20Name to seed the cover "Prepared for" line.
     (function () {
       try {
         if (location.protocol === 'file:') return;
-        if (location.search.indexOf('print-pdf') !== -1) return;
+        var params = new URLSearchParams(location.search);
+        if (params.has('print-pdf')) return;
+        if (params.get('preview') === '1') {
+          var n = params.get('name');
+          if (n) { try { sessionStorage.setItem('mm_briefing_name', n); } catch (_) {} }
+          return;
+        }
         if (sessionStorage.getItem('mm_briefing_access')) return;
         location.replace('/briefing');
       } catch (e) { location.replace('/briefing'); }
@@ -122,6 +130,111 @@
     }
     .reveal .progress { color: var(--emr-secondary); }
     .reveal .controls { color: var(--emr-accent); }
+
+    /* Desktop slide-nav arrows — split to opposite edges of the viewport, vertically centered.
+       Mobile uses the custom .mobile-nav (line ~5872); .reveal .controls is hidden on mobile
+       via display:none at ~line 5492 within the @media (max-width: 768px) block. */
+    .reveal .controls {
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      pointer-events: none !important;
+    }
+    .reveal .controls .navigate-up,
+    .reveal .controls .navigate-down {
+      display: none !important;
+    }
+    /* Chevron-only — no pill, no border, no background. Drop-shadow keeps the line legible
+       on any slide background (light AND dark). Same treatment style as .mobile-nav uses. */
+    .reveal .controls .navigate-left,
+    .reveal .controls .navigate-right {
+      position: fixed !important;
+      top: 50% !important;
+      bottom: auto !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 56px !important;
+      height: 56px !important;
+      background: transparent !important;
+      border: 0 !important;
+      box-shadow: none !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      color: var(--emr-primary, #1a365d) !important;
+      opacity: 0.55 !important;
+      transform: translateY(-50%) !important;
+      transition: opacity 0.15s ease, color 0.15s ease;
+      pointer-events: auto;
+      filter: drop-shadow(0 1px 2px rgba(255,255,255,0.85));
+    }
+    .reveal .controls .navigate-left {
+      left: 12px !important;
+      right: auto !important;
+    }
+    .reveal .controls .navigate-right {
+      right: 12px !important;
+      left: auto !important;
+    }
+    .reveal .controls .navigate-left:hover,
+    .reveal .controls .navigate-right:hover {
+      opacity: 0.95 !important;
+    }
+    /* Disabled state — fade out so they don't draw attention when unavailable */
+    .reveal .controls .navigate-left[disabled],
+    .reveal .controls .navigate-right[disabled] {
+      opacity: 0.12 !important;
+      pointer-events: none;
+    }
+    /* Replace reveal.js's chevron with a CSS-only one made from two equal borders so both
+       arrows are guaranteed identical line weight regardless of reveal's enabled/highlight
+       transforms. The pseudo-element chevrons reveal.js builds get rendered slightly
+       differently when one arrow has the .highlight pulse class — this avoids that. */
+    .reveal .controls .controls-arrow {
+      width: 22px !important;
+      height: 22px !important;
+      background: transparent !important;
+      border: 0 !important;
+      border-top: 4px solid currentColor !important;
+      border-right: 4px solid currentColor !important;
+      border-radius: 2px !important;
+      transform: none !important;
+      animation: none !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
+    }
+    .reveal .controls .controls-arrow::before,
+    .reveal .controls .controls-arrow::after {
+      display: none !important;
+    }
+    /* Right-pointing chevron (next): borders top+right rotated 45° */
+    .reveal .controls .navigate-right .controls-arrow {
+      transform: rotate(45deg) translateX(-3px) !important;
+    }
+    /* Left-pointing chevron (prev): same construction, rotated 225° */
+    .reveal .controls .navigate-left .controls-arrow {
+      transform: rotate(225deg) translateX(-3px) !important;
+    }
+    /* On dark-background slides (cover, divider, hook), flip chevron color to white
+       and switch the drop-shadow to dark for contrast. */
+    .reveal:has(> .slides > section.cover.present) .controls .navigate-left,
+    .reveal:has(> .slides > section.cover.present) .controls .navigate-right,
+    .reveal:has(> .slides > section.divider-slide.present) .controls .navigate-left,
+    .reveal:has(> .slides > section.divider-slide.present) .controls .navigate-right,
+    .reveal:has(> .slides > section.hook-slide.present) .controls .navigate-left,
+    .reveal:has(> .slides > section.hook-slide.present) .controls .navigate-right {
+      color: rgba(255,255,255,0.95) !important;
+      filter: drop-shadow(0 1px 2px rgba(0,0,0,0.4)) !important;
+    }
+    /* Cursor hint that the slide is clickable to advance (desktop only — JS handler below skips
+       mobile, interactive elements, and text selections). */
+    .reveal .slides { cursor: pointer; }
+    .reveal .slides input,
+    .reveal .slides textarea,
+    .reveal .slides select { cursor: text; }
+    .reveal .slides .gallery-img { cursor: zoom-in; }
 
     .slide-label {
       position: absolute;
@@ -333,6 +446,43 @@
     @media (prefers-reduced-motion: reduce) {
       .cover .badge-accent { animation: none; }
       .cover .badge-accent::before { animation: none; }
+    }
+
+    /* Prepared-for line — sits between tagline and footer-row, only renders when sessionStorage has a name */
+    .cover .cover-prepared-for {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      margin-top: 2.2em;
+      padding: 12px 26px;
+      border-radius: 14px;
+      background: rgba(190,227,248,0.06);
+      border: 1px solid rgba(190,227,248,0.18);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 2;
+      animation: fadeInUp 1s 1.05s cubic-bezier(0.2, 0.9, 0.2, 1) both;
+    }
+    .cover .cover-prepared-for-label {
+      font-size: 0.62em;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: rgba(255,255,255,0.55);
+    }
+    .cover .cover-prepared-for-name {
+      font-size: 1.05em;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      background: linear-gradient(135deg, #ffffff 0%, #bee3f8 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .cover .cover-prepared-for { animation: none; }
     }
 
     /* Footer — split layout with accent line */
@@ -3205,7 +3355,8 @@
     .advisors-grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 10px;
+      gap: 14px;
+      align-items: stretch;
     }
     .advisor-card {
       position: relative;
@@ -3213,55 +3364,68 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      padding: 14px 8px 10px;
-      background: #ffffff;
+      padding: 22px 12px 14px;
+      background: linear-gradient(180deg, #ffffff 0%, #fafcff 100%);
       border: 1px solid var(--emr-border);
-      border-radius: 14px;
-      box-shadow: 0 2px 10px rgba(26,54,93,0.05);
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(26,54,93,0.07), 0 1px 3px rgba(26,54,93,0.04);
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    /* Premium gradient accent bar on top — same treatment as .founder-card */
+    .advisor-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #1a365d 0%, #2b6cb0 50%, #3182ce 100%);
+      opacity: 0.55;
+    }
+    .advisor-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(26,54,93,0.10), 0 2px 6px rgba(26,54,93,0.05);
     }
     .advisor-card.is-pilot {
       border-color: rgba(49,130,206,0.35);
       background: linear-gradient(180deg, #ffffff 0%, #f0f7ff 100%);
     }
     .advisor-card.is-pilot::before {
-      content: '';
-      position: absolute;
-      top: -1px; left: -1px; right: -1px;
-      height: 3px;
-      border-top-left-radius: 14px;
-      border-top-right-radius: 14px;
-      background: linear-gradient(90deg, #2b6cb0 0%, #3182ce 100%);
+      opacity: 1;
     }
     .advisor-photo {
-      width: 62px;
-      height: 62px;
+      width: 76px;
+      height: 76px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 9px;
-      border: 2px solid #ffffff;
+      margin-bottom: 11px;
+      border: 2.5px solid #ffffff;
       box-shadow:
-        0 0 0 1.5px rgba(49,130,206,0.28),
-        0 4px 12px rgba(26,54,93,0.1);
+        0 0 0 1.5px rgba(49,130,206,0.32),
+        0 5px 14px rgba(26,54,93,0.13);
       filter: saturate(1.05) contrast(1.02);
     }
     .advisor-card h5 {
-      font-size: 0.68em;
+      font-size: 0.76em;
       font-weight: 800;
       color: var(--emr-primary);
-      margin: 0 0 3px;
-      line-height: 1.15;
+      margin: 0 0 4px;
+      line-height: 1.2;
       letter-spacing: -0.01em;
     }
     .advisor-card .role-small {
-      font-size: 0.52em;
+      font-size: 0.56em;
       color: var(--emr-text-muted);
-      line-height: 1.35;
-      margin: 0 0 7px;
-      min-height: 2.7em;
+      line-height: 1.4;
+      margin: 0 0 9px;
+      min-height: 2.8em;
       font-weight: 500;
     }
-    .advisor-card .chip-row { justify-content: center; gap: 4px; }
-    .advisor-card .chip { font-size: 0.48em; padding: 2px 6px; }
+    .advisor-card .chip-row {
+      justify-content: center;
+      gap: 5px;
+      margin-top: auto;
+    }
+    .advisor-card .chip { font-size: 0.5em; padding: 3px 7px; }
 
     .team-closer {
       text-align: center;
@@ -4492,7 +4656,7 @@
       grid-template-columns: 0.9fr 1.3fr;
       gap: 32px;
       margin-top: 18px;
-      align-items: start;
+      align-items: stretch;
     }
 
     /* Premium dark deal-terms card */
@@ -4509,6 +4673,20 @@
       position: relative;
       overflow: hidden;
       isolation: isolate;
+      display: flex;
+      flex-direction: column;
+    }
+    /* Push the "Your terms" footer block to the bottom so the card fills the column height */
+    .terms-box .terms-stake {
+      margin-top: auto;
+    }
+    /* Right column matches as a flex column so its bottom aligns with the card's bottom */
+    .terms-layout > div:last-child {
+      display: flex;
+      flex-direction: column;
+    }
+    .terms-layout > div:last-child .perks-grid {
+      margin-top: auto;
     }
     /* Top-right glow pocket */
     .terms-box::before {
@@ -5663,6 +5841,14 @@
       }
       .cover .tagline { font-size: 1.4em !important; max-width: 100% !important; }
       .cover .tagline-line { line-height: 1.2 !important; }
+      .cover .cover-prepared-for {
+        margin-top: 1.4em !important;
+        padding: 9px 18px !important;
+        gap: 4px !important;
+        max-width: 86vw !important;
+      }
+      .cover .cover-prepared-for-label { font-size: 0.55em !important; letter-spacing: 0.22em !important; }
+      .cover .cover-prepared-for-name { font-size: 0.95em !important; }
 
       /* Hook (problem) slide — proper padding so the border bar isn't
          flush at viewport edge, headline shrinks to fit viewport. */
@@ -5690,14 +5876,59 @@
       }
       .hook-slide .hook-divider { margin: 16px 0 !important; }
 
-      /* Founder & advisor cards — photo on the LEFT, text on the right (row layout) */
-      .founder-card,
-      .advisor-card {
+      /* Founder & advisor cards — photo on the LEFT, text on the right (row layout).
+         Advisor cards have NO .advisor-info wrapper — h5/role/chips are direct siblings of
+         the photo. So we use grid: photo pinned to column 1 spanning all rows, text columns
+         flow into column 2 stacked. Founder cards have a .founder-info wrapper so flex
+         (row) works fine for them. */
+      .founder-card {
         flex-direction: row !important;
         align-items: center !important;
         text-align: left !important;
         gap: 14px !important;
         padding: 16px 14px !important;
+      }
+      .advisor-card {
+        display: grid !important;
+        grid-template-columns: auto 1fr !important;
+        column-gap: 14px !important;
+        row-gap: 4px !important;
+        align-items: center !important;
+        text-align: left !important;
+        padding: 16px 14px !important;
+      }
+      .advisor-card > .advisor-photo {
+        grid-row: 1 / -1 !important;
+        grid-column: 1 !important;
+        align-self: center !important;
+        margin: 0 !important;
+      }
+      .advisor-card > h5,
+      .advisor-card > .role-small,
+      .advisor-card > .chip-row {
+        grid-column: 2 !important;
+        text-align: left !important;
+        margin: 0 !important;
+      }
+      .advisor-card > h5 {
+        font-size: 0.95em !important;
+        line-height: 1.2 !important;
+        margin-bottom: 2px !important;
+      }
+      .advisor-card > .role-small {
+        font-size: 0.74em !important;
+        line-height: 1.35 !important;
+        margin-bottom: 8px !important;
+        min-height: 0 !important;
+      }
+      .advisor-card > .chip-row {
+        justify-content: flex-start !important;
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+      }
+      .advisor-card > .chip-row .chip {
+        font-size: 0.62em !important;
+        padding: 3px 9px !important;
       }
       /* Hide the absolutely-positioned "Co-Founder" badge on mobile —
          the role line "CO-FOUNDER · CLINICAL · PRODUCT" already says it,
@@ -5967,6 +6198,10 @@
       <span class="tagline-line tagline-line-1">The <em>AI-native</em> operating system</span>
       <span class="tagline-line tagline-line-2">for the modern hospital.</span>
     </div>
+          <div class="cover-prepared-for" id="cover-prepared-for" hidden>
+            <span class="cover-prepared-for-label">Prepared for</span>
+            <span class="cover-prepared-for-name" id="cover-prepared-for-name"></span>
+          </div>
           <div class="footer-row">
             <div><strong>Lasha Khoshtaria</strong> &nbsp;·&nbsp; team@medimind.md</div>
             <div>Investor Pitch &nbsp;·&nbsp; April 2026</div>
@@ -6266,7 +6501,7 @@
       <section class="cat-slide">
         <div class="slide-inner">
           <div class="slide-label"><span class="label-num">04</span>COMPETITION</div>
-          <h2 class="headline-big">Today's healthcare AI is an app. We are <em>the operating system</em>.</h2>
+          <h2 class="headline-big">Palantir reads Epic. We replace <em>Both</em>.</h2>
           <p class="headline-sub">Three crowded categories all sit on top of the hospital. None of them <em>is</em> the operating system the hospital runs on.</p>
 
           <div class="cat-terrain cat-terrain-wide">
@@ -6343,8 +6578,8 @@
               <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg>
             </div>
             <div class="cat-footer-text">
-              <div class="cat-footer-line">Palantir reads Epic <span class="cat-footer-aside">(Legacy EMR)</span>.</div>
-              <div class="cat-footer-sub">We replace <em>Both</em>.</div>
+              <div class="cat-footer-line">Today's healthcare AI is an app.</div>
+              <div class="cat-footer-sub">We are <em>the operating system</em>.</div>
             </div>
           </div>
         </div>
@@ -7321,6 +7556,135 @@
     });
 
     // Brand footer is now inlined directly in each section's HTML — see <a class="brand-footer"> tags.
+
+    // Cover slide — pull recipient name from sessionStorage (set by BriefingGate on unlock).
+    // Degrades silently when accessed directly without going through the gate.
+    (function injectPreparedFor() {
+      try {
+        var name = sessionStorage.getItem('mm_briefing_name');
+        if (!name || !name.trim()) return;
+        var box = document.getElementById('cover-prepared-for');
+        var slot = document.getElementById('cover-prepared-for-name');
+        if (!box || !slot) return;
+        slot.textContent = name.trim();
+        box.hidden = false;
+      } catch (e) { /* ignore */ }
+    })();
+
+    // Click-anywhere-to-advance — desktop only (mobile keeps swipe + custom .mobile-nav arrows).
+    // Skips clicks on interactive elements, gallery screenshots (which expand a lightbox),
+    // anything inside the lightbox, anything marked [data-no-advance], and clicks during text selection.
+    (function clickToAdvance() {
+      if (__isMobileDeck) return;
+      var INTERACTIVE = 'a, button, input, textarea, select, label, summary, details, .gallery-img, .gallery-lightbox, .gallery-lightbox *, .controls, .controls *, aside.notes, [data-no-advance]';
+      var reveal = document.querySelector('.reveal');
+      if (!reveal) return;
+      reveal.addEventListener('click', function(e) {
+        // Ignore clicks on interactive elements (or any descendant of one)
+        if (e.target.closest && e.target.closest(INTERACTIVE)) return;
+        // Don't advance if user is selecting text
+        var sel = window.getSelection && window.getSelection();
+        if (sel && sel.toString().length > 0) return;
+        // Don't advance while gallery lightbox is open
+        var lb = document.getElementById('gallery-lightbox');
+        if (lb && lb.classList.contains('open')) return;
+        Reveal.next();
+      });
+    })();
+
+    // Investor analytics — fire-and-forget tracking. Silent no-op when accessed
+    // without going through the gate (no token in sessionStorage). Mirrors the
+    // pattern in src/lib/tracking.ts. Sends: deck_opened, slide_view (per slide
+    // change), deck_closed (on unload).
+    (function deckAnalytics() {
+      var TRACK_URL = 'https://kvsqtolsjggpyvdtdpss.supabase.co/functions/v1/track-event';
+      var TOKEN = null;
+      try { TOKEN = sessionStorage.getItem('mm_briefing_token'); } catch (_) {}
+      if (!TOKEN) return;  // preview mode, direct access, or pre-gate — skip tracking
+
+      var slideEnterTs = Date.now();
+      var lastSlideIdx = null;
+      var lastSlideLabel = '';
+      var sessionStartTs = Date.now();
+      var slidesViewedCount = 0;
+      var deckClosedSent = false;
+
+      function labelOf(section) {
+        if (!section) return '';
+        // Each content slide has <div class="slide-label"><span class="label-num">04</span>NAME>.
+        // Strip the numeral chip; return just the human text. Cover/divider/hook slides have no
+        // .slide-label — fall back to the first CSS class on the section.
+        var lbl = section.querySelector('.slide-label');
+        if (!lbl) return (section.className || '').split(' ')[0] || '';
+        var clone = lbl.cloneNode(true);
+        var nClone = clone.querySelector('.label-num');
+        if (nClone && nClone.parentNode) nClone.parentNode.removeChild(nClone);
+        return (clone.textContent || '').trim() || (section.className || '').split(' ')[0] || '';
+      }
+
+      function track(eventType, metadata) {
+        try {
+          var body = JSON.stringify({ token: TOKEN, event_type: eventType, metadata: metadata || null });
+          // sendBeacon is the only transport that survives page unload reliably.
+          // Fall back to fetch+keepalive on browsers without sendBeacon.
+          if (navigator.sendBeacon) {
+            var blob = new Blob([body], { type: 'application/json' });
+            navigator.sendBeacon(TRACK_URL, blob);
+          } else {
+            fetch(TRACK_URL, {
+              method: 'POST', keepalive: true,
+              headers: { 'Content-Type': 'application/json' },
+              body: body,
+            }).catch(function () {});
+          }
+        } catch (_) { /* tracking must never break UX */ }
+      }
+
+      function flushCurrentSlide() {
+        if (lastSlideIdx === null) return;
+        var dwell = Math.round((Date.now() - slideEnterTs) / 1000);
+        if (dwell < 1) return;  // skip ultra-short visits (rapid arrow-key skim)
+        track('slide_view', {
+          slide_index: lastSlideIdx,
+          slide_label: lastSlideLabel,
+          dwell_seconds: dwell,
+        });
+        slidesViewedCount++;
+      }
+
+      Reveal.on('ready', function (e) {
+        track('deck_opened', {
+          total_slides: Reveal.getTotalSlides(),
+          viewport: { w: window.innerWidth, h: window.innerHeight },
+          referrer: document.referrer || null,
+          user_agent: navigator.userAgent,
+        });
+        lastSlideIdx = e.indexh;
+        lastSlideLabel = labelOf(e.currentSlide);
+        slideEnterTs = Date.now();
+      });
+
+      Reveal.on('slidechanged', function (e) {
+        flushCurrentSlide();  // emit slide_view for the slide we just left
+        lastSlideIdx = e.indexh;
+        lastSlideLabel = labelOf(e.currentSlide);
+        slideEnterTs = Date.now();
+      });
+
+      // Final flush on unload. pagehide is more reliable than beforeunload on mobile Safari;
+      // listen to both for max coverage. Guard against double-firing with deckClosedSent.
+      function onLeave() {
+        if (deckClosedSent) return;
+        deckClosedSent = true;
+        flushCurrentSlide();
+        track('deck_closed', {
+          total_dwell_seconds: Math.round((Date.now() - sessionStartTs) / 1000),
+          slides_viewed: slidesViewedCount,
+        });
+      }
+      window.addEventListener('pagehide', onLeave);
+      window.addEventListener('beforeunload', onLeave);
+    })();
 
     // Gallery lightbox — click any screenshot to expand fullscreen
     (function() {

@@ -149,3 +149,23 @@ s3_region = "env(S3_REGION)"
 s3_access_key = "env(S3_ACCESS_KEY)"
 # Configures AWS_SECRET_ACCESS_KEY for S3 bucket
 s3_secret_key = "env(S3_SECRET_KEY)"
+
+# ─── Edge functions with custom auth (admin JWT or token-in-body) — disable
+#     Supabase's default JWT verification so the function code can run its own
+#     check. Without this, ALL requests get rejected at the gateway with 401
+#     before reaching our code. Re-deploy commands MUST keep --no-verify-jwt OR
+#     these settings must stay in this file. ───
+[functions.admin-login]
+verify_jwt = false
+
+[functions.admin-write]
+verify_jwt = false
+
+[functions.admin-data]
+verify_jwt = false
+
+[functions.investor-login]
+verify_jwt = false
+
+[functions.track-event]
+verify_jwt = false

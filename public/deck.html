@@ -7609,7 +7609,14 @@
       var TOKEN = null;
       try { TOKEN = sessionStorage.getItem('mm_briefing_token'); } catch (_) {}
       dlog('init', { token: TOKEN ? TOKEN.slice(0, 8) + '…' : null, debug: DEBUG });
-      if (!TOKEN) { dlog('no token — skipping all tracking (preview/direct)'); return; }
+      if (!TOKEN) {
+        // One always-on log so the user can see in DevTools why no tracking is firing
+        console.log('[da] no token in sessionStorage — tracking disabled (preview mode or direct deck access)');
+        dlog('no token — skipping all tracking (preview/direct)');
+        return;
+      }
+      // Always-on heartbeat (no debug flag needed) — green-flag that the IIFE bootstrapped
+      console.log('[da] tracking active — token=' + TOKEN.slice(0, 8) + '… (deck_opened, slide_view, deck_closed will fire)');
 
       var slideEnterTs = Date.now();
       var lastSlideIdx = null;
@@ -7646,31 +7653,45 @@
         return (clone.textContent || '').trim() || (section.className || '').split(' ')[0] || '';
       }
 
-      function track(eventType, metadata) {
+      // track() — primary transport is fetch+keepalive (preflights cleanly, observable in
+      // DevTools Network panel). sendBeacon is used ONLY when isUnload=true, because in
+      // that path the page is being torn down and fetch may be killed by the browser.
+      // Beacon Blob uses text/plain (CORS-safe — no preflight) so the call doesn't get
+      // silently dropped by Chrome. The Edge Function reads body via req.json() which
+      // calls JSON.parse(text) regardless of Content-Type header.
+      function track(eventType, metadata, isUnload) {
         try {
           var body = JSON.stringify({ token: TOKEN, event_type: eventType, metadata: metadata || null });
-          dlog('sending', eventType, metadata);
-          // sendBeacon is the only transport that survives page unload reliably.
-          // Fall back to fetch+keepalive on browsers without sendBeacon.
-          if (navigator.sendBeacon) {
-            var blob = new Blob([body], { type: 'application/json' });
+          dlog('sending', eventType, metadata, isUnload ? '(unload)' : '');
+
+          if (isUnload && navigator.sendBeacon) {
+            var blob = new Blob([body], { type: 'text/plain' });
             var ok = navigator.sendBeacon(TRACK_URL, blob);
             dlog('beacon ok=' + ok);
-            if (!ok && DEBUG) console.warn('[deck-analytics] sendBeacon REJECTED — fallback to fetch');
-            // sendBeacon may reject if queue is full or body too large — fall back
-            if (!ok) {
-              fetch(TRACK_URL, { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json' }, body: body }).catch(function () {});
-            }
-          } else {
-            fetch(TRACK_URL, {
-              method: 'POST', keepalive: true,
-              headers: { 'Content-Type': 'application/json' },
-              body: body,
-            }).catch(function () {});
-            dlog('fetch sent (no sendBeacon support)');
+            console.log('[da] beacon ' + eventType + ' ' + (ok ? 'queued' : 'REJECTED'));
+            if (ok) { setPanel('Last: ' + eventType + ' (beacon)'); return; }
+            // sendBeacon refused — fall through to fetch (best-effort during unload)
           }
+
+          fetch(TRACK_URL, {
+            method: 'POST', keepalive: true,
+            headers: { 'Content-Type': 'application/json' },
+            body: body,
+          }).then(function (r) {
+            if (r.ok) {
+              console.log('[da] sent ' + eventType + (metadata && typeof metadata.slide_index !== 'undefined' ? ' #' + metadata.slide_index : '') + ' → ' + r.status);
+              dlog('fetch ' + r.status);
+            } else {
+              console.warn('[da] FAILED ' + eventType + ' → ' + r.status);
+              dlog('fetch FAILED ' + r.status);
+            }
+          }).catch(function (e) {
+            console.warn('[da] fetch ERROR ' + eventType, e && e.message);
+            dlog('fetch error', e && e.message);
+          });
           setPanel('Last: ' + eventType + (metadata && typeof metadata.slide_index !== 'undefined' ? ' #' + metadata.slide_index + ' (' + metadata.dwell_seconds + 's)' : ''));
         } catch (e) {
+          console.warn('[da] track threw for', eventType, e && e.message);
           dlog('track error', e && e.message);
         }
       }
@@ -7679,6 +7700,7 @@
         if (lastSlideIdx === null) { dlog('flush skipped — never entered a slide'); return; }
         var dwell = Math.round((Date.now() - slideEnterTs) / 1000);
         if (dwell < 1) { dlog('flush skipped — dwell<1s', { idx: lastSlideIdx }); return; }
+        if (dwell > 600) dwell = 600;  // cap at 10 min — prevents idle-tab dwell skew
         track('slide_view', {
           slide_index: lastSlideIdx,
           slide_label: lastSlideLabel,
@@ -7723,14 +7745,27 @@
 
       // Final flush on unload. pagehide is more reliable than beforeunload on mobile Safari;
       // listen to both for max coverage. Guard against double-firing with deckClosedSent.
+      // Pass isUnload=true so track() uses sendBeacon (the only transport that survives a
+      // page being torn down). flushCurrentSlide() also re-routes through track(); patch
+      // it inline by passing isUnload via a closure flag.
       function onLeave() {
         if (deckClosedSent) return;
         deckClosedSent = true;
-        flushCurrentSlide();
+        // Inline final slide_view via sendBeacon so it survives unload
+        if (lastSlideIdx !== null) {
+          var dwell = Math.round((Date.now() - slideEnterTs) / 1000);
+          if (dwell > 600) dwell = 600;  // cap per slide at 10 min
+          if (dwell >= 1) {
+            track('slide_view', { slide_index: lastSlideIdx, slide_label: lastSlideLabel, dwell_seconds: dwell }, true);
+            slidesViewedCount++;
+          }
+        }
+        var total = Math.round((Date.now() - sessionStartTs) / 1000);
+        if (total > 7200) total = 7200;  // cap total at 2 hours — prevents idle-tab skew
         track('deck_closed', {
-          total_dwell_seconds: Math.round((Date.now() - sessionStartTs) / 1000),
+          total_dwell_seconds: total,
           slides_viewed: slidesViewedCount,
-        });
+        }, true);
         dlog('onLeave fired', { slides_viewed: slidesViewedCount });
       }
       window.addEventListener('pagehide', onLeave);

@@ -30,14 +30,24 @@ async function verifyAdminJwt(req: Request): Promise<boolean> {
   }
 }
 
-function generateToken(firstName: string): string {
-  const slug = firstName.toLowerCase().trim().replace(/[^a-z0-9]/g, "");
-  const alphabet = "abcdefghjkmnpqrstuvwxyz23456789"; // no 0/o/l/1/i confusion
-  const bytes = crypto.getRandomValues(new Uint8Array(6));
-  const suffix = Array.from(bytes)
-    .map((b) => alphabet[b % alphabet.length])
-    .join("");
-  return `${slug || "guest"}-${suffix}`;
+// Slugify a full name into "first-last" form.
+//   "Lasha Khoshtaria"   -> "lasha-khoshtaria"
+//   "Dr. Mamuka Kobalava" -> "dr-mamuka-kobalava"
+//   "Felipe"             -> "felipe"
+//   ""                   -> "guest"
+// Strips diacritics, lowercases, replaces whitespace runs with single hyphen,
+// drops anything that isn't [a-z0-9-].
+function slugifyFullName(fullName: string): string {
+  const normalized = fullName
+    .normalize("NFKD")
+    .replace(/[̀-ͯ]/g, "") // strip combining diacritics
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/[^a-z0-9-]/g, "")
+    .replace(/-+/g, "-")
+    .replace(/^-+|-+$/g, "");
+  return normalized || "guest";
 }
 
 // Password format: FirstName + UPPER(first letter of surname).
@@ -73,16 +83,17 @@ Deno.serve(async (req) => {
       const first_name =
         String(body.first_name ?? full_name.split(/\s+/)[0]).toLowerCase().trim();
 
-      // Generate token + retry on rare collision
-      let token = generateToken(first_name);
-      for (let i = 0; i < 5; i++) {
+      // Generate token from full name as "first-last". On collision, append -2, -3, etc.
+      const baseSlug = slugifyFullName(full_name);
+      let token = baseSlug;
+      for (let i = 2; i <= 50; i++) {
         const { data: clash } = await supabase
           .from("investor_invites")
           .select("token")
           .eq("token", token)
           .maybeSingle();
         if (!clash) break;
-        token = generateToken(first_name);
+        token = `${baseSlug}-${i}`;
       }
 
       const password = generatePassword(full_name);

@@ -7596,11 +7596,20 @@
     // without going through the gate (no token in sessionStorage). Mirrors the
     // pattern in src/lib/tracking.ts. Sends: deck_opened, slide_view (per slide
     // change), deck_closed (on unload).
+    //
+    // ?debug=1 in the URL enables console logging + a floating status panel.
     (function deckAnalytics() {
       var TRACK_URL = 'https://kvsqtolsjggpyvdtdpss.supabase.co/functions/v1/track-event';
+      var DEBUG = false;
+      try { DEBUG = new URLSearchParams(location.search).get('debug') === '1'; } catch (_) {}
+      var dlog = DEBUG
+        ? function () { try { console.log.apply(console, ['[deck-analytics]'].concat([].slice.call(arguments))); } catch (_) {} }
+        : function () {};
+
       var TOKEN = null;
       try { TOKEN = sessionStorage.getItem('mm_briefing_token'); } catch (_) {}
-      if (!TOKEN) return;  // preview mode, direct access, or pre-gate — skip tracking
+      dlog('init', { token: TOKEN ? TOKEN.slice(0, 8) + '…' : null, debug: DEBUG });
+      if (!TOKEN) { dlog('no token — skipping all tracking (preview/direct)'); return; }
 
       var slideEnterTs = Date.now();
       var lastSlideIdx = null;
@@ -7608,6 +7617,21 @@
       var sessionStartTs = Date.now();
       var slidesViewedCount = 0;
       var deckClosedSent = false;
+      var readyHandled = false;
+
+      // Floating status panel — only when ?debug=1
+      var panel = null;
+      if (DEBUG) {
+        try {
+          panel = document.createElement('div');
+          panel.style.cssText = 'position:fixed;top:8px;left:8px;z-index:99999;background:rgba(15,23,42,0.92);color:#bee3f8;font:11px/1.4 ui-monospace,monospace;padding:8px 10px;border-radius:6px;border:1px solid rgba(190,227,248,0.3);box-shadow:0 4px 12px rgba(0,0,0,0.4);max-width:320px;pointer-events:none';
+          panel.textContent = '[deck-analytics] init…';
+          document.body && document.body.appendChild(panel);
+        } catch (_) {}
+      }
+      function setPanel(msg) {
+        if (panel) panel.textContent = '[deck-analytics] ' + msg;
+      }
 
       function labelOf(section) {
         if (!section) return '';
@@ -7625,25 +7649,36 @@
       function track(eventType, metadata) {
         try {
           var body = JSON.stringify({ token: TOKEN, event_type: eventType, metadata: metadata || null });
+          dlog('sending', eventType, metadata);
           // sendBeacon is the only transport that survives page unload reliably.
           // Fall back to fetch+keepalive on browsers without sendBeacon.
           if (navigator.sendBeacon) {
             var blob = new Blob([body], { type: 'application/json' });
-            navigator.sendBeacon(TRACK_URL, blob);
+            var ok = navigator.sendBeacon(TRACK_URL, blob);
+            dlog('beacon ok=' + ok);
+            if (!ok && DEBUG) console.warn('[deck-analytics] sendBeacon REJECTED — fallback to fetch');
+            // sendBeacon may reject if queue is full or body too large — fall back
+            if (!ok) {
+              fetch(TRACK_URL, { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json' }, body: body }).catch(function () {});
+            }
           } else {
             fetch(TRACK_URL, {
               method: 'POST', keepalive: true,
               headers: { 'Content-Type': 'application/json' },
               body: body,
             }).catch(function () {});
+            dlog('fetch sent (no sendBeacon support)');
           }
-        } catch (_) { /* tracking must never break UX */ }
+          setPanel('Last: ' + eventType + (metadata && typeof metadata.slide_index !== 'undefined' ? ' #' + metadata.slide_index + ' (' + metadata.dwell_seconds + 's)' : ''));
+        } catch (e) {
+          dlog('track error', e && e.message);
+        }
       }
 
       function flushCurrentSlide() {
-        if (lastSlideIdx === null) return;
+        if (lastSlideIdx === null) { dlog('flush skipped — never entered a slide'); return; }
         var dwell = Math.round((Date.now() - slideEnterTs) / 1000);
-        if (dwell < 1) return;  // skip ultra-short visits (rapid arrow-key skim)
+        if (dwell < 1) { dlog('flush skipped — dwell<1s', { idx: lastSlideIdx }); return; }
         track('slide_view', {
           slide_index: lastSlideIdx,
           slide_label: lastSlideLabel,
@@ -7652,19 +7687,34 @@
         slidesViewedCount++;
       }
 
-      Reveal.on('ready', function (e) {
+      // Race-proof ready handling: Reveal.on('ready') is non-sticky — if Reveal already
+      // initialized before this IIFE ran, the listener never fires. Check isReady()
+      // synchronously and fire the handler immediately if so.
+      function handleReady(slide, indexh) {
+        if (readyHandled) return;
+        readyHandled = true;
         track('deck_opened', {
-          total_slides: Reveal.getTotalSlides(),
+          total_slides: Reveal.getTotalSlides ? Reveal.getTotalSlides() : null,
           viewport: { w: window.innerWidth, h: window.innerHeight },
           referrer: document.referrer || null,
           user_agent: navigator.userAgent,
         });
-        lastSlideIdx = e.indexh;
-        lastSlideLabel = labelOf(e.currentSlide);
+        lastSlideIdx = (typeof indexh === 'number') ? indexh : (Reveal.getIndices ? Reveal.getIndices().h : 0);
+        lastSlideLabel = labelOf(slide || (Reveal.getCurrentSlide && Reveal.getCurrentSlide()));
         slideEnterTs = Date.now();
-      });
+        dlog('ready handled', { idx: lastSlideIdx, label: lastSlideLabel });
+      }
+
+      if (Reveal.isReady && Reveal.isReady()) {
+        dlog('Reveal already ready when IIFE ran — firing handleReady immediately');
+        handleReady(Reveal.getCurrentSlide && Reveal.getCurrentSlide());
+      } else {
+        dlog('Reveal not yet ready — registering listener');
+        Reveal.on('ready', function (e) { handleReady(e.currentSlide, e.indexh); });
+      }
 
       Reveal.on('slidechanged', function (e) {
+        dlog('slidechanged', { from: lastSlideIdx, to: e.indexh, label: labelOf(e.currentSlide) });
         flushCurrentSlide();  // emit slide_view for the slide we just left
         lastSlideIdx = e.indexh;
         lastSlideLabel = labelOf(e.currentSlide);
@@ -7681,9 +7731,12 @@
           total_dwell_seconds: Math.round((Date.now() - sessionStartTs) / 1000),
           slides_viewed: slidesViewedCount,
         });
+        dlog('onLeave fired', { slides_viewed: slidesViewedCount });
       }
       window.addEventListener('pagehide', onLeave);
       window.addEventListener('beforeunload', onLeave);
+
+      setPanel('init ✓ (token=' + TOKEN.slice(0, 8) + '…)');
     })();
 
     // Gallery lightbox — click any screenshot to expand fullscreen

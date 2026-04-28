@@ -2012,7 +2012,452 @@
     }
 
     /* ════════════════════════════════════════════════════════
-       SLIDE 05 — THE GEORGIA WINDOW
+       SLIDE 05 — SCOPE · ONE OPERATING SYSTEM
+       Hospital floor plan: 12 rooms in a 5-col grid surrounding
+       a central glowing AI BRAIN core. Each room labels the
+       department + the encoded gold-standard protocol. Pulse
+       rings radiate from the brain to every room.
+       Visual rhyme: shares plate aesthetic with slide 02 and
+       gradient-hero closing band with slide 04.
+       Color discipline: theme blues only.
+       ════════════════════════════════════════════════════════ */
+    /* Inherit template defaults (.slide-inner padding 80px 90px 60px,
+       headline-big + headline-sub spacing from .reveal h2 / .headline-sub).
+       No scope-specific overrides — title/subhead match every other content
+       slide exactly. */
+    .scope-slide .slide-inner > * { flex-shrink: 0; }
+
+    /* ─── Floor plan — natural aspect, vertically centered in remaining space ─── */
+    .floor-plan {
+      position: relative;
+      width: calc(100% + 140px);
+      margin: auto -70px;
+      padding: 4px 4px 0;
+      border-radius: 14px;
+      background:
+        radial-gradient(ellipse 55% 70% at 50% 50%,
+          rgba(49, 130, 206, 0.10) 0%,
+          rgba(49, 130, 206, 0.04) 45%,
+          transparent 78%);
+    }
+    .floor-plan svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      overflow: visible;
+    }
+
+    /* SVG room styles */
+    .fp-room-shadow { fill: rgba(15, 32, 58, 0.10); filter: blur(4px); }
+    .fp-room-bg {
+      fill: url(#fpRoomGrad);
+      stroke: rgba(190, 227, 248, 0.85);
+      stroke-width: 1;
+    }
+    .fp-room-accent {
+      fill: url(#fpRoomAccent);
+      opacity: 0.92;
+    }
+    .fp-room-icon {
+      stroke: var(--emr-secondary);
+      fill: none;
+      stroke-width: 1.55;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .fp-room-icon-dot { fill: var(--emr-secondary); stroke: none; }
+    .fp-room-name {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 800;
+      font-size: 13px;
+      fill: var(--emr-text-primary);
+      letter-spacing: 0.06em;
+    }
+    .fp-room-std {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 600;
+      font-size: 9.5px;
+      fill: #475569;
+      letter-spacing: 0.005em;
+    }
+    .fp-room-std-star { fill: var(--emr-accent); font-weight: 800; }
+
+    /* Brain panel */
+    .fp-brain-shadow { fill: rgba(15, 32, 58, 0.30); filter: blur(8px); }
+    .fp-brain-bg {
+      fill: url(#fpBrainGrad);
+      stroke: rgba(190, 227, 248, 0.30);
+      stroke-width: 1;
+    }
+    .fp-brain-pattern {
+      fill: url(#fpBrainPattern);
+      opacity: 0.55;
+    }
+    .fp-brain-aura {
+      fill: url(#fpBrainAura);
+    }
+    .fp-brain-core {
+      fill: url(#fpBrainCore);
+      transform-origin: center;
+      transform-box: fill-box;
+    }
+    .fp-brain-ring {
+      fill: none;
+      stroke: rgba(190, 227, 248, 0.55);
+      stroke-width: 1.2;
+    }
+    .fp-brain-ring.r1 { stroke-dasharray: 3 3; }
+    .fp-brain-ring.r2 { stroke-dasharray: 2 4; opacity: 0.55; }
+    .fp-brain-ring.r3 { stroke-dasharray: 1 5; opacity: 0.30; }
+    .fp-brain-title {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 800;
+      font-size: 22px;
+      fill: #ffffff;
+      letter-spacing: 0.22em;
+      text-anchor: middle;
+    }
+    /* Foundation strip — MediMind EMR core beneath all rooms */
+    .fp-foundation-text {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 800;
+      font-size: 11px;
+      fill: #ffffff;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+    .fp-foundation {
+      opacity: 0;
+      transition: opacity 0.55s ease;
+      transition-delay: 0.32s;
+    }
+    .scope-slide.present .fp-foundation { opacity: 1; }
+    .fp-brain-sub {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 500;
+      font-size: 10px;
+      fill: rgba(255, 255, 255, 0.85);
+      letter-spacing: 0.06em;
+      text-anchor: middle;
+    }
+    .fp-brain-tagline {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 9px;
+      fill: var(--emr-light-accent);
+      letter-spacing: 0.18em;
+      text-anchor: middle;
+      text-transform: uppercase;
+    }
+    .fp-pulse-line {
+      fill: none;
+      stroke: url(#fpPulseLine);
+      stroke-width: 0.9;
+      stroke-dasharray: 2 4;
+    }
+    .fp-pulse-end {
+      fill: var(--emr-light-accent);
+      filter: drop-shadow(0 0 3px rgba(190, 227, 248, 0.8));
+    }
+
+    /* Animations */
+    @keyframes fpBrainPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.04); }
+    }
+    @keyframes fpRingExpand {
+      0%   { r: 38; opacity: 0.65; }
+      100% { r: 92; opacity: 0; }
+    }
+    @keyframes fpAuraPulse {
+      0%, 100% { opacity: 0.55; }
+      50%      { opacity: 0.85; }
+    }
+    .scope-slide.present .fp-brain-core {
+      animation: fpBrainPulse 3.4s ease-in-out infinite;
+    }
+    .scope-slide.present .fp-brain-aura {
+      animation: fpAuraPulse 3.4s ease-in-out infinite;
+    }
+    .scope-slide.present .fp-brain-ring.r1 { animation: fpRingExpand 3.4s ease-out infinite; }
+    .scope-slide.present .fp-brain-ring.r2 { animation: fpRingExpand 3.4s ease-out infinite 1.1s; }
+    .scope-slide.present .fp-brain-ring.r3 { animation: fpRingExpand 3.4s ease-out infinite 2.2s; }
+
+    /* Room entry stagger — opacity-only so we don't clobber the SVG
+       transform="translate(...)" attribute that positions each room. */
+    .fp-room {
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    .scope-slide.present .fp-room { opacity: 1; }
+    .scope-slide.present .fp-room:nth-child(1)  { transition-delay: 0.40s; }
+    .scope-slide.present .fp-room:nth-child(2)  { transition-delay: 0.46s; }
+    .scope-slide.present .fp-room:nth-child(3)  { transition-delay: 0.52s; }
+    .scope-slide.present .fp-room:nth-child(4)  { transition-delay: 0.58s; }
+    .scope-slide.present .fp-room:nth-child(5)  { transition-delay: 0.64s; }
+    .scope-slide.present .fp-room:nth-child(6)  { transition-delay: 0.70s; }
+    .scope-slide.present .fp-room:nth-child(7)  { transition-delay: 0.76s; }
+    .scope-slide.present .fp-room:nth-child(8)  { transition-delay: 0.82s; }
+    .scope-slide.present .fp-room:nth-child(9)  { transition-delay: 0.88s; }
+    .scope-slide.present .fp-room:nth-child(10) { transition-delay: 0.94s; }
+    .scope-slide.present .fp-room:nth-child(11) { transition-delay: 1.00s; }
+    .scope-slide.present .fp-room:nth-child(12) { transition-delay: 1.06s; }
+
+    /* ─── Three proof cards ─── */
+    .scope-proofs {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+      margin: 4px 0 0;
+    }
+    .scope-proof {
+      position: relative;
+      padding: 8px 12px 9px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      border: 1px solid var(--emr-border);
+      border-radius: 10px;
+      box-shadow:
+        0 1px 2px rgba(15, 32, 58, 0.04),
+        0 4px 14px rgba(15, 32, 58, 0.05);
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .scope-proof::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--emr-gradient-primary);
+      opacity: 0.9;
+    }
+    .scope-slide.present .scope-proof { opacity: 1; transform: translateY(0); }
+    .scope-slide.present .scope-proof:nth-child(1) { transition-delay: 1.18s; }
+    .scope-slide.present .scope-proof:nth-child(2) { transition-delay: 1.26s; }
+    .scope-slide.present .scope-proof:nth-child(3) { transition-delay: 1.34s; }
+    .scope-proof-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.34em;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--emr-accent);
+      margin-bottom: 3px;
+    }
+    .scope-proof-eyebrow-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 12px; height: 12px;
+      padding: 0 3px;
+      background: var(--emr-gradient-primary);
+      border-radius: 999px;
+      color: #ffffff;
+      font-size: 1em;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+    .scope-proof-title {
+      font-size: 0.66em;
+      font-weight: 800;
+      color: var(--emr-text-primary);
+      line-height: 1.16;
+      letter-spacing: -0.01em;
+      margin: 0 0 3px;
+    }
+    .scope-proof-title em {
+      font-style: normal;
+      background: var(--emr-gradient-primary);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .scope-proof-body {
+      font-size: 0.48em;
+      font-weight: 500;
+      color: var(--emr-text-body);
+      line-height: 1.38;
+      margin: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .scope-proof-body strong {
+      color: var(--emr-text-primary);
+      font-weight: 700;
+    }
+    .scope-proof-body em {
+      font-style: normal;
+      color: var(--emr-secondary);
+      font-weight: 700;
+    }
+
+    /* Closing band uses the cat-slide template default styling
+       (no scope-specific size overrides). */
+    .scope-slide .cat-footer { transition-delay: 1.50s; }
+    .scope-slide .cat-footer-hero {
+      margin-top: 6px;
+    }
+    .scope-slide .cat-footer-hero .cat-footer-sub em {
+      color: var(--emr-light-accent);
+      font-weight: 800;
+      font-style: italic;
+    }
+
+    /* Desktop: hide mobile-only fallback */
+    .fp-mobile { display: none; }
+
+    /* Mobile (≤ 768px) — swap SVG floor plan for native HTML cards */
+    @media (max-width: 768px) {
+      .scope-slide .slide-inner {
+        padding: 36px 22px 24px !important;
+      }
+      .scope-slide .headline-big {
+        font-size: 1.55em !important;
+        line-height: 1.18 !important;
+      }
+      .scope-slide .headline-sub {
+        font-size: 0.86em !important;
+        line-height: 1.42 !important;
+        margin: 8px 0 14px !important;
+      }
+      .scope-slide .floor-plan {
+        flex: 0 0 auto !important;
+        width: 100% !important;
+        margin: 8px 0 0 !important;
+        padding: 0 !important;
+        background: none !important;
+        display: block !important;
+      }
+      .scope-slide .floor-plan svg { display: none !important; }
+      .fp-mobile {
+        display: flex !important;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+      }
+      .fp-mobile-brain {
+        position: relative;
+        background: linear-gradient(135deg, #0f2947 0%, #1a365d 50%, #2b6cb0 100%);
+        padding: 14px 18px 16px;
+        border-radius: 14px;
+        color: #ffffff;
+        text-align: center;
+        box-shadow: 0 10px 22px rgba(15, 32, 58, 0.25),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        overflow: hidden;
+      }
+      .fp-mobile-brain::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+        background-size: 14px 14px;
+        pointer-events: none;
+      }
+      .fp-mobile-brain-tagline {
+        position: relative;
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        color: var(--emr-light-accent);
+        text-transform: uppercase;
+        margin-bottom: 4px;
+      }
+      .reveal .scope-slide .fp-mobile-brain-title {
+        position: relative;
+        font-size: 26px;
+        font-weight: 800;
+        letter-spacing: 0.22em;
+        color: #ffffff !important;
+        margin: 2px 0 6px !important;
+        line-height: 1;
+      }
+      .reveal .scope-slide .fp-mobile-room h4 {
+        margin: 5px 0 4px !important;
+      }
+      .fp-mobile-brain-sub {
+        position: relative;
+        font-size: 11px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.85);
+        letter-spacing: 0.04em;
+        margin: 0;
+        line-height: 1.35;
+      }
+      .fp-mobile-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+      .fp-mobile-room {
+        position: relative;
+        padding: 10px 12px 11px;
+        background: linear-gradient(180deg, #ffffff 0%, #eef6ff 100%);
+        border: 1px solid rgba(190, 227, 248, 0.85);
+        border-radius: 9px;
+        overflow: hidden;
+        box-shadow: 0 1px 2px rgba(15, 32, 58, 0.04),
+                    0 4px 10px rgba(15, 32, 58, 0.04);
+      }
+      .fp-mobile-room::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 2.5px;
+        background: linear-gradient(90deg, #1a365d 0%, #2b6cb0 50%, #3182ce 100%);
+      }
+      .fp-mobile-room h4 {
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        color: var(--emr-text-primary);
+        margin: 5px 0 4px;
+        line-height: 1.1;
+      }
+      .fp-mobile-room p {
+        font-size: 10px;
+        font-weight: 500;
+        color: var(--emr-text-body);
+        line-height: 1.32;
+        margin: 0;
+      }
+      .fp-mobile-foundation {
+        background: linear-gradient(135deg, #0f2947 0%, #1a365d 50%, #2b6cb0 100%);
+        color: #ffffff;
+        text-align: center;
+        padding: 10px 14px;
+        border-radius: 10px;
+        font-size: 9.5px;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        line-height: 1.3;
+        box-shadow: 0 6px 16px rgba(15, 32, 58, 0.22);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .scope-slide.present .fp-brain-core,
+      .scope-slide.present .fp-brain-aura,
+      .scope-slide.present .fp-brain-ring.r1,
+      .scope-slide.present .fp-brain-ring.r2,
+      .scope-slide.present .fp-brain-ring.r3 {
+        animation: none !important;
+      }
+      .scope-slide .fp-room,
+      .scope-slide .scope-proof {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+
+    /* ════════════════════════════════════════════════════════
+       SLIDE 06 — THE GEORGIA WINDOW
        Uses .headline-big + .headline-sub. Vertical padding tightened
        to fit timeline + 3 cards + stats; horizontal padding stays at
        90px so the eyebrow/headline align exactly with the Team slide.
@@ -6590,11 +7035,338 @@
       </section>
 
       <!-- ═══════════════════════════════════════════════
-           SLIDE 03: THE GEORGIA WINDOW — regulatory runway
+           SLIDE 05: SCOPE — One operating system, every room
+           ═══════════════════════════════════════════════ -->
+      <section class="cat-slide scope-slide">
+        <div class="slide-inner">
+          <div class="slide-label"><span class="label-num">05</span>INSIDE MEDIMIND</div>
+
+          <h2 class="headline-big"><em>MediMind</em> is the EMR. The LIS. The pharmacy. The HR… <em>all in one, AI-native</em>.</h2>
+          <p class="headline-sub">Every department <em>covered</em>. Every clinician <em>levelled up</em>. Every shift <em>smarter than the last</em>.</p>
+
+          <!-- Hospital floor plan: 12 rooms surrounding a central AI brain -->
+          <div class="floor-plan">
+            <svg viewBox="0 0 1100 326" xmlns="http://www.w3.org/2000/svg" aria-label="Inside MediMind: 12 hospital modules built on the MediMind EMR core">
+              <defs>
+                <!-- Room body gradient -->
+                <linearGradient id="fpRoomGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#ffffff"/>
+                  <stop offset="100%" stop-color="#eef6ff"/>
+                </linearGradient>
+                <!-- Room top accent stripe -->
+                <linearGradient id="fpRoomAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#1a365d"/>
+                  <stop offset="50%" stop-color="#2b6cb0"/>
+                  <stop offset="100%" stop-color="#3182ce"/>
+                </linearGradient>
+                <!-- Brain panel deep gradient -->
+                <linearGradient id="fpBrainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#0f2947"/>
+                  <stop offset="50%" stop-color="#1a365d"/>
+                  <stop offset="100%" stop-color="#2b6cb0"/>
+                </linearGradient>
+                <!-- Brain hex/dot pattern overlay -->
+                <pattern id="fpBrainPattern" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
+                  <circle cx="7" cy="7" r="0.6" fill="rgba(190, 227, 248, 0.35)"/>
+                </pattern>
+                <!-- Brain aura -->
+                <radialGradient id="fpBrainAura" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="rgba(190, 227, 248, 0.55)"/>
+                  <stop offset="55%" stop-color="rgba(49, 130, 206, 0.18)"/>
+                  <stop offset="100%" stop-color="rgba(49, 130, 206, 0)"/>
+                </radialGradient>
+                <!-- Brain core white-hot center -->
+                <radialGradient id="fpBrainCore" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
+                  <stop offset="35%" stop-color="#ffffff" stop-opacity="0.95"/>
+                  <stop offset="65%" stop-color="#bee3f8" stop-opacity="0.7"/>
+                  <stop offset="100%" stop-color="#3182ce" stop-opacity="0"/>
+                </radialGradient>
+                <!-- Pulse line gradient -->
+                <linearGradient id="fpPulseLine" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="rgba(190, 227, 248, 0.85)"/>
+                  <stop offset="100%" stop-color="rgba(49, 130, 206, 0.20)"/>
+                </linearGradient>
+                <!-- Reusable star for "★" room standard markers -->
+                <symbol id="fpStar" viewBox="0 0 10 10">
+                  <polygon points="5,0.5 6.2,3.7 9.5,3.9 6.9,6 7.9,9.3 5,7.4 2.1,9.3 3.1,6 0.5,3.9 3.8,3.7" fill="currentColor"/>
+                </symbol>
+              </defs>
+
+              <!-- ─── FOUNDATION STRIP: MediMind EMR core beneath every module ─── -->
+              <g class="fp-foundation">
+                <rect class="fp-foundation-shadow" x="2" y="298" width="1096" height="22" rx="6" fill="rgba(15, 32, 58, 0.18)"/>
+                <rect class="fp-foundation-bar" x="0" y="294" width="1100" height="26" rx="6" fill="url(#fpBrainGrad)"/>
+                <rect class="fp-foundation-pattern" x="0" y="294" width="1100" height="26" rx="6" fill="url(#fpBrainPattern)"/>
+                <text class="fp-foundation-text" x="550" y="311" text-anchor="middle">★  EMR · CORE · FHIR R4  —  ONE PLATFORM, EVERY MODULE  ★</text>
+              </g>
+
+              <!-- ─── ROW 1: Clinical Floor (Y=12, h=68) ─── -->
+              <g class="fp-rooms-row1">
+                <!-- ER -->
+                <g class="fp-room" transform="translate(24, 12)">
+                  <rect class="fp-room-shadow" x="2" y="5" width="192" height="64" rx="7"/>
+                  <rect class="fp-room-bg" x="0" y="0" width="192" height="68" rx="7"/>
+                  <rect class="fp-room-accent" x="0" y="0" width="192" height="2.5" rx="1.2"/>
+                  <g class="fp-room-icon" transform="translate(13, 12)">
+                    <path d="M0 8 L3 8 L5 4 L7 12 L9 6 L11 9 L14 9"/>
+                    <circle class="fp-room-icon-dot" cx="14" cy="9" r="1.4"/>
+                  </g>
+                  <text class="fp-room-name" x="36" y="22">ER</text>
+                  <use href="#fpStar" x="13" y="38" width="7.5" height="7.5" class="fp-room-std-star"/>
+                  <text class="fp-room-std" x="24" y="44">ESI triage + sepsis screening</text>
+                  <text class="fp-room-std" x="13" y="58" style="fill:var(--emr-text-light);font-weight:500;font-size:8px;letter-spacing:0.08em;text-transform:uppercase;">Triage · Resus · Disposition</text>
+                </g>
+                <!-- ICU -->
+                <g class="fp-room" transform="translate(238, 12)">
+                  <rect class="fp-room-shadow" x="2" y="5" width="192" height="64" rx="7"/>
+                  <rect class="fp-room-bg" x="0" y="0" width="192" height="68" rx="7"/>
+                  <rect class="fp-room-accent" x="0" y="0" width="192" height="2.5" rx="1.2"/>
+                  <g class="fp-room-icon" transform="translate(13, 12)">
+                    <rect x="0" y="2" width="14" height="9" rx="1.2"/>
+                    <path d="M2 7 L4 7 L5 4 L7 9 L9 5 L11 7 L13 7"/>
+                  </g>
+                  <text class="fp-room-name" x="36" y="22">ICU</text>
+                  <use href="#fpStar" x="13" y="38" width="7.5" height="7.5" class="fp-room-std-star"/>
+                  <text class="fp-room-std" x="24" y="44">Continuous monitoring + EWS</text>
+                  <text class="fp-room-std" x="13" y="58" style="fill:var(--emr-text-light);font-weight:500;font-size:8px;letter-spacing:0.08em;text-transform:uppercase;">Vitals · Sepsis · Bundles</text>
+                </g>
+                <!-- OR -->
+                <g class="fp-room" transform="translate(452, 12)">
+                  <rect class="fp-room-shadow" x="2" y="5" width="192" height="64" rx="7"/>
+                  <rect class="fp-room-bg" x="0" y="0" width="192" height="68" rx="7"/>
+                  <rect class="fp-room-accent" x="0" y="0" width="192" height="2.5" rx="1.2"/>
+                  <g class="fp-room-icon" transform="translate(13, 12)">
+                    <path d="M0 11 L9 2"/>
+                    <path d="M8 1 L11 4 L13 6 L11 8 L8 5 z"/>
+                    <circle class="fp-room-icon-dot" cx="1" cy="11" r="1"/>
+                  </g>
+                  <text class="fp-room-name" x="36" y="22">OR</text>
+                  <use href="#fpStar" x="13" y="38" width="7.5" height="7.5" class="fp-room-std-star"/>
+                  <text class="fp-room-std" x="24" y="44">Pre-op + structured op notes</text>
+                  <text class="fp-room-std" x="13" y="58" style="fill:var(--emr-text-light);font-weight:500;font-size:8px;letter-spacing:0.08em;text-transform:uppercase;">Anesthesia · Theatre · Recovery</text>
+                </g>
+                <!-- WARDS -->
+                <g class="fp-room" transform="translate(666, 12)">
+                  <rect class="fp-room-shadow" x="2" y="5" width="192" height="64" rx="7"/>
+                  <rect class="fp-room-bg" x="0" y="0" width="192" height="68" rx="7"/>
+                  <rect class="fp-room-accent" x="0" y="0" width="192" height="2.5" rx="1.2"/>
+                  <g class="fp-room-icon" transform="translate(13, 12)">
+                    <path d="M0 11 L0 6 L4 6 L4 4 L14 4 L14 11"/>
+                    <circle class="fp-room-icon-dot" cx="3.5" cy="8" r="1.2"/>
+                    <path d="M5 8 L14 8"/>
+                  </g>
+                  <text class="fp-room-name" x="36" y="22">WARDS</text>
+                  <use href="#fpStar" x="13" y="38" width="7.5" height="7.5" class="fp-room-std-star"/>
+                  <text class="fp-room-std" x="24" y="44">I-PASS handoff + bed flow</text>
+                  <text class="fp-room-std" x="13" y="58" style="fill:var(--emr-text-light);font-weight:500;font-size:8px;letter-spacing:0.08em;text-transform:uppercase;">Inpatient · Discharge · Notes</text>
+                </g>
+                <!-- PACS -->
+                <g class="fp-room" transform="translate(880, 12)">
+                  <rect class="fp-room-shadow" x="2" y="5" width="192" height="64" rx="7"/>
+                  <rect class="fp-room-bg" x="0" y="0" width="192" height="68" rx="7"/>
+                  <rect class="fp-room-accent" x="0" y="0" width="192" height="2.5" rx="1.2"/>
+                  <g class="fp-room-icon" transform="translate(13, 12)">
+                    <rect x="0" y="0" width="14" height="12" rx="1"/>
+                    <circle cx="7" cy="6" r="3"/>
+                    <path d="M7 3 L7 6 L9 8"/>
+                  </g>
+                  <text class="fp-room-name" x="36" y="22">PACS</text>
+                  <use href="#fpStar" x="13" y="38" width="7.5" height="7.5" class="fp-room-std-star"/>
+                  <text class="fp-room-std" x="24" y="44">Cornerstone3D + radiology</text>
+                  <text class="fp-room-std" x="13" y="58" style="fill:var(--emr-text-light);font-weight:500;font-size:8px;letter-spacing:0.08em;text-transform:uppercase;">DICOM · CT · MRI · X-Ray</text>
+                </g>
+              </g>
+
+              <!-- ─── ROW 2: LAB · BRAIN · PHARMACY (Y=92, h=106) ─── -->
+              <g class="fp-rooms-row2">
+                <!-- LAB (left edge) -->
+                <g class="fp-room" transform="translate(24, 92)">
+                  <rect class="fp-room-shadow" x="2" y="5" width="192" height="100" rx="7"/>
+                  <rect class="fp-room-bg" x="0" y="0" width="192" height="106" rx="7"/>
+                  <rect class="fp-room-accent" x="0" y="0" width="192" height="2.5" rx="1.2"/>
+                  <g class="fp-room-icon" transform="translate(13, 14)">
+                    <path d="M5 0 L5 4 L1 12 Q 1 14 3 14 L11 14 Q 13 14 13 12 L9 4 L9 0 Z"/>
+                    <path d="M3 0 L11 0"/>
+                    <circle class="fp-room-icon-dot" cx="6" cy="10" r="0.7"/>
+                    <circle class="fp-room-icon-dot" cx="9" cy="9" r="0.7"/>
+                  </g>
+                  <text class="fp-room-name" x="36" y="24">LAB · LIS</text>
+                  <use href="#fpStar" x="13" y="46" width="7.5" height="7.5" class="fp-room-std-star"/>
+                  <text class="fp-room-std" x="24" y="52">Critical-value protocols</text>
+                  <use href="#fpStar" x="13" y="64" width="7.5" height="7.5" class="fp-room-std-star"/>
+                  <text class="fp-room-std" x="24" y="70">Specimen + auto-routing</text>
+                  <text class="fp-room-std" x="13" y="93" style="fill:var(--emr-text-light);font-weight:500;font-size:8px;letter-spacing:0.08em;text-transform:uppercase;">Chem · Heme · Micro · Path</text>
+                </g>
+
+                <!-- ★ AI BRAIN CORE — center band, 3 cells wide (cols 2-4) -->
+                <g class="fp-brain" transform="translate(238, 92)">
+                  <!-- Drop shadow -->
+                  <rect class="fp-brain-shadow" x="4" y="8" width="618" height="98" rx="13"/>
+                  <!-- Main body -->
+                  <rect class="fp-brain-bg" x="0" y="0" width="618" height="106" rx="13"/>
+                  <!-- Subtle dot pattern overlay -->
+                  <rect class="fp-brain-pattern" x="0" y="0" width="618" height="106" rx="13"/>
+                  <!-- Aura ellipse glow behind core -->
+                  <ellipse class="fp-brain-aura" cx="309" cy="53" rx="280" ry="68"/>
+                  <!-- Pulse rings around core -->
+                  <circle class="fp-brain-ring r3" cx="309" cy="53" r="60"/>
+                  <circle class="fp-brain-ring r2" cx="309" cy="53" r="48"/>
+                  <circle class="fp-brain-ring r1" cx="309" cy="53" r="36"/>
+                  <!-- Core white-hot center -->
+                  <circle class="fp-brain-core" cx="309" cy="53" r="30"/>
+                  <!-- Inner brain icon -->
+                  <g transform="translate(298, 41)" stroke="#1a365d" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 1 a 4 4 0 0 0 -8 2 a 4 4 0 0 0 1.5 6 a 4 4 0 0 0 6.5 4 a 4 4 0 0 0 6.5 -4 a 4 4 0 0 0 1.5 -6 a 4 4 0 0 0 -8 -2 z"/>
+                    <path d="M9 5 v 9"/>
+                    <path d="M5 8 q 4 -2 8 0"/>
+                  </g>
+                  <!-- Headers -->
+                  <text class="fp-brain-tagline" x="309" y="18">ONE CODEBASE  ·  GROUND-UP ON FHIR R4  ·  ONE COMPANY</text>
+                  <text class="fp-brain-title" x="309" y="92">MEDIMIND</text>
+                  <text class="fp-brain-sub" x="309" y="102">EMR · LIS · RIS · Pharmacy · HR · every module — all built by us</text>
+                </g>
+
+                <!-- PHARMACY (right edge) -->
+                <g class="fp-room" transform="translate(880, 92)">
+                  <rect class="fp-room-shadow" x="2" y="5" width="192" height="100" rx="7"/>
+                  <rect class="fp-room-bg" x="0" y="0" width="192" height="106" rx="7"/>
+                  <rect class="fp-room-accent" x="0" y="0" width="192" height="2.5" rx="1.2"/>
+                  <g class="fp-room-icon" transform="translate(13, 14)">
+                    <rect x="2" y="0" width="10" height="14" rx="2"/>
+                    <path d="M2 5 L12 5"/>
+                    <path d="M5 8 L9 8 M 7 7 L 7 11"/>
+                  </g>
+                  <text class="fp-room-name" x="36" y="24">PHARMACY · MAR</text>
+                  <use href="#fpStar" x="13" y="46" width="7.5" height="7.5" class="fp-room-std-star"/>
+                  <text class="fp-room-std" x="24" y="52">Beers + native DDI</text>
+                  <use href="#fpStar" x="13" y="64" width="7.5" height="7.5" class="fp-room-std-star"/>
+                  <text class="fp-room-std" x="24" y="70">Dose + allergy checks</text>
+                  <text class="fp-room-std" x="13" y="93" style="fill:var(--emr-text-light);font-weight:500;font-size:8px;letter-spacing:0.08em;text-transform:uppercase;">Rx · MAR · Dispense Queue</text>
+                </g>
+              </g>
+
+              <!-- ─── ROW 3: Operations & Patient (Y=218, h=68) ─── -->
+              <g class="fp-rooms-row3">
+                <!-- COORDINATOR -->
+                <g class="fp-room" transform="translate(24, 218)">
+                  <rect class="fp-room-shadow" x="2" y="5" width="192" height="64" rx="7"/>
+                  <rect class="fp-room-bg" x="0" y="0" width="192" height="68" rx="7"/>
+                  <rect class="fp-room-accent" x="0" y="0" width="192" height="2.5" rx="1.2"/>
+                  <g class="fp-room-icon" transform="translate(13, 12)">
+                    <rect x="0" y="2" width="14" height="11" rx="1"/>
+                    <path d="M0 5 L14 5"/>
+                    <path d="M3 0 L3 4 M 11 0 L 11 4"/>
+                    <path d="M3 9 L5 11 L9 7"/>
+                  </g>
+                  <text class="fp-room-name" x="36" y="22">COORDINATOR</text>
+                  <use href="#fpStar" x="13" y="38" width="7.5" height="7.5" class="fp-room-std-star"/>
+                  <text class="fp-room-std" x="24" y="44">Capacity foresight + bed flow</text>
+                  <text class="fp-room-std" x="13" y="58" style="fill:var(--emr-text-light);font-weight:500;font-size:8px;letter-spacing:0.08em;text-transform:uppercase;">Registration · Front Desk · Slots</text>
+                </g>
+                <!-- BILLING -->
+                <g class="fp-room" transform="translate(238, 218)">
+                  <rect class="fp-room-shadow" x="2" y="5" width="192" height="64" rx="7"/>
+                  <rect class="fp-room-bg" x="0" y="0" width="192" height="68" rx="7"/>
+                  <rect class="fp-room-accent" x="0" y="0" width="192" height="2.5" rx="1.2"/>
+                  <g class="fp-room-icon" transform="translate(13, 12)">
+                    <rect x="2" y="0" width="11" height="13" rx="0.5"/>
+                    <path d="M5 4 L10 4 M 5 7 L 10 7 M 5 10 L 8 10"/>
+                  </g>
+                  <text class="fp-room-name" x="36" y="22">BILLING · CLAIMS</text>
+                  <use href="#fpStar" x="13" y="38" width="7.5" height="7.5" class="fp-room-std-star"/>
+                  <text class="fp-room-std" x="24" y="44">Denial-pattern + AI appeals</text>
+                  <text class="fp-room-std" x="13" y="58" style="fill:var(--emr-text-light);font-weight:500;font-size:8px;letter-spacing:0.08em;text-transform:uppercase;">Charges · Claims · Coverage</text>
+                </g>
+                <!-- WAREHOUSE -->
+                <g class="fp-room" transform="translate(452, 218)">
+                  <rect class="fp-room-shadow" x="2" y="5" width="192" height="64" rx="7"/>
+                  <rect class="fp-room-bg" x="0" y="0" width="192" height="68" rx="7"/>
+                  <rect class="fp-room-accent" x="0" y="0" width="192" height="2.5" rx="1.2"/>
+                  <g class="fp-room-icon" transform="translate(13, 12)">
+                    <rect x="0" y="0" width="6" height="6" rx="0.5"/>
+                    <rect x="8" y="0" width="6" height="6" rx="0.5"/>
+                    <rect x="4" y="7" width="6" height="6" rx="0.5"/>
+                  </g>
+                  <text class="fp-room-name" x="36" y="22">WAREHOUSE</text>
+                  <use href="#fpStar" x="13" y="38" width="7.5" height="7.5" class="fp-room-std-star"/>
+                  <text class="fp-room-std" x="24" y="44">Predictive ordering + ledger</text>
+                  <text class="fp-room-std" x="13" y="58" style="fill:var(--emr-text-light);font-weight:500;font-size:8px;letter-spacing:0.08em;text-transform:uppercase;">Supply · Returns · Analytics</text>
+                </g>
+                <!-- HR -->
+                <g class="fp-room" transform="translate(666, 218)">
+                  <rect class="fp-room-shadow" x="2" y="5" width="192" height="64" rx="7"/>
+                  <rect class="fp-room-bg" x="0" y="0" width="192" height="68" rx="7"/>
+                  <rect class="fp-room-accent" x="0" y="0" width="192" height="2.5" rx="1.2"/>
+                  <g class="fp-room-icon" transform="translate(13, 12)">
+                    <circle cx="4" cy="3.5" r="2"/>
+                    <path d="M0 12 Q 0 7 4 7 Q 8 7 8 12"/>
+                    <circle cx="11" cy="4.5" r="1.5"/>
+                    <path d="M8 12 Q 8 8 11 8 Q 14 8 14 12"/>
+                  </g>
+                  <text class="fp-room-name" x="36" y="22">HR · STAFF</text>
+                  <use href="#fpStar" x="13" y="38" width="7.5" height="7.5" class="fp-room-std-star"/>
+                  <text class="fp-room-std" x="24" y="44">Shift fairness + burnout signals</text>
+                  <text class="fp-room-std" x="13" y="58" style="fill:var(--emr-text-light);font-weight:500;font-size:8px;letter-spacing:0.08em;text-transform:uppercase;">Roles · Permissions · MOH</text>
+                </g>
+                <!-- PORTAL -->
+                <g class="fp-room" transform="translate(880, 218)">
+                  <rect class="fp-room-shadow" x="2" y="5" width="192" height="64" rx="7"/>
+                  <rect class="fp-room-bg" x="0" y="0" width="192" height="68" rx="7"/>
+                  <rect class="fp-room-accent" x="0" y="0" width="192" height="2.5" rx="1.2"/>
+                  <g class="fp-room-icon" transform="translate(13, 12)">
+                    <rect x="2" y="0" width="10" height="14" rx="1.5"/>
+                    <path d="M5 11 L9 11"/>
+                    <path d="M4 2 L10 2"/>
+                  </g>
+                  <text class="fp-room-name" x="36" y="22">PATIENT · PORTAL</text>
+                  <use href="#fpStar" x="13" y="38" width="7.5" height="7.5" class="fp-room-std-star"/>
+                  <text class="fp-room-std" x="24" y="44">Health-literacy graded msgs</text>
+                  <text class="fp-room-std" x="13" y="58" style="fill:var(--emr-text-light);font-weight:500;font-size:8px;letter-spacing:0.08em;text-transform:uppercase;">Notifications · Records · Appts</text>
+                </g>
+              </g>
+            </svg>
+
+            <!-- MOBILE NATIVE LAYOUT: replaces the SVG on narrow viewports -->
+            <div class="fp-mobile" aria-hidden="false">
+              <div class="fp-mobile-brain">
+                <div class="fp-mobile-brain-tagline">ONE CODEBASE · GROUND-UP ON FHIR R4</div>
+                <h3 class="fp-mobile-brain-title">MEDIMIND</h3>
+                <p class="fp-mobile-brain-sub">EMR · LIS · RIS · Pharmacy · HR · every module — built by us</p>
+              </div>
+
+              <div class="fp-mobile-grid">
+                <article class="fp-mobile-room"><h4>ER</h4><p>ESI triage + sepsis screening</p></article>
+                <article class="fp-mobile-room"><h4>ICU</h4><p>Continuous monitoring + EWS</p></article>
+                <article class="fp-mobile-room"><h4>OR</h4><p>Pre-op + structured op notes</p></article>
+                <article class="fp-mobile-room"><h4>WARDS</h4><p>I-PASS handoff + bed flow</p></article>
+                <article class="fp-mobile-room"><h4>PACS</h4><p>Cornerstone3D + radiology</p></article>
+                <article class="fp-mobile-room"><h4>LAB · LIS</h4><p>Critical-value + auto-routing</p></article>
+                <article class="fp-mobile-room"><h4>PHARMACY · MAR</h4><p>Beers + native DDI</p></article>
+                <article class="fp-mobile-room"><h4>COORDINATOR</h4><p>Capacity foresight + bed flow</p></article>
+                <article class="fp-mobile-room"><h4>BILLING · CLAIMS</h4><p>Denial-pattern + AI appeals</p></article>
+                <article class="fp-mobile-room"><h4>WAREHOUSE</h4><p>Predictive ordering + ledger</p></article>
+                <article class="fp-mobile-room"><h4>HR · STAFF</h4><p>Shift fairness + burnout signals</p></article>
+                <article class="fp-mobile-room"><h4>PATIENT · PORTAL</h4><p>Health-literacy graded msgs</p></article>
+              </div>
+
+              <div class="fp-mobile-foundation">★  EMR · CORE · FHIR R4  —  ONE PLATFORM, EVERY MODULE  ★</div>
+            </div>
+          </div>
+
+        </div>
+        <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
+        <aside class="notes">
+          The slide that answers the unspoken question after slide 04. They are apps. We are the OS — but what does an OS actually contain? Twelve rooms, every department a hospital runs. ER, ICU, OR, Wards, PACS on the clinical floor. Lab, Pharmacy on the diagnostics-and-therapeutics layer. Coordinator, Billing, Warehouse, HR, Patient Portal on the operations layer. And one AI brain reasoning across all of them — the same brain pre-checks every claim, every prescription, every note. Each room names the gold-standard protocol it has encoded — Mayo critical-value, Beers Criteria, ESI triage, I-PASS, Cornerstone3D. The protocol is the keystroke. After MediMind, every clinician operates at the level of the best one — because the best practice, the best AI, the best decision support live inside every screen, every workflow, every department. And every keystroke shorter is a complaint a clinician fixed last Tuesday in a live hospital. Built where lives depend on it.
+        </aside>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════
+           SLIDE 06: THE GEORGIA WINDOW — regulatory runway
            ═══════════════════════════════════════════════ -->
       <section class="gw-slide">
         <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">05</span>THE GEORGIA WINDOW · REGULATORY RUNWAY</div>
+          <div class="slide-label"><span class="label-num">06</span>THE GEORGIA WINDOW · REGULATORY RUNWAY</div>
 
           <h2 class="headline-big"><em>12–28 months</em> of head start.</h2>
           <p class="headline-sub">While US and EU competitors queue for FDA clearance and EU AI Act conformity, we ship full-stack agentic AI in live Georgian hospitals today.</p>
@@ -6691,7 +7463,7 @@
            ═══════════════════════════════════════════════ -->
       <section class="bm-slide">
         <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">06</span>BUSINESS MODEL · PRICING</div>
+          <div class="slide-label"><span class="label-num">07</span>BUSINESS MODEL · PRICING</div>
           <h2 class="headline-big">Priced where <em>hospitals are</em>.</h2>
           <p class="headline-sub">Same product. Three market tiers. Flex on price and SLA — never on features.</p>
 
@@ -6765,7 +7537,7 @@
            ═══════════════════════════════════════════════ -->
       <section>
         <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">07</span>AMBITION</div>
+          <div class="slide-label"><span class="label-num">08</span>AMBITION</div>
           <h2 class="ambition-headline" style="font-size: 2.8em;"><span class="h-home">Georgia</span><span class="h-arrow" aria-hidden="true">→</span><span class="h-region">Region</span><span class="h-arrow" aria-hidden="true">→</span><span class="h-global">Global</span></h2>
 
           <div class="ambition-cards" style="margin-top: 32px;">
@@ -6823,7 +7595,7 @@
            ═══════════════════════════════════════════════ -->
       <section class="team-slide">
         <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">08</span>TEAM</div>
+          <div class="slide-label"><span class="label-num">09</span>TEAM</div>
           <h2 class="headline-big">We are <em>doctors</em> building for doctors.</h2>
 
           <div class="team-section">
@@ -6922,7 +7694,7 @@
            ═══════════════════════════════════════════════ -->
       <section class="prog-slide">
         <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">09</span>PROGRESS MADE</div>
+          <div class="slide-label"><span class="label-num">10</span>PROGRESS MADE</div>
           <h2 class="headline-big">13 months. From idea to <em>25-hospital contract</em>.</h2>
           <p class="headline-sub">Built. Validated. Funded. Signed. Live.</p>
 
@@ -7034,7 +7806,7 @@
            ═══════════════════════════════════════════════ -->
       <section>
         <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">10</span>THE ASK</div>
+          <div class="slide-label"><span class="label-num">11</span>THE ASK</div>
           <h2 class="headline-big" style="font-size: 2.2em;"><em>$200K</em> pre-seed. Cover Georgia. Start regional.</h2>
 
           <div class="ask-journey">
@@ -7108,7 +7880,7 @@
            ═══════════════════════════════════════════════ -->
       <section>
         <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">11</span>WHAT YOU'RE INVESTING IN</div>
+          <div class="slide-label"><span class="label-num">12</span>WHAT YOU'RE INVESTING IN</div>
           <h2 class="headline-big" style="font-size: 1.9em; line-height: 1.15;">How your $200K <em>becomes equity</em>.</h2>
 
           <div class="terms-layout">

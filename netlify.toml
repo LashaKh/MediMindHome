@@ -35,6 +35,18 @@
   [headers.values]
     X-Robots-Tag  = "noindex, nofollow"
 
+# ─── Walkthrough page (gated investor demo) — never indexed ───
+[[headers]]
+  for = "/walkthrough"
+  [headers.values]
+    X-Robots-Tag  = "noindex, nofollow"
+
+# ─── Demo MP4 — long-cache, byte-range streaming ───
+[[headers]]
+  for = "/walkthrough/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
 # ─── HTML shell: revalidate every load so SPA bundle hashes are fresh ───
 [[headers]]
   for = "/index.html"

@@ -1,178 +1,179 @@
-// 3-minute investor walkthrough — 16 scene entries totaling 180s exactly.
-// Layout:  5 montage shots (9s) → 10 anchor scenes (150s) → 1 end card (21s)
-// Image paths are relative to /deck-assets/.  Some shots will be replaced
-// with fresh Playwright captures from medplum_medimind once available; until
-// then we use the existing renders shipped in the deck appendix.
+// Walkthrough scenes — fully video-driven (rebuilt from scratch).
+// Each entry pairs a muted screen-recording with a Gemini-2.5-TTS
+// narration track and a slide-notes rail. Add more scenes as the
+// founder records additional clips; runtime grows accordingly.
 
-export type Scene =
-  | {
-      kind: "montage";
-      image: string;
-      sectionTitle?: string; // shown only on first montage shot, persists through cuts via CSS
-      durationMs: number;
-    }
-  | {
-      kind: "anchor";
-      image: string;
-      secondaryImage?: string; // hard-cut to this at cutAtMs
-      cutAtMs?: number;
-      caption: string;
-      label?: string;
-      durationMs: number;
-    }
-  | {
-      kind: "end";
-      title: string;
-      subtitle: string;
-      cta: string;
-      tiles: string[];
-      durationMs: number;
-    };
-
-const ASSET = (name: string) => `/deck-assets/screenshots/${name}`;
-// Fresh Playwright captures live in a sibling subdir so they don't shadow the
-// 16 polished mockups when the scene references the same filename.
-const FRESH = (name: string) => `/deck-assets/walkthrough/${name}`;
+export type Scene = {
+  kind: "video";
+  video: string;          // Path to muted mp4 in /public/walkthrough/clips/
+  audio?: string;         // Path to mp3 narration in /public/walkthrough/audio/
+  chapter: {
+    number: string;       // "01"
+    title: string;        // "The Operating System"
+    duration: string;     // "0:22"
+    slug: string;         // "operating-system" — used in browser-chrome URL pill
+  };
+  notes: {
+    title: string;
+    subtitle?: string;
+    bullets?: string[];   // " — " separator splits each bullet into (label, body)
+  };
+  durationMs: number;
+};
 
 export const scenes: Scene[] = [
-  // ── 0:00–0:09 — Cold-open montage (5 cuts × 1.8s = 9s) ───────────────
+  // ── 0:00–0:22 — Sign-in → clinician home → admin dashboard ───────────
   {
-    kind: "montage",
-    image: ASSET("command-center.png"),
-    sectionTitle: "MediMind. The hospital OS for our region.",
-    durationMs: 1800,
-  },
-  { kind: "montage", image: ASSET("ai-chat.png"), durationMs: 1800 },
-  { kind: "montage", image: ASSET("mediscribe.png"), durationMs: 1800 },
-  { kind: "montage", image: ASSET("dicom.png"), durationMs: 1800 },
-  { kind: "montage", image: ASSET("bed-board.png"), durationMs: 1800 },
-
-  // ── 0:09–0:24 — MediScribe deep dive ──────────────────────────────────
-  {
-    kind: "anchor",
-    image: ASSET("mediscribe.png"),
-    caption:
-      "Doctor speaks Georgian. SOAP note appears. No typing.",
-    label: "Live · KA → SOAP · 2.4s",
-    durationMs: 15000,
-  },
-
-  // ── 0:24–0:39 — Patient 360 ───────────────────────────────────────────
-  {
-    kind: "anchor",
-    image: ASSET("patient-360.png"),
-    caption:
-      "Twenty years of a patient's life — visits, labs, meds, images — on one timeline.",
-    label: "Patient 360 · AI summary",
-    durationMs: 15000,
+    kind: "video",
+    video: "/walkthrough/clips/home-to-admin.mp4",
+    audio: "/walkthrough/audio/home-to-admin.mp3",
+    chapter: {
+      number: "01",
+      title: "The Operating System",
+      duration: "0:22",
+      slug: "operating-system",
+    },
+    notes: {
+      title: "One sign-in. The whole hospital.",
+      subtitle: "Where every shift starts — and where it's run from.",
+      bullets: [
+        "Clinician home — patients, tasks, alerts at a glance",
+        "Behind it — staff, finance, command center, warehouse, analytics",
+        "Unified data model — one shape across every module",
+        "FHIR R4 compliant — interoperable from day one",
+      ],
+    },
+    durationMs: 23500,
   },
 
-  // ── 0:39–0:54 — AI Co-pilot ───────────────────────────────────────────
+  // ── 0:22–1:07 — Patient hub → bed board → unified card → chart ──────
   {
-    kind: "anchor",
-    image: ASSET("ai-chat.png"),
-    caption:
-      "“Why is this patient's troponin trending up?” The answer cites the chart.",
-    label: "Co-pilot · Cardiology mode",
-    durationMs: 15000,
+    kind: "video",
+    video: "/walkthrough/clips/patient-hub-to-chart.mp4",
+    audio: "/walkthrough/audio/patient-hub-to-chart.mp3",
+    chapter: {
+      number: "02",
+      title: "The Clinical Core",
+      duration: "0:46",
+      slug: "clinical-core",
+    },
+    notes: {
+      title: "The chart is the workflow. The AI is the brain.",
+      subtitle: "Every byte of clinical data feeds one coherent picture.",
+      bullets: [
+        "Patient hub — cohort and floor view in one screen",
+        "Bed board — real-time availability, drag-drop transfers",
+        "Unified card — orders, notes, handoff, discharge in one place",
+        "Twenty-year history — structured, searchable, per patient",
+        "AI brain layer — summarizes the patient, drafts shift handoff",
+        "Safety net — flags drug interactions and allergies before the bedside",
+      ],
+    },
+    durationMs: 36500,
   },
 
-  // ── 0:54–1:09 — CPOE → MAR closed loop (hard cut at 8s) ──────────────
-  // CPOE shot is a fresh capture from the live build — shows Nino's real meds.
+  // ── 1:11–1:39 — MediScribe: voice → SOAP → ICD codes → form ──────────
   {
-    kind: "anchor",
-    image: FRESH("cpoe.png"),
-    secondaryImage: ASSET("mar.png"),
-    cutAtMs: 8000,
-    caption:
-      "One click orders a med. The nurse scans the barcode at the bedside.",
-    label: "CPOE → MAR · closed loop",
-    durationMs: 15000,
+    kind: "video",
+    video: "/walkthrough/clips/mediscribe-voice-to-chart.mp4",
+    audio: "/walkthrough/audio/mediscribe-voice-to-chart.mp3",
+    chapter: {
+      number: "03",
+      title: "MediScribe — Voice to Chart",
+      duration: "0:28",
+      slug: "mediscribe",
+    },
+    notes: {
+      title: "Doctors don't fill forms. They speak.",
+      subtitle: "Voice → SOAP → structured chart, in one pass.",
+      bullets: [
+        "Live dictation captured straight into MediScribe",
+        "AI generates a full SOAP note — subjective, objective, assessment, plan",
+        "Every diagnosis ICD-coded straight from the conversation",
+        "Allergies and drug reactions surfaced as one-click suggestions",
+        "Doctor confirms — the official medical form populates itself",
+      ],
+    },
+    durationMs: 30000,
   },
 
-  // ── 1:09–1:24 — Mobile nursing (fresh portrait capture) ──────────────
+  // ── 1:39–2:17 — Lab dashboard → verify report → PACS → DICOM viewer ──
   {
-    kind: "anchor",
-    image: FRESH("nursing-mobile.png"),
-    caption: "A nurse runs her shift from a phone — vitals, tasks, handoff.",
-    label: "Mobile-native · live build",
-    durationMs: 15000,
+    kind: "video",
+    video: "/walkthrough/clips/lab-and-pacs.mp4",
+    audio: "/walkthrough/audio/lab-and-pacs.mp3",
+    chapter: {
+      number: "04",
+      title: "Lab & PACS — One Brain Layer",
+      duration: "0:38",
+      slug: "lab-and-pacs",
+    },
+    notes: {
+      title: "From chart, to lab, to image — one brain.",
+      subtitle: "Western-standard lab workflow + native PACS, with AI reading both.",
+      bullets: [
+        "Lab pipeline — ordered, received, processing, resulted, verified",
+        "Western guideline-aligned — reference ranges, flags, structured results",
+        "AI reads every value — in patient context, not in isolation",
+        "PACS fully native — no third-party viewer, every modality in one space",
+        "Imaging AI — flags CT and MRI abnormalities before the radiologist reads",
+      ],
+    },
+    durationMs: 39000,
   },
 
-  // ── 1:24–1:39 — DICOM / PACS ──────────────────────────────────────────
+  // ── 2:17–2:50 — AI Assistant: case-from-patient → reasoning → KB upload ──
   {
-    kind: "anchor",
-    image: ASSET("dicom.png"),
-    caption:
-      "On-prem PACS. CT angiogram with CAD-RADS scoring inline.",
-    label: "PACS · DICOM · CAD-RADS",
-    durationMs: 15000,
+    kind: "video",
+    video: "/walkthrough/clips/ai-assistant.mp4",
+    audio: "/walkthrough/audio/ai-assistant.mp3",
+    chapter: {
+      number: "05",
+      title: "AI Assistant — Medical-Grade Copilot",
+      duration: "0:33",
+      slug: "ai-assistant",
+    },
+    notes: {
+      title: "The medical brain, in every patient context.",
+      subtitle: "Medical-grade AI you can trust — grounded in your hospital's guidelines.",
+      bullets: [
+        "Open from any patient — full clinical context auto-loads",
+        "Quick Consult or Case Study — discuss a patient or workshop a case end-to-end",
+        "Up-to-date guidelines — answers anchored in current medical literature",
+        "Hospital knowledge base — upload your protocols, research, case studies",
+        "Your practice, your AI — follows your guidelines, not a generic textbook",
+      ],
+    },
+    durationMs: 32500,
   },
 
-  // ── 1:39–1:51 — MOH submission ────────────────────────────────────────
+  // ── 2:38–2:54 — Patient portal + research recruitment (1.5x video pace) ──
   {
-    kind: "anchor",
-    image: ASSET("moh.png"),
-    caption: "One click. ICD-mapped. Submitted to Georgia's Gov-EHR.",
-    label: "Gov-EHR · 1-click",
-    durationMs: 12000,
-  },
-
-  // ── 1:51–2:03 — Trilingual proof (placeholder until captured) ─────────
-  // TODO: replace with composed `trilingual-en/ka/ru.png` triptych.
-  {
-    kind: "anchor",
-    image: ASSET("patient-360.png"),
-    caption: "Same chart, three languages, zero re-training.",
-    label: "EN · ქართული · RU",
-    durationMs: 12000,
-  },
-
-  // ── 2:03–2:21 — Revenue cycle → Coordinator (hard cut at 9s) ─────────
-  {
-    kind: "anchor",
-    image: ASSET("revenue-cycle.png"),
-    secondaryImage: ASSET("coordinator.png"),
-    cutAtMs: 9000,
-    caption:
-      "The CFO sees DSO drop. The coordinator clears pre-op debt before admission.",
-    label: "CFO · Revenue cycle  →  Coordinator",
-    durationMs: 18000,
-  },
-
-  // ── 2:21–2:39 — Bed board → SBAR handoff (hard cut at 9s) ────────────
-  {
-    kind: "anchor",
-    image: ASSET("bed-board.png"),
-    secondaryImage: ASSET("handoff.png"),
-    cutAtMs: 9000,
-    caption:
-      "Drag a patient to a new bed. SBAR handoff carries every detail forward.",
-    label: "Bed board  →  SBAR",
-    durationMs: 18000,
-  },
-
-  // ── 2:39–3:00 — End card ──────────────────────────────────────────────
-  {
-    kind: "end",
-    title: "MediMind",
-    subtitle: "One platform. Fourteen modules. Built for hospitals.",
-    cta: "medimind.md  ·  team@medimind.md",
-    tiles: [
-      ASSET("laboratory.png"),
-      ASSET("form-builder.png"),
-      ASSET("research.png"),
-      ASSET("mediscribe.png"),
-    ],
-    durationMs: 21000,
+    kind: "video",
+    video: "/walkthrough/clips/patient-portal-research.mp4",
+    audio: "/walkthrough/audio/patient-portal-research.mp3",
+    chapter: {
+      number: "06",
+      title: "Patient Portal + Research",
+      duration: "0:15",
+      slug: "patient-portal-research",
+    },
+    notes: {
+      title: "The patient gets the same platform.",
+      subtitle: "Portal, telemedicine, billing, meds, labs — plus AI-matched research recruitment.",
+      bullets: [
+        "Patient portal — appointments, messages, health records, AI assistant",
+        "Telemedicine, billing, medications, labs — every touchpoint in one app",
+        "Research recruitment — AI scans the entire hospital database",
+        "Matches every patient to the active trials they fit",
+      ],
+    },
+    durationMs: 15500,
   },
 ];
 
 export const TOTAL_MS = scenes.reduce((acc, s) => acc + s.durationMs, 0);
-// Sanity: TOTAL_MS should equal 180000.  See unit-style assertion in dev.
-if (typeof window !== "undefined" && import.meta.env?.DEV && TOTAL_MS !== 180000) {
+if (typeof window !== "undefined" && import.meta.env?.DEV) {
   // eslint-disable-next-line no-console
-  console.warn(
-    `[walkthroughScenes] Total duration is ${TOTAL_MS}ms, expected 180000ms`,
-  );
+  console.log(`[walkthroughScenes] Total runtime: ${TOTAL_MS / 1000}s`);
 }

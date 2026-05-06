@@ -6633,6 +6633,29 @@
         filter: drop-shadow(0 1px 2px rgba(0,0,0,0.4));
       }
 
+      /* Tour slide — make the iframe taller than the slide viewport
+         (at least 900px) so the walkthrough has room to lay out all
+         its content without internal clipping, and the parent section
+         (already overflow-y: auto from the mobile bypass above) gets
+         a normal finger-scroll to reveal the lower portion. */
+      .tour-slide .tour-iframe {
+        height: max(100dvh, 900px);
+        min-height: 900px;
+      }
+      /* Smoother iOS momentum scroll + don't bleed scroll into the
+         document/Reveal navigation when bouncing at edges. */
+      .reveal .slides > section.tour-slide {
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+      }
+      /* The Continue pill must stay visible while the user scrolls
+         the slide content. Switch from absolute (which scrolls with
+         content) to fixed. Because .tour-slide carries a transform,
+         "fixed" anchors to the slide's box (= viewport-anchored). */
+      .tour-slide .tour-skip {
+        position: fixed;
+      }
+
       /* Tour slide — iframe captures touch (taps play/pause the demo
          and Reveal can't see swipe gestures across iframes), so the
          mobile-nav chevrons are the only way to advance. Make them

@@ -6082,39 +6082,45 @@
       display: block;
       background: #050b18;
     }
-    /* When the tour slide is the active slide, neutralize Reveal's
-       canvas-scaling transform on the .slides ancestor and let the
-       slide fill the entire viewport. Other slides keep their normal
-       scaled layout because the override only kicks in when this
-       specific slide carries the .present class. */
-    .reveal:has(section.tour-slide.present) .slides {
-      transform: none !important;
-      -webkit-transform: none !important;
-      perspective: none !important;
-      top: 0 !important;
-      left: 0 !important;
-      width: 100% !important;
-      height: 100% !important;
+    /* Desktop: hide the mobile-only Continue pill (mobile media query
+       below re-enables it via display: inline-flex !important). */
+    .tour-slide .tour-skip { display: none; }
+    /* DESKTOP ONLY: when the tour slide is the active slide, neutralize
+       Reveal's canvas-scaling transform on the .slides ancestor and let
+       the slide fill the entire viewport. Other slides keep their normal
+       scaled layout. On mobile (<= 768px), the deck's existing mobile
+       bypass at lines 6076–6151 already provides full-bleed slides, so
+       we don't apply this override there. */
+    @media (min-width: 769px) {
+      .reveal:has(section.tour-slide.present) .slides {
+        transform: none !important;
+        -webkit-transform: none !important;
+        perspective: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+      }
+      .reveal .slides > section.tour-slide.present {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-width: none !important;
+        max-height: none !important;
+        transform: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        z-index: 10;
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+      /* Keep Reveal's prev/next arrow controls clickable above the
+         full-screen iframe so investors can advance past the demo. */
+      .reveal .controls { z-index: 40; }
     }
-    .reveal .slides > section.tour-slide.present {
-      position: absolute !important;
-      inset: 0 !important;
-      width: 100% !important;
-      height: 100% !important;
-      max-width: none !important;
-      max-height: none !important;
-      transform: none !important;
-      top: 0 !important;
-      left: 0 !important;
-      margin: 0 !important;
-      padding: 0 !important;
-      z-index: 10;
-      opacity: 1 !important;
-      visibility: visible !important;
-    }
-    /* Keep Reveal's prev/next arrow controls clickable above the
-       full-screen iframe so investors can advance past the demo. */
-    .reveal .controls { z-index: 40; }
 
     /* ═════════════════════════════════════════════════════════════
        MOBILE NATIVE — portrait reflow for phones (≤ 768px)
@@ -6626,6 +6632,61 @@
         color: rgba(255,255,255,0.95);
         filter: drop-shadow(0 1px 2px rgba(0,0,0,0.4));
       }
+
+      /* Tour slide — iframe captures touch (taps play/pause the demo
+         and Reveal can't see swipe gestures across iframes), so the
+         mobile-nav chevrons are the only way to advance. Make them
+         obvious: white-on-glass pill, full opacity, no longer subtle. */
+      .reveal:has(> .slides > section.tour-slide.present) ~ .mobile-nav {
+        color: rgba(255, 255, 255, 0.98);
+        opacity: 0.92;
+        background: rgba(10, 22, 40, 0.78);
+        border: 1px solid rgba(190, 227, 248, 0.32);
+        border-radius: 999px;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        filter: none;
+        box-shadow: 0 6px 18px -4px rgba(0, 0, 0, 0.55);
+        z-index: 110;
+      }
+      .reveal:has(> .slides > section.tour-slide.present) ~ .mobile-nav:active {
+        background: rgba(49, 130, 206, 0.45);
+        opacity: 1;
+      }
+
+      /* Floating "Continue →" pill at top-center of the tour slide.
+         Gives investors an unambiguous "exit demo" affordance even
+         when the iframe has captured touch events. Hidden on desktop
+         (handled by the !important display:none default below). */
+      .tour-slide .tour-skip {
+        display: inline-flex !important;
+        position: absolute;
+        top: 56px;            /* below the walkthrough's top brand strip */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 60;
+        align-items: center;
+        gap: 6px;
+        padding: 7px 14px;
+        background: rgba(10, 22, 40, 0.85);
+        color: rgba(255, 255, 255, 0.96);
+        border: 1px solid rgba(190, 227, 248, 0.28);
+        border-radius: 999px;
+        font: 600 11px/1 -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        text-decoration: none;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 6px 16px -4px rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .tour-slide .tour-skip:active {
+        background: rgba(49, 130, 206, 0.5);
+        transform: translateX(-50%) scale(0.96);
+      }
+      .tour-slide .tour-skip-arrow { font-size: 13px; line-height: 1; }
 
       /* Ask slide — stack the funds-bar segments vertically on mobile so
          labels like "MediMind OS · $90K" stay fully readable */
@@ -8637,6 +8698,12 @@
           loading="lazy"
           allow="autoplay; fullscreen"
         ></iframe>
+        <button
+          type="button"
+          class="tour-skip"
+          aria-label="Skip walkthrough and continue to appendix"
+          onclick="Reveal.next()"
+        >Continue<span class="tour-skip-arrow" aria-hidden="true">→</span></button>
         <aside class="notes">
           Live 3-minute product walkthrough embedded from /walkthrough. Click play to start; scrubber, theater toggle (top-right), and chapter stepper all work inside. To leave the walkthrough, click outside the iframe and press the right arrow (or use the on-screen Reveal arrow controls) — that advances to the appendix.
         </aside>

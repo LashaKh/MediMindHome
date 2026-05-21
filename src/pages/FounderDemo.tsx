@@ -28,7 +28,7 @@ export const FounderDemo: React.FC = () => {
 
       <main className="fd-stage">
         <div className="fd-eyebrow">Founder Walkthrough</div>
-        <h1 className="fd-title">MediMind — Product Demo</h1>
+        <h1 className="fd-title">MediMind — Founder Demo</h1>
         <p className="fd-lede">
           A short walkthrough of MediMind, the AI-native EMR for Georgian
           clinicians. Shared privately for review.

@@ -1,10 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { scenes, TOTAL_MS, type Scene } from "./walkthroughScenes";
 import "./Walkthrough.css";
-import "./BriefingGate.css";
-
-const WALKTHROUGH_SESSION_KEY = "mm_walkthrough_access";
-const WALKTHROUGH_PASSWORD = "Y-Combinator";
 
 const formatMs = (ms: number): string => {
   const s = Math.max(0, Math.floor(ms / 1000));
@@ -29,24 +25,7 @@ const findSceneAtMs = (totalMs: number) => {
   return { idx: 0, offset: 0 };
 };
 
-// ── Top-level: gate decision. Renders the password panel until unlocked. ─
-export const Walkthrough: React.FC = () => {
-  const [authed, setAuthed] = useState<boolean>(() => {
-    if (typeof window === "undefined") return false;
-    const params = new URLSearchParams(window.location.search);
-    if (params.get("preview") === "1") return true;
-    try {
-      return sessionStorage.getItem(WALKTHROUGH_SESSION_KEY) === "1";
-    } catch {
-      return false;
-    }
-  });
-
-  if (!authed) {
-    return <WalkthroughGate onUnlock={() => setAuthed(true)} />;
-  }
-  return <Player />;
-};
+export const Walkthrough: React.FC = () => <Player />;
 
 // ── Player: the original walkthrough UI. Runs only after the gate passes. ─
 const Player: React.FC = () => {
@@ -582,153 +561,6 @@ const NotesRail: React.FC<{ scene: Scene }> = ({ scene }) => {
           ))}
         </ol>
       )}
-    </div>
-  );
-};
-
-// ── Password gate (mirrors BriefingGate visual language) ────────────────
-const WalkthroughGate: React.FC<{ onUnlock: () => void }> = ({ onUnlock }) => {
-  const [value, setValue] = useState("");
-  const [pending, setPending] = useState(false);
-  const [helperText, setHelperText] = useState(
-    "Single-use, encrypted access. Verified against your invitation.",
-  );
-  const [helperKind, setHelperKind] = useState<"normal" | "error" | "success">(
-    "normal",
-  );
-  const [shake, setShake] = useState(false);
-  const inputRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    if (!matchMedia("(max-width: 640px)").matches) {
-      inputRef.current?.focus();
-    }
-  }, []);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (pending) return;
-
-    const trimmed = value.trim();
-    if (!trimmed) {
-      setShake(true);
-      setTimeout(() => setShake(false), 500);
-      inputRef.current?.focus();
-      return;
-    }
-
-    setPending(true);
-    setHelperKind("normal");
-    setHelperText("Verifying…");
-    // Brief delay so the verifying state is perceivable.
-    await new Promise((r) => setTimeout(r, 320));
-
-    if (trimmed.toLowerCase() === WALKTHROUGH_PASSWORD.toLowerCase()) {
-      setHelperKind("success");
-      setHelperText("Welcome — entering walkthrough…");
-      try {
-        sessionStorage.setItem(WALKTHROUGH_SESSION_KEY, "1");
-      } catch {/* ignore */}
-      setTimeout(() => onUnlock(), 600);
-      return;
-    }
-
-    setPending(false);
-    setShake(true);
-    setTimeout(() => setShake(false), 500);
-    setValue("");
-    inputRef.current?.focus();
-    setHelperKind("error");
-    setHelperText("That access code does not match.");
-  };
-
-  return (
-    <div className="bg-page">
-      <div className="orb orb-a" aria-hidden="true" />
-      <div className="orb orb-b" aria-hidden="true" />
-
-      <div className="stage">
-        <header className="topbar">
-          <div className="brand">
-            <img src="/deck-assets/logo-horizontal-dark.svg" alt="MediMind" />
-          </div>
-          <div className="session-tag">Encrypted Session</div>
-        </header>
-
-        <main className="center">
-          <section
-            className={`card ${shake ? "shake" : ""}`}
-            role="dialog"
-            aria-labelledby="wtCardTitle"
-          >
-            <div className="eyebrow">Live Product Walkthrough</div>
-            <h1 className="title" id="wtCardTitle">By invitation only.</h1>
-            <p className="lede">
-              This walkthrough is shared with a select group of partners.
-              Please enter your access code to continue.
-            </p>
-
-            <form onSubmit={handleSubmit} autoComplete="off" noValidate>
-              <div className="field">
-                <label className="field-label" htmlFor="wt-access">
-                  Access Code
-                </label>
-                <input
-                  ref={inputRef}
-                  type="text"
-                  id="wt-access"
-                  name="wt-access"
-                  placeholder="Provided with your invitation"
-                  value={value}
-                  onChange={(e) => setValue(e.target.value)}
-                  autoCapitalize="none"
-                  autoCorrect="off"
-                  spellCheck={false}
-                  required
-                  disabled={pending}
-                />
-              </div>
-
-              <button type="submit" className="submit" disabled={pending}>
-                {pending ? (
-                  "Verifying…"
-                ) : (
-                  <>
-                    <span>Enter Walkthrough</span>
-                    <span aria-hidden="true">→</span>
-                  </>
-                )}
-              </button>
-
-              <div
-                className={`helper ${helperKind}`}
-                role="status"
-                aria-live="polite"
-              >
-                {helperText}
-              </div>
-            </form>
-          </section>
-        </main>
-
-        <footer className="footer">
-          <span className="lock">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              strokeWidth={2}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              <rect x="4" y="11" width="16" height="10" rx="2" />
-              <path d="M8 11V7a4 4 0 1 1 8 0v4" />
-            </svg>
-            <span>Confidential</span>
-          </span>
-          <span>&copy; 2026 MediMind. All rights reserved.</span>
-        </footer>
-      </div>
     </div>
   );
 };

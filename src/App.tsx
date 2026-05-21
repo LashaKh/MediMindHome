@@ -9,6 +9,7 @@ import { BriefingLocked } from './pages/BriefingLocked';
 import { AdminLogin } from './pages/AdminLogin';
 import { AdminDashboard } from './pages/AdminDashboard';
 import { Walkthrough } from './pages/Walkthrough';
+import { FounderDemo } from './pages/FounderDemo';
 
 // Wrapper element that renders nested routes inside MainLayout via <Outlet />.
 function MainLayoutShell() {
@@ -29,6 +30,7 @@ function App() {
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
         <Route path="/walkthrough" element={<Walkthrough />} />
+        <Route path="/founder-demo" element={<FounderDemo />} />
 
         {/* Existing site routes — wrapped in MainLayout (Header + Footer) */}
         <Route element={<MainLayoutShell />}>

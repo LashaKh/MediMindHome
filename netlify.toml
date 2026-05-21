@@ -47,6 +47,19 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+# ─── Founder demo page (hidden, link-only) — never indexed ───
+[[headers]]
+  for = "/founder-demo"
+  [headers.values]
+    X-Robots-Tag  = "noindex, nofollow"
+
+# ─── Private media (founder demo mp4, etc.) — long-cache, never indexed ───
+[[headers]]
+  for = "/media/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    X-Robots-Tag  = "noindex, nofollow"
+
 # ─── HTML shell: revalidate every load so SPA bundle hashes are fresh ───
 [[headers]]
   for = "/index.html"

@@ -1,0 +1,135 @@
+.fd-page {
+  min-height: 100dvh;
+  background: #060912;
+  color: #e6eaf2;
+  display: flex;
+  flex-direction: column;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.fd-page::before,
+.fd-page::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.fd-page::before {
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, #2563eb 0%, transparent 70%);
+  top: -180px;
+  left: -180px;
+}
+
+.fd-page::after {
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, #7c3aed 0%, transparent 70%);
+  bottom: -160px;
+  right: -160px;
+}
+
+.fd-topbar {
+  position: relative;
+  z-index: 1;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fd-topbar img {
+  height: 28px;
+}
+
+.fd-tag {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(230, 234, 242, 0.65);
+  padding: 6px 12px;
+  border: 1px solid rgba(230, 234, 242, 0.18);
+  border-radius: 999px;
+}
+
+.fd-stage {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 32px 40px;
+}
+
+.fd-eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #60a5fa;
+  margin-bottom: 12px;
+}
+
+.fd-title {
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0 0 8px;
+  text-align: center;
+}
+
+.fd-lede {
+  font-size: 15px;
+  color: rgba(230, 234, 242, 0.7);
+  max-width: 560px;
+  text-align: center;
+  margin: 0 0 28px;
+  line-height: 1.55;
+}
+
+.fd-player-frame {
+  width: min(960px, 100%);
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+  padding: 10px;
+  backdrop-filter: blur(12px);
+}
+
+.fd-player-frame video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  background: #000;
+}
+
+.fd-footer {
+  position: relative;
+  z-index: 1;
+  padding: 20px 32px;
+  font-size: 12px;
+  color: rgba(230, 234, 242, 0.45);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+@media (max-width: 640px) {
+  .fd-topbar { padding: 18px 20px; }
+  .fd-stage { padding: 8px 16px 32px; }
+  .fd-player-frame { padding: 6px; border-radius: 14px; }
+  .fd-footer { padding: 16px 20px; }
+}

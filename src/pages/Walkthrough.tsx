@@ -25,6 +25,22 @@ const findSceneAtMs = (totalMs: number) => {
   return { idx: 0, offset: 0 };
 };
 
+// Swap the English chapter/notes strings for their Georgian twins when lang==="ka".
+// Preserves every other field (timing, video, slug) so the playback engine is unaffected.
+const localizeScene = (s: Scene, lang: "en" | "ka"): Scene =>
+  lang === "ka" && s.ka
+    ? {
+        ...s,
+        chapter: { ...s.chapter, title: s.ka.chapterTitle },
+        notes: {
+          ...s.notes,
+          title: s.ka.notesTitle,
+          subtitle: s.ka.notesSubtitle ?? s.notes.subtitle,
+          bullets: s.ka.notesBullets ?? s.notes.bullets,
+        },
+      }
+    : s;
+
 export const Walkthrough: React.FC = () => <Player />;
 
 // ── Player: the original walkthrough UI. Runs only after the gate passes. ─
@@ -36,10 +52,18 @@ const Player: React.FC = () => {
   const [elapsedInScene, setElapsedInScene] = useState(0);
   const [seekToken, setSeekToken] = useState(0);
   const [theater, setTheater] = useState(false);
+  const [lang, setLang] = useState<"en" | "ka">(() =>
+    typeof window !== "undefined" &&
+    new URLSearchParams(window.location.search).get("lang") === "ka"
+      ? "ka"
+      : "en",
+  );
   const sceneStartRef = useRef<number>(Date.now());
   const elapsedAtPauseRef = useRef<number>(0);
 
-  const scene = scenes[idx];
+  const scene = localizeScene(scenes[idx], lang);
+  const displayScenes =
+    lang === "ka" ? scenes.map((s) => localizeScene(s, lang)) : scenes;
   const isLast = idx === scenes.length - 1;
   const effectivePaused = paused || scrubbing;
 
@@ -137,6 +161,24 @@ const Player: React.FC = () => {
     return () => window.removeEventListener("keydown", onKey);
   }, [togglePause, goNext, goPrev, theater, toggleTheater]);
 
+  // ── Language sync with the parent deck (when embedded as an iframe) ────
+  useEffect(() => {
+    const onMsg = (e: MessageEvent) => {
+      const d = e.data;
+      if (d && d.type === "mm-lang" && (d.lang === "en" || d.lang === "ka")) {
+        setLang(d.lang);
+      }
+    };
+    window.addEventListener("message", onMsg);
+    // Announce readiness so the deck replies with the current language.
+    try {
+      window.parent?.postMessage({ type: "mm-wt-ready" }, "*");
+    } catch {
+      /* not embedded */
+    }
+    return () => window.removeEventListener("message", onMsg);
+  }, []);
+
   const totalElapsedMs =
     scenes.slice(0, idx).reduce((a, s) => a + s.durationMs, 0) +
     Math.min(elapsedInScene, scene.durationMs);
@@ -154,9 +196,10 @@ const Player: React.FC = () => {
 
       <SceneFrame
         scene={scene}
+        lang={lang}
         paused={effectivePaused}
         sceneProgress={sceneProgress}
-        scenes={scenes}
+        scenes={displayScenes}
         idx={idx}
         seekToken={seekToken}
         seekOffsetMs={elapsedInScene}
@@ -195,6 +238,7 @@ const Player: React.FC = () => {
           totalElapsedMs={totalElapsedMs}
           totalMs={TOTAL_MS}
           scenes={scenes}
+          lang={lang}
           onSeek={seekToTotal}
           onSeekStart={() => setScrubbing(true)}
           onSeekEnd={() => setScrubbing(false)}
@@ -210,10 +254,11 @@ const Scrubber: React.FC<{
   totalElapsedMs: number;
   totalMs: number;
   scenes: Scene[];
+  lang: "en" | "ka";
   onSeek: (totalMs: number) => void;
   onSeekStart: () => void;
   onSeekEnd: () => void;
-}> = ({ totalElapsedMs, totalMs, scenes, onSeek, onSeekStart, onSeekEnd }) => {
+}> = ({ totalElapsedMs, totalMs, scenes, lang, onSeek, onSeekStart, onSeekEnd }) => {
   const railRef = useRef<HTMLDivElement>(null);
   const [hoverPct, setHoverPct] = useState<number | null>(null);
   const [isScrubbing, setIsScrubbing] = useState(false);
@@ -312,7 +357,7 @@ const Scrubber: React.FC<{
           className="wt-scrubber-tooltip"
           style={{ left: `${hoverPct * 100}%` }}
         >
-          <span className="wt-tt-chap">Ch {hoverScene.chapter.number}</span>
+          <span className="wt-tt-chap">{lang === "ka" ? "თ." : "Ch"} {hoverScene.chapter.number}</span>
           <span className="wt-tt-divider" />
           <span className="wt-tt-time">{formatMs(hoverMs)}</span>
         </div>
@@ -351,6 +396,7 @@ const TopBar: React.FC<{ idx: number; total: number; scene: Scene }> = ({
 // ── Scene renderer ─────────────────────────────────────────────────────
 const SceneFrame: React.FC<{
   scene: Scene;
+  lang: "en" | "ka";
   paused: boolean;
   sceneProgress: number;
   scenes: Scene[];
@@ -371,6 +417,7 @@ const SceneFrame: React.FC<{
 // ── Left: video stack ───────────────────────────────────────────────────
 const VideoColumn: React.FC<{
   scene: Scene;
+  lang: "en" | "ka";
   paused: boolean;
   sceneProgress: number;
   scenes: Scene[];
@@ -381,7 +428,7 @@ const VideoColumn: React.FC<{
   theater: boolean;
   onToggleTheater: () => void;
   onAudioEnded: () => void;
-}> = ({ scene, paused, sceneProgress, scenes, idx, seekToken, seekOffsetMs, onJump, theater, onToggleTheater, onAudioEnded }) => {
+}> = ({ scene, lang, paused, sceneProgress, scenes, idx, seekToken, seekOffsetMs, onJump, theater, onToggleTheater, onAudioEnded }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
 
@@ -419,7 +466,7 @@ const VideoColumn: React.FC<{
   return (
     <div className="wt-video-column">
       <div className="wt-chapter-eyebrow">
-        <span className="wt-chapter-tag">Chapter {scene.chapter.number}</span>
+        <span className="wt-chapter-tag">{lang === "ka" ? "თავი" : "Chapter"} {scene.chapter.number}</span>
         <span className="wt-chapter-dot" aria-hidden="true" />
         <span className="wt-chapter-time">{scene.chapter.duration}</span>
       </div>

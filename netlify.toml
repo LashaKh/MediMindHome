@@ -24,6 +24,13 @@
     Cache-Control = "no-store, must-revalidate"
     X-Robots-Tag  = "noindex, nofollow"
 
+# ─── Healthycore partner deck — same treatment: never cache, never index ───
+[[headers]]
+  for = "/healthycore.html"
+  [headers.values]
+    Cache-Control = "no-store, must-revalidate"
+    X-Robots-Tag  = "noindex, nofollow"
+
 # ─── Briefing & admin routes are private — never indexed ───
 [[headers]]
   for = "/briefing/*"

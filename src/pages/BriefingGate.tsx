@@ -7,6 +7,21 @@ const DECK_URL = "/deck.html";
 const SESSION_KEY = "mm_briefing_access";
 const TOKEN_KEY = "mm_briefing_token";
 const NAME_KEY = "mm_briefing_name";
+const POST_GATE_TARGET_KEY = "mm_post_gate_target";
+
+// Where to send the visitor after a successful unlock. A gated static deck
+// (e.g. /healthycore.html) drops a breadcrumb before bouncing here so we can
+// return them to that deck instead of the default investor deck.
+const postGateTarget = (): string => {
+  try {
+    const t = sessionStorage.getItem(POST_GATE_TARGET_KEY);
+    if (t) {
+      sessionStorage.removeItem(POST_GATE_TARGET_KEY);
+      return t;
+    }
+  } catch {/* ignore */}
+  return DECK_URL;
+};
 
 export const BriefingGate: React.FC = () => {
   const { token = "" } = useParams<{ token: string }>();
@@ -26,7 +41,7 @@ export const BriefingGate: React.FC = () => {
   // If already authenticated this session, skip straight to deck.
   useEffect(() => {
     if (sessionStorage.getItem(SESSION_KEY)) {
-      window.location.replace(DECK_URL);
+      window.location.replace(postGateTarget());
     }
   }, []);
 
@@ -96,8 +111,9 @@ export const BriefingGate: React.FC = () => {
         }
       } catch {/* ignore */}
       // Brief delay so the success state is perceivable
+      const target = postGateTarget();
       setTimeout(() => {
-        window.location.replace(DECK_URL);
+        window.location.replace(target);
       }, 600);
       return;
     }

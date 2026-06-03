@@ -18,6 +18,12 @@ export type Scene = {
     subtitle?: string;
     bullets?: string[];   // " — " separator splits each bullet into (label, body)
   };
+  ka?: {                  // Georgian twin — shown when the deck toggles to ქარ
+    chapterTitle: string;
+    notesTitle: string;
+    notesSubtitle?: string;
+    notesBullets?: string[];
+  };
   durationMs: number;
 };
 
@@ -41,6 +47,17 @@ export const scenes: Scene[] = [
         "Behind it — staff, finance, command center, warehouse, analytics",
         "Unified data model — one shape across every module",
         "FHIR R4 compliant — interoperable from day one",
+      ],
+    },
+    ka: {
+      chapterTitle: "ოპერაციული სისტემა",
+      notesTitle: "ერთი შესვლა. მთელი ჰოსპიტალი.",
+      notesSubtitle: "სადაც იწყება ყველა ცვლა — და საიდანაც იმართება ყველაფერი.",
+      notesBullets: [
+        "ექიმის სივრცე — პაციენტები, დავალებები, შეტყობინებები ერთ ეკრანზე",
+        "კულისებში — პერსონალი, ფინანსები, მართვის ცენტრი, საწყობი, ანალიტიკა",
+        "ერთიანი მონაცემთა მოდელი — ერთი ფორმა ყველა მოდულში",
+        "FHIR R4 სტანდარტი — ინტეროპერაბელური პირველივე დღიდან",
       ],
     },
     durationMs: 23500,
@@ -69,6 +86,19 @@ export const scenes: Scene[] = [
         "Safety net — flags drug interactions and allergies before the bedside",
       ],
     },
+    ka: {
+      chapterTitle: "კლინიკური ბირთვი",
+      notesTitle: "ჩანაწერი არის სამუშაო პროცესი. AI არის ტვინი.",
+      notesSubtitle: "კლინიკური მონაცემის ყოველი ბაიტი ერთ მთლიან სურათს ქმნის.",
+      notesBullets: [
+        "პაციენტების ჰაბი — კოჰორტა და განყოფილების ხედი ერთ ეკრანზე",
+        "საწოლების დაფა — ხელმისაწვდომობა რეალურ დროში, გადატანა drag-and-drop-ით",
+        "ერთიანი ბარათი — დანიშნულებები, ჩანაწერები, გადაბარება, გაწერა ერთ ადგილას",
+        "ოცწლიანი ისტორია — სტრუქტურირებული, ძიებადი, თითო პაციენტზე",
+        "AI-ტვინის შრე — აჯამებს პაციენტს, ამზადებს ცვლის გადაბარებას",
+        "უსაფრთხოების ბადე — აფიქსირებს წამლების ურთიერთქმედებას და ალერგიებს პაციენტთან მისვლამდე",
+      ],
+    },
     durationMs: 36500,
   },
 
@@ -92,6 +122,18 @@ export const scenes: Scene[] = [
         "Every diagnosis ICD-coded straight from the conversation",
         "Allergies and drug reactions surfaced as one-click suggestions",
         "Doctor confirms — the official medical form populates itself",
+      ],
+    },
+    ka: {
+      chapterTitle: "MediScribe — ხმა ჩანაწერად",
+      notesTitle: "ექიმები არ ავსებენ ფორმებს. ისინი ლაპარაკობენ.",
+      notesSubtitle: "ხმა → SOAP → სტრუქტურირებული ჩანაწერი, ერთ ეტაპად.",
+      notesBullets: [
+        "ცოცხალი კარნახი პირდაპირ MediScribe-ში ჩაიწერება",
+        "AI ქმნის სრულ SOAP ჩანაწერს — სუბიექტური, ობიექტური, შეფასება, გეგმა",
+        "ყველა დიაგნოზი ICD-კოდირებული პირდაპირ საუბრიდან",
+        "ალერგიები და წამლისმიერი რეაქციები ერთ კლიკზე გამოდის რეკომენდაციად",
+        "ექიმი ადასტურებს — ოფიციალური სამედიცინო ფორმა თავად ივსება",
       ],
     },
     durationMs: 30000,
@@ -119,6 +161,18 @@ export const scenes: Scene[] = [
         "Imaging AI — flags CT and MRI abnormalities before the radiologist reads",
       ],
     },
+    ka: {
+      chapterTitle: "ლაბი და PACS — ერთი ტვინის შრე",
+      notesTitle: "ჩანაწერიდან ლაბორატორიამდე და გამოსახულებამდე — ერთი ტვინი.",
+      notesSubtitle: "დასავლური სტანდარტის ლაბორატორიული პროცესი + ნატიური PACS, და AI კითხულობს ორივეს.",
+      notesBullets: [
+        "ლაბორატორიული პროცესი — დანიშნული, მიღებული, მუშავდება, შედეგი, დადასტურებული",
+        "დასავლურ გაიდლაინებთან შესაბამისი — სარეფერენსო ნორმები, აღნიშვნები, სტრუქტურირებული შედეგები",
+        "AI კითხულობს ყველა მაჩვენებელს — პაციენტის კონტექსტში, და არა იზოლირებულად",
+        "PACS სრულად ნატიური — მესამე მხარის მნახველის გარეშე, ყველა მოდალობა ერთ სივრცეში",
+        "გამოსახულების AI — აღნიშნავს CT და MRI პათოლოგიებს რადიოლოგის დათვალიერებამდე",
+      ],
+    },
     durationMs: 39000,
   },
 
@@ -144,6 +198,18 @@ export const scenes: Scene[] = [
         "Your practice, your AI — follows your guidelines, not a generic textbook",
       ],
     },
+    ka: {
+      chapterTitle: "AI ასისტენტი — სამედიცინო დონის თანაშემწე",
+      notesTitle: "სამედიცინო ტვინი — ყველა პაციენტის კონტექსტში.",
+      notesSubtitle: "სამედიცინო დონის AI, რომელსაც ენდობით — დაფუძნებული თქვენი ჰოსპიტლის გაიდლაინებზე.",
+      notesBullets: [
+        "გახსენით ნებისმიერი პაციენტიდან — სრული კლინიკური კონტექსტი ავტომატურად იტვირთება",
+        "სწრაფი კონსულტაცია ან კეის-სტადი — განიხილეთ პაციენტი ან დაამუშავეთ შემთხვევა ბოლომდე",
+        "განახლებული გაიდლაინები — პასუხები დაფუძნებული აქტუალურ სამედიცინო ლიტერატურაზე",
+        "ჰოსპიტლის ცოდნის ბაზა — ატვირთეთ თქვენი პროტოკოლები, კვლევები, კეის-სტადიები",
+        "თქვენი პრაქტიკა, თქვენი AI — მიჰყვება თქვენს გაიდლაინებს, და არა ზოგად სახელმძღვანელოს",
+      ],
+    },
     durationMs: 32500,
   },
 
@@ -166,6 +232,17 @@ export const scenes: Scene[] = [
         "Telemedicine, billing, medications, labs — every touchpoint in one app",
         "Research recruitment — AI scans the entire hospital database",
         "Matches every patient to the active trials they fit",
+      ],
+    },
+    ka: {
+      chapterTitle: "პაციენტის პორტალი + კვლევა",
+      notesTitle: "პაციენტი იღებს იმავე პლატფორმას.",
+      notesSubtitle: "პორტალი, ტელემედიცინა, ბილინგი, მედიკამენტები, ანალიზები — პლუს AI-ით შერჩეული კვლევებში ჩართვა.",
+      notesBullets: [
+        "პაციენტის პორტალი — ვიზიტები, შეტყობინებები, ჯანმრთელობის ჩანაწერები, AI ასისტენტი",
+        "ტელემედიცინა, ბილინგი, მედიკამენტები, ანალიზები — ყველა შეხების წერტილი ერთ აპში",
+        "კვლევებში ჩართვა — AI ასკანერებს მთელ ჰოსპიტლის ბაზას",
+        "უსადაგებს თითოეულ პაციენტს მისთვის შესაფერის აქტიურ კვლევებს",
       ],
     },
     durationMs: 15500,

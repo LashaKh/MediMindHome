@@ -52,6 +52,15 @@ const Player: React.FC = () => {
   const [elapsedInScene, setElapsedInScene] = useState(0);
   const [seekToken, setSeekToken] = useState(0);
   const [theater, setTheater] = useState(false);
+  // Narration volume + mute. Persisted to localStorage so the choice survives
+  // chapter changes, reloads, and carries across both deck embeds (same origin).
+  const [volume, setVolume] = useState(() => {
+    const v = typeof window !== "undefined" ? localStorage.getItem("mm_wt_volume") : null;
+    return v !== null ? Number(v) : 1;
+  });
+  const [muted, setMuted] = useState(
+    () => typeof window !== "undefined" && localStorage.getItem("mm_wt_muted") === "1",
+  );
   const [lang, setLang] = useState<"en" | "ka">(() =>
     typeof window !== "undefined" &&
     new URLSearchParams(window.location.search).get("lang") === "ka"
@@ -66,6 +75,25 @@ const Player: React.FC = () => {
     lang === "ka" ? scenes.map((s) => localizeScene(s, lang)) : scenes;
   const isLast = idx === scenes.length - 1;
   const effectivePaused = paused || scrubbing;
+
+  useEffect(() => {
+    localStorage.setItem("mm_wt_volume", String(volume));
+    localStorage.setItem("mm_wt_muted", muted ? "1" : "0");
+  }, [volume, muted]);
+
+  // Speaker click: toggle mute. If unmuting while volume sits at 0, nudge it up
+  // so a single click actually restores audible sound.
+  const toggleMute = useCallback(() => {
+    setMuted((m) => {
+      if (m) setVolume((v) => (v === 0 ? 0.6 : v));
+      return !m;
+    });
+  }, []);
+
+  const onVolumeChange = useCallback((v: number) => {
+    setVolume(v);
+    if (v > 0) setMuted(false);
+  }, []);
 
   // ── Auto-advance + elapsed tracker ───────────────────────────────────
   useEffect(() => {
@@ -207,6 +235,8 @@ const Player: React.FC = () => {
         theater={theater}
         onToggleTheater={toggleTheater}
         onAudioEnded={handleAudioEnded}
+        volume={volume}
+        muted={muted}
       />
 
       <div className="wt-controls" onClick={(e) => e.stopPropagation()}>
@@ -244,6 +274,60 @@ const Player: React.FC = () => {
           onSeekEnd={() => setScrubbing(false)}
         />
         <span className="wt-time wt-time-end">{formatMs(TOTAL_MS)}</span>
+        <div className="wt-volume" onClick={(e) => e.stopPropagation()}>
+          <button
+            className="wt-btn wt-mute"
+            onClick={toggleMute}
+            aria-label={muted || volume === 0 ? "Unmute narration" : "Mute narration"}
+            title={muted || volume === 0 ? "Unmute" : "Mute"}
+          >
+            {muted || volume === 0 ? (
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M11 5 6 9H3v6h3l5 4V5z"
+                  stroke="currentColor"
+                  strokeWidth="1.7"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="m22 9-6 6M16 9l6 6"
+                  stroke="currentColor"
+                  strokeWidth="1.7"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            ) : (
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M11 5 6 9H3v6h3l5 4V5z"
+                  stroke="currentColor"
+                  strokeWidth="1.7"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M16 9a3.5 3.5 0 0 1 0 6M19 6.5a7 7 0 0 1 0 11"
+                  stroke="currentColor"
+                  strokeWidth="1.7"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            )}
+          </button>
+          <input
+            type="range"
+            className="wt-volume-slider"
+            min={0}
+            max={1}
+            step={0.05}
+            value={muted ? 0 : volume}
+            onChange={(e) => onVolumeChange(Number(e.currentTarget.value))}
+            aria-label="Narration volume"
+          />
+        </div>
       </div>
     </div>
   );
@@ -407,6 +491,8 @@ const SceneFrame: React.FC<{
   theater: boolean;
   onToggleTheater: () => void;
   onAudioEnded: () => void;
+  volume: number;
+  muted: boolean;
 }> = (props) => (
   <div className="wt-frame wt-frame-anchor">
     <VideoColumn {...props} />
@@ -428,9 +514,21 @@ const VideoColumn: React.FC<{
   theater: boolean;
   onToggleTheater: () => void;
   onAudioEnded: () => void;
-}> = ({ scene, lang, paused, sceneProgress, scenes, idx, seekToken, seekOffsetMs, onJump, theater, onToggleTheater, onAudioEnded }) => {
+  volume: number;
+  muted: boolean;
+}> = ({ scene, lang, paused, sceneProgress, scenes, idx, seekToken, seekOffsetMs, onJump, theater, onToggleTheater, onAudioEnded, volume, muted }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
+
+  // Apply narration volume / mute. scene.audio in deps so a freshly-swapped
+  // track (on auto-advance) inherits the current setting.
+  useEffect(() => {
+    const a = audioRef.current;
+    if (a) {
+      a.volume = volume;
+      a.muted = muted;
+    }
+  }, [volume, muted, scene.audio]);
 
   // Sync media currentTime to the requested offset on:
   //   - scene change (offset will normally be 0 or the seek-target)

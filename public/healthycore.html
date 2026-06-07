@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <script>
-    // Access guard — gateway sets sessionStorage["mm_briefing_access"] on success.
+    // Access guard — Healthycore partner deck unlocks with a shared password.
     // Local file:// previews (offline PDF export, etc.) and ?print-pdf are exempted.
     // ?preview=1 also bypasses the guard for local/admin preview; combine with
     // ?name=Some%20Name to seed the cover "Prepared for" line.
     (function () {
+      var PASSWORD = 'healthycore'; // compared case-insensitively
       try {
         if (location.protocol === 'file:') return;
         var params = new URLSearchParams(location.search);
@@ -19,10 +20,51 @@
           if (n) { try { sessionStorage.setItem('mm_briefing_name', n); } catch (_) {} }
           return;
         }
-        if (sessionStorage.getItem('mm_briefing_access')) return;
-        try { sessionStorage.setItem('mm_post_gate_target', '/healthycore.html'); } catch (_) {}
-        location.replace('/briefing');
-      } catch (e) { location.replace('/briefing'); }
+        if (sessionStorage.getItem('hc_access') === '1') return;
+      } catch (e) { /* fall through to the gate */ }
+
+      // Hide the deck until the password is entered.
+      var hideStyle = document.createElement('style');
+      hideStyle.textContent = 'body > *:not(#hc-gate){visibility:hidden!important}';
+      (document.head || document.documentElement).appendChild(hideStyle);
+
+      function mount() {
+        var gate = document.createElement('div');
+        gate.id = 'hc-gate';
+        gate.style.cssText = 'position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;padding:24px;background:radial-gradient(120% 120% at 0% 0%,#16365f,#0b1f3a 60%);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;';
+        gate.innerHTML =
+          '<form id="hc-form" style="width:100%;max-width:380px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:18px;padding:34px 30px;box-shadow:0 30px 70px -30px rgba(0,0,0,0.6);">' +
+            '<div style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#8fb4e0;font-weight:700;margin-bottom:10px;">MediMind × Healthycore</div>' +
+            '<h1 style="margin:0 0 6px;color:#fff;font-size:22px;font-weight:700;">Partner proposal</h1>' +
+            '<p style="margin:0 0 22px;color:rgba(255,255,255,0.6);font-size:14px;line-height:1.4;">Enter the password to view the deck.</p>' +
+            '<input id="hc-pass" type="password" autocomplete="off" placeholder="Password" style="width:100%;box-sizing:border-box;padding:13px 15px;border-radius:11px;border:1px solid rgba(255,255,255,0.18);background:rgba(0,0,0,0.25);color:#fff;font-size:15px;outline:none;" />' +
+            '<div id="hc-err" style="min-height:18px;margin:8px 2px 0;color:#fda4af;font-size:13px;"></div>' +
+            '<button type="submit" style="width:100%;margin-top:8px;padding:13px;border:none;border-radius:11px;background:linear-gradient(135deg,#3182ce,#2b6cb0);color:#fff;font-size:15px;font-weight:700;cursor:pointer;">Unlock deck</button>' +
+          '</form>';
+        document.body.appendChild(gate);
+        var form = gate.querySelector('#hc-form');
+        var input = gate.querySelector('#hc-pass');
+        var err = gate.querySelector('#hc-err');
+        input.focus();
+        form.addEventListener('submit', function (ev) {
+          ev.preventDefault();
+          if (input.value.trim().toLowerCase() === PASSWORD) {
+            try { sessionStorage.setItem('hc_access', '1'); } catch (_) {}
+            gate.remove();
+            hideStyle.remove();
+          } else {
+            err.textContent = 'Incorrect password. Please try again.';
+            input.value = '';
+            input.focus();
+          }
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', mount);
+      } else {
+        mount();
+      }
     })();
   </script>
 
@@ -3455,7 +3497,7 @@
     .os-reframe .gw-cards { gap: 18px; }
     .os-reframe .gw-card {
       padding: 24px 22px; border-radius: 16px; gap: 12px;
-      min-height: 150px; justify-content: center;
+      min-height: 150px; justify-content: flex-start;
       border: 1px solid var(--emr-border);
       box-shadow: 0 14px 32px -18px rgba(26,54,93,0.28);
     }
@@ -8132,7 +8174,8 @@
       background:
         radial-gradient(130% 120% at 0% 0%, rgba(190,227,248,0.20), transparent 55%),
         var(--emr-gradient-primary);
-      box-shadow: 0 32px 66px -26px rgba(26,54,93,0.6);
+      box-shadow: 0 32px 66px -26px rgba(26,54,93,0.6), inset 0 1px 0 rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.10);
     }
     .pp-card-head {
       display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
@@ -8141,6 +8184,10 @@
     }
     .pp-angel .pp-card-head { color: var(--emr-text-muted); }
     .pp-hc .pp-card-head { color: #fff; }
+    .pp-hc .pp-tag {
+      color: var(--emr-primary); background: #fff;
+      padding: 5px 13px; box-shadow: 0 4px 12px -4px rgba(0,0,0,0.3);
+    }
     .pp-tag {
       font-size: 0.78em; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
       color: var(--emr-primary); background: var(--emr-light-accent);
@@ -8149,8 +8196,16 @@
     .pp-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 18px; }
     .pp-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 1.0em; line-height: 1.4; }
     .pp-angel .pp-list li { color: var(--emr-text-light); }
-    .pp-hc .pp-list li { color: rgba(255,255,255,0.94); }
+    .pp-hc .pp-list { gap: 0; }
+    .pp-hc .pp-list li {
+      color: rgba(255,255,255,0.94);
+      padding: 15px 4px; border-bottom: 1px solid rgba(255,255,255,0.12);
+      transition: background 0.18s ease;
+    }
+    .pp-hc .pp-list li:first-child { padding-top: 2px; }
+    .pp-hc .pp-list li:last-child { border-bottom: none; padding-bottom: 2px; }
     .pp-hc .pp-list strong { color: #fff; font-weight: 700; }
+    .pp-hc .pp-yes::before { line-height: 1.45; }
     .pp-no::before, .pp-yes::before { flex-shrink: 0; font-weight: 900; }
     .pp-no::before { content: '–'; color: var(--emr-text-light); }
     .pp-yes::before { content: '✓'; color: #6ee7b7; font-size: 1.05em; line-height: 1.25; }
@@ -8769,9 +8824,9 @@
             <div class="gw-card">
               <div class="gw-card-head">
                 <div class="gw-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-                <h3><span class="lang-en">First in the world</span><span class="lang-ka" style="display:none;">პირველი მსოფლიოში</span></h3>
+                <h3><span class="lang-en">Among the first</span><span class="lang-ka" style="display:none;">ერთ-ერთი პირველი</span></h3>
               </div>
-              <p><span class="lang-en">Others bolt FHIR on as an export. We're the only one built FHIR-native, ground-up.</span><span class="lang-ka" style="display:none;">სხვები FHIR-ს ზემოდან აბამენ. ჩვენ ერთადერთები ვართ, ვინც ნულიდან FHIR-ზე ავაშენეთ.</span></p>
+              <p><span class="lang-en">Others bolt FHIR on afterward. We're among the first built AI-native and FHIR-native, ground-up.</span><span class="lang-ka" style="display:none;">სხვები FHIR-ს მოგვიანებით აბამენ. ჩვენ ერთ-ერთი პირველები ვართ, ვინც AI-ნეიტიური და FHIR-ნეიტიური ნულიდან ავაშენეთ.</span></p>
             </div>
             <div class="gw-card">
               <div class="gw-card-head">
@@ -8883,7 +8938,7 @@
                 <li class="pp-yes"><span class="lang-en"><strong>Equity</strong> — with a guaranteed floor, 2–5%</span><span class="lang-ka" style="display:none;"><strong>წილი</strong> — გარანტირებული მინიმუმით, 2–5%</span></li>
                 <li class="pp-yes"><span class="lang-en"><strong>Free software, forever</strong> — EMR + PACS + lab</span><span class="lang-ka" style="display:none;"><strong>უფასო პროგრამა, სამუდამოდ</strong> — EMR + PACS + ლაბი</span></li>
                 <li class="pp-yes"><span class="lang-en"><strong>Unlimited free development</strong></span><span class="lang-ka" style="display:none;"><strong>შეუზღუდავი უფასო დეველოპმენტი</strong></span></li>
-                <li class="pp-yes"><span class="lang-en"><strong>Total dedication</strong> — every resource, one hospital, a decade.</span><span class="lang-ka" style="display:none;"><strong>სრული თავდადება</strong> — ყველა რესურსი, ერთი კლინიკა, ათწლეული.</span></li>
+                <li class="pp-yes"><span class="lang-en"><strong>Total dedication</strong> — every resource, one hospital, for years to come.</span><span class="lang-ka" style="display:none;"><strong>სრული თავდადება</strong> — ყველა რესურსი, ერთი კლინიკა, წლების განმავლობაში.</span></li>
               </ul>
             </div>
           </div>
@@ -8901,7 +8956,6 @@
         <div class="slide-inner center">
           <div class="slide-label" style="align-self:flex-start;"><span class="label-num">10</span><span class="lang-en">THE PARTNERSHIP</span><span class="lang-ka" style="display:none;">პარტნიორობა</span></div>
           <h2 class="headline-big" style="text-align:center; max-width: 1040px;"><span class="lang-en">You already run first-in-human device trials. <em>Lead in software too.</em></span><span class="lang-ka" style="display:none;">თქვენ უკვე ატარებთ პირველად კლინიკურ კვლევებს. <em>იყავით ლიდერი პროგრამაშიც.</em></span></h2>
-          <p class="headline-sub" style="text-align:center;"><span class="lang-en">Being first is who you are — this is the same choice, now in software and AI.</span><span class="lang-ka" style="display:none;">პირველობა თქვენი ბუნებაა — ეს იგივე არჩევანია, ახლა პროგრამასა და AI-ში.</span></p>
 
           <div class="hc-close-cta">
             <div class="hc-close-partner"><span class="lang-en">Partner with us.</span><span class="lang-ka" style="display:none;">გახდით ჩვენი პარტნიორი.</span></div>
@@ -9200,7 +9254,7 @@
           <div class="case-asym-row">
             <span class="case-asym-from">~$20<small><span class="lang-en">lab</span><span class="lang-ka" style="display:none;">ანალიზი</span></small></span>
             <span class="case-asym-vs"><span class="lang-en">vs</span><span class="lang-ka" style="display:none;">vs</span></span>
-            <span class="case-asym-to">$20–50K<small><span class="lang-en">/ ICU day</span><span class="lang-ka" style="display:none;">/ რეანიმაციის დღე</span></small></span>
+            <span class="case-asym-to">20 days<small><span class="lang-en">inpatient stay</span><span class="lang-ka" style="display:none;">სტაციონარში</span></small></span>
           </div>
           <p><span class="lang-en">Caught early, every time — by a system that never gets tired.</span><span class="lang-ka" style="display:none;">დროულად დაჭერილი, ყოველთვის — სისტემით, რომელიც არასოდეს იღლება.</span></p>
         </div>

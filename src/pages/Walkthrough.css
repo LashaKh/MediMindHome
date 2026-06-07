@@ -487,6 +487,62 @@
   background: rgba(49, 130, 206, 0.18);
   color: var(--ink-strong);
 }
+/* ── Narration volume widget (mute toggle + slider) ────────────── */
+.wt-volume {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 2px;
+}
+.wt-mute svg { width: 18px; height: 18px; }
+.wt-volume-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 72px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(190, 227, 248, 0.12);
+  cursor: pointer;
+  outline: none;
+}
+.wt-volume-slider::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 999px;
+  background: transparent;
+}
+.wt-volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  margin-top: -4px;
+  border-radius: 999px;
+  background: var(--ink-strong);
+  border: 2px solid var(--accent);
+  box-shadow: 0 2px 8px rgba(49, 130, 206, 0.5);
+}
+.wt-volume-slider::-moz-range-track {
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(190, 227, 248, 0.12);
+}
+.wt-volume-slider::-moz-range-progress {
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-soft));
+}
+.wt-volume-slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: var(--ink-strong);
+  border: 2px solid var(--accent);
+  box-shadow: 0 2px 8px rgba(49, 130, 206, 0.5);
+}
+.wt-volume-slider:focus-visible {
+  outline: 2px solid var(--accent-soft);
+  outline-offset: 3px;
+}
 /* ── Time labels flanking the scrubber ─────────────────────────── */
 .wt-time {
   font-variant-numeric: tabular-nums;
@@ -673,6 +729,7 @@
   .wt-stepper { display: none; }
   .wt-controls { bottom: 20px; padding: 6px 10px; gap: 8px; }
   .wt-scrubber { width: 160px; height: 24px; }
+  .wt-volume-slider { display: none; }
   .wt-time { min-width: 28px; font-size: 10px; }
   .wt-browser { animation: none; }
 }

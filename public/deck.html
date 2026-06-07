@@ -91,14 +91,18 @@
 
     .slide-inner {
       height: 100%;
-      padding: 80px 90px 60px;
+      padding: 64px 90px 60px;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
     }
     .slide-inner.center { justify-content: center; padding-top: 70px; }
-    .slide-inner > .headline-big,
+    /* Standardized: every in-scope headline starts at the same Y (padding-top 64
+       + margin-top 0). hook-headline (out of scope, centered) keeps its 28px. */
+    .slide-inner > .headline-big {
+      margin-top: 0;
+    }
     .slide-inner > .hook-headline {
       margin-top: 28px;
     }
@@ -248,10 +252,10 @@
     .slide-label .label-num { color: var(--emr-accent); margin-right: 8px; }
 
     .headline-big {
-      font-size: 3.4em;
+      font-size: 2.2em;
       font-weight: 800;
       color: var(--emr-text-primary);
-      line-height: 1.05;
+      line-height: 1.08;
       letter-spacing: -0.03em;
       max-width: 95%;
     }
@@ -514,6 +518,7 @@
     .cover .footer-row strong {
       color: rgba(255,255,255,0.88);
       font-weight: 600;
+      white-space: nowrap;
     }
     @media (prefers-reduced-motion: reduce) {
       .cover .footer-row { animation: none; }
@@ -712,9 +717,12 @@
     .hook-slide.present .hook-statement {
       animation: hookStatementIn 0.9s cubic-bezier(0.2, 0.9, 0.2, 1) both;
     }
-    .hook-slide.present .hook-statement-1 { animation-delay: 0.15s; }
-    .hook-slide.present .hook-divider     { animation: hookDividerIn 0.7s 0.45s cubic-bezier(0.2, 0.9, 0.2, 1) both; }
-    .hook-slide.present .hook-statement-2 { animation-delay: 0.65s; }
+    /* Sequential cascade — each element's animation window starts only after the
+       previous one has landed, so the two truths reveal one-after-another (not piled up).
+       s1: [0.10s → 1.00s] · divider draws: [0.95s → 1.50s] · s2: [1.45s → 2.35s] */
+    .hook-slide.present .hook-statement-1 { animation-delay: 0.1s; }
+    .hook-slide.present .hook-divider     { animation: hookDividerIn 0.55s 0.95s cubic-bezier(0.2, 0.9, 0.2, 1) both; }
+    .hook-slide.present .hook-statement-2 { animation-delay: 1.45s; }
 
     @keyframes hookStatementIn {
       0%   { opacity: 0; transform: translateY(18px); }
@@ -1815,13 +1823,13 @@
        ───────────────────────────────────────────────────────────── */
 
     .cat-slide:not(.is-solo) .headline-big {
-      font-size: 2.05em;
+      font-size: 2.2em;
       max-width: 95%;
     }
     .cat-slide:not(.is-solo) .headline-sub {
-      margin: 10px 0 16px;
+      margin: 12px 0 16px;
       max-width: 880px;
-      font-size: 0.95em;
+      font-size: 1em;
     }
 
     /* Stack of category cards */
@@ -2316,11 +2324,9 @@
         padding: 36px 22px 24px !important;
       }
       .scope-slide .headline-big {
-        font-size: 1.55em !important;
         line-height: 1.18 !important;
       }
       .scope-slide .headline-sub {
-        font-size: 0.86em !important;
         line-height: 1.42 !important;
         margin: 8px 0 14px !important;
       }
@@ -3141,7 +3147,7 @@
        contract is the climactic hero tile (brand gradient, larger
        icon, heavier drop shadow — sits flush with siblings).
        ════════════════════════════════════════════════════════ */
-    .prog-slide .slide-inner { padding: 56px 90px 40px; }
+    .prog-slide .slide-inner { padding: 64px 90px 40px; }
 
     .prog-phase { margin-top: 18px; }
     .prog-phase:first-of-type { margin-top: 8px; }
@@ -3651,8 +3657,7 @@
     .team-slide .slide-inner { position: relative; z-index: 1; }
 
     .team-slide .headline-big {
-      font-size: 2.3em;
-      margin-top: 4px;
+      margin-top: 0;
       margin-bottom: 18px;
     }
 
@@ -4115,11 +4120,14 @@
     }
 
     /* ─── SLIDE 9: AMBITION (escalating stages redesign) ─── */
+    /* fill the 1280×720 stage: spread headline / cards / thesis vertically */
+    .slide-inner:has(.ambition-headline) { justify-content: space-between; }
     .ambition-headline {
-      font-size: 3em;
+      font-size: 2.2em;
       font-weight: 900;
       letter-spacing: -0.03em;
-      line-height: 1.1;
+      line-height: 1.08;
+      margin-top: 0;
       margin-bottom: 0;
     }
     .ambition-headline .h-home { color: var(--emr-primary); opacity: 0.5; }
@@ -4143,17 +4151,18 @@
     .ambition-cards {
       display: grid;
       grid-template-columns: 1fr 1fr 1.15fr;
-      gap: 16px;
-      margin-top: 24px;
+      gap: 18px;
+      margin-top: 0;
     }
     .ambition-card {
-      padding: 22px 22px 20px;
+      padding: 26px 24px 24px;
       border-radius: 16px;
       position: relative;
       overflow: hidden;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       display: flex;
       flex-direction: column;
+      min-height: 290px;
     }
     .ambition-card:hover {
       transform: translateY(-4px);
@@ -4198,7 +4207,7 @@
     }
 
     .stage-title {
-      font-size: 1.9em;
+      font-size: 2.05em;
       font-weight: 900;
       color: var(--emr-primary);
       letter-spacing: -0.03em;
@@ -4208,7 +4217,7 @@
     .ambition-card-3 .stage-title { color: white; }
 
     .stage-subtitle {
-      font-size: 0.72em;
+      font-size: 0.78em;
       color: var(--emr-text-muted);
       margin-bottom: 14px;
       font-weight: 500;
@@ -4222,11 +4231,11 @@
       display: flex;
       align-items: baseline;
       gap: 8px;
-      padding: 10px 14px;
+      padding: 13px 16px;
       background: white;
       border: 1px solid var(--emr-light-accent);
       border-radius: 10px;
-      margin-bottom: 14px;
+      margin-top: 14px;
       flex-wrap: wrap;
     }
     .ambition-card-3 .stage-stat {
@@ -4234,7 +4243,7 @@
       border-color: rgba(190,227,248,0.25);
     }
     .stage-stat-value {
-      font-size: 1.05em;
+      font-size: 1.18em;
       font-weight: 900;
       color: var(--emr-primary);
       letter-spacing: -0.02em;
@@ -4248,7 +4257,7 @@
     .ambition-card-3 .stage-stat-label { color: rgba(255,255,255,0.75); }
 
     .stage-body {
-      font-size: 0.8em;
+      font-size: 0.84em;
       color: var(--emr-text-body);
       line-height: 1.5;
       margin: 0;
@@ -4260,7 +4269,7 @@
       display: flex;
       align-items: center;
       gap: 22px;
-      margin-top: 44px;
+      margin-top: 0;
       padding: 0 8px;
     }
     .ambition-thesis .thesis-rule {
@@ -4270,7 +4279,7 @@
     }
     .ambition-thesis .thesis-line {
       margin: 0;
-      font-size: 0.92em;
+      font-size: 1em;
       line-height: 1.5;
       color: var(--emr-text-body);
       text-align: center;
@@ -6242,7 +6251,7 @@
         line-height: 1.18 !important;
         letter-spacing: -0.01em !important;
       }
-      .headline-sub {
+      .headline-sub, .gwx-sub, .bmx-sub {
         font-size: clamp(0.95rem, 3.8vw, 1.15rem) !important;
         line-height: 1.45 !important;
       }
@@ -6503,6 +6512,9 @@
 
       /* Ambition headline — clear breathing room from the slide-label above */
       .ambition-headline { margin-top: 18px !important; }
+      /* mobile scrolls: keep natural top-flow, no stretched cards */
+      .slide-inner:has(.ambition-headline) { justify-content: flex-start !important; }
+      .ambition-card { min-height: 0 !important; }
 
       /* Category & competition rows */
       .cat-row {
@@ -6545,7 +6557,7 @@
 
       /* Ambition — stage cards stack, Y4 ARR strip stays prominent */
       .ambition-headline {
-        font-size: clamp(1.5rem, 7vw, 2.1rem) !important;
+        font-size: clamp(1.5rem, 6.4vw, 2.1rem) !important;
         flex-wrap: wrap !important;
         justify-content: center !important;
         gap: 6px !important;
@@ -6741,7 +6753,7 @@
       h2.headline-big {
         font-size: clamp(1.3rem, 6.2vw, 1.8rem) !important;
       }
-      .headline-sub {
+      .headline-sub, .gwx-sub, .bmx-sub {
         font-size: clamp(0.88rem, 3.6vw, 1.05rem) !important;
       }
       .bm-tier,
@@ -6751,7 +6763,7 @@
       .advisor-card { padding: 14px !important; }
       .bm-tier-price-num { font-size: 2.3em !important; }
       .bm-arr-num { font-size: 2.2em !important; }
-      .ambition-headline { font-size: clamp(1.3rem, 6vw, 1.8rem) !important; }
+      .ambition-headline { font-size: clamp(1.3rem, 6.2vw, 1.8rem) !important; }
       .cover img,
       .cover .cover-logo,
       .cover svg { max-width: min(220px, 65vw) !important; }
@@ -7180,6 +7192,1448 @@
       }
     }
   </style>
+
+    <!-- redesign: category -->
+    <style>
+    /* ════════════════════════════════════════════════════════
+       SLIDE — CATEGORY (AI-native redesign, prefix catx-)
+       Hero definition band (Collect → Analyze → Act) + 3 pillars.
+       Designed for the fixed 1280×720 stage; ≈1100×580 usable.
+       ════════════════════════════════════════════════════════ */
+    .catx-slide {
+      position: relative;
+      overflow: hidden;
+    }
+    /* soft ambient glows (purely decorative, behind content) */
+    .catx-slide::before {
+      content: '';
+      position: absolute;
+      top: -140px; right: -120px;
+      width: 460px; height: 460px;
+      background: radial-gradient(circle, rgba(49,130,206,0.10) 0%, transparent 65%);
+      pointer-events: none; z-index: 0;
+    }
+    .catx-slide::after {
+      content: '';
+      position: absolute;
+      bottom: -200px; left: -120px;
+      width: 520px; height: 520px;
+      background: radial-gradient(circle, rgba(190,227,248,0.18) 0%, transparent 65%);
+      pointer-events: none; z-index: 0;
+    }
+    .catx-slide .slide-inner {
+      position: relative;
+      z-index: 1;
+      padding-left: 70px;
+      padding-right: 70px;
+    }
+    .catx-slide .slide-label { left: 70px; }
+
+    /* Headline — compact so the hero + 3 cards clear the canvas */
+    .catx-headline {
+      font-size: 2.2em;
+      line-height: 1.08;
+      margin: 0;
+      max-width: 1000px;
+    }
+    .catx-slide .slide-inner > .catx-headline { margin-top: 0; }
+    .catx-headline em {
+      font-style: normal;
+      background: var(--emr-gradient-primary);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* ── HERO definition band ───────────────────────────────── */
+    .catx-hero {
+      margin: 26px 0 30px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 28px;
+      padding: 15px 26px;
+      background: linear-gradient(135deg, #eef6ff 0%, #f7fbff 55%, #ffffff 100%);
+      border: 1px solid var(--emr-light-accent);
+      border-radius: 16px;
+      box-shadow: 0 1px 2px rgba(15,32,58,0.04), 0 12px 30px rgba(15,32,58,0.07);
+    }
+    .catx-hero-lead { min-width: 0; }
+    .catx-kicker {
+      display: inline-block;
+      font-size: 0.6em;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--emr-secondary);
+      margin-bottom: 6px;
+    }
+    .catx-def {
+      margin: 0;
+      font-size: 1em;
+      line-height: 1.4;
+      color: var(--emr-text-body);
+      font-weight: 500;
+      max-width: 680px;
+    }
+    .catx-def strong { color: var(--emr-primary); font-weight: 700; }
+
+    /* Collect → Analyze → Act motif */
+    .catx-motif {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      flex-shrink: 0;
+      padding-left: 26px;
+      border-left: 1px dashed var(--emr-light-accent);
+    }
+    .catx-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      width: 60px;
+    }
+    .catx-step-ic {
+      width: 44px; height: 44px;
+      border-radius: 13px;
+      display: grid; place-items: center;
+      color: #fff;
+      background: var(--emr-gradient-primary);
+      box-shadow: 0 7px 16px rgba(43,108,176,0.30);
+    }
+    .catx-step-ic svg { width: 24px; height: 24px; }
+    .catx-step-tx {
+      font-size: 0.6em;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      color: var(--emr-primary);
+      text-transform: uppercase;
+    }
+    .catx-arrow { color: var(--emr-accent); opacity: 0.6; display: grid; place-items: center; }
+    .catx-arrow svg { width: 20px; height: 20px; }
+
+    /* ── THREE pillar cards (✓ what we are · ✕ the old way) ──── */
+    .catx-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .catx-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      padding: 22px 20px 20px;
+      background: linear-gradient(180deg, #ffffff 0%, #f6faff 100%);
+      border: 1px solid var(--emr-border);
+      border-radius: 14px;
+      box-shadow: 0 1px 2px rgba(15,32,58,0.04), 0 9px 24px rgba(15,32,58,0.05);
+      overflow: hidden;
+    }
+    .catx-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--emr-gradient-primary);
+      opacity: 0.9;
+    }
+    .catx-num {
+      position: absolute;
+      top: 16px; right: 17px;
+      font-size: 0.7em;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      background: var(--emr-gradient-primary);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-feature-settings: 'tnum';
+      opacity: 0.85;
+    }
+    .catx-icon {
+      width: 40px; height: 40px;
+      border-radius: 12px;
+      display: grid; place-items: center;
+      color: var(--emr-secondary);
+      background: linear-gradient(135deg, rgba(26,54,93,0.06) 0%, rgba(49,130,206,0.13) 100%);
+    }
+    .catx-icon svg { width: 23px; height: 23px; }
+    .catx-title {
+      margin: 2px 0 1px;
+      font-size: 1.04em;
+      font-weight: 700;
+      line-height: 1.14;
+      color: var(--emr-primary);
+      letter-spacing: -0.015em;
+    }
+    .catx-body {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+    .catx-claim, .catx-foil {
+      margin: 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .catx-claim {
+      font-size: 0.84em;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--emr-primary);
+      /* reserve 2 lines so card 3's 1-line claim keeps its ✗ row level with cards 1-2
+         (claim renders at line-height 1.5, so 2 lines = 3em, not 2.6em) */
+      min-height: 3em;
+    }
+    .catx-foil {
+      font-size: 0.76em;
+      line-height: 1.3;
+      color: var(--emr-text-muted);
+    }
+    /* mark glyphs: em-sized + margin-top tuned to the 1.3 line-height so the
+       check/cross optically centers on the first text line (scales with text) */
+    .catx-claim svg, .catx-foil svg {
+      width: 1.1em; height: 1.1em;
+      flex-shrink: 0;
+      margin-top: 0.1em;
+    }
+    .catx-claim svg { color: var(--emr-secondary); }
+    .catx-foil svg { opacity: 0.6; }
+
+    /* ── Entrance animation (matches deck's reveal cadence) ──── */
+    .catx-hero, .catx-card {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .cat-slide.present .catx-hero { opacity: 1; transform: translateY(0); transition-delay: 0.25s; }
+    .cat-slide.present .catx-card { opacity: 1; transform: translateY(0); }
+    .cat-slide.present .catx-card:nth-child(1) { transition-delay: 0.45s; }
+    .cat-slide.present .catx-card:nth-child(2) { transition-delay: 0.57s; }
+    .cat-slide.present .catx-card:nth-child(3) { transition-delay: 0.69s; }
+
+    /* ════════════════════════════════════════════════════════
+       MOBILE — single-column scrollable stack (deck is mobile-native)
+       ════════════════════════════════════════════════════════ */
+    @media (max-width: 768px) {
+      .catx-slide .slide-inner {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+      .catx-slide .slide-label { left: 22px; }
+      /* decorative ambient glows sit at right:-120px — clip-free on the
+         scrollable mobile section they cause horizontal scroll, so drop them */
+      .catx-slide::before, .catx-slide::after { display: none; }
+      .catx-headline {
+        font-size: 1.7em;
+        line-height: 1.12;
+        max-width: 100%;
+        margin-top: 8px;
+      }
+
+      /* hero stacks: definition over motif */
+      .catx-hero {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 18px 18px;
+        margin: 16px 0 20px;
+      }
+      .catx-kicker { font-size: 0.82em; }
+      .catx-def { font-size: 1.08em; line-height: 1.5; max-width: 100%; }
+      .catx-motif {
+        padding-left: 0;
+        border-left: none;
+        border-top: 1px dashed var(--emr-light-accent);
+        padding-top: 16px;
+        justify-content: space-between;
+        width: 100%;
+        gap: 4px;
+      }
+      .catx-step { width: auto; flex: 1; gap: 8px; }
+      .catx-step-ic { width: 50px; height: 50px; border-radius: 15px; }
+      .catx-step-ic svg { width: 26px; height: 26px; }
+      .catx-step-tx { font-size: 0.78em; }
+      .catx-arrow { flex-shrink: 0; }
+      .catx-arrow svg { width: 22px; height: 22px; }
+
+      /* pillars: one full-width card per row */
+      .catx-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      .catx-card {
+        gap: 14px;
+        padding: 22px 22px 20px;
+      }
+      .catx-icon { width: 52px; height: 52px; }
+      .catx-icon svg { width: 29px; height: 29px; }
+      .catx-title { font-size: 1.32em; }
+      .catx-claim { font-size: 1.04em; min-height: 0; }
+      .catx-foil { font-size: 0.92em; }
+
+      /* disable transform-based entrance so scroll content is never offset */
+      .catx-hero, .catx-card { opacity: 1; transform: none; transition: none; }
+    }
+  </style>
+
+    <!-- redesign: georgia -->
+    <style>
+    /* ════════════════════════════════════════════════════════
+       SLIDE 06 — THE GEORGIA WINDOW (gwx- redesign)
+       Two-column split: left = Georgia advantage + map graphic,
+       right = condensed proof. Fits 1100x580 desktop, reflows to
+       a single scrollable column on mobile.
+       Height budget (628px flow after 56/36 padding): headline
+       ~78px (incl. 18px margin-top override) + sub ~74px + grid
+       ~400px + footnotes ~32px ≈ 584px. Fits with margin.
+       ════════════════════════════════════════════════════════ */
+    .gwx-slide .slide-inner { padding: 64px 90px 32px; }
+
+    /* Standardized title block: inherit 2.2em size + margin-top 0 from base. */
+    .gwx-slide .slide-inner > .gwx-headline { margin-top: 0; }
+    .gwx-slide .gwx-sub {
+      margin: 12px 0 10px;
+      max-width: 1060px;
+      font-size: 1em;
+      line-height: 1.42;
+    }
+
+    /* ---- Two-column grid ---- */
+    .gwx-grid {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 44fr 56fr;
+      gap: 30px;
+      min-height: 0;
+      align-items: stretch;
+    }
+
+    /* ---- LEFT column ---- */
+    .gwx-left {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      min-width: 0;
+    }
+    .gwx-contrast {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .gwx-pill {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 12px;
+      border-radius: 11px;
+      border: 1px solid var(--emr-border);
+      background: var(--emr-bg-subtle);
+    }
+    .gwx-pill svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .gwx-pill div { display: flex; flex-direction: column; line-height: 1.15; }
+    .gwx-pill strong { font-size: 0.66em; font-weight: 700; letter-spacing: 0.02em; }
+    .gwx-pill span { font-size: 0.58em; font-weight: 600; color: var(--emr-text-muted); }
+    .gwx-pill--go {
+      border-color: rgba(56,161,105,0.32);
+      background: linear-gradient(135deg, rgba(56,161,105,0.10), rgba(56,161,105,0.03));
+    }
+    .gwx-pill--go svg { color: var(--emr-success); }
+    .gwx-pill--go strong { color: #276749; }
+    .gwx-pill--wait { background: var(--emr-bg-subtle); }
+    .gwx-pill--wait svg { color: var(--emr-text-light); }
+    .gwx-pill--wait strong { color: var(--emr-text-body); }
+
+    /* ---- Map graphic ---- */
+    .gwx-mapwrap {
+      position: relative;
+      flex: 1;
+      min-height: 0;
+      border-radius: 16px;
+      border: 1px solid var(--emr-border);
+      background:
+        radial-gradient(120% 90% at 50% 18%, var(--emr-bg-tint), var(--emr-bg-page) 70%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 10px;
+    }
+    .gwx-mapwrap::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--emr-border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--emr-border) 1px, transparent 1px);
+      background-size: 34px 34px;
+      opacity: 0.35;
+      mask-image: radial-gradient(80% 70% at 50% 45%, #000 35%, transparent 80%);
+      -webkit-mask-image: radial-gradient(80% 70% at 50% 45%, #000 35%, transparent 80%);
+    }
+    .gwx-map {
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      max-height: 100%;
+      display: block;
+    }
+    .gwx-mapcap {
+      position: absolute;
+      top: 12px;
+      left: 14px;
+      font-size: 0.56em;
+      font-weight: 800;
+      letter-spacing: 0.34em;
+      color: var(--emr-accent);
+      z-index: 2;
+    }
+
+    /* ---- Live-hospital network: pulsing city nodes drawn INSIDE the
+       map's own viewBox(0..1024) space, so each dot pins exactly to the
+       silhouette and scales with it on every viewport (no CSS-% drift). ---- */
+    .gwx-net text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    }
+    .gwx-links line {
+      stroke: #9ecbf2;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-dasharray: 1 14;
+      opacity: 0.55;
+    }
+    /* Expanding radar ring — non-scaling stroke keeps it crisp as it grows. */
+    .gwx-pulse {
+      fill: none;
+      stroke: #5aa6e8;
+      stroke-width: 2.5;
+      vector-effect: non-scaling-stroke;
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: gwxRipple 2.8s ease-out infinite;
+      animation-delay: var(--d, 0s);
+    }
+    @keyframes gwxRipple {
+      0%   { transform: scale(0.5); opacity: 0.85; }
+      100% { transform: scale(3.6); opacity: 0; }
+    }
+    .gwx-core { fill: #eaf4ff; stroke: #2b6cb0; stroke-width: 4; }
+    .gwx-dot--hub .gwx-core { fill: #ffffff; stroke: #f6a609; stroke-width: 6; }
+    .gwx-dot--hub .gwx-pulse { stroke: #f6a609; }
+    .gwx-cityname {
+      font-size: 31px;
+      font-weight: 800;
+      fill: #ffffff;
+      paint-order: stroke;
+      stroke: rgba(11,32,58,0.82);
+      stroke-width: 6px;
+      stroke-linejoin: round;
+    }
+    .gwx-cityname--hub { font-size: 35px; fill: #ffd27a; }
+
+    /* ---- Hero number badge layered over the map ---- */
+    .gwx-bignum {
+      position: absolute;
+      left: 13px;
+      bottom: 11px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 13px;
+      background: rgba(255,255,255,0.9);
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+      border: 1px solid var(--emr-light-accent);
+      box-shadow: 0 10px 28px rgba(15,32,58,0.18);
+      z-index: 3;
+    }
+    .gwx-bignum-n {
+      font-size: 2.15em;
+      font-weight: 800;
+      line-height: 0.85;
+      letter-spacing: -0.03em;
+      background: var(--emr-gradient-primary);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gwx-bignum-t { display: flex; flex-direction: column; line-height: 1.02; }
+    .gwx-bignum-t b { font-size: 0.74em; font-weight: 800; color: var(--emr-text-primary); letter-spacing: -0.01em; }
+
+    /* ---- Regulatory chips ---- */
+    .gwx-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+      padding-top: 4px;
+    }
+    .gwx-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.6em;
+      font-weight: 600;
+      color: var(--emr-secondary);
+      background: var(--emr-bg-tint);
+      border: 1px solid var(--emr-light-accent);
+      padding: 6px 11px;
+      border-radius: 999px;
+    }
+    .gwx-chip svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    /* ---- RIGHT column ---- */
+    .gwx-right {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      min-width: 0;
+    }
+    .gwx-runway {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border-radius: 12px;
+      color: #fff;
+      background: var(--emr-gradient-primary);
+      box-shadow: 0 8px 30px rgba(15,32,58,0.18);
+      font-size: 0.8em;
+      line-height: 1.3;
+    }
+    .gwx-runway svg { width: 20px; height: 20px; flex-shrink: 0; opacity: 0.9; }
+    .gwx-runway strong { color: #fff; font-weight: 800; }
+
+    .gwx-points {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .gwx-points li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 8px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--emr-border);
+      background: var(--emr-bg-page);
+      box-shadow: 0 2px 10px rgba(15,32,58,0.04);
+    }
+    .gwx-pt-icon {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--emr-bg-tint);
+      color: var(--emr-accent);
+      border: 1px solid var(--emr-light-accent);
+    }
+    .gwx-pt-icon svg { width: 17px; height: 17px; }
+    .gwx-points div {
+      font-size: 0.72em;
+      line-height: 1.3;
+      color: var(--emr-text-body);
+    }
+    .gwx-points strong { color: var(--emr-text-primary); font-weight: 700; }
+    .gwx-points sup { font-size: 0.7em; color: var(--emr-text-light); }
+
+    /* ---- Hero stats ---- */
+    .gwx-stats {
+      margin-top: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .gwx-stat {
+      padding: 11px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--emr-border);
+      background: var(--emr-bg-subtle);
+    }
+    .gwx-stat--accent {
+      border-color: var(--emr-light-accent);
+      background: linear-gradient(135deg, var(--emr-bg-tint), #fff);
+    }
+    .gwx-stat-num {
+      font-size: 1.6em;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      color: var(--emr-primary);
+      background: var(--emr-gradient-primary);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gwx-stat-unit {
+      font-size: 0.42em;
+      font-weight: 800;
+      margin-left: 3px;
+      -webkit-text-fill-color: var(--emr-accent);
+      letter-spacing: 0.04em;
+    }
+    .gwx-stat-label {
+      font-size: 0.66em;
+      font-weight: 700;
+      color: var(--emr-text-primary);
+      margin-top: 5px;
+    }
+    .gwx-stat-sub {
+      font-size: 0.58em;
+      font-weight: 500;
+      color: var(--emr-text-muted);
+      margin-top: 2px;
+      line-height: 1.3;
+    }
+
+    /* ---- Footnotes ---- */
+    .gwx-footnotes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 12px;
+      padding-top: 9px;
+      border-top: 1px solid var(--emr-border);
+      font-size: 0.54em;
+      font-weight: 500;
+      color: var(--emr-text-light);
+    }
+    .gwx-footnotes sup { color: var(--emr-accent); margin-right: 2px; }
+
+    /* ════════════════════════════════════════════════════════
+       MOBILE — single scrollable column (thesis → map → proof)
+       ════════════════════════════════════════════════════════ */
+    @media (max-width: 768px) {
+      .gwx-slide .slide-inner { padding: 84px 22px 40px; }
+      .gwx-slide .slide-inner > .gwx-headline { margin-top: 0; }
+      .gwx-slide .gwx-sub { margin: 10px 0 20px !important; max-width: 100%; }
+
+      .gwx-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+      }
+      .gwx-left, .gwx-right { gap: 16px; }
+
+      .gwx-contrast { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .gwx-pill { padding: 11px 13px; }
+      .gwx-pill strong { font-size: 0.9em; }
+      .gwx-pill span { font-size: 0.78em; }
+      .gwx-pill svg { width: 22px; height: 22px; }
+
+      .gwx-mapwrap {
+        min-height: 320px;
+        padding: 18px;
+      }
+      .gwx-map { width: 92%; max-width: 400px; }
+      .gwx-mapcap { font-size: 0.8em; }
+      .gwx-bignum { left: 12px; bottom: 12px; padding: 9px 15px; gap: 11px; }
+      .gwx-bignum-n { font-size: 2.6em; }
+      .gwx-bignum-t b { font-size: 0.92em; }
+
+      .gwx-chips { gap: 10px; }
+      .gwx-chip { font-size: 0.82em; padding: 8px 13px; }
+      .gwx-chip svg { width: 17px; height: 17px; }
+
+      .gwx-runway { font-size: 1em; padding: 14px 16px; }
+      .gwx-runway svg { width: 24px; height: 24px; }
+
+      .gwx-points { gap: 14px; }
+      .gwx-points li { padding: 14px 16px; gap: 14px; }
+      .gwx-points div { font-size: 0.96em; line-height: 1.4; }
+      .gwx-pt-icon { width: 40px; height: 40px; }
+      .gwx-pt-icon svg { width: 22px; height: 22px; }
+
+      .gwx-chips { margin-top: 10px; }
+
+      .gwx-footnotes {
+        gap: 8px;
+        flex-direction: column;
+        font-size: 0.74em;
+      }
+    }
+  </style>
+
+    <!-- redesign: business -->
+    <style>
+  /* ===== BUSINESS MODEL — two-phase value arc (prefix: bmx-) ===== */
+  .bmx-slide .slide-inner { padding: 64px 90px 46px; }
+
+  .bmx-slide .bmx-headline { margin: 0 0 24px; max-width: 100%; }
+  .bmx-slide .bmx-headline em { display: inline; color: var(--emr-secondary); font-style: italic; }
+  .bmx-slide .bmx-sub {
+    margin: 12px 0 0;
+    max-width: 720px;
+    font-size: 1em; line-height: 1.5;
+    color: var(--emr-text-body);
+  }
+  .bmx-slide .bmx-sub strong { color: var(--emr-text-primary); font-weight: 700; }
+
+  /* ---- Stage: two phases + connector node ---- */
+  .bmx-stage {
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: stretch;
+    gap: 22px;
+  }
+
+  .bmx-phase {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 34px 34px 30px;
+    border-radius: 22px;
+    background: var(--emr-bg-page);
+    border: 1px solid var(--emr-border);
+    box-shadow: 0 18px 50px rgba(15, 32, 58, .09);
+    overflow: hidden;
+  }
+  .bmx-phase::before {
+    content: "";
+    position: absolute; top: 0; left: 0; right: 0; height: 5px;
+  }
+  .bmx-phase--now::before  { background: linear-gradient(90deg, var(--emr-secondary), var(--emr-accent)); }
+  .bmx-phase--grow::before { background: linear-gradient(90deg, var(--emr-accent), var(--emr-success)); }
+  .bmx-phase--grow {
+    background: linear-gradient(180deg, #f4fbf7 0%, var(--emr-bg-page) 58%);
+    box-shadow: 0 18px 52px rgba(56, 161, 105, .15);
+  }
+
+  .bmx-phase .bmx-ord {
+    position: absolute; top: 16px; right: 26px;
+    font-size: 3.6em; font-weight: 800; line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--emr-primary);
+    opacity: 0.06;
+    pointer-events: none;
+  }
+
+  .bmx-phase .bmx-eyebrow {
+    font-size: 0.62em; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .bmx-phase--now  .bmx-eyebrow { color: var(--emr-secondary); }
+  .bmx-phase--grow .bmx-eyebrow { color: var(--emr-success); }
+
+  .bmx-phase .bmx-word {
+    margin: 0;
+    font-size: 2.7em; font-weight: 800;
+    line-height: 1; letter-spacing: -0.035em;
+  }
+  .bmx-phase--now  .bmx-word { color: var(--emr-secondary); }
+  .bmx-phase--grow .bmx-word { color: var(--emr-success); }
+
+  .bmx-phase .bmx-line {
+    margin: 15px 0 0;
+    font-size: 0.92em; line-height: 1.45;
+    color: var(--emr-text-body);
+    max-width: 31ch;
+  }
+  .bmx-phase .bmx-line strong { color: var(--emr-text-primary); font-weight: 700; }
+
+  .bmx-phase .bmx-pill {
+    margin-top: 22px;
+    align-self: flex-start;
+    font-size: 0.72em; font-weight: 600; font-style: italic;
+    padding: 6px 16px; border-radius: 999px;
+    background: var(--emr-bg-tint);
+    border: 1px solid var(--emr-light-accent);
+    color: var(--emr-secondary);
+  }
+  .bmx-phase--grow .bmx-pill {
+    background: #edf9f1;
+    border-color: #b9e7cb;
+    color: var(--emr-success);
+  }
+
+  /* ---- Connector node (blue -> green = value compounds) ---- */
+  .bmx-link {
+    align-self: center;
+    width: 58px; height: 58px;
+    display: grid; place-items: center;
+    border-radius: 999px;
+    color: #fff;
+    background: linear-gradient(135deg, var(--emr-accent), var(--emr-success));
+    box-shadow: 0 12px 28px rgba(49, 130, 206, .30);
+    z-index: 2;
+  }
+  .bmx-link svg { width: 27px; height: 18px; }
+
+  /* ---- Seal: same codebase everywhere ---- */
+  .bmx-seal {
+    align-self: center;
+    margin-top: 32px;
+    display: inline-flex;
+    align-items: center; gap: 13px;
+    padding: 13px 28px;
+    border-radius: 999px;
+    background: var(--emr-gradient-primary);
+    box-shadow: 0 14px 36px rgba(15, 32, 58, .22);
+  }
+  .bmx-seal-mark { display: grid; place-items: center; color: var(--emr-light-accent); }
+  .bmx-seal-mark svg { width: 22px; height: 22px; }
+  .bmx-seal p {
+    margin: 0;
+    font-size: 1.05em; font-weight: 700;
+    letter-spacing: 0.005em;
+    color: #fff;
+  }
+
+  /* ===== MOBILE ===== */
+  @media (max-width: 768px) {
+    .bmx-slide .slide-inner { padding: 68px 20px 36px; }
+
+    .bmx-slide .bmx-headline { line-height: 1.08; }
+    .bmx-slide .bmx-headline em { display: inline; }
+    .bmx-slide .bmx-sub { margin-top: 12px; max-width: 100%; }
+
+    .bmx-stage {
+      margin-top: 24px;
+      grid-template-columns: 1fr;
+      gap: 0;
+      justify-items: stretch;
+    }
+
+    .bmx-phase { padding: 26px 24px 24px; border-radius: 20px; }
+    .bmx-phase .bmx-ord { font-size: 3.2em; top: 14px; right: 22px; }
+    .bmx-phase .bmx-eyebrow { font-size: 0.76em; }
+    .bmx-phase .bmx-word { font-size: 3em; }
+    .bmx-phase .bmx-line { font-size: 1.05em; max-width: 100%; margin-top: 12px; }
+    .bmx-phase .bmx-pill { font-size: 0.84em; margin-top: 16px; }
+
+    .bmx-link {
+      width: 52px; height: 52px;
+      transform: rotate(90deg);
+      justify-self: center;
+      margin: -16px 0;
+      border: 3px solid var(--emr-bg-page);
+      box-sizing: content-box;
+      z-index: 3;
+    }
+    .bmx-link svg { width: 24px; height: 16px; }
+
+    .bmx-seal {
+      width: 100%;
+      margin-top: 24px;
+      justify-content: center;
+      padding: 15px 22px;
+      border-radius: 16px;
+    }
+    .bmx-seal p { font-size: 1.08em; }
+  }
+</style>
+
+    <!-- redesign: ask -->
+    <style>
+/* ===== THE ASK — askx- namespace (matched 3-station set) ===== */
+.askx-section .slide-inner { overflow: hidden; }
+
+.askx-headline {
+  font-size: 2.2em;
+  line-height: 1.08;
+  margin: 0 0 22px;
+  max-width: 95%;
+}
+.askx-headline em { color: var(--emr-secondary); font-style: italic; }
+
+/* ---- 3-station journey row ---- */
+.askx-journey {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+/* shared card shell — all three stations share this design language */
+.askx-station {
+  position: relative;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  padding: 22px 22px 20px;
+  border-radius: 18px;
+  background: var(--emr-bg-page);
+  border: 1px solid var(--emr-border);
+  box-shadow: 0 16px 44px rgba(15,32,58,.10);
+  overflow: hidden;
+}
+.askx-station::before {
+  content: "";
+  position: absolute; top: 0; left: 0; right: 0; height: 4px;
+}
+.askx-station--now { background: linear-gradient(180deg, #f4f9ff 0%, var(--emr-bg-page) 46%); }
+.askx-station--now::before { background: linear-gradient(90deg, var(--emr-secondary), var(--emr-accent)); }
+.askx-station--unlock { background: linear-gradient(180deg, #f2fbf6 0%, var(--emr-bg-page) 46%); }
+.askx-station--unlock::before { background: linear-gradient(90deg, var(--emr-accent), var(--emr-success)); }
+
+/* phase chip — filled pill */
+.askx-phase {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  align-self: flex-start;
+  font-size: 0.6em;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 5px 12px 5px 10px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+.askx-phase-dot { width: 7px; height: 7px; border-radius: 50%; }
+.askx-station--now .askx-phase {
+  color: var(--emr-secondary);
+  background: var(--emr-bg-tint);
+  border: 1px solid var(--emr-light-accent);
+}
+.askx-station--now .askx-phase-dot { background: var(--emr-secondary); box-shadow: 0 0 0 3px rgba(43,108,176,.16); }
+.askx-station--unlock .askx-phase {
+  color: var(--emr-success);
+  background: rgba(56,161,105,.10);
+  border: 1px solid rgba(56,161,105,.26);
+}
+.askx-station--unlock .askx-phase-dot { background: var(--emr-success); box-shadow: 0 0 0 3px rgba(56,161,105,.18); }
+
+.askx-station-head {
+  font-size: 0.92em;
+  font-weight: 800;
+  color: var(--emr-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+}
+
+/* side-station rows (divided, like the hero's terms) */
+.askx-list {
+  list-style: none;
+  margin: 0; padding: 0;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+}
+.askx-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.75em;
+  line-height: 1.34;
+  color: var(--emr-text-body);
+  padding: 13px 0;
+}
+.askx-list li + li { border-top: 1px solid rgba(15,32,58,.08); }
+.askx-station--unlock .askx-list li + li { border-top-color: rgba(56,161,105,.14); }
+.askx-list strong { color: var(--emr-primary); font-weight: 700; }
+.askx-list em { color: var(--emr-secondary); font-style: italic; }
+.askx-station--unlock .askx-list em { color: var(--emr-success); }
+.askx-ico {
+  flex-shrink: 0;
+  width: 27px; height: 27px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--emr-bg-tint);
+  color: var(--emr-secondary);
+  border: 1px solid var(--emr-light-accent);
+  margin-top: -1px;
+}
+.askx-ico svg { width: 15px; height: 15px; }
+.askx-station--unlock .askx-ico {
+  background: rgba(56,161,105,.10);
+  color: var(--emr-success);
+  border-color: rgba(56,161,105,.22);
+}
+
+/* arrows between stations — subtle journey nodes */
+.askx-arrow {
+  flex: 0 0 auto;
+  align-self: center;
+  display: flex; align-items: center; justify-content: center;
+  width: 30px; height: 30px;
+  border-radius: 999px;
+  background: var(--emr-bg-subtle);
+  border: 1px solid var(--emr-border);
+  color: var(--emr-accent);
+  box-shadow: 0 4px 12px rgba(15,32,58,.08);
+}
+.askx-arrow svg { width: 17px; height: 17px; }
+
+/* ---- HERO station (the raise) — the anchor of the set ---- */
+.askx-station--hero {
+  flex: 1.18 1 0;
+  position: relative;
+  background: var(--emr-gradient-primary);
+  border: none;
+  box-shadow: 0 20px 52px rgba(26,54,93,.34);
+  color: #fff;
+  align-items: stretch;
+  justify-content: center;
+  padding: 24px 24px;
+  overflow: hidden;
+}
+.askx-station--hero::before {
+  background: linear-gradient(90deg, #bee3f8, #9ae6b4);
+  opacity: .92;
+}
+.askx-station--hero::after {
+  content: "";
+  position: absolute;
+  top: -40%; right: -30%;
+  width: 70%; height: 160%;
+  background: radial-gradient(circle, rgba(255,255,255,.18), transparent 70%);
+  pointer-events: none;
+}
+.askx-phase--hero {
+  color: #fff;
+  background: rgba(255,255,255,.16);
+  border: 1px solid rgba(255,255,255,.28);
+}
+.askx-phase--hero .askx-phase-dot { background: #fff; box-shadow: 0 0 0 3px rgba(255,255,255,.22); }
+.askx-hero-value {
+  position: relative;
+  font-size: 2.7em;
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: #fff;
+  margin: 2px 0 10px;
+}
+.askx-hero-cur {
+  font-size: 0.5em;
+  font-weight: 700;
+  vertical-align: top;
+  margin-right: 2px;
+  color: rgba(255,255,255,.82);
+}
+.askx-hero-tags {
+  position: relative;
+  display: flex;
+  gap: 7px;
+  margin-bottom: 13px;
+}
+.askx-tag {
+  font-size: 0.56em;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.16);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.28);
+}
+.askx-hero-rule {
+  position: relative;
+  height: 1px;
+  background: rgba(255,255,255,.22);
+  margin: 0 0 3px;
+}
+.askx-terms {
+  position: relative;
+  list-style: none;
+  margin: 0; padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.askx-terms li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 0;
+  border-top: 1px solid rgba(255,255,255,.15);
+}
+.askx-terms li:first-child { border-top: none; }
+.askx-term-k {
+  font-size: 0.66em;
+  color: rgba(255,255,255,.74);
+  letter-spacing: 0.01em;
+}
+.askx-term-v {
+  font-size: 0.74em;
+  font-weight: 800;
+  color: #fff;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* ---- budget bar ---- */
+.askx-funds { margin-top: 18px; }
+.askx-funds-row {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  height: 38px;
+}
+.askx-runway {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 16px;
+  background: linear-gradient(90deg, rgba(190,227,248,.22) 0%, rgba(49,130,206,.12) 100%);
+  border: 1px solid rgba(49,130,206,.28);
+  border-radius: 10px;
+  font-size: 0.64em;
+  color: var(--emr-text-body);
+  line-height: 1;
+  white-space: nowrap;
+}
+.askx-runway strong { color: var(--emr-primary); font-weight: 800; }
+.askx-runway-ico {
+  flex-shrink: 0;
+  width: 18px; height: 18px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--emr-secondary);
+}
+.askx-runway-ico svg { width: 16px; height: 16px; }
+.askx-bar {
+  flex: 1 1 auto;
+  display: flex;
+  height: 38px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(26,54,93,.12);
+}
+.askx-seg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.58em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 0 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.askx-seg + .askx-seg { box-shadow: inset 1px 0 0 rgba(255,255,255,.18); }
+.askx-seg--os  { background: var(--emr-primary); }
+.askx-seg--gtm { background: var(--emr-secondary); }
+.askx-seg--ai  { background: var(--emr-accent); }
+.askx-seg--reg { background: #5aa5e1; font-style: italic; }
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .askx-section .slide-inner { overflow: visible; }
+
+  .askx-headline {
+    font-size: 1.72em;
+    line-height: 1.12;
+    margin-bottom: 22px;
+  }
+
+  .askx-journey {
+    flex-direction: column;
+    gap: 14px;
+  }
+  .askx-arrow {
+    align-self: center;
+    transform: rotate(90deg);
+    width: 34px; height: 34px;
+  }
+  .askx-arrow svg { width: 18px; height: 18px; }
+
+  .askx-station,
+  .askx-station--hero {
+    flex: 1 1 auto;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 22px 22px 20px;
+    border-radius: 18px;
+  }
+  .askx-station--hero { justify-content: flex-start; }
+
+  .askx-phase { font-size: 0.74em; margin-bottom: 16px; }
+  .askx-station-head { font-size: 1.15em; margin-bottom: 12px; }
+  .askx-list { justify-content: flex-start; }
+  .askx-list li { font-size: 0.98em; line-height: 1.4; padding: 15px 0; }
+  .askx-ico { width: 32px; height: 32px; }
+  .askx-ico svg { width: 18px; height: 18px; }
+
+  .askx-hero-value { font-size: 3.2em; margin: 4px 0 12px; }
+  .askx-hero-tags { margin-bottom: 16px; }
+  .askx-tag { font-size: 0.7em; padding: 6px 13px; }
+  .askx-hero-rule { margin-bottom: 6px; }
+  .askx-terms li { padding: 13px 0; }
+  .askx-term-k { font-size: 0.92em; }
+  .askx-term-v { font-size: 1em; }
+
+  .askx-funds { margin-top: 22px; }
+  .askx-funds-row {
+    flex-direction: column;
+    height: auto;
+    gap: 12px;
+  }
+  .askx-runway {
+    align-self: stretch;
+    justify-content: center;
+    height: 44px;
+    font-size: 0.95em;
+    border-radius: 12px;
+  }
+  .askx-bar {
+    flex-direction: column;
+    height: auto;
+    border-radius: 12px;
+  }
+  .askx-seg {
+    width: 100% !important;
+    height: 46px;
+    justify-content: flex-start;
+    font-size: 0.92em;
+    letter-spacing: 0.02em;
+    padding: 0 18px;
+  }
+  .askx-seg + .askx-seg { box-shadow: inset 0 1px 0 rgba(255,255,255,.18); }
+}
+</style>
+    <style id="prog-kpi">
+    /* ════════════════════════════════════════════════════════
+       SLIDE 03 · PROGRESS / TRACTION — traction-first redesign.
+       Four prominent proof KPIs (gradient hero "25" + three live
+       stat cards) sit above a DEMOTED 13-month "receipt" rail.
+       Self-contained, namespaced `pk-`. Desktop 1280x720 + mobile.
+       ════════════════════════════════════════════════════════ */
+
+    /* Headline — beat the global `.slide-inner > .headline-big`
+       (margin-top:28px / 3.4em): higher specificity + defined later. */
+    .prog-slide .slide-inner > .pk-headline {
+      margin: 0;
+      line-height: 1.08;
+      max-width: 100%;
+    }
+    .prog-slide .pk-headline em { font-style: italic; color: var(--emr-secondary); }
+
+    /* ── BAND 2 · the KPI board (the four proof points) ──── */
+    .pk-board {
+      display: grid;
+      grid-template-columns: 1fr 2.1fr;
+      gap: 18px;
+      margin-top: 24px;
+    }
+    .pk-card, .pk-hero {
+      position: relative;
+      border-radius: 18px;
+      padding: 22px 24px;
+      min-height: 312px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+    .pk-card {
+      background: #ffffff;
+      border: 1px solid var(--emr-border);
+      box-shadow: 0 1px 2px rgba(26,54,93,.04), 0 8px 22px rgba(26,54,93,.07);
+    }
+
+    /* HERO · 25 hospitals signed (the anchor proof) */
+    .pk-hero {
+      background: var(--emr-gradient-primary);
+      color: #ffffff;
+      border: 0;
+      box-shadow: 0 20px 44px rgba(26,54,93,.34), 0 1px 0 rgba(255,255,255,.12) inset;
+    }
+    .pk-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,.10) 1px, transparent 1px);
+      background-size: 18px 18px;
+      pointer-events: none;
+    }
+    .pk-hero > * { position: relative; z-index: 1; }
+    .pk-seal {
+      align-self: flex-start;
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.26);
+      border-radius: 999px;
+      padding: 5px 12px;
+      font-size: .58em; font-weight: 800;
+      letter-spacing: .15em; text-transform: uppercase;
+    }
+    .pk-seal svg { width: 13px; height: 13px; color: var(--emr-light-accent); }
+    .pk-hero-foot { display: flex; flex-direction: column; gap: 10px; }
+    .pk-labels { display: flex; flex-direction: column; gap: 4px; }
+    .pk-hero-num { display: flex; align-items: flex-end; gap: 13px; }
+    .pk-hero-num b {
+      font-size: 5.4em; font-weight: 800; line-height: .78;
+      letter-spacing: -.03em; font-variant-numeric: tabular-nums;
+    }
+    .pk-hero-unit { display: flex; flex-direction: column; gap: 8px; padding-bottom: 7px; }
+    .pk-hero-unit .u { font-size: 1.35em; font-weight: 700; line-height: 1; }
+    .pk-hero-unit .s {
+      align-self: flex-start;
+      background: rgba(255,255,255,.16);
+      color: var(--emr-light-accent);
+      padding: 3px 11px; border-radius: 6px;
+      font-size: .62em; font-weight: 800;
+      letter-spacing: .16em; text-transform: uppercase;
+    }
+    .pk-hero-sub { font-size: .92em; color: var(--emr-light-accent); font-weight: 500; line-height: 1.3; }
+    .pk-receipt {
+      align-self: flex-start;
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 9px; padding: 7px 12px;
+      font-size: .66em; color: rgba(255,255,255,.94); font-weight: 500;
+    }
+    .pk-receipt svg { width: 14px; height: 14px; color: var(--emr-light-accent); flex: 0 0 auto; }
+
+    /* PEER cards (white live-status stats) */
+    .pk-badge {
+      align-self: flex-start;
+      display: inline-flex; align-items: center; gap: 7px;
+      border-radius: 999px; padding: 4px 11px;
+      font-size: .56em; font-weight: 800;
+      letter-spacing: .14em; text-transform: uppercase;
+    }
+    .pk-badge-live { background: rgba(56,161,105,.12); color: var(--emr-success); }
+    .pk-badge-eta  { background: var(--emr-bg-tint); color: var(--emr-secondary); }
+    .pk-badge-eta svg { width: 12px; height: 12px; }
+    .pk-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--emr-success); flex: 0 0 auto;
+      box-shadow: 0 0 0 0 rgba(56,161,105,.5);
+      animation: pk-pulse 2s ease-out infinite;
+    }
+    @keyframes pk-pulse {
+      0%   { box-shadow: 0 0 0 0 rgba(56,161,105,.5); }
+      70%  { box-shadow: 0 0 0 7px rgba(56,161,105,0); }
+      100% { box-shadow: 0 0 0 0 rgba(56,161,105,0); }
+    }
+    .pk-mid { display: flex; flex-direction: column; gap: 5px; }
+    .pk-val {
+      font-weight: 800; line-height: .9; letter-spacing: -.02em;
+      font-variant-numeric: tabular-nums; color: var(--emr-primary);
+    }
+    .pk-val--live { font-size: 2.9em; color: var(--emr-success); }
+    .pk-val--num  { font-size: 3.05em; }
+    .pk-val--num i { color: var(--emr-accent); font-style: normal; font-size: .5em; font-weight: 800; vertical-align: .58em; margin-left: 2px; }
+    .pk-val--eta  { font-size: 2.85em; }
+    .pk-label { font-size: .98em; font-weight: 700; color: var(--emr-text-primary); line-height: 1.18; }
+    .pk-sub { font-size: .76em; color: var(--emr-text-muted); line-height: 1.35; }
+    .pk-foot { display: flex; flex-direction: column; gap: 9px; }
+    .pk-prog { height: 5px; border-radius: 999px; background: var(--emr-bg-subtle); overflow: hidden; }
+    .pk-prog > i { display: block; height: 100%; width: 38%; background: var(--emr-gradient-primary); border-radius: 999px; }
+
+    /* ── BAND 3 · demoted journey rail (bonus receipts) ──── */
+    .pk-rail-cap {
+      font-size: .58em; letter-spacing: .24em; text-transform: uppercase;
+      color: var(--emr-text-light); font-weight: 800;
+      margin: 22px 0 14px;
+    }
+    .pk-rail { display: grid; grid-template-columns: repeat(7, 1fr); position: relative; }
+    .pk-rail::before {
+      content: ''; position: absolute;
+      left: 5px; right: 6%; top: 5px; height: 1px;
+      background: linear-gradient(90deg, var(--emr-border) 0%, var(--emr-border) 86%, transparent 100%);
+    }
+    .pk-node { display: flex; flex-direction: column; align-items: flex-start; gap: 7px; padding-right: 12px; }
+    .pk-node-dot {
+      width: 11px; height: 11px; border-radius: 50%;
+      background: #ffffff; border: 1.5px solid var(--emr-text-light);
+      position: relative; z-index: 1;
+    }
+    .pk-node-date { font-size: .62em; font-weight: 800; color: var(--emr-text-light); letter-spacing: .03em; }
+    .pk-node-tx { font-size: .68em; color: var(--emr-text-muted); line-height: 1.28; font-weight: 600; }
+    .pk-node--end .pk-node-dot { background: var(--emr-accent); border-color: var(--emr-accent); box-shadow: 0 0 0 4px rgba(49,130,206,.14); }
+    .pk-node--end .pk-node-date { color: var(--emr-secondary); }
+    .pk-node--end .pk-node-tx { color: var(--emr-primary); font-weight: 700; }
+
+    @media (prefers-reduced-motion: reduce) { .pk-dot { animation: none !important; } }
+
+    /* UNIFIED live-scale panel — merges the three live proofs onto ONE surface.
+       Hairline dividers (not gaps) + a single live eyebrow make it read as one
+       console rather than three cards. */
+    .pk-panel {
+      position: relative;
+      min-height: 312px;
+      border-radius: 18px;
+      overflow: hidden;
+      background: linear-gradient(180deg, #ffffff 0%, #f6faff 100%);
+      border: 1px solid var(--emr-border);
+      box-shadow: 0 1px 2px rgba(26,54,93,.04), 0 10px 28px rgba(26,54,93,.08);
+      padding: 20px 28px 22px;
+      display: flex;
+      flex-direction: column;
+    }
+    .pk-panel::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--emr-success) 0%, var(--emr-accent) 100%);
+    }
+    .pk-panel-head {
+      display: flex; align-items: center; gap: 9px; width: 100%;
+      color: var(--emr-success);
+      font-size: .62em; font-weight: 800; letter-spacing: .16em; text-transform: uppercase;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--emr-border);
+    }
+    .pk-panel-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; flex: 1; }
+    .pk-stat {
+      position: relative;
+      display: flex; flex-direction: column; justify-content: center;
+      gap: 6px;
+      padding: 0 26px;
+    }
+    .pk-stat:first-child { padding-left: 2px; }
+    .pk-stat:last-child  { padding-right: 2px; }
+    .pk-stat + .pk-stat::before {
+      content: ''; position: absolute; left: 0; top: 17%; bottom: 17%;
+      width: 1px;
+      background: linear-gradient(180deg, transparent, var(--emr-border) 22%, var(--emr-border) 78%, transparent);
+    }
+    .pk-panel .pk-val { font-size: 2.55em; }
+    .pk-panel .pk-prog { margin-top: 7px; max-width: 150px; }
+    /* reserve 2 lines for label + sub so all three stats center-align row-by-row
+       (col-3 "To full go-live" + its sub are naturally 1 line, which threw the trio off-level) */
+    .pk-panel .pk-label { min-height: 2.36em; }
+    .pk-panel .pk-sub   { min-height: 2.7em; }
+    /* equalize stat heights so all three values share one baseline despite col-3's bar */
+    .pk-stat:not(:last-child)::after { content: ''; display: block; height: 12px; }
+
+    /* ── MOBILE <=768 ────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .prog-slide .slide-inner > .pk-headline { font-size: 1.85em; margin-top: 14px; }
+      .pk-board { grid-template-columns: 1fr; gap: 12px; margin-top: 18px; }
+      .pk-card, .pk-hero { min-height: 0; padding: 18px 20px; }
+      .pk-hero-num b { font-size: 4.4em; }
+      .pk-val--num { font-size: 2.9em; }
+      .pk-val--live, .pk-val--eta { font-size: 2.5em; }
+      .pk-rail { grid-template-columns: 1fr; gap: 11px; }
+      .pk-rail::before { display: none; }
+      .pk-node { flex-direction: row; align-items: center; gap: 11px; padding: 0; }
+      .pk-node-date { font-size: .74em; min-width: 66px; }
+      .pk-node-tx { font-size: .82em; }
+      .pk-panel { min-height: 0; padding: 16px 18px; }
+      .pk-panel-grid { grid-template-columns: 1fr; }
+      .pk-stat { padding: 14px 2px; justify-content: flex-start; }
+      .pk-stat:first-child { padding-top: 4px; }
+      .pk-stat + .pk-stat::before { display: none; }
+      .pk-stat + .pk-stat { border-top: 1px solid var(--emr-border); }
+      .pk-panel .pk-val { font-size: 2.7em; }
+      .pk-panel .pk-prog { max-width: 240px; }
+      .pk-panel .pk-label, .pk-panel .pk-sub { min-height: 0; }
+      .pk-stat:not(:last-child)::after { display: none; }
+    }
+    </style>
 </head>
 <body>
   <div class="reveal">
@@ -7205,7 +8659,7 @@
             <span class="cover-prepared-for-name" id="cover-prepared-for-name"></span>
           </div>
           <div class="footer-row">
-            <div><strong>Lasha Khoshtaria</strong> &nbsp;·&nbsp; team@medimind.md</div>
+            <div><strong>Lasha Khoshtaria</strong> &nbsp;·&nbsp; <strong>Irakli Pkhovelishvili</strong> &nbsp;·&nbsp; team@medimind.md</div>
             <div>Investor Pitch &nbsp;·&nbsp; April 2026</div>
           </div>
         </div>
@@ -7434,7 +8888,9 @@
            Memory-line spine sits above as the philosophical
            anchor. Original Slide 02 (isometric) preserved.
            ═══════════════════════════════════════════════ -->
-      <section class="solv2-slide">
+      <!-- HIDDEN from rendered deck (data-visibility="hidden") per request — Solution
+           taken out of the live flow but preserved in source for future use. -->
+      <section class="solv2-slide" data-visibility="hidden">
         <div class="slide-inner">
           <div class="slide-label"><span class="label-num">02</span>SOLUTION</div>
           <h2 class="headline-big" style="font-size: 2.05em; max-width: 95%;">One hospital. <em>One operating system.</em></h2>
@@ -7551,173 +9007,290 @@
       </section>
 
       <!-- ═══════════════════════════════════════════════
-           SLIDE 03: CATEGORY — What we are
+           SLIDE 8: TEAM — Doctors building for doctors
            ═══════════════════════════════════════════════ -->
-      <section class="cat-slide is-solo cat-solo-v2">
+      <section class="team-slide">
         <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">03</span>CATEGORY</div>
+          <div class="slide-label"><span class="label-num">02</span>TEAM</div>
+          <h2 class="headline-big">We are <em>doctors</em> building for doctors.</h2>
 
-          <h2 class="headline-big">One of the first hospital operating systems built <em>ground-up on FHIR&nbsp;R4</em>.</h2>
-          <p class="headline-sub">Four conditions. <em>All four required at once</em> — or it isn't the category.</p>
-
-          <div class="cs2-grid">
-            <article class="cs2-card">
-              <span class="cs2-num">01</span>
-              <div class="cs2-icon" aria-hidden="true">
-                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M13 6.5a3.5 3.5 0 0 0-3.5 3.5v1.2A3.3 3.3 0 0 0 7 14.5a3.3 3.3 0 0 0 2.5 3.2V19a3.5 3.5 0 0 0 3.5 3.5h1.5V6.5z"/>
-                  <path d="M19 6.5A3.5 3.5 0 0 1 22.5 10v1.2A3.3 3.3 0 0 1 25 14.5a3.3 3.3 0 0 1-2.5 3.2V19a3.5 3.5 0 0 1-3.5 3.5h-1.5V6.5z"/>
-                  <path d="M16 22.5v4M13 26.5h6"/>
-                  <circle cx="11.5" cy="11" r="0.9" fill="currentColor"/>
-                  <circle cx="20.5" cy="11" r="0.9" fill="currentColor"/>
-                  <circle cx="11.5" cy="17.5" r="0.9" fill="currentColor"/>
-                  <circle cx="20.5" cy="17.5" r="0.9" fill="currentColor"/>
-                </svg>
+          <div class="team-section">
+            <div class="team-section-label">Founders</div>
+            <div class="founders-grid">
+              <div class="founder-card">
+                <span class="founder-badge">Co-Founder</span>
+                <img class="founder-photo" src="/deck-assets/team/lasha.png?v=2" alt="Lasha Khoshtaria">
+                <div class="founder-info">
+                  <h4>Dr. Lasha Khoshtaria</h4>
+                  <div class="role">Co-Founder · Clinical-Product</div>
+                  <p class="hook">Physician turned builder — shipping the EMR I wished I had at the bedside.</p>
+                  <div class="chip-row">
+                    <span class="chip">Tbilisi State Medical Univ.</span>
+                    <span class="chip">DevoteAI</span>
+                  </div>
+                </div>
               </div>
-              <h3 class="cs2-title">AI as architectural primitive</h3>
-              <p class="cs2-desc">Model lives in the <em>write path</em> — not bolted on as a copilot.</p>
-            </article>
-
-            <article class="cs2-card">
-              <span class="cs2-num">02</span>
-              <div class="cs2-icon" aria-hidden="true">
-                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="5" y="11" width="22" height="15.5" rx="1.4"/>
-                  <path d="M11 26.5v-5h4v5"/>
-                  <path d="M16 5.5v4M14 7.5h4"/>
-                  <path d="M9 14.5h2.5M9 17.5h2.5M20.5 14.5H23M20.5 17.5H23"/>
-                  <path d="M5 11l11-5 11 5"/>
-                </svg>
+              <div class="founder-card">
+                <span class="founder-badge">Co-Founder</span>
+                <img class="founder-photo" src="/deck-assets/team/irakli-pkh.png?v=5" alt="Irakli Pkhovelishvili">
+                <div class="founder-info">
+                  <h4>Irakli Pkhovelishvili</h4>
+                  <div class="role">Co-Founder · Product &amp; Strategy</div>
+                  <p class="hook">Scaled product at Riot Games to 10M+ players. Now scaling care at the bedside.</p>
+                  <div class="chip-row">
+                    <span class="chip">Duke Fuqua MBA</span>
+                    <span class="chip">Riot Games · PM</span>
+                  </div>
+                </div>
               </div>
-              <h3 class="cs2-title">Full hospital breadth</h3>
-              <p class="cs2-desc">One codebase replaces <em>30+ stitched vendors</em> — Epic, Cerner, athena, Nuance.</p>
-            </article>
-
-            <article class="cs2-card">
-              <span class="cs2-num">03</span>
-              <div class="cs2-icon" aria-hidden="true">
-                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M16 4l11 5.5v13L16 28 5 22.5v-13z"/>
-                  <path d="M5 9.5l11 5.5 11-5.5M16 15v13"/>
-                </svg>
-              </div>
-              <h3 class="cs2-title">Not stitched, not an overlay</h3>
-              <p class="cs2-desc">One product, <em>one schema, one team</em> — FHIR R4 as the storage primitive.</p>
-            </article>
-
-            <article class="cs2-card">
-              <span class="cs2-num">04</span>
-              <div class="cs2-icon" aria-hidden="true">
-                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="16" cy="16" r="11"/>
-                  <path d="M5 16h22"/>
-                  <path d="M16 5c3.5 3.5 3.5 18 0 22"/>
-                  <path d="M16 5c-3.5 3.5-3.5 18 0 22"/>
-                </svg>
-              </div>
-              <h3 class="cs2-title">Priced for emerging markets</h3>
-              <p class="cs2-desc">Markets US incumbents <em>won't enter</em> — global standards, regional pricing.</p>
-            </article>
+            </div>
           </div>
 
+          <div class="team-section">
+            <div class="team-section-label">Clinical &amp; Strategic Advisory</div>
+            <div class="advisors-grid">
+              <div class="advisor-card is-pilot">
+                <img class="advisor-photo" src="/deck-assets/team/gogorishvili.png?v=3" alt="Dr. Irakli Gogorishvili">
+                <h5>Dr. Irakli Gogorishvili, MD, PhD</h5>
+                <p class="role-small">Head of Interventional Cardiology</p>
+                <div class="chip-row">
+                  <span class="chip chip-pilot">Healthycore · Pilot</span>
+                </div>
+              </div>
+              <div class="advisor-card is-pilot">
+                <img class="advisor-photo" src="/deck-assets/team/kobalava.png?v=5" alt="Dr. Mamuka Kobalava">
+                <h5>Dr. Mamuka Kobalava, MD, PhD</h5>
+                <p class="role-small">Head of Cardiology</p>
+                <div class="chip-row">
+                  <span class="chip chip-pilot">Healthycore · Pilot</span>
+                </div>
+              </div>
+              <div class="advisor-card is-pilot">
+                <img class="advisor-photo" src="/deck-assets/team/levan.png?v=2" alt="Dr. Levan G.">
+                <h5>Dr. Levan G., MD</h5>
+                <p class="role-small">Head of Surgery · Liver Transplant &amp; HPB</p>
+                <div class="chip-row">
+                  <span class="chip">Liver Research Network</span>
+                  <span class="chip">Univ. of Regensburg</span>
+                </div>
+              </div>
+              <div class="advisor-card">
+                <img class="advisor-photo" src="/deck-assets/team/felipe.png?v=2" alt="Felipe Infante de Castro">
+                <h5>Felipe Infante de Castro</h5>
+                <p class="role-small">Strategic Advisor · US GTM &amp; Fundraising</p>
+                <div class="chip-row">
+                  <span class="chip">Harvard HBS</span>
+                  <span class="chip">Distillery</span>
+                </div>
+              </div>
+              <div class="advisor-card">
+                <img class="advisor-photo" src="/deck-assets/team/tornike.png?v=2" alt="Tornike Phkhovelishvili">
+                <h5>Tornike Phkhovelishvili</h5>
+                <p class="role-small">Strategic Advisor · Regional Ecosystem</p>
+                <div class="chip-row">
+                  <span class="chip">Univ. of Tartu</span>
+                  <span class="chip">Radiusi</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-closer">
+            They use the product. They break it. They shape it. <em>Clinical depth × technical depth.</em>
+          </div>
         </div>
         <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
         <aside class="notes">
-          The category claim. One of the first hospital operating systems built ground-up on FHIR R4 — meaning FHIR is the storage primitive, not an export format. Four things have to be true together. AI as a native architectural primitive — the model is in the write path, not bolted on. Full hospital breadth — one codebase covers what today takes thirty stitched-together vendors. Not acquisition-stitched, not an overlay — single product, one schema, one team. Priced for underserved markets — the markets American incumbents won't enter.
+          The team is the reason we can execute this. I'm a physician — my co-founder Irakli comes from Riot Games where he led product for TeamFight Tactics. Clinical context plus product-at-scale experience. Our advisory isn't decorative: Dr. Gogorishvili heads interventional cardiology at Healthycore — our active pilot site. Dr. Kobalava heads cardiology there. They use the product daily. They break it. They shape it. On surgical and transplant depth we have Dr. Levan — Head of Surgery, HPB and liver transplant surgeon, founder of Liver Research Network, University of Regensburg. On GTM and fundraising we're advised by Felipe Infante de Castro — HBS, Distillery. On regional ecosystem we work with Tornike Phkhovelishvili — University of Tartu, co-founder of Radiusi coworking. Clinical depth × technical depth × GTM depth — that's the shape of team this takes.
         </aside>
       </section>
 
       <!-- ═══════════════════════════════════════════════
-           SLIDE 04: COMPETITION — Who we aren't
+           SLIDE 9: PROGRESS / TIMELINE
            ═══════════════════════════════════════════════ -->
-      <section class="cat-slide">
+      <section class="prog-slide">
         <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">04</span>COMPETITION</div>
-          <h2 class="headline-big">Palantir reads Epic. We replace <em>Both</em>.</h2>
-          <p class="headline-sub">Three crowded categories all sit on top of the hospital. None of them <em>is</em> the operating system the hospital runs on.</p>
+          <div class="slide-label"><span class="label-num">03</span>PROGRESS MADE</div>
+          <h2 class="headline-big pk-headline">13 months. From idea to <em>live in 25 hospitals</em>.</h2>
 
-          <div class="cat-terrain cat-terrain-wide">
-            <div class="cat-row">
-              <div class="cat-row-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="9" y="3" width="6" height="11" rx="3"></rect>
-                  <path d="M5 11a7 7 0 0 0 14 0"></path>
-                  <line x1="12" y1="18" x2="12" y2="22"></line>
-                  <line x1="8" y1="22" x2="16" y2="22"></line>
-                </svg>
+          <!-- KPI BOARD · the four proof points (prominent) -->
+          <div class="pk-board">
+
+            <!-- HERO · 25 hospitals signed -->
+            <div class="pk-hero">
+              <span class="pk-seal">
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg>
+                Anchor contract
+              </span>
+              <div class="pk-hero-num">
+                <b>25</b>
+                <span class="pk-hero-unit">
+                  <span class="u">hospitals</span>
+                  <span class="s">Signed</span>
+                </span>
               </div>
-              <div class="cat-row-label">
-                Ambient Scribes
-                <em>write notes on top</em>
-              </div>
-              <div class="cat-row-names">
-                <span class="cat-name">Abridge</span>
-                <span class="cat-name">Dragon Copilot</span>
-                <span class="cat-name">Suki</span>
+              <div class="pk-hero-foot">
+                <div class="pk-hero-sub">Georgia&rsquo;s 2nd largest hospital chain.</div>
+                <span class="pk-receipt">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  Counter-signed Apr 2026 &middot; binding
+                </span>
               </div>
             </div>
 
-            <div class="cat-row">
-              <div class="cat-row-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 3l1.8 4.4L18.4 9l-4.6 1.6L12 15l-1.8-4.4L5.6 9l4.6-1.6z"/>
-                  <path d="M19 15.5l.9 1.9 1.9.9-1.9.9-.9 1.9-.9-1.9-1.9-.9 1.9-.9z"/>
-                </svg>
-              </div>
-              <div class="cat-row-label">
-                Proactive AI Overlays
-                <em>reason on top</em>
-              </div>
-              <div class="cat-row-names">
-                <span class="cat-name">Palantir AIP</span>
-                <span class="cat-name">Bayesian Health</span>
-                <span class="cat-name">Regard</span>
-              </div>
-            </div>
+            <!-- UNIFIED · live-scale panel (the three live proofs, one surface) -->
+            <div class="pk-panel">
+              <div class="pk-panel-head"><span class="pk-dot"></span>Shipped &amp; scaling</div>
+              <div class="pk-panel-grid">
 
-            <div class="cat-row">
-              <div class="cat-row-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                  <ellipse cx="12" cy="5" rx="8" ry="2.6"/>
-                  <path d="M4 5v6c0 1.4 3.6 2.6 8 2.6s8-1.2 8-2.6V5"/>
-                  <path d="M4 11v6c0 1.4 3.6 2.6 8 2.6s8-1.2 8-2.6v-6"/>
-                </svg>
-              </div>
-              <div class="cat-row-label">
-                Legacy Hospital Records
-                <em>own the data, no native AI</em>
-              </div>
-              <div class="cat-row-names">
-                <span class="cat-name">Epic</span>
-                <span class="cat-name">Cerner</span>
-                <span class="cat-name">Oracle</span>
+                <div class="pk-stat">
+                  <span class="pk-val pk-val--live">Live</span>
+                  <span class="pk-label">First modules shipped</span>
+                  <span class="pk-sub">Running in 25 hospitals today.</span>
+                </div>
+
+                <div class="pk-stat">
+                  <span class="pk-val pk-val--num">1,000<i>+</i></span>
+                  <span class="pk-label">Doctors using daily</span>
+                  <span class="pk-sub">Active across pilot sites.</span>
+                </div>
+
+                <div class="pk-stat">
+                  <span class="pk-val pk-val--eta">~2 mo</span>
+                  <span class="pk-label">To full go-live</span>
+                  <span class="pk-sub">All 25 sites &middot; ~Aug 2026.</span>
+                  <div class="pk-prog"><i></i></div>
+                </div>
+
               </div>
             </div>
           </div>
 
-          <div class="cat-gap">
-            <div class="cat-gap-line"></div>
-            <div class="cat-gap-chip">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="M6 13l6 6 6-6"/></svg>
-              <span>None of the above is the OS</span>
-            </div>
-            <div class="cat-gap-line"></div>
-          </div>
-
-          <!-- Position statement — branded gradient hero card. -->
-          <div class="cat-footer cat-footer-hero">
-            <div class="cat-footer-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg>
-            </div>
-            <div class="cat-footer-text">
-              <div class="cat-footer-line">Today's healthcare AI is an app.</div>
-              <div class="cat-footer-sub">We are <em>the operating system</em>.</div>
-            </div>
+          <!-- DEMOTED · the 13-month path (bonus receipts) -->
+          <div class="pk-rail-cap">The 13-month path</div>
+          <div class="pk-rail">
+            <div class="pk-node"><span class="pk-node-dot"></span><span class="pk-node-date">Mar &rsquo;25</span><span class="pk-node-tx">Idea born</span></div>
+            <div class="pk-node"><span class="pk-node-dot"></span><span class="pk-node-date">May &rsquo;25</span><span class="pk-node-tx">Pilot &middot; 50 doctors</span></div>
+            <div class="pk-node"><span class="pk-node-dot"></span><span class="pk-node-date">Sep &rsquo;25</span><span class="pk-node-tx">&#8382;150K GITA grant</span></div>
+            <div class="pk-node"><span class="pk-node-dot"></span><span class="pk-node-date">Oct &rsquo;25</span><span class="pk-node-tx">AI-native pivot</span></div>
+            <div class="pk-node"><span class="pk-node-dot"></span><span class="pk-node-date">Jan &rsquo;26</span><span class="pk-node-tx">LOI &middot; 25-hospital</span></div>
+            <div class="pk-node"><span class="pk-node-dot"></span><span class="pk-node-date">Feb &rsquo;26</span><span class="pk-node-tx">Gov. &ldquo;Innovative Startup&rdquo;</span></div>
+            <div class="pk-node pk-node--end"><span class="pk-node-dot"></span><span class="pk-node-date">Apr &rsquo;26</span><span class="pk-node-tx">Contract signed</span></div>
           </div>
         </div>
         <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
         <aside class="notes">
-          The market today has three crowded categories — all of them ride on top of the hospital. Ambient scribes write notes on top. Proactive AI overlays reason on top. Legacy EHRs own the data but have no native AI in the write path. None of them is the operating system the hospital runs on. That is the position MediMind owns. They are apps. We are the OS.
+          13 months from idea to contract — and we can prove it. Started as an idea last March. Cardiology pilot with 50 doctors in May. ₾150K Gita grant in September, validating clinical readiness. Pivoted to the full AI-native ecosystem in October. LOI with a 25-hospital chain in January. February: awarded "Innovative Startup" status by the Government of Georgia. Signed the actual 25-hospital contract in April — Georgia's 2nd largest hospital chain. Full go-live August. This is what momentum looks like.
+        </aside>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════
+           SLIDE 03: CATEGORY — What we are
+           ═══════════════════════════════════════════════ -->
+      <section class="cat-slide is-solo catx-slide">
+        <div class="slide-inner">
+          <div class="slide-label"><span class="label-num">04</span>CATEGORY</div>
+
+          <h2 class="headline-big catx-headline">One of the first <em>AI-native</em> hospital systems.</h2>
+
+          <!-- HERO: what "AI-native" actually means -->
+          <div class="catx-hero">
+            <div class="catx-hero-lead">
+              <span class="catx-kicker">What &ldquo;AI-native&rdquo; means</span>
+              <p class="catx-def">Intelligence lives <strong>inside every workflow</strong> &mdash; not added on top.</p>
+            </div>
+            <div class="catx-motif" aria-hidden="true">
+              <div class="catx-step">
+                <div class="catx-step-ic">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3"/>
+                    <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/>
+                  </svg>
+                </div>
+                <span class="catx-step-tx">Collect</span>
+              </div>
+              <span class="catx-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+              </span>
+              <div class="catx-step">
+                <div class="catx-step-ic">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3a4 4 0 0 0-4 4 3.5 3.5 0 0 0-1.5 6.4A3.5 3.5 0 0 0 9 20a3 3 0 0 0 3-1.5z"/>
+                    <path d="M12 3a4 4 0 0 1 4 4 3.5 3.5 0 0 1 1.5 6.4A3.5 3.5 0 0 1 15 20a3 3 0 0 1-3-1.5z"/>
+                    <path d="M12 3v15.5"/>
+                  </svg>
+                </div>
+                <span class="catx-step-tx">Analyze</span>
+              </div>
+              <span class="catx-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+              </span>
+              <div class="catx-step">
+                <div class="catx-step-ic">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M13 2 4 14h7l-1 8 9-12h-7z"/>
+                  </svg>
+                </div>
+                <span class="catx-step-tx">Act</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- THREE PILLARS -->
+          <div class="catx-grid">
+            <article class="catx-card">
+              <span class="catx-num">01</span>
+              <div class="catx-icon" aria-hidden="true">
+                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="5" y="6" width="22" height="20" rx="3"/>
+                  <path d="M5 12h22"/>
+                  <path d="M9 19h8M9 22.5h5"/>
+                  <path d="M22 17.5l1.6 1.6 2.6-2.8" stroke="var(--emr-success)"/>
+                </svg>
+              </div>
+              <h3 class="catx-title">Built ground-up</h3>
+              <div class="catx-body">
+                <p class="catx-claim"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg><span>One product &middot; one schema &middot; one team.</span></p>
+                <p class="catx-foil"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></svg><span>Not an overlay on legacy systems.</span></p>
+              </div>
+            </article>
+
+            <article class="catx-card">
+              <span class="catx-num">02</span>
+              <div class="catx-icon" aria-hidden="true">
+                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 4l11 5.5v13L16 28 5 22.5v-13z"/>
+                  <path d="M5 9.5l11 5.5 11-5.5M16 15v13"/>
+                </svg>
+              </div>
+              <h3 class="catx-title">Whole-hospital scope</h3>
+              <div class="catx-body">
+                <p class="catx-claim"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg><span>One codebase across every department.</span></p>
+                <p class="catx-foil"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></svg><span>Not 30+ stitched-together apps.</span></p>
+              </div>
+            </article>
+
+            <article class="catx-card">
+              <span class="catx-num">03</span>
+              <div class="catx-icon" aria-hidden="true">
+                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M13 6.5a3.5 3.5 0 0 0-3.5 3.5v1.2A3.3 3.3 0 0 0 7 14.5a3.3 3.3 0 0 0 2.5 3.2V19a3.5 3.5 0 0 0 3.5 3.5h1.5V6.5z"/>
+                  <path d="M19 6.5A3.5 3.5 0 0 1 22.5 10v1.2A3.3 3.3 0 0 1 25 14.5a3.3 3.3 0 0 1-2.5 3.2V19a3.5 3.5 0 0 1-3.5 3.5h-1.5V6.5z"/>
+                  <path d="M16 22.5v4M13 26.5h6"/>
+                </svg>
+              </div>
+              <h3 class="catx-title">AI in every layer</h3>
+              <div class="catx-body">
+                <p class="catx-claim"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg><span>In the write path of every decision.</span></p>
+                <p class="catx-foil"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></svg><span>Not a read-only copilot on the side.</span></p>
+              </div>
+            </article>
+          </div>
+
+        </div>
+        <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
+        <aside class="notes">
+          This is the category claim. MediMind is one of the first AI-native hospital operating systems. Here's what "AI-native" actually means, in plain terms: the intelligence sits inside every hospital workflow rather than off to the side. The system continuously collects every datapoint, analyzes all of it together, and acts directly in the workflow — Collect, Analyze, Act. That end-to-end loop is what lets us optimize the whole hospital at once: maximizing both quality of care and the hospital's profitability. Three things make this real and they're all true at once. One — it's not an overlay on legacy systems; we built it ground-up as a single product, one schema, one team, with FHIR R4 as the storage primitive, not something bolted onto Epic or Cerner. Two — full hospital scope: one codebase covers what today takes thirty-plus stitched-together vendors, every department, clinical and operational. Three — the AI brain lives in every layer, in the write path of every workflow, reasoning across all the hospital's data, not a copilot bolted on after the fact.
         </aside>
       </section>
 
@@ -7728,8 +9301,8 @@
         <div class="slide-inner">
           <div class="slide-label"><span class="label-num">05</span>INSIDE MEDIMIND</div>
 
-          <h2 class="headline-big"><em>MediMind</em> is the EMR. The LIS. The pharmacy. The HR… <em>all in one, AI-native</em>.</h2>
-          <p class="headline-sub">Every department <em>covered</em>. Every clinician <em>levelled up</em>. Every shift <em>smarter than the last</em>.</p>
+          <h2 class="headline-big">MediMind is the EMR. The LIS. The pharmacy. The&nbsp;HR&hellip; <em>all in one, AI-native.</em></h2>
+          <p class="headline-sub"><strong>In practice it means</strong> — every department <em>covered</em>, every clinician <em>levelled up</em>, every shift <em>smarter than the last</em>.</p>
 
           <!-- Hospital floor plan: 12 rooms surrounding a central AI brain -->
           <div class="floor-plan">
@@ -8049,173 +9622,204 @@
       </section>
 
       <!-- ═══════════════════════════════════════════════
-           SLIDE 06: THE GEORGIA WINDOW — regulatory runway
+           SLIDE 04: COMPETITION — Who we aren't
            ═══════════════════════════════════════════════ -->
-      <section class="gw-slide">
+      <section class="cat-slide">
         <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">06</span>THE GEORGIA WINDOW · REGULATORY RUNWAY</div>
+          <div class="slide-label"><span class="label-num">06</span>COMPETITION</div>
+          <h2 class="headline-big">Palantir reads Epic. We replace <em>Both</em>.</h2>
+          <p class="headline-sub">Three crowded categories all sit on top of the hospital. None of them <em>is</em> the operating system the hospital runs on.</p>
 
-          <h2 class="headline-big"><em>12–28 months</em> of head start.</h2>
-          <p class="headline-sub">While US and EU competitors queue for FDA clearance and EU AI Act conformity, we ship full-stack agentic AI in live Georgian hospitals today.</p>
-
-          <!-- Timeline — 3 stops + head-start chip -->
-          <div class="gw-timeline">
-            <div class="gw-stops">
-              <div class="gw-stop gw-stop--today">
-                <div class="gw-dot"></div>
-                <div class="gw-stop-date">Apr 2026</div>
-                <div class="gw-stop-caption">Today · shipping live</div>
+          <div class="cat-terrain cat-terrain-wide">
+            <div class="cat-row">
+              <div class="cat-row-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="9" y="3" width="6" height="11" rx="3"></rect>
+                  <path d="M5 11a7 7 0 0 0 14 0"></path>
+                  <line x1="12" y1="18" x2="12" y2="22"></line>
+                  <line x1="8" y1="22" x2="16" y2="22"></line>
+                </svg>
               </div>
-              <div class="gw-stop">
-                <div class="gw-dot"></div>
-                <div class="gw-stop-date">2 Aug 2027</div>
-                <div class="gw-stop-caption">EU AI Act activates<sup>¹</sup></div>
+              <div class="cat-row-label">
+                Ambient Scribes
+                <em>write notes on top</em>
               </div>
-              <div class="gw-stop">
-                <div class="gw-dot"></div>
-                <div class="gw-stop-date">2028 — Q1</div>
-                <div class="gw-stop-caption">Western equivalents filable<sup>²</sup></div>
+              <div class="cat-row-names">
+                <span class="cat-name">Abridge</span>
+                <span class="cat-name">Dragon Copilot</span>
+                <span class="cat-name">Suki</span>
               </div>
             </div>
-            <div class="gw-span">
-              <div class="gw-span-line"></div>
-              <div class="gw-span-chip">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
-                16–28 months · MediMind ships into this gap
+
+            <div class="cat-row">
+              <div class="cat-row-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 3l1.8 4.4L18.4 9l-4.6 1.6L12 15l-1.8-4.4L5.6 9l4.6-1.6z"/>
+                  <path d="M19 15.5l.9 1.9 1.9.9-1.9.9-.9 1.9-.9-1.9-1.9-.9 1.9-.9z"/>
+                </svg>
               </div>
-              <div class="gw-span-line"></div>
+              <div class="cat-row-label">
+                Proactive AI Overlays
+                <em>reason on top</em>
+              </div>
+              <div class="cat-row-names">
+                <span class="cat-name">Palantir AIP</span>
+                <span class="cat-name">Bayesian Health</span>
+                <span class="cat-name">Regard</span>
+              </div>
+            </div>
+
+            <div class="cat-row">
+              <div class="cat-row-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <ellipse cx="12" cy="5" rx="8" ry="2.6"/>
+                  <path d="M4 5v6c0 1.4 3.6 2.6 8 2.6s8-1.2 8-2.6V5"/>
+                  <path d="M4 11v6c0 1.4 3.6 2.6 8 2.6s8-1.2 8-2.6v-6"/>
+                </svg>
+              </div>
+              <div class="cat-row-label">
+                Legacy Hospital Records
+                <em>own the data, no native AI</em>
+              </div>
+              <div class="cat-row-names">
+                <span class="cat-name">Epic</span>
+                <span class="cat-name">Cerner</span>
+                <span class="cat-name">Oracle</span>
+              </div>
             </div>
           </div>
 
-          <!-- Three cards — short, icon-led -->
-          <div class="gw-cards">
-            <div class="gw-card">
-              <div class="gw-card-head">
-                <div class="gw-card-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5 3 21l4.5-1.5"/><path d="M15 5l4 4"/><path d="M7.5 19.5L14 13l-3-3-6.5 6.5 3 3z"/><path d="M14 13l5-5a3 3 0 1 0-4-4l-5 5"/></svg>
-                </div>
-                <h3>Ship today</h3>
-              </div>
-              <p>Agentic CPOE, MAR prep, auto-discharge, predictive bed ops — <strong>live at GeoHospitals</strong>. Features that would need FDA 510(k) or EU Annex III conformity abroad.</p>
+          <div class="cat-gap">
+            <div class="cat-gap-line"></div>
+            <div class="cat-gap-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="M6 13l6 6 6-6"/></svg>
+              <span>None can become AI-native</span>
             </div>
-            <div class="gw-card">
-              <div class="gw-card-head">
-                <div class="gw-card-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 16 14"/></svg>
-                </div>
-                <h3>Rivals queue</h3>
-              </div>
-              <p>EU AI Act high-risk activates <strong>2 Aug 2027</strong><sup>¹</sup>, plus <strong>13–18 mo</strong> Notified Body queue<sup>²</sup>. FDA AI SaMD real-world: <strong>140–310 days</strong><sup>³</sup>.</p>
-            </div>
-            <div class="gw-card">
-              <div class="gw-card-head">
-                <div class="gw-card-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="14 7 21 7 21 14"/></svg>
-                </div>
-                <h3>Moat compounds</h3>
-              </div>
-              <p>Every Georgian deployment month becomes <strong>real-world evidence</strong> — shortening our own future FDA PCCP and EU Annex III submissions.</p>
-            </div>
+            <div class="cat-gap-line"></div>
           </div>
 
-          <!-- Stats — the visual climax -->
-          <div class="gw-stats">
-            <div class="gw-stat">
-              <div class="gw-stat-num">25<span class="gw-stat-unit">+</span></div>
-              <div class="gw-stat-label">Hospitals · MSA signed</div>
-              <div class="gw-stat-sub">Counter-signed Apr 2026 · go-live Aug 2026</div>
+          <!-- Position statement — branded gradient hero card. -->
+          <div class="cat-footer cat-footer-hero">
+            <div class="cat-footer-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg>
             </div>
-            <div class="gw-stat">
-              <div class="gw-stat-num">16–28<span class="gw-stat-unit">MO</span></div>
-              <div class="gw-stat-label">Head start · US + EU</div>
-              <div class="gw-stat-sub">~12–18 mo median for agentic clinical AI</div>
+            <div class="cat-footer-text">
+              <div class="cat-footer-line">Vast majority of the competitors can't unify into AI-native.</div>
+              <div class="cat-footer-sub">We are <em>the combination they can't become</em>.</div>
             </div>
-          </div>
-
-          <!-- Footnotes -->
-          <div class="gw-footnotes">
-            <span><sup>¹</sup>Regulation (EU) 2024/1689, Art 6(1) + Annex I</span>
-            <span><sup>²</sup>MDR Notified Body avg certification time, 2025–26</span>
-            <span><sup>³</sup>FDA MDUFA V performance data · AI/ML 510(k) + De Novo</span>
           </div>
         </div>
         <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
         <aside class="notes">
-          The Georgia window. Greenfield regulatory environment plus a ground-up FHIR-native codebase means we ship full-stack agentic AI against live clinical data today. The head start is real but it is feature-specific and it is bounded. EU AI Act Article 6(1) high-risk medical-device obligations activate on 2 August 2027. Add the Notified Body queue of thirteen to eighteen months and Western competitors are looking at 2028 Q1 before they can legitimately ship the equivalent of what we're shipping at Healthycore today. That's a sixteen to twenty-eight month runway — median closer to twelve to eighteen for the agentic clinical AI we actually build. And the real moat is not the legal arbitrage, it's the data. Every month of Georgian deployment becomes real-world evidence competitors cannot retroactively acquire. The head start compounds into a dossier. Twenty-five hospitals are under signed MSA as of April 2026, Healthycore is our live pilot site today, and every feature we ship there is feeding the file we'll use when we expand to the EU and US — shortening our own future FDA PCCP and Annex III submissions. The slide is honest about what's contracted versus what's live. That honesty is the sharpest claim in the room.
+          The market today has three crowded categories — all of them ride on top of the hospital. Ambient scribes write notes on top. Proactive AI overlays reason on top. Legacy EHRs own the data but have no native AI in the write path. None of them is the operating system the hospital runs on. That is the position MediMind owns. They are apps. We are the OS.
         </aside>
       </section>
 
       <!-- ═══════════════════════════════════════════════
-           SLIDE 05: BUSINESS MODEL — three-tier pricing
+           SLIDE 06: THE GEORGIA WINDOW — regulatory runway
            ═══════════════════════════════════════════════ -->
-      <section class="bm-slide">
+      <section class="gwx-slide">
         <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">07</span>BUSINESS MODEL · PRICING</div>
-          <h2 class="headline-big">Priced where <em>hospitals are</em>.</h2>
-          <p class="headline-sub">Same product. Three market tiers. Flex on price and SLA — never on features.</p>
+          <div class="slide-label"><span class="label-num">07</span>THE GEORGIA WINDOW · REGULATORY RUNWAY</div>
 
-          <!-- Three-tier pricing cards — single focus per card -->
-          <div class="bm-tiers">
-            <!-- LAUNCH -->
-            <div class="bm-tier">
-              <div class="bm-tier-label">Launch</div>
-              <div class="bm-tier-regions">Georgia</div>
+          <h2 class="headline-big gwx-headline">The <em>Georgia window</em> — ship live today.</h2>
+          <p class="headline-sub gwx-sub">A human-first innovation hub with <strong>relaxed med-device regulation</strong> — so we run agentic clinical AI in <em>live hospitals today</em>, years before US / EU rivals clear approval.</p>
 
-              <div class="bm-tier-price">
-                <span class="bm-tier-price-dollar">$</span>
-                <span class="bm-tier-price-num">30</span>
+          <div class="gwx-grid">
+
+            <!-- LEFT — Georgia advantage + map -->
+            <div class="gwx-left">
+              <div class="gwx-contrast">
+                <div class="gwx-pill gwx-pill--go">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+                  <div><strong>Georgia</strong><span>ship live today</span></div>
+                </div>
+                <div class="gwx-pill gwx-pill--wait">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 16 14"/></svg>
+                  <div><strong>US / EU</strong><span>queue for years</span></div>
+                </div>
               </div>
-              <div class="bm-tier-price-unit">per seat · per month</div>
 
-              <div class="bm-tier-scope">
-                <div class="bm-tier-scope-title">Full platform</div>
+              <div class="gwx-mapwrap">
+                <span class="gwx-mapcap">GEORGIA</span>
+                <svg class="gwx-map" viewBox="-15 210 1054 600" xmlns="http://www.w3.org/2000/svg" aria-label="Map of Georgia" role="img">
+                  <defs>
+                    <linearGradient id="gwxMapFill" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0" stop-color="#1a365d"/>
+                      <stop offset="0.55" stop-color="#2b6cb0"/>
+                      <stop offset="1" stop-color="#3182ce"/>
+                    </linearGradient>
+                    <filter id="gwxMapGlow" x="-20%" y="-20%" width="140%" height="140%">
+                      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#1a365d" flood-opacity="0.28"/>
+                    </filter>
+                  </defs>
+                  <g transform="translate(0,1024) scale(0.1,-0.1)" fill="url(#gwxMapFill)" stroke="#bee3f8" stroke-width="14" filter="url(#gwxMapGlow)"><path d="M285 7743 c-11 -2 -43 -13 -71 -24 -57 -22 -79 -53 -115 -156 -10 -31 -26 -68 -35 -81 -17 -27 -66 -163 -60 -169 2 -2 28 -6 57 -10 42 -5 62 -13 91 -39 45 -40 82 -60 131 -69 29 -6 41 -16 61 -49 29 -50 55 -145 49 -179 -4 -18 2 -30 21 -45 15 -11 36 -41 47 -67 l21 -47 22 21 c31 29 61 26 106 -9 21 -16 61 -36 90 -43 37 -10 69 -28 107 -62 50 -44 57 -47 91 -40 55 11 151 6 206 -11 27 -8 63 -14 78 -14 45 0 93 -43 108 -96 7 -25 21 -51 32 -57 10 -7 18 -16 18 -21 0 -6 12 -22 26 -38 l27 -27 25 19 c33 26 74 25 99 -2 38 -41 93 -176 93 -227 0 -42 5 -53 51 -104 45 -50 53 -56 71 -46 36 20 106 5 142 -30 25 -24 41 -31 71 -31 66 -1 128 -20 159 -48 16 -15 46 -64 66 -109 45 -97 80 -287 80 -437 0 -104 21 -176 71 -251 14 -22 30 -60 34 -85 4 -25 14 -53 23 -63 10 -12 15 -32 13 -57 -1 -24 4 -49 15 -64 13 -21 16 -47 15 -129 l-2 -102 51 -80 c102 -159 111 -189 126 -437 7 -106 6 -106 -24 -160 -17 -30 -34 -73 -38 -97 -9 -55 -109 -192 -154 -211 -19 -8 -41 -31 -59 -64 -17 -28 -50 -80 -75 -115 -26 -36 -46 -68 -46 -72 0 -4 25 -10 56 -14 41 -5 64 -14 90 -37 31 -27 42 -31 88 -29 41 1 56 -2 70 -18 10 -11 35 -22 55 -26 27 -4 42 -14 54 -34 23 -39 65 -47 77 -15 5 13 21 26 35 30 15 4 36 22 49 43 13 20 42 50 66 66 l42 29 32 -18 c17 -10 49 -28 70 -39 l39 -21 38 22 c32 19 42 20 63 10 22 -9 29 -8 45 6 19 17 22 17 74 -13 40 -23 67 -31 103 -31 32 0 54 -6 68 -19 25 -22 79 -41 117 -41 19 0 43 -13 69 -37 l41 -36 35 16 c19 10 43 31 52 49 9 17 36 53 60 80 23 27 42 59 42 72 0 62 11 83 56 104 58 29 218 32 228 6 5 -13 15 -15 50 -10 l45 7 -6 -58 c-4 -39 -12 -62 -25 -73 -18 -14 -17 -17 26 -52 l45 -38 32 33 33 32 15 -38 c13 -31 20 -37 39 -32 17 4 24 0 31 -17 5 -13 21 -34 35 -47 14 -14 26 -32 26 -40 1 -26 97 -121 123 -121 29 0 59 -28 77 -69 9 -22 19 -31 36 -31 12 0 26 -5 30 -11 3 -6 16 -8 29 -5 16 4 25 1 29 -10 10 -27 7 -44 -9 -44 -28 0 -72 -29 -78 -50 -5 -18 0 -20 36 -20 23 0 48 -4 55 -8 6 -5 23 -39 35 -78 28 -80 37 -85 107 -55 49 21 112 26 181 15 31 -5 39 -13 62 -60 15 -30 27 -66 27 -79 0 -31 0 -31 86 -1 54 19 73 22 89 13 18 -10 82 -19 235 -33 l55 -5 67 60 66 61 106 0 c82 0 117 5 161 21 40 15 68 19 93 15 108 -19 108 -19 125 7 9 14 19 37 23 52 4 15 17 30 32 36 21 8 30 5 56 -19 61 -58 96 -64 171 -31 l48 21 48 -22 c55 -26 129 -24 173 6 25 16 27 15 56 -15 25 -27 32 -30 49 -21 12 6 28 24 36 40 13 26 21 30 56 30 22 0 53 -7 69 -15 24 -13 53 -14 155 -9 145 8 148 11 89 93 l-35 50 25 16 c23 15 27 15 85 -14 33 -17 71 -31 83 -31 15 0 81 51 198 156 333 297 353 308 444 238 l46 -35 83 6 82 6 27 -41 c24 -34 33 -40 64 -40 60 0 117 -21 156 -58 36 -34 38 -35 97 -28 34 4 61 4 61 0 0 -4 -16 -24 -35 -45 -19 -22 -35 -43 -35 -48 0 -13 114 -111 185 -158 33 -22 98 -52 144 -68 105 -35 187 -31 286 14 47 21 74 28 98 24 18 -3 51 0 72 6 l39 11 101 -99 c103 -101 134 -124 157 -117 59 19 66 17 78 -18 15 -46 43 -68 87 -70 36 -1 37 1 58 54 19 51 24 55 55 58 65 5 80 12 93 45 8 17 26 38 40 46 22 12 27 22 27 50 0 20 6 45 13 56 14 20 15 127 2 211 -6 37 -11 42 -56 62 -38 16 -53 28 -64 56 -15 34 -18 36 -64 36 -31 0 -53 5 -61 15 -7 8 -20 15 -29 15 -10 0 -40 20 -67 45 -27 25 -57 45 -67 45 -9 0 -22 11 -27 24 -5 14 -20 26 -37 31 -15 3 -35 12 -43 19 -8 8 -28 16 -43 20 -22 5 -27 11 -22 25 4 13 -3 28 -20 45 -14 14 -25 37 -25 51 0 21 5 25 29 25 37 0 45 22 20 54 -17 22 -24 24 -41 15 -21 -12 -38 1 -38 29 0 16 -5 15 -41 -4 -16 -8 -38 -12 -48 -9 -31 9 -61 95 -61 170 0 77 18 127 55 151 22 14 32 15 64 5 70 -20 63 -25 177 104 42 49 57 75 72 131 l19 69 -27 34 c-27 31 -34 34 -112 42 -78 7 -85 10 -108 40 -66 86 -53 81 -166 68 -55 -7 -109 -9 -118 -6 -9 4 -23 22 -31 41 -16 39 -38 51 -55 31 -11 -13 -15 -13 -33 0 -28 19 -57 19 -85 -1 -21 -14 -22 -14 -22 5 0 11 -9 25 -20 31 -12 6 -20 21 -20 36 0 46 -34 81 -87 89 -87 12 -120 27 -182 80 -44 39 -71 55 -103 60 -31 6 -52 17 -75 43 -29 31 -32 41 -27 72 4 19 19 58 35 86 44 78 85 183 103 264 9 40 24 89 32 108 14 35 14 36 -17 68 -44 46 -169 93 -300 114 -64 10 -71 8 -168 -25 -55 -19 -108 -35 -119 -35 -12 0 -23 13 -32 38 -16 46 -66 109 -92 118 -11 3 -28 25 -38 49 -11 25 -34 54 -57 71 -21 15 -54 45 -74 66 -42 43 -63 46 -119 18 -72 -37 -100 -29 -185 51 -84 81 -99 83 -174 34 -37 -25 -39 -29 -43 -86 -3 -46 -10 -65 -30 -87 -25 -25 -26 -29 -12 -55 13 -24 13 -28 -1 -33 -26 -10 -45 4 -45 33 0 30 -75 167 -106 195 -23 19 -153 48 -222 48 -54 0 -129 -23 -209 -64 -45 -22 -65 -26 -142 -26 l-90 0 -12 -42 c-16 -61 -60 -136 -84 -143 -11 -3 -68 -10 -128 -15 -119 -10 -155 -25 -201 -85 -35 -46 -62 -45 -122 5 -47 39 -49 39 -138 42 l-91 3 -19 38 -18 38 43 62 c24 34 51 68 61 75 10 7 25 26 33 41 l14 28 -62 38 c-40 24 -83 40 -122 46 -50 8 -64 15 -85 42 -64 83 -155 142 -250 162 -19 4 -42 13 -50 20 -17 14 -106 35 -150 35 -16 0 -50 11 -76 25 -30 16 -63 25 -91 25 -60 0 -107 27 -200 111 -43 40 -99 92 -125 116 l-48 44 15 41 c18 53 10 64 -63 78 -67 14 -94 29 -144 83 -33 35 -41 39 -60 30 -17 -7 -33 -5 -65 9 -33 14 -47 16 -63 8 -14 -8 -26 -8 -40 0 -30 16 -54 4 -71 -33 -22 -50 -63 -49 -152 5 -40 23 -90 59 -112 79 -54 49 -91 59 -210 59 -71 0 -107 4 -120 14 -14 10 -26 11 -44 4 -14 -5 -34 -8 -45 -7 -62 4 -85 -3 -148 -51 l-66 -50 -119 31 c-169 45 -175 45 -219 15 -50 -34 -87 -33 -143 4 -39 24 -58 30 -121 32 -41 2 -91 -1 -110 -5 -34 -7 -36 -6 -88 62 -46 60 -61 72 -113 91 -46 18 -59 27 -59 43 0 12 -12 34 -27 49 -25 26 -33 28 -102 28 -68 0 -84 4 -146 37 -66 34 -77 36 -190 42 l-121 6 -54 40 c-30 21 -79 61 -109 88 -57 51 -133 93 -216 121 -38 12 -59 27 -85 61 l-35 46 -61 -4 c-47 -2 -72 -9 -104 -31 -39 -26 -49 -28 -109 -24 -72 5 -109 21 -187 78 -33 25 -70 42 -108 50 -33 7 -73 21 -90 31 -29 18 -75 22 -121 12z"/></g>
+                  <g class="gwx-net">
+                    <g class="gwx-dot" data-city="Mtskheta" style="--d:0.20s"><circle class="gwx-pulse" cx="721" cy="610" r="9"/><circle class="gwx-core" cx="721" cy="610" r="7"/></g>
+                    <g class="gwx-dot" data-city="Rustavi" style="--d:0.35s"><circle class="gwx-pulse" cx="765" cy="671" r="10"/><circle class="gwx-core" cx="765" cy="671" r="8"/></g>
+                    <g class="gwx-dot" data-city="Gori" style="--d:0.50s"><circle class="gwx-pulse" cx="628" cy="582" r="10"/><circle class="gwx-core" cx="628" cy="582" r="8"/></g>
+                    <g class="gwx-dot" data-city="Sagarejo" style="--d:0.60s"><circle class="gwx-pulse" cx="815" cy="634" r="9"/><circle class="gwx-core" cx="815" cy="634" r="7"/></g>
+                    <g class="gwx-dot" data-city="Kutaisi" style="--d:0.75s"><circle class="gwx-pulse" cx="415" cy="523" r="11"/><circle class="gwx-core" cx="415" cy="523" r="10"/></g>
+                    <g class="gwx-dot" data-city="Telavi" style="--d:0.90s"><circle class="gwx-pulse" cx="836" cy="595" r="10"/><circle class="gwx-core" cx="836" cy="595" r="8"/></g>
+                    <g class="gwx-dot" data-city="Zugdidi" style="--d:1.05s"><circle class="gwx-pulse" cx="286" cy="474" r="10"/><circle class="gwx-core" cx="286" cy="474" r="8"/></g>
+                    <g class="gwx-dot" data-city="Poti" style="--d:1.20s"><circle class="gwx-pulse" cx="255" cy="549" r="10"/><circle class="gwx-core" cx="255" cy="549" r="8"/></g>
+                    <g class="gwx-dot" data-city="Batumi" style="--d:1.35s"><circle class="gwx-pulse" cx="250" cy="652" r="11"/><circle class="gwx-core" cx="250" cy="652" r="10"/></g>
+                    <g class="gwx-dot gwx-dot--hub" data-city="Tbilisi" style="--d:0s"><circle class="gwx-pulse" cx="733" cy="637" r="13"/><circle class="gwx-core" cx="733" cy="637" r="13"/></g>
+                    <text class="gwx-cityname gwx-cityname--hub" x="716" y="651" text-anchor="end">Tbilisi</text>
+                    <text class="gwx-cityname" x="415" y="495" text-anchor="middle">Kutaisi</text>
+                    <text class="gwx-cityname" x="250" y="702" text-anchor="middle">Batumi</text>
+                  </g>
+                </svg>
+                <div class="gwx-bignum">
+                  <span class="gwx-bignum-n">25</span>
+                  <span class="gwx-bignum-t"><b>live</b><b>hospitals</b></span>
+                </div>
               </div>
-
-              <div class="bm-tier-foot">Implementing today</div>
             </div>
 
-            <!-- REGIONAL (featured) -->
-            <div class="bm-tier bm-tier--featured">
-              <div class="bm-tier-label">Regional<span class="bm-tier-label-star">★</span></div>
-              <div class="bm-tier-regions">Caucasus · CIS · CEE · Türkiye · MENA · LatAm · SEA</div>
-
-              <div class="bm-tier-price">
-                <span class="bm-tier-price-dollar">$</span>
-                <span class="bm-tier-price-num">75</span>
-              </div>
-              <div class="bm-tier-price-unit">per seat · per month</div>
-
-              <div class="bm-tier-scope">
-                <div class="bm-tier-scope-title">Full platform</div>
+            <!-- RIGHT — the proof, condensed -->
+            <div class="gwx-right">
+              <div class="gwx-runway">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+                <span><strong>16–28 months</strong> of runway before US / EU rivals can ship the equivalent.</span>
               </div>
 
-              <div class="bm-tier-foot">Y4 target · 160 hospitals</div>
-            </div>
+              <ul class="gwx-points">
+                <li>
+                  <span class="gwx-pt-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5 3 21l4.5-1.5"/><path d="M7.5 19.5L14 13l-3-3-6.5 6.5 3 3z"/><path d="M14 13l5-5a3 3 0 1 0-4-4l-5 5"/></svg>
+                  </span>
+                  <div><strong>Live now.</strong> Agentic CPOE, MAR &amp; auto-discharge in production — features that need FDA 510(k) abroad.</div>
+                </li>
+                <li>
+                  <span class="gwx-pt-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 16 14"/></svg>
+                  </span>
+                  <div><strong>Rivals stuck.</strong> EU AI Act high-risk<sup>1</sup> + Notified Body queue<sup>2</sup> push any Western launch to 2028.</div>
+                </li>
+                <li>
+                  <span class="gwx-pt-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="14 7 21 7 21 14"/></svg>
+                  </span>
+                  <div><strong>Moat compounds.</strong> Every live month becomes <em>real-world evidence</em> rivals can't backfill.</div>
+                </li>
+              </ul>
 
-            <!-- PREMIUM -->
-            <div class="bm-tier bm-tier--premium">
-              <div class="bm-tier-label">Premium</div>
-              <div class="bm-tier-regions">US · UK · EU · GCC · Australia</div>
-
-              <div class="bm-tier-price">
-                <span class="bm-tier-price-dollar">$</span>
-                <span class="bm-tier-price-num">200</span>
+              <div class="gwx-chips">
+                <span class="gwx-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg>Relaxed device &amp; pharma-study regulation</span>
+                <span class="gwx-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V8"/><path d="M5 22V12"/><path d="M19 22V4"/></svg>Greenfield clinical-AI runway</span>
               </div>
-              <div class="bm-tier-price-unit">per seat · per month</div>
-
-              <div class="bm-tier-scope">
-                <div class="bm-tier-scope-title">Full platform</div>
-              </div>
-
-              <div class="bm-tier-foot">Strategic · Y5+ enterprise</div>
             </div>
           </div>
 
-          <!-- Y4 ARR — one stat, clean -->
+          <div class="gwx-footnotes">
+            <span><sup>1</sup>Regulation (EU) 2024/1689, Art 6(1) + Annex I</span>
+            <span><sup>2</sup>MDR Notified Body avg certification time, 2025–26</span>
+          </div>
         </div>
         <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
         <aside class="notes">
-          The business model. Monthly subscription, per seat, three tiers — priced where hospitals actually are, not where we are. Launch tier is Georgia: thirty dollars per seat per month — the model we're already implementing today. Regional covers Armenia and Azerbaijan plus Turkey, CIS, Central and Eastern Europe, MENA outside the Gulf, Latin America, Southeast Asia — seventy-five dollars per seat, forty to sixty percent below Commure while actually replacing the EHR beneath them. Premium is the US, UK, EU, and Gulf — two hundred dollars per seat, sixty to seventy percent below Epic and Oracle Health, unlocks after FDA and EU AI Act conformity in year five. Same product across all three tiers. Same codebase. We never gate features by tier — what flexes is price and SLA. Revenue projection lives on the next slide.
+          The Georgia window. Georgia is a human-first innovation hub with relaxed regulation for medical devices and clinical and pharmacological studies — so we ship full-stack agentic clinical AI against live clinical data today, while US and EU competitors are stuck in endless approval chains: FDA clearance, EU AI Act conformity. The head start is real but it is feature-specific and bounded. EU AI Act Article 6(1) high-risk obligations activate 2 August 2027; add the 13–18 month Notified Body queue and Western competitors are looking at 2028 Q1 before they can legitimately ship the equivalent of what we run at Healthycore today. That's a 16–28 month runway. And the real moat is not the legal arbitrage — it's the data. Every month of Georgian deployment becomes real-world evidence competitors cannot retroactively acquire, and it shortens our own future FDA PCCP and EU Annex III filings. Twenty-five hospitals are under signed MSA as of April 2026, go-live August. The slide is honest about what's contracted versus what's live, and that honesty is the sharpest claim in the room.
         </aside>
       </section>
 
@@ -8225,13 +9829,14 @@
       <section>
         <div class="slide-inner">
           <div class="slide-label"><span class="label-num">08</span>AMBITION</div>
-          <h2 class="ambition-headline" style="font-size: 2.8em;"><span class="h-home">Georgia</span><span class="h-arrow" aria-hidden="true">→</span><span class="h-region">Region</span><span class="h-arrow" aria-hidden="true">→</span><span class="h-global">Global</span></h2>
+          <h2 class="ambition-headline"><span class="h-home">Georgia</span><span class="h-arrow" aria-hidden="true">→</span><span class="h-region">Region</span><span class="h-arrow" aria-hidden="true">→</span><span class="h-global">Global</span></h2>
 
-          <div class="ambition-cards" style="margin-top: 32px;">
+          <div class="ambition-cards">
             <div class="ambition-card ambition-card-1">
               <div class="stage-label">Stage 1 · Home</div>
               <div class="stage-title">Georgia</div>
               <div class="stage-subtitle">Year 1 – 2 · Dominate home market</div>
+              <p class="stage-body">Elevate local systems to world-class standards — category leader at home within a year.</p>
               <div class="stage-stat">
                 <span class="stage-stat-value">0 → 40+</span>
                 <span class="stage-stat-label">hospitals by Y4</span>
@@ -8242,6 +9847,7 @@
               <div class="stage-label">Stage 2 · Expansion</div>
               <div class="stage-title">Region</div>
               <div class="stage-subtitle">Year 2 – 4 · Replicate the playbook</div>
+              <p class="stage-body">Replicate the proven playbook across post-Soviet and CEE markets.</p>
               <div class="stage-stat">
                 <span class="stage-stat-value">9 countries</span>
                 <span class="stage-stat-label">· 236 hospitals</span>
@@ -8252,17 +9858,12 @@
               <div class="stage-label">Stage 3 · Global</div>
               <div class="stage-title">U.S. + E.U.</div>
               <div class="stage-subtitle">Year 4+ · Arrive battle-tested</div>
+              <p class="stage-body">Built on FHIR R4 from day 1 — the exact standards the U.S. and E.U. demand.</p>
               <div class="stage-stat">
                 <span class="stage-stat-value">$45B TAM</span>
                 <span class="stage-stat-label">· FHIR-native from day 1</span>
               </div>
             </div>
-          </div>
-
-          <div class="bm-arr" style="margin-top: 28px; opacity: 1; transform: none; transition: none;">
-            <div class="bm-arr-label">Year 4 ARR</div>
-            <div class="bm-arr-num">~$28<span class="bm-arr-unit">M</span></div>
-            <div class="bm-arr-sub">236 hospitals · 9 countries · 3 tiers</div>
           </div>
 
           <div class="ambition-thesis">
@@ -8273,292 +9874,167 @@
         </div>
         <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
         <aside class="notes">
-          Our ambition, tied to our market plan. Three stages. Stage 1 — Georgia: we elevate outdated local systems to world-leading standards. Three hospitals Year 1, twenty-two by Y4. Category leadership at home within a year. Stage 2 — region: we expand across post-Soviet and CEE markets. Nine countries, 236 hospitals. Stage 3 — U.S. and E.U.: the key point. We built MediMind from day 1 on FHIR R4, SMART-on-FHIR, OAuth 2.0 — the exact standards U.S. and E.U. hospitals demand. We aren't a regional product we'll someday try to export. We're a globally-compliant product we're growing regionally while the West sorts out AI regulation. When those markets open, we arrive with the most tested AI-medical product in the category. The punch line: tiered pricing across 236 hospitals in 9 countries gets us to roughly twenty-eight million dollars in annual recurring revenue by Year 4. That's the plan.
+          Our ambition, tied to our market plan. Three stages. Stage 1 — Georgia: we elevate outdated local systems to world-leading standards. Three hospitals Year 1, twenty-two by Y4. Category leadership at home within a year. Stage 2 — region: we expand across post-Soviet and CEE markets. Nine countries, 236 hospitals. Stage 3 — U.S. and E.U.: the key point. We built MediMind from day 1 on FHIR R4, SMART-on-FHIR, OAuth 2.0 — the exact standards U.S. and E.U. hospitals demand. We aren't a regional product we'll someday try to export. We're a globally-compliant product we're growing regionally while the West sorts out AI regulation. When those markets open, we arrive with the most tested AI-medical product in the category. One playbook, three stages — built globally-compliant from day one, scaling regionally while the West sorts out AI regulation. That's the plan.
         </aside>
       </section>
 
       <!-- ═══════════════════════════════════════════════
-           SLIDE 8: TEAM — Doctors building for doctors
+           SLIDE 05: BUSINESS MODEL — three-tier pricing
            ═══════════════════════════════════════════════ -->
-      <section class="team-slide">
-        <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">09</span>TEAM</div>
-          <h2 class="headline-big">We are <em>doctors</em> building for doctors.</h2>
+      <section class="bmx-slide">
+  <div class="slide-inner">
+    <div class="slide-label"><span class="label-num">09</span>BUSINESS MODEL</div>
 
-          <div class="team-section">
-            <div class="team-section-label">Founders</div>
-            <div class="founders-grid">
-              <div class="founder-card">
-                <span class="founder-badge">Co-Founder</span>
-                <img class="founder-photo" src="/deck-assets/team/lasha.png?v=2" alt="Lasha Khoshtaria">
-                <div class="founder-info">
-                  <h4>Lasha Khoshtaria</h4>
-                  <div class="role">Co-Founder · Clinical-Product</div>
-                  <p class="hook">Physician turned builder — shipping the EMR I wished I had at the bedside.</p>
-                  <div class="chip-row">
-                    <span class="chip">Tbilisi State Medical Univ.</span>
-                    <span class="chip">DevoteAI</span>
-                  </div>
-                </div>
-              </div>
-              <div class="founder-card">
-                <span class="founder-badge">Co-Founder</span>
-                <img class="founder-photo" src="/deck-assets/team/irakli-pkh.png?v=5" alt="Irakli Pkhovelishvili">
-                <div class="founder-info">
-                  <h4>Irakli Pkhovelishvili</h4>
-                  <div class="role">Co-Founder · Product &amp; Strategy</div>
-                  <p class="hook">Scaled product at Riot Games to 10M+ players. Now scaling care at the bedside.</p>
-                  <div class="chip-row">
-                    <span class="chip">Duke Fuqua MBA</span>
-                    <span class="chip">Riot Games · PM</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    <h2 class="headline-big bmx-headline">Priced for the market. <em>Built world-class.</em></h2>
+    <p class="bmx-sub">Meet every market at what it can pay <strong>today</strong> — grow into a <strong>share of the value</strong> we create <strong>tomorrow</strong>.</p>
 
-          <div class="team-section">
-            <div class="team-section-label">Clinical &amp; Strategic Advisory</div>
-            <div class="advisors-grid">
-              <div class="advisor-card is-pilot">
-                <img class="advisor-photo" src="/deck-assets/team/gogorishvili.png?v=3" alt="Dr. Irakli Gogorishvili">
-                <h5>Dr. Irakli Gogorishvili, MD, PhD</h5>
-                <p class="role-small">Head of Interventional Cardiology</p>
-                <div class="chip-row">
-                  <span class="chip chip-pilot">Healthycore · Pilot</span>
-                </div>
-              </div>
-              <div class="advisor-card is-pilot">
-                <img class="advisor-photo" src="/deck-assets/team/kobalava.png?v=5" alt="Dr. Mamuka Kobalava">
-                <h5>Dr. Mamuka Kobalava, MD, PhD</h5>
-                <p class="role-small">Head of Cardiology</p>
-                <div class="chip-row">
-                  <span class="chip chip-pilot">Healthycore · Pilot</span>
-                </div>
-              </div>
-              <div class="advisor-card is-pilot">
-                <img class="advisor-photo" src="/deck-assets/team/levan.png?v=2" alt="Dr. Levan G.">
-                <h5>Dr. Levan G., MD</h5>
-                <p class="role-small">Head of Surgery · Liver Transplant &amp; HPB</p>
-                <div class="chip-row">
-                  <span class="chip">Liver Research Network</span>
-                  <span class="chip">Univ. of Regensburg</span>
-                </div>
-              </div>
-              <div class="advisor-card">
-                <img class="advisor-photo" src="/deck-assets/team/felipe.png?v=2" alt="Felipe Infante de Castro">
-                <h5>Felipe Infante de Castro</h5>
-                <p class="role-small">Strategic Advisor · US GTM &amp; Fundraising</p>
-                <div class="chip-row">
-                  <span class="chip">Harvard HBS</span>
-                  <span class="chip">Distillery</span>
-                </div>
-              </div>
-              <div class="advisor-card">
-                <img class="advisor-photo" src="/deck-assets/team/tornike.png?v=2" alt="Tornike Phkhovelishvili">
-                <h5>Tornike Phkhovelishvili</h5>
-                <p class="role-small">Strategic Advisor · Regional Ecosystem</p>
-                <div class="chip-row">
-                  <span class="chip">Univ. of Tartu</span>
-                  <span class="chip">Radiusi</span>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div class="bmx-stage">
+      <!-- PHASE 1 - NOW -->
+      <article class="bmx-phase bmx-phase--now">
+        <span class="bmx-ord" aria-hidden="true">01</span>
+        <span class="bmx-eyebrow">Now &middot; Go-to-market</span>
+        <h3 class="bmx-word">Land</h3>
+        <p class="bmx-line">Priced where each region can pay — the <strong>full</strong> platform, never gated.</p>
+        <span class="bmx-pill">land &amp; prove</span>
+      </article>
 
-          <div class="team-closer">
-            They use the product. They break it. They shape it. <em>Clinical depth × technical depth.</em>
-          </div>
-        </div>
-        <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
-        <aside class="notes">
-          The team is the reason we can execute this. I'm a physician — my co-founder Irakli comes from Riot Games where he led product for TeamFight Tactics. Clinical context plus product-at-scale experience. Our advisory isn't decorative: Dr. Gogorishvili heads interventional cardiology at Healthycore — our active pilot site. Dr. Kobalava heads cardiology there. They use the product daily. They break it. They shape it. On surgical and transplant depth we have Dr. Levan — Head of Surgery, HPB and liver transplant surgeon, founder of Liver Research Network, University of Regensburg. On GTM and fundraising we're advised by Felipe Infante de Castro — HBS, Distillery. On regional ecosystem we work with Tornike Phkhovelishvili — University of Tartu, co-founder of Radiusi coworking. Clinical depth × technical depth × GTM depth — that's the shape of team this takes.
-        </aside>
-      </section>
+      <!-- CONNECTOR NODE (arrow right on desktop, down on mobile) -->
+      <div class="bmx-link" aria-hidden="true">
+        <svg viewBox="0 0 48 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 12h38"/>
+          <path d="m33 5 9 7-9 7"/>
+        </svg>
+      </div>
 
-      <!-- ═══════════════════════════════════════════════
-           SLIDE 9: PROGRESS / TIMELINE
-           ═══════════════════════════════════════════════ -->
-      <section class="prog-slide">
-        <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">10</span>PROGRESS MADE</div>
-          <h2 class="headline-big">13 months. From idea to <em>25-hospital contract</em>.</h2>
-          <p class="headline-sub">Built. Validated. Funded. Signed. Live.</p>
+      <!-- PHASE 2 - LONG TERM -->
+      <article class="bmx-phase bmx-phase--grow">
+        <span class="bmx-ord" aria-hidden="true">02</span>
+        <span class="bmx-eyebrow">Long term &middot; Value-based</span>
+        <h3 class="bmx-word">Grow</h3>
+        <p class="bmx-line">Outcomes, throughput &amp; savings compound — we <strong>capture a share</strong>.</p>
+        <span class="bmx-pill">grow with the outcome</span>
+      </article>
+    </div>
 
-          <!-- 2025 · FOUNDATION track -->
-          <div class="prog-phase">
-            <div class="prog-phase-header">
-              <span class="prog-phase-tag">2025</span>
-              <span class="prog-phase-name">Foundation</span>
-              <span class="prog-phase-line"></span>
-            </div>
-            <div class="prog-track">
-              <div class="prog-track-rail" aria-hidden="true"></div>
+    <!-- SEAL -->
+    <div class="bmx-seal">
+      <span class="bmx-seal-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3 4 6v5c0 4.2 2.9 7.6 8 9 5.1-1.4 8-4.8 8-9V6l-8-3Z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+      </span>
+      <p>Same codebase everywhere.</p>
+    </div>
 
-              <div class="prog-tile">
-                <div class="prog-tile-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c0 1.3 1 2.3 2 2.3h4c1 0 2-1 2-2.3A7 7 0 0 0 12 2z"/></svg>
-                </div>
-                <div class="prog-tile-month">Mar</div>
-                <div class="prog-tile-title">Idea born</div>
-                <div class="prog-tile-meta">MediMind concept</div>
-              </div>
+    <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
+  </div>
 
-              <div class="prog-tile">
-                <div class="prog-tile-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13h4l2-4 4 8 2-4h6"/><path d="M20 8a4 4 0 0 0-7-2.65A4 4 0 0 0 4 8c0 1.5 1 3.4 3 5.5"/></svg>
-                </div>
-                <div class="prog-tile-month">May</div>
-                <div class="prog-tile-title">Cardiology pilot</div>
-                <div class="prog-tile-meta"><strong>50 doctors</strong></div>
-              </div>
-
-              <div class="prog-tile">
-                <div class="prog-tile-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M6 12h.01M18 12h.01"/></svg>
-                </div>
-                <div class="prog-tile-month">Sept</div>
-                <div class="prog-tile-title">GITA grant</div>
-                <div class="prog-tile-meta"><strong>₾150K</strong> · validation</div>
-              </div>
-
-              <div class="prog-tile">
-                <div class="prog-tile-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><polyline points="21 3 21 8 16 8"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><polyline points="3 21 3 16 8 16"/></svg>
-                </div>
-                <div class="prog-tile-month">Oct</div>
-                <div class="prog-tile-title">AI-native pivot</div>
-                <div class="prog-tile-meta">+ FHIR standards</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 2026 · SCALE track -->
-          <div class="prog-phase">
-            <div class="prog-phase-header">
-              <span class="prog-phase-tag prog-phase-tag--accent">2026</span>
-              <span class="prog-phase-name">Scale</span>
-              <span class="prog-phase-line"></span>
-            </div>
-            <div class="prog-track">
-              <div class="prog-track-rail" aria-hidden="true"></div>
-
-              <div class="prog-tile">
-                <div class="prog-tile-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                </div>
-                <div class="prog-tile-month">Jan</div>
-                <div class="prog-tile-title">LOI signed</div>
-                <div class="prog-tile-meta"><strong>25-hospital</strong> chain</div>
-              </div>
-
-              <div class="prog-tile prog-tile--accent">
-                <div class="prog-tile-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
-                </div>
-                <div class="prog-tile-month">Feb</div>
-                <div class="prog-tile-title">"Innovative Startup"</div>
-                <div class="prog-tile-meta">Gov. of Georgia</div>
-              </div>
-
-              <div class="prog-tile prog-tile--hero">
-                <div class="prog-tile-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg>
-                </div>
-                <div class="prog-tile-month">Apr</div>
-                <div class="prog-tile-title">Contract SIGNED</div>
-                <div class="prog-tile-meta"><strong>25 hospitals</strong></div>
-              </div>
-
-              <div class="prog-tile">
-                <div class="prog-tile-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
-                </div>
-                <div class="prog-tile-month">Aug</div>
-                <div class="prog-tile-title">Full go-live</div>
-                <div class="prog-tile-meta">25 hospitals · <em>planned</em></div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
-        <aside class="notes">
-          13 months from idea to contract — and we can prove it. Started as an idea last March. Cardiology pilot with 50 doctors in May. ₾150K Gita grant in September, validating clinical readiness. Pivoted to the full AI-native ecosystem in October. LOI with a 25-hospital chain in January. February: awarded "Innovative Startup" status by the Government of Georgia. Signed the actual 25-hospital contract in April — the largest cardiology network in Georgia. Full go-live August. This is what momentum looks like.
-        </aside>
-      </section>
+  <aside class="notes">
+    Our business model has two phases. Phase 1 — go-to-market, happening now: we match each region's affordable price point while still delivering the full, world-class platform. We meet hospitals at what they can actually pay, and we never gate features by market — everyone gets the complete product. The goal is to land fast and prove value in live production. Phase 2 — long term: value-based pricing. As we unlock the platform's full potential — better clinical outcomes, higher throughput, real cost savings, and captured revenue for the hospital — we capture a share of the value we create. To be transparent: the exact mechanics are still being refined, and the model will evolve as we learn from live deployments. The anchoring principle ties it together: same codebase everywhere — one product, no feature gates by market. Note: we intentionally removed hard per-seat pricing tiers from this slide — pricing detail lives elsewhere in the deck.
+  </aside>
+</section>
 
       <!-- ═══════════════════════════════════════════════
            SLIDE 7: THE ASK (3-station journey)
            ═══════════════════════════════════════════════ -->
-      <section>
+      <section class="askx-section">
         <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">11</span>THE ASK</div>
-          <h2 class="headline-big" style="font-size: 2.2em;"><em>$200K</em> pre-seed. Cover Georgia. Start regional.</h2>
+          <div class="slide-label"><span class="label-num">10</span>THE ASK</div>
+          <h2 class="headline-big askx-headline"><em>$200K</em> pre-seed to win Georgia &amp; go regional.</h2>
 
-          <div class="ask-journey">
-            <!-- Station 1: Now -->
-            <div class="journey-station now">
-              <div class="station-phase">Today</div>
-              <div class="station-headline">Implementing &amp; growing</div>
-              <ul class="station-bullets">
-                <li><strong>25-hospital</strong> contract signed</li>
-                <li><strong>Healthycore</strong> pilot live</li>
-                <li><strong>Gov</strong> recognition + ₾150K grant</li>
+          <div class="askx-journey">
+            <!-- STATION 1: Today -->
+            <div class="askx-station askx-station--now">
+              <div class="askx-phase">
+                <span class="askx-phase-dot" aria-hidden="true"></span>Today
+              </div>
+              <div class="askx-station-head">Where we are</div>
+              <ul class="askx-list">
+                <li>
+                  <span class="askx-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                  <span><strong>25-hospital</strong> contract <em>signed</em></span>
+                </li>
+                <li>
+                  <span class="askx-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12a10 10 0 1 1-10-10"/><path d="M9 11l3 3L22 4"/></svg></span>
+                  <span><strong>Healthycore</strong> pilot live</span>
+                </li>
+                <li>
+                  <span class="askx-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 7v6c0 4.5 3.3 7.3 8 8 4.7-.7 8-3.5 8-8V7z"/></svg></span>
+                  <span><strong>Gov</strong> recognition + <em>₾150K</em> grant</span>
+                </li>
               </ul>
             </div>
 
-            <div class="journey-arrow">→</div>
-
-            <!-- Station 2: Raise (HERO) -->
-            <div class="journey-station hero">
-              <div class="station-phase">We are raising</div>
-              <div class="station-hero-value">$200K</div>
-              <div class="station-hero-sub">pre-seed · SAFE · $5M cap</div>
-              <div class="station-divider"></div>
-              <div class="station-sub-label">Milestone · 12–18 mo</div>
-              <div class="station-sub-value">Going live + first revenue</div>
-              <div class="station-sub-desc">30 Georgian contracts · regional launch</div>
+            <div class="askx-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13"/><path d="m13 6 6 6-6 6"/></svg>
             </div>
 
-            <div class="journey-arrow">→</div>
+            <!-- STATION 2: The raise (HERO) -->
+            <div class="askx-station askx-station--hero">
+              <div class="askx-phase askx-phase--hero">
+                <span class="askx-phase-dot" aria-hidden="true"></span>We're raising
+              </div>
+              <div class="askx-hero-value"><span class="askx-hero-cur">$</span>200K</div>
+              <div class="askx-hero-tags">
+                <span class="askx-tag">pre-seed</span>
+                <span class="askx-tag">SAFE</span>
+              </div>
+              <div class="askx-hero-rule"></div>
+              <ul class="askx-terms">
+                <li><span class="askx-term-k">Valuation cap</span><span class="askx-term-v">$5M</span></li>
+                <li><span class="askx-term-k">Discount</span><span class="askx-term-v">20%</span></li>
+                <li><span class="askx-term-k">Investor rights</span><span class="askx-term-v">MFN + pro-rata</span></li>
+              </ul>
+            </div>
 
-            <!-- Station 3: Unlocks -->
-            <div class="journey-station unlock">
-              <div class="station-phase">Unlocks</div>
-              <div class="station-headline">Seed-ready</div>
-              <ul class="station-bullets">
-                <li><strong>Georgian leader</strong> — full coverage</li>
-                <li><strong>Regional launch</strong> — 2–3 countries</li>
-                <li><strong>Series A pipeline</strong> — metrics-proven</li>
+            <div class="askx-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13"/><path d="m13 6 6 6-6 6"/></svg>
+            </div>
+
+            <!-- STATION 3: Unlocks -->
+            <div class="askx-station askx-station--unlock">
+              <div class="askx-phase">
+                <span class="askx-phase-dot" aria-hidden="true"></span>Unlocks
+              </div>
+              <div class="askx-station-head">What this gets us</div>
+              <ul class="askx-list">
+                <li>
+                  <span class="askx-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21h14"/><path d="M7 21V10l5-5 5 5v11"/><path d="M10 21v-5h4v5"/></svg></span>
+                  <span><strong>Georgian leader</strong> — <em>multiple hospitals live</em></span>
+                </li>
+                <li>
+                  <span class="askx-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-5 4 4 8-8"/><path d="M16 8h4v4"/></svg></span>
+                  <span><strong>AI-native value</strong> proven by live data + case studies</span>
+                </li>
+                <li>
+                  <span class="askx-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
+                  <span><strong>Regional scouting</strong> — <em>started</em></span>
+                </li>
               </ul>
             </div>
           </div>
 
-          <div class="ask-funds">
-            <div class="funds-row">
-              <div class="funds-runway-inline">
-                <span class="funds-runway-icon" aria-hidden="true">
+          <div class="askx-funds">
+            <div class="askx-funds-row">
+              <div class="askx-runway">
+                <span class="askx-runway-ico" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
                 </span>
-                <span class="funds-runway-text"><strong>14-month runway</strong></span>
+                <span class="askx-runway-txt"><strong>14-month runway</strong></span>
               </div>
-              <div class="funds-bar">
-                <div class="funds-segment team" style="width: 38%;">MediMind OS · $90K</div>
-                <div class="funds-segment gtm" style="width: 24%;">GTM · $50K</div>
-                <div class="funds-segment rd" style="width: 16%;">AI depth · $30K</div>
-                <div class="funds-segment legal" style="width: 22%;">Regional entry · $30K</div>
+              <div class="askx-bar">
+                <div class="askx-seg askx-seg--os" style="width:43%;">MediMind OS · $90K</div>
+                <div class="askx-seg askx-seg--gtm" style="width:23%;">GTM · $50K</div>
+                <div class="askx-seg askx-seg--ai" style="width:17%;">AI depth · $30K</div>
+                <div class="askx-seg askx-seg--reg" style="width:17%;">Regional first steps</div>
               </div>
-            </div>
-            <div class="funds-outcome">
-              <span class="funds-outcome-label">What we get</span>
-              <span class="funds-outcome-text"><strong>Polished, battle-tested AI-native hospital OS</strong> · <strong>Full Georgian market dominance</strong> · <strong>First regional steps</strong></span>
             </div>
           </div>
         </div>
         <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
         <aside class="notes">
-          The ask. $200K pre-seed. SAFE with a $5M valuation cap. Today we are implementing and growing — 25-hospital contract signed, Healthycore pilot live, government recognition plus a ₾150K grant. With $200K we go live and start generating revenue: thirty Georgian contracts and the first regional launch. Budget split: MediMind OS $90K, GTM $50K, AI depth $30K, Regional entry $30K (market expansion plus operating reserve). That makes us the category leader at home, launches post-Soviet regional expansion, and gets us to metrics-proven Seed-ready status. Next slide shows what this means for you as an investor in plain English.
+          The ask: $200K pre-seed, raised on a SAFE with a $5M valuation cap, a 20% discount, and MFN plus pro-rata rights. Read this as a journey across three stations. Today, on the left, is where we already are — a signed 25-hospital contract, the Healthycore pilot live, and government recognition plus a ₾150K grant. The center is the raise itself: clean, simple terms, nothing more. On the right is what this round unlocks — not promises to launch two or three countries, but realistic, fundable progress: becoming the Georgian leader with multiple hospitals live, validating our AI-native value with real clinical data and case studies, and starting regional scouting. The budget bar shows where the money goes: $90K into the MediMind OS product, $50K into go-to-market, $30K into AI depth, and $30K into early regional entry — giving us a 14-month runway. The next slide translates all of this into what it means for you as an investor.
         </aside>
       </section>
 
@@ -8567,8 +10043,8 @@
            ═══════════════════════════════════════════════ -->
       <section>
         <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">12</span>WHAT YOU'RE INVESTING IN</div>
-          <h2 class="headline-big" style="font-size: 1.9em; line-height: 1.15;">How your $200K <em>becomes equity</em>.</h2>
+          <div class="slide-label"><span class="label-num">11</span>WHAT YOU'RE INVESTING IN</div>
+          <h2 class="headline-big">How your $200K <em>becomes equity</em>.</h2>
 
           <div class="terms-layout">
             <div class="terms-box">
@@ -8729,6 +10205,190 @@
         >Continue<span class="tour-skip-arrow" aria-hidden="true">→</span></button>
         <aside class="notes">
           Live 3-minute product walkthrough embedded from /walkthrough. Click play to start; scrubber, theater toggle (top-right), and chapter stepper all work inside. To leave the walkthrough, click outside the iframe and press the right arrow (or use the on-screen Reveal arrow controls) — that advances to the appendix.
+        </aside>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════
+           APPENDIX A · ARCHITECTURE — isometric "operating system" diagram.
+           Shown after the live walkthrough, before the platform gallery.
+           (Copied from the hidden Solution slide above; that original stays
+           hidden & recoverable per CLAUDE.md. Shares gradient IDs with it,
+           which is safe: the gradients are identical.)
+           ════════════════════════════════════════════════ -->
+      <section class="arch-iso-slide">
+        <div class="slide-inner">
+          <div class="slide-label"><span class="label-num">A</span>APPENDIX · ARCHITECTURE</div>
+          <h2 class="headline-big" style="font-size: 1.85em; line-height: 1.05;">One hospital. <em>One operating system.</em></h2>
+          <p class="sub-head" style="font-size: 0.88em; margin-top: 6px; max-width: 920px;">Every department. Every workflow. One AI-native codebase, built ground-up on FHIR.</p>
+
+          <div class="arch-wrapper">
+            <svg class="arch-scene" viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="heartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#1a365d"/>
+                  <stop offset="52%" stop-color="#2b6cb0"/>
+                  <stop offset="100%" stop-color="#3182ce"/>
+                </linearGradient>
+                <linearGradient id="heartFront" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#0f2947"/>
+                  <stop offset="100%" stop-color="#0a1e38"/>
+                </linearGradient>
+                <radialGradient id="heartShine" cx="28%" cy="30%" r="75%">
+                  <stop offset="0%" stop-color="rgba(255,255,255,0.35)"/>
+                  <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+                </radialGradient>
+              </defs>
+
+              <g class="top-row">
+                <g class="plate-group" transform="translate(40, 14)">
+                  <polygon class="plate-front" points="0,36 170,36 170,44 0,44"/>
+                  <polygon class="plate-right" points="170,36 195,0 195,8 170,44"/>
+                  <polygon class="plate-top" points="25,0 195,0 170,36 0,36"/>
+                  <g class="icon-stroke" transform="translate(40, 10)"><path d="M3 1 v 6 a 3 3 0 0 0 6 0 v -6"/><path d="M6 10 v 3 a 3 3 0 0 0 6 0 v -3"/><circle cx="12" cy="13" r="1.6"/></g>
+                  <g class="icon-stroke" transform="translate(75, 10)"><circle cx="6" cy="4" r="2.5"/><path d="M1 15 Q 1 9 6 9 Q 11 9 11 15"/></g>
+                  <g class="icon-stroke" transform="translate(108, 10)"><path d="M0 8 h 3 l 2 -4 l 3 8 l 2 -4 h 3"/></g>
+                  <g class="icon-stroke" transform="translate(142, 10)"><rect x="0" y="0" width="11" height="14" rx="1"/><path d="M3 4 h 5 M 3 7 h 5 M 3 10 h 3"/></g>
+                  <text class="plate-label" x="97" y="66">CLINICIANS</text>
+                  <text class="plate-sublabel-inline" x="97" y="78">doctors &amp; nurses</text>
+                </g>
+
+                <g class="plate-group" transform="translate(275, 14)">
+                  <polygon class="plate-front" points="0,36 170,36 170,44 0,44"/>
+                  <polygon class="plate-right" points="170,36 195,0 195,8 170,44"/>
+                  <polygon class="plate-top" points="25,0 195,0 170,36 0,36"/>
+                  <g class="icon-stroke" transform="translate(40, 10)"><rect x="1" y="2" width="10" height="12" rx="1"/><path d="M3 0 h 6 v 3 h -6 z"/><path d="M3 7 h 6 M 3 10 h 4"/></g>
+                  <g class="icon-stroke" transform="translate(75, 10)"><path d="M0 3 v 4 a 6 6 0 0 1 12 0 v 4"/><rect x="0" y="7" width="3" height="6" rx="1"/><rect x="9" y="7" width="3" height="6" rx="1"/></g>
+                  <g class="icon-stroke" transform="translate(108, 10)"><rect x="0" y="0" width="13" height="13" rx="2"/><path d="M3 6 l 3 3 l 5 -5"/></g>
+                  <g class="icon-stroke" transform="translate(144, 10)"><path d="M0 1 h 11 v 8 h -4 l -3 3 v -3 h -4 z"/></g>
+                  <text class="plate-label" x="97" y="66">COORDINATORS</text>
+                  <text class="plate-sublabel-inline" x="97" y="78">admin &amp; operations</text>
+                </g>
+
+                <g class="plate-group" transform="translate(510, 14)">
+                  <polygon class="plate-front" points="0,36 170,36 170,44 0,44"/>
+                  <polygon class="plate-right" points="170,36 195,0 195,8 170,44"/>
+                  <polygon class="plate-top" points="25,0 195,0 170,36 0,36"/>
+                  <g class="icon-stroke" transform="translate(40, 10)"><circle cx="6" cy="4" r="2.5"/><path d="M1 15 Q 1 9 6 9 Q 11 9 11 15"/></g>
+                  <g class="icon-stroke" transform="translate(75, 10)"><rect x="2" y="0" width="9" height="14" rx="1"/><path d="M5 12 h 3"/><path d="M4 1.5 h 5"/></g>
+                  <g class="icon-stroke" transform="translate(108, 10)"><rect x="0" y="2" width="14" height="12" rx="1"/><path d="M0 5 h 14"/><path d="M3 0 v 3 M 11 0 v 3"/><rect x="3" y="8" width="2" height="2"/><rect x="9" y="8" width="2" height="2"/></g>
+                  <g class="icon-stroke" transform="translate(144, 10)"><path d="M3 11 a 4 4 0 0 1 -1 -3 v -1 a 5 5 0 0 1 10 0 v 1 a 4 4 0 0 1 -1 3 z"/><path d="M5 13 a 2 2 0 0 0 4 0"/></g>
+                  <text class="plate-label" x="97" y="66">PATIENTS</text>
+                  <text class="plate-sublabel-inline" x="97" y="78">portal &amp; notifications</text>
+                </g>
+              </g>
+
+              <text class="tier-label" x="360" y="108">SKIN — THE SURFACES OF THE HOSPITAL</text>
+              <text class="flow-annotation" x="360" y="122">— view · edit · write —</text>
+
+              <g class="heart-group" transform="translate(30, 130)">
+                <polygon class="heart-front" points="10,74 670,74 670,92 10,92"/>
+                <polygon class="heart-right" points="670,74 720,0 720,18 670,92"/>
+                <polygon class="heart-top" points="60,0 720,0 670,74 10,74"/>
+                <polygon class="heart-shimmer" points="60,0 720,0 670,74 10,74" fill="url(#heartShine)"/>
+
+                <g transform="translate(95, 10)">
+                  <g class="icon-white"><circle cx="9" cy="5" r="3"/><path d="M3 16 Q 3 10 9 10 Q 15 10 15 16"/></g>
+                  <text class="heart-obj-label" x="9" y="26">Patient</text>
+                </g>
+                <g transform="translate(235, 8)">
+                  <g class="icon-white"><rect x="2" y="2" width="14" height="16" rx="1"/><path d="M5 0 h 8 v 3 h -8 z"/><path d="M5 8 h 8 M 5 11 h 6 M 5 14 h 4"/></g>
+                  <text class="heart-obj-label" x="9" y="26">Encounter</text>
+                </g>
+                <g transform="translate(375, 6)">
+                  <g class="icon-white"><path d="M0 14 v -8 h 6 v -2 h 11 v 10 h -17 z"/><circle cx="3.5" cy="9" r="1.5"/><path d="M6 10 h 11"/></g>
+                  <text class="heart-obj-label" x="9" y="26">Bed</text>
+                </g>
+                <g transform="translate(515, 4)">
+                  <g class="icon-white"><rect x="4" y="0" width="9" height="16" rx="4.5" transform="rotate(35 8.5 8)"/><path d="M8.5 0 L 8.5 16" transform="rotate(35 8.5 8)"/></g>
+                  <text class="heart-obj-label" x="9" y="26">Medication</text>
+                </g>
+
+                <g transform="translate(155, 38)">
+                  <g class="icon-white"><rect x="2" y="0" width="12" height="15" rx="1"/><path d="M5 4 h 6 M 5 7 h 6 M 5 10 h 4"/></g>
+                  <text class="heart-obj-label" x="8" y="25">Claim</text>
+                </g>
+                <g transform="translate(295, 36)">
+                  <g class="icon-white"><path d="M9 0 l 8 3 v 5 a 8 11 0 0 1 -8 10 a 8 11 0 0 1 -8 -10 v -5 z"/><path d="M5 9 l 3 3 l 5 -5"/></g>
+                  <text class="heart-obj-label" x="9" y="25">Coverage</text>
+                </g>
+                <g transform="translate(435, 34)">
+                  <g class="icon-white"><path d="M5 1 v 12 a 4 4 0 0 0 8 0 v -12"/><path d="M3 1 h 12"/><path d="M5 8 h 8"/></g>
+                  <text class="heart-obj-label" x="9" y="25">Specimen</text>
+                </g>
+                <g transform="translate(575, 32)">
+                  <g class="icon-white"><rect x="0" y="0" width="16" height="15" rx="1"/><path d="M4 4 h 8 M 4 7 h 8 M 4 10 h 5"/><circle cx="2" cy="4" r="0.7"/><circle cx="2" cy="7" r="0.7"/><circle cx="2" cy="10" r="0.7"/></g>
+                  <text class="heart-obj-label" x="8" y="25">Order</text>
+                </g>
+              </g>
+
+              <text class="heart-label" x="360" y="238">HEART — THE LIVING HOSPITAL MODEL</text>
+              <text class="heart-sublabel" x="360" y="252">80+ FHIR R4 resources  ·  one living model  ·  ground-up, not an API layer</text>
+              <text class="flow-annotation" x="360" y="272">— reason · act · remember —</text>
+
+              <g class="bottom-row">
+                <!-- BRAIN — AI reasoning across the Heart -->
+                <g class="plate-group" transform="translate(40, 304)">
+                  <polygon class="plate-front" points="0,36 170,36 170,44 0,44"/>
+                  <polygon class="plate-right" points="170,36 195,0 195,8 170,44"/>
+                  <polygon class="plate-top" points="25,0 195,0 170,36 0,36"/>
+                  <g class="icon-stroke" transform="translate(40, 10)"><path d="M7 1 a 3 3 0 0 0 -6 2 a 3 3 0 0 0 1 5 a 3 3 0 0 0 5 3 a 3 3 0 0 0 5 -3 a 3 3 0 0 0 1 -5 a 3 3 0 0 0 -6 -2 z"/><path d="M7 4 v 8"/></g>
+                  <g class="icon-stroke" transform="translate(75, 10)"><circle cx="2" cy="2" r="1.5"/><circle cx="11" cy="2" r="1.5"/><circle cx="2" cy="12" r="1.5"/><circle cx="11" cy="12" r="1.5"/><circle cx="6.5" cy="7" r="1.5"/><path d="M3.5 2 L 5.5 6 M 9.5 2 L 7.5 6 M 3.5 12 L 5.5 8 M 9.5 12 L 7.5 8"/></g>
+                  <g class="icon-stroke" transform="translate(108, 10)"><path d="M6 2 l 1 3 l 3 1 l -3 1 l -1 3 l -1 -3 l -3 -1 l 3 -1 z"/><path d="M1 11 l 0.5 1.5 l 1.5 0.5 l -1.5 0.5 l -0.5 1.5 l -0.5 -1.5 l -1.5 -0.5 l 1.5 -0.5 z"/></g>
+                  <g class="icon-stroke" transform="translate(144, 10)"><path d="M0 1 h 11 v 8 h -4 l -3 3 v -3 h -4 z"/><circle cx="3" cy="5" r="0.7"/><circle cx="5.5" cy="5" r="0.7"/><circle cx="8" cy="5" r="0.7"/></g>
+                  <text class="plate-label" x="97" y="66">AI-BRAIN</text>
+                  <text class="plate-sublabel-inline" x="97" y="78">reasons across the Heart</text>
+                </g>
+
+                <!-- MUSCLE — actions into the real world -->
+                <g class="plate-group" transform="translate(275, 304)">
+                  <polygon class="plate-front" points="0,36 170,36 170,44 0,44"/>
+                  <polygon class="plate-right" points="170,36 195,0 195,8 170,44"/>
+                  <polygon class="plate-top" points="25,0 195,0 170,36 0,36"/>
+                  <g class="icon-stroke" transform="translate(40, 10)"><path d="M0 7 h 12"/><path d="M8 3 l 4 4 l -4 4"/></g>
+                  <g class="icon-stroke" transform="translate(75, 10)"><circle cx="3" cy="3" r="2"/><circle cx="11" cy="11" r="2"/><circle cx="3" cy="11" r="2"/><path d="M4 4 l 6 6"/></g>
+                  <g class="icon-stroke" transform="translate(108, 10)"><path d="M0 6 l 13 -5 l -5 13 l -2 -5 z"/><path d="M3 6 l 4 4"/></g>
+                  <g class="icon-stroke" transform="translate(144, 10)"><circle cx="6" cy="7" r="1.5"/><path d="M3 4 a 4 4 0 0 0 0 6 M 9 4 a 4 4 0 0 1 0 6 M 1 2 a 7 7 0 0 0 0 10 M 11 2 a 7 7 0 0 1 0 10"/></g>
+                  <text class="plate-label" x="97" y="66">MUSCLE</text>
+                  <text class="plate-sublabel-inline" x="97" y="78">acts on the real world</text>
+                </g>
+
+                <!-- NERVE — events, audit, provenance, real-time signals -->
+                <g class="plate-group" transform="translate(510, 304)">
+                  <polygon class="plate-front" points="0,36 170,36 170,44 0,44"/>
+                  <polygon class="plate-right" points="170,36 195,0 195,8 170,44"/>
+                  <polygon class="plate-top" points="25,0 195,0 170,36 0,36"/>
+                  <g class="icon-stroke" transform="translate(40, 10)"><path d="M0 7 L 2 7 L 4 3 L 6 11 L 8 7 L 10 7 L 12 4 L 14 7"/></g>
+                  <g class="icon-stroke" transform="translate(75, 10)"><rect x="2" y="0" width="12" height="14" rx="1"/><path d="M5 4 h 7 M 5 7 h 7 M 5 10 h 4"/><circle cx="3.5" cy="4" r="0.5"/><circle cx="3.5" cy="7" r="0.5"/><circle cx="3.5" cy="10" r="0.5"/></g>
+                  <g class="icon-stroke" transform="translate(108, 10)"><path d="M7 0 L 13 3 v 4 c 0 4 -3 7 -6 8 c -3 -1 -6 -4 -6 -8 v -4 z"/><path d="M4 7 l 2 2 l 4 -4"/></g>
+                  <g class="icon-stroke" transform="translate(144, 10)"><circle cx="7" cy="7" r="6"/><path d="M7 4 v 3 l 2 2"/></g>
+                  <text class="plate-label" x="97" y="66">NERVE</text>
+                  <text class="plate-sublabel-inline" x="97" y="78">feels every change</text>
+                </g>
+              </g>
+            </svg>
+
+            <div class="obj-callout obj-callout-right">
+              <div class="obj-callout-header">
+                <span>Data Flow</span>
+                <span class="obj-callout-id">Live</span>
+              </div>
+              <div class="obj-callout-body">
+                <div class="flow-row"><span class="flow-arrow flow-both">&#x2195;</span><div class="flow-text"><span class="flow-layer">Skin</span><span class="flow-desc">people read &amp; write</span></div></div>
+                <div class="flow-row"><span class="flow-arrow flow-both">&#x2195;</span><div class="flow-text"><span class="flow-layer">AI-Brain</span><span class="flow-desc">AI reasons &amp; writes</span></div></div>
+                <div class="flow-row"><span class="flow-arrow flow-out">&rarr;</span><div class="flow-text"><span class="flow-layer">Muscle</span><span class="flow-desc">sends actions out</span></div></div>
+                <div class="flow-row"><span class="flow-arrow flow-in">&larr;</span><div class="flow-text"><span class="flow-layer">Nerve</span><span class="flow-desc">records every change</span></div></div>
+              </div>
+              <div class="obj-callout-quote">
+                <strong>Heart</strong> is the center.<br/>Everything else flows through it.
+              </div>
+            </div>
+          </div>
+
+          <div class="arch-tagline">Not an EMR. Not an integration layer. <em>The whole thing.</em></div>
+        </div>
+        <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
+        <aside class="notes">
+          One hospital. One operating system. Built ground-up on FHIR R4 — not as an API layer, as the storage primitive. AI is in the architecture — the Brain reasons across the FHIR Heart. The Muscle reaches into MOH, insurance, pharmacy, DICOM, SMS. The Skin is every UI a hospital role touches. The Nerve carries every event and audit signal through the whole body. That's the scope: we replace Epic, Cerner, athena, DeepScribe, Nuance, OpenEMR, and thirty more — in one codebase. Not an EMR. Not an integration layer. The whole thing.
         </aside>
       </section>
 

@@ -211,6 +211,18 @@ npm run lint         # eslint
 - **Mobile pass 7**: Reverted the founder-card column stacking — kept photos side-by-side per user's preference.
 - **Mobile pass 8**: Hid `.founder-badge` on mobile to fix name overlap.
 - **Password feature (just shipped)**: Password column added, backfilled, edge functions deployed, admin UI wired.
+- **Deck reorder + slide redesign pass (2026-06-07)**: Major content pass on `public/deck.html`.
+  - **New visible slide order** (labels 01–11): Problem → Team → Progress (Traction) → Category → Inside MediMind → Competition → Georgia Window → Ambition → Business Model → Ask → Investing. The two **Solution** slides are kept in source but `data-visibility="hidden"` (taken out of the deck, recoverable — do NOT delete).
+  - **4 slides fully redesigned** with self-contained, namespaced `<style>` blocks inserted just before `</head>` (after the main stylesheet): Category (`catx-`), Georgia Window (`gwx-`), Business Model (`bmx-`), Ask (`askx-`). To edit one, find its prefix. Each block contains its own desktop + `@media (max-width:768px)` mobile rules.
+    - **Category**: 3 pillars (was 4; dropped "priced for emerging markets") + an "AI-native" definition hero (Collect → Analyze → Act).
+    - **Georgia Window**: two-column split — left = regulation-contrast chips + a real Georgia **map** (potrace outline, embedded verbatim with `transform="translate(0,1024) scale(0.1,-0.1)"`, Tbilisi pin); right = condensed proof. Headline is intentionally **one line** to fit 720.
+    - **Business Model**: pricing tiers REMOVED. Now a GTM-now → value-based-long-term narrative, no dollar figures.
+    - **Ask**: softened ("regional scouting started", not "launch 2-3 countries"); raise box is terms-only ($200K · SAFE · $5M cap · 20% · MFN); "What we get" section removed.
+  - **Ambition**: the Year-4 ARR (`~$28M`) `.bm-arr` box was deleted from the slide.
+  - **Competition**: reworded — "Today's healthcare runs on bolted-on apps…" + footer "Incumbents can't unify into AI-native. We are the combination they can't become."
+  - **Problem slide animation**: the two-truth entrance now cascades sequentially (s1 → divider → s2) via staggered `animation-delay` on `.hook-slide.present` children (~line 712).
+  - **GOTCHA confirmed**: the global `.slide-inner > .headline-big { margin-top: 28px }` (specificity 0,2,0) overrides a redesigned slide's own `.xxx-headline { margin: 0 }`. To control a redesign headline's margin/size, use a `.xxx-slide .slide-inner > .xxx-headline { … }` selector (≥ same specificity, defined later) or an inline `style=`. Desktop fit verified at 1280×720, mobile at 390 + 320 (no horizontal overflow).
+  - **NOTE**: this pass shifted line numbers throughout `deck.html` (CSS grew ~600 lines, slides moved). Any "~line N" reference elsewhere in this file is approximate — search by selector/class, not line number.
 
 ---
 

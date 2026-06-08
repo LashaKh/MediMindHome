@@ -7992,6 +7992,137 @@
     color: #fff;
   }
 
+  /* ====== Market ascension ramp (SOM -> SAM -> TAM) ====== */
+  .bmx-ramp {
+    position: relative;
+    margin-top: 26px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 376px;
+    padding: 0 6px;
+  }
+  /* soft baseline the pillars stand on */
+  .bmx-ramp::after {
+    content:""; position:absolute; left:1%; right:1%; bottom:0; height:2px;
+    background: linear-gradient(90deg, transparent, rgba(43,108,176,.28) 18%, rgba(56,161,105,.3) 82%, transparent);
+  }
+
+  .bmx-pillar {
+    position: relative;
+    flex: 1 1 0; max-width: 320px;
+    display: flex; flex-direction: column;
+    padding: 26px 30px 22px;
+    border-radius: 24px;
+    background: var(--emr-bg-page);
+    border: 1px solid var(--emr-border);
+    box-shadow: 0 22px 54px rgba(15,32,58,.10);
+    overflow: hidden;
+    z-index: 1;
+  }
+  .bmx-pillar::before { content:""; position:absolute; top:0; left:0; right:0; height:6px; z-index:2; }
+
+  .bmx-pillar--som { height: 268px; background: linear-gradient(180deg,#f9fcff 0%, var(--emr-bg-page) 44%); }
+  .bmx-pillar--sam { height: 320px; background: linear-gradient(180deg,#f1f7ff 0%, var(--emr-bg-page) 46%); }
+  .bmx-pillar--tam { height: 376px; }
+
+  .bmx-pillar--som::before { background: var(--emr-secondary); }
+  .bmx-pillar--sam::before { background: linear-gradient(90deg, var(--emr-secondary), var(--emr-accent)); }
+
+  .bmx-pillar--tam {
+    background: var(--emr-gradient-primary);
+    border: none;
+    box-shadow: 0 30px 80px rgba(26,54,93,.46);
+  }
+  .bmx-pillar--tam::before { background: linear-gradient(90deg, var(--emr-accent), var(--emr-success)); }
+  .bmx-pillar--tam::after {
+    content:""; position:absolute; left:50%; top:-8%; width:160%; height:75%;
+    transform: translateX(-50%);
+    background: radial-gradient(58% 70% at 50% 0%, rgba(66,153,225,.55), transparent 72%);
+    pointer-events:none; z-index:0;
+  }
+  .bmx-pillar--tam > * { position: relative; z-index: 1; }
+
+  .bmx-ptag {
+    font-size: 0.6em; font-weight: 800; letter-spacing: 0.13em; text-transform: uppercase;
+    color: var(--emr-text-muted);
+  }
+  .bmx-pillar--som .bmx-ptag { color: var(--emr-secondary); }
+  .bmx-pillar--sam .bmx-ptag { color: var(--emr-accent); }
+  .bmx-pillar--tam .bmx-ptag { color: var(--emr-light-accent); }
+
+  .bmx-pgeo {
+    margin-top: 9px;
+    font-size: 1.04em; font-weight: 800; letter-spacing: -0.01em;
+    color: var(--emr-text-primary);
+  }
+  .bmx-pillar--tam .bmx-pgeo { color: #fff; }
+
+  .bmx-pval {
+    margin-top: 15px;
+    font-weight: 800; line-height: 0.9; letter-spacing: -0.045em;
+    color: var(--emr-primary);
+    white-space: nowrap;
+  }
+  .bmx-pillar--som .bmx-pval { font-size: 2.7em; }
+  .bmx-pillar--sam .bmx-pval { font-size: 3.2em; color: var(--emr-secondary); }
+  .bmx-pillar--tam .bmx-pval { font-size: 3.6em; color: #fff; }
+  .bmx-pval small {
+    font-size: 0.26em; font-weight: 700; letter-spacing: 0; color: var(--emr-text-muted); margin-left: 5px;
+  }
+  .bmx-pillar--sam .bmx-pval small { color: var(--emr-text-muted); }
+  .bmx-pillar--tam .bmx-pval small { color: rgba(255,255,255,.72); }
+
+  .bmx-pscope {
+    margin: auto 0 0;
+    padding-top: 16px;
+    font-size: 0.68em; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+    color: var(--emr-text-muted);
+  }
+  .bmx-pillar--tam .bmx-pscope { color: rgba(255,255,255,.78); }
+  .bmx-pillar--tam .bmx-pscope::before {
+    content:""; display:block; width:34px; height:2px; margin-bottom:9px;
+    background: linear-gradient(90deg, var(--emr-light-accent), transparent);
+  }
+
+  /* growth-multiplier connectors between pillars */
+  .bmx-mult {
+    position: relative; z-index: 4;
+    flex: 0 0 auto;
+    align-self: flex-start;
+    margin: 96px -17px 0;
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+  }
+  .bmx-mult b {
+    font-size: 0.7em; font-weight: 800; letter-spacing: 0.01em;
+    padding: 6px 13px; border-radius: 999px;
+    background: #fff; color: var(--emr-accent);
+    border: 1px solid var(--emr-light-accent);
+    box-shadow: 0 10px 26px rgba(15,32,58,.16);
+    white-space: nowrap;
+  }
+  .bmx-mult svg { width: 24px; height: 16px; color: var(--emr-accent); opacity: .8; }
+
+  .bmx-axis {
+    margin-top: 18px;
+    display: flex; align-items: center; gap: 16px;
+    font-size: 0.6em; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;
+  }
+  .bmx-axis .a-land { color: var(--emr-secondary); }
+  .bmx-axis .a-grow { color: var(--emr-success); }
+  .bmx-axis-track {
+    flex: 1; height: 2px; border-radius: 2px;
+    background: linear-gradient(90deg, var(--emr-secondary), var(--emr-accent), var(--emr-success));
+    opacity: .45;
+  }
+
+  .bmx-cap {
+    margin: 16px 0 0;
+    font-size: 0.8em; line-height: 1.5; color: var(--emr-text-body);
+  }
+  .bmx-cap strong { color: var(--emr-text-primary); font-weight: 800; }
+  .bmx-cap cite { color: var(--emr-text-light); font-style: italic; }
+
   /* ===== MOBILE ===== */
   @media (max-width: 768px) {
     .bmx-slide .slide-inner { padding: 68px 20px 36px; }
@@ -8033,6 +8164,42 @@
       border-radius: 16px;
     }
     .bmx-seal p { font-size: 1.08em; }
+
+    /* ramp stacks vertically — use block flow so cards size to content */
+    .bmx-ramp {
+      display: block;
+      margin-top: 22px;
+      height: auto;
+      padding: 0;
+    }
+    .bmx-ramp::after { display: none; }
+    .bmx-pillar {
+      display: block;
+      width: 100%; max-width: none;
+      height: auto !important;
+      padding: 22px 24px; border-radius: 20px;
+    }
+    .bmx-pillar > span { display: block; }
+    .bmx-pillar--sam { background: linear-gradient(180deg,#f3f8ff 0%, var(--emr-bg-page) 38%); }
+    .bmx-pillar--tam::after { height: 60%; }
+    .bmx-ptag { font-size: 0.74em; }
+    .bmx-pgeo { font-size: 1.18em; margin-top: 8px; }
+    .bmx-pillar--som .bmx-pval,
+    .bmx-pillar--sam .bmx-pval { font-size: 3.2em; margin-top: 10px; }
+    .bmx-pillar--tam .bmx-pval { font-size: 3.5em; margin-top: 10px; }
+    .bmx-pval small { font-size: 0.24em; }
+    .bmx-pscope { margin: 12px 0 0 !important; padding-top: 0; font-size: 0.82em; }
+    .bmx-pillar--tam .bmx-pscope::before { display: none; }
+
+    /* multiplier chips sit centered between stacked cards, arrow points down */
+    .bmx-mult {
+      display: flex; flex-direction: row; justify-content: center; align-items: center;
+      margin: 10px 0; gap: 8px;
+    }
+    .bmx-mult svg { transform: rotate(135deg); width: 20px; height: 14px; }
+
+    .bmx-axis { margin-top: 18px; font-size: 0.74em; }
+    .bmx-cap { font-size: 0.92em; margin-top: 18px; }
   }
 </style>
 
@@ -9838,8 +10005,8 @@
               <div class="stage-subtitle">Year 1 – 2 · Dominate home market</div>
               <p class="stage-body">Elevate local systems to world-class standards — category leader at home within a year.</p>
               <div class="stage-stat">
-                <span class="stage-stat-value">0 → 40+</span>
-                <span class="stage-stat-label">hospitals by Y4</span>
+                <span class="stage-stat-value">0 → 50</span>
+                <span class="stage-stat-label">hospitals by Y2</span>
               </div>
             </div>
 
@@ -9860,8 +10027,8 @@
               <div class="stage-subtitle">Year 4+ · Arrive battle-tested</div>
               <p class="stage-body">Built on FHIR R4 from day 1 — the exact standards the U.S. and E.U. demand.</p>
               <div class="stage-stat">
-                <span class="stage-stat-value">$45B TAM</span>
-                <span class="stage-stat-label">· FHIR-native from day 1</span>
+                <span class="stage-stat-value">$31B TAM</span>
+                <span class="stage-stat-label">· $200/doctor value-based</span>
               </div>
             </div>
           </div>
@@ -9885,53 +10052,56 @@
   <div class="slide-inner">
     <div class="slide-label"><span class="label-num">09</span>BUSINESS MODEL</div>
 
-    <h2 class="headline-big bmx-headline">Priced for the market. <em>Built world-class.</em></h2>
-    <p class="bmx-sub">Meet every market at what it can pay <strong>today</strong> — grow into a <strong>share of the value</strong> we create <strong>tomorrow</strong>.</p>
+    <h2 class="headline-big bmx-headline">Land in Georgia. <em>Grow into a global market.</em></h2>
+    <p class="bmx-sub">The same world-class platform everywhere — sized from a home beachhead we already lead to a global, <strong>value-based</strong> opportunity.</p>
 
-    <div class="bmx-stage">
-      <!-- PHASE 1 - NOW -->
-      <article class="bmx-phase bmx-phase--now">
-        <span class="bmx-ord" aria-hidden="true">01</span>
-        <span class="bmx-eyebrow">Now &middot; Go-to-market</span>
-        <h3 class="bmx-word">Land</h3>
-        <p class="bmx-line">Priced where each region can pay — the <strong>full</strong> platform, never gated.</p>
-        <span class="bmx-pill">land &amp; prove</span>
+    <!-- Market ascension ramp: SOM -> SAM -> TAM -->
+    <div class="bmx-ramp">
+      <article class="bmx-pillar bmx-pillar--som">
+        <span class="bmx-ptag">SOM &middot; Obtainable</span>
+        <span class="bmx-pgeo">Georgia</span>
+        <span class="bmx-pval">$8.6M<small>/ yr</small></span>
+        <span class="bmx-pscope">Home beachhead</span>
       </article>
 
-      <!-- CONNECTOR NODE (arrow right on desktop, down on mobile) -->
-      <div class="bmx-link" aria-hidden="true">
-        <svg viewBox="0 0 48 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4 12h38"/>
-          <path d="m33 5 9 7-9 7"/>
-        </svg>
+      <div class="bmx-mult" aria-hidden="true">
+        <b>&times;43</b>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19 19 5"/><path d="M9 5h10v10"/></svg>
       </div>
 
-      <!-- PHASE 2 - LONG TERM -->
-      <article class="bmx-phase bmx-phase--grow">
-        <span class="bmx-ord" aria-hidden="true">02</span>
-        <span class="bmx-eyebrow">Long term &middot; Value-based</span>
-        <h3 class="bmx-word">Grow</h3>
-        <p class="bmx-line">Outcomes, throughput &amp; savings compound — we <strong>capture a share</strong>.</p>
-        <span class="bmx-pill">grow with the outcome</span>
+      <article class="bmx-pillar bmx-pillar--sam">
+        <span class="bmx-ptag">SAM &middot; Serviceable</span>
+        <span class="bmx-pgeo">Region &middot; 9 countries</span>
+        <span class="bmx-pval">$370M<small>/ yr</small></span>
+        <span class="bmx-pscope">Regional expansion</span>
+      </article>
+
+      <div class="bmx-mult" aria-hidden="true">
+        <b>&times;84</b>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19 19 5"/><path d="M9 5h10v10"/></svg>
+      </div>
+
+      <article class="bmx-pillar bmx-pillar--tam">
+        <span class="bmx-ptag">TAM &middot; Total</span>
+        <span class="bmx-pgeo">Global</span>
+        <span class="bmx-pval">$31B+<small>/ yr</small></span>
+        <span class="bmx-pscope">Value-based &middot; $200 floor</span>
       </article>
     </div>
 
-    <!-- SEAL -->
-    <div class="bmx-seal">
-      <span class="bmx-seal-mark" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 3 4 6v5c0 4.2 2.9 7.6 8 9 5.1-1.4 8-4.8 8-9V6l-8-3Z"/>
-          <path d="m9 12 2 2 4-4"/>
-        </svg>
-      </span>
-      <p>Same codebase everywhere.</p>
+    <div class="bmx-axis" aria-hidden="true">
+      <span class="a-land">Land &middot; home market</span>
+      <span class="bmx-axis-track"></span>
+      <span class="a-grow">Grow &middot; value-based, global</span>
     </div>
+
+    <p class="bmx-cap">Global shown at a <strong>$200/doctor starting floor</strong> &mdash; value-based pricing scales well above it. <cite>Methodology &amp; sources in appendix.</cite></p>
 
     <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
   </div>
 
   <aside class="notes">
-    Our business model has two phases. Phase 1 — go-to-market, happening now: we match each region's affordable price point while still delivering the full, world-class platform. We meet hospitals at what they can actually pay, and we never gate features by market — everyone gets the complete product. The goal is to land fast and prove value in live production. Phase 2 — long term: value-based pricing. As we unlock the platform's full potential — better clinical outcomes, higher throughput, real cost savings, and captured revenue for the hospital — we capture a share of the value we create. To be transparent: the exact mechanics are still being refined, and the model will evolve as we learn from live deployments. The anchoring principle ties it together: same codebase everywhere — one product, no feature gates by market. Note: we intentionally removed hard per-seat pricing tiers from this slide — pricing detail lives elsewhere in the deck.
+    Our model is "land in Georgia, grow into a global market," and it sizes the whole opportunity as a clean TAM/SAM/SOM. SOM — Georgia, our home beachhead we already lead: an ~$8.6M/year obtainable market. SAM — the regional expansion across nine post-Soviet markets: a ~$370M/year serviceable market. TAM — global, value-based: a ~$31B/year-plus total market. The key point on the global number: $200/doctor/month is just a starting floor — value-based pricing scales well above it as outcomes compound, because the value we create per physician is far larger than the price. The full math — physician counts, per-doctor prices, the country list, and the peer-reviewed value justification — is in the appendix (Market Math), so this slide stays clean and we go deeper only if you want to.
   </aside>
 </section>
 
@@ -10652,6 +10822,214 @@
         <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
         <aside class="notes">
           Appendix A4 — operations and finance. Four tiles: interactive floor-plan bed board with drag-drop admits/discharges, hospital command center (real-time occupancy, ED boarding alerts, discharge queue), patient coordinator hub (pre-op, insurance, funding, debt), and revenue cycle dashboard for the CFO view (DSO, AR aging, payer mix, denials). Hospitals don't sign EMRs that can't run operations or get paid — MediMind does both.
+        </aside>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════
+           APPENDIX A5: MARKET MATH — TAM/SAM/SOM derivation
+           ═══════════════════════════════════════════════ -->
+      <style>
+/* ===== APPENDIX · MARKET MATH — apm- namespace (equation ledger) ===== */
+.apm-slide .slide-inner { padding: 46px 84px 26px; }
+.apm-headline { margin: 0 0 5px; font-size: 1.78em; }
+.apm-headline em { color: var(--emr-secondary); font-style: italic; }
+.apm-sub {
+  margin: 0 0 20px; max-width: 840px;
+  font-size: 0.9em; line-height: 1.5; color: var(--emr-text-body);
+}
+.apm-sub strong { color: var(--emr-text-primary); font-weight: 800; }
+
+/* ---- equation ledger: physicians × price × 12 = market ---- */
+.apm-eqs { display: flex; flex-direction: column; gap: 11px; }
+.apm-eq {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.7fr 1.05fr 20px 0.95fr 20px 0.8fr 24px 1.1fr;
+  align-items: center;
+  gap: 0 6px;
+  padding: 13px 26px 13px 24px;
+  border-radius: 18px;
+  background: var(--emr-bg-page);
+  border: 1px solid var(--emr-border);
+  box-shadow: 0 14px 36px rgba(15,32,58,.08);
+  overflow: hidden;
+}
+.apm-eq::before { content:""; position:absolute; left:0; top:0; bottom:0; width:5px; }
+.apm-eq--som::before { background: var(--emr-secondary); }
+.apm-eq--sam::before { background: linear-gradient(180deg, var(--emr-secondary), var(--emr-accent)); }
+.apm-eq--tam::before { background: linear-gradient(180deg, var(--emr-accent), var(--emr-success)); }
+.apm-eq--tam {
+  background: var(--emr-gradient-primary);
+  border: none;
+  box-shadow: 0 22px 54px rgba(26,54,93,.40);
+}
+
+/* head: tier badge + geography + source */
+.apm-eq-head { display: flex; align-items: center; gap: 13px; }
+.apm-eq-tier {
+  flex: 0 0 auto;
+  display: grid; place-items: center;
+  width: 46px; height: 46px; border-radius: 13px;
+  font-size: 0.6em; font-weight: 800; letter-spacing: 0.03em; color: #fff;
+}
+.apm-eq--som .apm-eq-tier { background: var(--emr-secondary); }
+.apm-eq--sam .apm-eq-tier { background: linear-gradient(135deg, var(--emr-secondary), var(--emr-accent)); }
+.apm-eq--tam .apm-eq-tier { background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.34); }
+.apm-eq-geo { font-size: 1.0em; font-weight: 800; color: var(--emr-text-primary); line-height: 1.12; letter-spacing: -0.01em; }
+.apm-eq-sub { font-size: 0.7em; color: var(--emr-text-muted); margin-top: 3px; }
+.apm-eq--tam .apm-eq-geo { color: #fff; }
+.apm-eq--tam .apm-eq-sub { color: rgba(255,255,255,.68); }
+
+/* operand tokens + operators */
+.apm-tok { display: flex; flex-direction: column; line-height: 1.05; }
+.apm-tok b { font-size: 1.02em; font-weight: 800; color: var(--emr-text-primary); letter-spacing: -0.01em; }
+.apm-tok i { font-style: normal; font-size: 0.62em; font-weight: 600; color: var(--emr-text-muted); margin-top: 3px; letter-spacing: 0.02em; }
+.apm-eq--tam .apm-tok b { color: #fff; }
+.apm-eq--tam .apm-tok i { color: rgba(255,255,255,.62); }
+.apm-op { text-align: center; font-size: 0.92em; font-weight: 500; color: var(--emr-text-light); }
+.apm-op-eq { font-size: 1.15em; font-weight: 700; color: var(--emr-text-muted); }
+.apm-eq--tam .apm-op { color: rgba(255,255,255,.5); }
+.apm-eq--tam .apm-op-eq { color: rgba(255,255,255,.6); }
+
+/* result */
+.apm-eq-res { justify-self: end; }
+.apm-eq-val { font-weight: 800; letter-spacing: -0.03em; color: var(--emr-primary); white-space: nowrap; }
+.apm-eq--som .apm-eq-val { font-size: 1.85em; }
+.apm-eq--sam .apm-eq-val { font-size: 2.1em; color: var(--emr-secondary); }
+.apm-eq--tam .apm-eq-val { font-size: 2.45em; color: #fff; }
+.apm-eq-val small { font-size: 0.34em; font-weight: 700; color: var(--emr-text-muted); margin-left: 3px; }
+.apm-eq--sam .apm-eq-val small { color: var(--emr-text-muted); }
+.apm-eq--tam .apm-eq-val small { color: rgba(255,255,255,.72); }
+
+/* ---- footer: country chips + floor callout + sources ---- */
+.apm-foot { display: grid; grid-template-columns: 1.05fr 1fr; gap: 26px; margin-top: 18px; align-items: start; }
+.apm-foot-h { font-size: 0.62em; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--emr-text-muted); margin-bottom: 9px; }
+.apm-countries { display: flex; flex-wrap: wrap; gap: 7px; }
+.apm-chip {
+  font-size: 0.72em; font-weight: 600;
+  padding: 5px 12px; border-radius: 999px;
+  background: var(--emr-bg-tint); color: var(--emr-secondary);
+  border: 1px solid var(--emr-light-accent);
+}
+.apm-foot-note { margin-top: 10px; font-size: 0.7em; line-height: 1.45; color: var(--emr-text-muted); }
+
+.apm-floor {
+  position: relative;
+  padding: 15px 20px; border-radius: 16px;
+  background: linear-gradient(135deg, #f1faf5 0%, #eef6ff 100%);
+  border: 1px solid var(--emr-light-accent);
+}
+.apm-floor .apm-foot-h { color: var(--emr-success); }
+.apm-floor p { margin: 0; font-size: 0.74em; line-height: 1.5; color: var(--emr-text-body); }
+.apm-floor p strong { color: var(--emr-text-primary); font-weight: 800; }
+.apm-floor-proj { margin-top: 11px; display: flex; align-items: center; gap: 11px; padding-top: 11px; border-top: 1px dashed rgba(56,161,105,.3); }
+.apm-floor-proj span { font-size: 0.7em; font-weight: 600; color: var(--emr-text-muted); text-transform: uppercase; letter-spacing: 0.04em; }
+.apm-floor-proj b { font-size: 1.0em; font-weight: 800; color: var(--emr-success); margin-left: auto; }
+
+.apm-src { margin-top: 14px; font-size: 0.62em; line-height: 1.5; color: var(--emr-text-light); }
+
+@media (max-width: 768px) {
+  .apm-slide .slide-inner { padding: 68px 20px 36px; }
+  .apm-headline { font-size: 1.7em; }
+  .apm-sub { font-size: 1em; margin-bottom: 18px; }
+
+  .apm-eqs { gap: 14px; }
+  .apm-eq { display: block; padding: 18px 20px; }
+  .apm-eq::before { width: 100%; height: 5px; bottom: auto; }
+  .apm-eq-head { margin-bottom: 13px; }
+  .apm-eq-tier { width: 44px; height: 44px; font-size: 0.7em; }
+  .apm-eq-geo { font-size: 1.15em; }
+  .apm-eq-sub { font-size: 0.82em; }
+  .apm-eq > .apm-tok { display: inline-flex; vertical-align: middle; margin-right: 4px; }
+  .apm-eq > .apm-op { display: inline-block; vertical-align: middle; margin: 0 5px; }
+  .apm-tok b { font-size: 1.1em; }
+  .apm-tok i { font-size: 0.74em; }
+  .apm-op-eq { display: none; }
+  .apm-eq-res { display: block; margin-top: 14px; }
+  .apm-eq-res::before { content: "= "; font-weight: 700; color: var(--emr-text-light); }
+  .apm-eq--tam .apm-eq-res::before { color: rgba(255,255,255,.6); }
+  .apm-eq--som .apm-eq-val { font-size: 2.5em; }
+  .apm-eq--sam .apm-eq-val { font-size: 2.6em; }
+  .apm-eq--tam .apm-eq-val { font-size: 2.7em; }
+
+  .apm-foot { grid-template-columns: 1fr; gap: 18px; }
+  .apm-chip { font-size: 0.86em; }
+  .apm-foot-note { font-size: 0.82em; }
+  .apm-floor p { font-size: 0.9em; }
+  .apm-floor-proj span { font-size: 0.82em; }
+  .apm-src { font-size: 0.78em; }
+}
+      </style>
+      <section class="apm-slide">
+        <div class="slide-inner">
+          <div class="slide-label"><span class="label-num">A5</span>APPENDIX · MARKET MATH</div>
+          <h2 class="headline-big apm-headline">Market sizing — <em>the math.</em></h2>
+          <p class="apm-sub">Bottom-up, not top-down — every figure is <strong>physicians &times; monthly price &times; 12</strong>. Real physician counts, conservative pricing; each tier maps to a stage of the plan.</p>
+
+          <div class="apm-eqs">
+            <article class="apm-eq apm-eq--som">
+              <div class="apm-eq-head">
+                <span class="apm-eq-tier">SOM</span>
+                <div><div class="apm-eq-geo">Georgia &middot; home</div><div class="apm-eq-sub">Geostat &middot; 2024 national count</div></div>
+              </div>
+              <span class="apm-tok"><b>24,000</b><i>physicians</i></span>
+              <span class="apm-op">&times;</span>
+              <span class="apm-tok"><b>$30</b><i>/ doctor&middot;mo</i></span>
+              <span class="apm-op">&times;</span>
+              <span class="apm-tok"><b>12</b><i>months</i></span>
+              <span class="apm-op apm-op-eq">=</span>
+              <div class="apm-eq-res"><span class="apm-eq-val">$8.6M<small>/ yr</small></span></div>
+            </article>
+
+            <article class="apm-eq apm-eq--sam">
+              <div class="apm-eq-head">
+                <span class="apm-eq-tier">SAM</span>
+                <div><div class="apm-eq-geo">Region &middot; 9 countries</div><div class="apm-eq-sub">WHO GHO density &times; population</div></div>
+              </div>
+              <span class="apm-tok"><b>~440,000</b><i>physicians</i></span>
+              <span class="apm-op">&times;</span>
+              <span class="apm-tok"><b>$70</b><i>/ doctor&middot;mo</i></span>
+              <span class="apm-op">&times;</span>
+              <span class="apm-tok"><b>12</b><i>months</i></span>
+              <span class="apm-op apm-op-eq">=</span>
+              <div class="apm-eq-res"><span class="apm-eq-val">$370M<small>/ yr</small></span></div>
+            </article>
+
+            <article class="apm-eq apm-eq--tam">
+              <div class="apm-eq-head">
+                <span class="apm-eq-tier">TAM</span>
+                <div><div class="apm-eq-geo">Global &middot; value-based</div><div class="apm-eq-sub">WHO &middot; U.S. + E.U. alone &asymp; 2.9M</div></div>
+              </div>
+              <span class="apm-tok"><b>12.8M</b><i>physicians</i></span>
+              <span class="apm-op">&times;</span>
+              <span class="apm-tok"><b>$200</b><i>/ mo &middot; floor</i></span>
+              <span class="apm-op">&times;</span>
+              <span class="apm-tok"><b>12</b><i>months</i></span>
+              <span class="apm-op apm-op-eq">=</span>
+              <div class="apm-eq-res"><span class="apm-eq-val">$31B+<small>/ yr</small></span></div>
+            </article>
+          </div>
+
+          <div class="apm-foot">
+            <div>
+              <div class="apm-foot-h">The 9-country region</div>
+              <div class="apm-countries">
+                <span class="apm-chip">Armenia</span><span class="apm-chip">Azerbaijan</span><span class="apm-chip">Moldova</span><span class="apm-chip">Ukraine</span><span class="apm-chip">Kazakhstan</span><span class="apm-chip">Uzbekistan</span><span class="apm-chip">Belarus</span><span class="apm-chip">Kyrgyzstan</span><span class="apm-chip">Tajikistan</span>
+              </div>
+              <p class="apm-foot-note">Physician counts derived from WHO Global Health Observatory density applied to current population.</p>
+            </div>
+            <div class="apm-floor">
+              <div class="apm-foot-h">$200 is a floor, not a ceiling</div>
+              <p>At $2,400/yr MediMind returns a <strong>3–6&times;</strong> value ratio — peer-reviewed AI documentation recovers <strong>$7.5K–15K</strong> of physician time per doctor each year. Value-based pricing scales well above $200.</p>
+              <div class="apm-floor-proj"><span>At a $400 value price</span><b>global TAM &asymp; $60B+</b></div>
+            </div>
+          </div>
+
+          <p class="apm-src">Sources — Georgia: Geostat (2024). Region: WHO Global Health Observatory, physician density &times; UN/WPR 2026 population. Global: WHO (12.8M physicians, 2019); Eurostat (EU-27 1.98M, 2023); HRSA (U.S. ~934K, 2023). Value: JAMA (2026, n=8,581 clinicians); Kaiser Permanente / The Permanente Medical Group (15,791 documentation hours recovered); Medscape Physician Compensation Report (2025, $374K avg ≈ $144/hr).</p>
+        </div>
+        <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
+        <aside class="notes">
+          Appendix A5 — the market math, for anyone who wants to see under the hood. Everything is bottom-up: physicians times monthly price times twelve. SOM is Georgia — 24,000 physicians from Geostat's 2024 national count at $30/month, about $8.6M/year, the home market we already lead. SAM is the nine-country region — roughly 440,000 physicians from WHO Global Health Observatory densities at $70/month, about $370M/year. TAM is global — 12.8 million physicians worldwide per WHO at a $200/month floor, about $31B/year-plus; the U.S. and E.U. alone are about 2.9 million physicians. The most important caveat: $200 is a starting floor, not the real price. At $2,400/year it already returns 3 to 6 times its cost in recovered physician time — JAMA 2026, the Kaiser Permanente deployment, Medscape comp data — so value-based pricing scales materially higher. At a $400 value-based price, the global TAM is north of $60B. We kept the headline slide clean and put the full derivation here so we can go as deep as you want.
         </aside>
       </section>
 

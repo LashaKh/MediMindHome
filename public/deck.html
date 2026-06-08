@@ -8064,14 +8064,21 @@
     color: var(--emr-primary);
     white-space: nowrap;
   }
-  .bmx-pillar--som .bmx-pval { font-size: 2.7em; }
-  .bmx-pillar--sam .bmx-pval { font-size: 3.2em; color: var(--emr-secondary); }
-  .bmx-pillar--tam .bmx-pval { font-size: 3.6em; color: #fff; }
+  .bmx-pillar--som .bmx-pval { font-size: 2.35em; }
+  .bmx-pillar--sam .bmx-pval { font-size: 2.75em; color: var(--emr-secondary); }
+  .bmx-pillar--tam .bmx-pval { font-size: 3.15em; color: #fff; }
   .bmx-pval small {
-    font-size: 0.26em; font-weight: 700; letter-spacing: 0; color: var(--emr-text-muted); margin-left: 5px;
+    font-size: 0.28em; font-weight: 700; letter-spacing: 0; color: var(--emr-text-muted); margin-left: 5px;
   }
   .bmx-pillar--sam .bmx-pval small { color: var(--emr-text-muted); }
   .bmx-pillar--tam .bmx-pval small { color: rgba(255,255,255,.72); }
+
+  .bmx-pcomp {
+    margin-top: 9px;
+    font-size: 0.66em; font-weight: 700; letter-spacing: 0;
+    color: var(--emr-text-muted);
+  }
+  .bmx-pillar--tam .bmx-pcomp { color: rgba(255,255,255,.74); }
 
   .bmx-pscope {
     margin: auto 0 0;
@@ -8188,7 +8195,8 @@
     .bmx-pillar--sam .bmx-pval { font-size: 3.2em; margin-top: 10px; }
     .bmx-pillar--tam .bmx-pval { font-size: 3.5em; margin-top: 10px; }
     .bmx-pval small { font-size: 0.24em; }
-    .bmx-pscope { margin: 12px 0 0 !important; padding-top: 0; font-size: 0.82em; }
+    .bmx-pcomp { font-size: 0.92em; margin-top: 8px; }
+    .bmx-pscope { margin: 10px 0 0 !important; padding-top: 0; font-size: 0.72em; overflow-wrap: anywhere; }
     .bmx-pillar--tam .bmx-pscope::before { display: none; }
 
     /* multiplier chips sit centered between stacked cards, arrow points down */
@@ -10053,31 +10061,33 @@
     <div class="slide-label"><span class="label-num">09</span>BUSINESS MODEL</div>
 
     <h2 class="headline-big bmx-headline">Land in Georgia. <em>Grow into a global market.</em></h2>
-    <p class="bmx-sub">The same world-class platform everywhere — sized from a home beachhead we already lead to a global, <strong>value-based</strong> opportunity.</p>
+    <p class="bmx-sub">The same world-class platform everywhere. Meet every market at what it can pay <strong>today</strong> — grow into a <strong>share of the value</strong> we create <strong>tomorrow</strong>.</p>
 
     <!-- Market ascension ramp: SOM -> SAM -> TAM -->
     <div class="bmx-ramp">
       <article class="bmx-pillar bmx-pillar--som">
         <span class="bmx-ptag">SOM &middot; Obtainable</span>
-        <span class="bmx-pgeo">Georgia</span>
+        <span class="bmx-pgeo">Georgia &middot; home</span>
         <span class="bmx-pval">$8.6M<small>/ yr</small></span>
-        <span class="bmx-pscope">Home beachhead</span>
+        <span class="bmx-pcomp">24,000 doctors &times; $30/mo</span>
+        <span class="bmx-pscope">Home market &mdash; we already lead</span>
       </article>
 
       <div class="bmx-mult" aria-hidden="true">
-        <b>&times;43</b>
+        <b>&times;44</b>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19 19 5"/><path d="M9 5h10v10"/></svg>
       </div>
 
       <article class="bmx-pillar bmx-pillar--sam">
         <span class="bmx-ptag">SAM &middot; Serviceable</span>
-        <span class="bmx-pgeo">Region &middot; 9 countries</span>
-        <span class="bmx-pval">$370M<small>/ yr</small></span>
-        <span class="bmx-pscope">Regional expansion</span>
+        <span class="bmx-pgeo">Georgia + 9 countries</span>
+        <span class="bmx-pval">$379M<small>/ yr</small></span>
+        <span class="bmx-pcomp">Georgia $8.6M + region $370M</span>
+        <span class="bmx-pscope">Local pricing &middot; $30–70/doctor/mo</span>
       </article>
 
       <div class="bmx-mult" aria-hidden="true">
-        <b>&times;84</b>
+        <b>&times;82</b>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19 19 5"/><path d="M9 5h10v10"/></svg>
       </div>
 
@@ -10085,7 +10095,8 @@
         <span class="bmx-ptag">TAM &middot; Total</span>
         <span class="bmx-pgeo">Global</span>
         <span class="bmx-pval">$31B+<small>/ yr</small></span>
-        <span class="bmx-pscope">Value-based &middot; $200 floor</span>
+        <span class="bmx-pcomp">12.8M physicians worldwide</span>
+        <span class="bmx-pscope">Value-based &middot; $200/mo floor</span>
       </article>
     </div>
 
@@ -10101,7 +10112,7 @@
   </div>
 
   <aside class="notes">
-    Our model is "land in Georgia, grow into a global market," and it sizes the whole opportunity as a clean TAM/SAM/SOM. SOM — Georgia, our home beachhead we already lead: an ~$8.6M/year obtainable market. SAM — the regional expansion across nine post-Soviet markets: a ~$370M/year serviceable market. TAM — global, value-based: a ~$31B/year-plus total market. The key point on the global number: $200/doctor/month is just a starting floor — value-based pricing scales well above it as outcomes compound, because the value we create per physician is far larger than the price. The full math — physician counts, per-doctor prices, the country list, and the peer-reviewed value justification — is in the appendix (Market Math), so this slide stays clean and we go deeper only if you want to.
+    Our model is "land in Georgia, grow into a global market," sized as a nested TAM/SAM/SOM — each tier a slice of the next. SOM, what we can obtain: our home market we already lead — Georgia, 24,000 physicians at $30/month, an $8.6M/year market. SAM, the serviceable market: Georgia plus nine post-Soviet countries, about 464,000 physicians at local pricing — Georgia at $30, the region at $70, blending to about $68 — a ~$379M/year market; that's Georgia's $8.6M plus the region's $370M. TAM, the total global opportunity: 12.8 million physicians worldwide at our $200/month value-based floor — $31B/year-plus. The key point on the global number: $200/doctor/month is just a starting floor; value-based pricing scales well above it as outcomes compound, because the value we create per physician is far larger than the price. The full math — physician counts, the per-doctor prices, the country list, and the peer-reviewed value justification — is in the appendix (Market Math), so this slide stays clean and we go deeper only if you want to.
   </aside>
 </section>
 
@@ -10830,24 +10841,24 @@
            ═══════════════════════════════════════════════ -->
       <style>
 /* ===== APPENDIX · MARKET MATH — apm- namespace (equation ledger) ===== */
-.apm-slide .slide-inner { padding: 46px 84px 26px; }
-.apm-headline { margin: 0 0 5px; font-size: 1.78em; }
+.apm-slide .slide-inner { padding: 40px 84px 18px; }
+.apm-headline { margin: 0 0 5px; font-size: 1.72em; }
 .apm-headline em { color: var(--emr-secondary); font-style: italic; }
 .apm-sub {
-  margin: 0 0 20px; max-width: 840px;
-  font-size: 0.9em; line-height: 1.5; color: var(--emr-text-body);
+  margin: 0 0 14px; max-width: 840px;
+  font-size: 0.88em; line-height: 1.45; color: var(--emr-text-body);
 }
 .apm-sub strong { color: var(--emr-text-primary); font-weight: 800; }
 
 /* ---- equation ledger: physicians × price × 12 = market ---- */
-.apm-eqs { display: flex; flex-direction: column; gap: 11px; }
+.apm-eqs { display: flex; flex-direction: column; gap: 12px; }
 .apm-eq {
   position: relative;
   display: grid;
   grid-template-columns: 1.7fr 1.05fr 20px 0.95fr 20px 0.8fr 24px 1.1fr;
   align-items: center;
   gap: 0 6px;
-  padding: 13px 26px 13px 24px;
+  padding: 16px 26px 16px 24px;
   border-radius: 18px;
   background: var(--emr-bg-page);
   border: 1px solid var(--emr-border);
@@ -10883,7 +10894,7 @@
 /* operand tokens + operators */
 .apm-tok { display: flex; flex-direction: column; line-height: 1.05; }
 .apm-tok b { font-size: 1.02em; font-weight: 800; color: var(--emr-text-primary); letter-spacing: -0.01em; }
-.apm-tok i { font-style: normal; font-size: 0.62em; font-weight: 600; color: var(--emr-text-muted); margin-top: 3px; letter-spacing: 0.02em; }
+.apm-tok i { font-style: normal; font-size: 0.56em; font-weight: 600; color: var(--emr-text-light); margin-top: 3px; letter-spacing: 0.02em; }
 .apm-eq--tam .apm-tok b { color: #fff; }
 .apm-eq--tam .apm-tok i { color: rgba(255,255,255,.62); }
 .apm-op { text-align: center; font-size: 0.92em; font-weight: 500; color: var(--emr-text-light); }
@@ -10902,7 +10913,7 @@
 .apm-eq--tam .apm-eq-val small { color: rgba(255,255,255,.72); }
 
 /* ---- footer: country chips + floor callout + sources ---- */
-.apm-foot { display: grid; grid-template-columns: 1.05fr 1fr; gap: 26px; margin-top: 18px; align-items: start; }
+.apm-foot { display: grid; grid-template-columns: 1.05fr 1fr; gap: 26px; margin-top: 13px; align-items: start; }
 .apm-foot-h { font-size: 0.62em; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--emr-text-muted); margin-bottom: 9px; }
 .apm-countries { display: flex; flex-wrap: wrap; gap: 7px; }
 .apm-chip {
@@ -10926,7 +10937,7 @@
 .apm-floor-proj span { font-size: 0.7em; font-weight: 600; color: var(--emr-text-muted); text-transform: uppercase; letter-spacing: 0.04em; }
 .apm-floor-proj b { font-size: 1.0em; font-weight: 800; color: var(--emr-success); margin-left: auto; }
 
-.apm-src { margin-top: 14px; font-size: 0.62em; line-height: 1.5; color: var(--emr-text-light); }
+.apm-src { margin-top: 14px; font-size: 0.5em; line-height: 1.4; color: var(--emr-text-light); opacity: 0.85; }
 
 @media (max-width: 768px) {
   .apm-slide .slide-inner { padding: 68px 20px 36px; }
@@ -10964,13 +10975,13 @@
         <div class="slide-inner">
           <div class="slide-label"><span class="label-num">A5</span>APPENDIX · MARKET MATH</div>
           <h2 class="headline-big apm-headline">Market sizing — <em>the math.</em></h2>
-          <p class="apm-sub">Bottom-up, not top-down — every figure is <strong>physicians &times; monthly price &times; 12</strong>. Real physician counts, conservative pricing; each tier maps to a stage of the plan.</p>
+          <p class="apm-sub">A nested funnel — <strong>SOM &sub; SAM &sub; TAM</strong>. Every tier is bottom-up (<strong>physicians &times; local price &times; 12</strong>) and a slice of the next: home, then region, then global.</p>
 
           <div class="apm-eqs">
             <article class="apm-eq apm-eq--som">
               <div class="apm-eq-head">
                 <span class="apm-eq-tier">SOM</span>
-                <div><div class="apm-eq-geo">Georgia &middot; home</div><div class="apm-eq-sub">Geostat &middot; 2024 national count</div></div>
+                <div><div class="apm-eq-geo">Obtainable &middot; Georgia</div><div class="apm-eq-sub">Geostat &middot; 2024 national count</div></div>
               </div>
               <span class="apm-tok"><b>24,000</b><i>physicians</i></span>
               <span class="apm-op">&times;</span>
@@ -10984,21 +10995,21 @@
             <article class="apm-eq apm-eq--sam">
               <div class="apm-eq-head">
                 <span class="apm-eq-tier">SAM</span>
-                <div><div class="apm-eq-geo">Region &middot; 9 countries</div><div class="apm-eq-sub">WHO GHO density &times; population</div></div>
+                <div><div class="apm-eq-geo">Serviceable &middot; Georgia + 9 countries</div><div class="apm-eq-sub">Georgia $8.6M + region $370M</div></div>
               </div>
-              <span class="apm-tok"><b>~440,000</b><i>physicians</i></span>
+              <span class="apm-tok"><b>~464,000</b><i>physicians</i></span>
               <span class="apm-op">&times;</span>
-              <span class="apm-tok"><b>$70</b><i>/ doctor&middot;mo</i></span>
+              <span class="apm-tok"><b>~$68</b><i>/ mo blended</i></span>
               <span class="apm-op">&times;</span>
               <span class="apm-tok"><b>12</b><i>months</i></span>
               <span class="apm-op apm-op-eq">=</span>
-              <div class="apm-eq-res"><span class="apm-eq-val">$370M<small>/ yr</small></span></div>
+              <div class="apm-eq-res"><span class="apm-eq-val">~$379M<small>/ yr</small></span></div>
             </article>
 
             <article class="apm-eq apm-eq--tam">
               <div class="apm-eq-head">
                 <span class="apm-eq-tier">TAM</span>
-                <div><div class="apm-eq-geo">Global &middot; value-based</div><div class="apm-eq-sub">WHO &middot; U.S. + E.U. alone &asymp; 2.9M</div></div>
+                <div><div class="apm-eq-geo">Total &middot; global</div><div class="apm-eq-sub">WHO &middot; U.S. + E.U. alone &asymp; 2.9M</div></div>
               </div>
               <span class="apm-tok"><b>12.8M</b><i>physicians</i></span>
               <span class="apm-op">&times;</span>
@@ -11012,24 +11023,23 @@
 
           <div class="apm-foot">
             <div>
-              <div class="apm-foot-h">The 9-country region</div>
+              <div class="apm-foot-h">The serviceable region &middot; 9 countries</div>
               <div class="apm-countries">
                 <span class="apm-chip">Armenia</span><span class="apm-chip">Azerbaijan</span><span class="apm-chip">Moldova</span><span class="apm-chip">Ukraine</span><span class="apm-chip">Kazakhstan</span><span class="apm-chip">Uzbekistan</span><span class="apm-chip">Belarus</span><span class="apm-chip">Kyrgyzstan</span><span class="apm-chip">Tajikistan</span>
               </div>
-              <p class="apm-foot-note">Physician counts derived from WHO Global Health Observatory density applied to current population.</p>
             </div>
             <div class="apm-floor">
               <div class="apm-foot-h">$200 is a floor, not a ceiling</div>
-              <p>At $2,400/yr MediMind returns a <strong>3–6&times;</strong> value ratio — peer-reviewed AI documentation recovers <strong>$7.5K–15K</strong> of physician time per doctor each year. Value-based pricing scales well above $200.</p>
+              <p>As outcomes compound, value-based pricing scales well above it — peer-reviewed savings recover <strong>$7.5K–15K</strong> of physician time per doctor each year.</p>
               <div class="apm-floor-proj"><span>At a $400 value price</span><b>global TAM &asymp; $60B+</b></div>
             </div>
           </div>
 
-          <p class="apm-src">Sources — Georgia: Geostat (2024). Region: WHO Global Health Observatory, physician density &times; UN/WPR 2026 population. Global: WHO (12.8M physicians, 2019); Eurostat (EU-27 1.98M, 2023); HRSA (U.S. ~934K, 2023). Value: JAMA (2026, n=8,581 clinicians); Kaiser Permanente / The Permanente Medical Group (15,791 documentation hours recovered); Medscape Physician Compensation Report (2025, $374K avg ≈ $144/hr).</p>
+          <p class="apm-src">Sources: Geostat (2024) &middot; WHO Global Health Observatory &middot; Eurostat &middot; HRSA &middot; JAMA (2026) &middot; Kaiser Permanente &middot; Medscape (2025).</p>
         </div>
         <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
         <aside class="notes">
-          Appendix A5 — the market math, for anyone who wants to see under the hood. Everything is bottom-up: physicians times monthly price times twelve. SOM is Georgia — 24,000 physicians from Geostat's 2024 national count at $30/month, about $8.6M/year, the home market we already lead. SAM is the nine-country region — roughly 440,000 physicians from WHO Global Health Observatory densities at $70/month, about $370M/year. TAM is global — 12.8 million physicians worldwide per WHO at a $200/month floor, about $31B/year-plus; the U.S. and E.U. alone are about 2.9 million physicians. The most important caveat: $200 is a starting floor, not the real price. At $2,400/year it already returns 3 to 6 times its cost in recovered physician time — JAMA 2026, the Kaiser Permanente deployment, Medscape comp data — so value-based pricing scales materially higher. At a $400 value-based price, the global TAM is north of $60B. We kept the headline slide clean and put the full derivation here so we can go as deep as you want.
+          Appendix A5 — the market math, for anyone who wants to see under the hood. It's a nested funnel: SOM inside SAM inside TAM, every tier bottom-up as physicians times local price times twelve. SOM is the obtainable home market we already lead — Georgia, 24,000 physicians from Geostat's 2024 national count at $30/month, about $8.6M/year. SAM is the serviceable region — Georgia plus nine post-Soviet countries, roughly 464,000 physicians at local pricing (Georgia $30, the region $70, blending to about $68/month), about $379M/year; that's Georgia's $8.6M plus the region's $370M. TAM is global — 12.8 million physicians worldwide per WHO at our $200/month value-based floor, about $31B/year-plus; the U.S. and E.U. alone are about 2.9 million physicians. The most important caveat on TAM: $200 is a starting floor, not the real price. At $2,400/year it already returns 3 to 6 times its cost in recovered physician time — JAMA 2026, the Kaiser Permanente deployment, Medscape comp data — so value-based pricing scales materially higher; at a $400 value-based price the global TAM is north of $60B. We kept the headline slide clean and put the full derivation here so we can go as deep as you want.
         </aside>
       </section>
 

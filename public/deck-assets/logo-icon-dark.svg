@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="MediMind">
   <title>MediMind</title>
-  <defs>
-    <linearGradient id="iconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#3182ce"/>
-      <stop offset="100%" stop-color="#bee3f8"/>
-    </linearGradient>
-  </defs>
-  <rect x="6" y="14" width="88" height="14" rx="3" fill="url(#iconGrad)"/>
-  <rect x="6" y="34" width="88" height="14" rx="3" fill="url(#iconGrad)" opacity="0.78"/>
-  <rect x="6" y="54" width="88" height="14" rx="3" fill="url(#iconGrad)" opacity="0.55"/>
-  <rect x="6" y="74" width="88" height="14" rx="3" fill="url(#iconGrad)" opacity="0.32"/>
+  <!-- Simplified footer mark in bright blue — reads on BOTH white and dark slide backgrounds -->
+  <circle cx="50" cy="50" r="33" fill="none" stroke="#3182ce" stroke-width="4" opacity="0.95"/>
+  <rect x="37" y="37" width="11" height="11" rx="2.5" fill="#3182ce"/>
+  <rect x="52" y="37" width="11" height="11" rx="2.5" fill="#3182ce"/>
+  <rect x="37" y="52" width="11" height="11" rx="2.5" fill="#3182ce"/>
+  <rect x="52" y="52" width="11" height="11" rx="2.5" fill="#3182ce"/>
 </svg>

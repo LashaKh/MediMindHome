@@ -359,7 +359,7 @@
 
     /* Logo — bigger with layered shadow */
     .cover-logo {
-      width: 600px;
+      width: 440px;
       height: auto;
       margin: 0 auto 44px;
       display: block;
@@ -8909,122 +8909,165 @@
     <!-- redesign: case-study -->
     <style>
     /* ════════════════════════════════════════════════════════
-       SLIDE 05 — CASE STUDY (prefix csx-) · "OS core hub"
-       One signal in → MediMind OS (the .csx-core node) → fires
-       every department at once. Centre is a clean brand-gradient
-       node w/ the 4-bar mark + pulse rings (.csx-core-rings) — the
-       old ai-brain.png image was retired (cliché + text-on-texture).
-       Green is reserved for the .csx-out--good outcome ONLY.
-       Real, de-identified case from the pilot hospital.
+       SLIDE 05 — CASE STUDY (prefix csx-) · light "calm clinical"
+       One signal in → MediMind OS core → every department at once.
+       Easy-on-the-eye light build (2026-06-09): airy, restrained
+       palette (navy + ONE soft blue accent + neutrals), hairlines
+       instead of heavy cards, minimal motion. A dark "command
+       center" variant was tried and REJECTED — keep it light/calm.
+       PURE reskin — geometry kept identical so the generated
+       .csx-spokes still land on the dept dots and 720px fit holds.
        ════════════════════════════════════════════════════════ */
     .csx-slide { position: relative; overflow: hidden; }
-    .csx-slide::before { content:''; position:absolute; top:-150px; left:30%; width:620px; height:620px;
-      background: radial-gradient(circle, rgba(49,130,206,.12) 0%, transparent 62%); pointer-events:none; z-index:0; }
+    /* whisper-soft glow behind the core — barely there, just depth */
+    .csx-slide::before { content:''; position:absolute; top:6%; left:50%; transform:translateX(-50%); width:760px; height:520px;
+      background: radial-gradient(closest-side, rgba(49,130,206,.07) 0%, transparent 72%); pointer-events:none; z-index:0; }
     .csx-slide .slide-inner { position: relative; z-index: 1; padding-left: 64px; padding-right: 64px; }
     .csx-slide .slide-label { left: 64px; }
 
     /* deck-cascade guards — beat the global .reveal h2/h3/p element rules */
     .csx-slide .slide-inner > .csx-headline { margin: 0; }
     .csx-slide .csx-sub { margin: 8px 0 0; }
-    .csx-slide .csx-foot { margin: 7px 0 0; }
     .csx-brain h3 { color: var(--emr-text-primary); }
 
-    .csx-headline { font-size: 2.2em; line-height: 1.06; margin: 0; }
+    .csx-headline { font-size: 2.2em; line-height: 1.06; margin: 0; color: var(--emr-text-primary); letter-spacing: -.01em; }
     .csx-headline em { font-style: normal; background: var(--emr-gradient-primary);
       -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
     .csx-sub { font-size: .76em; line-height: 1.4; color: var(--emr-text-muted); }
     .csx-sub strong { color: var(--emr-text-body); font-weight: 700; }
     .csx-credline { margin: 11px 0 0; }
-    .csx-realtag { display: inline-flex; align-items: center; gap: 8px; font-size: .56em; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; padding: 6px 13px 6px 11px; border-radius: 999px; color: #1f7a4d; background: linear-gradient(135deg, rgba(56,161,105,.12), rgba(56,161,105,.04)); border: 1px solid #c2ead0; }
-    .csx-realdot { width: 8px; height: 8px; border-radius: 50%; flex: none; background: var(--emr-success); box-shadow: 0 0 0 3px rgba(56,161,105,.18); }
+    .csx-realtag { display: inline-flex; align-items: center; gap: 8px; font-size: .56em; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; padding: 6px 13px 6px 11px; border-radius: 999px; color: var(--emr-text-muted); background: var(--emr-bg-subtle); border: 1px solid var(--emr-border); }
+    .csx-realdot { width: 8px; height: 8px; border-radius: 50%; flex: none; background: var(--emr-accent); box-shadow: 0 0 0 3px rgba(49,130,206,.14); }
 
-    /* ---- the hub ---- */
-    .csx-hub { position: relative; flex: 1; min-height: 0; display: grid; grid-template-columns: 0.72fr 1.52fr 0.98fr; align-items: center; margin: 8px 0 0; }
-    .csx-spokes { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; opacity: 0; transition: opacity .6s ease; }
-    .csx-spoke-path { stroke-dasharray: 5 5; }
+    /* ---- the hub: inputs → MediMind OS → departments fired ---- */
+    .csx-hub { position: relative; flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 46px 0.72fr 46px 1fr; align-items: center; margin: 10px 0 0; }
 
-    .csx-signal { justify-self: end; z-index: 2; max-width: 250px; display: flex; flex-direction: column; gap: 8px; }
-    .csx-sigcard { background: var(--emr-bg-page); border: 1px solid var(--emr-border); border-radius: 14px; padding: 13px 16px; box-shadow: 0 12px 30px rgba(15,32,58,.08); }
-    .csx-sig-eyebrow { font-size: .54em; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--emr-text-light); }
-    .csx-sig-big { font-size: 1.02em; font-weight: 800; color: var(--emr-text-primary); margin: 3px 0 4px; line-height: 1.1; }
-    .csx-sig-txt { font-size: .76em; line-height: 1.34; color: var(--emr-text-muted); }
-    .csx-sig-flow { display: flex; align-items: center; gap: 8px; align-self: flex-end; margin-right: 6px; font-size: .56em; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--emr-secondary); }
-    .csx-sig-flow svg { width: 26px; height: 14px; }
+    /* the 46px gap columns are kept as empty spacers; the connectors are drawn by .csx-flowlines */
+    .csx-flow { display: grid; }
+    /* data-flow connectors: signal → MediMind → every department */
+    .csx-flowlines { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 4; pointer-events: none; overflow: visible; }
+    .csx-fl { stroke-linecap: round; opacity: 0; }
+    .csx-slide.present .csx-fl { opacity: 1; transition: opacity .6s ease; }
+    .csx-slide.present .csx-fl-in { transition-delay: .2s; }
+    .csx-slide.present .csx-fl-out { transition-delay: .5s; }
+    /* a glowing pulse travels along each connector */
+    .csx-fl-dot { opacity: 0; }
+    .csx-slide.present .csx-fl-dot { animation: csxDotFlow 1.7s ease-in-out infinite; }
+    .csx-slide.present .csx-fl-dot.out { animation-delay: .55s; }
+    @keyframes csxDotFlow { 0% { transform: translateX(0); opacity: 0; } 18% { opacity: 1; } 82% { opacity: 1; } 100% { transform: translateX(52px); opacity: 0; } }
+    .csx-fl-lbl { fill: var(--emr-secondary); font-size: 10px; font-weight: 800; letter-spacing: 1.2px; text-anchor: middle; opacity: .82; }
 
-    /* the core — MediMind OS orchestration hub (replaces the brain image) */
-    .csx-brain { justify-self: center; z-index: 2; position: relative; width: 100%; max-width: 340px; min-height: 300px; display: flex; align-items: center; justify-content: center; }
-    @keyframes csxDotPulse { 0% { box-shadow: 0 0 0 0 rgba(154,230,180,.5); } 70%,100% { box-shadow: 0 0 0 7px rgba(154,230,180,0); } }
-    @keyframes csxRing { 0% { transform: scale(.6); opacity: .5; } 100% { transform: scale(1.5); opacity: 0; } }
-    /* concentric pulse rings radiating into the spokes */
-    .csx-core-rings { position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none; z-index: 1; }
-    .csx-core-rings span { position: absolute; width: 196px; height: 196px; border-radius: 50%; border: 1.5px solid rgba(49,130,206,.32); opacity: 0; }
-    .csx-slide.present .csx-core-rings span { animation: csxRing 3.4s ease-out infinite; }
-    .csx-slide.present .csx-core-rings span:nth-child(2) { animation-delay: 1.13s; }
-    .csx-slide.present .csx-core-rings span:nth-child(3) { animation-delay: 2.26s; }
-    /* the solid OS node — clean fill, legible label, brand mark */
-    .csx-core { position: relative; z-index: 3; width: 100%; max-width: 264px; padding: 25px 26px 21px; border-radius: 30px; text-align: center; background: var(--emr-gradient-primary); border: 1px solid rgba(255,255,255,.16); box-shadow: 0 18px 44px rgba(43,108,176,.34), inset 0 1px 0 rgba(255,255,255,.18); }
-    .csx-core-mark { width: 44px; height: 44px; display: block; margin: 0 auto 12px; filter: drop-shadow(0 3px 8px rgba(8,22,48,.32)); }
-    .csx-core h3 { margin: 0; font-size: 1.26em; font-weight: 800; letter-spacing: -.02em; color: #fff; -webkit-text-fill-color: #fff; }
-    .csx-core p { margin: 7px auto 0; font-size: .58em; line-height: 1.38; color: rgba(255,255,255,.92); max-width: 208px; } .csx-core p strong { color: #fff; font-weight: 700; }
-    .csx-core-badge { display: inline-flex; align-items: center; gap: 7px; margin-top: 13px; font-size: .54em; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; padding: 5px 12px; border-radius: 999px; background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.32); color: #fff; }
-    .csx-core-badge .csx-dot { width: 7px; height: 7px; border-radius: 50%; background: #9ae6b4; box-shadow: 0 0 0 0 rgba(154,230,180,.5); animation: csxDotPulse 1.8s ease-out infinite; }
+    /* shared card chrome (Patient / Signal inputs) */
+    .csx-inputs { display: flex; flex-direction: column; gap: 12px; }
+    .csx-card { background: var(--emr-bg-page); border: 1px solid var(--emr-border); border-radius: 14px; box-shadow: 0 1px 2px rgba(26,54,93,.04), 0 10px 26px -20px rgba(26,54,93,.3); overflow: hidden; }
+    .csx-card-h { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 13px; border-bottom: 1px solid var(--emr-border); }
+    .csx-mlabel { display: inline-flex; align-items: center; gap: 7px; font-size: .44em; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--emr-text-light); }
+    .csx-mic { width: 13px; height: 13px; color: var(--emr-secondary); flex: none; }
+    .csx-ts { font-size: .48em; font-weight: 600; letter-spacing: .04em; color: var(--emr-text-muted); font-variant-numeric: tabular-nums; }
+    .csx-card-b { padding: 10px 13px 12px; }
+    /* Patient card */
+    .csx-pt-id { display: flex; align-items: baseline; gap: 9px; margin-bottom: 9px; }
+    .csx-pt-id b { font-size: .82em; font-weight: 800; color: var(--emr-text-primary); letter-spacing: -.01em; line-height: 1; }
+    .csx-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 12px; }
+    .csx-fld { display: flex; flex-direction: column; gap: 1px; }
+    .csx-fld--wide { grid-column: 1 / -1; padding-top: 8px; border-top: 1px dashed var(--emr-border); }
+    .csx-k { font-size: .4em; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--emr-text-light); }
+    .csx-v { font-size: .58em; font-weight: 600; color: var(--emr-text-body); line-height: 1.2; }
+    .csx-fld--wide .csx-v { color: var(--emr-text-primary); font-weight: 700; }
+    /* Signal card */
+    .csx-signalcard { position: relative; display: flex; flex-direction: column; min-height: 250px; }
+    .csx-signalcard::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, var(--emr-accent), var(--emr-secondary)); z-index: 1; }
+    .csx-signalcard .csx-card-b { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 7px; }
+    .csx-sig-big { font-size: 1.0em; font-weight: 800; color: var(--emr-text-primary); letter-spacing: -.01em; line-height: 1.12; margin: 0; }
+    .csx-sig-note { font-size: .64em; line-height: 1.46; color: var(--emr-text-muted); margin: 0; }
+    .csx-sig-note strong { color: var(--emr-text-body); font-weight: 700; }
+
+    /* the core — a clean glassy MediMind OS circle that holds all its copy */
+    .csx-brain { justify-self: center; z-index: 2; position: relative; width: 100%; max-width: 285px; min-height: 0; display: flex; align-items: center; justify-content: center; }
+    @keyframes csxDotPulse { 0% { box-shadow: 0 0 0 0 rgba(49,130,206,.4); } 70%,100% { box-shadow: 0 0 0 7px rgba(49,130,206,0); } }
+    .csx-coredisc { position: relative; z-index: 2; box-sizing: border-box; width: 248px; height: 248px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px; text-align: center; padding: 0 30px;
+      background: radial-gradient(circle at 50% 24%, #ffffff 0%, #eef5fd 56%, #d9e9fb 100%);
+      border: 1px solid #c6dcf2;
+      box-shadow: 0 22px 46px -16px rgba(43,108,176,.36), 0 4px 10px rgba(43,108,176,.12), inset 0 2px 4px #ffffff, inset 0 -16px 30px rgba(43,108,176,.07); }
+    /* faint broadcast ring around the circle */
+    .csx-coredisc::before { content: ''; position: absolute; inset: -10px; border-radius: 50%; border: 1px solid rgba(49,130,206,.18); }
+    .csx-coredisc h3 { margin: 0; font-size: 1.12em; font-weight: 800; letter-spacing: -.02em; color: var(--emr-text-primary); }
+    .csx-core-badge { display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; font-size: .5em; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; padding: 5px 11px; border-radius: 999px; background: var(--emr-bg-tint); border: 1px solid #cfe1f6; color: var(--emr-secondary); }
+    .csx-core-badge .csx-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--emr-accent); box-shadow: 0 0 0 0 rgba(49,130,206,.4); animation: csxDotPulse 2s ease-out infinite; }
+    .csx-coredisc .csx-core-desc { margin: 2px 0 0; font-size: .52em; line-height: 1.42; color: var(--emr-text-muted); max-width: 180px; }
+    .csx-core-desc strong { color: var(--emr-text-primary); font-weight: 700; }
+    .csx-core-desc em { font-style: normal; font-weight: 700; background: var(--emr-gradient-primary); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    /* the OS tagline — a refined statement, not basic text */
+    .csx-brainsub { display: flex; flex-direction: column; align-items: center; gap: 9px; max-width: 258px; margin: 0; }
+    .csx-brainsub-rule { width: 46px; height: 2px; border-radius: 2px; background: linear-gradient(90deg, transparent, var(--emr-accent) 50%, transparent); }
+    .csx-brainsub-txt { font-size: .58em; line-height: 1.52; color: var(--emr-text-muted); text-align: center; margin: 0; letter-spacing: .005em; text-wrap: balance; }
+    .csx-brainsub-txt strong { color: var(--emr-text-primary); font-weight: 700; }
+    .csx-brainsub-txt em { font-style: normal; font-weight: 700; background: var(--emr-gradient-primary); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
 
 
-    /* departments fired in parallel */
-    .csx-depts { justify-self: stretch; z-index: 2; height: 100%; display: flex; flex-direction: column; justify-content: center; gap: 9px; padding: 0 0 0 14px; }
-    .csx-dept { position: relative; display: flex; align-items: center; gap: 10px; background: var(--emr-bg-page); border: 1px solid var(--emr-border); border-radius: 11px; padding: 5px 10px; box-shadow: 0 1px 3px rgba(15,32,58,.05); }
-    .csx-dept::before { content: ''; position: absolute; left: -10px; top: 50%; transform: translateY(-50%); width: 7px; height: 7px; border-radius: 50%; background: var(--emr-secondary); box-shadow: 0 0 0 3px rgba(43,108,176,.12); }
-    .csx-dept--lab::before { background: var(--emr-success); box-shadow: 0 0 0 3px rgba(56,161,105,.14); }
-    /* selector must out-specify `.csx-dept span` (0,1,1), else display:block wins and the SVG falls top-left */
-    .csx-dept .csx-dept-ic { width: 28px; height: 28px; border-radius: 8px; display: grid; place-items: center; flex: none; background: var(--emr-bg-tint); color: var(--emr-secondary); }
-    .csx-dept-ic svg { width: 16px; height: 16px; }
-    .csx-dept b { font-size: .77em; font-weight: 800; color: var(--emr-text-primary); line-height: 1.05; }
-    .csx-dept span { display: block; font-size: .63em; color: var(--emr-text-muted); line-height: 1.2; margin-top: 1px; }
-    .csx-dept--lab { background: linear-gradient(135deg, #f2fbf6, var(--emr-bg-page) 60%); border-color: #c2ead0; }
-    .csx-dept--lab .csx-dept-ic { background: #e3f6ea; color: #1f7a4d; }
-    .csx-dept--lab b { color: #1f7a4d; }
+    /* departments — the checklist now lives in a card (.csx-deptcard) to match the signal box */
+    .csx-deptcard { display: flex; flex-direction: column; min-height: 250px; }
+    .csx-checklist { position: relative; flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 1px; padding: 3px 9px; }
+    /* connector spine threading the department icon-nodes */
+    .csx-checklist::before { content: ''; position: absolute; left: 30px; top: 20px; bottom: 20px; width: 2px; transform: translateX(-50%); background: linear-gradient(180deg, transparent, var(--emr-border) 14%, var(--emr-border) 86%, transparent); z-index: 0; }
+    .csx-srow { position: relative; z-index: 1; display: flex; align-items: center; gap: 12px; padding: 5px 6px; border-radius: 12px; transition: background .2s ease; }
+    .csx-srow:hover { background: var(--emr-bg-subtle); }
+    .csx-srow-ic { width: 30px; height: 30px; border-radius: 9px; flex: none; display: grid; place-items: center; background: var(--emr-bg-page); border: 1px solid #d6e6f7; color: var(--emr-secondary); box-shadow: 0 2px 6px rgba(26,54,93,.08); }
+    .csx-srow-ic svg { width: 16px; height: 16px; }
+    .csx-srow-txt { display: flex; flex-direction: column; gap: 1px; min-width: 0; flex: 1; }
+    .csx-srow-txt b { font-size: .6em; font-weight: 800; color: var(--emr-text-primary); line-height: 1.1; letter-spacing: -.005em; }
+    .csx-srow-txt span { font-size: .53em; color: var(--emr-text-muted); line-height: 1.25; }
+    .csx-stat { display: inline-flex; align-items: center; gap: 6px; flex: none; padding: 3px 10px 3px 8px; border-radius: 999px; background: rgba(49,130,206,.07); border: 1px solid #dbe9f8; color: var(--emr-secondary); font-size: .42em; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
+    .csx-stat-dot { width: 5px; height: 5px; border-radius: 50%; flex: none; background: var(--emr-accent); box-shadow: 0 0 0 2px rgba(49,130,206,.14); }
 
-    /* dual outcome strip */
-    .csx-outcomes { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0 0; }
-    .csx-out { position: relative; display: flex; align-items: flex-start; gap: 12px; padding: 12px 16px 12px 15px; border-radius: 16px; overflow: hidden; box-shadow: 0 12px 32px rgba(15,32,58,.08); }
-    .csx-out::before { content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 4px; }
-    .csx-out--bad  { background: linear-gradient(135deg, #f3f5f8 0%, #fafbfc 72%); border: 1px solid #e2e8f0; }
+    /* outcome strip — REALITY (solid) vs COUNTERFACTUAL (dashed), split by a vs-divider */
+    .csx-outcomes { display: grid; grid-template-columns: 1fr auto 1fr; align-items: stretch; gap: 0 16px; margin: 12px 0 0; }
+    .csx-outvs { position: relative; display: flex; align-items: center; justify-content: center; }
+    .csx-outvs::before { content: ''; position: absolute; top: 6px; bottom: 6px; width: 1px; background: var(--emr-border); }
+    .csx-outvs span { position: relative; z-index: 1; display: grid; place-items: center; width: 27px; height: 27px; border-radius: 50%; background: var(--emr-bg-page); border: 1px solid var(--emr-border); box-shadow: 0 2px 6px rgba(26,54,93,.08); font-size: .42em; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; color: var(--emr-text-light); }
+    .csx-out { position: relative; display: flex; align-items: flex-start; gap: 11px; padding: 9px 15px 10px 16px; border-radius: 13px; overflow: hidden; }
+    .csx-out::before { content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 3px; }
+    .csx-out--bad  { background: var(--emr-bg-subtle); border: 1px solid var(--emr-border); }
     .csx-out--bad::before  { background: linear-gradient(180deg, #cbd5e1, #94a3b8); }
-    .csx-out--good { background: linear-gradient(135deg, #ebf3fd 0%, #f8fbff 72%); border: 1px solid #cfe1f6; }
+    .csx-out--good { background: linear-gradient(135deg, #eef5fc 0%, #f8fbff 72%); border: 1px dashed #a3c5ea; }
     .csx-out--good::before { background: linear-gradient(180deg, var(--emr-accent), var(--emr-secondary)); }
-    .csx-out-ic { width: 33px; height: 33px; border-radius: 10px; display: grid; place-items: center; flex: none; margin-top: 1px; }
+    .csx-out-ic { width: 27px; height: 27px; border-radius: 8px; display: grid; place-items: center; flex: none; margin-top: 1px; }
     .csx-out--bad  .csx-out-ic { background: #eef1f5; color: #64748b; }
     .csx-out--good .csx-out-ic { background: #e3eefb; color: var(--emr-secondary); }
-    .csx-out-ic svg { width: 18px; height: 18px; }
+    .csx-out-ic svg { width: 16px; height: 16px; }
     .csx-out-body { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
-    .csx-out-head { display: flex; align-items: center; gap: 8px; font-size: .95em; font-weight: 800; line-height: 1.1; letter-spacing: -.01em; }
+    .csx-out-head { font-size: .86em; font-weight: 800; line-height: 1.16; letter-spacing: -.01em; }
     .csx-out--bad  .csx-out-head { color: #475569; }
-    .csx-out--bad  .csx-crit { color: #e53e3e; }
+    .csx-out--bad  .csx-crit { color: #b04a4a; }
     .csx-out--good .csx-out-head { color: var(--emr-secondary); }
-    .csx-out-tag { font-size: .5em; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; padding: 3px 8px; border-radius: 999px; flex: none; }
+    .csx-out-tag { align-self: flex-start; font-size: .46em; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; padding: 3px 8px; border-radius: 999px; margin-bottom: 1px; }
     .csx-out--bad  .csx-out-tag { color: #64748b; background: #eef1f5; }
     .csx-out--good .csx-out-tag { color: var(--emr-secondary); background: #dcebfb; }
-    .csx-out-why { font-size: .72em; line-height: 1.32; color: var(--emr-text-muted); }
+    .csx-out-why { font-size: .62em; line-height: 1.3; color: var(--emr-text-muted); }
     .csx-out-why strong { font-weight: 700; color: var(--emr-text-body); }
 
-    .csx-thesis { margin: 18px 0 0; text-align: center; font-size: 1.18em; font-weight: 600; color: var(--emr-text-muted); }
+    /* closing thesis — framed statement: clinical timestamp + gradient payoff */
+    .csx-thesis { margin: 34px 0 0; display: flex; align-items: center; justify-content: center; gap: 20px; }
+    .csx-thesis-rule { width: 72px; height: 2px; border-radius: 2px; flex: none; }
+    .csx-thesis-rule.l { background: linear-gradient(90deg, transparent, #c5d8ef); }
+    .csx-thesis-rule.r { background: linear-gradient(90deg, #c5d8ef, transparent); }
+    .csx-thesis-txt { font-size: 1.2em; font-weight: 600; color: var(--emr-text-muted); letter-spacing: -.005em; text-align: center; }
+    .csx-thesis-time { font-weight: 800; color: var(--emr-text-primary); font-variant-numeric: tabular-nums; }
     .csx-thesis em { font-style: normal; font-weight: 800; color: var(--emr-text-primary); }
     .csx-thesis em b { background: var(--emr-gradient-primary); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-    .csx-foot { text-align: center; font-size: .58em; color: var(--emr-text-light); letter-spacing: .01em; }
 
-    /* spoke draw-in + entrance cascade (fires on .present) */
-    .csx-slide.present .csx-spokes { opacity: 1; transition-delay: .42s; }
-    .csx-signal, .csx-brain, .csx-dept, .csx-out { opacity: 0; transform: translateY(12px); transition: opacity .5s ease, transform .5s ease; }
-    .csx-slide.present .csx-signal { opacity: 1; transform: none; transition-delay: .12s; }
+    /* entrance cascade (fires on .present): inputs → OS → departments → outcomes */
+    .csx-card, .csx-brain, .csx-srow, .csx-out, .csx-flow { opacity: 0; transform: translateY(10px); transition: opacity .5s ease, transform .5s ease; }
+    .csx-slide.present .csx-card { opacity: 1; transform: none; transition-delay: .12s; }
+    .csx-slide.present .csx-flow { opacity: 1; transform: none; transition-delay: .26s; }
     .csx-slide.present .csx-brain  { opacity: 1; transform: none; transition-delay: .30s; }
-    .csx-slide.present .csx-dept:nth-child(1) { opacity: 1; transform: none; transition-delay: .58s; }
-    .csx-slide.present .csx-dept:nth-child(2) { opacity: 1; transform: none; transition-delay: .66s; }
-    .csx-slide.present .csx-dept:nth-child(3) { opacity: 1; transform: none; transition-delay: .74s; }
-    .csx-slide.present .csx-dept:nth-child(4) { opacity: 1; transform: none; transition-delay: .82s; }
-    .csx-slide.present .csx-dept:nth-child(5) { opacity: 1; transform: none; transition-delay: .90s; }
-    .csx-slide.present .csx-dept:nth-child(6) { opacity: 1; transform: none; transition-delay: .98s; }
-    .csx-slide.present .csx-out--bad  { opacity: 1; transform: none; transition-delay: 1.12s; }
-    .csx-slide.present .csx-out--good { opacity: 1; transform: none; transition-delay: 1.20s; }
+    .csx-slide.present .csx-srow:nth-child(1) { opacity: 1; transform: none; transition-delay: .50s; }
+    .csx-slide.present .csx-srow:nth-child(2) { opacity: 1; transform: none; transition-delay: .58s; }
+    .csx-slide.present .csx-srow:nth-child(3) { opacity: 1; transform: none; transition-delay: .66s; }
+    .csx-slide.present .csx-srow:nth-child(4) { opacity: 1; transform: none; transition-delay: .74s; }
+    .csx-slide.present .csx-srow:nth-child(5) { opacity: 1; transform: none; transition-delay: .82s; }
+    .csx-slide.present .csx-out--bad  { opacity: 1; transform: none; transition-delay: .96s; }
+    .csx-slide.present .csx-out--good { opacity: 1; transform: none; transition-delay: 1.04s; }
 
     /* ---- Mobile ---- */
     @media (max-width: 768px) {
@@ -9034,19 +9077,17 @@
       .csx-headline { font-size: 1.42em; line-height: 1.12; }
       .csx-sub { font-size: .82em; margin-top: 10px; }
       .csx-realtag { font-size: .48em; }
-      .csx-hub { display: flex; flex-direction: column; gap: 14px; flex: none; margin-top: 16px; }
-      .csx-spokes { display: none; }
-      .csx-signal { justify-self: stretch; max-width: 100%; align-items: stretch; }
-      .csx-sig-big { font-size: .92em; } .csx-sig-txt { font-size: .66em; }
-      .csx-sig-flow { display: none; }
-      .csx-brain { justify-self: stretch; width: 100%; min-height: 0; }
-      .csx-core { max-width: 280px; padding: 22px 24px 18px; } .csx-core h3 { font-size: 1.08em; } .csx-core p { font-size: .56em; max-width: 220px; } .csx-core-badge { font-size: .5em; margin-top: 9px; } .csx-core-mark { width: 40px; } .csx-core-rings span { width: 168px; height: 168px; }
-      .csx-depts { height: auto; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: none; align-items: stretch; gap: 8px; padding: 0; }
-      .csx-dept b { font-size: .72em; } .csx-dept span { font-size: .6em; }
-      .csx-dept::before { display: none; }
-      .csx-outcomes { grid-template-columns: 1fr; gap: 10px; margin-top: 16px; }
+      .csx-hub { display: flex; flex-direction: column; gap: 12px; flex: none; margin-top: 14px; }
+      .csx-flow, .csx-flowlines { display: none; }
+      .csx-inputs { gap: 10px; }
+      .csx-mlabel { font-size: .5em; } .csx-ts { font-size: .52em; } .csx-sig-big { font-size: 1.0em; } .csx-sig-note { font-size: .68em; } .csx-signalcard, .csx-deptcard { min-height: 0; } .csx-signalcard .csx-card-b { justify-content: flex-start; }
+      .csx-brain { justify-self: stretch; width: 100%; min-height: 0; max-width: 100%; }
+      .csx-coredisc { width: 244px; height: 244px; } .csx-coredisc h3 { font-size: 1.08em; } .csx-core-badge { font-size: .5em; } .csx-coredisc .csx-core-desc { font-size: .6em; max-width: 196px; }
+      .csx-checklist { justify-content: flex-start; }
+      .csx-srow { padding: 6px 6px; } .csx-srow-ic { width: 30px; height: 30px; } .csx-srow-txt b { font-size: .68em; } .csx-srow-txt span { font-size: .58em; } .csx-stat { font-size: .46em; }
+      .csx-outcomes { grid-template-columns: 1fr; gap: 10px; margin-top: 16px; } .csx-outvs { display: none; }
       .csx-out-head { font-size: 1.04em; } .csx-out-why { font-size: .82em; }
-      .csx-thesis { font-size: .96em; margin-top: 16px; }
+      .csx-thesis { margin-top: 16px; } .csx-thesis-rule { display: none; } .csx-thesis-txt { font-size: .96em; }
       .csx-foot { font-size: .56em; }
     }
     </style>
@@ -9563,9 +9604,9 @@
                 </div>
 
                 <div class="pk-stat">
-                  <span class="pk-val pk-val--eta">~2 mo</span>
+                  <span class="pk-val pk-val--eta">2 mo</span>
                   <span class="pk-label">To full go-live</span>
-                  <span class="pk-sub">All 25 sites &middot; ~Aug 2026.</span>
+                  <span class="pk-sub">All 25 sites &middot; Aug 2026.</span>
                   <div class="pk-prog"><i></i></div>
                 </div>
 
@@ -9712,70 +9753,87 @@
 
           <h2 class="headline-big csx-headline">One symptom. <em>The whole hospital should move.</em></h2>
           <div class="csx-credline"><span class="csx-realtag"><span class="csx-realdot"></span>Real case · MediMind pilot hospital · May 2026</span></div>
-          <p class="csx-sub">A 65-year-old — <strong>on dialysis, diabetic, two weeks after a heart procedure</strong> (coronary stenting) — arrives in the ER one night with stomach pain.</p>
+          <p class="csx-sub">A 65-year-old — <strong>on dialysis, diabetic, two weeks after a heart procedure</strong> (coronary stenting) — arrives in the ER with stomach pain.</p>
 
           <div class="csx-hub">
-            <!-- radiating spokes (fan from the brain to every department) -->
-            <svg class="csx-spokes" viewBox="0 0 100 100" preserveAspectRatio="none" fill="none">
-              <defs><linearGradient id="csxg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3182ce"/><stop offset="1" stop-color="#90cdf4"/></linearGradient></defs>
-              <path class="csx-spoke-path" vector-effect="non-scaling-stroke" d="M22.36,52.10 L32.68,41.68" stroke="#cbd5e1" stroke-width="1.3"/>
-              <path class="csx-spoke-path" vector-effect="non-scaling-stroke" d="M59.24,41.68 C61.24,41.68 65.88,27.05 70.30,17.30" stroke="url(#csxg)" stroke-width="1.4"/>
-              <path class="csx-spoke-path" vector-effect="non-scaling-stroke" d="M59.24,41.68 C61.24,41.68 65.88,37.49 70.30,34.70" stroke="url(#csxg)" stroke-width="1.4"/>
-              <path class="csx-spoke-path" vector-effect="non-scaling-stroke" d="M59.24,41.68 C61.24,41.68 65.88,47.93 70.30,52.10" stroke="url(#csxg)" stroke-width="1.4"/>
-              <path class="csx-spoke-path" vector-effect="non-scaling-stroke" d="M59.24,41.68 C61.24,41.68 65.88,58.37 70.30,69.50" stroke="url(#csxg)" stroke-width="1.4"/>
-              <path class="csx-spoke-path" vector-effect="non-scaling-stroke" d="M59.24,41.68 C61.24,41.68 65.88,68.81 70.30,86.90" stroke="url(#csxg)" stroke-width="1.4"/>
+            <!-- data-flow: the signal feeds the brain; the brain fires every department -->
+            <svg class="csx-flowlines" viewBox="0 0 1152 306" preserveAspectRatio="none" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="csxflowin" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#c2daf2"/><stop offset="1" stop-color="#2b6cb0"/></linearGradient>
+                <linearGradient id="csxflowout" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2b6cb0"/><stop offset="1" stop-color="#8ab6ea"/></linearGradient>
+                <marker id="csxah" markerWidth="14" markerHeight="14" refX="2.5" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L8,4 L0,8 Z" fill="#2b6cb0"/></marker>
+                <filter id="csxglow" x="-60%" y="-60%" width="220%" height="220%"><feDropShadow dx="0" dy="0" stdDeviation="2.2" flood-color="#3182ce" flood-opacity="0.55"/></filter>
+              </defs>
+              <path class="csx-fl csx-fl-in" d="M390,153 L446,153" stroke="url(#csxflowin)" stroke-width="2.4" stroke-linecap="round" marker-end="url(#csxah)"/>
+              <circle class="csx-fl-dot" cx="392" cy="153" r="3.6" fill="#3182ce" filter="url(#csxglow)"></circle>
+              <path class="csx-fl csx-fl-out" d="M702,153 L757,153" stroke="url(#csxflowout)" stroke-width="2.4" stroke-linecap="round" marker-end="url(#csxah)"/>
+              <circle class="csx-fl-dot out" cx="704" cy="153" r="3.6" fill="#3182ce" filter="url(#csxglow)"></circle>
+              <text class="csx-fl-lbl" x="420" y="138">FEEDS IN</text>
+              <text class="csx-fl-lbl" x="729" y="138">FIRES</text>
             </svg>
 
-            <!-- signal in -->
-            <div class="csx-signal">
-              <div class="csx-sigcard">
-                <span class="csx-sig-eyebrow">02:30 · one signal</span>
-                <div class="csx-sig-big">Stomach pain</div>
-                <div class="csx-sig-txt">Mimics the cardiac pain he was just treated for — so the real cause, pancreatitis, was easy to miss at 2am.</div>
+            <!-- LEFT: the inputs that feed the OS -->
+            <div class="csx-inputs">
+              <div class="csx-card csx-signalcard">
+                <div class="csx-card-h">
+                  <span class="csx-mlabel"><svg class="csx-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Signal</span>
+                  <span class="csx-ts">02:30 · one signal</span>
+                </div>
+                <div class="csx-card-b">
+                  <div class="csx-sig-big">Stomach pain</div>
+                  <div class="csx-sig-note"><strong>Mimics the cardiac pain he was just treated for</strong> — so the real cause, pancreatitis, was easy to miss at 2am.</div>
+                </div>
               </div>
-              <span class="csx-sig-flow">feeds in
-                <svg viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h20m-6-5 6 5-6 5"/></svg>
-              </span>
             </div>
+
+            <!-- feeds in → -->
+            <div class="csx-flow" aria-hidden="true"></div>
 
             <!-- the core — MediMind OS, the orchestration hub at the centre -->
             <div class="csx-brain">
-              <span class="csx-core-rings" aria-hidden="true"><span></span><span></span><span></span></span>
-              <div class="csx-core">
-                <svg class="csx-core-mark" viewBox="0 0 100 100" aria-hidden="true">
-                  <rect x="6" y="14" width="88" height="14" rx="3" fill="#fff"/>
-                  <rect x="6" y="34" width="88" height="14" rx="3" fill="#fff" opacity=".8"/>
-                  <rect x="6" y="54" width="88" height="14" rx="3" fill="#fff" opacity=".58"/>
-                  <rect x="6" y="74" width="88" height="14" rx="3" fill="#fff" opacity=".36"/>
-                </svg>
+              <div class="csx-coredisc">
                 <h3>MediMind OS</h3>
-                <p>Reads the <strong>whole patient</strong> and steers every team — so a buried signal can't be missed.</p>
                 <span class="csx-core-badge"><span class="csx-dot"></span>02:32 · all at once</span>
+                <div class="csx-core-desc">Reads the <strong>whole patient</strong> and steers <strong>every team</strong> — so a buried signal <em>can't be missed.</em></div>
               </div>
             </div>
 
-            <!-- departments fired in parallel -->
-            <div class="csx-depts">
-              <div class="csx-dept">
-                <span class="csx-dept-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l2-7 4 14 2-7h8"/></svg></span>
-                <span><b>ER</b><span>High-acuity pathway opened</span></span>
+            <!-- fires → -->
+            <div class="csx-flow" aria-hidden="true"></div>
+
+            <!-- RIGHT: every department, wrapped in a card to match the signal box -->
+            <div class="csx-card csx-deptcard">
+              <div class="csx-card-h">
+                <span class="csx-mlabel"><svg class="csx-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Every team</span>
+                <span class="csx-ts">02:32 · all at once</span>
               </div>
-              <div class="csx-dept">
-                <span class="csx-dept-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
-                <span><b>Cardiology + GI / Surgery</b><span>Both paged in parallel — rule out, don't anchor</span></span>
+              <div class="csx-checklist">
+              <div class="csx-srow">
+                <span class="csx-srow-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l2-7 4 14 2-7h8"/></svg></span>
+                <span class="csx-srow-txt"><b>ER</b><span>High-acuity pathway opened</span></span>
+                <span class="csx-stat"><span class="csx-stat-dot"></span>Open</span>
               </div>
-              <div class="csx-dept">
-                <span class="csx-dept-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/></svg></span>
-                <span><b>Labs</b><span>The right $20 test, ordered at 02:32</span></span>
+              <div class="csx-srow">
+                <span class="csx-srow-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+                <span class="csx-srow-txt"><b>Cardiology + GI / Surgery</b><span>Both paged in parallel — rule out, don't anchor</span></span>
+                <span class="csx-stat"><span class="csx-stat-dot"></span>Paged</span>
               </div>
-              <div class="csx-dept">
-                <span class="csx-dept-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a2 2 0 0 1 2-2h11a4 4 0 0 1 4 4v4M3 14h18M6 10V7"/></svg></span>
-                <span><b>ICU</b><span>Bed pre-alerted, sepsis watch armed</span></span>
+              <div class="csx-srow">
+                <span class="csx-srow-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/></svg></span>
+                <span class="csx-srow-txt"><b>Labs</b><span>The right $20 test, ordered at 02:32</span></span>
+                <span class="csx-stat"><span class="csx-stat-dot"></span>Ordered</span>
               </div>
-              <div class="csx-dept">
-                <span class="csx-dept-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></span>
-                <span><b>Billing</b><span>Coded clean, pre-authorized</span></span>
+              <div class="csx-srow">
+                <span class="csx-srow-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a2 2 0 0 1 2-2h11a4 4 0 0 1 4 4v4M3 14h18M6 10V7"/></svg></span>
+                <span class="csx-srow-txt"><b>ICU</b><span>Bed pre-alerted, sepsis watch armed</span></span>
+                <span class="csx-stat"><span class="csx-stat-dot"></span>Armed</span>
               </div>
+              <div class="csx-srow">
+                <span class="csx-srow-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></span>
+                <span class="csx-srow-txt"><b>Billing</b><span>Coded clean, pre-authorized</span></span>
+                <span class="csx-stat"><span class="csx-stat-dot"></span>Cleared</span>
+              </div>
+            </div>
             </div>
           </div>
 
@@ -9783,20 +9841,23 @@
             <div class="csx-out csx-out--bad">
               <span class="csx-out-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.2 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.2a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg></span>
               <span class="csx-out-body">
-                <span class="csx-out-head"><span class="csx-out-tag">What happened</span><span><span class="csx-crit">20 ICU days</span> — he <span class="csx-crit">nearly died</span></span></span>
+                <span class="csx-out-tag">What happened</span>
+                <span class="csx-out-head"><span class="csx-crit">20 ICU days</span> — he <span class="csx-crit">nearly died</span></span>
                 <span class="csx-out-why">The follow-up labs and consults his symptoms called for weren't ordered until morning — in an overworked midnight ward, crucial hours were lost.</span>
               </span>
             </div>
+            <div class="csx-outvs" aria-hidden="true"><span>vs</span></div>
             <div class="csx-out csx-out--good">
               <span class="csx-out-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
               <span class="csx-out-body">
-                <span class="csx-out-head"><span class="csx-out-tag">With MediMind</span>Caught ~18h earlier, before sepsis</span>
+                <span class="csx-out-tag">What could've happened</span>
+                <span class="csx-out-head">Would've caught it 18h earlier — before sepsis</span>
                 <span class="csx-out-why">MediMind re-checks every action <strong>and inaction</strong> against the latest gold-standard guidelines — making that kind of miss impossible.</span>
               </span>
             </div>
           </div>
 
-          <div class="csx-thesis">At 02:00, people miss things. <em>MediMind <b>doesn't.</b></em></div>
+          <div class="csx-thesis"><span class="csx-thesis-rule l" aria-hidden="true"></span><span class="csx-thesis-txt">At <span class="csx-thesis-time">02:00</span>, people miss things. <em>MediMind <b>doesn't.</b></em></span><span class="csx-thesis-rule r" aria-hidden="true"></span></div>
 
           <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
         </div>
@@ -9987,11 +10048,24 @@
                   <circle class="fp-brain-ring r1" cx="309" cy="53" r="36"/>
                   <!-- Core white-hot center -->
                   <circle class="fp-brain-core" cx="309" cy="53" r="30"/>
-                  <!-- Inner brain icon -->
-                  <g transform="translate(298, 41)" stroke="#1a365d" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M9 1 a 4 4 0 0 0 -8 2 a 4 4 0 0 0 1.5 6 a 4 4 0 0 0 6.5 4 a 4 4 0 0 0 6.5 -4 a 4 4 0 0 0 1.5 -6 a 4 4 0 0 0 -8 -2 z"/>
-                    <path d="M9 5 v 9"/>
-                    <path d="M5 8 q 4 -2 8 0"/>
+                  <!-- Inner OS-modules grid (AI-Brain Aura) -->
+                  <g>
+                    <rect x="298" y="42" width="4" height="4" rx="0.9" fill="#1a365d" opacity="1"/>
+                    <rect x="304" y="42" width="4" height="4" rx="0.9" fill="#1a365d" opacity="1"/>
+                    <rect x="310" y="42" width="4" height="4" rx="0.9" fill="#1a365d" opacity="1"/>
+                    <rect x="316" y="42" width="4" height="4" rx="0.9" fill="#1a365d" opacity="1"/>
+                    <rect x="298" y="48" width="4" height="4" rx="0.9" fill="#1a365d" opacity="0.845"/>
+                    <rect x="304" y="48" width="4" height="4" rx="0.9" fill="#1a365d" opacity="0.845"/>
+                    <rect x="310" y="48" width="4" height="4" rx="0.9" fill="#1a365d" opacity="0.845"/>
+                    <rect x="316" y="48" width="4" height="4" rx="0.9" fill="#1a365d" opacity="0.845"/>
+                    <rect x="298" y="54" width="4" height="4" rx="0.9" fill="#1a365d" opacity="0.69"/>
+                    <rect x="304" y="54" width="4" height="4" rx="0.9" fill="#1a365d" opacity="0.69"/>
+                    <rect x="310" y="54" width="4" height="4" rx="0.9" fill="#1a365d" opacity="0.69"/>
+                    <rect x="316" y="54" width="4" height="4" rx="0.9" fill="#1a365d" opacity="0.69"/>
+                    <rect x="298" y="60" width="4" height="4" rx="0.9" fill="#1a365d" opacity="0.535"/>
+                    <rect x="304" y="60" width="4" height="4" rx="0.9" fill="#1a365d" opacity="0.535"/>
+                    <rect x="310" y="60" width="4" height="4" rx="0.9" fill="#1a365d" opacity="0.535"/>
+                    <rect x="316" y="60" width="4" height="4" rx="0.9" fill="#1a365d" opacity="0.535"/>
                   </g>
                   <!-- Headers -->
                   <text class="fp-brain-tagline" x="309" y="18">ONE CODEBASE  ·  GROUND-UP ON FHIR R4  ·  ONE COMPANY</text>

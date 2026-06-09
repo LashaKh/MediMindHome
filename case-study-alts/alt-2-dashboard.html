@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MediMind · Case Study — Clinical Monitor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1a365d;
+    --secondary:#2b6cb0;
+    --accent:#3182ce;
+    --light-accent:#bee3f8;
+    --body:#334155;
+    --muted:#64748b;
+    --light:#94a3b8;
+    --hairline:#e2e8f0;
+    --white:#ffffff;
+    --subtle:#f8fafc;
+    --tint:#f0f7ff;
+    --grad:linear-gradient(135deg,#1a365d 0%,#2b6cb0 50%,#3182ce 100%);
+    --crit:#b04a4a;
+    --mono:ui-monospace,'SF Mono',Menlo,'Roboto Mono',monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{height:100%;}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#e9edf2;
+    color:var(--body);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  .slide{
+    position:relative;
+    width:1280px;
+    height:720px;
+    background:var(--white);
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 30px 80px -28px rgba(26,54,93,.30), 0 4px 14px -6px rgba(26,54,93,.10);
+    display:flex;
+    flex-direction:column;
+    padding:26px 40px 24px;
+    animation:fade .7s ease both;
+  }
+  @keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+
+  /* faint clinical grid wash behind everything */
+  .slide::before{
+    content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
+    background-image:linear-gradient(var(--hairline) 1px,transparent 1px),linear-gradient(90deg,var(--hairline) 1px,transparent 1px);
+    background-size:34px 34px;
+    -webkit-mask-image:radial-gradient(120% 90% at 50% 0%,#000 0%,transparent 70%);
+    mask-image:radial-gradient(120% 90% at 50% 0%,#000 0%,transparent 70%);
+    opacity:.45;
+  }
+  .slide > *{position:relative;z-index:1;}
+
+  /* ============ TOP BAR ============ */
+  .topbar{
+    display:flex;align-items:center;gap:18px;
+    padding-bottom:13px;
+    border-bottom:1px solid var(--hairline);
+  }
+  .brand{display:flex;align-items:center;gap:10px;flex:none;}
+  .brand .wm{font-size:15px;font-weight:800;color:var(--navy);letter-spacing:-.01em;}
+  .brand .wm span{color:var(--secondary);}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;flex:none;
+    font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--muted);
+    padding:5px 11px;border-radius:999px;
+    background:var(--subtle);border:1px solid var(--hairline);
+  }
+  .eyebrow .seg{color:var(--light);}
+
+  .ecg{flex:1;min-width:0;height:30px;opacity:.9;}
+  .clockwrap{display:flex;align-items:center;gap:9px;flex:none;}
+  .pulse-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 rgba(49,130,206,.45);animation:pdot 2.4s ease-out infinite;}
+  @keyframes pdot{0%{box-shadow:0 0 0 0 rgba(49,130,206,.4);}70%,100%{box-shadow:0 0 0 7px rgba(49,130,206,0);}}
+  .clock{font-family:var(--mono);font-size:14px;font-weight:600;color:var(--navy);letter-spacing:.02em;}
+  .clock-lbl{font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--light);}
+
+  /* ============ HEADER ZONE ============ */
+  .header{padding:15px 0 14px;display:flex;align-items:flex-end;justify-content:space-between;gap:24px;}
+  .headline{font-size:30px;line-height:1.1;font-weight:800;color:var(--navy);letter-spacing:-.018em;max-width:740px;}
+  .headline em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+  .credtag{
+    display:inline-flex;align-items:center;gap:8px;flex:none;
+    font-size:10px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;
+    color:var(--muted);
+    padding:7px 13px 7px 11px;border-radius:999px;
+    background:var(--subtle);border:1px solid var(--hairline);
+    margin-bottom:3px;
+  }
+  .credtag .rd{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px rgba(49,130,206,.14);flex:none;}
+
+  /* ============ MAIN GRID ============ */
+  .grid{display:grid;grid-template-columns:0.86fr 1.14fr;gap:18px;flex:1;min-height:0;}
+  .col{display:flex;flex-direction:column;gap:14px;min-height:0;}
+
+  .card{
+    background:var(--white);
+    border:1px solid var(--hairline);
+    border-radius:14px;
+    box-shadow:0 1px 2px rgba(26,54,93,.04), 0 10px 26px -20px rgba(26,54,93,.30);
+  }
+  .card-h{
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    padding:11px 16px;border-bottom:1px solid var(--hairline);
+  }
+  .mlabel{font-size:10px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--light);display:inline-flex;align-items:center;gap:8px;}
+  .mlabel .ic{width:15px;height:15px;color:var(--secondary);flex:none;}
+  .ts{font-family:var(--mono);font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.02em;}
+
+  /* PATIENT card */
+  .patient .card-b{padding:13px 16px 14px;}
+  .pt-id{display:flex;align-items:baseline;gap:10px;margin-bottom:11px;}
+  .pt-id b{font-size:18px;font-weight:800;color:var(--navy);letter-spacing:-.01em;}
+  .pt-id .mrn{font-family:var(--mono);font-size:10px;color:var(--light);letter-spacing:.04em;}
+  .fields{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;}
+  .fld{display:flex;flex-direction:column;gap:2px;}
+  .fld .k{font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--light);}
+  .fld .v{font-size:13px;font-weight:600;color:var(--body);line-height:1.2;}
+  .fld.wide{grid-column:1 / -1;padding-top:9px;border-top:1px dashed var(--hairline);}
+  .fld.wide .v{color:var(--navy);font-weight:700;}
+
+  /* SIGNAL card */
+  .signal{position:relative;overflow:hidden;}
+  .signal::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--accent),var(--secondary));}
+  .signal .card-b{padding:12px 16px 14px;}
+  .sig-big{font-size:18px;font-weight:800;color:var(--navy);letter-spacing:-.01em;line-height:1.1;margin-bottom:6px;}
+  .sig-note{font-size:12px;line-height:1.4;color:var(--muted);}
+  .sig-note strong{color:var(--body);font-weight:700;}
+  .sig-flag{display:inline-flex;align-items:center;gap:7px;font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--secondary);background:var(--tint);border:1px solid var(--light-accent);border-radius:999px;padding:4px 10px;}
+  .sig-flag .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);}
+
+  /* ============ MEDIMIND OS — centerpiece ============ */
+  .os{display:flex;flex-direction:column;min-height:0;}
+  .os .card-h{padding:12px 18px;}
+  .os-title{display:flex;flex-direction:column;gap:3px;}
+  .os-title .lead{display:inline-flex;align-items:center;gap:9px;font-size:14px;font-weight:800;color:var(--navy);letter-spacing:-.01em;}
+  .os-title .lead .chip{width:22px;height:22px;border-radius:7px;background:var(--grad);display:grid;place-items:center;flex:none;box-shadow:0 4px 10px -3px rgba(43,108,176,.5);}
+  .os-title .sub{font-size:11px;line-height:1.35;color:var(--muted);max-width:430px;}
+  .os-badge{display:inline-flex;align-items:center;gap:7px;flex:none;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--secondary);background:var(--tint);border:1px solid var(--light-accent);border-radius:999px;padding:6px 12px;align-self:flex-start;}
+  .os-badge .bd{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 rgba(49,130,206,.5);animation:pdot 2s ease-out infinite;}
+
+  .statuslist{padding:6px 8px 7px;display:flex;flex-direction:column;flex:1;min-height:0;justify-content:space-between;}
+  .srow{display:flex;align-items:center;gap:13px;padding:8px 12px;border-radius:10px;}
+  .srow + .srow{border-top:1px solid var(--hairline);}
+  .srow .check{
+    width:24px;height:24px;border-radius:50%;flex:none;
+    display:grid;place-items:center;
+    background:var(--tint);border:1px solid var(--light-accent);color:var(--secondary);
+  }
+  .srow .check svg{width:13px;height:13px;}
+  .srow .txt{display:flex;flex-direction:column;gap:1px;min-width:0;flex:1;}
+  .srow .txt b{font-size:13px;font-weight:800;color:var(--navy);line-height:1.1;letter-spacing:-.005em;}
+  .srow .txt span{font-size:11.5px;color:var(--muted);line-height:1.25;}
+  .srow .stat{font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--light);flex:none;}
+
+  /* ============ OUTCOME COMPARE ============ */
+  .outcomes{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px;}
+  .out{position:relative;border-radius:14px;padding:13px 16px 14px 18px;overflow:hidden;}
+  .out::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;}
+  .out--bad{background:var(--subtle);border:1px solid var(--hairline);}
+  .out--bad::before{background:linear-gradient(180deg,#cbd5e1,#94a3b8);}
+  .out--good{background:linear-gradient(135deg,#eef5fc 0%,#f8fbff 72%);border:1px solid #cfe1f6;}
+  .out--good::before{background:linear-gradient(180deg,var(--accent),var(--secondary));}
+  .out-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:4px;}
+  .out-lbl{font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;}
+  .out--bad .out-lbl{color:var(--light);}
+  .out--good .out-lbl{color:var(--secondary);}
+  .out-tag{font-size:8.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:999px;flex:none;}
+  .out--bad .out-tag{color:var(--muted);background:#eef1f5;}
+  .out--good .out-tag{color:var(--secondary);background:#dcebfb;}
+  .out-head{font-size:17px;font-weight:800;line-height:1.12;letter-spacing:-.015em;margin-bottom:5px;}
+  .out--bad .out-head{color:#475569;}
+  .out--bad .out-head .crit{color:var(--crit);}
+  .out--good .out-head{color:var(--secondary);}
+  .out-why{font-size:11.5px;line-height:1.35;color:var(--muted);}
+  .out-why strong{color:var(--body);font-weight:700;}
+
+  /* ============ THESIS FOOTER ============ */
+  .thesis{margin-top:15px;text-align:center;font-size:18px;font-weight:600;color:var(--muted);letter-spacing:-.005em;}
+  .thesis em{font-style:normal;font-weight:800;color:var(--navy);}
+  .thesis em b{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+</style>
+</head>
+<body>
+  <main class="slide" role="img" aria-label="MediMind case study clinical monitor slide">
+
+    <!-- ============ TOP BAR ============ -->
+    <header class="topbar">
+      <div class="brand">
+        <svg viewBox="0 0 100 100" width="32" height="32" aria-hidden="true">
+          <rect x="6" y="14" width="88" height="14" rx="3" fill="#2b6cb0"/>
+          <rect x="6" y="34" width="88" height="14" rx="3" fill="#2b6cb0" opacity=".75"/>
+          <rect x="6" y="54" width="88" height="14" rx="3" fill="#2b6cb0" opacity=".5"/>
+          <rect x="6" y="74" width="88" height="14" rx="3" fill="#2b6cb0" opacity=".3"/>
+        </svg>
+        <div class="wm">MediMind<span> OS</span></div>
+      </div>
+      <div class="eyebrow"><span class="seg">05</span> · Case Study</div>
+
+      <svg class="ecg" viewBox="0 0 600 30" preserveAspectRatio="none" aria-hidden="true">
+        <polyline points="0,15 130,15 150,15 165,8 180,22 195,15 250,15 268,15 278,2 290,28 302,15 360,15 380,15 396,9 412,21 426,15 600,15"
+          fill="none" stroke="#3182ce" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/>
+      </svg>
+
+      <div class="clockwrap">
+        <span class="pulse-dot"></span>
+        <span class="clock-lbl">Live</span>
+        <span class="clock">02:32</span>
+      </div>
+    </header>
+
+    <!-- ============ HEADER ZONE ============ -->
+    <div class="header">
+      <h1 class="headline">One symptom. <em>The whole hospital should move.</em></h1>
+      <div class="credtag"><span class="rd"></span>Real case · MediMind pilot hospital · May 2026</div>
+    </div>
+
+    <!-- ============ MAIN GRID ============ -->
+    <div class="grid">
+
+      <!-- LEFT COLUMN -->
+      <div class="col">
+
+        <!-- PATIENT -->
+        <section class="card patient">
+          <div class="card-h">
+            <span class="mlabel">
+              <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Patient
+            </span>
+            <span class="ts">ER · 02:30</span>
+          </div>
+          <div class="card-b">
+            <div class="pt-id"><b>65-year-old</b><span class="mrn">MRN ·8821·</span></div>
+            <div class="fields">
+              <div class="fld"><span class="k">Renal</span><span class="v">On dialysis</span></div>
+              <div class="fld"><span class="k">Metabolic</span><span class="v">Diabetic</span></div>
+              <div class="fld wide"><span class="k">Recent procedure</span><span class="v">Coronary stenting — two weeks ago</span></div>
+              <div class="fld wide"><span class="k">Presenting tonight</span><span class="v">Arrives in the ER with stomach pain</span></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SIGNAL -->
+        <section class="card signal">
+          <div class="card-h">
+            <span class="mlabel">
+              <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              Signal
+            </span>
+            <span class="ts">02:30 · One signal</span>
+          </div>
+          <div class="card-b">
+            <div class="sig-big">Stomach pain</div>
+            <p class="sig-note"><strong>Mimics the cardiac pain he was just treated for</strong> — so the real cause, pancreatitis, was easy to miss at 2am.</p>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- RIGHT COLUMN — MEDIMIND OS -->
+      <section class="card os">
+        <div class="card-h">
+          <div class="os-title">
+            <span class="lead">
+              <span class="chip">
+                <svg viewBox="0 0 100 100" width="13" height="13" aria-hidden="true">
+                  <rect x="6" y="14" width="88" height="14" rx="3" fill="#fff"/>
+                  <rect x="6" y="34" width="88" height="14" rx="3" fill="#fff" opacity=".78"/>
+                  <rect x="6" y="54" width="88" height="14" rx="3" fill="#fff" opacity=".55"/>
+                  <rect x="6" y="74" width="88" height="14" rx="3" fill="#fff" opacity=".35"/>
+                </svg>
+              </span>
+              MediMind OS
+            </span>
+            <span class="sub">Reads the whole patient and steers every team — so a buried signal can't be missed.</span>
+          </div>
+          <span class="os-badge"><span class="bd"></span>02:32 · all at once</span>
+        </div>
+
+        <div class="statuslist">
+          <div class="srow">
+            <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="txt"><b>ER</b><span>High-acuity pathway opened</span></span>
+            <span class="stat">Open</span>
+          </div>
+          <div class="srow">
+            <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="txt"><b>Cardiology + GI / Surgery</b><span>Both paged in parallel — rule out, don't anchor</span></span>
+            <span class="stat">Paged</span>
+          </div>
+          <div class="srow">
+            <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="txt"><b>Labs</b><span>The right $20 test, ordered at 02:32</span></span>
+            <span class="stat">Ordered</span>
+          </div>
+          <div class="srow">
+            <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="txt"><b>ICU</b><span>Bed pre-alerted, sepsis watch armed</span></span>
+            <span class="stat">Armed</span>
+          </div>
+          <div class="srow">
+            <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="txt"><b>Billing</b><span>Coded clean, pre-authorized</span></span>
+            <span class="stat">Cleared</span>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ============ OUTCOME COMPARE ============ -->
+    <div class="outcomes">
+      <div class="out out--bad">
+        <div class="out-top"><span class="out-lbl">What happened</span><span class="out-tag">Without</span></div>
+        <div class="out-head">20 ICU days — <span class="crit">he nearly died</span></div>
+        <p class="out-why">The follow-up labs and consults his symptoms called for <strong>weren't ordered until morning</strong> — in an overworked midnight ward, crucial hours were lost.</p>
+      </div>
+      <div class="out out--good">
+        <div class="out-top"><span class="out-lbl">With MediMind</span><span class="out-tag">Caught</span></div>
+        <div class="out-head">Caught ~18h earlier, before sepsis</div>
+        <p class="out-why">MediMind re-checks every action and inaction against the latest gold-standard guidelines — <strong>making that kind of miss impossible.</strong></p>
+      </div>
+    </div>
+
+    <!-- ============ THESIS ============ -->
+    <p class="thesis">At 02:00, people miss things. <em><b>MediMind doesn't.</b></em></p>
+
+  </main>
+</body>
+</html>

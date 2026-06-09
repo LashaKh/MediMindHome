@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MediMind — Case Study · Two Fates</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a365d;
+    --secondary: #2b6cb0;
+    --accent: #3182ce;
+    --light-accent: #bee3f8;
+    --body: #334155;
+    --muted: #64748b;
+    --light: #94a3b8;
+    --hairline: #e2e8f0;
+    --white: #ffffff;
+    --subtle: #f8fafc;
+    --tint: #f0f7ff;
+    --warm: #b04a4a;
+    --gradient: linear-gradient(135deg, #1a365d 0%, #2b6cb0 50%, #3182ce 100%);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    background: #e9edf2;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+
+  .slide {
+    position: relative;
+    width: 1280px;
+    height: 720px;
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 24px 70px rgba(26, 54, 93, .14), 0 2px 8px rgba(26, 54, 93, .06);
+    overflow: hidden;
+    color: var(--body);
+  }
+
+  /* faint structural backdrop: two halves, neutral vs soft-blue, kept very light */
+  .slide::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, #fbfcfd 0%, #fbfcfd 49.9%, rgba(255,255,255,0) 50%),
+      linear-gradient(90deg, rgba(255,255,255,0) 50%, #f5f9fe 50.1%, #f5f9fe 100%);
+    z-index: 0;
+  }
+
+  .stage {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    padding: 38px 56px 30px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* fade-in cascade */
+  .fade { opacity: 0; transform: translateY(10px); animation: rise .7s cubic-bezier(.2,.7,.3,1) forwards; }
+  .d1 { animation-delay: .05s; } .d2 { animation-delay: .14s; } .d3 { animation-delay: .24s; }
+  .d4 { animation-delay: .36s; } .d5 { animation-delay: .46s; } .d6 { animation-delay: .56s; }
+  .d7 { animation-delay: .64s; } .d8 { animation-delay: .72s; }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+
+  /* ───── header ───── */
+  .head { display: grid; grid-template-columns: 1fr auto; align-items: start; column-gap: 24px; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 9px;
+    font-size: 11px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--light);
+  }
+  .eyebrow .num { color: var(--accent); }
+  .eyebrow .bar { width: 26px; height: 1px; background: var(--hairline); }
+
+  .headline {
+    margin-top: 10px;
+    font-size: 31px; font-weight: 800; line-height: 1.08; letter-spacing: -.022em;
+    color: var(--navy); max-width: 760px;
+  }
+  .headline .grad {
+    background: var(--gradient); -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+  }
+
+  .credtag {
+    align-self: start; margin-top: 4px;
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 10.5px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--muted); background: var(--subtle);
+    border: 1px solid var(--hairline); border-radius: 999px; padding: 7px 13px 7px 11px;
+    white-space: nowrap;
+  }
+  .credtag .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px rgba(49,130,206,.14); flex: none; }
+
+  .patient {
+    margin-top: 11px; font-size: 14px; line-height: 1.45; color: var(--muted); max-width: 1040px;
+  }
+  .patient strong { color: var(--body); font-weight: 700; }
+
+  /* ───── shared signal → pivot connector ───── */
+  .signal-zone {
+    position: relative; margin-top: 14px;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .signal {
+    display: flex; align-items: center; gap: 14px;
+    background: var(--white); border: 1px solid var(--hairline);
+    border-radius: 13px; padding: 9px 18px 9px 14px;
+    box-shadow: 0 4px 14px rgba(26,54,93,.05);
+    max-width: 740px;
+  }
+  .signal .sig-time {
+    font-size: 11px; font-weight: 800; letter-spacing: .1em; color: var(--accent);
+    border-right: 1px solid var(--hairline); padding-right: 14px; flex: none;
+  }
+  .signal .sig-label { font-size: 13px; font-weight: 800; color: var(--navy); flex: none; letter-spacing: -.01em; }
+  .signal .sig-why { font-size: 11.5px; line-height: 1.35; color: var(--muted); }
+  .signal .sig-why strong { color: var(--warm); font-weight: 700; }
+  .sig-eyebrow {
+    font-size: 9.5px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--light); margin-bottom: 7px;
+  }
+
+  /* ───── diptych body ─────
+     3-column grid: left path · center pivot lane · right path.
+     The pivot lives in its OWN lane so the two fates can never collide with it. */
+  .diptych {
+    position: relative; flex: 1; min-height: 0;
+    display: grid; grid-template-columns: 1fr 276px 1fr; column-gap: 0;
+    margin-top: 6px;
+  }
+  /* central hairline divider, behind the pivot lane */
+  .diptych::after {
+    content: ''; position: absolute; top: 4px; bottom: 4px; left: 50%; transform: translateX(-50%);
+    width: 1px; background: linear-gradient(180deg, rgba(226,232,240,0) 0%, var(--hairline) 16%, var(--hairline) 100%);
+    z-index: 1;
+  }
+
+  .col { display: flex; flex-direction: column; min-width: 0; padding-top: 2px; z-index: 2; }
+  .col-left  { padding-right: 30px; align-items: flex-end; text-align: right; }
+  .col-right { padding-left: 30px; }
+
+  .col-head {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 10.5px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase;
+    padding: 5px 11px; border-radius: 999px; margin-bottom: 11px;
+  }
+  .col-left .col-head  { color: var(--muted); background: var(--subtle); border: 1px solid var(--hairline); }
+  .col-right .col-head { color: var(--secondary); background: var(--tint); border: 1px solid #d6e6fa; }
+  .col-head .hd { width: 6px; height: 6px; border-radius: 50%; flex: none; }
+  .col-left .col-head .hd  { background: var(--light); }
+  .col-right .col-head .hd { background: var(--accent); box-shadow: 0 0 0 3px rgba(49,130,206,.14); }
+
+  /* LEFT — the chain of silence */
+  .silence { display: flex; flex-direction: column; gap: 7px; align-items: flex-end; width: 100%; }
+  .silence-row {
+    display: flex; align-items: center; gap: 10px; flex-direction: row-reverse;
+    width: 100%; max-width: 290px;
+  }
+  .silence-row .sx {
+    width: 22px; height: 22px; border-radius: 7px; flex: none;
+    display: grid; place-items: center; background: #eef1f5; color: var(--light);
+  }
+  .silence-row .sx svg { width: 13px; height: 13px; }
+  .silence-row .stxt { font-size: 12px; line-height: 1.28; color: var(--muted); }
+  .silence-row .stxt b { color: #475569; font-weight: 700; }
+
+  .why-left {
+    margin-top: 12px; max-width: 300px;
+    font-size: 11.5px; line-height: 1.42; color: var(--muted);
+    padding-right: 13px; border-right: 2px solid var(--hairline);
+  }
+  .why-left strong { color: var(--body); font-weight: 700; }
+
+  /* RIGHT — five departments firing at once */
+  .depts { display: flex; flex-direction: column; gap: 6px; width: 100%; max-width: 392px; }
+  .dept {
+    position: relative; display: flex; align-items: center; gap: 11px;
+    background: linear-gradient(135deg, #f4f9fe 0%, #fbfdff 75%);
+    border: 1px solid #dcebfb; border-radius: 10px; padding: 6px 12px 6px 11px;
+  }
+  .dept .di {
+    width: 26px; height: 26px; border-radius: 7px; flex: none;
+    display: grid; place-items: center; background: #e3eefb; color: var(--secondary);
+  }
+  .dept .di svg { width: 15px; height: 15px; }
+  .dept .dt { min-width: 0; }
+  .dept .dt b { display: block; font-size: 12px; font-weight: 800; color: var(--navy); line-height: 1.1; letter-spacing: -.01em; }
+  .dept .dt span { display: block; font-size: 10.5px; color: var(--muted); line-height: 1.2; margin-top: 1px; }
+
+  .why-right {
+    margin-top: 11px; max-width: 392px;
+    font-size: 11.5px; line-height: 1.42; color: var(--muted);
+    padding-left: 13px; border-left: 2px solid var(--light-accent);
+  }
+  .why-right strong { color: var(--body); font-weight: 700; }
+
+  /* endpoints */
+  .endpoint {
+    margin-top: auto; display: flex; align-items: baseline; gap: 9px;
+  }
+  .col-left .endpoint  { flex-direction: row-reverse; }
+  .endpoint .ep-line { width: 22px; height: 2px; border-radius: 2px; align-self: center; }
+  .col-left  .endpoint .ep-line { background: linear-gradient(90deg, #cbd5e1, #94a3b8); }
+  .col-right .endpoint .ep-line { background: var(--gradient); }
+  .endpoint .ep-big { font-size: 19px; font-weight: 800; line-height: 1.08; letter-spacing: -.02em; }
+  .col-left  .endpoint .ep-big { color: #475569; }
+  .col-left  .endpoint .ep-big .crit { color: var(--warm); }
+  .col-right .endpoint .ep-big { color: var(--secondary); }
+  .col-right .endpoint .ep-big .accenttxt {
+    background: var(--gradient); -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+  }
+
+  /* ───── CENTER PIVOT — MediMind OS core node, centered in its own lane ───── */
+  .pivot-lane {
+    position: relative; z-index: 4;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding-top: 2px;
+  }
+  .pivot {
+    position: relative; z-index: 5; width: 256px; text-align: center;
+    background: var(--gradient);
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 22px; padding: 16px 20px 15px;
+    box-shadow: 0 18px 44px rgba(43,108,176,.26), 0 0 0 7px rgba(255,255,255,.96);
+  }
+  /* horizontal connectors: signal feeds in from above, two fates branch out left & right */
+  .pivot::before {
+    content: ''; position: absolute; top: -16px; left: 50%; transform: translateX(-50%);
+    width: 2px; height: 16px; background: linear-gradient(180deg, var(--accent), var(--secondary));
+  }
+  .pivot::after {
+    content: ''; position: absolute; top: 50%; left: -64px; right: -64px; height: 1px;
+    background: linear-gradient(90deg, rgba(148,163,184,.55) 0%, rgba(49,130,206,.0) 28%, rgba(49,130,206,0) 72%, rgba(49,130,206,.6) 100%);
+    z-index: -1;
+  }
+  .pivot-mark { width: 38px; height: 38px; display: block; margin: 0 auto 8px; filter: drop-shadow(0 2px 6px rgba(8,22,48,.22)); }
+  .pivot h3 { font-size: 17px; font-weight: 800; letter-spacing: -.02em; color: #fff; }
+  .pivot .pbadge {
+    display: inline-flex; align-items: center; gap: 6px; margin-top: 9px;
+    font-size: 9.5px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+    padding: 4px 11px; border-radius: 999px;
+    background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.32); color: #fff;
+  }
+  .pivot .pbadge .pdot { width: 6px; height: 6px; border-radius: 50%; background: #fff; }
+  .pivot p { margin-top: 9px; font-size: 10.5px; line-height: 1.4; color: rgba(255,255,255,.92); }
+  .pivot p strong { color: #fff; font-weight: 700; }
+
+  /* the two fate labels flanking the connector line, just under the node */
+  .fate-cue { position: absolute; top: calc(50% + 6px); font-size: 9px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--light); }
+  .fate-cue.l { right: calc(100% + 14px); }
+  .fate-cue.r { left: calc(100% + 14px); color: var(--accent); }
+
+  /* ───── footer thesis ───── */
+  .thesis {
+    margin-top: 14px; text-align: center;
+    font-size: 19px; font-weight: 600; color: var(--muted); letter-spacing: -.01em;
+  }
+  .thesis em { font-style: normal; font-weight: 800; color: var(--navy); }
+  .thesis em b {
+    background: var(--gradient); -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent; font-weight: 800;
+  }
+
+  /* corner brand watermark */
+  .brand-corner {
+    position: absolute; bottom: 16px; left: 56px; z-index: 3;
+    display: inline-flex; align-items: center; gap: 7px;
+    font-size: 10px; font-weight: 700; letter-spacing: .04em; color: var(--light);
+  }
+  .brand-corner svg { width: 13px; height: 13px; opacity: .6; }
+</style>
+</head>
+<body>
+  <div class="slide">
+    <div class="stage">
+
+      <!-- ───────── HEADER ───────── -->
+      <div class="head">
+        <div>
+          <div class="eyebrow fade d1"><span class="num">05</span><span class="bar"></span><span>Case Study</span></div>
+          <h1 class="headline fade d1">One symptom. <span class="grad">The whole hospital should move.</span></h1>
+        </div>
+        <div class="credtag fade d2"><span class="dot"></span>Real case · MediMind pilot hospital · May 2026</div>
+      </div>
+
+      <p class="patient fade d2">A <strong>65-year-old</strong> — <strong>on dialysis</strong>, <strong>diabetic</strong>, <strong>two weeks after a heart procedure</strong> (coronary stenting) — arrives in the ER one night with stomach pain.</p>
+
+      <!-- ───────── SHARED SIGNAL → PIVOT ───────── -->
+      <div class="signal-zone fade d3">
+        <div class="sig-eyebrow">The single signal both fates begin from</div>
+        <div class="signal">
+          <span class="sig-time">02:30</span>
+          <span class="sig-label">Stomach pain</span>
+          <span class="sig-why">Mimics the cardiac pain he was just treated for — so the real cause, <strong>pancreatitis</strong>, was easy to miss at 2am.</span>
+        </div>
+      </div>
+
+      <!-- ───────── DIPTYCH ───────── -->
+      <div class="diptych">
+
+        <!-- LEFT · WITHOUT -->
+        <div class="col col-left">
+          <span class="col-head fade d4"><span class="hd"></span>Without MediMind</span>
+          <div class="silence fade d5">
+            <div class="silence-row">
+              <span class="sx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
+              <span class="stxt">The signal is anchored on <b>the heart</b> — the obvious, recent diagnosis</span>
+            </div>
+            <div class="silence-row">
+              <span class="sx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="7" height="16" rx="1"/><rect x="14" y="4" width="7" height="16" rx="1"/></svg></span>
+              <span class="stxt">Cardiology, GI &amp; lab data sit in <b>separate silos</b></span>
+            </div>
+            <div class="silence-row">
+              <span class="sx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/><line x1="3" y1="3" x2="21" y2="21"/></svg></span>
+              <span class="stxt">No one <b>owns the patient</b> overnight</span>
+            </div>
+          </div>
+          <p class="why-left fade d5">The follow-up labs and consults his symptoms called for <strong>weren't ordered until morning</strong> — in an overworked midnight ward, crucial hours were lost.</p>
+          <div class="endpoint fade d7">
+            <span class="ep-line"></span>
+            <span class="ep-big"><span class="crit">20 ICU days</span> — he nearly died.</span>
+          </div>
+        </div>
+
+        <!-- CENTER PIVOT LANE -->
+        <div class="pivot-lane">
+          <div class="pivot fade d3">
+            <span class="fate-cue l">Without</span>
+            <span class="fate-cue r">With</span>
+            <svg class="pivot-mark" viewBox="0 0 100 100" aria-hidden="true"><rect x="6" y="14" width="88" height="14" rx="3" fill="#fff"/><rect x="6" y="34" width="88" height="14" rx="3" fill="#fff" opacity=".8"/><rect x="6" y="54" width="88" height="14" rx="3" fill="#fff" opacity=".58"/><rect x="6" y="74" width="88" height="14" rx="3" fill="#fff" opacity=".36"/></svg>
+            <h3>MediMind OS</h3>
+            <span class="pbadge"><span class="pdot"></span>02:32 · all at once</span>
+            <p>Reads the <strong>whole patient</strong> and steers <strong>every team</strong> — so a buried signal can't be missed.</p>
+          </div>
+        </div>
+
+        <!-- RIGHT · WITH -->
+        <div class="col col-right">
+          <span class="col-head fade d4"><span class="hd"></span>With MediMind</span>
+          <div class="depts">
+            <div class="dept fade d6">
+              <span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v12M6 12h12"/></svg></span>
+              <span class="dt"><b>ER</b><span>High-acuity pathway opened</span></span>
+            </div>
+            <div class="dept fade d6">
+              <span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 5 4-12 2 7h6"/></svg></span>
+              <span class="dt"><b>Cardiology + GI / Surgery</b><span>Both paged in parallel — rule out, don't anchor</span></span>
+            </div>
+            <div class="dept fade d6">
+              <span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6.5L5.5 18a2 2 0 0 0 1.8 3h9.4a2 2 0 0 0 1.8-3L14 9.5V3"/></svg></span>
+              <span class="dt"><b>Labs</b><span>The right $20 test, ordered at 02:32</span></span>
+            </div>
+            <div class="dept fade d6">
+              <span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3l2-7 4 14 2-7h7"/></svg></span>
+              <span class="dt"><b>ICU</b><span>Bed pre-alerted, sepsis watch armed</span></span>
+            </div>
+            <div class="dept fade d6">
+              <span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg></span>
+              <span class="dt"><b>Billing</b><span>Coded clean, pre-authorized</span></span>
+            </div>
+          </div>
+          <p class="why-right fade d6">MediMind <strong>re-checks every action and inaction</strong> against the latest gold-standard guidelines — making that kind of miss impossible.</p>
+          <div class="endpoint fade d8">
+            <span class="ep-line"></span>
+            <span class="ep-big">Caught <span class="accenttxt">~18h earlier</span>, before sepsis.</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ───────── THESIS ───────── -->
+      <p class="thesis fade d8">At 02:00, people miss things. <em><b>MediMind doesn't.</b></em></p>
+
+    </div>
+
+    <span class="brand-corner">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><rect x="6" y="14" width="88" height="14" rx="3" fill="#94a3b8"/><rect x="6" y="34" width="88" height="14" rx="3" fill="#94a3b8" opacity=".7"/><rect x="6" y="54" width="88" height="14" rx="3" fill="#94a3b8" opacity=".5"/><rect x="6" y="74" width="88" height="14" rx="3" fill="#94a3b8" opacity=".3"/></svg>
+      medimind.md
+    </span>
+  </div>
+</body>
+</html>

@@ -18,18 +18,22 @@ interface MediMindLogoProps {
 }
 
 /**
- * MediMind brand mark — Platform Stack (four bars) + wordmark.
+ * MediMind brand mark — AI-Brain Aura + wordmark.
  *
- * Source of truth: `medimind-brand/01-logo/svg/`. The horizontal variant is
- * composed in React (icon SVG + HTML text) rather than as one big SVG so
- * proportions track the text font-size — icon height = 0.95em, perfectly
- * balanced against the bold wordmark at every display size.
+ * The mark is a centered 4×4 node grid wrapped in five concentric, fading
+ * gradient rings — a "neural aura" that reads as intelligence radiating from a
+ * structured core. The horizontal variant is composed in React (icon SVG + HTML
+ * text) rather than as one big SVG so proportions track the text font-size —
+ * the aura disc reads ~1.48× the bold wordmark cap-height (icon height = 1.05em).
+ *
+ * The `icon` variant uses a SIMPLIFIED mark (solid tile + one bold white ring +
+ * white 2×2 grid) because the faint 5-ring aura turns to mush at ~20px (footer).
  *
  * Variants:
- * - `icon`        — just the four-bar Platform Stack (square)
+ * - `icon`        — simplified small mark (square, footer-safe)
  * - `wordmark`    — "MediMind" text only
- * - `horizontal`  — icon-left + wordmark-right (header / hero / footer)
- * - `vertical`    — icon-top + wordmark-below (splash / cover)
+ * - `horizontal`  — aura-left + wordmark-right (header / hero)
+ * - `vertical`    — aura-top + wordmark-below (splash / cover)
  */
 export const MediMindLogo: React.FC<MediMindLogoProps> = ({
   variant = 'horizontal',
@@ -51,28 +55,61 @@ export const MediMindLogo: React.FC<MediMindLogoProps> = ({
 
   const mediColor = effectiveTone === 'dark' ? '#e2e8f0' : '#1a365d';
 
-  // Inline icon SVG renderer — viewBox cropped to bars area exactly.
-  // Bars: y=14..88 (74 tall), x=0..100 (100 wide) → tight 100×74, aspect 1.35:1
-  // No empty padding: icon visible height = SVG height, sized via em units.
+  // Gradient def for the aura — userSpaceOnUse so ring STROKES paint correctly
+  // (percentage objectBoundingBox units mis-paint thin strokes around a circle).
+  const auraGradient = (id: string) => (
+    <linearGradient id={id} gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="100" y2="100">
+      <stop offset="0%" stopColor={stops.from} />
+      <stop offset="50%" stopColor={stops.mid} />
+      <stop offset="100%" stopColor={stops.to} />
+    </linearGradient>
+  );
+
+  // Full AI-Brain Aura (viewBox 0 0 100 100, center 50,50): 5 fading rings + 4×4 node grid.
+  const auraCells = [34.4, 42.8, 51.2, 59.6];
+  // On dark backgrounds the aura is solid WHITE (crisp, matches the deck cover);
+  // on light it uses the brand gradient. Dark cubes get brighter opacities so they pop.
+  const rowOpacity = effectiveTone === 'dark' ? [1, 0.92, 0.84, 0.76] : [1, 0.845, 0.69, 0.535];
+  const renderAura = (id: string) => {
+    const paint = effectiveTone === 'dark' ? '#ffffff' : `url(#${id})`;
+    const stroke = paint;
+    const fill = paint;
+    return (
+      <>
+        <circle cx="50" cy="50" r="26" fill="none" stroke={stroke} strokeWidth="2" opacity="0.9" />
+        <circle cx="50" cy="50" r="32" fill="none" stroke={stroke} strokeWidth="1.7" opacity="0.6" />
+        <circle cx="50" cy="50" r="38" fill="none" stroke={stroke} strokeWidth="1.4" opacity="0.42" />
+        <circle cx="50" cy="50" r="44" fill="none" stroke={stroke} strokeWidth="1.1" opacity="0.26" />
+        <circle cx="50" cy="50" r="49" fill="none" stroke={stroke} strokeWidth="0.8" opacity="0.14" />
+        {auraCells.map((y, row) =>
+          auraCells.map((x) => (
+            <rect
+              key={`${x}-${y}`}
+              x={x}
+              y={y}
+              width="6"
+              height="6"
+              rx="1.32"
+              fill={fill}
+              opacity={rowOpacity[row]}
+            />
+          ))
+        )}
+      </>
+    );
+  };
+
+  // Inline icon SVG renderer for the horizontal lockup — FULL aura on a square viewBox.
   const renderIconSvg = (heightClass: string) => (
     <svg
-      viewBox="0 14 100 74"
+      viewBox="0 0 100 100"
       role="img"
       aria-hidden="true"
       preserveAspectRatio="xMidYMid meet"
       className={cn('w-auto flex-shrink-0', heightClass)}
     >
-      <defs>
-        <linearGradient id={stackGrad} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor={stops.from} />
-          <stop offset="50%" stopColor={stops.mid} />
-          <stop offset="100%" stopColor={stops.to} />
-        </linearGradient>
-      </defs>
-      <rect x="0" y="14" width="100" height="14" rx="3" fill={`url(#${stackGrad})`} />
-      <rect x="0" y="34" width="100" height="14" rx="3" fill={`url(#${stackGrad})`} opacity="0.78" />
-      <rect x="0" y="54" width="100" height="14" rx="3" fill={`url(#${stackGrad})`} opacity="0.55" />
-      <rect x="0" y="74" width="100" height="14" rx="3" fill={`url(#${stackGrad})`} opacity="0.32" />
+      <defs>{auraGradient(stackGrad)}</defs>
+      {renderAura(stackGrad)}
     </svg>
   );
 
@@ -91,17 +128,13 @@ export const MediMindLogo: React.FC<MediMindLogoProps> = ({
         aria-label="MediMind"
         className={cn('w-auto', heightByIconSize[size], className)}
       >
-        <defs>
-          <linearGradient id={stackGrad} x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor={stops.from} />
-            <stop offset="50%" stopColor={stops.mid} />
-            <stop offset="100%" stopColor={stops.to} />
-          </linearGradient>
-        </defs>
-        <rect x="6" y="14" width="88" height="14" rx="3" fill={`url(#${stackGrad})`} />
-        <rect x="6" y="34" width="88" height="14" rx="3" fill={`url(#${stackGrad})`} opacity="0.78" />
-        <rect x="6" y="54" width="88" height="14" rx="3" fill={`url(#${stackGrad})`} opacity="0.55" />
-        <rect x="6" y="74" width="88" height="14" rx="3" fill={`url(#${stackGrad})`} opacity="0.32" />
+        <defs>{auraGradient(stackGrad)}</defs>
+        <rect x="6" y="6" width="88" height="88" rx="20" fill={`url(#${stackGrad})`} />
+        <circle cx="50" cy="50" r="33" fill="none" stroke="#ffffff" strokeWidth="4" opacity="0.9" />
+        <rect x="37" y="37" width="11" height="11" rx="2.5" fill="#ffffff" />
+        <rect x="52" y="37" width="11" height="11" rx="2.5" fill="#ffffff" />
+        <rect x="37" y="52" width="11" height="11" rx="2.5" fill="#ffffff" />
+        <rect x="52" y="52" width="11" height="11" rx="2.5" fill="#ffffff" />
       </svg>
     );
   }
@@ -159,25 +192,16 @@ export const MediMindLogo: React.FC<MediMindLogoProps> = ({
         className={cn('w-auto', heightByVerticalSize[size], className)}
       >
         <defs>
-          <linearGradient id={stackGrad} x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor={stops.from} />
-            <stop offset="50%" stopColor={stops.mid} />
-            <stop offset="100%" stopColor={stops.to} />
-          </linearGradient>
+          {auraGradient(stackGrad)}
           <linearGradient id={wordGrad} x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stopColor={stops.from} />
             <stop offset="100%" stopColor={stops.to} />
           </linearGradient>
         </defs>
-        <g transform="translate(140 12)">
-          <rect x="0" y="0" width="80" height="11" rx="2.5" fill={`url(#${stackGrad})`} />
-          <rect x="0" y="15" width="80" height="11" rx="2.5" fill={`url(#${stackGrad})`} opacity="0.78" />
-          <rect x="0" y="30" width="80" height="11" rx="2.5" fill={`url(#${stackGrad})`} opacity="0.55" />
-          <rect x="0" y="45" width="80" height="11" rx="2.5" fill={`url(#${stackGrad})`} opacity="0.32" />
-        </g>
+        <g transform="translate(137 8) scale(0.86)">{renderAura(stackGrad)}</g>
         <text
           x="180"
-          y="140"
+          y="148"
           textAnchor="middle"
           fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
           fontSize="58"
@@ -192,7 +216,7 @@ export const MediMindLogo: React.FC<MediMindLogoProps> = ({
   }
 
   // Horizontal lockup — flex composition for guaranteed proportion.
-  // Icon sized as `0.95em` so it visually matches the text cap-height.
+  // Aura disc sized as `1.05em` so it reads ~1.48× the bold wordmark cap-height.
   const fontSizeClass: Record<Size, string> = {
     sm: 'text-xl',
     md: 'text-2xl',
@@ -209,8 +233,9 @@ export const MediMindLogo: React.FC<MediMindLogoProps> = ({
         className
       )}
     >
-      {/* Icon sized to match text cap-height (~0.72em) so it sits at the same visual level as the wordmark */}
-      {renderIconSvg('h-[0.72em]')}
+      {/* Aura disc reads clearly larger than the bold wordmark — the approved EMR balance
+          (icon box ≈ 1.45× the font-size, so the disc is ~2× the wordmark cap-height) */}
+      {renderIconSvg('h-[1.45em]')}
       <span>
         <span style={{ color: mediColor }}>Medi</span>
         <span

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Study — Editorial Timeline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:      #1a365d;
+    --secondary: #2b6cb0;
+    --accent:    #3182ce;
+    --light-acc: #bee3f8;
+    --tint:      #f0f7ff;
+    --body:      #334155;
+    --muted:     #64748b;
+    --light:     #94a3b8;
+    --hair:      #e2e8f0;
+    --white:     #ffffff;
+    --subtle:    #f8fafc;
+    --warm:      #b04a4a;
+    --grad: linear-gradient(135deg, #1a365d, #2b6cb0 50%, #3182ce);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    height: 100%;
+    background: #e9edf2;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 24px;
+  }
+
+  /* ── Canvas ───────────────────────────────────────────── */
+  .slide {
+    position: relative;
+    width: 1280px;
+    height: 720px;
+    flex: none;
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 24px 70px -24px rgba(26, 54, 93, .28), 0 2px 8px rgba(26, 54, 93, .05);
+    overflow: hidden;
+    color: var(--body);
+  }
+
+  /* whisper-soft tint bleed in the upper-right for depth — never dark */
+  .slide::before {
+    content: '';
+    position: absolute;
+    top: -180px; right: -160px;
+    width: 560px; height: 560px;
+    background: radial-gradient(circle at center, rgba(190, 227, 248, .30), rgba(190, 227, 248, 0) 70%);
+    pointer-events: none;
+  }
+
+  .canvas {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    padding: 40px 64px 36px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* entrance — subtle, single soft rise */
+  .fade { opacity: 0; transform: translateY(10px); animation: rise .8s cubic-bezier(.22,.61,.36,1) forwards; }
+  .d1 { animation-delay: .05s; } .d2 { animation-delay: .14s; }
+  .d3 { animation-delay: .24s; } .d4 { animation-delay: .36s; }
+  .d5 { animation-delay: .50s; } .d6 { animation-delay: .62s; }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+
+  /* ── Masthead ─────────────────────────────────────────── */
+  .masthead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--hair);
+  }
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .26em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .brandmark {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+  .brandmark svg { display: block; }
+  .brandmark span {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--navy);
+  }
+
+  /* ── Headline + standfirst ────────────────────────────── */
+  .lede-zone { padding: 14px 0 12px; }
+  .headline {
+    font-size: 41px;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -.022em;
+    color: var(--navy);
+    max-width: 1000px;
+  }
+  .headline .accent {
+    background: var(--grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: var(--secondary);
+  }
+
+  .credtag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 13px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .credtag .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 3px rgba(49,130,206,.14);
+  }
+
+  .standfirst {
+    margin-top: 12px;
+    max-width: 880px;
+    font-size: 16.5px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--body);
+    letter-spacing: -.005em;
+  }
+  .standfirst strong { font-weight: 700; color: var(--navy); }
+
+  /* ── Time spine ───────────────────────────────────────── */
+  .spine {
+    position: relative;
+    flex: 1;
+    min-height: 0;
+    margin-top: 6px;
+    padding-left: 128px;       /* room for the timestamp gutter + line */
+  }
+  /* the hairline rail */
+  .spine::before {
+    content: '';
+    position: absolute;
+    left: 108px;
+    top: 6px;
+    bottom: 4px;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--accent) 0%, var(--secondary) 62%, var(--hair) 100%);
+  }
+
+  .node { position: relative; }
+  .node + .node { margin-top: 16px; }
+
+  /* the ring sitting on the rail */
+  .node::before {
+    content: '';
+    position: absolute;
+    left: -26px;               /* aligns onto the 108px rail */
+    top: 7px;
+    width: 11px; height: 11px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 2px solid var(--accent);
+    box-shadow: 0 0 0 4px rgba(49,130,206,.10);
+  }
+
+  /* big tabular timestamp pulled into the left gutter */
+  .timestamp {
+    position: absolute;
+    left: -128px;
+    top: -2px;
+    width: 92px;
+    text-align: right;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -.02em;
+    color: var(--navy);
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+  }
+  .micro {
+    font-size: 9.5px;
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--light);
+  }
+  .node-title {
+    margin-top: 2px;
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: -.015em;
+    color: var(--navy);
+  }
+  .node-body {
+    margin-top: 4px;
+    max-width: 560px;
+    font-size: 13.5px;
+    line-height: 1.46;
+    color: var(--muted);
+  }
+  .node-body strong { color: var(--body); font-weight: 700; }
+
+  /* node 2 carries the OS mark inline */
+  .node-titlewrap {
+    display: flex;
+    align-items: baseline;
+    gap: 11px;
+  }
+  .os-flag {
+    font-size: 9.5px;
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding: 3px 9px;
+    border-radius: 999px;
+    background: var(--tint);
+    align-self: center;
+  }
+
+  /* ── Department cluster — airy, hairline-separated, no boxes ── */
+  .depts {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    margin-top: 13px;
+    max-width: 1010px;
+  }
+  .dept {
+    flex: 1;
+    padding: 0 18px;
+    border-left: 1px solid var(--hair);
+  }
+  .dept:first-child { padding-left: 0; border-left: 0; }
+  .dept:last-child { padding-right: 0; }
+  .dept b {
+    display: block;
+    font-size: 12.5px;
+    font-weight: 800;
+    letter-spacing: -.01em;
+    color: var(--navy);
+    line-height: 1.15;
+  }
+  .dept span {
+    display: block;
+    margin-top: 4px;
+    font-size: 11px;
+    line-height: 1.34;
+    color: var(--muted);
+  }
+
+  /* ── Outcomes — the fork at the spine's terminus ──────── */
+  .outcomes {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid var(--hair);
+  }
+  .outcomes::after {
+    content: '';
+    position: absolute;
+    top: 18px; bottom: 4px;
+    left: 50%;
+    width: 1px;
+    background: var(--hair);
+  }
+  .out { padding-right: 30px; }
+  .out:last-child { padding-right: 0; padding-left: 30px; }
+
+  .out-tag {
+    display: inline-block;
+    font-size: 9.5px;
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--light);
+  }
+  .out--good .out-tag { color: var(--accent); }
+
+  .out-head {
+    margin-top: 5px;
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: -.015em;
+    line-height: 1.12;
+    color: var(--navy);
+  }
+  .out--good .out-head { color: var(--secondary); }
+  .out-head .warm { color: var(--warm); }
+
+  .out-why {
+    margin-top: 6px;
+    font-size: 12.5px;
+    line-height: 1.42;
+    color: var(--muted);
+  }
+  .out-why strong { font-weight: 700; color: var(--body); }
+
+  /* ── Thesis ───────────────────────────────────────────── */
+  .thesis {
+    margin-top: 16px;
+    padding-top: 15px;
+    border-top: 1px solid var(--hair);
+    text-align: center;
+    font-size: 18.5px;
+    font-weight: 500;
+    letter-spacing: -.01em;
+    color: var(--muted);
+  }
+  .thesis strong { font-weight: 800; color: var(--navy); }
+  .thesis .accent {
+    font-weight: 800;
+    background: var(--grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: var(--secondary);
+  }
+</style>
+</head>
+<body>
+  <div class="slide" role="img" aria-label="MediMind case study — editorial timeline">
+    <div class="canvas">
+
+      <!-- Masthead -->
+      <div class="masthead fade d1">
+        <div class="eyebrow">05 · Case Study</div>
+        <div class="brandmark">
+          <svg viewBox="0 0 100 100" width="26" height="26" aria-hidden="true">
+            <rect x="6" y="14" width="88" height="14" rx="3" fill="#2b6cb0"/>
+            <rect x="6" y="34" width="88" height="14" rx="3" fill="#2b6cb0" opacity=".75"/>
+            <rect x="6" y="54" width="88" height="14" rx="3" fill="#2b6cb0" opacity=".5"/>
+            <rect x="6" y="74" width="88" height="14" rx="3" fill="#2b6cb0" opacity=".3"/>
+          </svg>
+          <span>MediMind OS</span>
+        </div>
+      </div>
+
+      <!-- Headline + standfirst -->
+      <div class="lede-zone fade d2">
+        <h1 class="headline">One symptom.<br><span class="accent">The whole hospital should move.</span></h1>
+        <div class="credtag"><span class="dot"></span>Real case · MediMind pilot hospital · May 2026</div>
+        <p class="standfirst">A 65-year-old — <strong>on dialysis, diabetic, two weeks after a heart procedure</strong> (coronary stenting) — arrives in the ER one night with stomach pain.</p>
+      </div>
+
+      <!-- Time spine -->
+      <div class="spine">
+
+        <!-- Node 1 -->
+        <div class="node fade d3">
+          <div class="timestamp">02:30</div>
+          <div class="micro">One signal</div>
+          <div class="node-title">Stomach pain</div>
+          <p class="node-body">Mimics the cardiac pain he was just treated for — so the real cause, <strong>pancreatitis</strong>, was easy to miss at 2am.</p>
+        </div>
+
+        <!-- Node 2 -->
+        <div class="node fade d4">
+          <div class="timestamp">02:32</div>
+          <div class="micro">All at once</div>
+          <div class="node-titlewrap">
+            <div class="node-title">MediMind OS</div>
+            <span class="os-flag">Fires every department</span>
+          </div>
+          <p class="node-body">Reads the whole patient and steers every team — so a buried signal can't be missed.</p>
+
+          <!-- 5-department cluster -->
+          <div class="depts">
+            <div class="dept">
+              <b>ER</b>
+              <span>High-acuity pathway opened</span>
+            </div>
+            <div class="dept">
+              <b>Cardiology + GI / Surgery</b>
+              <span>Both paged in parallel — rule out, don't anchor</span>
+            </div>
+            <div class="dept">
+              <b>Labs</b>
+              <span>The right $20 test, ordered at 02:32</span>
+            </div>
+            <div class="dept">
+              <b>ICU</b>
+              <span>Bed pre-alerted, sepsis watch armed</span>
+            </div>
+            <div class="dept">
+              <b>Billing</b>
+              <span>Coded clean, pre-authorized</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Outcomes — the fork -->
+      <div class="outcomes fade d5">
+        <div class="out out--bad">
+          <span class="out-tag">What happened</span>
+          <div class="out-head"><span class="warm">20 ICU days</span> — he <span class="warm">nearly died</span></div>
+          <p class="out-why">The follow-up labs and consults his symptoms called for weren't ordered until morning — in an overworked midnight ward, <strong>crucial hours were lost</strong>.</p>
+        </div>
+        <div class="out out--good">
+          <span class="out-tag">With MediMind</span>
+          <div class="out-head">Caught ~18h earlier, before sepsis</div>
+          <p class="out-why">MediMind re-checks every action and inaction against the latest gold-standard guidelines — <strong>making that kind of miss impossible</strong>.</p>
+        </div>
+      </div>
+
+      <!-- Thesis -->
+      <div class="thesis fade d6">
+        At 02:00, people miss things. <span class="accent">MediMind doesn't.</span>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

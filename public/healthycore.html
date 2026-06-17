@@ -9738,7 +9738,7 @@
       <h3 class="eco-modal-title" id="eco-modal-title"></h3>
       <div class="eco-modal-stage">
         <video id="eco-modal-video" class="eco-modal-video" controls playsinline muted preload="none"></video>
-        <iframe id="eco-modal-frame" class="eco-modal-frame" title="MediMind live walkthrough" loading="lazy" allow="autoplay; fullscreen"></iframe>
+        <iframe id="eco-modal-frame" class="eco-modal-frame" title="MediMind live walkthrough" allow="autoplay; fullscreen"></iframe>
         <div class="eco-modal-soon" id="eco-modal-soon">
           <span class="eco-soon-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16"/></svg></span>
           <div class="eco-soon-title"><span class="lang-en">Demo recording coming soon</span><span class="lang-ka" style="display:none;">დემო ჩანაწერი მალე დაემატება</span></div>
@@ -10111,9 +10111,9 @@
         if (frameSrc) {                 // walkthrough / embedded-page mode (e.g. the OS core)
           try { video.pause(); } catch (e) {}
           video.removeAttribute('src');
-          frame.src = frameSrc;
           showFrame();
           modal.classList.add('open', 'is-frame');
+          frame.src = frameSrc;         // set src AFTER the modal is visible so the iframe loads reliably
         } else {                        // standard muted-video demo
           modal.classList.remove('is-frame');
           frame.removeAttribute('src');

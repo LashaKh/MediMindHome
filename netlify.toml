@@ -54,15 +54,20 @@
   for = "/walkthrough"
   [headers.values]
     X-Robots-Tag  = "noindex, nofollow"
-    # The walkthrough SPA *page* must NOT be cached immutably (the /walkthrough/* media rule
-    # below otherwise also freezes the HTML shell → stale bundle ref → blank iframe on later deploys).
-    Cache-Control = "no-store, must-revalidate"
 
 # ─── Demo MP4 — long-cache, byte-range streaming ───
 [[headers]]
   for = "/walkthrough/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# Netlify applies the LAST matching rule, and /walkthrough/* above also matches the
+# /walkthrough HTML page — which must NOT be frozen, or a later bundle hash leaves the
+# cached shell pointing at a dead bundle → blank iframe. Re-assert no-store AFTER it.
+[[headers]]
+  for = "/walkthrough"
+  [headers.values]
+    Cache-Control = "no-store, must-revalidate"
 
 # ─── Founder demo page (hidden, link-only) — never indexed ───
 [[headers]]

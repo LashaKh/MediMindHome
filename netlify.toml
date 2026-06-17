@@ -54,6 +54,9 @@
   for = "/walkthrough"
   [headers.values]
     X-Robots-Tag  = "noindex, nofollow"
+    # The walkthrough SPA *page* must NOT be cached immutably (the /walkthrough/* media rule
+    # below otherwise also freezes the HTML shell → stale bundle ref → blank iframe on later deploys).
+    Cache-Control = "no-store, must-revalidate"
 
 # ─── Demo MP4 — long-cache, byte-range streaming ───
 [[headers]]

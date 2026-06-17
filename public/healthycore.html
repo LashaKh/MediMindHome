@@ -9393,7 +9393,7 @@
       <section class="tour-slide">
         <iframe
           class="tour-iframe"
-          src="/walkthrough?preview=1"
+          src="/walkthrough?preview=1&muted=1"
           onload="mmPostLang()"
           title="MediMind live product walkthrough"
           loading="lazy"
@@ -10113,7 +10113,9 @@
           video.removeAttribute('src');
           showFrame();
           modal.classList.add('open', 'is-frame');
-          frame.src = frameSrc;         // set src AFTER the modal is visible so the iframe loads reliably
+          // /walkthrough is served with a long immutable cache header, so reusing one URL can render a stale shell (blank).
+          // A unique (cache-busted) + muted URL each open guarantees a fresh load.
+          frame.src = frameSrc + (frameSrc.indexOf('?') >= 0 ? '&' : '?') + 'muted=1&cb=' + Date.now();
         } else {                        // standard muted-video demo
           modal.classList.remove('is-frame');
           frame.removeAttribute('src');

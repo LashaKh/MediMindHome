@@ -3554,6 +3554,14 @@
       color: var(--emr-light-accent); margin-bottom: 6px;
     }
     .bm-proof-text p { margin: 0; font-size: 0.78em; line-height: 1.45; color: rgba(255,255,255,0.88); max-width: 560px; }
+    /* Clickable proof band → opens the MediMind Structural (TAVI) demo video */
+    .bm-proof-clickable { cursor: pointer; }
+    .bm-proof-clickable:hover { transform: translateY(-3px) !important; box-shadow: 0 30px 60px -18px rgba(26,54,93,0.6) !important; }
+    .bm-proof-clickable:focus-visible { outline: 2px solid var(--emr-light-accent); outline-offset: 3px; }
+    .bm-proof-watch { margin-left: auto; flex-shrink: 0; display: inline-flex; align-items: center; gap: 11px; font-size: 0.72em; font-weight: 700; color: #fff; white-space: nowrap; }
+    .bm-proof-play { width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.34); transition: background 0.18s ease; }
+    .bm-proof-play svg { width: 17px; height: 17px; margin-left: 2px; fill: #fff; }
+    .bm-proof-clickable:hover .bm-proof-play { background: rgba(255,255,255,0.3); }
 
     @media (prefers-reduced-motion: reduce) {
       .bm-kicker, .bm-headline, .bm-sub, .bm-tier, .bm-arr {
@@ -7733,9 +7741,9 @@
     /* Partnership lockup — MediMind and Healthycore sized to read as EQUAL partners.
        Logo (440×80 SVG) is height-locked so its "MediMind" cap-height matches the
        Healthycore wordmark; the cross is a quiet connector, not a third element. */
-    .hc-lockup { display: flex; align-items: center; justify-content: center; gap: 26px; flex-wrap: wrap; margin: 4px 0 2px; }
+    .hc-lockup { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 26px; max-width: 660px; margin: 4px auto 2px; }
     .hc-lockup .cover-logo {
-      margin: 0 -55px 0 0; width: 250px; height: auto;   /* width-based so the mobile max-width cap can't distort it */
+      margin: 0; height: 58px; width: auto; justify-self: end;   /* height-locked = equal partner; the 1fr/auto/1fr grid keeps the × dead-centre so the accent line sits under it */
       filter: drop-shadow(0 10px 26px rgba(0,0,0,0.40));
     }
     /* × as a deliberate union mark — a quiet glass ring, not a dangling glyph */
@@ -7757,7 +7765,7 @@
     }
     /* Healthycore partner logo (white knockout) — height-matched to the MediMind lockup */
     .hc-lockup .hc-partner-logo {
-      height: 74px; width: auto; margin: 0;
+      height: 58px; width: auto; margin: 0; justify-self: start;
       filter: drop-shadow(0 10px 24px rgba(0,0,0,0.35));
     }
     .hc-coversub { margin-top: 30px; font-size: 0.95em; color: rgba(230,238,251,0.78); letter-spacing: 0.01em; }
@@ -8314,7 +8322,7 @@
       background: var(--emr-light-accent); box-shadow: 0 0 8px var(--emr-light-accent);
     }
     .hc-close-seal { display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: 32px; }
-    .hc-close-logo { width: 104px; height: auto; opacity: 0.92; margin-right: -23px; }
+    .hc-close-logo { height: 31px; width: auto; opacity: 0.92; margin-right: 0; }
     .hc-close-cross { font-size: 1.25em; font-weight: 200; color: rgba(190,227,248,0.5); }
     .hc-close-wordmark {
       font-size: 1.35em; font-weight: 700; letter-spacing: -0.01em;
@@ -8335,7 +8343,7 @@
     @media (max-width: 768px) {
       /* Stack the lockup vertically so the × sits between the two brands as a
          deliberate connector — avoids a dangling × when the row would wrap. */
-      .hc-lockup { flex-direction: column; gap: 8px; }
+      .hc-lockup { display: flex; flex-direction: column; gap: 8px; max-width: none; }
       .hc-wordmark { font-size: 1.55em; }
       .hc-lockup .hc-partner-logo { height: 60px; }
       .hc-lockup .cover-logo { margin-right: 0; }
@@ -8641,12 +8649,277 @@
         </aside>
       </section>
 
+      <!-- =================================================================
+           SLIDE 04 · THE PLATFORM — one core, many products (light, clickable demos)
+           Each product card opens a short pre-recorded demo (eco-modal).
+           Videos: /deck-assets/product-videos/<slug>.mp4 (graceful "soon" until added).
+           ================================================================= -->
+      <section class="eco-slide">
+        <style>
+          .eco-slide {
+            background:
+              radial-gradient(ellipse 64% 56% at 50% 50%, rgba(49,130,206,0.08) 0%, transparent 62%),
+              radial-gradient(ellipse 50% 42% at 6% 98%, rgba(190,227,248,0.12) 0%, transparent 55%),
+              linear-gradient(180deg, #ffffff 0%, #f6fbff 100%);
+          }
+          .eco-slide .slide-inner { justify-content: flex-start; }
+
+          /* ── Hero stat ribbon ── */
+          .eco-stats {
+            display: flex; align-self: stretch; margin: 12px 0 2px;
+            border: 1px solid var(--emr-border); border-radius: 14px; overflow: hidden;
+            background: linear-gradient(180deg, #ffffff, #f3f9ff);
+            box-shadow: 0 16px 32px -24px rgba(26,54,93,0.45);
+          }
+          .eco-stat { flex: 1; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; padding: 12px 14px; }
+          .eco-stat + .eco-stat::before { content: ''; position: absolute; left: 0; top: 20%; bottom: 20%; width: 1px; background: var(--emr-border); }
+          .eco-stat-num {
+            font-size: 1.74em; font-weight: 900; letter-spacing: -0.02em; line-height: 1;
+            background: linear-gradient(135deg, var(--emr-primary) 0%, var(--emr-accent) 100%);
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+          }
+          .eco-stat-label { font-size: 0.58em; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--emr-text-muted); text-align: center; }
+
+          /* ── Orbital stage ── */
+          .eco-stage { position: relative; width: 100%; flex: 1 1 auto; min-height: 338px; margin-top: 4px; }
+          .eco-links { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+          .eco-links line { stroke: url(#ecoGrad); stroke-width: 1.6; vector-effect: non-scaling-stroke; stroke-linecap: round; }
+
+          /* Concentric rings radiating from the core */
+          .eco-core-ring { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); border-radius: 50%; border: 1px solid rgba(49,130,206,0.22); z-index: 1; pointer-events: none; }
+          .eco-core-ring.r1 { width: 210px; height: 210px; }
+          .eco-core-ring.r2 { width: 286px; height: 286px; border-color: rgba(49,130,206,0.15); }
+          .eco-core-ring.r3 { width: 360px; height: 360px; border-color: rgba(49,130,206,0.09); }
+          .eco-slide.present .eco-core-ring { animation: ecoBreathe 5s ease-in-out infinite; }
+          .eco-slide.present .eco-core-ring.r2 { animation-delay: 0.5s; }
+          .eco-slide.present .eco-core-ring.r3 { animation-delay: 1s; }
+          @keyframes ecoBreathe { 0%,100% { opacity: 0.55; } 50% { opacity: 1; } }
+
+          /* Central core — MediMind OS */
+          .eco-core {
+            position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); z-index: 4;
+            width: 188px; padding: 17px 20px 16px; border-radius: 20px; cursor: pointer;
+            display: flex; flex-direction: column; align-items: center; gap: 7px; text-align: center;
+            font-family: inherit; color: #fff; border: 1px solid rgba(190,227,248,0.45);
+            background:
+              radial-gradient(130% 120% at 28% 8%, rgba(99,179,237,0.55), transparent 58%),
+              linear-gradient(155deg, #1a365d 0%, #2b6cb0 62%, #3182ce 100%);
+            box-shadow: 0 28px 60px -22px rgba(26,54,93,0.72), 0 0 0 7px rgba(190,227,248,0.16);
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+          }
+          .eco-core:hover { transform: translate(-50%,-50%) translateY(-3px); box-shadow: 0 34px 72px -20px rgba(26,54,93,0.82), 0 0 0 9px rgba(190,227,248,0.22); }
+          .eco-core-icon { width: 44px; height: 44px; border-radius: 13px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.3); }
+          .eco-core-icon svg { width: 24px; height: 24px; color: #fff; stroke-width: 1.9; }
+          .eco-core-name { font-size: 1.12em; font-weight: 800; letter-spacing: -0.01em; line-height: 1; }
+          .eco-core-sub { font-size: 0.58em; color: rgba(226,238,251,0.84); line-height: 1.3; }
+          .eco-core-live { display: inline-flex; align-items: center; gap: 6px; font-size: 0.54em; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #d8fff0; padding: 3px 11px; border-radius: 100px; background: rgba(110,231,183,0.18); border: 1px solid rgba(110,231,183,0.42); }
+          .eco-livedot { width: 6px; height: 6px; border-radius: 50%; background: #6ee7b7; flex: 0 0 auto; }
+          .eco-slide.present .eco-livedot { animation: ecoLive 2.2s ease-out infinite; }
+          @keyframes ecoLive { 0% { box-shadow: 0 0 0 0 rgba(110,231,183,0.6); } 70% { box-shadow: 0 0 0 7px rgba(110,231,183,0); } 100% { box-shadow: 0 0 0 0 rgba(110,231,183,0); } }
+          .eco-core .eco-pb { position: absolute; top: 12px; right: 12px; bottom: auto; width: 22px; height: 22px; background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.3); }
+          .eco-core .eco-pb svg { width: 9px; height: 9px; }
+
+          /* Product nodes */
+          .eco-node {
+            position: absolute; transform: translate(-50%,-50%); z-index: 3;
+            width: 174px; padding: 11px 13px; border-radius: 15px; cursor: pointer; text-align: left;
+            display: flex; align-items: flex-start; gap: 10px; font-family: inherit;
+            background: #fff; border: 1px solid var(--emr-border); color: var(--emr-text-body);
+            box-shadow: 0 12px 26px -18px rgba(26,54,93,0.4);
+            transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+          }
+          .eco-node:hover { transform: translate(-50%,-50%) translateY(-3px); box-shadow: 0 20px 40px -16px rgba(26,54,93,0.5); border-color: var(--emr-accent); }
+          .eco-ico { position: relative; flex: 0 0 auto; width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; background: var(--emr-bg-tint); border: 1px solid #dceaf9; color: var(--emr-accent); }
+          .eco-ico svg { width: 18px; height: 18px; stroke-width: 1.85; }
+          .eco-pb { position: absolute; right: -5px; bottom: -5px; width: 16px; height: 16px; border-radius: 50%; background: var(--emr-accent); display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(26,54,93,0.42); }
+          .eco-pb svg { width: 8px; height: 8px; fill: #fff; stroke: none; }
+          .eco-body { display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1; }
+          .eco-name { font-size: 0.82em; font-weight: 800; color: var(--emr-primary); line-height: 1.06; }
+          .eco-pre { display: block; font-size: 0.5em; font-weight: 800; letter-spacing: 0.13em; text-transform: uppercase; color: var(--emr-text-light); margin-bottom: 1px; }
+          .eco-tag { font-size: 0.6em; color: var(--emr-text-muted); line-height: 1.2; }
+          .eco-pill { align-self: flex-start; margin-top: 4px; display: inline-flex; align-items: center; gap: 5px; font-size: 0.5em; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 8px; border-radius: 100px; }
+          .eco-pilldot { width: 5px; height: 5px; border-radius: 50%; flex: 0 0 auto; }
+          .eco-pill--live { background: rgba(56,161,105,0.12); color: #2f855a; } .eco-pill--live .eco-pilldot { background: #38a169; }
+          .eco-pill--mvp { background: rgba(49,130,206,0.12); color: #2b6cb0; } .eco-pill--mvp .eco-pilldot { background: #3182ce; }
+          .eco-pill--build { background: rgba(221,107,32,0.12); color: #c05621; } .eco-pill--build .eco-pilldot { background: #dd6b20; }
+
+          /* Node positions (centers, %) — must match the SVG line endpoints */
+          .eco-p1 { left: 50%; top: 13%; } .eco-p2 { left: 18%; top: 27%; } .eco-p3 { left: 82%; top: 27%; }
+          .eco-p4 { left: 10%; top: 60%; } .eco-p5 { left: 90%; top: 60%; }
+          .eco-p6 { left: 28%; top: 88%; } .eco-p7 { left: 72%; top: 88%; }
+
+          /* Entrance */
+          .eco-core, .eco-node, .eco-links, .eco-core-ring { opacity: 0; }
+          .eco-slide.present .eco-links { opacity: 1; transition: opacity 0.7s ease 0.15s; }
+          .eco-slide.present .eco-core { opacity: 1; transition: opacity 0.5s ease 0.1s; }
+          .eco-slide.present .eco-core-ring { opacity: 0.55; transition: opacity 0.8s ease 0.2s; }
+          .eco-slide.present .eco-node { opacity: 1; transition: opacity 0.5s ease; }
+          .eco-slide.present .eco-p1 { transition-delay: 0.28s; } .eco-slide.present .eco-p2 { transition-delay: 0.36s; } .eco-slide.present .eco-p3 { transition-delay: 0.44s; }
+          .eco-slide.present .eco-p4 { transition-delay: 0.52s; } .eco-slide.present .eco-p5 { transition-delay: 0.60s; }
+          .eco-slide.present .eco-p6 { transition-delay: 0.68s; } .eco-slide.present .eco-p7 { transition-delay: 0.76s; }
+
+          /* ── Video demo modal (markup lives just before the scripts) ── */
+          .eco-modal {
+            display: none; position: fixed; inset: 0; z-index: 3200;
+            align-items: center; justify-content: center; padding: 4vh 4vw;
+            background: rgba(4,9,20,0.8); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+          }
+          .eco-modal.open { display: flex; animation: caseFadeIn 0.25s ease both; }
+          .eco-modal-card {
+            position: relative; width: 100%; max-width: min(940px, 94vw);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Noto Sans Georgian', sans-serif;
+            padding: 28px 30px 30px; border-radius: 22px; color: #eaf1fb;
+            background: linear-gradient(160deg, #0c1426 0%, #111d36 60%, #16233f 100%);
+            border: 1px solid rgba(190,227,248,0.18); box-shadow: 0 40px 100px -30px rgba(0,0,0,0.7);
+            animation: caseRise 0.3s cubic-bezier(0.2,0.9,0.2,1) both;
+          }
+          .eco-modal-close {
+            position: absolute; top: 15px; right: 17px; width: 42px; height: 42px; border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.16); background: rgba(255,255,255,0.06);
+            color: #cfe0f5; font-size: 26px; line-height: 1; cursor: pointer; z-index: 2;
+            display: flex; align-items: center; justify-content: center; transition: background 0.15s ease, color 0.15s ease;
+          }
+          .eco-modal-close:hover { background: rgba(255,255,255,0.14); color: #fff; }
+          .eco-modal-eyebrow { font-size: 12.5px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #7dd3fc; margin-bottom: 8px; }
+          .eco-modal-title { font-size: 27px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; color: #fff; margin: 0 0 17px; }
+          .eco-modal-stage { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 14px; overflow: hidden; background: #0a1220; border: 1px solid rgba(190,227,248,0.14); }
+          .eco-modal-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #0a1220; display: none; }
+          .eco-modal-frame { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: none; background: #0a1220; }
+          .eco-modal.is-frame .eco-modal-card { max-width: min(1180px, 95vw); }
+          .eco-modal.is-frame .eco-modal-stage { aspect-ratio: auto; height: min(66vh, 640px); }
+          .eco-modal-soon { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px; text-align: center; padding: 24px; }
+          .eco-soon-ico { width: 50px; height: 50px; border-radius: 14px; background: rgba(125,211,252,0.12); border: 1px solid rgba(125,211,252,0.28); display: flex; align-items: center; justify-content: center; color: #7dd3fc; }
+          .eco-soon-ico svg { width: 25px; height: 25px; }
+          .eco-soon-title { font-size: 17px; font-weight: 700; color: #eaf1fb; }
+          .eco-soon-sub { font-size: 13.5px; color: rgba(190,210,235,0.7); max-width: 360px; line-height: 1.5; }
+
+          /* ── Mobile: collapse the orbital into a stacked list ── */
+          @media (max-width: 768px) {
+            .eco-stats { flex-wrap: wrap; }
+            .eco-stat { flex: 1 0 30%; padding: 10px 8px; }
+            .eco-stat-num { font-size: 1.4em; }
+            .eco-stage { min-height: 0; display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
+            .eco-links, .eco-core-ring { display: none; }
+            .eco-core, .eco-node { position: static; left: auto; top: auto; transform: none !important; width: 100%; opacity: 1 !important; }
+            .eco-core { flex-direction: row; justify-content: flex-start; text-align: left; gap: 12px; padding: 14px 16px; }
+            .eco-core-live { margin-left: auto; }
+            .eco-core:hover, .eco-node:hover { transform: translateY(-2px) !important; }
+          }
+
+          /* ── Georgian — tighter sizing ── */
+          body.lang-active-ka .eco-stat-num { font-size: 1.42em; }
+          body.lang-active-ka .eco-stat-label { font-size: 0.5em; }
+          body.lang-active-ka .eco-core-name { font-size: 1.0em; }
+          body.lang-active-ka .eco-core-sub { font-size: 0.52em; }
+          body.lang-active-ka .eco-name { font-size: 0.72em; }
+          body.lang-active-ka .eco-pre { font-size: 0.46em; }
+          body.lang-active-ka .eco-tag { font-size: 0.54em; }
+          body.lang-active-ka .eco-pill { font-size: 0.44em; }
+          body.lang-active-ka .eco-modal-title { font-size: 23px; }
+
+          @media print {
+            .eco-core, .eco-node, .eco-links, .eco-core-ring { opacity: 1 !important; }
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .eco-modal.open, .eco-modal-card { animation: none; }
+            .eco-slide.present .eco-core, .eco-slide.present .eco-node, .eco-slide.present .eco-links, .eco-slide.present .eco-core-ring, .eco-slide.present .eco-livedot { transition: none; animation: none; }
+          }
+        </style>
+        <div class="slide-inner">
+          <div class="slide-label"><span class="label-num">04</span><span class="lang-en">THE PLATFORM</span><span class="lang-ka" style="display:none;">პლატფორმა</span></div>
+          <h2 class="headline-big"><span class="lang-en">One core. <em>Many products.</em></span><span class="lang-ka" style="display:none;">ერთი ბირთვი. <em>ბევრი პროდუქტი.</em></span></h2>
+          <p class="headline-sub"><span class="lang-en">What looks like an EMR is really a platform — eight products on one FHIR-native core. <strong>Tap any product to watch it run.</strong></span><span class="lang-ka" style="display:none;">ის, რაც EMR-ად გამოიყურება, სინამდვილეში პლატფორმაა — რვა პროდუქტი ერთ FHIR-ბირთვზე. <strong>დააჭირეთ ნებისმიერ პროდუქტს, რომ ნახოთ ის მოქმედებაში.</strong></span></p>
+
+          <div class="eco-stats">
+            <div class="eco-stat"><span class="eco-stat-num">3.6M+</span><span class="eco-stat-label"><span class="lang-en">lines of code</span><span class="lang-ka" style="display:none;">ხაზი კოდი</span></span></div>
+            <div class="eco-stat"><span class="eco-stat-num">₾180K+</span><span class="eco-stat-label"><span class="lang-en">invested to date</span><span class="lang-ka" style="display:none;">ინვესტირებული</span></span></div>
+            <div class="eco-stat"><span class="eco-stat-num">8</span><span class="eco-stat-label"><span class="lang-en">products · one core</span><span class="lang-ka" style="display:none;">პროდუქტი · ერთი ბირთვი</span></span></div>
+          </div>
+
+          <div class="eco-stage">
+            <span class="eco-core-ring r1" aria-hidden="true"></span>
+            <span class="eco-core-ring r2" aria-hidden="true"></span>
+            <span class="eco-core-ring r3" aria-hidden="true"></span>
+            <svg class="eco-links" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <radialGradient id="ecoGrad" gradientUnits="userSpaceOnUse" cx="50" cy="50" r="52">
+                  <stop offset="0" stop-color="#3182ce" stop-opacity="0.6"/>
+                  <stop offset="1" stop-color="#bee3f8" stop-opacity="0.25"/>
+                </radialGradient>
+              </defs>
+              <line x1="50" y1="50" x2="50" y2="13"/>
+              <line x1="50" y1="50" x2="18" y2="27"/>
+              <line x1="50" y1="50" x2="82" y2="27"/>
+              <line x1="50" y1="50" x2="10" y2="60"/>
+              <line x1="50" y1="50" x2="90" y2="60"/>
+              <line x1="50" y1="50" x2="28" y2="88"/>
+              <line x1="50" y1="50" x2="72" y2="88"/>
+            </svg>
+
+            <!-- CORE · MediMind OS -->
+            <button type="button" class="eco-core" data-no-advance aria-haspopup="dialog" aria-label="Open the MediMind OS live walkthrough" data-iframe="/walkthrough?preview=1" data-title="MediMind OS" onclick="openProductDemo(this)">
+              <span class="eco-pb" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+              <span class="eco-core-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5"/></svg></span>
+              <span class="eco-core-name">MediMind OS</span>
+              <span class="eco-core-sub"><span class="lang-en">The hospital operating system</span><span class="lang-ka" style="display:none;">კლინიკის ოპერაციული სისტემა</span></span>
+              <span class="eco-core-live"><span class="eco-livedot"></span><span class="lang-en">Live</span><span class="lang-ka" style="display:none;">მუშაობს</span></span>
+            </button>
+
+            <!-- p1 · Connect -->
+            <button type="button" class="eco-node eco-p1" data-no-advance aria-haspopup="dialog" aria-label="Watch the MediMind Connect demo" data-video="/deck-assets/product-videos/connect.mp4" data-title="MediMind Connect" onclick="openProductDemo(this)">
+              <span class="eco-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg><span class="eco-pb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></span>
+              <span class="eco-body"><span class="eco-name"><span class="eco-pre">MediMind</span>Connect</span><span class="eco-tag"><span class="lang-en">Telemedicine</span><span class="lang-ka" style="display:none;">ტელემედიცინა</span></span><span class="eco-pill eco-pill--live"><span class="eco-pilldot"></span><span class="lang-en">Live</span><span class="lang-ka" style="display:none;">მუშაობს</span></span></span>
+            </button>
+
+            <!-- p2 · PACS -->
+            <button type="button" class="eco-node eco-p2" data-no-advance aria-haspopup="dialog" aria-label="Watch the MediMind PACS demo" data-video="/deck-assets/product-videos/pacs.mp4" data-title="MediMind PACS" onclick="openProductDemo(this)">
+              <span class="eco-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M3 13l4-4 3 3 4-5 4 5"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg><span class="eco-pb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></span>
+              <span class="eco-body"><span class="eco-name"><span class="eco-pre">MediMind</span>PACS</span><span class="eco-tag"><span class="lang-en">DICOM imaging</span><span class="lang-ka" style="display:none;">DICOM გამოსახულება</span></span><span class="eco-pill eco-pill--live"><span class="eco-pilldot"></span><span class="lang-en">Live</span><span class="lang-ka" style="display:none;">მუშაობს</span></span></span>
+            </button>
+
+            <!-- p3 · Lab -->
+            <button type="button" class="eco-node eco-p3" data-no-advance aria-haspopup="dialog" aria-label="Watch the MediMind Lab demo" data-video="/deck-assets/product-videos/lab.mp4" data-title="MediMind Lab" onclick="openProductDemo(this)">
+              <span class="eco-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"/><path d="M10 3v6l-4.6 8.6A2 2 0 0 0 7.2 21h9.6a2 2 0 0 0 1.8-3.4L14 9V3"/><line x1="8" y1="14.5" x2="16" y2="14.5"/></svg><span class="eco-pb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></span>
+              <span class="eco-body"><span class="eco-name"><span class="eco-pre">MediMind</span>Lab</span><span class="eco-tag"><span class="lang-en">Laboratory</span><span class="lang-ka" style="display:none;">ლაბორატორია</span></span><span class="eco-pill eco-pill--live"><span class="eco-pilldot"></span><span class="lang-en">Live</span><span class="lang-ka" style="display:none;">მუშაობს</span></span></span>
+            </button>
+
+            <!-- p4 · LiverRa -->
+            <button type="button" class="eco-node eco-p4" data-no-advance aria-haspopup="dialog" aria-label="Watch the LiverRa demo" data-video="/deck-assets/product-videos/liverra.mp4" data-title="LiverRa" onclick="openProductDemo(this)">
+              <span class="eco-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5S5 9 5 14a7 7 0 0 0 14 0c0-5-7-11.5-7-11.5z"/></svg><span class="eco-pb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></span>
+              <span class="eco-body"><span class="eco-name">LiverRa</span><span class="eco-tag"><span class="lang-en">Liver surgical AI</span><span class="lang-ka" style="display:none;">ღვიძლის ქირურგიული AI</span></span><span class="eco-pill eco-pill--mvp"><span class="eco-pilldot"></span>MVP</span></span>
+            </button>
+
+            <!-- p5 · Structural -->
+            <button type="button" class="eco-node eco-p5" data-no-advance aria-haspopup="dialog" aria-label="Watch the MediMind Structural demo" data-video="/deck-assets/product-videos/structural.mp4" data-title="MediMind Structural" onclick="openProductDemo(this)">
+              <span class="eco-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg><span class="eco-pb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></span>
+              <span class="eco-body"><span class="eco-name"><span class="eco-pre">MediMind</span>Structural</span><span class="eco-tag"><span class="lang-en">Structural heart</span><span class="lang-ka" style="display:none;">სტრუქტურული გული</span></span><span class="eco-pill eco-pill--build"><span class="eco-pilldot"></span><span class="lang-en">Building</span><span class="lang-ka" style="display:none;">მუშავდება</span></span></span>
+            </button>
+
+            <!-- p6 · Patient Portal -->
+            <button type="button" class="eco-node eco-p6" data-no-advance aria-haspopup="dialog" aria-label="Watch the MediMind Patient Portal demo" data-video="/deck-assets/product-videos/portal.mp4" data-title="MediMind Patient Portal" onclick="openProductDemo(this)">
+              <span class="eco-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><line x1="10" y1="18.5" x2="14" y2="18.5"/></svg><span class="eco-pb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></span>
+              <span class="eco-body"><span class="eco-name"><span class="eco-pre">MediMind</span><span class="lang-en">Patient Portal</span><span class="lang-ka" style="display:none;">პაციენტის პორტალი</span></span><span class="eco-tag"><span class="lang-en">Patient app</span><span class="lang-ka" style="display:none;">პაციენტის აპი</span></span><span class="eco-pill eco-pill--build"><span class="eco-pilldot"></span><span class="lang-en">Building</span><span class="lang-ka" style="display:none;">მუშავდება</span></span></span>
+            </button>
+
+            <!-- p7 · Angio -->
+            <button type="button" class="eco-node eco-p7" data-no-advance aria-haspopup="dialog" aria-label="Watch the MediMind Angio demo" data-video="/deck-assets/product-videos/angio.mp4" data-title="MediMind Angio" onclick="openProductDemo(this)">
+              <span class="eco-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><line x1="8.1" y1="13.3" x2="15.9" y2="17.7"/><line x1="15.9" y1="6.3" x2="8.1" y2="10.7"/></svg><span class="eco-pb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></span>
+              <span class="eco-body"><span class="eco-name"><span class="eco-pre">MediMind</span>Angio</span><span class="eco-tag"><span class="lang-en">Vascular reporting</span><span class="lang-ka" style="display:none;">ვასკულარული დიაგნოსტიკა</span></span><span class="eco-pill eco-pill--mvp"><span class="eco-pilldot"></span>MVP</span></span>
+            </button>
+          </div>
+        </div>
+        <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
+        <aside class="notes">
+          <span class="lang-en">This is the answer to "should we just build the EMR ourselves." What looks like one product is really eight, all on a single FHIR-native core: the OS that runs the hospital, plus Connect for telemedicine, PACS for imaging, the lab, and the patient portal — and three specialist tools: LiverRa for liver surgery, Angio for vascular, and Structural for TAVI and structural-heart planning. Some are live in daily use, some are MVPs, some are in active build — but all of it already exists, on one core, millions of lines deep. You are not buying an EMR. You are partnering with a platform you could never staff to rebuild. Tap any product to see it run.</span><span class="lang-ka" style="display:none;">ეს არის პასუხი კითხვაზე — „იქნებ თვითონ ავაშენოთ EMR." ის, რაც ერთ პროდუქტად გამოიყურება, სინამდვილეში რვა პროდუქტია, ყველა ერთ FHIR-ბირთვზე: OS, რომელიც კლინიკას მართავს, პლუს Connect ტელემედიცინისთვის, PACS გამოსახულებისთვის, ლაბორატორია და პაციენტის პორტალი — და სამი სპეციალიზებული ხელსაწყო: LiverRa ღვიძლის ქირურგიისთვის, Angio ვასკულარული დიაგნოსტიკისთვის და Structural — TAVI-სა და სტრუქტურული გულის დაგეგმვისთვის. ნაწილი უკვე ყოველდღიურ მოხმარებაშია, ნაწილი MVP-ია, ნაწილი აქტიურად მუშავდება — მაგრამ ეს ყველაფერი უკვე არსებობს, ერთ ბირთვზე, მილიონობით ხაზის სიღრმეში. თქვენ არ ყიდულობთ EMR-ს — თქვენ ხდებით პლატფორმის პარტნიორი, რომლის ხელახლა ასაშენებლადაც ვერასოდეს დააკომპლექტებდით გუნდს. დააჭირეთ ნებისმიერ პროდუქტს, რომ ნახოთ ის მოქმედებაში.</span>
+        </aside>
+      </section>
+
       <!-- ═══════════════════════════════════════════════
            SLIDE 2 · LEGACY EMR IS A TICKING BOMB (loss-framing, dark/red)
            ═══════════════════════════════════════════════ -->
       <section class="hc-dark hc-liability">
         <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">04</span><span class="lang-en">THE LIABILITY</span><span class="lang-ka" style="display:none;">რისკი</span></div>
+          <div class="slide-label"><span class="label-num">05</span><span class="lang-en">THE LIABILITY</span><span class="lang-ka" style="display:none;">რისკი</span></div>
           <span class="hc-redbar" aria-hidden="true"></span>
           <h2 class="headline-big" style="max-width: 1040px;"><span class="lang-en">Across Georgia and the region, hospitals sit on EMRs a decade behind the world. A <em>liability</em> no one has been billed for yet.</span><span class="lang-ka" style="display:none;">თქვენი ძველი EMR არის <em>რისკი</em>, რომლის ფასიც ჯერ არ გადაგიხდიათ.</span></h2>
 
@@ -8686,7 +8959,7 @@
            ═══════════════════════════════════════════════ -->
       <section class="gw-slide gw-switch">
         <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">05</span><span class="lang-en">THE SWITCH</span><span class="lang-ka" style="display:none;">გადასვლა</span></div>
+          <div class="slide-label"><span class="label-num">06</span><span class="lang-en">THE SWITCH</span><span class="lang-ka" style="display:none;">გადასვლა</span></div>
           <h2 class="headline-big"><span class="lang-en">We make it work, validate it, then switch you over in <em>a single day.</em> No downtime.</span><span class="lang-ka" style="display:none;">ძველი სისტემიდან ჩვენზე გადმოსვლა <em>ერთ დღეში.</em> მონაცემებზე ჩვენ ვზრუნავთ.</span></h2>
           <p class="headline-sub"><span class="lang-en">The only thing keeping you on a broken system is the fear of switching, so we own the entire move and prove it works before you commit.</span><span class="lang-ka" style="display:none;">ერთადერთი მიზეზი, რის გამოც რჩებით სისტემაზე, რომელიც იცით, რომ გაფუჭებულია — გადასვლის შიშია. ამიტომ ეს შიში ჩვენ მოვხსენით.</span></p>
 
@@ -8812,7 +9085,7 @@
           body.lang-active-ka .invl-perk { font-size:0.64em; }
         </style>
         <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">06</span><span class="lang-en">THE INVITATION</span><span class="lang-ka" style="display:none;">მოწვევა</span></div>
+          <div class="slide-label"><span class="label-num">07</span><span class="lang-en">THE INVITATION</span><span class="lang-ka" style="display:none;">მოწვევა</span></div>
 
           <h2 class="headline-big"><span class="lang-en">More than a fix. <em>A stake in what comes next.</em></span><span class="lang-ka" style="display:none;">უფრო მეტი, ვიდრე გადაწყვეტა. <em>წილი იმაში, რაც შემდეგ მოვა.</em></span></h2>
           <p class="headline-sub"><span class="lang-en">We're inviting you to invest in us. Not just to replace a failing system, but to own a piece of the company replacing it everywhere.</span><span class="lang-ka" style="display:none;">გახდით ჩვენი პარტნიორი და თქვენ უბრალოდ კი არ ცვლით მოძველებულ სისტემას — თქვენ ფლობთ წილს კომპანიაში, რომელიც მას ყველგან ცვლის.</span></p>
@@ -8858,7 +9131,7 @@
            ═══════════════════════════════════════════════ -->
       <section class="bm-slide bm-offer">
         <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">07</span><span class="lang-en">THE OFFER</span><span class="lang-ka" style="display:none;">შეთავაზება</span></div>
+          <div class="slide-label"><span class="label-num">08</span><span class="lang-en">THE OFFER</span><span class="lang-ka" style="display:none;">შეთავაზება</span></div>
           <h2 class="headline-big"><span class="lang-en">Today you pay for EMR, PACS &amp; lab. <em>With us, all three are free</em>, and better.</span><span class="lang-ka" style="display:none;">დღეს იხდით EMR-ში, PACS-სა და ლაბორატორიაში. <em>ჩვენთან სამივე უფასოა</em> — და უკეთესი.</span></h2>
           <p class="headline-sub"><span class="lang-en">A modern replacement (Vabako + Radium + labs) runs about GEL 10,000/month, and even that stack is fundamentally outdated. Ours is free, gold-standard, not stripped-down.</span><span class="lang-ka" style="display:none;">თანამედროვე ჩანაცვლება ~GEL 10,000/თვეში ჯდება. ჩვენი უფასოა — ოქროს სტანდარტი, და არა შეზღუდული ვერსია.</span></p>
 
@@ -8892,7 +9165,7 @@
             </div>
           </div>
 
-          <div class="bm-arr" style="margin-top: 26px; opacity: 1; transform: none; transition: none;">
+          <div class="bm-arr bm-proof-clickable" style="margin-top: 26px; opacity: 1; transform: none; transition: transform 0.18s ease, box-shadow 0.18s ease;" data-no-advance role="button" tabindex="0" aria-haspopup="dialog" aria-label="Watch the MediMind Structural (TAVI) demo" data-video="/deck-assets/product-videos/structural.mp4" data-title="MediMind Structural" onclick="openProductDemo(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProductDemo(this);}">
             <div class="bm-proof-price">
               <span class="bm-proof-was">$6,000<span class="bm-proof-per">/yr</span></span>
               <span class="bm-proof-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
@@ -8902,6 +9175,10 @@
               <div class="bm-proof-tag"><span class="lang-en">Proof, not a promise</span><span class="lang-ka" style="display:none;">დადასტურება, და არა დაპირება</span></div>
               <p><span class="lang-en">A 3mensio-class TAVI tool, built in-house.</span><span class="lang-ka" style="display:none;">3mensio-ს კლასის TAVI ხელსაწყო — ჩვენით შექმნილი.</span></p>
             </div>
+            <span class="bm-proof-watch">
+              <span class="lang-en">Watch it run</span><span class="lang-ka" style="display:none;">ნახეთ მოქმედებაში</span>
+              <span class="bm-proof-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            </span>
           </div>
         </div>
         <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
@@ -8915,7 +9192,7 @@
            ═══════════════════════════════════════════════ -->
       <section>
         <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">08</span><span class="lang-en">THE PARTNER DEAL</span><span class="lang-ka" style="display:none;">პარტნიორობის გარიგება</span></div>
+          <div class="slide-label"><span class="label-num">09</span><span class="lang-en">THE PARTNER DEAL</span><span class="lang-ka" style="display:none;">პარტნიორობის გარიგება</span></div>
           <h2 class="headline-big"><span class="lang-en">Same check as an angel. <em>A partner's deal.</em></span><span class="lang-ka" style="display:none;">იგივე ინვესტიცია, რაც ანგელ-ინვესტორს. <em>პარტნიორის გარიგება.</em></span></h2>
           <p class="headline-sub"><span class="lang-en">We ask for half the round, on your terms. You get far more than equity.</span><span class="lang-ka" style="display:none;">ჩვენ ვითხოვთ რაუნდის ნახევარს — თქვენივე პირობებით. თქვენ იღებთ ბევრად მეტს, ვიდრე უბრალოდ წილს.</span></p>
 
@@ -8951,7 +9228,7 @@
            ═══════════════════════════════════════════════ -->
       <section class="bm-slide bm-wins">
         <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">09</span><span class="lang-en">WHY THIS WINS</span><span class="lang-ka" style="display:none;">რატომ არის ეს მომგებიანი</span></div>
+          <div class="slide-label"><span class="label-num">10</span><span class="lang-en">WHY THIS WINS</span><span class="lang-ka" style="display:none;">რატომ არის ეს მომგებიანი</span></div>
           <h2 class="headline-big"><span class="lang-en">The math only runs <em>one way.</em></span><span class="lang-ka" style="display:none;">ციფრები მხოლოდ <em>ერთ დასკვნამდე მიდის.</em></span></h2>
           <p class="headline-sub"><span class="lang-en">Your $100K pays for itself in under 4 years. The rest is pure upside.</span><span class="lang-ka" style="display:none;">თქვენი $100K თავს ინაზღაურებს 4 წელზე ნაკლებში. დანარჩენი სუფთა მოგებაა.</span></p>
 
@@ -9009,7 +9286,7 @@
            ═══════════════════════════════════════════════ -->
       <section class="hc-dark hc-aibrain">
         <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">10</span><span class="lang-en">MORE THAN AN EMR</span><span class="lang-ka" style="display:none;">უფრო მეტი, ვიდრე EMR</span></div>
+          <div class="slide-label"><span class="label-num">11</span><span class="lang-en">MORE THAN AN EMR</span><span class="lang-ka" style="display:none;">უფრო მეტი, ვიდრე EMR</span></div>
           <h2 class="headline-big"><span class="lang-en">An EMR fixes today's problems. An <em>AI brain</em> unlocks the value you can't reach yet.</span><span class="lang-ka" style="display:none;">თქვენ არ ყიდულობთ EMR-ს. თქვენ აყენებთ <em>AI ტვინს</em> კლინიკისთვის.</span></h2>
           <p class="headline-sub"><span class="lang-en">It reads every patient and every workflow in real time, optimizing two things humans can't, at scale:</span><span class="lang-ka" style="display:none;">ის რეალურ დროში კითხულობს ყველა პაციენტსა და ყველა პროცესს — და ოპტიმიზებას უკეთებს ორ რამეს, რასაც ადამიანი ვერ ახერხებს, მასშტაბურად:</span></p>
 
@@ -9063,7 +9340,7 @@
            ═══════════════════════════════════════════════ -->
       <section class="hc-dark hc-close">
         <div class="slide-inner center">
-          <div class="slide-label" style="align-self:flex-start;"><span class="label-num">11</span><span class="lang-en">THE PARTNERSHIP</span><span class="lang-ka" style="display:none;">პარტნიორობა</span></div>
+          <div class="slide-label" style="align-self:flex-start;"><span class="label-num">12</span><span class="lang-en">THE PARTNERSHIP</span><span class="lang-ka" style="display:none;">პარტნიორობა</span></div>
           <h2 class="headline-big" style="text-align:center; max-width: 1040px;"><span class="lang-en">You already run first-in-human device trials. <em>Lead in software too.</em></span><span class="lang-ka" style="display:none;">თქვენ უკვე ატარებთ პირველად კლინიკურ კვლევებს. <em>იყავით ლიდერი პროგრამაშიც.</em></span></h2>
 
           <div class="hc-close-cta">
@@ -9453,6 +9730,24 @@
     </div>
   </div>
 
+  <!-- Product-demo video modal — shared by the platform slide's product cards -->
+  <div class="eco-modal" id="eco-modal" role="dialog" aria-modal="true" aria-labelledby="eco-modal-title">
+    <div class="eco-modal-card" data-no-advance>
+      <button class="eco-modal-close" type="button" aria-label="Close" onclick="closeProductDemo()">×</button>
+      <div class="eco-modal-eyebrow"><span class="lang-en">Product demo</span><span class="lang-ka" style="display:none;">პროდუქტის დემო</span></div>
+      <h3 class="eco-modal-title" id="eco-modal-title"></h3>
+      <div class="eco-modal-stage">
+        <video id="eco-modal-video" class="eco-modal-video" controls playsinline muted preload="none"></video>
+        <iframe id="eco-modal-frame" class="eco-modal-frame" title="MediMind live walkthrough" loading="lazy" allow="autoplay; fullscreen"></iframe>
+        <div class="eco-modal-soon" id="eco-modal-soon">
+          <span class="eco-soon-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16"/></svg></span>
+          <div class="eco-soon-title"><span class="lang-en">Demo recording coming soon</span><span class="lang-ka" style="display:none;">დემო ჩანაწერი მალე დაემატება</span></div>
+          <div class="eco-soon-sub"><span class="lang-en">A short walkthrough of this product will play here.</span><span class="lang-ka" style="display:none;">აქ ჩაირთვება ამ პროდუქტის მოკლე მიმოხილვა.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
   <script>
     const __isMobileDeck = window.matchMedia('(max-width: 768px)').matches;
@@ -9785,6 +10080,64 @@
       modal.addEventListener('click', function (e) { if (e.target === modal) closeBizModal(); });
       document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && modal.classList.contains('open')) { e.stopPropagation(); closeBizModal(); }
+      }, true);
+    })();
+
+    // Product-demo modal — click any product card on the platform slide to play its short demo.
+    // Videos live at /deck-assets/product-videos/<slug>.mp4. Until a file exists, a graceful
+    // "coming soon" placeholder shows instead of a broken player (driven by the <video> error event).
+    (function productDemo() {
+      var modal = document.getElementById('eco-modal');
+      if (!modal) return;
+      var video = document.getElementById('eco-modal-video');
+      var soon  = document.getElementById('eco-modal-soon');
+      var title = document.getElementById('eco-modal-title');
+      var frame = document.getElementById('eco-modal-frame');
+
+      function showSoon()  { frame.style.display = 'none'; video.style.display = 'none'; soon.style.display = 'flex'; }
+      function showVideo() { frame.style.display = 'none'; soon.style.display = 'none'; video.style.display = 'block'; }
+      function showFrame() { video.style.display = 'none'; soon.style.display = 'none'; frame.style.display = 'block'; }
+
+      video.addEventListener('error', showSoon);
+      video.addEventListener('loadeddata', function () {
+        showVideo();
+        var p = video.play();
+        if (p && p.catch) p.catch(function () {});
+      });
+
+      window.openProductDemo = function (btn) {
+        title.textContent = btn.getAttribute('data-title') || '';
+        var frameSrc = btn.getAttribute('data-iframe');
+        if (frameSrc) {                 // walkthrough / embedded-page mode (e.g. the OS core)
+          try { video.pause(); } catch (e) {}
+          video.removeAttribute('src');
+          frame.src = frameSrc;
+          showFrame();
+          modal.classList.add('open', 'is-frame');
+        } else {                        // standard muted-video demo
+          modal.classList.remove('is-frame');
+          frame.removeAttribute('src');
+          showSoon();                   // default to the placeholder until the file proves it can play
+          video.src = btn.getAttribute('data-video') || '';
+          video.muted = true;           // demos open muted; viewer can unmute via the controls
+          try { video.load(); } catch (e) {}
+          modal.classList.add('open');
+        }
+        document.body.style.overflow = 'hidden';
+      };
+      window.closeProductDemo = function () {
+        modal.classList.remove('open', 'is-frame');
+        document.body.style.overflow = '';
+        try { video.pause(); } catch (e) {}
+        video.removeAttribute('src');
+        try { video.load(); } catch (e) {}
+        frame.removeAttribute('src');   // stop the walkthrough
+        showSoon();
+      };
+
+      modal.addEventListener('click', function (e) { if (e.target === modal) closeProductDemo(); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.classList.contains('open')) { e.stopPropagation(); closeProductDemo(); }
       }, true);
     })();
   </script>

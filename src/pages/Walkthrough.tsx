@@ -58,9 +58,12 @@ const Player: React.FC = () => {
     const v = typeof window !== "undefined" ? localStorage.getItem("mm_wt_volume") : null;
     return v !== null ? Number(v) : 1;
   });
-  const [muted, setMuted] = useState(
-    () => typeof window !== "undefined" && localStorage.getItem("mm_wt_muted") === "1",
-  );
+  const [muted, setMuted] = useState(() => {
+    if (typeof window === "undefined") return false;
+    // ?muted=1 (used by the pitch-deck appendix) starts the video muted by default.
+    if (new URLSearchParams(window.location.search).get("muted") === "1") return true;
+    return localStorage.getItem("mm_wt_muted") === "1";
+  });
   const [lang, setLang] = useState<"en" | "ka">(() =>
     typeof window !== "undefined" &&
     new URLSearchParams(window.location.search).get("lang") === "ka"

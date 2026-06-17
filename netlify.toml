@@ -31,6 +31,13 @@
     Cache-Control = "no-store, must-revalidate"
     X-Robots-Tag  = "noindex, nofollow"
 
+# ─── Open presentation deck (pitch.html) — never cache, never index ───
+[[headers]]
+  for = "/pitch.html"
+  [headers.values]
+    Cache-Control = "no-store, must-revalidate"
+    X-Robots-Tag  = "noindex, nofollow"
+
 # ─── Briefing & admin routes are private — never indexed ───
 [[headers]]
   for = "/briefing/*"

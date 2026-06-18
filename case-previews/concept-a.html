@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Case A — The Misdirection</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1a365d; --secondary:#2b6cb0; --accent:#3182ce; --light-acc:#bee3f8;
+    --tint:#f0f7ff; --body:#334155; --muted:#64748b; --light:#94a3b8;
+    --hair:#e2e8f0; --white:#fff; --subtle:#f8fafc;
+    --warm:#c75d44; --warm-deep:#a8472f; --warm-bg:rgba(199,93,68,.10); --warm-ring:rgba(199,93,68,.30);
+    --grad:linear-gradient(135deg,#1a365d,#2b6cb0 50%,#3182ce);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{height:100%;background:#e9edf2;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  body{display:flex;align-items:center;justify-content:center;min-height:100vh;padding:24px;}
+  .slide{position:relative;width:1280px;height:720px;flex:none;background:var(--white);border-radius:16px;box-shadow:0 24px 70px -24px rgba(26,54,93,.28),0 2px 8px rgba(26,54,93,.05);overflow:hidden;color:var(--body);}
+  .slide::before{content:'';position:absolute;top:-180px;right:-160px;width:560px;height:560px;background:radial-gradient(circle at center,rgba(190,227,248,.30),rgba(190,227,248,0) 70%);pointer-events:none;}
+  .canvas{position:relative;z-index:1;height:100%;padding:40px 64px 32px;display:flex;flex-direction:column;}
+  .fade{opacity:0;transform:translateY(10px);animation:rise .8s cubic-bezier(.22,.61,.36,1) forwards;}
+  .d1{animation-delay:.05s;}.d2{animation-delay:.14s;}.d3{animation-delay:.26s;}.d4{animation-delay:.4s;}.d5{animation-delay:.54s;}.d6{animation-delay:.66s;}
+  @keyframes rise{to{opacity:1;transform:none;}}
+
+  /* ── Masthead ── */
+  .masthead{display:flex;align-items:center;justify-content:space-between;padding-bottom:12px;border-bottom:1px solid var(--hair);}
+  .eyebrow{font-size:11px;font-weight:800;letter-spacing:.26em;text-transform:uppercase;color:var(--accent);}
+  .brandmark{display:flex;align-items:center;gap:9px;}
+  .brandmark span{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);}
+
+  /* ── Headline ── */
+  .lede{padding:13px 0 9px;}
+  .headline{font-size:40px;font-weight:800;line-height:1.04;letter-spacing:-.022em;color:var(--navy);}
+  .headline .accent{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+  .credtag{display:inline-flex;align-items:center;gap:8px;margin-top:12px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
+  .credtag .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px rgba(49,130,206,.14);}
+
+  /* ── Stage: body diagram | cost ladder ── */
+  .stage{flex:1;min-height:0;display:grid;grid-template-columns:1.16fr 1fr;gap:26px;margin-top:12px;}
+
+  /* LEFT — anatomy panel */
+  .bodywrap{position:relative;border:1px solid var(--hair);border-radius:16px;background:linear-gradient(180deg,#fbfdff,#f4f8fe);overflow:hidden;}
+  .figure{position:absolute;left:50%;top:50%;width:300px;height:384px;transform:translate(-50%,-50%);}
+  .bodyart{position:absolute;inset:0;width:100%;height:100%;}
+  .bodyart path,.bodyart circle{stroke:#1a365d;opacity:.28;fill:none;}
+
+  /* organ markers (positioned within .figure) */
+  .organ{position:absolute;transform:translate(-50%,-50%);}
+  .heart{left:42.5%;top:39%;}
+  .panc{left:50%;top:60.5%;}
+  .organ .glyph{position:relative;z-index:2;display:grid;place-items:center;}
+
+  /* heart = the focus of all attention (blue reticle) */
+  .reticle{position:absolute;left:50%;top:50%;width:104px;height:104px;transform:translate(-50%,-50%);border-radius:50%;border:1.5px solid rgba(49,130,206,.45);box-shadow:0 0 0 6px rgba(49,130,206,.06),inset 0 0 0 8px rgba(49,130,206,.05);animation:reticle 3.4s ease-in-out infinite;}
+  .reticle::before,.reticle::after{content:'';position:absolute;background:var(--accent);opacity:.6;}
+  .reticle::before{left:50%;top:-7px;width:1.5px;height:12px;transform:translateX(-50%);box-shadow:0 99px 0 var(--accent);}
+  .reticle::after{top:50%;left:-7px;height:1.5px;width:12px;transform:translateY(-50%);box-shadow:99px 0 0 var(--accent);}
+  @keyframes reticle{0%,100%{box-shadow:0 0 0 6px rgba(49,130,206,.06),inset 0 0 0 8px rgba(49,130,206,.05);}50%{box-shadow:0 0 0 11px rgba(49,130,206,.03),inset 0 0 0 8px rgba(49,130,206,.05);}}
+  .heart .glyph svg{filter:drop-shadow(0 4px 10px rgba(49,130,206,.35));}
+
+  /* pancreas = the missed signal (warm) + MediMind scan ring (blue) */
+  .panc .dot{width:20px;height:20px;border-radius:50%;background:var(--warm);box-shadow:0 0 0 5px var(--warm-bg),0 4px 10px rgba(199,93,68,.4);position:relative;z-index:2;}
+  .pulse{position:absolute;left:50%;top:50%;width:20px;height:20px;border-radius:50%;transform:translate(-50%,-50%);background:var(--warm);opacity:.5;animation:pulse 2.6s ease-out infinite;}
+  @keyframes pulse{0%{transform:translate(-50%,-50%) scale(1);opacity:.45;}70%,100%{transform:translate(-50%,-50%) scale(3.4);opacity:0;}}
+  .scan{position:absolute;left:50%;top:50%;width:78px;height:78px;border-radius:50%;transform:translate(-50%,-50%);border:1.5px dashed rgba(49,130,206,.55);}
+  .scanlabel{position:absolute;left:50%;top:calc(50% + 48px);transform:translateX(-50%);white-space:nowrap;font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:5px;}
+  .scanlabel svg{width:11px;height:11px;}
+
+  /* chips in the side margins */
+  .chip{position:absolute;width:186px;padding:11px 13px;border-radius:13px;background:var(--white);}
+  .chip b{display:block;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;line-height:1.1;}
+  .chip span{display:block;margin-top:4px;font-size:13px;font-weight:500;line-height:1.34;color:var(--muted);}
+  .chip.cb{left:20px;top:23%;border:1px solid #cfe1f6;box-shadow:0 8px 22px -12px rgba(43,108,176,.4);}
+  .chip.cb b{color:var(--secondary);}
+  .chip.cw{right:20px;top:52%;border:1px solid #ecc8bd;box-shadow:0 8px 22px -12px rgba(199,93,68,.4);}
+  .chip.cw b{color:var(--warm-deep);}
+  /* leader lines */
+  .chip.cb::after{content:'';position:absolute;right:-26px;top:24px;width:26px;height:1.5px;background:linear-gradient(90deg,#cfe1f6,rgba(49,130,206,.5));}
+  .chip.cw::before{content:'';position:absolute;left:-26px;top:22px;width:26px;height:1.5px;background:linear-gradient(90deg,rgba(199,93,68,.5),#ecc8bd);}
+
+  /* RIGHT — cost ladder */
+  .ladder{display:flex;flex-direction:column;justify-content:center;}
+  .lhead{font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--light);margin-bottom:14px;}
+  .rail{position:relative;padding-left:30px;}
+  .rail::before{content:'';position:absolute;left:6px;top:8px;bottom:32px;width:2px;border-radius:2px;background:linear-gradient(to bottom,var(--accent) 0%,#9bb6d4 42%,var(--warm) 100%);}
+  .step{position:relative;}
+  .step+.step{margin-top:20px;}
+  .step::before{content:'';position:absolute;left:-30px;top:3px;width:14px;height:14px;border-radius:50%;background:var(--white);border:2.5px solid var(--accent);box-shadow:0 0 0 4px rgba(49,130,206,.10);}
+  .step.warm::before{border-color:var(--warm);box-shadow:0 0 0 4px var(--warm-bg);}
+  .step .t{display:flex;align-items:baseline;gap:9px;}
+  .step .when{font-size:13px;font-weight:800;letter-spacing:-.01em;color:var(--navy);font-variant-numeric:tabular-nums;}
+  .step .ttl{font-size:17px;font-weight:800;letter-spacing:-.015em;color:var(--navy);line-height:1.1;}
+  .step.warm .ttl{color:var(--warm-deep);}
+  .step .desc{margin-top:3px;font-size:12.5px;line-height:1.4;color:var(--muted);}
+
+  .catch{margin-top:20px;margin-left:30px;display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border-radius:13px;background:var(--tint);border:1px solid #d7e7fa;}
+  .catch .ic{flex:none;width:26px;height:26px;border-radius:8px;background:var(--white);border:1px solid #cfe1f6;display:grid;place-items:center;}
+  .catch .ic svg{width:15px;height:15px;}
+  .catch b{font-size:13px;font-weight:800;color:var(--secondary);letter-spacing:-.01em;}
+  .catch span{display:block;margin-top:2px;font-size:12px;color:var(--muted);line-height:1.35;}
+
+  .valid{margin-top:14px;margin-left:30px;display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;color:var(--secondary);}
+  .valid .vd{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px rgba(49,130,206,.14);}
+
+  /* ── Thesis ── */
+  .thesis{margin-top:16px;padding-top:14px;border-top:1px solid var(--hair);text-align:center;font-size:19px;font-weight:500;letter-spacing:-.01em;color:var(--muted);}
+  .thesis strong{font-weight:800;color:var(--navy);font-variant-numeric:tabular-nums;}
+  .thesis .accent{font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+</style>
+</head>
+<body>
+  <div class="slide" role="img" aria-label="Case study — the misdirection">
+    <div class="canvas">
+
+      <div class="masthead fade d1">
+        <div class="eyebrow">04 · Case Study</div>
+        <div class="brandmark">
+          <svg viewBox="0 0 100 100" width="24" height="24" aria-hidden="true">
+            <rect x="6" y="14" width="88" height="14" rx="3" fill="#2b6cb0"/>
+            <rect x="6" y="34" width="88" height="14" rx="3" fill="#2b6cb0" opacity=".75"/>
+            <rect x="6" y="54" width="88" height="14" rx="3" fill="#2b6cb0" opacity=".5"/>
+            <rect x="6" y="74" width="88" height="14" rx="3" fill="#2b6cb0" opacity=".3"/>
+          </svg>
+          <span>MediMind OS</span>
+        </div>
+      </div>
+
+      <div class="lede fade d2">
+        <h1 class="headline">Everyone watched the heart.<br><span class="accent">The pancreas was failing.</span></h1>
+        <div class="credtag"><span class="dot"></span>Real case · MediMind pilot hospital · May 2026</div>
+      </div>
+
+      <div class="stage">
+
+        <!-- LEFT: anatomy -->
+        <div class="bodywrap fade d3">
+          <div class="figure">
+            <svg class="bodyart" viewBox="0 0 300 384" aria-hidden="true">
+              <circle cx="150" cy="52" r="34" stroke-width="2.5"/>
+              <path stroke-width="2.5" d="M112 90 C100 96 84 104 74 120 C62 138 60 150 58 172 L52 280 C50 320 84 362 150 362 C216 362 250 320 248 280 L242 172 C240 150 238 138 226 120 C216 104 200 96 188 90 C172 102 128 102 112 90 Z"/>
+            </svg>
+
+            <!-- heart: the focus -->
+            <div class="organ heart">
+              <div class="reticle"></div>
+              <div class="glyph">
+                <svg viewBox="0 0 24 24" width="30" height="30"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#3182ce"/></svg>
+              </div>
+            </div>
+
+            <!-- pancreas: the missed signal -->
+            <div class="organ panc">
+              <div class="scan"></div>
+              <div class="pulse"></div>
+              <div class="glyph"><div class="dot"></div></div>
+              <div class="scanlabel">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#3182ce" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+                MediMind flags it
+              </div>
+            </div>
+          </div>
+
+          <!-- side chips -->
+          <div class="chip cb"><b>All eyes here</b><span>Recent heart procedure — the obvious suspect.</span></div>
+          <div class="chip cw"><b>The real failure</b><span>Pancreas — hidden in a long, complex history.</span></div>
+        </div>
+
+        <!-- RIGHT: cost ladder -->
+        <div class="ladder fade d4">
+          <div class="lhead">What it cost</div>
+          <div class="rail">
+            <div class="step">
+              <div class="t"><span class="when">02:00</span><span class="ttl">Stomach pain</span></div>
+              <p class="desc">Arrives in the ER, a week after his heart procedure.</p>
+            </div>
+            <div class="step">
+              <div class="t"><span class="ttl">Hours lost</span></div>
+              <p class="desc">The team chases the heart while the real signal is missed.</p>
+            </div>
+            <div class="step warm">
+              <div class="t"><span class="when">+20 days</span><span class="ttl">Intensive care</span></div>
+              <p class="desc">He nearly died — to a miss the best hospitals make far more than we admit.</p>
+            </div>
+          </div>
+
+          <div class="catch fade d5">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#2b6cb0" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+            <div><b>With MediMind, flagged at 02:00</b><span>The buried signal caught before the spiral — not after.</span></div>
+          </div>
+
+          <div class="valid fade d6"><span class="vd"></span>Now tested in parallel — significant gains in patient outcomes</div>
+        </div>
+      </div>
+
+      <div class="thesis fade d6">At <strong>02:00</strong>, people miss things. <span class="accent">MediMind doesn't.</span></div>
+
+    </div>
+  </div>
+</body>
+</html>

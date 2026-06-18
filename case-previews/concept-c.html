@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Case C — Two Readings</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1a365d; --secondary:#2b6cb0; --accent:#3182ce; --light-acc:#bee3f8;
+    --tint:#f0f7ff; --body:#334155; --muted:#64748b; --light:#94a3b8;
+    --hair:#e2e8f0; --white:#fff; --subtle:#f8fafc;
+    --warm:#c75d44; --warm-deep:#a8472f; --warm-bg:rgba(199,93,68,.10); --warm-ring:rgba(199,93,68,.30);
+    --grad:linear-gradient(135deg,#1a365d,#2b6cb0 50%,#3182ce);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{height:100%;background:#e9edf2;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  body{display:flex;align-items:center;justify-content:center;min-height:100vh;padding:24px;}
+  .slide{position:relative;width:1280px;height:720px;flex:none;background:var(--white);border-radius:16px;box-shadow:0 24px 70px -24px rgba(26,54,93,.28),0 2px 8px rgba(26,54,93,.05);overflow:hidden;color:var(--body);}
+  .slide::before{content:'';position:absolute;top:-180px;right:-160px;width:560px;height:560px;background:radial-gradient(circle at center,rgba(190,227,248,.30),rgba(190,227,248,0) 70%);pointer-events:none;}
+  .canvas{position:relative;z-index:1;height:100%;padding:40px 64px 32px;display:flex;flex-direction:column;}
+  .fade{opacity:0;transform:translateY(10px);animation:rise .8s cubic-bezier(.22,.61,.36,1) forwards;}
+  .d1{animation-delay:.05s;}.d2{animation-delay:.14s;}.d3{animation-delay:.26s;}.d4{animation-delay:.4s;}.d5{animation-delay:.54s;}.d6{animation-delay:.66s;}
+  @keyframes rise{to{opacity:1;transform:none;}}
+
+  .masthead{display:flex;align-items:center;justify-content:space-between;padding-bottom:12px;border-bottom:1px solid var(--hair);}
+  .eyebrow{font-size:11px;font-weight:800;letter-spacing:.26em;text-transform:uppercase;color:var(--accent);}
+  .brandmark{display:flex;align-items:center;gap:9px;}
+  .brandmark span{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);}
+
+  .lede{padding:13px 0 9px;}
+  .headline{font-size:40px;font-weight:800;line-height:1.04;letter-spacing:-.022em;color:var(--navy);}
+  .headline .accent{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+  .credtag{display:inline-flex;align-items:center;gap:8px;margin-top:12px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
+  .credtag .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px rgba(49,130,206,.14);}
+
+  /* ── Stage ── */
+  .stage{flex:1;min-height:0;display:flex;flex-direction:column;margin-top:14px;}
+
+  /* signal ribbon */
+  .ribbon{position:relative;border:1px solid var(--hair);border-radius:14px;background:linear-gradient(180deg,#fbfdff,#f5f9fe);padding:12px 18px 10px;}
+  .ribbon-tag{position:absolute;left:18px;top:11px;font-size:9.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--light);}
+  .ribbon svg{display:block;width:100%;height:86px;}
+  .rlbl{position:absolute;font-size:10px;font-weight:800;letter-spacing:.04em;}
+  .rlbl.blue{color:var(--secondary);} .rlbl.warm{color:var(--warm-deep);}
+  .rlbl small{display:block;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--light);margin-top:1px;}
+  .rlbl.blue{left:27%;top:8px;} .rlbl.warm{right:21%;top:40px;text-align:right;}
+
+  /* two cards + center connector column */
+  .cards{flex:1;min-height:0;display:grid;grid-template-columns:1fr 86px 1fr;gap:0;margin-top:16px;}
+  .card{position:relative;border-radius:16px;padding:20px 22px;display:flex;flex-direction:column;}
+  .card.room{grid-column:1;grid-row:1;border:1px solid var(--hair);background:var(--subtle);}
+  .card.real{grid-column:3;grid-row:1;border:1px solid #ecc8bd;background:linear-gradient(180deg,#fdf7f4,#fbf1ec);}
+  .card-tag{font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--light);}
+  .card.real .card-tag{color:var(--warm);}
+  .card-ic{margin-top:13px;width:52px;height:52px;border-radius:14px;display:grid;place-items:center;}
+  .card.room .card-ic{background:var(--white);border:1px solid #cfe1f6;box-shadow:0 6px 16px -8px rgba(43,108,176,.4);}
+  .card.real .card-ic{background:var(--white);border:1px solid #ecc8bd;box-shadow:0 6px 16px -8px rgba(199,93,68,.4);}
+  .card h3{margin-top:14px;font-size:23px;font-weight:800;letter-spacing:-.02em;line-height:1.08;color:var(--navy);}
+  .card.real h3{color:var(--warm-deep);}
+  .card p{margin-top:8px;font-size:14px;line-height:1.48;color:var(--muted);max-width:330px;}
+  .card p strong{font-weight:700;color:var(--body);}
+
+  /* center seam: MediMind bridges the two readings */
+  .seam{grid-column:2;grid-row:1;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+  .seam::before{content:'';position:absolute;left:50%;top:8px;bottom:8px;width:2px;transform:translateX(-50%);background:repeating-linear-gradient(to bottom,#cbd5e1 0 5px,transparent 5px 11px);}
+  .seam .node{position:relative;z-index:2;width:56px;height:56px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;box-shadow:0 14px 30px -10px rgba(26,54,93,.6);}
+  .seam .node svg{width:25px;height:25px;}
+  .seam .cap{position:relative;z-index:2;margin-top:9px;width:84px;text-align:center;font-size:10.5px;font-weight:800;letter-spacing:.02em;color:var(--secondary);line-height:1.28;background:var(--white);padding:3px 0;}
+
+  /* cost strip + validation */
+  .foot{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:15px;}
+  .cost{display:inline-flex;align-items:center;gap:9px;font-size:13px;font-weight:600;color:var(--muted);}
+  .cost b{font-weight:800;color:var(--warm-deep);}
+  .cost .cd{width:8px;height:8px;border-radius:50%;background:var(--warm);box-shadow:0 0 0 4px var(--warm-bg);flex:none;}
+  .valid{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;color:var(--secondary);}
+  .valid .vd{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px rgba(49,130,206,.14);}
+
+  .thesis{margin-top:14px;padding-top:13px;border-top:1px solid var(--hair);text-align:center;font-size:19px;font-weight:500;letter-spacing:-.01em;color:var(--muted);}
+  .thesis strong{font-weight:800;color:var(--navy);font-variant-numeric:tabular-nums;}
+  .thesis .accent{font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+</style>
+</head>
+<body>
+  <div class="slide" role="img" aria-label="Case study — two readings of the same patient">
+    <div class="canvas">
+
+      <div class="masthead fade d1">
+        <div class="eyebrow">04 · Case Study</div>
+        <div class="brandmark">
+          <svg viewBox="0 0 100 100" width="24" height="24" aria-hidden="true">
+            <rect x="6" y="14" width="88" height="14" rx="3" fill="#2b6cb0"/>
+            <rect x="6" y="34" width="88" height="14" rx="3" fill="#2b6cb0" opacity=".75"/>
+            <rect x="6" y="54" width="88" height="14" rx="3" fill="#2b6cb0" opacity=".5"/>
+            <rect x="6" y="74" width="88" height="14" rx="3" fill="#2b6cb0" opacity=".3"/>
+          </svg>
+          <span>MediMind OS</span>
+        </div>
+      </div>
+
+      <div class="lede fade d2">
+        <h1 class="headline">The same patient. <span class="accent">Two different stories.</span></h1>
+        <div class="credtag"><span class="dot"></span>Real case · MediMind pilot hospital · May 2026</div>
+      </div>
+
+      <div class="stage">
+
+        <!-- signal ribbon -->
+        <div class="ribbon fade d3">
+          <span class="ribbon-tag">One patient · one night of signals</span>
+          <svg viewBox="0 0 1000 86" preserveAspectRatio="none" aria-hidden="true">
+            <polyline fill="none" stroke="#cbd5e1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              points="0,60 90,58 150,62 230,57 270,60 300,18 330,60 430,58 520,61 600,57 660,56 690,46 720,56 800,59 880,57 1000,60"/>
+            <circle cx="300" cy="18" r="6" fill="#3182ce"/>
+            <circle cx="300" cy="18" r="11" fill="none" stroke="#3182ce" stroke-width="1.5" opacity=".5"/>
+            <circle cx="690" cy="46" r="6" fill="#c75d44"/>
+            <circle cx="690" cy="46" r="11" fill="none" stroke="#c75d44" stroke-width="1.5" opacity=".5"/>
+          </svg>
+          <div class="rlbl blue">The loud signal<small>the heart</small></div>
+          <div class="rlbl warm">The quiet one — missed<small>the pancreas</small></div>
+        </div>
+
+        <!-- two readings -->
+        <div class="cards fade d4">
+          <div class="card room">
+            <span class="card-tag">What the room saw</span>
+            <div class="card-ic">
+              <svg viewBox="0 0 24 24" width="28" height="28"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#3182ce"/></svg>
+            </div>
+            <h3>Recent heart procedure</h3>
+            <p>Stomach pain looked cardiac, so <strong>every eye stayed on the heart</strong> — the obvious story.</p>
+          </div>
+
+          <div class="card real">
+            <span class="card-tag">What was actually happening</span>
+            <div class="card-ic">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#c75d44" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9c4-3 7 1 10 0s5-2 8 0"/><path d="M3 14c4-3 7 1 10 0s5-2 8 0"/></svg>
+            </div>
+            <h3>The pancreas was failing</h3>
+            <p>Subtle signs, <strong>buried in a long, complex history</strong> — the signal that was there all along.</p>
+          </div>
+
+          <!-- center seam -->
+          <div class="seam fade d5">
+            <div class="node">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            </div>
+            <div class="cap">MediMind reads both</div>
+          </div>
+        </div>
+
+        <!-- cost + validation -->
+        <div class="foot fade d6">
+          <div class="cost"><span class="cd"></span>Without it: hours lost · <b>20 days in ICU</b></div>
+          <div class="valid"><span class="vd"></span>Now tested in parallel — significant gains in patient outcomes</div>
+        </div>
+      </div>
+
+      <div class="thesis fade d6">At <strong>02:00</strong>, people miss things. <span class="accent">MediMind doesn't.</span></div>
+
+    </div>
+  </div>
+</body>
+</html>

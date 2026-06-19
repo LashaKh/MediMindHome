@@ -8063,6 +8063,17 @@
   }
   .bmx-pillar--tam .bmx-pcomp { color: rgba(255,255,255,.74); }
 
+  /* TAM value-based escalator pill (sits inside the dark TAM pillar) */
+  .bmx-tam-esc {
+    margin-top: 8px; align-self: flex-start;
+    font-size: 2.5em; font-weight: 800; letter-spacing: -0.045em; line-height: 0.9;
+    color: #bee3f8; white-space: nowrap;
+  }
+  .bmx-tam-esc small {
+    font-size: 0.24em; font-weight: 700; letter-spacing: 0; margin-left: 6px;
+    color: rgba(255,255,255,.72); vertical-align: middle;
+  }
+
   .bmx-pscope {
     margin: auto 0 0;
     padding-top: 16px;
@@ -9250,9 +9261,15 @@
       .pclose-quote { font-family: Georgia, 'Times New Roman', serif; font-size: 3.4em; line-height: .5; color: #2b6cb0; opacity: .5; margin-bottom: 14px; }
       .pclose-head { font-size: 2.5em; line-height: 1.13; font-weight: 800; color: var(--emr-primary); letter-spacing: -.02em; margin: 0; }
       .pclose-head em { font-style: normal; color: var(--emr-secondary); }
-      .pclose-cta { display: inline-flex; align-items: center; gap: 10px; margin: 30px 0 24px; padding: 15px 30px; border-radius: 999px; background: var(--emr-gradient-primary); color: #fff; font-weight: 700; font-size: 1.02em; text-decoration: none; box-shadow: 0 14px 32px rgba(43,108,176,.30); }
+      .pclose-cta { display: inline-flex; align-items: center; gap: 10px; margin: 24px 0 0; padding: 15px 30px; border-radius: 999px; background: var(--emr-gradient-primary); color: #fff; font-weight: 700; font-size: 1.02em; text-decoration: none; box-shadow: 0 14px 32px rgba(43,108,176,.30); }
       .pclose-sub { font-size: 1.0em; line-height: 1.5; color: #4a5568; margin: 0; max-width: 560px; }
       .pclose-sub strong { color: var(--emr-primary); }
+      .pclose-eyebrow { font-size: 0.7em; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #94a3b8; margin: 24px 0 13px; }
+      .pclose-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 560px; }
+      .pclose-card { display: flex; align-items: center; gap: 12px; min-height: 62px; padding: 11px 15px; background: #f6faff; border: 1px solid #e6eef9; border-radius: 14px; transition: transform .2s ease, box-shadow .2s ease; }
+      .pclose-card-ic { flex: none; width: 34px; height: 34px; border-radius: 10px; background: linear-gradient(135deg, #2b6cb0, #3182ce); display: grid; place-items: center; box-shadow: 0 6px 14px -6px rgba(43,108,176,.55); }
+      .pclose-card-ic svg { width: 18px; height: 18px; fill: none; stroke: #fff; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+      .pclose-card span { font-size: 0.93em; font-weight: 700; color: var(--emr-primary); line-height: 1.18; }
       .pclose-photo { position: relative; height: 100%; display: flex; align-items: flex-end; justify-content: center; }
       .pclose-photo::before { content: ''; position: absolute; z-index: 0; left: 50%; bottom: 5%; transform: translateX(-50%); width: 470px; height: 470px; border-radius: 50%; background: radial-gradient(circle at 50% 40%, #eef5fd 0%, #dcebfb 52%, #cfe3f8 100%); }
       .pclose-photo::after { content: ''; position: absolute; z-index: 0; left: 50%; bottom: 3.5%; transform: translateX(-50%); width: 330px; height: 40px; border-radius: 50%; background: radial-gradient(ellipse at center, rgba(26,54,93,.20) 0%, transparent 70%); }
@@ -9264,7 +9281,29 @@
         .pclose-photo::after { width: 190px; height: 26px; }
         .pclose-photo img { max-height: 300px; transform: none; }
         .pclose-head { font-size: 1.55em; }
-        .pclose-cta { margin: 20px 0 16px; }
+        .pclose-cards { grid-template-columns: 1fr 1fr; gap: 8px; }
+        .pclose-card { padding: 10px 11px; gap: 9px; }
+        .pclose-card-ic { width: 28px; height: 28px; border-radius: 8px; }
+        .pclose-card span { font-size: 0.82em; }
+        .pclose-cta { margin: 18px 0 16px; }
+      }
+
+      /* THE ASK — standalone, centered, no photo (label stays pinned top-left) */
+      .pask-wrap { max-width: 760px; margin: auto; display: flex; flex-direction: column; align-items: center; text-align: center; }
+      .pask-head { font-size: 2.4em; font-weight: 800; color: var(--emr-primary); letter-spacing: -.02em; line-height: 1.12; margin: 0; }
+      .pask-head em { font-style: normal; color: var(--emr-secondary); }
+      .pask-slide .pclose-eyebrow { text-align: center; }
+      .pask-slide .pclose-cards { max-width: 620px; }
+      .pask-slide .pclose-cta { margin: 26px 0 0; }
+
+      /* THANK YOU — quote + portrait, "Thank you" at the bottom (replaces divider) */
+      .pthanks-foot { margin-top: 32px; }
+      .pthanks-ty { display: block; font-size: 2.0em; font-weight: 800; color: var(--emr-primary); letter-spacing: -.02em; line-height: 1; }
+      .pthanks-next { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; font-size: 0.9em; font-weight: 600; color: #94a3b8; letter-spacing: .01em; }
+      @media (max-width: 768px) {
+        .pask-head { font-size: 1.55em; }
+        .pthanks-ty { font-size: 1.5em; }
+        .pthanks-next { font-size: 0.82em; }
       }
 
       /* COVER — hide the always-empty "Prepared for" row (open deck, no name) */
@@ -9432,8 +9471,8 @@
       @media (max-width: 768px) {
         .probx-wrap { gap: 22px; }
         .probx-lead { font-size: 1.12em; }
-        .probx-thesis { font-size: 1.45em; }
-        .probx-thesis em { font-size: 1.55em; }
+        .probx-thesis { font-size: clamp(1.2rem, 5.4vw, 1.65rem); }
+        .probx-thesis em { font-size: 1.22em; margin-top: 8px; }
       }
 
       /* ════════ 07 GEORGIA WINDOW — beautified pitch layout (wins over the
@@ -9665,7 +9704,7 @@
         <div class="slide-inner">
           <div class="slide-label"><span class="label-num">02</span>THE PROBLEM</div>
           <div class="probx-wrap">
-            <h2 class="probx-thesis">The problem isn&rsquo;t a missing feature.<em>It&rsquo;s the whole&nbsp;thing.</em></h2>
+            <h2 class="probx-thesis">The problem isn&rsquo;t a missing feature.<em>It&rsquo;s the whole legacy&nbsp;system.</em></h2>
           </div>
         </div>
         <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
@@ -9673,6 +9712,48 @@
           13 months ago I thought a chatbot and a few AI tools would fix healthcare. I was wrong — they fix nothing. Scribes write notes on top, copilots reason on top — but the hospital underneath is still thirty disconnected systems. The problem isn&rsquo;t a missing feature; it&rsquo;s the whole thing. That&rsquo;s what has to be rebuilt.
         </aside>
       </section>
+
+      <!-- ALL-IN product pillars (aip-) — three truths beneath the headline -->
+      <style>
+        .aip-pillars { margin-top: 30px; max-width: 540px; }
+        .aip-eyebrow {
+          font-size: 0.6em; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase;
+          color: var(--emr-accent); margin: 0 0 14px;
+          opacity: 0; animation: pitchFadeUp .7s ease .4s forwards;
+        }
+        .aip-row {
+          display: flex; align-items: center; gap: 16px;
+          padding: 13px 0; border-top: 1px solid rgba(20,40,80,.10);
+          opacity: 0; animation: pitchFadeUp .7s ease forwards;
+        }
+        .aip-row:last-child { border-bottom: 1px solid rgba(20,40,80,.10); }
+        .aip-row:nth-of-type(1) { animation-delay: .5s; }
+        .aip-row:nth-of-type(2) { animation-delay: .64s; }
+        .aip-row:nth-of-type(3) { animation-delay: .78s; }
+        .aip-ic {
+          flex: 0 0 auto; width: 48px; height: 48px; border-radius: 14px;
+          display: grid; place-items: center;
+          background: linear-gradient(135deg, #eaf3ff 0%, #d8e9fc 100%);
+          border: 1px solid rgba(43,108,176,.18);
+          box-shadow: 0 6px 16px rgba(43,108,176,.12);
+        }
+        .aip-ic svg { width: 24px; height: 24px; display: block; }
+        .aip-txt { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+        .aip-key { font-size: 1.16em; font-weight: 800; letter-spacing: -.012em; color: var(--emr-primary); line-height: 1.06; }
+        .aip-gloss { font-size: 0.82em; font-weight: 500; line-height: 1.34; color: #5a6b85; }
+        @media (prefers-reduced-motion: reduce) {
+          .aip-eyebrow, .aip-row { opacity: 1; animation: none; }
+        }
+        @media (max-width: 768px) {
+          .aip-pillars { margin-top: 18px; max-width: 100%; }
+          .aip-eyebrow { margin-bottom: 11px; }
+          .aip-row { padding: 11px 0; gap: 13px; }
+          .aip-ic { width: 42px; height: 42px; border-radius: 12px; }
+          .aip-ic svg { width: 21px; height: 21px; }
+          .aip-key { font-size: 1.02em; }
+          .aip-gloss { font-size: 0.9em; }
+        }
+      </style>
 
       <!-- ═══════════════════════════════════════════════
            SLIDE 03: ALL-IN (founder photo, repurposed hook)
@@ -9685,6 +9766,27 @@
             <div class="hook-col-text">
               <div class="hook-statement hook-statement-2">
                 <h2 class="hook-headline">We are doctors <span class="hook-emphasis hook-emphasis-static">building for doctors</span>.</h2>
+              </div>
+              <div class="aip-pillars">
+                <div class="aip-eyebrow">What we built</div>
+                <div class="aip-row">
+                  <span class="aip-ic"><svg viewBox="0 0 24 24" fill="#2b6cb0"><path d="M12 2l2 8 8 2-8 2-2 8-2-8-8-2 8-2z"/></svg></span>
+                  <span class="aip-txt">
+                    <span class="aip-key">Proactive AI-native OS</span>
+                  </span>
+                </div>
+                <div class="aip-row">
+                  <span class="aip-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#2b6cb0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>
+                  <span class="aip-txt">
+                    <span class="aip-key">Replaces every software a hospital needs</span>
+                  </span>
+                </div>
+                <div class="aip-row">
+                  <span class="aip-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#2b6cb0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+                  <span class="aip-txt">
+                    <span class="aip-key">One codebase</span>
+                  </span>
+                </div>
               </div>
             </div>
             <div class="hook-col-photo">
@@ -9856,21 +9958,21 @@
           <div class="slide-label"><span class="label-num">06</span>COMPETITION</div>
 
           <div class="compx-wrap">
-            <h2 class="compx-head">We cover <em>everything</em> — and move medical care into the next decade.</h2>
+            <h2 class="compx-head">All 3 in <em>one universal codebase</em> — we are a category-defining company.</h2>
 
             <div class="compx-tag compx-them-tag">Everyone else</div>
             <div class="compx-them">
               <div class="compx-card">
                 <span class="compx-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5 11a7 7 0 0 0 14 0"></path><line x1="12" y1="18" x2="12" y2="22"></line><line x1="8" y1="22" x2="16" y2="22"></line></svg></span>
-                <div class="compx-card-txt"><b>Ambient scribes</b><span>write notes on top</span></div>
+                <div class="compx-card-txt"><b>AI tools</b></div>
               </div>
               <div class="compx-card">
                 <span class="compx-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.4L18.4 9l-4.6 1.6L12 15l-1.8-4.4L5.6 9l4.6-1.6z"/><path d="M19 15.5l.9 1.9 1.9.9-1.9.9-.9 1.9-.9-1.9-1.9-.9 1.9-.9z"/></svg></span>
-                <div class="compx-card-txt"><b>AI overlays</b><span>reason from outside</span></div>
+                <div class="compx-card-txt"><b>AI overlays</b></div>
               </div>
               <div class="compx-card">
                 <span class="compx-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="2.6"/><path d="M4 5v6c0 1.4 3.6 2.6 8 2.6s8-1.2 8-2.6V5"/><path d="M4 11v6c0 1.4 3.6 2.6 8 2.6s8-1.2 8-2.6v-6"/></svg></span>
-                <div class="compx-card-txt"><b>Legacy EHRs</b><span>hold the data, no native AI</span></div>
+                <div class="compx-card-txt"><b>Legacy EHRs</b></div>
               </div>
             </div>
           </div>
@@ -10251,14 +10353,14 @@
             </div>
             <div class="fpx-legend">
               <span class="fpx-legend-h">Picture 2&nbsp;a.m.</span>
-              <span class="fpx-legend-step"><i>1</i>ER pathway</span>
-              <span class="fpx-legend-step"><i>2</i>Lipase ordered</span>
-              <span class="fpx-legend-step"><i>3</i>CT ordered</span>
-              <span class="fpx-legend-step"><i>4</i>Fluids started</span>
-              <span class="fpx-legend-step"><i>5</i>Surgery paged</span>
-              <span class="fpx-legend-step"><i>6</i>ICU bed ready</span>
-              <span class="fpx-legend-step"><i>7</i>Billing cleared</span>
-              <span class="fpx-legend-f">Not one alert — the entire response.</span>
+              <span class="fpx-legend-step"><i>1</i>Order labs</span>
+              <span class="fpx-legend-step"><i>2</i>Order consults</span>
+              <span class="fpx-legend-step"><i>3</i>Order imaging</span>
+              <span class="fpx-legend-step"><i>4</i>Book ICU bed</span>
+              <span class="fpx-legend-step"><i>5</i>Clear billing</span>
+              <span class="fpx-legend-step"><i>6</i>Fluids started</span>
+              <span class="fpx-legend-step"><i>7</i>Surgery paged</span>
+              <span class="fpx-legend-f">The whole hospital moves.</span>
             </div>
           </div>
 
@@ -10401,31 +10503,31 @@
   <div class="slide-inner">
     <div class="slide-label"><span class="label-num">09</span>AMBITION</div>
 
-    <h2 class="headline-big bmx-headline">Land in Georgia.<br><em>Grow into a value-based global market.</em></h2>
+    <h2 class="headline-big bmx-headline">Georgia: <em>Land of Validation.</em></h2>
 
     <!-- Market ascension ramp: SOM -> SAM -> TAM -->
     <div class="bmx-ramp">
       <article class="bmx-pillar bmx-pillar--som">
         <span class="bmx-ptag">SOM &middot; Obtainable</span>
         <span class="bmx-pgeo">Georgia &middot; home</span>
-        <span class="bmx-pval">$8.6M<small>/ yr</small></span>
-        <span class="bmx-pcomp">24,000 physicians</span>
+        <span class="bmx-pval">$3.5M<small>/ yr</small></span>
+        <span class="bmx-pcomp">243 hospitals &middot; ~9,600 doctors</span>
       </article>
 
       <div class="bmx-mult" aria-hidden="true">
-        <b>&times;44</b>
+        <b>&times;130</b>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19 19 5"/><path d="M9 5h10v10"/></svg>
       </div>
 
       <article class="bmx-pillar bmx-pillar--sam">
         <span class="bmx-ptag">SAM &middot; Serviceable</span>
         <span class="bmx-pgeo">Georgia + 9 countries</span>
-        <span class="bmx-pval">$379M<small>/ yr</small></span>
-        <span class="bmx-pcomp">464,000 physicians</span>
+        <span class="bmx-pval">$460M<small>/ yr</small></span>
+        <span class="bmx-pcomp">~255,000 hospital doctors</span>
       </article>
 
       <div class="bmx-mult" aria-hidden="true">
-        <b>&times;82</b>
+        <b>&times;67</b>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19 19 5"/><path d="M9 5h10v10"/></svg>
       </div>
 
@@ -10433,7 +10535,8 @@
         <span class="bmx-ptag">TAM &middot; Total</span>
         <span class="bmx-pgeo">Global</span>
         <span class="bmx-pval">$31B+<small>/ yr</small></span>
-        <span class="bmx-pcomp">12.8M physicians worldwide</span>
+        <span class="bmx-pcomp">~6.1M hospital physicians</span>
+        <span class="bmx-tam-esc">&rarr; $60B<small>value-based</small></span>
       </article>
     </div>
 
@@ -10443,28 +10546,63 @@
       <span class="a-grow">Grow &middot; value-based, global</span>
     </div>
 
-    <p class="bmx-cap">Global shown at a <strong>$200/doctor starting floor</strong> &mdash; value-based pricing scales well above it. <cite>Methodology &amp; sources in appendix.</cite></p>
+    <p class="bmx-cap"><strong>Hospital physicians only</strong> &mdash; our actual buyer. Georgia matches legacy (the lab); region <strong>$100&ndash;200</strong>, U.S./E.U. <strong>$1,000</strong>/doctor&middot;mo value-based. Global &asymp; today's entire EHR market; conservative $200-flat floor &asymp; $15B; nurses &amp; value-share are upside. <cite>Full derivation in appendix.</cite></p>
 
     <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
   </div>
 
   <aside class="notes">
-    Georgia is the validation — a free ticket into a market of enormous size, where we arrive already proven. The visual is a nested SOM → SAM → TAM, each tier a slice of the next: Georgia today (24,000 physicians, $8.6M/yr), Georgia plus nine post-Soviet countries (464,000 physicians, ~$379M/yr), and the global total (12.8M physicians, $31B+/yr). The point isn't the home number — it's that we don't enter any of these markets cold. We arrive already proven. (If they dig into pricing, the country list, or the peer-reviewed value-based justification, it's all in the Market Math appendix.)
+    Now scoped to our real buyer — physicians who practise in hospitals, not every licensed doctor. Georgia: 243 hospitals, about 9,600 hospital doctors at a legacy-match $30/month — roughly $3.5M, and deliberately so; Georgia is the lab, not the margin. The region: nine post-Soviet countries, about 255,000 hospital doctors at $100–200 by country (~$150 blended) — about $460M, with Kazakhstan alone near $107M. Global: about 6.1 million hospital physicians; at our value-based pricing — U.S. and E.U. at $1,000, the rest at $200 — that's about $31B, roughly the size of today's entire EHR market. (A conservative flat-$200 floor would still be ~$15B.) And that's doctors only; we also seat nurses and coordinators, which is upside on top. Full derivation and the legacy benchmark are in the appendix.
   </aside>
 </section>
 
       <!-- ═══════════════════════════════════════════════
            SLIDE 11: THE CLOSE — "we save millions" (mirrors original deck p.11)
            ═══════════════════════════════════════════════ -->
+      <section class="pclose-slide pask-slide">
+        <div class="slide-inner">
+          <div class="slide-label"><span class="label-num">10</span>THE ASK</div>
+          <div class="pask-wrap">
+            <h2 class="pask-head">We&rsquo;re opening a <em>$200K pre-seed</em> round.</h2>
+            <p class="pclose-eyebrow">Where the raise goes</p>
+            <div class="pclose-cards">
+              <div class="pclose-card">
+                <span class="pclose-card-ic"><svg viewBox="0 0 24 24"><path d="M12 21s6-5 6-10a6 6 0 1 0-12 0c0 5 6 10 6 10z"/><circle cx="12" cy="11" r="2"/></svg></span>
+                <span>Dominate Georgia</span>
+              </div>
+              <div class="pclose-card">
+                <span class="pclose-card-ic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+                <span>Clinical validation</span>
+              </div>
+              <div class="pclose-card">
+                <span class="pclose-card-ic"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M10 13h5M10 16h5"/></svg></span>
+                <span>Peer-reviewed papers</span>
+              </div>
+              <div class="pclose-card">
+                <span class="pclose-card-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17"/><path d="M12 3.5c2.6 2.3 2.6 14.7 0 17M12 3.5c-2.6 2.3-2.6 14.7 0 17"/></svg></span>
+                <span>Enter Kazakhstan</span>
+              </div>
+            </div>
+            <a class="pclose-cta" href="https://medimind.md" target="_blank" rel="noopener noreferrer">Join the round <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
+        <aside class="notes">
+          The ask. We're opening a $200K pre-seed round. The money goes four places: dominate Georgia, collect deep clinical validation and case studies, publish peer-reviewed papers, and enter Kazakhstan with a few targeted regional integrations.
+        </aside>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════
+           THE CLOSE — "we save millions" quote + founder portrait.
+           ═══════════════════════════════════════════════ -->
       <section class="pclose-slide">
         <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">10</span>THE CLOSE</div>
+          <div class="slide-label"><span class="label-num">11</span>THE CLOSE</div>
           <div class="pclose-grid">
             <div class="pclose-text">
               <div class="pclose-quote" aria-hidden="true">&ldquo;</div>
               <h2 class="pclose-head">As one doctor, I may save 1,000 lives. <em>With MediMind? We save millions.</em></h2>
-              <a class="pclose-cta" href="https://medimind.md" target="_blank" rel="noopener noreferrer">Join our pre-seed round <span aria-hidden="true">→</span></a>
-              <p class="pclose-sub">We have the <strong>team</strong>, the <strong>technology</strong>, and the <strong>traction</strong>. The question isn&rsquo;t whether AI will transform medicine — it&rsquo;s whether you&rsquo;ll be part of it.</p>
+              <div class="pclose-cta">Join Us!</div>
             </div>
             <div class="pclose-photo">
               <img src="/deck-assets/team/lasha-scrubs.png" alt="Dr. Lasha Khoshtaria, MediMind founder">
@@ -10473,7 +10611,7 @@
         </div>
         <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
         <aside class="notes">
-          The close. As one cardiologist, I can save a few thousand lives in a career. With MediMind, we save millions. The question isn't whether AI will transform medicine — it's whether you'll be part of it. We have the team, the technology, and the traction; now we need your investment to scale this globally.
+          The close. As one cardiologist, I can save a few thousand lives in a career — with MediMind, we save millions.
         </aside>
       </section>
 
@@ -10486,37 +10624,126 @@
           <h1 class="divider-title">Thank you.</h1>
           <div class="divider-rule" aria-hidden="true"></div>
           <div class="divider-tag">Appendix ahead</div>
-          <div class="divider-sub">Architecture · market math · competition · Q&amp;A</div>
+          <div class="divider-sub">Architecture · competition · Q&amp;A</div>
           <div class="divider-arrow" aria-hidden="true">→</div>
         </div>
         <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
         <aside class="notes">
-          End of the main deck. Thank you. The slides that follow are appendix material — platform screenshots, clinical depth, operations. Feel free to skim or dwell based on what you want to see more of. Happy to take questions here or between sections.
+          End of the main deck. Thank you. The slides that follow are appendix material — market math, architecture, competition, Q&amp;A. Happy to take questions here or between sections.
         </aside>
       </section>
 
       <!-- ═══════════════════════════════════════════════
-           LIVE PRODUCT WALKTHROUGH — embedded /walkthrough page
-           First slide after "Thank you", before the appendix gallery.
-           preview=1 bypasses the walkthrough's own password gate
-           because the deck itself is already gated.
+           APPENDIX · PRICING & LEGACY — three-tier ladder + legacy stack vs MediMind
            ═══════════════════════════════════════════════ -->
-      <section class="tour-slide">
-        <iframe
-          class="tour-iframe"
-          src="/walkthrough?preview=1&muted=1"
-          title="MediMind live product walkthrough"
-          loading="lazy"
-          allow="autoplay; fullscreen"
-        ></iframe>
-        <button
-          type="button"
-          class="tour-skip"
-          aria-label="Skip walkthrough and continue to appendix"
-          onclick="Reveal.next()"
-        >Continue<span class="tour-skip-arrow" aria-hidden="true">→</span></button>
+      <style>
+/* ===== APPENDIX · PRICING & LEGACY — ptx- namespace ===== */
+.ptx-slide .slide-inner { padding: 40px 84px 22px; }
+.ptx-headline { margin: 0 0 5px; font-size: 1.72em; }
+.ptx-headline em { color: var(--emr-secondary); font-style: italic; }
+.ptx-sub { margin: 0 0 16px; max-width: 880px; font-size: 0.88em; line-height: 1.45; color: var(--emr-text-body); }
+.ptx-sub strong { color: var(--emr-text-primary); font-weight: 800; }
+
+.ptx-grid { display: grid; grid-template-columns: 0.82fr 1.18fr; gap: 24px; align-items: start; }
+.ptx-colh { font-size: 0.62em; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--emr-text-muted); margin-bottom: 10px; }
+
+/* ---- left: pricing ladder ---- */
+.ptx-tiers { display: flex; flex-direction: column; gap: 11px; }
+.ptx-tier { position: relative; padding: 14px 18px 14px 22px; border-radius: 16px; background: var(--emr-bg-page); border: 1px solid var(--emr-border); box-shadow: 0 12px 30px rgba(15,32,58,.07); overflow: hidden; }
+.ptx-tier::before { content:""; position:absolute; left:0; top:0; bottom:0; width:5px; }
+.ptx-tier--ge::before { background: var(--emr-secondary); }
+.ptx-tier--rg::before { background: linear-gradient(180deg, var(--emr-secondary), var(--emr-accent)); }
+.ptx-tier--we { background: var(--emr-gradient-primary); border: none; box-shadow: 0 20px 48px rgba(26,54,93,.40); }
+.ptx-tier--we::before { background: linear-gradient(180deg, var(--emr-accent), var(--emr-success)); }
+.ptx-tier-top { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.ptx-geo { font-size: 0.96em; font-weight: 800; color: var(--emr-text-primary); }
+.ptx-tier--we .ptx-geo { color: #fff; }
+.ptx-price { font-size: 1.18em; font-weight: 800; letter-spacing: -0.02em; color: var(--emr-secondary); white-space: nowrap; }
+.ptx-price small { font-size: 0.5em; font-weight: 700; color: var(--emr-text-muted); margin-left: 2px; }
+.ptx-tier--we .ptx-price { color: #fff; }
+.ptx-tier--we .ptx-price small { color: rgba(255,255,255,.72); }
+.ptx-note { margin-top: 4px; font-size: 0.68em; font-weight: 600; color: var(--emr-text-muted); }
+.ptx-tier--we .ptx-note { color: rgba(255,255,255,.84); }
+.ptx-rev { margin-top: 7px; font-size: 0.64em; font-weight: 700; color: var(--emr-text-light); }
+.ptx-tier--we .ptx-rev { color: rgba(255,255,255,.72); }
+
+/* ---- right: legacy stack vs MediMind ---- */
+.ptx-stack { display: flex; flex-direction: column; gap: 7px; }
+.ptx-row { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 9px 16px; border-radius: 11px; background: var(--emr-bg-page); border: 1px solid var(--emr-border); }
+.ptx-row-l { font-size: 0.76em; font-weight: 600; color: var(--emr-text-body); }
+.ptx-row-l em { font-style: italic; color: var(--emr-text-primary); }
+.ptx-row-v { font-size: 0.82em; font-weight: 800; color: var(--emr-text-primary); white-space: nowrap; }
+.ptx-row--sum { background: var(--emr-bg-tint); border-color: var(--emr-light-accent); }
+.ptx-row--sum .ptx-row-l { font-weight: 800; color: var(--emr-text-primary); }
+.ptx-row--sum .ptx-row-v { color: var(--emr-secondary); font-size: 0.92em; }
+.ptx-row--mm { background: var(--emr-gradient-primary); border: none; box-shadow: 0 14px 34px rgba(26,54,93,.34); }
+.ptx-row--mm .ptx-row-l { color: #fff; font-weight: 800; }
+.ptx-row--mm .ptx-row-v { color: #fff; font-size: 0.96em; }
+.ptx-punch { margin-top: 12px; font-size: 0.78em; line-height: 1.45; color: var(--emr-text-body); }
+.ptx-punch strong { color: var(--emr-text-primary); font-weight: 800; }
+.ptx-esc { margin-top: 9px; font-size: 0.64em; line-height: 1.4; color: var(--emr-text-light); }
+.ptx-esc strong { color: var(--emr-secondary); font-weight: 800; }
+
+@media (max-width: 768px) {
+  .ptx-slide .slide-inner { padding: 64px 20px 36px; }
+  .ptx-headline { font-size: 1.62em; }
+  .ptx-sub { font-size: 1em; }
+  .ptx-grid { grid-template-columns: 1fr; gap: 22px; }
+  .ptx-geo { font-size: 1.05em; }
+  .ptx-price { font-size: 1.3em; }
+  .ptx-note, .ptx-rev { font-size: 0.82em; }
+  .ptx-row-l { font-size: 0.9em; }
+  .ptx-row-v { font-size: 0.95em; }
+  .ptx-punch { font-size: 0.92em; }
+  .ptx-esc { font-size: 0.8em; }
+}
+      </style>
+      <section class="ptx-slide">
+        <div class="slide-inner">
+          <div class="slide-label"><span class="label-num">A2</span>APPENDIX &middot; PRICING &amp; LEGACY</div>
+          <h2 class="headline-big ptx-headline">Priced to the value &mdash; <em>not the legacy bill.</em></h2>
+          <p class="ptx-sub">One platform, three price tiers by what each market can pay. The U.S. anchor isn't a new cost &mdash; it <strong>replaces a fragmented stack hospitals already buy</strong>.</p>
+
+          <div class="ptx-grid">
+            <div>
+              <div class="ptx-colh">Price by market</div>
+              <div class="ptx-tiers">
+                <article class="ptx-tier ptx-tier--ge">
+                  <div class="ptx-tier-top"><span class="ptx-geo">Georgia</span><span class="ptx-price">$30<small>/ mo</small></span></div>
+                  <div class="ptx-note">Legacy-match &middot; validation (our lab, not our margin)</div>
+                  <div class="ptx-rev">243 hospitals &middot; ~9,600 doctors &middot; $3.5M / yr</div>
+                </article>
+                <article class="ptx-tier ptx-tier--rg">
+                  <div class="ptx-tier-top"><span class="ptx-geo">Region &middot; 9 countries</span><span class="ptx-price">$100&ndash;200<small>/ mo</small></span></div>
+                  <div class="ptx-note">By country capability &middot; ~$150 blended</div>
+                  <div class="ptx-rev">~255,000 hospital doctors &middot; ~$460M / yr</div>
+                </article>
+                <article class="ptx-tier ptx-tier--we">
+                  <div class="ptx-tier-top"><span class="ptx-geo">U.S. / E.U.</span><span class="ptx-price">$1,000<small>/ mo</small></span></div>
+                  <div class="ptx-note">Value-based &middot; replaces the whole stack</div>
+                  <div class="ptx-rev">~1.7M hospital doctors &middot; ~$21B / yr</div>
+                </article>
+              </div>
+            </div>
+
+            <div>
+              <div class="ptx-colh">What a U.S. hospital pays today &mdash; per physician / year</div>
+              <div class="ptx-stack">
+                <div class="ptx-row"><span class="ptx-row-l">Epic / Oracle-Cerner EMR &mdash; license + maintenance</span><span class="ptx-row-v">$5,000&ndash;7,000</span></div>
+                <div class="ptx-row"><span class="ptx-row-l">Ambient AI scribe &mdash; <em>one</em> tool (DAX / Suki / Abridge)</span><span class="ptx-row-v">$3,600&ndash;7,200</span></div>
+                <div class="ptx-row"><span class="ptx-row-l">Point tools &mdash; sepsis, imaging, billing, ops</span><span class="ptx-row-v">$3,000&ndash;6,000+</span></div>
+                <div class="ptx-row ptx-row--sum"><span class="ptx-row-l">= Fragmented legacy stack &middot; 5+ vendors</span><span class="ptx-row-v">$12,000&ndash;20,000+</span></div>
+                <div class="ptx-row ptx-row--mm"><span class="ptx-row-l">MediMind &mdash; one AI-native OS</span><span class="ptx-row-v">$12,000 &middot; $1,000/mo</span></div>
+              </div>
+              <p class="ptx-punch"><strong>Same spend. One system instead of five.</strong> Proactive and agentic &mdash; it does what none of them do alone.</p>
+              <p class="ptx-esc">Value created &#8811; price: one prevented ICU cascade <strong>$60&ndash;200K</strong> &middot; U.S. diagnostic-error waste <strong>~$100B / yr</strong> &middot; healthcare-IT ceiling <strong>~$628B by 2030</strong> &mdash; the escalator from per-seat to value-share.</p>
+            </div>
+          </div>
+
+          <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
+        </div>
         <aside class="notes">
-          Live 3-minute product walkthrough embedded from /walkthrough. Click play to start; scrubber, theater toggle (top-right), and chapter stepper all work inside. To leave the walkthrough, click outside the iframe and press the right arrow (or use the on-screen Reveal arrow controls) — that advances to the appendix.
+          The pricing detail and the legacy benchmark. Three tiers: Georgia at a legacy-matching $30 a month — validation, not margin; the region at $100 to $200 by country, blending near $150; and the U.S. and E.U. at $1,000 a month, value-based. The key idea on the right: $1,000 a month is not a new cost. A U.S. hospital already pays $12,000 to $20,000 per physician per year — five to seven thousand for Epic, three to seven for a single ambient scribe, and several thousand more for point tools like sepsis alerts, imaging triage and billing. We replace that whole stack with one AI-native system for about the same money — and ours is proactive, which none of theirs are. And the value dwarfs the price: a single prevented ICU cascade is $60,000 to $200,000, U.S. diagnostic errors waste about $100 billion a year, and the healthcare-IT ceiling we displace is around $628 billion by 2030. That's why per-seat is just the floor — the model scales to a share of the value.
         </aside>
       </section>
 
@@ -10529,7 +10756,7 @@
            ════════════════════════════════════════════════ -->
       <section class="arch-iso-slide">
         <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">A</span>APPENDIX · ARCHITECTURE</div>
+          <div class="slide-label"><span class="label-num">A3</span>APPENDIX · ARCHITECTURE</div>
           <h2 class="headline-big" style="font-size: 1.85em; line-height: 1.05;">One hospital. <em>One operating system.</em></h2>
           <p class="sub-head" style="font-size: 0.88em; margin-top: 6px; max-width: 920px;">Every department. Every workflow. One AI-native codebase, built ground-up on FHIR.</p>
 
@@ -10967,216 +11194,9 @@
         </aside>
       </section>
 
-      <!-- ═══════════════════════════════════════════════
-           APPENDIX A5: MARKET MATH — TAM/SAM/SOM derivation
-           ═══════════════════════════════════════════════ -->
-      <style>
-/* ===== APPENDIX · MARKET MATH — apm- namespace (equation ledger) ===== */
-.apm-slide .slide-inner { padding: 40px 84px 18px; }
-.apm-headline { margin: 0 0 5px; font-size: 1.72em; }
-.apm-headline em { color: var(--emr-secondary); font-style: italic; }
-.apm-sub {
-  margin: 0 0 14px; max-width: 840px;
-  font-size: 0.88em; line-height: 1.45; color: var(--emr-text-body);
-}
-.apm-sub strong { color: var(--emr-text-primary); font-weight: 800; }
-
-/* ---- equation ledger: physicians × price × 12 = market ---- */
-.apm-eqs { display: flex; flex-direction: column; gap: 12px; }
-.apm-eq {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1.7fr 1.05fr 20px 0.95fr 20px 0.8fr 24px 1.1fr;
-  align-items: center;
-  gap: 0 6px;
-  padding: 16px 26px 16px 24px;
-  border-radius: 18px;
-  background: var(--emr-bg-page);
-  border: 1px solid var(--emr-border);
-  box-shadow: 0 14px 36px rgba(15,32,58,.08);
-  overflow: hidden;
-}
-.apm-eq::before { content:""; position:absolute; left:0; top:0; bottom:0; width:5px; }
-.apm-eq--som::before { background: var(--emr-secondary); }
-.apm-eq--sam::before { background: linear-gradient(180deg, var(--emr-secondary), var(--emr-accent)); }
-.apm-eq--tam::before { background: linear-gradient(180deg, var(--emr-accent), var(--emr-success)); }
-.apm-eq--tam {
-  background: var(--emr-gradient-primary);
-  border: none;
-  box-shadow: 0 22px 54px rgba(26,54,93,.40);
-}
-
-/* head: tier badge + geography + source */
-.apm-eq-head { display: flex; align-items: center; gap: 13px; }
-.apm-eq-tier {
-  flex: 0 0 auto;
-  display: grid; place-items: center;
-  width: 46px; height: 46px; border-radius: 13px;
-  font-size: 0.6em; font-weight: 800; letter-spacing: 0.03em; color: #fff;
-}
-.apm-eq--som .apm-eq-tier { background: var(--emr-secondary); }
-.apm-eq--sam .apm-eq-tier { background: linear-gradient(135deg, var(--emr-secondary), var(--emr-accent)); }
-.apm-eq--tam .apm-eq-tier { background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.34); }
-.apm-eq-geo { font-size: 1.0em; font-weight: 800; color: var(--emr-text-primary); line-height: 1.12; letter-spacing: -0.01em; }
-.apm-eq-sub { font-size: 0.7em; color: var(--emr-text-muted); margin-top: 3px; }
-.apm-eq--tam .apm-eq-geo { color: #fff; }
-.apm-eq--tam .apm-eq-sub { color: rgba(255,255,255,.68); }
-
-/* operand tokens + operators */
-.apm-tok { display: flex; flex-direction: column; line-height: 1.05; }
-.apm-tok b { font-size: 1.02em; font-weight: 800; color: var(--emr-text-primary); letter-spacing: -0.01em; }
-.apm-tok i { font-style: normal; font-size: 0.56em; font-weight: 600; color: var(--emr-text-light); margin-top: 3px; letter-spacing: 0.02em; }
-.apm-eq--tam .apm-tok b { color: #fff; }
-.apm-eq--tam .apm-tok i { color: rgba(255,255,255,.62); }
-.apm-op { text-align: center; font-size: 0.92em; font-weight: 500; color: var(--emr-text-light); }
-.apm-op-eq { font-size: 1.15em; font-weight: 700; color: var(--emr-text-muted); }
-.apm-eq--tam .apm-op { color: rgba(255,255,255,.5); }
-.apm-eq--tam .apm-op-eq { color: rgba(255,255,255,.6); }
-
-/* result */
-.apm-eq-res { justify-self: end; }
-.apm-eq-val { font-weight: 800; letter-spacing: -0.03em; color: var(--emr-primary); white-space: nowrap; }
-.apm-eq--som .apm-eq-val { font-size: 1.85em; }
-.apm-eq--sam .apm-eq-val { font-size: 2.1em; color: var(--emr-secondary); }
-.apm-eq--tam .apm-eq-val { font-size: 2.45em; color: #fff; }
-.apm-eq-val small { font-size: 0.34em; font-weight: 700; color: var(--emr-text-muted); margin-left: 3px; }
-.apm-eq--sam .apm-eq-val small { color: var(--emr-text-muted); }
-.apm-eq--tam .apm-eq-val small { color: rgba(255,255,255,.72); }
-
-/* ---- footer: country chips + floor callout + sources ---- */
-.apm-foot { display: grid; grid-template-columns: 1.05fr 1fr; gap: 26px; margin-top: 13px; align-items: start; }
-.apm-foot-h { font-size: 0.62em; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--emr-text-muted); margin-bottom: 9px; }
-.apm-countries { display: flex; flex-wrap: wrap; gap: 7px; }
-.apm-chip {
-  font-size: 0.72em; font-weight: 600;
-  padding: 5px 12px; border-radius: 999px;
-  background: var(--emr-bg-tint); color: var(--emr-secondary);
-  border: 1px solid var(--emr-light-accent);
-}
-.apm-foot-note { margin-top: 10px; font-size: 0.7em; line-height: 1.45; color: var(--emr-text-muted); }
-
-.apm-floor {
-  position: relative;
-  padding: 15px 20px; border-radius: 16px;
-  background: linear-gradient(135deg, #f1faf5 0%, #eef6ff 100%);
-  border: 1px solid var(--emr-light-accent);
-}
-.apm-floor .apm-foot-h { color: var(--emr-success); }
-.apm-floor p { margin: 0; font-size: 0.74em; line-height: 1.5; color: var(--emr-text-body); }
-.apm-floor p strong { color: var(--emr-text-primary); font-weight: 800; }
-.apm-floor-proj { margin-top: 11px; display: flex; align-items: center; gap: 11px; padding-top: 11px; border-top: 1px dashed rgba(56,161,105,.3); }
-.apm-floor-proj span { font-size: 0.7em; font-weight: 600; color: var(--emr-text-muted); text-transform: uppercase; letter-spacing: 0.04em; }
-.apm-floor-proj b { font-size: 1.0em; font-weight: 800; color: var(--emr-success); margin-left: auto; }
-
-.apm-src { margin-top: 14px; font-size: 0.5em; line-height: 1.4; color: var(--emr-text-light); opacity: 0.85; }
-
-@media (max-width: 768px) {
-  .apm-slide .slide-inner { padding: 68px 20px 36px; }
-  .apm-headline { font-size: 1.7em; }
-  .apm-sub { font-size: 1em; margin-bottom: 18px; }
-
-  .apm-eqs { gap: 14px; }
-  .apm-eq { display: block; padding: 18px 20px; }
-  .apm-eq::before { width: 100%; height: 5px; bottom: auto; }
-  .apm-eq-head { margin-bottom: 13px; }
-  .apm-eq-tier { width: 44px; height: 44px; font-size: 0.7em; }
-  .apm-eq-geo { font-size: 1.15em; }
-  .apm-eq-sub { font-size: 0.82em; }
-  .apm-eq > .apm-tok { display: inline-flex; vertical-align: middle; margin-right: 4px; }
-  .apm-eq > .apm-op { display: inline-block; vertical-align: middle; margin: 0 5px; }
-  .apm-tok b { font-size: 1.1em; }
-  .apm-tok i { font-size: 0.74em; }
-  .apm-op-eq { display: none; }
-  .apm-eq-res { display: block; margin-top: 14px; }
-  .apm-eq-res::before { content: "= "; font-weight: 700; color: var(--emr-text-light); }
-  .apm-eq--tam .apm-eq-res::before { color: rgba(255,255,255,.6); }
-  .apm-eq--som .apm-eq-val { font-size: 2.5em; }
-  .apm-eq--sam .apm-eq-val { font-size: 2.6em; }
-  .apm-eq--tam .apm-eq-val { font-size: 2.7em; }
-
-  .apm-foot { grid-template-columns: 1fr; gap: 18px; }
-  .apm-chip { font-size: 0.86em; }
-  .apm-foot-note { font-size: 0.82em; }
-  .apm-floor p { font-size: 0.9em; }
-  .apm-floor-proj span { font-size: 0.82em; }
-  .apm-src { font-size: 0.78em; }
-}
-      </style>
-      <section class="apm-slide">
-        <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">A5</span>APPENDIX · MARKET MATH</div>
-          <h2 class="headline-big apm-headline">Market sizing — <em>the math.</em></h2>
-          <p class="apm-sub">A nested funnel — <strong>SOM &sub; SAM &sub; TAM</strong>. Every tier is bottom-up (<strong>physicians &times; local price &times; 12</strong>) and a slice of the next: home, then region, then global.</p>
-
-          <div class="apm-eqs">
-            <article class="apm-eq apm-eq--som">
-              <div class="apm-eq-head">
-                <span class="apm-eq-tier">SOM</span>
-                <div><div class="apm-eq-geo">Obtainable &middot; Georgia</div><div class="apm-eq-sub">Geostat &middot; 2024 national count</div></div>
-              </div>
-              <span class="apm-tok"><b>24,000</b><i>physicians</i></span>
-              <span class="apm-op">&times;</span>
-              <span class="apm-tok"><b>$30</b><i>/ doctor&middot;mo</i></span>
-              <span class="apm-op">&times;</span>
-              <span class="apm-tok"><b>12</b><i>months</i></span>
-              <span class="apm-op apm-op-eq">=</span>
-              <div class="apm-eq-res"><span class="apm-eq-val">$8.6M<small>/ yr</small></span></div>
-            </article>
-
-            <article class="apm-eq apm-eq--sam">
-              <div class="apm-eq-head">
-                <span class="apm-eq-tier">SAM</span>
-                <div><div class="apm-eq-geo">Serviceable &middot; Georgia + 9 countries</div><div class="apm-eq-sub">Georgia $8.6M + region $370M</div></div>
-              </div>
-              <span class="apm-tok"><b>~464,000</b><i>physicians</i></span>
-              <span class="apm-op">&times;</span>
-              <span class="apm-tok"><b>~$68</b><i>/ mo blended</i></span>
-              <span class="apm-op">&times;</span>
-              <span class="apm-tok"><b>12</b><i>months</i></span>
-              <span class="apm-op apm-op-eq">=</span>
-              <div class="apm-eq-res"><span class="apm-eq-val">~$379M<small>/ yr</small></span></div>
-            </article>
-
-            <article class="apm-eq apm-eq--tam">
-              <div class="apm-eq-head">
-                <span class="apm-eq-tier">TAM</span>
-                <div><div class="apm-eq-geo">Total &middot; global</div><div class="apm-eq-sub">WHO &middot; U.S. + E.U. alone &asymp; 2.9M</div></div>
-              </div>
-              <span class="apm-tok"><b>12.8M</b><i>physicians</i></span>
-              <span class="apm-op">&times;</span>
-              <span class="apm-tok"><b>$200</b><i>/ mo &middot; floor</i></span>
-              <span class="apm-op">&times;</span>
-              <span class="apm-tok"><b>12</b><i>months</i></span>
-              <span class="apm-op apm-op-eq">=</span>
-              <div class="apm-eq-res"><span class="apm-eq-val">$31B+<small>/ yr</small></span></div>
-            </article>
-          </div>
-
-          <div class="apm-foot">
-            <div>
-              <div class="apm-foot-h">The serviceable region &middot; 9 countries</div>
-              <div class="apm-countries">
-                <span class="apm-chip">Armenia</span><span class="apm-chip">Azerbaijan</span><span class="apm-chip">Moldova</span><span class="apm-chip">Ukraine</span><span class="apm-chip">Kazakhstan</span><span class="apm-chip">Uzbekistan</span><span class="apm-chip">Belarus</span><span class="apm-chip">Kyrgyzstan</span><span class="apm-chip">Tajikistan</span>
-              </div>
-            </div>
-            <div class="apm-floor">
-              <div class="apm-foot-h">$200 is a floor, not a ceiling</div>
-              <p>As outcomes compound, value-based pricing scales well above it — peer-reviewed savings recover <strong>$7.5K–15K</strong> of physician time per doctor each year.</p>
-              <div class="apm-floor-proj"><span>At a $400 value price</span><b>global TAM &asymp; $60B+</b></div>
-            </div>
-          </div>
-
-          <p class="apm-src">Sources: Geostat (2024) &middot; WHO Global Health Observatory &middot; Eurostat &middot; HRSA &middot; JAMA (2026) &middot; Kaiser Permanente &middot; Medscape (2025).</p>
-        </div>
-        <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
-        <aside class="notes">
-          Appendix A5 — the market math, for anyone who wants to see under the hood. It's a nested funnel: SOM inside SAM inside TAM, every tier bottom-up as physicians times local price times twelve. SOM is the obtainable home market we already lead — Georgia, 24,000 physicians from Geostat's 2024 national count at $30/month, about $8.6M/year. SAM is the serviceable region — Georgia plus nine post-Soviet countries, roughly 464,000 physicians at local pricing (Georgia $30, the region $70, blending to about $68/month), about $379M/year; that's Georgia's $8.6M plus the region's $370M. TAM is global — 12.8 million physicians worldwide per WHO at our $200/month value-based floor, about $31B/year-plus; the U.S. and E.U. alone are about 2.9 million physicians. The most important caveat on TAM: $200 is a starting floor, not the real price. At $2,400/year it already returns 3 to 6 times its cost in recovered physician time — JAMA 2026, the Kaiser Permanente deployment, Medscape comp data — so value-based pricing scales materially higher; at a $400 value-based price the global TAM is north of $60B. We kept the headline slide clean and put the full derivation here so we can go as deep as you want.
-        </aside>
-      </section>
-
       <section class="cat-slide">
         <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">A6</span>APPENDIX · COMPETITION</div>
+          <div class="slide-label"><span class="label-num">A4</span>APPENDIX · COMPETITION</div>
           <h2 class="headline-big">Palantir reads Epic. We replace <em>Both</em>.</h2>
           <p class="headline-sub">Three crowded categories all sit on top of the hospital. None of them <em>is</em> the operating system the hospital runs on.</p>
 
@@ -11380,15 +11400,15 @@
           <div class="qax-eyebrow"><b>Appendix</b> · Market &amp; model</div>
           <h2 class="headline-big qax-headline">$30 at home. <em>Same code, priced up as we expand.</em></h2>
           <div class="qax-points">
-            <div class="qax-point"><p><b>Georgia is the wedge, not the market</b> — an ~$8.6M home base we already lead.</p></div>
-            <div class="qax-point"><p><b>The region: 9 post-Soviet &amp; CEE markets ≈ $380M</b> — the global EHR market is $30–40B today, heading to $50B by 2030.</p></div>
-            <div class="qax-point"><p><b>One codebase, priced per market</b> — $30 home · ~$75 regional · $200 premium; still 60–70% below Epic and Oracle.</p></div>
+            <div class="qax-point"><p><b>Georgia is the wedge, not the market</b> — a ~$3.5M hospital home base (243 hospitals) we already lead.</p></div>
+            <div class="qax-point"><p><b>The region: 9 post-Soviet &amp; CEE markets ≈ $460M</b> — ~255,000 hospital doctors; the global EHR market is $30–40B today, heading to $50B by 2030.</p></div>
+            <div class="qax-point"><p><b>One codebase, priced per market</b> — $30 home · $100–200 regional · $1,000 U.S./E.U. value-based; the premium tier replaces the entire $12–20K/physician stack.</p></div>
             <div class="qax-point"><p><b>Reference-sell, zero paid acquisition</b> — land an anchor hospital, convert it into government and KOL endorsement, sell into the network.</p></div>
           </div>
         </div>
         <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
         <aside class="notes">
-          Q9 (Georgia is tiny) — Georgia is the wedge, not the market: ~$8.6M home base we already lead. Serviceable region — 9 post-Soviet/CEE markets on the same broken systems — roughly $380M. Global EHR market $30–40B today, heading to $50B by 2030. Q10 (can a business run on $30/seat) — $30 is the home price, set into existing local IT spend; same codebase, ~$75 regional, $200 premium after compliance, still 60–70% below Epic/Oracle; a 100-doctor hospital is ~$36K/yr at home and multiples abroad. Q11 (selling outside Georgia) — Same playbook: land one anchor reference hospital, convert it into government and KOL endorsement, then reference-sell; zero paid acquisition. COACHING: "$31B TAM" is internal floor-math — if pushed, cite the sourced "$30–41B EHR market → $50B by 2030 (Grand View / Roots / Mordor)."
+          Q9 (Georgia is tiny) — Georgia is the wedge, not the market: a ~$3.5M hospital home base (243 hospitals, ~9,600 hospital doctors) we already lead. Serviceable region — 9 post-Soviet/CEE markets, ~255,000 hospital doctors on the same broken systems — roughly $460M. We size hospital doctors only, not all licensed physicians. Global EHR market $30–40B today, heading to $50B by 2030. Q10 (pricing) — $30 is the home price, a legacy match set into existing local IT spend; same codebase priced up as we expand: $100–200 regional, $1,000 U.S./E.U. value-based — the premium tier replaces the entire $12–20K/physician legacy stack rather than undercutting one tool. A 100-doctor hospital is ~$36K/yr at home and multiples abroad. Q11 (selling outside Georgia) — Same playbook: land one anchor reference hospital, convert it into government and KOL endorsement, then reference-sell; zero paid acquisition. COACHING: the ~$31B value-based TAM (hospital doctors; U.S./E.U. at $1,000) ≈ today's EHR market; the conservative $200-flat floor is ~$15B — if pushed, cite the sourced "$30–41B EHR market → $50B by 2030 (Grand View / Roots / Mordor)."
         </aside>
       </section>
 
@@ -11856,9 +11876,9 @@
           </div>
 
           <div class="pcap-ramp">
-            <div class="pcap-step pcap-step--som"><span class="pcap-tag">SOM · Georgia</span><span class="pcap-val">$8.6M<small>/yr</small></span></div>
+            <div class="pcap-step pcap-step--som"><span class="pcap-tag">SOM · Georgia</span><span class="pcap-val">$3.5M<small>/yr</small></span></div>
             <span class="pcap-arrow" aria-hidden="true">→</span>
-            <div class="pcap-step pcap-step--sam"><span class="pcap-tag">SAM · Region</span><span class="pcap-val">$379M<small>/yr</small></span></div>
+            <div class="pcap-step pcap-step--sam"><span class="pcap-tag">SAM · Region</span><span class="pcap-val">$460M<small>/yr</small></span></div>
             <span class="pcap-arrow" aria-hidden="true">→</span>
             <div class="pcap-step pcap-step--tam"><span class="pcap-tag">TAM · Global</span><span class="pcap-val">$31B+<small>/yr</small></span></div>
           </div>

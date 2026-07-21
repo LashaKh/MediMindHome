@@ -9114,17 +9114,23 @@
     /* ══ 03 THE PATH (hxs-) — 3-phase integration staircase ══
        Fresh classes on purpose: the orphaned ambition-/stage- classes carry
        global KA !important overrides tuned for another layout — do not reuse. */
-    .hxs-stair { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 40px 1.02fr 40px 1.18fr; grid-template-rows: 1fr 8px; align-items: end; column-gap: 0; margin-top: 8px; }
+    .hxs-stair { flex: 1; min-height: 0; display: grid; grid-template-columns: 1.16fr 40px 1fr 40px 1fr; grid-template-rows: 1fr 8px auto; align-items: end; column-gap: 0; margin-top: 8px; }
     .hxs-card { position: relative; overflow: hidden; display: flex; flex-direction: column; border-radius: 16px; padding: 15px 18px 14px; grid-row: 1; transition: transform 0.18s ease, box-shadow 0.18s ease; }
-    .hxs-card--p1 { min-height: 232px; background: #fff; border: 1px solid var(--emr-light-accent); border-top: 4px solid var(--emr-accent); box-shadow: 0 10px 26px rgba(26,54,93,0.08); }
-    .hxs-card--p2 { min-height: 262px; background: #fff; border: 1px solid var(--emr-border); border-top: 4px solid var(--emr-success); box-shadow: 0 10px 26px rgba(26,54,93,0.10); }
-    .hxs-card--p3 { min-height: 292px; border: none; color: #eaf4ff;
+    /* P1 is THE offer on the table — tallest, framed, ribboned. P2/P3 sit on the
+       "optional, later" shelf: shorter, dashed, quieter. Do not re-flip. */
+    .hxs-card--p1 { align-self: stretch; min-height: 288px; background: linear-gradient(180deg, #ffffff, #f6fbff); border: 2px solid var(--emr-accent); box-shadow: 0 16px 36px rgba(49,130,206,0.20); }
+    .hxs-card--p2 { min-height: 236px; background: #fff; border: 1px dashed rgba(56,161,105,0.45); box-shadow: 0 8px 20px rgba(26,54,93,0.06); }
+    .hxs-card--p3 { min-height: 236px; border: none; color: #eaf4ff;
       background: radial-gradient(90% 120% at 20% 0%, rgba(94,158,214,0.38), transparent 55%), var(--emr-gradient-primary);
-      box-shadow: 0 22px 48px rgba(26,54,93,0.38), inset 0 1px 0 rgba(255,255,255,0.16); }
+      box-shadow: 0 14px 30px rgba(26,54,93,0.26), inset 0 1px 0 rgba(255,255,255,0.16); }
     .hxs-card--p3::before { content: ''; position: absolute; inset: 0; pointer-events: none;
       background-image: radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px); background-size: 22px 22px; }
     .hxs-glow { position: absolute; top: -40px; right: -30px; width: 180px; height: 180px; border-radius: 50%; pointer-events: none;
       background: radial-gradient(circle, rgba(125,211,252,0.35), transparent 70%); filter: blur(2px); }
+    /* Full-bleed banner across the top of P1 — scopes the price promise to
+       Phase 1 so phases 2-3 are never read as "same money". */
+    .hxs-ribbon { margin: -15px -18px 12px; padding: 7px 14px; text-align: center; background: var(--emr-gradient-primary); color: #fff;
+      font-size: 0.5em; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; line-height: 1.25; }
     .hxs-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 10px; }
     .hxs-phase { font-size: 0.56em; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--emr-secondary); }
     .hxs-card--p2 .hxs-phase { color: #2f855a; }
@@ -9153,7 +9159,8 @@
     .hxs-num { position: absolute; top: 30px; right: 10px; z-index: 0; font-size: 3.4em; font-weight: 900; line-height: 1; letter-spacing: -0.04em; color: rgba(26,54,93,0.06); pointer-events: none; }
     .hxs-card--p3 .hxs-num { color: rgba(255,255,255,0.09); }
     .hxs-card > *:not(.hxs-num):not(.hxs-glow) { position: relative; z-index: 1; }
-    .hxs-card--p1:hover, .hxs-card--p2:hover { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(26,54,93,0.16); }
+    .hxs-card--p1:hover { transform: translateY(-3px); box-shadow: 0 22px 44px rgba(49,130,206,0.28); }
+    .hxs-card--p2:hover { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(26,54,93,0.16); }
     .hxs-card--p3:hover { transform: translateY(-3px); box-shadow: 0 28px 56px rgba(26,54,93,0.45), inset 0 1px 0 rgba(255,255,255,0.16); }
     /* One-shot sheen across the apex card */
     .hxs-card--p3::after { content: ""; position: absolute; z-index: 2; top: 0; bottom: 0; left: 0; width: 40%; transform: translateX(-160%) skewX(-18deg); background: linear-gradient(90deg, transparent, rgba(255,255,255,0.20), transparent); pointer-events: none; }
@@ -9164,19 +9171,34 @@
     .hxs-foot-t { font-size: 0.56em; font-weight: 600; line-height: 1.3; color: var(--emr-text-body); }
     .hxs-card--p3 .hxs-foot-t { color: rgba(255,255,255,0.85); }
     .hxs-riser { grid-row: 1; align-self: end; display: flex; flex-direction: column; align-items: center; position: relative; z-index: 2; }
-    .hxs-riser--1 { margin-bottom: 99px; }
-    .hxs-riser--2 { margin-bottom: 114px; }
+    .hxs-riser--1 { margin-bottom: 104px; }
+    .hxs-riser--2 { margin-bottom: 104px; }
     .hxs-riser-circle { width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--emr-secondary);
       background: linear-gradient(#fff, #fff) padding-box, var(--emr-gradient-primary) border-box; border: 2px solid transparent; box-shadow: 0 8px 20px rgba(26,54,93,0.18); }
     .hxs-riser-circle svg { width: 15px; height: 15px; transform: rotate(-45deg); }
     .hxs-riser-label { display: none; }
-    .hxs-ground { grid-column: 1 / -1; grid-row: 2; height: 6px; align-self: end; border-radius: 3px; background: var(--emr-gradient-primary); opacity: 0.85; box-shadow: 0 6px 18px rgba(26,54,93,0.25); }
+    /* Two-zone base rail + labels: solid under Phase 1 (today's offer),
+       faded under phases 2-3 (optional, agreed separately). */
+    .hxs-ground { grid-row: 2; height: 6px; align-self: end; border-radius: 3px; }
+    .hxs-ground--now { grid-column: 1 / 2; background: var(--emr-gradient-primary); opacity: 0.9; box-shadow: 0 6px 18px rgba(26,54,93,0.25); }
+    .hxs-ground--later { grid-column: 3 / -1; background: rgba(49,130,206,0.22); }
+    .hxs-zone { grid-row: 3; margin-top: 9px; font-size: 0.54em; line-height: 1.3; color: var(--emr-text-muted); }
+    .hxs-zone b { font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; }
+    .hxs-zone--now { grid-column: 1 / 2; }
+    .hxs-zone--now b { color: var(--emr-accent); }
+    .hxs-zone--later { grid-column: 3 / -1; }
     .hxs-closer { margin-top: 14px; display: flex; align-items: center; gap: 16px; }
     .hxs-rule { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, rgba(49,130,206,0.4)); }
     .hxs-rule:last-child { background: linear-gradient(90deg, rgba(49,130,206,0.4), transparent); }
     .hxs-closer-line { margin: 0; font-size: 0.76em; line-height: 1.45; text-align: center; color: var(--emr-text-body); }
     .hxs-closer-line strong { font-weight: 800; background: var(--emr-gradient-section); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
     body.lang-active-ka .hxs-list { font-size: 0.63em; }
+    /* Mkhedruli has no case and runs longer — drop the uppercase tracking */
+    body.lang-active-ka .hxs-ribbon { font-size: 0.46em; letter-spacing: 0.01em; }
+    body.lang-active-ka .hxs-zone { font-size: 0.5em; }
+    /* "თქვენ" is a word, not a numeral — keep it from eating the foot row */
+    body.lang-active-ka .hxs-foot-num { font-size: 0.82em; }
+    body.lang-active-ka .hxs-zone b { letter-spacing: 0.01em; }
     body.lang-active-en .hxs-slide .lang-en, body.lang-active-ka .hxs-slide .lang-ka { display: inline !important; }
     /* Bullet stagger index (max 4 bullets per card) */
     .hxs-list li:nth-child(1) { --i: 0; } .hxs-list li:nth-child(2) { --i: 1; }
@@ -9268,10 +9290,16 @@
       .hxc-cases { grid-template-columns: 1fr; }
       .hxn-steps { flex-direction: column; align-items: stretch; }
       .hxn-sep { display: none; }
-      .hxs-stair { display: flex; flex-direction: column; gap: 12px; margin-top: 12px; }
+      /* align-items:end is a grid rule — in the mobile column flex it would
+         right-align the zone labels, so reset it here. */
+      .hxs-stair { display: flex; flex-direction: column; align-items: stretch; gap: 12px; margin-top: 12px; }
       .hxs-card, .hxs-card--p1, .hxs-card--p2, .hxs-card--p3 { min-height: 0; }
       .hxs-riser { display: none; }
-      .hxs-ground { height: 5px; margin-top: 2px; }
+      .hxs-ground { display: none; }
+      /* Zone labels lead their group in DOM order, so on mobile they read as
+         section headers above the cards they bracket. */
+      .hxs-zone { margin: 4px 0 0; font-size: 0.64em; }
+      .hxs-ribbon { margin: -15px -18px 12px; font-size: 0.56em; }
       .hxs-closer { margin-top: 12px; }
       .hxt-badge { position: static; align-self: flex-start; margin: 0 0 10px; }
       .hxa-slide .floor-plan { width: 100%; margin: 8px 0 0; }
@@ -9515,7 +9543,7 @@
                 <span class="hxd-tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
                 <b><span class="lang-en"><em>Free</em> deployment</span><span class="lang-ka" style="display:none;"><em>უფასო</em> დანერგვა</span></b>
               </div>
-              <p><span class="lang-en">We install, configure and train your teams — the rollout costs you nothing.</span><span class="lang-ka" style="display:none;">ჩვენ ვაინსტალირებთ, ვაწყობთ და ვამზადებთ თქვენს გუნდებს — დანერგვა არაფერი გიჯდებათ.</span></p>
+              <p><span class="lang-en">We install, configure and train your key users on-site — the rollout costs you nothing.</span><span class="lang-ka" style="display:none;">ვაინსტალირებთ, ვაწყობთ და ადგილზე ვამზადებთ თქვენს ძირითად მომხმარებლებს — დანერგვა არაფერი გიჯდებათ.</span></p>
             </div>
             <div class="hxd-card">
               <span class="hxd-num" aria-hidden="true">02</span>
@@ -9545,9 +9573,9 @@
               <span class="hxd-num" aria-hidden="true">05</span>
               <div class="hxd-card-head">
                 <span class="hxd-tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-                <b><span class="lang-en">Tomorrow's standard, <em>at today's price</em></span><span class="lang-ka" style="display:none;">ხვალინდელი სტანდარტი — <em>დღევანდელ ფასად</em></span></b>
+                <b><span class="lang-en">Tomorrow's standard, <em>today</em></span><span class="lang-ka" style="display:none;">ხვალინდელი სტანდარტი — <em>უკვე დღეს</em></span></b>
               </div>
-              <p><span class="lang-en">The latest Western-grade platform — after MediMind, you'll never need another software vendor.</span><span class="lang-ka" style="display:none;">უახლესი დასავლური დონის პლატფორმა — MediMind-ის შემდეგ სხვა ვენდორი აღარასდროს დაგჭირდებათ.</span></p>
+              <p><span class="lang-en">The latest Western-grade platform, improving every month — after MediMind, you'll never need another software vendor.</span><span class="lang-ka" style="display:none;">უახლესი დასავლური დონის პლატფორმა, რომელიც ყოველთვიურად ვითარდება — MediMind-ის შემდეგ სხვა ვენდორი აღარასდროს დაგჭირდებათ.</span></p>
             </div>
           </div>
 
@@ -9555,7 +9583,7 @@
         </div>
         <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
         <aside class="notes">
-          <span class="lang-en">Before anything else, here is the whole deal — so no question hangs in the air. Deployment is free: we install, configure, migrate and train. Development is free and limitless: you ask, we build, no invoices. The platform covers everything the hospital runs — EMR, lab, PACS, pharmacy, billing — at what you already pay today. You hold the first version of the source code in writing, as insurance. And the migration is one prepared day — painless, no downtime. Everything after this slide is just proof of these five sentences.</span><span class="lang-ka" style="display:none;">სანამ რამეს გაჩვენებთ, აი მთელი შეთავაზება — რომ არცერთი კითხვა ჰაერში არ დარჩეს. დანერგვა უფასოა: ვაინსტალირებთ, ვაწყობთ, გადმოგვაქვს მონაცემები და ვამზადებთ გუნდებს. დეველოპმენტი უფასო და შეუზღუდავია: თქვენ ითხოვთ, ჩვენ ვაშენებთ — ინვოისების გარეშე. პლატფორმა ფარავს ყველაფერს — EMR, ლაბორატორია, PACS, აფთიაქი, ბილინგი — იმავე ფასად, რასაც დღეს იხდით. პირველი ვერსიის საწყის კოდს წერილობით ფლობთ, როგორც დაზღვევას. და მიგრაცია ერთი მომზადებული დღეა — უმტკივნეულო, შეფერხების გარეშე. ყველაფერი ამ სლაიდის შემდეგ უბრალოდ ამ ხუთი წინადადების მტკიცებულებაა.</span>
+          <span class="lang-en">Before anything else, here is the whole deal — so no question hangs in the air. Deployment is free: we install, configure, migrate and train your key users on-site. [If asked about training: it is real and hands-on, but it works because each department names someone who owns the system and learns it properly with us — we support that person indefinitely, we don't run endless open training.] Development is free and limitless: you ask, we build, no invoices. The platform covers everything the hospital runs — EMR, lab, PACS, pharmacy, billing — at what you already pay today. You hold the first version of the source code in writing, as insurance. And the migration is one prepared day — painless, no downtime. Everything after this slide is just proof of these five sentences.</span><span class="lang-ka" style="display:none;">სანამ რამეს გაჩვენებთ, აი მთელი შეთავაზება — რომ არცერთი კითხვა ჰაერში არ დარჩეს. დანერგვა უფასოა: ვაინსტალირებთ, ვაწყობთ, გადმოგვაქვს მონაცემები და ადგილზე ვამზადებთ თქვენს ძირითად მომხმარებლებს. [თუ ტრენინგზე იკითხავენ: ტრენინგი რეალური და პრაქტიკულია, მაგრამ მუშაობს იმიტომ, რომ თითოეული განყოფილება ასახელებს ადამიანს, რომელიც სისტემას ჩაიბარებს და კარგად გაერკვევა — ამ ადამიანს მუდმივად ვუწევთ მხარდაჭერას; დაუსრულებელ ღია ტრენინგებს არ ვატარებთ.] დეველოპმენტი უფასო და შეუზღუდავია: თქვენ ითხოვთ, ჩვენ ვაშენებთ — ინვოისების გარეშე. პლატფორმა ფარავს ყველაფერს — EMR, ლაბორატორია, PACS, აფთიაქი, ბილინგი — იმავე ფასად, რასაც დღეს იხდით. პირველი ვერსიის საწყის კოდს წერილობით ფლობთ, როგორც დაზღვევას. და მიგრაცია ერთი მომზადებული დღეა — უმტკივნეულო, შეფერხების გარეშე. ყველაფერი ამ სლაიდის შემდეგ უბრალოდ ამ ხუთი წინადადების მტკიცებულებაა.</span>
         </aside>
       </section>
 
@@ -9634,11 +9662,13 @@
         <div class="slide-inner">
           <div class="slide-label"><span class="label-num">03</span><span class="lang-en">THE PATH · 3 PHASES</span><span class="lang-ka" style="display:none;">გზა · 3 ეტაპი</span></div>
           <h2 class="headline-big"><span class="lang-en">Start solid. <em>End ahead of the world.</em></span><span class="lang-ka" style="display:none;">დაიწყეთ მყარად. <em>დაასრულეთ მსოფლიოზე წინ.</em></span></h2>
-          <p class="headline-sub"><span class="lang-en">Three phases on one platform. The first is included on day one — the next two are already wired, waiting for your yes.</span><span class="lang-ka" style="display:none;">სამი ეტაპი ერთ პლატფორმაზე. პირველი პირველივე დღიდან შედის ძალაში — მომდევნო ორი უკვე ჩაშენებულია და მხოლოდ თქვენს თანხმობას ელოდება.</span></p>
+          <p class="headline-sub"><span class="lang-en">Phase 1 is today's offer. Phases 2 and 3 stay optional.</span><span class="lang-ka" style="display:none;">ეტაპი 1 — დღევანდელი შეთავაზება. ეტაპები 2 და 3 არჩევითია.</span></p>
 
           <div class="hxs-stair">
+            <span class="hxs-zone hxs-zone--now"><b><span class="lang-en">On the table today</span><span class="lang-ka" style="display:none;">დღეს მაგიდაზე</span></b> — <span class="lang-en">at what you already pay.</span><span class="lang-ka" style="display:none;">იმავე ფასად, რასაც დღეს იხდით.</span></span>
             <article class="hxs-card hxs-card--p1">
               <span class="hxs-num" aria-hidden="true">1</span>
+              <div class="hxs-ribbon"><span class="lang-en">This is what we're offering today</span><span class="lang-ka" style="display:none;">სწორედ ამას გთავაზობთ დღეს</span></div>
               <div class="hxs-top">
                 <span class="hxs-phase"><span class="lang-en">Phase 1</span><span class="lang-ka" style="display:none;">ეტაპი 1</span></span>
                 <span class="hxs-status hxs-status--live"><span class="hxs-dot" aria-hidden="true"></span><span class="lang-en">Live · day one</span><span class="lang-ka" style="display:none;">აქტიური · პირველივე დღიდან</span></span>
@@ -9647,10 +9677,10 @@
               <div class="hxs-sub"><span class="lang-en">EMR · LAB · PACS · Portal</span><span class="lang-ka" style="display:none;">EMR · LAB · PACS · პორტალი</span></div>
               <ul class="hxs-list">
                 <li><span class="hxs-li-dot" aria-hidden="true"></span><span class="hxs-li-t"><span class="lang-en">The legacy stack goes.</span><span class="lang-ka" style="display:none;">ძველი სისტემები იცვლება.</span></span></li>
-                <li><span class="hxs-li-dot" aria-hidden="true"></span><span class="hxs-li-t"><span class="lang-en">A world-class, Western-standard system takes its place.</span><span class="lang-ka" style="display:none;">მათ ადგილს იკავებს მსოფლიო დონის, დასავლური სტანდარტის სისტემა.</span></span></li>
+                <li><span class="hxs-li-dot" aria-hidden="true"></span><span class="hxs-li-t"><span class="lang-en">A world-class Western system takes its place.</span><span class="lang-ka" style="display:none;">მის ადგილს იკავებს მსოფლიო დონის დასავლური სისტემა.</span></span></li>
                 <li><span class="hxs-li-dot" aria-hidden="true"></span><span class="hxs-li-t"><span class="lang-en">Built on FHIR R4 — secured to the highest bar.</span><span class="lang-ka" style="display:none;">აგებული FHIR R4-ზე — დაცული უმაღლესი სტანდარტით.</span></span></li>
               </ul>
-              <div class="hxs-foot"><b class="hxs-foot-num">25</b><span class="hxs-foot-t"><span class="lang-en">hospitals run it today — at what you already pay</span><span class="lang-ka" style="display:none;">კლინიკა მუშაობს მასზე დღეს</span></span></div>
+              <div class="hxs-foot"><b class="hxs-foot-num">25</b><span class="hxs-foot-t"><span class="lang-en">hospitals under one signed chain contract — modules already live</span><span class="lang-ka" style="display:none;">კლინიკა ერთი ხელმოწერილი ქსელური კონტრაქტით — მოდულები უკვე მუშაობს</span></span></div>
             </article>
 
             <div class="hxs-riser hxs-riser--1" aria-hidden="true">
@@ -9658,21 +9688,22 @@
               <span class="hxs-riser-label"><span class="lang-en">switch on</span><span class="lang-ka" style="display:none;">ჩართვა</span></span>
             </div>
 
+            <span class="hxs-zone hxs-zone--later"><b><span class="lang-en">Optional, later</span><span class="lang-ka" style="display:none;">არჩევითი, მოგვიანებით</span></b> — <span class="lang-en">your call, agreed separately if and when you want it.</span><span class="lang-ka" style="display:none;">თქვენი გადაწყვეტილებაა და ცალკე შესათანხმებელი — თუ და როცა მოისურვებთ.</span></span>
             <article class="hxs-card hxs-card--p2">
               <span class="hxs-num" aria-hidden="true">2</span>
               <div class="hxs-top">
                 <span class="hxs-phase"><span class="lang-en">Phase 2</span><span class="lang-ka" style="display:none;">ეტაპი 2</span></span>
                 <span class="hxs-status hxs-status--opt"><span class="lang-en">Optional · when ready</span><span class="lang-ka" style="display:none;">არჩევითი · როცა მზად ხართ</span></span>
               </div>
-              <h3 class="hxs-title"><span class="lang-en">AI in every workflow</span><span class="lang-ka" style="display:none;">AI ყველა პროცესში</span></h3>
-              <div class="hxs-sub"><span class="lang-en">Every department + management</span><span class="lang-ka" style="display:none;">ყველა განყოფილება + მენეჯმენტი</span></div>
+              <h3 class="hxs-title"><span class="lang-en">Efficiency gains</span><span class="lang-ka" style="display:none;">ეფექტიანობა</span></h3>
+              <div class="hxs-sub"><span class="lang-en">AI introduced workflow by workflow</span><span class="lang-ka" style="display:none;">AI ინერგება ეტაპობრივად</span></div>
               <ul class="hxs-list">
-                <li><span class="hxs-li-dot" aria-hidden="true"></span><span class="hxs-li-t"><span class="lang-en">Notes write themselves.</span><span class="lang-ka" style="display:none;">ჩანაწერები თავად იწერება.</span></span></li>
-                <li><span class="hxs-li-dot" aria-hidden="true"></span><span class="hxs-li-t"><span class="lang-en">Chart-cited answers for every clinician.</span><span class="lang-ka" style="display:none;">ყველა ექიმს — პასუხები პაციენტის ისტორიიდან.</span></span></li>
-                <li><span class="hxs-li-dot" aria-hidden="true"></span><span class="hxs-li-t"><span class="lang-en">Early warnings reach the ward first.</span><span class="lang-ka" style="display:none;">ადრეული გაფრთხილება პალატამდე პირველი აღწევს.</span></span></li>
-                <li><span class="hxs-li-dot" aria-hidden="true"></span><span class="hxs-li-t"><span class="lang-en">Management sees the whole hospital on one screen.</span><span class="lang-ka" style="display:none;">მენეჯმენტი მთელ კლინიკას ერთ ეკრანზე ხედავს.</span></span></li>
+                <li><span class="hxs-li-dot" aria-hidden="true"></span><span class="hxs-li-t"><span class="lang-en">Draft notes, signed off by the doctor.</span><span class="lang-ka" style="display:none;">ჩანაწერის პროექტი — ექიმის ხელმოწერით.</span></span></li>
+                <li><span class="hxs-li-dot" aria-hidden="true"></span><span class="hxs-li-t"><span class="lang-en">Answers cited from the patient's chart.</span><span class="lang-ka" style="display:none;">პასუხები პაციენტის ისტორიიდან.</span></span></li>
+                <li><span class="hxs-li-dot" aria-hidden="true"></span><span class="hxs-li-t"><span class="lang-en">Early warnings reach the team on duty.</span><span class="lang-ka" style="display:none;">ადრეული გაფრთხილება გუნდამდე.</span></span></li>
+                <li><span class="hxs-li-dot" aria-hidden="true"></span><span class="hxs-li-t"><span class="lang-en">Management sees the whole hospital.</span><span class="lang-ka" style="display:none;">მენეჯმენტი მთელ კლინიკას ხედავს.</span></span></li>
               </ul>
-              <div class="hxs-foot"><b class="hxs-foot-num">ON</b><span class="hxs-foot-t"><span class="lang-en">per department — the moment you say go</span><span class="lang-ka" style="display:none;">განყოფილებების მიხედვით</span></span></div>
+              <div class="hxs-foot"><b class="hxs-foot-num"><span class="lang-en">YOU</span><span class="lang-ka" style="display:none;">თქვენ</span></b><span class="hxs-foot-t"><span class="lang-en">decide which department starts — and when</span><span class="lang-ka" style="display:none;">წყვეტთ, საიდან და როდის დაიწყება</span></span></div>
             </article>
 
             <div class="hxs-riser hxs-riser--2" aria-hidden="true">
@@ -9691,24 +9722,25 @@
               <div class="hxs-sub"><span class="lang-en">The hospital that thinks ahead</span><span class="lang-ka" style="display:none;">კლინიკა, რომელიც წინასწარ ფიქრობს</span></div>
               <ul class="hxs-list">
                 <li><span class="hxs-li-dot" aria-hidden="true"></span><span class="hxs-li-t"><span class="lang-en">Reads every patient in real time.</span><span class="lang-ka" style="display:none;">ყველა პაციენტს რეალურ დროში კითხულობს.</span></span></li>
-                <li><span class="hxs-li-dot" aria-hidden="true"></span><span class="hxs-li-t"><span class="lang-en">Steers medicine and operations.</span><span class="lang-ka" style="display:none;">მართავს მედიცინასაც და ოპერაციებსაც.</span></span></li>
-                <li><span class="hxs-li-dot" aria-hidden="true"></span><span class="hxs-li-t"><span class="lang-en">Catches problems before they become emergencies.</span><span class="lang-ka" style="display:none;">იჭერს პრობლემებს, სანამ გადაუდებელი შემთხვევა გახდება.</span></span></li>
+                <li><span class="hxs-li-dot" aria-hidden="true"></span><span class="hxs-li-t"><span class="lang-en">Supports clinical and operational decisions.</span><span class="lang-ka" style="display:none;">ეხმარება კლინიკურ და ოპერაციულ გადაწყვეტილებებში.</span></span></li>
+                <li><span class="hxs-li-dot" aria-hidden="true"></span><span class="hxs-li-t"><span class="lang-en">Catches problems before they escalate.</span><span class="lang-ka" style="display:none;">იჭერს პრობლემებს გამწვავებამდე.</span></span></li>
               </ul>
               <div class="hxs-foot"><b class="hxs-foot-num">1st</b><span class="hxs-foot-t"><span class="lang-en">the hospitals that switch it on run among the first in the world</span><span class="lang-ka" style="display:none;">კლინიკები, რომლებიც ამას ჩართავენ, მსოფლიოში პირველთა შორის იქნებიან</span></span></div>
             </article>
 
-            <div class="hxs-ground" aria-hidden="true"></div>
+            <span class="hxs-ground hxs-ground--now" aria-hidden="true"></span>
+            <span class="hxs-ground hxs-ground--later" aria-hidden="true"></span>
           </div>
 
           <div class="hxs-closer">
             <span class="hxs-rule" aria-hidden="true"></span>
-            <p class="hxs-closer-line"><span class="lang-en">Phase 1 lays the rails — FHIR R4 under everything. <strong>Phases 2 and 3 aren't an upgrade. They're an activation.</strong></span><span class="lang-ka" style="display:none;">ეტაპი 1 აგებს რელსებს — FHIR R4 ყველაფრის ქვეშ. <strong>ყველაფერი თავიდანვე მზადდება 2 და 3 ეტაპებისთვის.</strong></span></p>
+            <p class="hxs-closer-line"><span class="lang-en">Phase 1 lays the rails — FHIR R4 under everything. <strong>So if you ever want more, it's a switch, not a rebuild.</strong></span><span class="lang-ka" style="display:none;">ეტაპი 1 აგებს რელსებს — FHIR R4 ყველაფრის ქვეშ. <strong>ამიტომ თუ ოდესმე მეტს მოისურვებთ, ეს იქნება ჩართვა და არა თავიდან შენება.</strong></span></p>
             <span class="hxs-rule" aria-hidden="true"></span>
           </div>
         </div>
         <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
         <aside class="notes">
-          <span class="lang-en">This is the whole partnership on one slide. Phase 1 is not a pilot — it is the full replacement: EMR, lab, PACS, portal, Western standards, FHIR R4, live in 25 hospitals, at the money you already spend. Everything after that is optional and pre-wired. Phase 2 puts AI into every department and gives management the whole hospital on one screen. Phase 3 is the proactive brain — the hospitals that turn it on will be among the first in the world, and frankly, that is the goal of this company. The key sentence: because Phase 1 rebuilds the foundation on FHIR, phases 2 and 3 are not an upgrade project. They are an activation — a switch we flip together, when you're ready. [CONFIRM framing: all three phases sit inside the same spend — "optional" means you choose WHEN, never a new invoice.]</span><span class="lang-ka" style="display:none;">ეს არის მთელი პარტნიორობა ერთ სლაიდზე. ეტაპი 1 პილოტი არ არის — ეს სრული ჩანაცვლებაა: EMR, ლაბორატორია, PACS, პორტალი, დასავლური სტანდარტები, FHIR R4, უკვე მუშაობს 25 კლინიკაში, იმ თანხად, რასაც ისედაც ხარჯავთ. ყველაფერი ამის შემდეგ არჩევითია და უკვე ჩაშენებული. ეტაპი 2 AI-ს ყველა განყოფილებაში სვამს და მენეჯმენტს მთელ კლინიკას ერთ ეკრანზე აძლევს. ეტაპი 3 პროაქტიული ტვინია — კლინიკები, რომლებიც მას ჩართავენ, მსოფლიოში პირველთა შორის იქნებიან, და გულწრფელად, ეს არის ამ კომპანიის მიზანი. მთავარი წინადადება: რადგან ეტაპი 1 საძირკველს FHIR-ზე აშენებს, ეტაპები 2 და 3 განახლების პროექტი არ არის. ეს ჩართვაა — ჩამრთველი, რომელსაც ერთად ვაჭერთ, როცა თქვენ მზად ხართ.</span>
+          <span class="lang-en">Be very clear about what is actually on the table today: Phase 1. It is not a pilot — it is the full replacement: EMR, lab, PACS, portal, Western standards, FHIR R4, already running across a 25-hospital chain, at the money you already spend. That alone is the offer, and it is a strong one — sell it, and stop there. Phases 2 and 3 are optional and deliberately NOT priced today. Phase 2 brings AI into the workflows where it actually saves time — introduced step by step, department by department, with the doctor always reviewing and signing. Phase 3 is the proactive brain — the hospitals that turn it on will be among the first in the world. Neither one is promised inside today's spend: we agree them separately, later, once the value is obvious and you ask for them. The key sentence: because Phase 1 rebuilds the foundation on FHIR, more is a switch, not a rebuild. [Never bundle phases 2-3 into the Phase 1 price.]</span><span class="lang-ka" style="display:none;">ძალიან ნათლად თქვით, რა დევს დღეს მაგიდაზე: ეტაპი 1. ეს პილოტი არ არის — ეს სრული ჩანაცვლებაა: EMR, ლაბორატორია, PACS, პორტალი, დასავლური სტანდარტები, FHIR R4, უკვე მუშაობს 25-კლინიკიან ქსელში, იმ თანხად, რასაც ისედაც ხარჯავთ. მარტო ეს არის შეთავაზება და ის ძლიერია — სწორედ ეს გაყიდეთ და აქ გაჩერდით. ეტაპები 2 და 3 არჩევითია და შეგნებულად არ არის დღეს ფასში ჩადებული. ეტაპი 2 AI-ს იმ პროცესებში შემოიტანს, სადაც ის რეალურად დროს ზოგავს — ეტაპობრივად, განყოფილება განყოფილებაზე, სადაც ექიმი ყოველთვის ამოწმებს და ხელს აწერს. ეტაპი 3 პროაქტიული ტვინია — კლინიკები, რომლებიც მას ჩართავენ, მსოფლიოში პირველთა შორის იქნებიან. არცერთი მათგანი არ არის დღევანდელ ხარჯში დაპირებული: მათ ცალკე შევათანხმებთ მოგვიანებით, როცა სარგებელი აშკარა გახდება და თავად მოგვთხოვთ. მთავარი წინადადება: რადგან ეტაპი 1 საძირკველს FHIR-ზე აშენებს, მეტის დამატება ჩართვაა და არა თავიდან შენება. [ეტაპები 2-3 არასდროს ჩადოთ ეტაპ 1-ის ფასში.]</span>
         </aside>
       </section>
 
@@ -9718,7 +9750,7 @@
       <section class="gw-slide hxp-slide">
         <div class="slide-inner">
           <div class="slide-label"><span class="label-num">04</span><span class="lang-en">PROOF · ALREADY LIVE</span><span class="lang-ka" style="display:none;">მტკიცებულება · უკვე დანერგილია</span></div>
-          <h2 class="headline-big"><span class="lang-en">Not a promise. <em>Live in 25 hospitals.</em></span><span class="lang-ka" style="display:none;">ეს არ არის დაპირება. <em>უკვე მუშაობს 25 კლინიკაში.</em></span></h2>
+          <h2 class="headline-big"><span class="lang-en">Not a promise. <em>Live across 25 hospitals.</em></span><span class="lang-ka" style="display:none;">ეს არ არის დაპირება. <em>უკვე მუშაობს 25 კლინიკაში.</em></span></h2>
           <p class="headline-sub"><span class="lang-en">Georgia's 2nd-largest hospital chain already runs on MediMind.</span><span class="lang-ka" style="display:none;">საქართველოს სიდიდით მე-2 საავადმყოფოთა ქსელი უკვე იყენებს MediMind-ს.</span></p>
 
           <div class="hxp-grid">
@@ -9782,8 +9814,8 @@
                   <div class="hxp-row hxp-row--1">
                     <span class="hxp-num">25</span>
                     <span class="hxp-t">
-                      <b><span class="lang-en">Hospitals — signed</span><span class="lang-ka" style="display:none;">კლინიკა — კონტრაქტით</span></b>
-                      <span class="hxp-sub"><span class="lang-en">GeoHospitals, Georgia's 2nd-largest chain · a binding contract, not an LOI</span><span class="lang-ka" style="display:none;">GeoHospitals, საქართველოს სიდიდით მე-2 ქსელი · იურიდიული ძალის მქონე კონტრაქტი და არა უბრალოდ LOI</span></span>
+                      <b><span class="lang-en">Hospitals — one signed contract</span><span class="lang-ka" style="display:none;">კლინიკა — ერთი ხელმოწერილი კონტრაქტი</span></b>
+                      <span class="hxp-sub"><span class="lang-en">GeoHospitals, Georgia's 2nd-largest chain, is moving all 25 onto MediMind — modules already live</span><span class="lang-ka" style="display:none;">GeoHospitals, საქართველოს სიდიდით მე-2 ქსელი, ოცდახუთივე კლინიკას MediMind-ზე გადმოჰყავს — მოდულები უკვე მუშაობს</span></span>
                     </span>
                   </div>
                   <div class="hxp-div" aria-hidden="true"></div>
@@ -9808,7 +9840,7 @@
         </div>
         <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
         <aside class="notes">
-          <span class="lang-en">Start with what's real — and please, check it. GeoHospitals, Georgia's second-largest chain, signed a binding contract with us: twenty-five hospitals. Labs and imaging are running in production today; more than a thousand clinician accounts are active; full go-live across all sites lands in August. We're a government-recognized Innovative Startup backed by a GITA grant. I want you to call them tonight — because the point of this slide is that you're not being asked to go first. Twenty-five hospitals are already ahead of you.</span><span class="lang-ka" style="display:none;">დავიწყოთ რეალური ფაქტებით — და გთხოვთ, თავად გადაამოწმოთ. GeoHospitals-მა, საქართველოს სიდიდით მე-2 ქსელმა, ჩვენთან სავალდებულო კონტრაქტი გააფორმა: ოცდახუთი კლინიკა. ლაბორატორია და რადიოლოგია დღეს უკვე რეალურ რეჟიმში მუშაობს; ათასზე მეტი ექიმის ანგარიში აქტიურია; ყველა ფილიალში სრული დანერგვა აგვისტოში დასრულდება. ჩვენ ვართ სახელმწიფოს მიერ აღიარებული ინოვაციური სტარტაპი, GITA-ს გრანტის მხარდაჭერით. მინდა, რომ დღესვე დაუკავშირდეთ მათ — რადგან ამ სლაიდის მთავარი სათქმელი ისაა, რომ თქვენგან პირველობას არავინ ითხოვს. ოცდახუთი კლინიკა უკვე თქვენზე წინ არის.</span>
+          <span class="lang-en">Start with what's real — and please, check it. Be precise about the shape of it: this is ONE binding contract, signed with GeoHospitals, Georgia's second-largest chain — not twenty-five separate deals. Under that contract the group is migrating its twenty-five hospitals onto us. Labs and imaging are running in production today; more than a thousand clinician accounts are active; full go-live across all sites lands in August. We're a government-recognized Innovative Startup backed by a GITA grant. I want you to call them tonight — because the point of this slide is that you're not being asked to go first. Twenty-five hospitals are already ahead of you.</span><span class="lang-ka" style="display:none;">დავიწყოთ რეალური ფაქტებით — და გთხოვთ, თავად გადაამოწმოთ. ზუსტად თქვით, რა ფორმისაა: ეს არის ერთი სავალდებულო კონტრაქტი, გაფორმებული GeoHospitals-თან, საქართველოს სიდიდით მე-2 ქსელთან — და არა ოცდახუთი ცალკეული გარიგება. ამ კონტრაქტით ჯგუფს თავისი ოცდახუთი კლინიკა ჩვენზე გადმოჰყავს. ლაბორატორია და რადიოლოგია დღეს უკვე რეალურ რეჟიმში მუშაობს; ათასზე მეტი ექიმის ანგარიში აქტიურია; ყველა ფილიალში სრული დანერგვა აგვისტოში დასრულდება. ჩვენ ვართ სახელმწიფოს მიერ აღიარებული ინოვაციური სტარტაპი, GITA-ს გრანტის მხარდაჭერით. მინდა, რომ დღესვე დაუკავშირდეთ მათ — რადგან ამ სლაიდის მთავარი სათქმელი ისაა, რომ თქვენგან პირველობას არავინ ითხოვს. ოცდახუთი კლინიკა უკვე თქვენზე წინ არის.</span>
         </aside>
       </section>
 
@@ -10687,9 +10719,9 @@
                 </span>
               </div>
               <ul class="hxo2-new-list">
-                <li><span class="hxo2-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><span class="lang-en">The full path: Phase 1 today — Phases 2 &amp; 3 the moment you say go</span><span class="lang-ka" style="display:none;">სრული გზა: ეტაპი 1 დღეს — ეტაპები 2 და 3, როგორც კი იტყვით</span></span></li>
+                <li><span class="hxo2-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><span class="lang-en">Phase 1 in full — the whole hospital on one platform, day one</span><span class="lang-ka" style="display:none;">სრული ეტაპი 1 — მთელი კლინიკა ერთ პლატფორმაზე, პირველივე დღიდან</span></span></li>
                 <li><span class="hxo2-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><span class="lang-en">Unlimited feature requests — you ask, we build it</span><span class="lang-ka" style="display:none;">შეუზღუდავი მოთხოვნები — თქვენ ითხოვთ, ჩვენ ვაშენებთ</span></span></li>
-                <li><span class="hxo2-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><span class="lang-en">Every future product, included</span><span class="lang-ka" style="display:none;">ყველა მომავალი პროდუქტი — პაკეტშივე</span></span></li>
+                <li><span class="hxo2-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><span class="lang-en">Every platform update, included</span><span class="lang-ka" style="display:none;">პლატფორმის ყველა განახლება — პაკეტშივე</span></span></li>
                 <li><span class="hxo2-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><span class="lang-en">One contract, one phone number</span><span class="lang-ka" style="display:none;">ერთი კონტრაქტი, ერთი ტელეფონის ნომერი</span></span></li>
               </ul>
             </div>
@@ -10723,13 +10755,13 @@
       <section class="gw-slide gw-switch">
         <div class="slide-inner">
           <div class="slide-label"><span class="label-num">11</span><span class="lang-en">THE SWITCH</span><span class="lang-ka" style="display:none;">გადასვლა</span></div>
-          <h2 class="headline-big"><span class="lang-en">We prove it works. Then switch you in <em>one day</em>.</span><span class="lang-ka" style="display:none;">ჯერ დავამტკიცებთ, რომ მუშაობს — შემდეგ გადმოგიყვანთ <em>ერთ დღეში</em>.</span></h2>
+          <h2 class="headline-big"><span class="lang-en">We prove it works. Then go live in <em>one day</em>.</span><span class="lang-ka" style="display:none;">ჯერ დავამტკიცებთ, რომ მუშაობს — შემდეგ <em>ერთ დღეში</em> გაგიშვებთ.</span></h2>
           <p class="headline-sub"><span class="lang-en">The move is our risk, not yours — you don't lose an hour of operations.</span><span class="lang-ka" style="display:none;">გადასვლა ჩვენი რისკია, არა თქვენი — თქვენ ოპერაციების არც ერთ საათს არ კარგავთ.</span></p>
 
           <div class="gw-switch-rail" aria-hidden="true">
             <div class="gw-rail-node gw-rail-from">
               <span class="gw-rail-dot"></span>
-              <span class="lang-en">Legacy EMR</span><span class="lang-ka" style="display:none;">ძველი EMR</span>
+              <span class="lang-en">Legacy EMR or paper</span><span class="lang-ka" style="display:none;">ძველი EMR ან ქაღალდი</span>
             </div>
             <div class="gw-rail-track">
               <span class="gw-rail-pill"><span class="lang-en">we handle the entire move</span><span class="lang-ka" style="display:none;">მთელ პროცესს ჩვენ ვუძღვებით</span></span>
@@ -10746,9 +10778,9 @@
                 <div class="gw-card-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                 </div>
-                <h3><span class="lang-en">We train every department</span><span class="lang-ka" style="display:none;">ვატრენინგებთ ყველა დეპარტამენტს</span></h3>
+                <h3><span class="lang-en">We train your team on-site</span><span class="lang-ka" style="display:none;">ვამზადებთ თქვენს გუნდს ადგილზე</span></h3>
               </div>
-              <p><span class="lang-en">Georgian UI, on-site training, ongoing support — 1,000+ doctors have already made this jump.</span><span class="lang-ka" style="display:none;">ქართული ინტერფეისი, ტრენინგი ადგილზე, მუდმივი მხარდაჭერა — 1,000+ ექიმმა ეს ნახტომი უკვე გააკეთა.</span></p>
+              <p><span class="lang-en">Georgian UI, hands-on sessions per department, and a named owner on your side we support long-term — 1,000+ doctors have already made this jump.</span><span class="lang-ka" style="display:none;">ქართული ინტერფეისი, პრაქტიკული სესიები განყოფილებების მიხედვით და თქვენი მხრიდან სისტემის კონკრეტული პასუხისმგებელი, რომელსაც მუდმივად ვუწევთ მხარდაჭერას — 1,000+ ექიმმა ეს ნახტომი უკვე გააკეთა.</span></p>
             </div>
             <div class="gw-card">
               <div class="gw-card-head">
@@ -10764,9 +10796,9 @@
                 <div class="gw-card-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
                 </div>
-                <h3><span class="lang-en">Coexistence path</span><span class="lang-ka" style="display:none;">პარალელური რეჟიმი</span></h3>
+                <h3><span class="lang-en">Your pace, either way</span><span class="lang-ka" style="display:none;">თქვენი ტემპით — ორივე შემთხვევაში</span></h3>
               </div>
-              <p><span class="lang-en">Nervous? Run both systems in parallel and cut over only when you're ready.</span><span class="lang-ka" style="display:none;">ამუშავეთ ორივე სისტემა პარალელურად და გადადით მხოლოდ მაშინ, როცა მზად იქნებით.</span></p>
+              <p><span class="lang-en">Replacing a legacy system? Run both in parallel until you're ready. Starting from scratch? We bring you live department by department.</span><span class="lang-ka" style="display:none;">ცვლით ძველ სისტემას? ორივე პარალელურად იმუშავებს, სანამ მზად არ იქნებით. ნულიდან იწყებთ? განყოფილება განყოფილებაზე გაგიშვებთ.</span></p>
             </div>
           </div>
 
@@ -10776,7 +10808,7 @@
         </div>
         <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
         <aside class="notes">
-          <span class="lang-en">The only real reason to stay on a system you know is broken is that switching feels dangerous. So we take that off the table. We move you in a single day. We scrape and migrate your data ourselves — even if the legacy vendor resists, we route around them. You don't wait on their goodwill, and you don't lose a day of operations. The thing that's kept you stuck is the exact thing we make trivial.</span><span class="lang-ka" style="display:none;">ერთადერთი რეალური მიზეზი, დარჩეთ სისტემაზე, რომელიც იცით რომ გაფუჭებულია, გადასვლის შიშია. ჩვენ ამ შიშს ვხსნით. გადაგვყავხართ ერთ დღეში. ჩვენ თავად ვიღებთ და გადმოგვაქვს თქვენი მონაცემები — თუნდაც ძველი ვენდორი წინააღმდეგობას გიწევდეთ, ჩვენ მათ გვერდს ავუვლით. თქვენ არ გჭირდებათ მათი კეთილი ნების ლოდინი და არ კარგავთ არცერთ სამუშაო დღეს. ის, რაც გაფერხებდათ, ჩვენთვის ტრივიალური ამოცანაა.</span>
+          <span class="lang-en">The only real reason to stay on a system you know is broken is that switching feels dangerous. So we take that off the table. We go live in a single day. We scrape and migrate your data ourselves — even if the legacy vendor resists, we route around them. You don't wait on their goodwill, and you don't lose a day of operations. The thing that's kept you stuck is the exact thing we make trivial. [If this hospital has no system to replace — new build, or still on paper — say it plainly: then there is nothing to migrate and nothing to run in parallel. We stand you up department by department, at your pace, and the first one is live within a day of being ready.] On training, be honest about the shape of it: hands-on sessions per department, plus one named owner on your side who learns it properly — that person we support indefinitely.</span><span class="lang-ka" style="display:none;">ერთადერთი რეალური მიზეზი, დარჩეთ სისტემაზე, რომელიც იცით რომ გაფუჭებულია, გადასვლის შიშია. ჩვენ ამ შიშს ვხსნით. გადაგვყავხართ ერთ დღეში. ჩვენ თავად ვიღებთ და გადმოგვაქვს თქვენი მონაცემები — თუნდაც ძველი ვენდორი წინააღმდეგობას გიწევდეთ, ჩვენ მათ გვერდს ავუვლით. თქვენ არ გჭირდებათ მათი კეთილი ნების ლოდინი და არ კარგავთ არცერთ სამუშაო დღეს. ის, რაც გაფერხებდათ, ჩვენთვის ტრივიალური ამოცანაა.</span>
         </aside>
       </section>
 

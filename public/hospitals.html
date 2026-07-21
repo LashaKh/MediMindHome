@@ -6529,6 +6529,11 @@
       -webkit-text-fill-color: transparent; color: transparent;
       text-shadow: none;
       filter: drop-shadow(0 8px 30px rgba(0,0,0,0.3));
+      /* Georgian descenders reach below the line-height:1 box; the gradient
+         only paints inside the box, so they rendered invisible ("cut").
+         Pad the paint area and pull the layout back with negative margins. */
+      padding: 0.18em 0.12em;
+      margin: -0.18em -0.12em 4px;
     }
     .divider-thanks .divider-tag {
       font-size: 0.66em; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase;
@@ -8635,6 +8640,173 @@
       .hxw2-quote { margin-top: 12px; }
     }
 
+    /* ══ 01 THE PROMISE (hxd-) — hero band + 5 commitment cards.
+       2026-07-21 upgrade: dot-grid + one-shot sheen on the hero, tick-in-title
+       lockup, ghost numerals 01-05, per-card keyline that draws itself,
+       gradient-border "future" card, tick pop ripple, hover lifts. ══ */
+    .hxd-hero { margin-top: 16px; position: relative; overflow: hidden; display: flex; align-items: center; gap: 20px; padding: 19px 26px; border-radius: 18px; color: #fff;
+      background: radial-gradient(120% 160% at 90% -20%, rgba(125,211,252,0.28), transparent 55%), var(--emr-gradient-primary);
+      box-shadow: 0 20px 48px -16px rgba(26,54,93,0.45); }
+    .hxd-hero::before { content: ""; position: absolute; inset: 0; pointer-events: none;
+      background-image: radial-gradient(rgba(255,255,255,0.10) 1px, transparent 1.4px); background-size: 20px 20px;
+      -webkit-mask-image: linear-gradient(90deg, transparent 25%, #000 70%); mask-image: linear-gradient(90deg, transparent 25%, #000 70%); }
+    .hxd-hero::after { content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 34%; pointer-events: none; transform: translateX(-160%) skewX(-18deg);
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent); }
+    .hxd-hero-icon { flex: none; width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.3); }
+    .hxd-hero-icon svg { width: 26px; height: 26px; }
+    .hxd-hero-t b { display: block; font-size: 1.04em; font-weight: 800; letter-spacing: -0.01em; }
+    .hxd-hero-t > span { display: block; margin-top: 3px; font-size: 0.72em; color: #dbeafe; line-height: 1.4; }
+    .hxd-hero-chips { margin-left: auto; display: flex; flex-wrap: wrap; gap: 7px; justify-content: flex-end; max-width: 320px; position: relative; z-index: 1; }
+    .hxd-chip { font-size: 0.58em; font-weight: 800; letter-spacing: 0.06em; padding: 5px 12px; border-radius: 999px; background: rgba(255,255,255,0.13); border: 1px solid rgba(255,255,255,0.32); color: #eaf4ff; white-space: nowrap; }
+    .hxd-grid { flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-top: 14px; }
+    .hxd-card { position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center; gap: 9px; padding: 15px 16px; border-radius: 16px; border: 1px solid var(--emr-border); background: #fff; box-shadow: 0 2px 10px rgba(15,32,58,0.04); transition: transform 0.18s ease, box-shadow 0.18s ease; }
+    .hxd-card:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(26,54,93,0.14); }
+    /* Keyline that draws itself along each card's top edge */
+    .hxd-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; transform-origin: 0 50%; background: linear-gradient(90deg, #38a169, #3182ce); opacity: 0.85; }
+    .hxd-card--future { border: 1.5px solid transparent;
+      background: linear-gradient(180deg, #f7fbff, #ffffff) padding-box, var(--emr-gradient-primary) border-box;
+      box-shadow: 0 3px 10px rgba(15,32,58,0.06), 0 22px 44px -18px rgba(26,54,93,0.32); }
+    .hxd-card--future::before { left: 2px; right: 2px; border-radius: 0 0 2px 2px; background: var(--emr-gradient-section); }
+    .hxd-card-head { display: flex; align-items: center; gap: 9px; position: relative; z-index: 1; }
+    .hxd-tick { flex: none; width: 26px; height: 26px; border-radius: 999px; display: flex; align-items: center; justify-content: center; color: #fff; background: linear-gradient(135deg, #276749, #38a169); box-shadow: 0 6px 14px -4px rgba(56,161,105,0.5); }
+    .hxd-tick svg { width: 13px; height: 13px; }
+    .hxd-num { position: absolute; bottom: 6px; right: 12px; z-index: 0; font-size: 2.5em; font-weight: 900; line-height: 1; letter-spacing: -0.04em; color: rgba(26,54,93,0.06); pointer-events: none; }
+    .hxd-card b { font-size: 0.8em; font-weight: 800; color: var(--emr-text-primary); letter-spacing: -0.01em; line-height: 1.2; }
+    .hxd-card b em { font-style: normal; color: var(--emr-secondary); }
+    .hxd-card p { position: relative; z-index: 1; margin: 0; font-size: 0.65em; line-height: 1.45; color: var(--emr-text-body); }
+    .hxd-closer { margin-top: 13px; text-align: center; font-size: 0.8em; font-weight: 700; color: var(--emr-text-primary); }
+    .hxd-closer em { font-style: normal; font-weight: 800; background: var(--emr-gradient-section); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+    /* Card cascade timing */
+    .hxd-card:nth-child(1) { --hxd-d: 0.22s; } .hxd-card:nth-child(2) { --hxd-d: 0.32s; }
+    .hxd-card:nth-child(3) { --hxd-d: 0.42s; } .hxd-card:nth-child(4) { --hxd-d: 0.52s; }
+    .hxd-card:nth-child(5) { --hxd-d: 0.62s; }
+    /* Entrance choreography — motion-safe; "backwards" fill keeps hover lifts alive */
+    @media (prefers-reduced-motion: no-preference) {
+      .hxd-slide.present .hxd-hero { animation: hxpRise 0.5s 0.08s cubic-bezier(0.16,1,0.3,1) backwards; }
+      .hxd-slide.present .hxd-hero::after { animation: hxr3Sweep 1.1s 0.95s ease-in-out backwards; }
+      .hxd-slide.present .hxd-chip { animation: hxsPop 0.4s cubic-bezier(0.34,1.56,0.64,1) backwards; }
+      .hxd-slide.present .hxd-chip:nth-child(1) { animation-delay: 0.35s; }
+      .hxd-slide.present .hxd-chip:nth-child(2) { animation-delay: 0.43s; }
+      .hxd-slide.present .hxd-chip:nth-child(3) { animation-delay: 0.51s; }
+      .hxd-slide.present .hxd-card { animation: hxpRise 0.5s var(--hxd-d, 0.2s) cubic-bezier(0.16,1,0.3,1) backwards; }
+      .hxd-slide.present .hxd-card::before { animation: hxsGround 0.55s calc(var(--hxd-d, 0.2s) + 0.2s) cubic-bezier(0.4,0,0.2,1) backwards; }
+      .hxd-slide.present .hxd-tick { animation: hxr3Mark 0.6s calc(var(--hxd-d, 0.2s) + 0.25s) cubic-bezier(0.34,1.56,0.64,1) backwards; }
+      .hxd-slide.present .hxd-num { animation: hxr3Fade 0.5s calc(var(--hxd-d, 0.2s) + 0.3s) cubic-bezier(0.16,1,0.3,1) backwards; }
+      .hxd-slide.present .hxd-closer { animation: hxpRise 0.5s 0.85s cubic-bezier(0.16,1,0.3,1) backwards; }
+    }
+    body.lang-active-ka .hxd-card b { font-size: 0.74em; }
+    body.lang-active-ka .hxd-card p { font-size: 0.61em; }
+    body.lang-active-ka .hxd-hero-t b { font-size: 0.95em; }
+    body.lang-active-ka .hxd-hero-t > span { font-size: 0.67em; }
+    body.lang-active-ka .hxd-closer { font-size: 0.74em; }
+    @media (max-width: 768px) {
+      .hxd-hero { flex-wrap: wrap; gap: 12px; }
+      .hxd-hero-chips { margin-left: 0; justify-content: flex-start; max-width: none; }
+      .hxd-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .hxd-card { min-height: 108px; }
+      .hxd-card--future { grid-column: 1 / -1; }
+    }
+
+    /* ══ 02 THE LIABILITY verdict board (hxr3-) — flat "past" ledger left ·
+       self-drawing spine center · elevated gradient-border MediMind panel right.
+       Choreography: panels rise → spine draws → VS pops → rows cascade in
+       pairs → checks pop with ripple → header shimmer → closer. ══ */
+    .hxr3-slide .slide-inner > .headline-sub { margin: 6px 0 0; }
+    .hxr3-board { --hxr3-mid: 148px; position: relative; flex: 1; min-height: 0; display: flex; flex-direction: column; margin-top: 12px; }
+    /* Continuous column panels painted behind the row grid */
+    .hxr3-bg { position: absolute; top: 0; bottom: 0; border-radius: 18px; }
+    .hxr3-bg--them { left: 0; width: calc(50% - var(--hxr3-mid) / 2); background: linear-gradient(180deg, #fdfafa 0%, #fbf6f6 100%); border: 1px solid #f2dede; }
+    .hxr3-bg--us { right: 0; width: calc(50% - var(--hxr3-mid) / 2); border: 1.5px solid transparent;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%) padding-box, var(--emr-gradient-primary) border-box;
+      box-shadow: 0 3px 10px rgba(15,32,58,0.06), 0 30px 60px -22px rgba(26,54,93,0.38); }
+    .hxr3-glow { position: absolute; right: -26px; top: 10%; bottom: 4%; width: 42%; border-radius: 50%; background: radial-gradient(closest-side, rgba(49,130,206,0.15), transparent 72%); filter: blur(8px); pointer-events: none; }
+    .hxr3-spine { position: absolute; left: 50%; top: 54px; bottom: 14px; width: 2px; transform: translateX(-50%); transform-origin: 50% 0; border-radius: 2px;
+      background: linear-gradient(180deg, rgba(197,48,48,0.28) 0%, rgba(148,163,184,0.32) 42%, rgba(49,130,206,0.55) 100%); }
+    /* Rows: symmetric grid keeps every row aligned to the panels behind it */
+    .hxr3-row { position: relative; display: grid; grid-template-columns: 1fr var(--hxr3-mid) 1fr; align-items: stretch; }
+    .hxr3-row--head { flex: none; }
+    .hxr3-row:not(.hxr3-row--head) { flex: 1; min-height: 0; }
+    .hxr3-head { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 0.6em; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; padding: 9px 8px; }
+    .hxr3-head--them { color: #b53030; margin: 1px 1px 0; border-radius: 17px 17px 0 0; background: linear-gradient(180deg, #f9ecec, rgba(249,236,236,0)); border-bottom: 1px dashed #efd7d7; }
+    .hxr3-head--us { position: relative; overflow: hidden; color: #fff; margin: 2px 2px 0; border-radius: 15px 15px 0 0; background: var(--emr-gradient-primary); }
+    .hxr3-head--us::after { content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 40%; transform: translateX(-140%) skewX(-18deg); background: linear-gradient(90deg, transparent, rgba(255,255,255,0.38), transparent); }
+    .hxr3-vs { align-self: center; justify-self: center; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.46em; font-weight: 800; letter-spacing: 0.1em; color: var(--emr-secondary);
+      border: 1.5px solid transparent; background: linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(135deg, #e3b1b1, #a8b6c8, #3182ce) border-box; box-shadow: 0 6px 16px rgba(15,32,58,0.14); }
+    .hxr3-cell { display: flex; align-items: center; gap: 11px; padding: 6px 18px; font-size: 0.65em; line-height: 1.35; }
+    .hxr3-cell--them { color: #5d6675; margin-left: 1px; }
+    .hxr3-cell--us { color: var(--emr-text-body); margin-right: 2px; }
+    .hxr3-cell-t { min-width: 0; }
+    .hxr3-cell strong { color: var(--emr-text-primary); font-weight: 800; }
+    @media (min-width: 769px) {
+      .hxr3-row:not(.hxr3-row--head) + .hxr3-row .hxr3-cell--them { border-top: 1px dashed #f0dcdc; }
+      .hxr3-row:not(.hxr3-row--head) + .hxr3-row .hxr3-cell--us { border-top: 1px solid #e9f1fa; }
+    }
+    .hxr3-mark { flex: none; width: 21px; height: 21px; border-radius: 999px; display: flex; align-items: center; justify-content: center; transition: transform 0.18s ease; }
+    .hxr3-cell--them .hxr3-mark { color: #c53030; background: #ffffff; border: 1.5px solid #ecc4c4; box-shadow: 0 3px 8px -2px rgba(197,48,48,0.25); }
+    .hxr3-cell--us .hxr3-mark { color: #fff; background: linear-gradient(135deg, #276749, #38a169); box-shadow: 0 5px 12px -4px rgba(56,161,105,0.55); }
+    .hxr3-mark svg { width: 10px; height: 10px; }
+    .hxr3-cell--us .hxr3-mark svg { width: 11px; height: 11px; }
+    .hxr3-axis { display: flex; align-items: center; justify-content: center; padding: 0 6px; }
+    .hxr3-axis-pill { position: relative; z-index: 1; display: inline-block; text-align: center; font-size: 0.5em; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.25; color: var(--emr-text-muted); background: #ffffff; border: 1px solid var(--emr-border); border-radius: 999px; padding: 5px 12px; box-shadow: 0 2px 6px rgba(15,32,58,0.06); transition: color 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease; }
+    /* Row-pair hover: both cells + the spine pill light up together */
+    .hxr3-row:not(.hxr3-row--head):hover .hxr3-axis-pill { color: var(--emr-secondary); border-color: var(--emr-light-accent); box-shadow: 0 4px 12px rgba(49,130,206,0.20); }
+    .hxr3-row:not(.hxr3-row--head):hover .hxr3-mark { transform: scale(1.14); }
+    .hxr3-closer { margin-top: 10px; padding: 9px 18px; border-radius: 13px; text-align: center; font-size: 0.75em; font-weight: 700; color: var(--emr-text-primary);
+      border: 1px solid transparent; background: linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(90deg, rgba(197,48,48,0.28), rgba(49,130,206,0.42), rgba(56,161,105,0.35)) border-box; box-shadow: 0 10px 24px -14px rgba(15,32,58,0.25); }
+    .hxr3-closer strong { background: var(--emr-gradient-section); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; font-weight: 800; }
+    body.lang-active-ka .hxr3-cell { font-size: 0.63em; }
+    body.lang-active-ka .hxr3-axis-pill { font-size: 0.46em; letter-spacing: 0.04em; }
+    body.lang-active-ka .hxr3-closer { font-size: 0.72em; }
+    /* Row cascade timing (div order inside the board: head = 1, rows = 2…7) */
+    .hxr3-row:nth-of-type(2) { --hxr3-d: 0.40s; }
+    .hxr3-row:nth-of-type(3) { --hxr3-d: 0.49s; }
+    .hxr3-row:nth-of-type(4) { --hxr3-d: 0.58s; }
+    .hxr3-row:nth-of-type(5) { --hxr3-d: 0.67s; }
+    .hxr3-row:nth-of-type(6) { --hxr3-d: 0.76s; }
+    .hxr3-row:nth-of-type(7) { --hxr3-d: 0.85s; }
+    /* Entrance choreography — only when presented, motion-safe. "backwards" fill
+       (not "both") so completed animations release transform back to the
+       cascade, keeping the hover micro-interactions alive. */
+    @media (prefers-reduced-motion: no-preference) {
+      .hxr3-slide.present .hxr3-bg--them, .hxr3-slide.present .hxr3-head--them { animation: hxr3Rise 0.55s 0.05s cubic-bezier(0.16,1,0.3,1) backwards; }
+      .hxr3-slide.present .hxr3-bg--us, .hxr3-slide.present .hxr3-head--us { animation: hxr3Rise 0.55s 0.18s cubic-bezier(0.16,1,0.3,1) backwards; }
+      .hxr3-slide.present .hxr3-spine { animation: hxr3Draw 0.9s 0.35s cubic-bezier(0.4,0,0.2,1) backwards; }
+      .hxr3-slide.present .hxr3-vs { animation: hxr3Pop 0.5s 0.3s cubic-bezier(0.34,1.56,0.64,1) backwards; }
+      .hxr3-slide.present .hxr3-head--us::after { animation: hxr3Sweep 1.1s 1.4s ease-in-out backwards; }
+      .hxr3-slide.present .hxr3-glow { animation: hxr3Breathe 6s 1.6s ease-in-out infinite; }
+      .hxr3-slide.present .hxr3-cell--them { animation: hxr3FromL 0.5s var(--hxr3-d, 0.4s) cubic-bezier(0.16,1,0.3,1) backwards; }
+      .hxr3-slide.present .hxr3-cell--us { animation: hxr3FromR 0.5s var(--hxr3-d, 0.4s) cubic-bezier(0.16,1,0.3,1) backwards; }
+      .hxr3-slide.present .hxr3-axis-pill { animation: hxr3Fade 0.45s calc(var(--hxr3-d, 0.4s) + 0.08s) cubic-bezier(0.16,1,0.3,1) backwards; }
+      .hxr3-slide.present .hxr3-cell--us .hxr3-mark { animation: hxr3Mark 0.6s calc(var(--hxr3-d, 0.4s) + 0.26s) cubic-bezier(0.34,1.56,0.64,1) backwards; }
+      .hxr3-slide.present .hxr3-closer { animation: hxr3Rise 0.55s 1.15s cubic-bezier(0.16,1,0.3,1) backwards; }
+    }
+    @keyframes hxr3Rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes hxr3FromL { from { opacity: 0; transform: translateX(-16px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes hxr3FromR { from { opacity: 0; transform: translateX(16px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes hxr3Fade { from { opacity: 0; transform: scale(0.85); } to { opacity: 1; transform: scale(1); } }
+    @keyframes hxr3Pop { from { opacity: 0; transform: scale(0.4); } to { opacity: 1; transform: scale(1); } }
+    @keyframes hxr3Draw { from { transform: translateX(-50%) scaleY(0); } to { transform: translateX(-50%) scaleY(1); } }
+    @keyframes hxr3Sweep { from { transform: translateX(-140%) skewX(-18deg); } to { transform: translateX(340%) skewX(-18deg); } }
+    @keyframes hxr3Breathe { 0%, 100% { opacity: 0.55; transform: scale(1); } 50% { opacity: 1; transform: scale(1.05); } }
+    @keyframes hxr3Mark {
+      0% { opacity: 0; transform: scale(0.3); box-shadow: 0 5px 12px -4px rgba(56,161,105,0.55), 0 0 0 0 rgba(56,161,105,0.4); }
+      60% { opacity: 1; }
+      100% { opacity: 1; transform: scale(1); box-shadow: 0 5px 12px -4px rgba(56,161,105,0.55), 0 0 0 11px rgba(56,161,105,0); }
+    }
+    @media (max-width: 768px) {
+      .hxr3-board { margin-top: 8px; }
+      .hxr3-bg, .hxr3-glow, .hxr3-spine, .hxr3-vs { display: none; }
+      .hxr3-row { grid-template-columns: 1fr; gap: 6px; }
+      .hxr3-row--head { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .hxr3-row:not(.hxr3-row--head) { flex: none; margin-top: 10px; }
+      .hxr3-head--them { margin: 0; border-radius: 11px; background: #fff5f5; border: 1px solid #fed7d7; }
+      .hxr3-head--us { margin: 0; border-radius: 11px; }
+      .hxr3-axis { order: -1; }
+      .hxr3-cell { padding: 8px 12px; border-radius: 12px; margin: 0; }
+      .hxr3-cell--them { background: #fffbfb; border: 1px solid #fed7d7; }
+      .hxr3-cell--us { background: #f7fbff; border: 1px solid rgba(49,130,206,0.28); }
+    }
+
     /* ══ 04 LOCAL MARKET (hxm-) — vendor patchwork vs one core ══ */
     .hxm-grid { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 84px 1fr; align-items: stretch; margin-top: 16px; }
     .hxm-panel { border-radius: 16px; border: 1px solid var(--emr-border); background: var(--emr-bg-subtle); padding: 14px 18px; display: flex; flex-direction: column; min-width: 0; }
@@ -8761,6 +8933,19 @@
     /* ══ 06 AI BRAIN (hxc-) — light case chips under the two-fates board ══ */
     .hx-brain .csb-stage { margin-top: 8px; }
     .hx-brain .csb-lanes { gap: 30px; }
+    /* KA-fit: the wrapped KA headline+sub squeeze the flexible stage until the
+       lanes spill into the case chips — compact the stage in KA so it can't */
+    body.lang-active-ka .hx-brain .headline-sub { margin-bottom: 8px; }
+    body.lang-active-ka .hx-brain .csb-stage { margin-top: 2px; }
+    body.lang-active-ka .hx-brain .csb-clock { font-size: 2.5em; }
+    body.lang-active-ka .hx-brain .csb-lanes { gap: 16px; }
+    body.lang-active-ka .hx-brain .csb-tag { margin-bottom: 10px; }
+    body.lang-active-ka .hx-brain .csb-ttl { margin-top: 10px; font-size: 0.74em; }
+    body.lang-active-ka .hx-brain .csb-misdir { margin-top: 6px; padding-top: 8px; }
+    body.lang-active-ka .hx-brain .hxc-cases { margin-top: 10px; gap: 12px; }
+    body.lang-active-ka .hx-brain .hxc-case { padding: 10px 16px; }
+    body.lang-active-ka .hx-brain .hxc-case-t b { font-size: 0.74em; }
+    body.lang-active-ka .hx-brain .hxc-case-t span { font-size: 0.6em; }
     .hxc-cases { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
     .hxc-case { display: flex; align-items: center; gap: 15px; padding: 14px 20px; border-radius: 12px; border: 1px solid var(--emr-border); background: var(--emr-bg-subtle); cursor: pointer; transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease; }
     .hxc-case:hover, .hxc-case:focus-visible { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(15,32,58,0.10); border-color: var(--emr-light-accent); }
@@ -8926,6 +9111,136 @@
     .lang-toggle button { appearance: none; border: none; cursor: pointer; font-family: inherit; font-size: 12px; font-weight: 800; letter-spacing: 0.06em; padding: 6px 13px; border-radius: 999px; background: transparent; color: rgba(255,255,255,0.75); transition: background .15s ease, color .15s ease; }
     .lang-toggle button:hover { color: #ffffff; }
 
+    /* ══ 03 THE PATH (hxs-) — 3-phase integration staircase ══
+       Fresh classes on purpose: the orphaned ambition-/stage- classes carry
+       global KA !important overrides tuned for another layout — do not reuse. */
+    .hxs-stair { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 40px 1.02fr 40px 1.18fr; grid-template-rows: 1fr 8px; align-items: end; column-gap: 0; margin-top: 8px; }
+    .hxs-card { position: relative; overflow: hidden; display: flex; flex-direction: column; border-radius: 16px; padding: 15px 18px 14px; grid-row: 1; transition: transform 0.18s ease, box-shadow 0.18s ease; }
+    .hxs-card--p1 { min-height: 232px; background: #fff; border: 1px solid var(--emr-light-accent); border-top: 4px solid var(--emr-accent); box-shadow: 0 10px 26px rgba(26,54,93,0.08); }
+    .hxs-card--p2 { min-height: 262px; background: #fff; border: 1px solid var(--emr-border); border-top: 4px solid var(--emr-success); box-shadow: 0 10px 26px rgba(26,54,93,0.10); }
+    .hxs-card--p3 { min-height: 292px; border: none; color: #eaf4ff;
+      background: radial-gradient(90% 120% at 20% 0%, rgba(94,158,214,0.38), transparent 55%), var(--emr-gradient-primary);
+      box-shadow: 0 22px 48px rgba(26,54,93,0.38), inset 0 1px 0 rgba(255,255,255,0.16); }
+    .hxs-card--p3::before { content: ''; position: absolute; inset: 0; pointer-events: none;
+      background-image: radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px); background-size: 22px 22px; }
+    .hxs-glow { position: absolute; top: -40px; right: -30px; width: 180px; height: 180px; border-radius: 50%; pointer-events: none;
+      background: radial-gradient(circle, rgba(125,211,252,0.35), transparent 70%); filter: blur(2px); }
+    .hxs-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 10px; }
+    .hxs-phase { font-size: 0.56em; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--emr-secondary); }
+    .hxs-card--p2 .hxs-phase { color: #2f855a; }
+    .hxs-card--p3 .hxs-phase { color: var(--emr-light-accent); }
+    .hxs-status { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 999px; font-size: 0.46em; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; white-space: nowrap; }
+    .hxs-status--live { background: rgba(56,161,105,0.12); border: 1px solid rgba(56,161,105,0.35); color: #2f855a; }
+    .hxs-status--opt { background: rgba(49,130,206,0.10); border: 1px solid rgba(49,130,206,0.30); color: #2b6cb0; }
+    .hxs-status--first { background: rgba(190,227,248,0.16); border: 1px solid rgba(190,227,248,0.45); color: #bee3f8; }
+    .hxs-dot { width: 6px; height: 6px; border-radius: 50%; background: #38a169; box-shadow: 0 0 0 3px rgba(56,161,105,0.18); animation: hxpPulse 2s ease-in-out infinite; }
+    .hxs-status svg { width: 10px; height: 10px; }
+    .hxs-title { margin: 0; font-size: 1.28em; font-weight: 900; letter-spacing: -0.02em; line-height: 1.05; color: var(--emr-text-primary); }
+    .hxs-card--p3 .hxs-title { color: #fff; }
+    .hxs-sub { margin: 5px 0 10px; font-size: 0.62em; font-weight: 700; color: var(--emr-text-muted); }
+    .hxs-card--p3 .hxs-sub { color: rgba(255,255,255,0.75); }
+    .hxs-body { flex: 1; margin: 0; font-size: 0.68em; line-height: 1.48; color: var(--emr-text-body); }
+    .hxs-card--p3 .hxs-body { color: rgba(255,255,255,0.92); }
+    /* Digestible bullets (replaced the .hxs-body paragraphs 2026-07-21) */
+    .hxs-list { list-style: none; margin: 0; padding: 0; flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 7px; font-size: 0.66em; line-height: 1.35; color: var(--emr-text-body); }
+    .hxs-list li { display: flex; align-items: flex-start; gap: 9px; }
+    .hxs-li-dot { flex: none; width: 6px; height: 6px; border-radius: 50%; margin-top: 8px; background: var(--emr-accent); box-shadow: 0 0 0 3px rgba(49,130,206,0.12); }
+    .hxs-card--p2 .hxs-li-dot { background: #38a169; box-shadow: 0 0 0 3px rgba(56,161,105,0.14); }
+    .hxs-card--p3 .hxs-list { color: rgba(255,255,255,0.92); }
+    .hxs-card--p3 .hxs-li-dot { background: #7dd3fc; box-shadow: 0 0 0 3px rgba(125,211,252,0.18); }
+    .hxs-li-t { min-width: 0; }
+    /* Ghost phase numeral — depth cue behind each card's content */
+    .hxs-num { position: absolute; top: 30px; right: 10px; z-index: 0; font-size: 3.4em; font-weight: 900; line-height: 1; letter-spacing: -0.04em; color: rgba(26,54,93,0.06); pointer-events: none; }
+    .hxs-card--p3 .hxs-num { color: rgba(255,255,255,0.09); }
+    .hxs-card > *:not(.hxs-num):not(.hxs-glow) { position: relative; z-index: 1; }
+    .hxs-card--p1:hover, .hxs-card--p2:hover { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(26,54,93,0.16); }
+    .hxs-card--p3:hover { transform: translateY(-3px); box-shadow: 0 28px 56px rgba(26,54,93,0.45), inset 0 1px 0 rgba(255,255,255,0.16); }
+    /* One-shot sheen across the apex card */
+    .hxs-card--p3::after { content: ""; position: absolute; z-index: 2; top: 0; bottom: 0; left: 0; width: 40%; transform: translateX(-160%) skewX(-18deg); background: linear-gradient(90deg, transparent, rgba(255,255,255,0.20), transparent); pointer-events: none; }
+    .hxs-foot { margin-top: 12px; display: flex; align-items: baseline; gap: 9px; padding: 8px 12px; border-radius: 10px; background: #fff; border: 1px solid var(--emr-light-accent); }
+    .hxs-card--p3 .hxs-foot { background: rgba(255,255,255,0.10); border-color: rgba(190,227,248,0.25); }
+    .hxs-foot-num { flex: none; white-space: nowrap; font-size: 1em; font-weight: 900; color: var(--emr-secondary); letter-spacing: -0.01em; }
+    .hxs-card--p3 .hxs-foot-num { color: var(--emr-light-accent); }
+    .hxs-foot-t { font-size: 0.56em; font-weight: 600; line-height: 1.3; color: var(--emr-text-body); }
+    .hxs-card--p3 .hxs-foot-t { color: rgba(255,255,255,0.85); }
+    .hxs-riser { grid-row: 1; align-self: end; display: flex; flex-direction: column; align-items: center; position: relative; z-index: 2; }
+    .hxs-riser--1 { margin-bottom: 99px; }
+    .hxs-riser--2 { margin-bottom: 114px; }
+    .hxs-riser-circle { width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--emr-secondary);
+      background: linear-gradient(#fff, #fff) padding-box, var(--emr-gradient-primary) border-box; border: 2px solid transparent; box-shadow: 0 8px 20px rgba(26,54,93,0.18); }
+    .hxs-riser-circle svg { width: 15px; height: 15px; transform: rotate(-45deg); }
+    .hxs-riser-label { display: none; }
+    .hxs-ground { grid-column: 1 / -1; grid-row: 2; height: 6px; align-self: end; border-radius: 3px; background: var(--emr-gradient-primary); opacity: 0.85; box-shadow: 0 6px 18px rgba(26,54,93,0.25); }
+    .hxs-closer { margin-top: 14px; display: flex; align-items: center; gap: 16px; }
+    .hxs-rule { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, rgba(49,130,206,0.4)); }
+    .hxs-rule:last-child { background: linear-gradient(90deg, rgba(49,130,206,0.4), transparent); }
+    .hxs-closer-line { margin: 0; font-size: 0.76em; line-height: 1.45; text-align: center; color: var(--emr-text-body); }
+    .hxs-closer-line strong { font-weight: 800; background: var(--emr-gradient-section); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+    body.lang-active-ka .hxs-list { font-size: 0.63em; }
+    body.lang-active-en .hxs-slide .lang-en, body.lang-active-ka .hxs-slide .lang-ka { display: inline !important; }
+    /* Bullet stagger index (max 4 bullets per card) */
+    .hxs-list li:nth-child(1) { --i: 0; } .hxs-list li:nth-child(2) { --i: 1; }
+    .hxs-list li:nth-child(3) { --i: 2; } .hxs-list li:nth-child(4) { --i: 3; }
+    /* Entrance choreography — climb the staircase left to right. "backwards"
+       fill (not "both") so the hover lift transitions stay alive afterwards. */
+    @media (prefers-reduced-motion: no-preference) {
+      .hxs-slide.present .hxs-ground { transform-origin: 0 50%; animation: hxsGround 0.7s 0.05s cubic-bezier(0.4,0,0.2,1) backwards; }
+      .hxs-slide.present .hxs-card--p1 { animation: hxpRise 0.5s 0.15s cubic-bezier(0.16,1,0.3,1) backwards; }
+      .hxs-slide.present .hxs-riser--1 { animation: hxsPop 0.4s 0.38s cubic-bezier(0.16,1,0.3,1) backwards; }
+      .hxs-slide.present .hxs-card--p2 { animation: hxpRise 0.5s 0.48s cubic-bezier(0.16,1,0.3,1) backwards; }
+      .hxs-slide.present .hxs-riser--2 { animation: hxsPop 0.4s 0.68s cubic-bezier(0.16,1,0.3,1) backwards; }
+      .hxs-slide.present .hxs-card--p3 { animation: hxpRise 0.5s 0.78s cubic-bezier(0.16,1,0.3,1) backwards; }
+      .hxs-slide.present .hxs-closer { animation: hxpRise 0.5s 1.15s cubic-bezier(0.16,1,0.3,1) backwards; }
+      .hxs-slide.present .hxs-list li { animation: hxsLi 0.4s cubic-bezier(0.16,1,0.3,1) backwards; }
+      .hxs-slide.present .hxs-card--p1 .hxs-list li { animation-delay: calc(0.34s + var(--i, 0) * 0.08s); }
+      .hxs-slide.present .hxs-card--p2 .hxs-list li { animation-delay: calc(0.66s + var(--i, 0) * 0.08s); }
+      .hxs-slide.present .hxs-card--p3 .hxs-list li { animation-delay: calc(0.96s + var(--i, 0) * 0.08s); }
+      .hxs-slide.present .hxs-card--p1 .hxs-foot { animation: hxsPop 0.45s 0.58s cubic-bezier(0.34,1.56,0.64,1) backwards; }
+      .hxs-slide.present .hxs-card--p2 .hxs-foot { animation: hxsPop 0.45s 0.9s cubic-bezier(0.34,1.56,0.64,1) backwards; }
+      .hxs-slide.present .hxs-card--p3 .hxs-foot { animation: hxsPop 0.45s 1.2s cubic-bezier(0.34,1.56,0.64,1) backwards; }
+      .hxs-slide.present .hxs-card--p3::after { animation: hxr3Sweep 1.2s 1.5s ease-in-out backwards; }
+      .hxs-slide.present .hxs-glow { animation: hxr3Breathe 6s 1.8s ease-in-out infinite; }
+      .hxs-slide.present .hxs-riser-circle { animation: hxsNudge 2.6s 1.8s ease-in-out infinite; }
+    }
+    @keyframes hxsPop { from { opacity: 0; transform: scale(0.85); } to { opacity: 1; transform: scale(1); } }
+    @keyframes hxsGround { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+    @keyframes hxsLi { from { opacity: 0; transform: translateX(-10px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes hxsNudge { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(4px, -4px); } }
+    @media print {
+      .hxs-slide .hxs-ground, .hxs-slide .hxs-card, .hxs-slide .hxs-riser, .hxs-slide .hxs-closer, .hxs-slide .hxs-list li, .hxs-slide .hxs-foot { opacity: 1 !important; transform: none !important; }
+    }
+
+    /* ══ 08 AI EVERYWHERE (hxa-) — floor plan reuse + management deck + optional strip ══
+       The fp-* CSS (rooms/brain/foundation/stagger/fp-mobile) already lives above,
+       keyed to .scope-slide.present — this slide just adds the section class. */
+    .hxa-slide .floor-plan { flex: none; width: calc(100% + 80px); margin: 6px -40px 0; }
+    .hxa-slide .slide-inner > .headline-big { margin-top: 10px; }
+    .hxa-slide .headline-sub { margin-bottom: 10px; }
+    .hxa-slide .fp-room-std-star { fill: var(--emr-success); }
+    .hxa-strip { margin-top: 12px; display: flex; align-items: center; justify-content: center; gap: 14px; }
+    .hxa-chip { display: inline-flex; align-items: center; gap: 7px; padding: 4px 12px; border-radius: 999px; white-space: nowrap;
+      font-size: 0.5em; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase;
+      background: rgba(56,161,105,0.10); border: 1px solid rgba(56,161,105,0.30); color: #2f855a; }
+    .hxa-chip-dot { width: 6px; height: 6px; border-radius: 50%; background: #38a169; }
+    .hxa-strip-t { margin: 0; font-size: 0.64em; line-height: 1.4; color: var(--emr-text-body); }
+    .hxa-strip-t strong { color: var(--emr-text-primary); font-weight: 800; }
+    .hxa-slide.present .hxa-strip { animation: hxpRise 0.5s 1.2s cubic-bezier(0.16,1,0.3,1) both; }
+    body.lang-active-en .hxa-slide .lang-en, body.lang-active-ka .hxa-slide .lang-ka { display: inline !important; }
+    body.lang-active-en .hxa-slide text.lang-en, body.lang-active-ka .hxa-slide text.lang-ka { display: inline !important; }
+    body.lang-active-ka .hxa-slide text.lang-en, body.lang-active-en .hxa-slide text.lang-ka { display: none !important; }
+    @media (prefers-reduced-motion: reduce) { .hxa-slide.present .hxa-strip { animation: none; } }
+    @media print { .hxa-slide .hxa-strip { opacity: 1 !important; } }
+
+    /* ══ Phase badge (hxt-) — chapter marker on the three depth slides ══
+       Sibling of .slide-label, absolute at section top-right (left of the
+       medimind.md brand pill at right:40) so it never pollutes labelOf(). */
+    .hxt-badge { position: absolute; top: 30px; right: 210px; z-index: 60; display: inline-flex; align-items: center; gap: 7px;
+      padding: 5px 13px; border-radius: 999px; font-size: 0.52em; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
+    .hxt-badge--p1 { color: #2b6cb0; background: rgba(49,130,206,0.10); border: 1px solid rgba(49,130,206,0.30); }
+    .hxt-badge--p2 { color: #2f855a; background: rgba(56,161,105,0.10); border: 1px solid rgba(56,161,105,0.30); }
+    .hxt-badge--p3 { color: #fff; background: var(--emr-gradient-primary); border: 1px solid transparent; box-shadow: 0 3px 10px rgba(26,54,93,0.35); }
+    body.lang-active-en .hxt-badge .lang-en, body.lang-active-ka .hxt-badge .lang-ka { display: inline !important; }
+
     /* ══ Mobile — new layouts stack ══ */
     @media (max-width: 768px) {
       .lang-toggle { top: 10px; right: 12px; }
@@ -8953,6 +9268,14 @@
       .hxc-cases { grid-template-columns: 1fr; }
       .hxn-steps { flex-direction: column; align-items: stretch; }
       .hxn-sep { display: none; }
+      .hxs-stair { display: flex; flex-direction: column; gap: 12px; margin-top: 12px; }
+      .hxs-card, .hxs-card--p1, .hxs-card--p2, .hxs-card--p3 { min-height: 0; }
+      .hxs-riser { display: none; }
+      .hxs-ground { height: 5px; margin-top: 2px; }
+      .hxs-closer { margin-top: 12px; }
+      .hxt-badge { position: static; align-self: flex-start; margin: 0 0 10px; }
+      .hxa-slide .floor-plan { width: 100%; margin: 8px 0 0; }
+      .hxa-strip { flex-wrap: wrap; text-align: left; justify-content: flex-start; }
     }
 
     /* ══ Georgian fit overrides for the new slides ══
@@ -8962,6 +9285,10 @@
     body.lang-active-ka .hxp-t .hxp-sub { font-size: 0.66em; }
     body.lang-active-ka .hxp-tag { font-size: 0.5em; letter-spacing: 0.08em; }
     body.lang-active-ka .hxp-closer { font-size: 0.7em; }
+    /* 2026-07-21 KA review removed these two blocks' Georgian copy entirely —
+       hide the now-empty containers in KA so no blank pill/band renders */
+    body.lang-active-ka .hxp-closer { display: none; }
+    body.lang-active-ka .hxw2-quote { display: none; }
     body.lang-active-ka .hxw2-card b { font-size: 0.84em; }
     body.lang-active-ka .hxw2-card p { font-size: 0.62em; line-height: 1.38; }
     body.lang-active-ka .hxw2-quote p { font-size: 0.72em; }
@@ -9009,6 +9336,26 @@
     body.lang-active-ka .hxl-side-tag { font-size: 0.46em; letter-spacing: 0.08em; }
     body.lang-active-ka .hxl-side-line { font-size: 0.7em; line-height: 1.35; }
     body.lang-active-ka .hxn-step { font-size: 0.58em; }
+    body.lang-active-ka .hxs-title { font-size: 1.12em; }
+    body.lang-active-ka .hxs-body { font-size: 0.62em; line-height: 1.42; }
+    body.lang-active-ka .hxs-sub { font-size: 0.56em; }
+    body.lang-active-ka .hxs-phase { font-size: 0.5em; letter-spacing: 0.1em; }
+    body.lang-active-ka .hxs-status { font-size: 0.42em; letter-spacing: 0.03em; }
+    body.lang-active-ka .hxs-foot-t { font-size: 0.5em; }
+    body.lang-active-ka .hxs-closer-line { font-size: 0.7em; }
+    body.lang-active-ka .hxs-riser-label { font-size: 0.38em; letter-spacing: 0.06em; }
+    /* KA-fit: keep the KA headline on ONE line — at the global 2.0em the new
+       plural wording wraps and the P2 card rides over the sub text */
+    body.lang-active-ka .hxs-slide .headline-big { font-size: 1.78em !important; }
+    body.lang-active-ka .hxt-badge { letter-spacing: 0.05em; font-size: 0.48em; }
+    body.lang-active-ka .hxa-strip-t { font-size: 0.58em; }
+    body.lang-active-ka .hxa-chip { font-size: 0.46em; letter-spacing: 0.03em; }
+    body.lang-active-ka .hxa-slide .fp-room-name { font-size: 10.5px; letter-spacing: 0.02em; }
+    body.lang-active-ka .hxa-slide .fp-room-std { font-size: 8.2px; letter-spacing: 0; }
+    body.lang-active-ka .hxa-slide .fp-brain-title { font-size: 16px; letter-spacing: 0.08em; }
+    body.lang-active-ka .hxa-slide .fp-brain-tagline { font-size: 8px; letter-spacing: 0.08em; }
+    body.lang-active-ka .hxa-slide .fp-brain-sub { font-size: 9px; letter-spacing: 0; }
+    body.lang-active-ka .hxa-slide .fp-foundation-text { font-size: 9px; letter-spacing: 0.08em; }
   </style>
 </head>
 <body>
@@ -9143,11 +9490,234 @@
       </section>
 
       <!-- ═══════════════════════════════════════════════
-           SLIDE 01 · PROOF — the living map: 25 hospitals already run on MediMind
+           SLIDE 01 · THE PROMISE — the whole value up front (5 commitments),
+           so every classic objection is cleared before it's raised.
+           ═══════════════════════════════════════════════ -->
+      <section class="gw-slide hxd-slide">
+        <div class="slide-inner">
+          <div class="slide-label"><span class="label-num">01</span><span class="lang-en">THE PROMISE</span><span class="lang-ka" style="display:none;">დაპირება</span></div>
+          <h2 class="headline-big"><span class="lang-en">The whole deal, <em>up front</em>.</span><span class="lang-ka" style="display:none;">მთელი შეთავაზება — <em>თავიდანვე</em>.</span></h2>
+          <p class="headline-sub"><span class="lang-en">Five commitments that answer every question before you ask it.</span><span class="lang-ka" style="display:none;">ხუთი ვალდებულება, რომელიც ყველა კითხვას წინასწარ პასუხობს.</span></p>
+
+          <div class="hxd-hero">
+            <span class="hxd-hero-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span>
+            <span class="hxd-hero-t">
+              <b><span class="lang-en">Everything your hospital needs — included.</span><span class="lang-ka" style="display:none;">ყველაფერი, რაც თქვენს კლინიკას სჭირდება — ერთ პაკეტში.</span></b>
+              <span><span class="lang-en">One platform for the whole hospital — at what you already pay today.</span><span class="lang-ka" style="display:none;">ერთი პლატფორმა მთელი კლინიკისთვის — იმავე ფასად, რასაც დღეს იხდით.</span></span>
+            </span>
+            <span class="hxd-hero-chips" aria-hidden="true"><span class="hxd-chip">EMR</span><span class="hxd-chip">LAB</span><span class="hxd-chip">PACS</span></span>
+          </div>
+
+          <div class="hxd-grid">
+            <div class="hxd-card">
+              <span class="hxd-num" aria-hidden="true">01</span>
+              <div class="hxd-card-head">
+                <span class="hxd-tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                <b><span class="lang-en"><em>Free</em> deployment</span><span class="lang-ka" style="display:none;"><em>უფასო</em> დანერგვა</span></b>
+              </div>
+              <p><span class="lang-en">We install, configure and train your teams — the rollout costs you nothing.</span><span class="lang-ka" style="display:none;">ჩვენ ვაინსტალირებთ, ვაწყობთ და ვამზადებთ თქვენს გუნდებს — დანერგვა არაფერი გიჯდებათ.</span></p>
+            </div>
+            <div class="hxd-card">
+              <span class="hxd-num" aria-hidden="true">02</span>
+              <div class="hxd-card-head">
+                <span class="hxd-tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                <b><span class="lang-en"><em>Free</em>, limitless development</span><span class="lang-ka" style="display:none;"><em>უფასო</em>, შეუზღუდავი დეველოპმენტი</span></b>
+              </div>
+              <p><span class="lang-en">You ask, we build. Custom features for your wards — never an invoice.</span><span class="lang-ka" style="display:none;">თქვენ ითხოვთ — ჩვენ ვაშენებთ. ფუნქციები თქვენი განყოფილებებისთვის, ინვოისის გარეშე.</span></p>
+            </div>
+            <div class="hxd-card">
+              <span class="hxd-num" aria-hidden="true">03</span>
+              <div class="hxd-card-head">
+                <span class="hxd-tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                <b><span class="lang-en">Code ownership as <em>insurance</em></span><span class="lang-ka" style="display:none;">კოდის ფლობა — <em>დაზღვევა</em></span></b>
+              </div>
+              <p><span class="lang-en">The first version of the source code is yours — in writing, from day one.</span><span class="lang-ka" style="display:none;">პირველი ვერსიის საწყისი კოდი თქვენია — წერილობით, პირველივე დღიდან.</span></p>
+            </div>
+            <div class="hxd-card">
+              <span class="hxd-num" aria-hidden="true">04</span>
+              <div class="hxd-card-head">
+                <span class="hxd-tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                <b><span class="lang-en">One-day, <em>painless</em> migration</span><span class="lang-ka" style="display:none;">ერთდღიანი, <em>უმტკივნეულო</em> გადასვლა</span></b>
+              </div>
+              <p><span class="lang-en">Prepared in advance, switched in a day — nobody stops working.</span><span class="lang-ka" style="display:none;">წინასწარ მომზადებული, ერთ დღეში გადართული — მუშაობა არ ჩერდება.</span></p>
+            </div>
+            <div class="hxd-card hxd-card--future">
+              <span class="hxd-num" aria-hidden="true">05</span>
+              <div class="hxd-card-head">
+                <span class="hxd-tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                <b><span class="lang-en">Tomorrow's standard, <em>at today's price</em></span><span class="lang-ka" style="display:none;">ხვალინდელი სტანდარტი — <em>დღევანდელ ფასად</em></span></b>
+              </div>
+              <p><span class="lang-en">The latest Western-grade platform — after MediMind, you'll never need another software vendor.</span><span class="lang-ka" style="display:none;">უახლესი დასავლური დონის პლატფორმა — MediMind-ის შემდეგ სხვა ვენდორი აღარასდროს დაგჭირდებათ.</span></p>
+            </div>
+          </div>
+
+          <div class="hxd-closer"><span class="lang-en">No small print. This is the deal — <em>and the rest of the deck is the proof.</em></span><span class="lang-ka" style="display:none;">დამალული პირობების გარეშე. ეს არის შეთავაზება — <em>დანარჩენი დეკი კი ამის მტკიცებულებაა.</em></span></div>
+        </div>
+        <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
+        <aside class="notes">
+          <span class="lang-en">Before anything else, here is the whole deal — so no question hangs in the air. Deployment is free: we install, configure, migrate and train. Development is free and limitless: you ask, we build, no invoices. The platform covers everything the hospital runs — EMR, lab, PACS, pharmacy, billing — at what you already pay today. You hold the first version of the source code in writing, as insurance. And the migration is one prepared day — painless, no downtime. Everything after this slide is just proof of these five sentences.</span><span class="lang-ka" style="display:none;">სანამ რამეს გაჩვენებთ, აი მთელი შეთავაზება — რომ არცერთი კითხვა ჰაერში არ დარჩეს. დანერგვა უფასოა: ვაინსტალირებთ, ვაწყობთ, გადმოგვაქვს მონაცემები და ვამზადებთ გუნდებს. დეველოპმენტი უფასო და შეუზღუდავია: თქვენ ითხოვთ, ჩვენ ვაშენებთ — ინვოისების გარეშე. პლატფორმა ფარავს ყველაფერს — EMR, ლაბორატორია, PACS, აფთიაქი, ბილინგი — იმავე ფასად, რასაც დღეს იხდით. პირველი ვერსიის საწყის კოდს წერილობით ფლობთ, როგორც დაზღვევას. და მიგრაცია ერთი მომზადებული დღეა — უმტკივნეულო, შეფერხების გარეშე. ყველაფერი ამ სლაიდის შემდეგ უბრალოდ ამ ხუთი წინადადების მტკიცებულებაა.</span>
+        </aside>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════
+           SLIDE 2 · LEGACY EMR IS A TICKING BOMB (loss-framing, dark/red)
+           ═══════════════════════════════════════════════ -->
+      <section class="gw-slide hxr-slide hxr3-slide">
+        <div class="slide-inner">
+          <div class="slide-label"><span class="label-num">02</span><span class="lang-en">THE LIABILITY</span><span class="lang-ka" style="display:none;">რისკები</span></div>
+          <span class="hc-redbar" aria-hidden="true"></span>
+          <h2 class="headline-big" style="max-width: 1040px;"><span class="lang-en">The riskiest option is <em>choosing the past</em>.</span><span class="lang-ka" style="display:none;">ყველაზე დიდი რისკი <em>წარსულის არჩევაა</em>.</span></h2>
+          <p class="headline-sub"><span class="lang-en">It may still run today. Give it a year or two — it's a dead end, and you're welded to it.</span><span class="lang-ka" style="display:none;"></span></p>
+
+          <div class="hxr3-board">
+            <span class="hxr3-glow" aria-hidden="true"></span>
+            <span class="hxr3-bg hxr3-bg--them" aria-hidden="true"></span>
+            <span class="hxr3-bg hxr3-bg--us" aria-hidden="true"></span>
+            <span class="hxr3-spine" aria-hidden="true"></span>
+            <div class="hxr3-row hxr3-row--head">
+              <div class="hxr3-head hxr3-head--them"><span class="lang-en">Any legacy vendor</span><span class="lang-ka" style="display:none;">ნებისმიერი ძველი ვენდორი</span></div>
+              <div class="hxr3-vs" aria-hidden="true">VS</div>
+              <div class="hxr3-head hxr3-head--us">MediMind</div>
+            </div>
+
+            <div class="hxr3-row">
+              <div class="hxr3-cell hxr3-cell--them"><span class="hxr3-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span class="hxr3-cell-t"><span class="lang-en">Every change is an invoice — billed, delayed, or refused.</span><span class="lang-ka" style="display:none;">ყოველი ცვლილება ინვოისია — ფასიანი, ჭიანურდება ან უარყოფილია.</span></span></div>
+              <div class="hxr3-axis"><span class="hxr3-axis-pill"><span class="lang-en">Standard features</span><span class="lang-ka" style="display:none;">სტანდარტული ფუნქციები</span></span></div>
+              <div class="hxr3-cell hxr3-cell--us"><span class="hxr3-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="hxr3-cell-t"><span class="lang-en">On request — <strong>built for you, free</strong>.</span><span class="lang-ka" style="display:none;">მოთხოვნისთანავე — <strong>თქვენთვის შენდება, უფასოდ</strong>.</span></span></div>
+            </div>
+
+            <div class="hxr3-row">
+              <div class="hxr3-cell hxr3-cell--them"><span class="hxr3-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span class="hxr3-cell-t"><span class="lang-en">Aging, often unlicensed tech — the same Russian 1C backend, no FHIR.</span><span class="lang-ka" style="display:none;">მოძველებული, ხშირად ულიცენზიო ტექნოლოგია — იგივე რუსული 1C ბექენდი, FHIR-ის გარეშე.</span></span></div>
+              <div class="hxr3-axis"><span class="hxr3-axis-pill"><span class="lang-en">Security &amp; foundation</span><span class="lang-ka" style="display:none;">უსაფრთხოება და საძირკველი</span></span></div>
+              <div class="hxr3-cell hxr3-cell--us"><span class="hxr3-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="hxr3-cell-t"><span class="lang-en">Modern and secure — <strong>FHIR-native</strong>, the standard the West runs on.</span><span class="lang-ka" style="display:none;">თანამედროვე და უსაფრთხო — <strong>FHIR-ნატიური</strong>, სტანდარტი, რომლითაც დასავლეთი ოპერირებს.</span></span></div>
+            </div>
+
+            <div class="hxr3-row">
+              <div class="hxr3-cell hxr3-cell--them"><span class="hxr3-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span class="hxr3-cell-t"><span class="lang-en">The code? Never handed over — you're welded to the vendor.</span><span class="lang-ka" style="display:none;">კოდი? არასდროს გადმოგეცემათ — ვენდორზე ხართ მიჯაჭვული.</span></span></div>
+              <div class="hxr3-axis"><span class="hxr3-axis-pill"><span class="lang-en">Source code</span><span class="lang-ka" style="display:none;">საწყისი კოდი</span></span></div>
+              <div class="hxr3-cell hxr3-cell--us"><span class="hxr3-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="hxr3-cell-t"><span class="lang-en">The first version is <strong>yours — in writing</strong>. Your insurance.</span><span class="lang-ka" style="display:none;">პირველი ვერსია <strong>თქვენია — წერილობით</strong>. თქვენი დაზღვევა.</span></span></div>
+            </div>
+
+            <div class="hxr3-row">
+              <div class="hxr3-cell hxr3-cell--them"><span class="hxr3-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span class="hxr3-cell-t"><span class="lang-en">Tomorrow's features aren't even an option there.</span><span class="lang-ka" style="display:none;">ხვალინდელი ფუნქციები იქ ოფციადაც არ არსებობს.</span></span></div>
+              <div class="hxr3-axis"><span class="hxr3-axis-pill"><span class="lang-en">AI &amp; the future</span><span class="lang-ka" style="display:none;">AI და მომავალი</span></span></div>
+              <div class="hxr3-cell hxr3-cell--us"><span class="hxr3-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="hxr3-cell-t"><span class="lang-en"><strong>AI-native today</strong> — always a step ahead.</span><span class="lang-ka" style="display:none;"><strong>AI-ნატიური უკვე დღეს</strong> — მუდამ ერთი ნაბიჯით წინ.</span></span></div>
+            </div>
+
+            <div class="hxr3-row">
+              <div class="hxr3-cell hxr3-cell--them"><span class="hxr3-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span class="hxr3-cell-t"><span class="lang-en">Frozen in time — updates cost extra, if they ever come.</span><span class="lang-ka" style="display:none;">დროში გაყინული — განახლებები ცალკე ფასია, თუ საერთოდ მოვა.</span></span></div>
+              <div class="hxr3-axis"><span class="hxr3-axis-pill"><span class="lang-en">Updates</span><span class="lang-ka" style="display:none;">განახლებები</span></span></div>
+              <div class="hxr3-cell hxr3-cell--us"><span class="hxr3-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="hxr3-cell-t"><span class="lang-en"><strong>Evolves every month</strong> — new features land automatically, included.</span><span class="lang-ka" style="display:none;"><strong>ყოველთვიურად ვითარდება</strong> — ახალი ფუნქციები ავტომატურად ემატება, ფასშივე.</span></span></div>
+            </div>
+
+            <div class="hxr3-row">
+              <div class="hxr3-cell hxr3-cell--them"><span class="hxr3-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span class="hxr3-cell-t"><span class="lang-en">Stagnant companies — minimal ambition, minimal investment.</span><span class="lang-ka" style="display:none;">სტაგნირებული კომპანიები — მინიმალური ამბიცია და ინვესტიცია.</span></span></div>
+              <div class="hxr3-axis"><span class="hxr3-axis-pill"><span class="lang-en">Ambition</span><span class="lang-ka" style="display:none;">ამბიცია</span></span></div>
+              <div class="hxr3-cell hxr3-cell--us"><span class="hxr3-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="hxr3-cell-t"><span class="lang-en"><strong>Funded for international scale</strong> — the resources to deliver all of this.</span><span class="lang-ka" style="display:none;"><strong>დაფინანსებული საერთაშორისო მასშტაბისთვის</strong> — რესურსები, რომ ეს ყველაფერი შევასრულოთ.</span></span></div>
+            </div>
+          </div>
+
+          <div class="hxr3-closer"><span class="lang-en">Medicine will change, and legacy simply can't follow. <strong>We are the future of this software — staying put is the dead end.</strong></span><span class="lang-ka" style="display:none;">მედიცინა შეიცვლება და ძველი სისტემები ვერ აჰყვებიან. <strong>მომავალი ჩვენ ვართ — ადგილზე დარჩენა ჩიხია.</strong></span></div>
+        </div>
+        <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
+        <aside class="notes">
+          <span class="lang-en">Let's be honest about the thing nobody puts on a balance sheet. Whether you keep your current system or sign with another local vendor, you land on the same foundation: an aging Russian 1C backend. It works at a functional level — but it cannot speak FHIR, the standard the Western world runs on, and it will not carry this hospital into the next decade. So ask any vendor at your table three questions: How many development hours are included — or is every change an invoice? Who holds a backup copy of the code if you disappear? And can the data structure talk to the outside world? We answer all three in writing: development happens with you, you get the source code from version one, and the foundation is FHIR-native from day one. This gets solved now, on your terms — or later, on someone else's. Spoken only, never printed: the local vendors — Vabako, Radium, Doctra — are small, stagnant teams: minimal investment, minimal ambition, no roadmap. We are funded, resourced and building for international scale — that is exactly why we can afford commitments they can't even offer.</span><span class="lang-ka" style="display:none;">მოდით გულწრფელად ვისაუბროთ იმაზე, რასაც ბალანსში არავინ წერს. შეინარჩუნებთ ახლანდელ სისტემას თუ სხვა ადგილობრივ ვენდორთან გააფორმებთ ხელშეკრულებას — მაინც იმავე საძირკველზე აღმოჩნდებით: მოძველებულ რუსულ 1C ბექენდზე. ფუნქციურ დონეზე ის მუშაობს, მაგრამ მას არ შეუძლია იმუშაოს FHIR-ზე — სტანდარტზე, რომლითაც დასავლური სამყარო ოპერირებს — და ის ამ კლინიკას მომდევნო ათწლეულში ვერ გაუძღვება. ამიტომ ნებისმიერ ვენდორს დაუსვით სამი კითხვა: რამდენი დეველოპმენტის საათი შედის შეთანხმებაში — თუ ყოველი ცვლილება ცალკე ინვოისია? ვის ექნება კოდის სარეზერვო ასლი, თუ ისინი გაქრებიან ბაზრიდან? და შეუძლია თუ არა მონაცემთა სტრუქტურას გარე სამყაროსთან ინტეგრაცია? ჩვენ სამივე კითხვას წერილობით ვპასუხობთ: დეველოპმენტი ხდება თქვენთან ერთად, პირველივე ვერსიის საწყისი კოდი გადმოგეცემათ თქვენ და საძირკველი პირველივე დღიდან FHIR-ნატიურია. ეს უნდა მოგვარდეს ახლა, თქვენი პირობებით — წინააღმდეგ შემთხვევაში მოგვიანებით სხვისი პირობებით მოგიწევთ ამის გაკეთება. მხოლოდ სიტყვიერად, არასდროს დაბეჭდილი: ადგილობრივი ვენდორები — ვაბაკო, რადიუმი, დოქტრა — პატარა, სტაგნირებული გუნდებია: მინიმალური ინვესტიცია, მინიმალური ამბიცია, გეგმის გარეშე. ჩვენ დაფინანსებული ვართ და საერთაშორისო მასშტაბისთვის ვშენდებით — სწორედ ამიტომ შეგვიძლია ისეთი ვალდებულებები, რასაც ისინი ვერც კი შემოგთავაზებენ.</span>
+        </aside>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════
+           SLIDE 03 · THE PATH — the 3-phase integration staircase.
+           Phase 1 included/live; phases 2-3 OPTIONAL = the hospital sets the
+           pace (same spend — never priced separately on-slide). Apex = P3.
+           ═══════════════════════════════════════════════ -->
+      <section class="gw-slide hxs-slide">
+        <div class="slide-inner">
+          <div class="slide-label"><span class="label-num">03</span><span class="lang-en">THE PATH · 3 PHASES</span><span class="lang-ka" style="display:none;">გზა · 3 ეტაპი</span></div>
+          <h2 class="headline-big"><span class="lang-en">Start solid. <em>End ahead of the world.</em></span><span class="lang-ka" style="display:none;">დაიწყეთ მყარად. <em>დაასრულეთ მსოფლიოზე წინ.</em></span></h2>
+          <p class="headline-sub"><span class="lang-en">Three phases on one platform. The first is included on day one — the next two are already wired, waiting for your yes.</span><span class="lang-ka" style="display:none;">სამი ეტაპი ერთ პლატფორმაზე. პირველი პირველივე დღიდან შედის ძალაში — მომდევნო ორი უკვე ჩაშენებულია და მხოლოდ თქვენს თანხმობას ელოდება.</span></p>
+
+          <div class="hxs-stair">
+            <article class="hxs-card hxs-card--p1">
+              <span class="hxs-num" aria-hidden="true">1</span>
+              <div class="hxs-top">
+                <span class="hxs-phase"><span class="lang-en">Phase 1</span><span class="lang-ka" style="display:none;">ეტაპი 1</span></span>
+                <span class="hxs-status hxs-status--live"><span class="hxs-dot" aria-hidden="true"></span><span class="lang-en">Live · day one</span><span class="lang-ka" style="display:none;">აქტიური · პირველივე დღიდან</span></span>
+              </div>
+              <h3 class="hxs-title"><span class="lang-en">The foundation</span><span class="lang-ka" style="display:none;">საძირკველი</span></h3>
+              <div class="hxs-sub"><span class="lang-en">EMR · LAB · PACS · Portal</span><span class="lang-ka" style="display:none;">EMR · LAB · PACS · პორტალი</span></div>
+              <ul class="hxs-list">
+                <li><span class="hxs-li-dot" aria-hidden="true"></span><span class="hxs-li-t"><span class="lang-en">The legacy stack goes.</span><span class="lang-ka" style="display:none;">ძველი სისტემები იცვლება.</span></span></li>
+                <li><span class="hxs-li-dot" aria-hidden="true"></span><span class="hxs-li-t"><span class="lang-en">A world-class, Western-standard system takes its place.</span><span class="lang-ka" style="display:none;">მათ ადგილს იკავებს მსოფლიო დონის, დასავლური სტანდარტის სისტემა.</span></span></li>
+                <li><span class="hxs-li-dot" aria-hidden="true"></span><span class="hxs-li-t"><span class="lang-en">Built on FHIR R4 — secured to the highest bar.</span><span class="lang-ka" style="display:none;">აგებული FHIR R4-ზე — დაცული უმაღლესი სტანდარტით.</span></span></li>
+              </ul>
+              <div class="hxs-foot"><b class="hxs-foot-num">25</b><span class="hxs-foot-t"><span class="lang-en">hospitals run it today — at what you already pay</span><span class="lang-ka" style="display:none;">კლინიკა მუშაობს მასზე დღეს</span></span></div>
+            </article>
+
+            <div class="hxs-riser hxs-riser--1" aria-hidden="true">
+              <span class="hxs-riser-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+              <span class="hxs-riser-label"><span class="lang-en">switch on</span><span class="lang-ka" style="display:none;">ჩართვა</span></span>
+            </div>
+
+            <article class="hxs-card hxs-card--p2">
+              <span class="hxs-num" aria-hidden="true">2</span>
+              <div class="hxs-top">
+                <span class="hxs-phase"><span class="lang-en">Phase 2</span><span class="lang-ka" style="display:none;">ეტაპი 2</span></span>
+                <span class="hxs-status hxs-status--opt"><span class="lang-en">Optional · when ready</span><span class="lang-ka" style="display:none;">არჩევითი · როცა მზად ხართ</span></span>
+              </div>
+              <h3 class="hxs-title"><span class="lang-en">AI in every workflow</span><span class="lang-ka" style="display:none;">AI ყველა პროცესში</span></h3>
+              <div class="hxs-sub"><span class="lang-en">Every department + management</span><span class="lang-ka" style="display:none;">ყველა განყოფილება + მენეჯმენტი</span></div>
+              <ul class="hxs-list">
+                <li><span class="hxs-li-dot" aria-hidden="true"></span><span class="hxs-li-t"><span class="lang-en">Notes write themselves.</span><span class="lang-ka" style="display:none;">ჩანაწერები თავად იწერება.</span></span></li>
+                <li><span class="hxs-li-dot" aria-hidden="true"></span><span class="hxs-li-t"><span class="lang-en">Chart-cited answers for every clinician.</span><span class="lang-ka" style="display:none;">ყველა ექიმს — პასუხები პაციენტის ისტორიიდან.</span></span></li>
+                <li><span class="hxs-li-dot" aria-hidden="true"></span><span class="hxs-li-t"><span class="lang-en">Early warnings reach the ward first.</span><span class="lang-ka" style="display:none;">ადრეული გაფრთხილება პალატამდე პირველი აღწევს.</span></span></li>
+                <li><span class="hxs-li-dot" aria-hidden="true"></span><span class="hxs-li-t"><span class="lang-en">Management sees the whole hospital on one screen.</span><span class="lang-ka" style="display:none;">მენეჯმენტი მთელ კლინიკას ერთ ეკრანზე ხედავს.</span></span></li>
+              </ul>
+              <div class="hxs-foot"><b class="hxs-foot-num">ON</b><span class="hxs-foot-t"><span class="lang-en">per department — the moment you say go</span><span class="lang-ka" style="display:none;">განყოფილებების მიხედვით</span></span></div>
+            </article>
+
+            <div class="hxs-riser hxs-riser--2" aria-hidden="true">
+              <span class="hxs-riser-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+              <span class="hxs-riser-label"><span class="lang-en">switch on</span><span class="lang-ka" style="display:none;">ჩართვა</span></span>
+            </div>
+
+            <article class="hxs-card hxs-card--p3">
+              <span class="hxs-glow" aria-hidden="true"></span>
+              <span class="hxs-num" aria-hidden="true">3</span>
+              <div class="hxs-top">
+                <span class="hxs-phase"><span class="lang-en">Phase 3</span><span class="lang-ka" style="display:none;">ეტაპი 3</span></span>
+                <span class="hxs-status hxs-status--first"><svg viewBox="0 0 10 10" aria-hidden="true"><polygon points="5,0.5 6.2,3.7 9.5,3.9 6.9,6 7.9,9.3 5,7.4 2.1,9.3 3.1,6 0.5,3.9 3.8,3.7" fill="currentColor"/></svg><span class="lang-en">Optional · world-first</span><span class="lang-ka" style="display:none;">არჩევითი · პირველი მსოფლიოში</span></span>
+              </div>
+              <h3 class="hxs-title"><span class="lang-en">The proactive brain</span><span class="lang-ka" style="display:none;">პროაქტიული ტვინი</span></h3>
+              <div class="hxs-sub"><span class="lang-en">The hospital that thinks ahead</span><span class="lang-ka" style="display:none;">კლინიკა, რომელიც წინასწარ ფიქრობს</span></div>
+              <ul class="hxs-list">
+                <li><span class="hxs-li-dot" aria-hidden="true"></span><span class="hxs-li-t"><span class="lang-en">Reads every patient in real time.</span><span class="lang-ka" style="display:none;">ყველა პაციენტს რეალურ დროში კითხულობს.</span></span></li>
+                <li><span class="hxs-li-dot" aria-hidden="true"></span><span class="hxs-li-t"><span class="lang-en">Steers medicine and operations.</span><span class="lang-ka" style="display:none;">მართავს მედიცინასაც და ოპერაციებსაც.</span></span></li>
+                <li><span class="hxs-li-dot" aria-hidden="true"></span><span class="hxs-li-t"><span class="lang-en">Catches problems before they become emergencies.</span><span class="lang-ka" style="display:none;">იჭერს პრობლემებს, სანამ გადაუდებელი შემთხვევა გახდება.</span></span></li>
+              </ul>
+              <div class="hxs-foot"><b class="hxs-foot-num">1st</b><span class="hxs-foot-t"><span class="lang-en">the hospitals that switch it on run among the first in the world</span><span class="lang-ka" style="display:none;">კლინიკები, რომლებიც ამას ჩართავენ, მსოფლიოში პირველთა შორის იქნებიან</span></span></div>
+            </article>
+
+            <div class="hxs-ground" aria-hidden="true"></div>
+          </div>
+
+          <div class="hxs-closer">
+            <span class="hxs-rule" aria-hidden="true"></span>
+            <p class="hxs-closer-line"><span class="lang-en">Phase 1 lays the rails — FHIR R4 under everything. <strong>Phases 2 and 3 aren't an upgrade. They're an activation.</strong></span><span class="lang-ka" style="display:none;">ეტაპი 1 აგებს რელსებს — FHIR R4 ყველაფრის ქვეშ. <strong>ყველაფერი თავიდანვე მზადდება 2 და 3 ეტაპებისთვის.</strong></span></p>
+            <span class="hxs-rule" aria-hidden="true"></span>
+          </div>
+        </div>
+        <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
+        <aside class="notes">
+          <span class="lang-en">This is the whole partnership on one slide. Phase 1 is not a pilot — it is the full replacement: EMR, lab, PACS, portal, Western standards, FHIR R4, live in 25 hospitals, at the money you already spend. Everything after that is optional and pre-wired. Phase 2 puts AI into every department and gives management the whole hospital on one screen. Phase 3 is the proactive brain — the hospitals that turn it on will be among the first in the world, and frankly, that is the goal of this company. The key sentence: because Phase 1 rebuilds the foundation on FHIR, phases 2 and 3 are not an upgrade project. They are an activation — a switch we flip together, when you're ready. [CONFIRM framing: all three phases sit inside the same spend — "optional" means you choose WHEN, never a new invoice.]</span><span class="lang-ka" style="display:none;">ეს არის მთელი პარტნიორობა ერთ სლაიდზე. ეტაპი 1 პილოტი არ არის — ეს სრული ჩანაცვლებაა: EMR, ლაბორატორია, PACS, პორტალი, დასავლური სტანდარტები, FHIR R4, უკვე მუშაობს 25 კლინიკაში, იმ თანხად, რასაც ისედაც ხარჯავთ. ყველაფერი ამის შემდეგ არჩევითია და უკვე ჩაშენებული. ეტაპი 2 AI-ს ყველა განყოფილებაში სვამს და მენეჯმენტს მთელ კლინიკას ერთ ეკრანზე აძლევს. ეტაპი 3 პროაქტიული ტვინია — კლინიკები, რომლებიც მას ჩართავენ, მსოფლიოში პირველთა შორის იქნებიან, და გულწრფელად, ეს არის ამ კომპანიის მიზანი. მთავარი წინადადება: რადგან ეტაპი 1 საძირკველს FHIR-ზე აშენებს, ეტაპები 2 და 3 განახლების პროექტი არ არის. ეს ჩართვაა — ჩამრთველი, რომელსაც ერთად ვაჭერთ, როცა თქვენ მზად ხართ.</span>
+        </aside>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════
+           SLIDE 04 · PROOF — the living map: 25 hospitals already run on MediMind
            ═══════════════════════════════════════════════ -->
       <section class="gw-slide hxp-slide">
         <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">01</span><span class="lang-en">PROOF · ALREADY LIVE</span><span class="lang-ka" style="display:none;">მტკიცებულება · უკვე დანერგილია</span></div>
+          <div class="slide-label"><span class="label-num">04</span><span class="lang-en">PROOF · ALREADY LIVE</span><span class="lang-ka" style="display:none;">მტკიცებულება · უკვე დანერგილია</span></div>
           <h2 class="headline-big"><span class="lang-en">Not a promise. <em>Live in 25 hospitals.</em></span><span class="lang-ka" style="display:none;">ეს არ არის დაპირება. <em>უკვე მუშაობს 25 კლინიკაში.</em></span></h2>
           <p class="headline-sub"><span class="lang-en">Georgia's 2nd-largest hospital chain already runs on MediMind.</span><span class="lang-ka" style="display:none;">საქართველოს სიდიდით მე-2 საავადმყოფოთა ქსელი უკვე იყენებს MediMind-ს.</span></p>
 
@@ -9226,7 +9796,7 @@
                     </span>
                   </div>
                 </div>
-                <div class="hxp-closer"><span class="lang-en">You're not being asked to go first — <em>25 hospitals are already ahead of you.</em></span><span class="lang-ka" style="display:none;">თქვენგან პირველობას არავინ ითხოვს — <em>25 კლინიკა უკვე თქვენზე წინ არის.</em></span></div>
+                <div class="hxp-closer"><span class="lang-en">You're not being asked to go first — <em>25 hospitals are already ahead of you.</em></span><span class="lang-ka" style="display:none;"></span></div>
               </div>
               <div class="chip-row">
                 <span class="chip"><span class="lang-en">Innovative Startup</span><span class="lang-ka" style="display:none;">ინოვაციური სტარტაპი</span></span>
@@ -9247,9 +9817,9 @@
            ═══════════════════════════════════════════════ -->
       <section class="gw-slide hxw-slide">
         <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">02</span><span class="lang-en">WHO WE ARE</span><span class="lang-ka" style="display:none;">ვინ ვართ ჩვენ</span></div>
+          <div class="slide-label"><span class="label-num">05</span><span class="lang-en">WHO WE ARE</span><span class="lang-ka" style="display:none;">ვინ ვართ ჩვენ</span></div>
           <h2 class="headline-big"><span class="lang-en">Doctors, building <em>for doctors</em>.</span><span class="lang-ka" style="display:none;">ექიმების მიერ შექმნილი <em>ექიმებისთვის</em>.</span></h2>
-          <p class="headline-sub"><span class="lang-en">Founded by a Georgian physician.</span><span class="lang-ka" style="display:none;">დაფუძნებულია ქართველი ექიმის მიერ.</span></p>
+          <p class="headline-sub"><span class="lang-en">Founded by a Georgian physician.</span><span class="lang-ka" style="display:none;"></span></p>
 
           <div class="hxw-grid">
             <div class="hxw-photo">
@@ -9288,78 +9858,12 @@
           </div>
           <div class="hxw2-quote">
             <span class="hxw2-quote-mark" aria-hidden="true">&ldquo;</span>
-            <p><span class="lang-en">Not foreign software parachuted into Georgia — built here, in your language, for your wards, <strong>by your colleagues</strong>.</span><span class="lang-ka" style="display:none;">ეს არ არის საქართველოში გარედან თავსმოხვეული უცხოური პროგრამა — ის შექმნილია აქ, თქვენს ენაზე, თქვენი განყოფილებებისთვის, <strong>თქვენი კოლეგების მიერ</strong>.</span></p>
+            <p><span class="lang-en">Not foreign software parachuted into Georgia — built here, in your language, for your wards, <strong>by your colleagues</strong>.</span><span class="lang-ka" style="display:none;"></span></p>
           </div>
         </div>
         <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
         <aside class="notes">
           <span class="lang-en">I'm a physician. I built this because I lived it — the missing lab at 2 a.m., the paper forms, the system that fights you instead of helping. My co-founder Irakli scaled product at Riot Games to ten million players; now he scales care with me. And the people shaping this product every day are department heads you know personally — Dr. Gogorishvili, Dr. Kobalava, Dr. Levan. They use it on real patients, they break it, and we fix it the same week. This isn't foreign software parachuted into Georgia. It's built here, in your language, for your wards, by your colleagues.</span><span class="lang-ka" style="display:none;">მე ექიმი ვარ. ეს იმიტომ შევქმენი, რომ თავად განვიცადე — გამორჩენილი ანალიზი ღამის 2 საათზე, ქაღალდის ფორმები, სისტემა, რომელიც გეხმარება კი არა, ხელს გიშლის. ჩემმა თანადამფუძნებელმა ირაკლიმ Riot Games-ში პროდუქტი ათ მილიონ მომხმარებლამდე გაზარდა; ახლა ის ჩემთან ერთად ზრდის ჯანდაცვის ხარისხს. ამ პროდუქტს ყოველდღიურად ავითარებენ დეპარტამენტების ხელმძღვანელები, რომლებსაც პირადად იცნობთ — ექიმი გოგორიშვილი, ექიმი კობალავა, ექიმი ლევანი. ისინი მას რეალურ პაციენტებზე იყენებენ, პოულობენ ხარვეზებს და ჩვენ მათ იმავე კვირაში ვასწორებთ. ეს არ არის საქართველოში გარედან თავსმოხვეული უცხოური პროგრამა. ის შექმნილია აქ, თქვენს ენაზე, თქვენი განყოფილებებისთვის, თქვენი კოლეგების მიერ.</span>
-        </aside>
-      </section>
-
-      <!-- ═══════════════════════════════════════════════
-           SLIDE 2 · LEGACY EMR IS A TICKING BOMB (loss-framing, dark/red)
-           ═══════════════════════════════════════════════ -->
-      <section class="gw-slide hxr-slide">
-        <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">03</span><span class="lang-en">THE LIABILITY</span><span class="lang-ka" style="display:none;">რისკები</span></div>
-          <span class="hc-redbar" aria-hidden="true"></span>
-          <h2 class="headline-big" style="max-width: 1040px;"><span class="lang-en">The riskiest option is <em>choosing the past</em>.</span><span class="lang-ka" style="display:none;">ყველაზე დიდი რისკი <em>წარსულის არჩევაა</em>.</span></h2>
-
-          <div class="hc-risk-row">
-            <div class="hc-risk">
-              <span class="hc-risk-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
-              <div class="hc-risk-text">
-                <div class="hc-risk-title"><span class="lang-en">Outdated &amp; insecure</span><span class="lang-ka" style="display:none;">მოძველებული და არაუსაფრთხო</span></div>
-                <div class="hc-risk-desc"><span class="lang-en">Aging, often unlicensed tech.</span><span class="lang-ka" style="display:none;">მოძველებული, ხშირად ულიცენზიო ტექნოლოგია.</span></div>
-              </div>
-            </div>
-            <div class="hc-risk">
-              <span class="hc-risk-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9.5" y1="12.5" x2="14.5" y2="17.5"/><line x1="14.5" y1="12.5" x2="9.5" y2="17.5"/></svg></span>
-              <div class="hc-risk-text">
-                <div class="hc-risk-title"><span class="lang-en">Every change is an invoice</span><span class="lang-ka" style="display:none;">ყოველი ცვლილება ინვოისია</span></div>
-                <div class="hc-risk-desc"><span class="lang-en">No development hours in the deal — every fix is billed, delayed, or refused.</span><span class="lang-ka" style="display:none;">ხელშეკრულებაში არ შედის დეველოპმენტის საათები — ყოველი შესწორება ფასიანია, ჭიანურდება ან უარყოფილია.</span></div>
-              </div>
-            </div>
-            <div class="hc-risk">
-              <span class="hc-risk-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="19" y1="4" x2="5" y2="20"/></svg></span>
-              <div class="hc-risk-text">
-                <div class="hc-risk-title"><span class="lang-en">No backup of the code</span><span class="lang-ka" style="display:none;">კოდის ასლი არ არსებობს</span></div>
-                <div class="hc-risk-desc"><span class="lang-en">Vendor stumbles? No copy exists — only they can fix what only they hold.</span><span class="lang-ka" style="display:none;">ვენდორს პრობლემა შეექმნა? კოდის ასლი არ არსებობს — მხოლოდ მათ შეუძლიათ შეასწორონ ის, რასაც მხოლოდ ისინი ფლობენ.</span></div>
-              </div>
-            </div>
-            <div class="hc-risk">
-              <span class="hc-risk-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
-              <div class="hc-risk-text">
-                <div class="hc-risk-title"><span class="lang-en">It's <em>when</em>, not <em>if</em></span><span class="lang-ka" style="display:none;">საკითხავია <em>როდის</em> მოხდება ეს და არა — <em>მოხდება თუ არა</em></span></div>
-                <div class="hc-risk-desc"><span class="lang-en">Fix it on your terms now — or on worse terms later.</span><span class="lang-ka" style="display:none;">მოაგვარეთ ეს ახლა, თქვენი პირობებით — წინააღმდეგ შემთხვევაში მოგიწევთ მოგვიანებით, გაცილებით უარესი პირობებით.</span></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="hc-hostage">
-            <span class="hc-hostage-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span>
-            <div class="hc-hostage-text">
-              <div class="hc-hostage-tag"><span class="lang-en">The foundation problem</span><span class="lang-ka" style="display:none;">საძირკვლის პრობლემა</span></div>
-              <p><span class="lang-en">Every vendor in Georgia stands on the same aging Russian 1C backend. <strong>It can't speak FHIR, the standard the West runs on.</strong></span><span class="lang-ka" style="display:none;">საქართველოში ყველა ვენდორი ერთსა და იმავე მოძველებულ რუსულ 1C ბექენდზე დგას. <strong>მას არ შეუძლია იმუშაოს FHIR სტანდარტზე, რომლითაც თანამედროვე დასავლეთი ოპერირებს.</strong></span></p>
-            </div>
-          </div>
-
-          <div class="hxl-flip">
-            <div class="hxl-side hxl-side--them">
-              <span class="hxl-side-tag"><span class="lang-en">Any legacy vendor</span><span class="lang-ka" style="display:none;">ნებისმიერი ძველი ვენდორი</span></span>
-              <span class="hxl-side-line"><span class="lang-en">Same 1C foundation. The code? Never handed over.</span><span class="lang-ka" style="display:none;">იგივე 1C საძირკველი. კოდი? არასდროს გადმოგეცემათ.</span></span>
-            </div>
-            <div class="hxl-flip-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-            <div class="hxl-side hxl-side--us">
-              <span class="hxl-side-tag">MediMind</span>
-              <span class="hxl-side-line"><span class="lang-en"><strong>FHIR-native</strong> — source code from version one, in writing.</span><span class="lang-ka" style="display:none;"><strong>FHIR-ნატიური</strong> — პირველივე ვერსიის საწყისი კოდი (Source code), წერილობითი გარანტიით.</span></span>
-            </div>
-          </div>
-        </div>
-        <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
-        <aside class="notes">
-          <span class="lang-en">Let's be honest about the thing nobody puts on a balance sheet. Whether you keep your current system or sign with another local vendor, you land on the same foundation: an aging Russian 1C backend. It works at a functional level — but it cannot speak FHIR, the standard the Western world runs on, and it will not carry this hospital into the next decade. So ask any vendor at your table three questions: How many development hours are included — or is every change an invoice? Who holds a backup copy of the code if you disappear? And can the data structure talk to the outside world? We answer all three in writing: development happens with you, you get the source code from version one, and the foundation is FHIR-native from day one. This gets solved now, on your terms — or later, on someone else's.</span><span class="lang-ka" style="display:none;">მოდით გულწრფელად ვისაუბროთ იმაზე, რასაც ბალანსში არავინ წერს. შეინარჩუნებთ ახლანდელ სისტემას თუ სხვა ადგილობრივ ვენდორთან გააფორმებთ ხელშეკრულებას — მაინც იმავე საძირკველზე აღმოჩნდებით: მოძველებულ რუსულ 1C ბექენდზე. ფუნქციურ დონეზე ის მუშაობს, მაგრამ მას არ შეუძლია იმუშაოს FHIR-ზე — სტანდარტზე, რომლითაც დასავლური სამყარო ოპერირებს — და ის ამ კლინიკას მომდევნო ათწლეულში ვერ გაუძღვება. ამიტომ ნებისმიერ ვენდორს დაუსვით სამი კითხვა: რამდენი დეველოპმენტის საათი შედის შეთანხმებაში — თუ ყოველი ცვლილება ცალკე ინვოისია? ვის ექნება კოდის სარეზერვო ასლი, თუ ისინი გაქრებიან ბაზრიდან? და შეუძლია თუ არა მონაცემთა სტრუქტურას გარე სამყაროსთან ინტეგრაცია? ჩვენ სამივე კითხვას წერილობით ვპასუხობთ: დეველოპმენტი ხდება თქვენთან ერთად, პირველივე ვერსიის საწყისი კოდი გადმოგეცემათ თქვენ და საძირკველი პირველივე დღიდან FHIR-ნატიურია. ეს უნდა მოგვარდეს ახლა, თქვენი პირობებით — წინააღმდეგ შემთხვევაში მოგვიანებით სხვისი პირობებით მოგიწევთ ამის გაკეთება.</span>
         </aside>
       </section>
 
@@ -9370,7 +9874,7 @@
            ═══════════════════════════════════════════════ -->
       <section class="gw-slide hxm-slide">
         <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">04</span><span class="lang-en">THE LOCAL MARKET</span><span class="lang-ka" style="display:none;">ადგილობრივი ბაზარი</span></div>
+          <div class="slide-label"><span class="label-num">06</span><span class="lang-en">THE LOCAL MARKET</span><span class="lang-ka" style="display:none;">ადგილობრივი ბაზარი</span></div>
           <h2 class="headline-big"><span class="lang-en">A patchwork of vendors <em>can't become AI-native</em>.</span><span class="lang-ka" style="display:none;">სხვადასხვა ვენდორის ჭრელი ნაკრები <em>AI-ნატიური ვერ გახდება</em>.</span></h2>
           <p class="headline-sub"><span class="lang-en">Every module a separate bill. Every integration your problem. Nothing new ever ships.</span><span class="lang-ka" style="display:none;">ყოველი მოდული ცალკე ხარჯია. ყოველი ინტეგრაცია — თქვენი პრობლემაა. სიახლეები კი არასდროს ინერგება.</span></p>
 
@@ -9575,6 +10079,9 @@
             padding: 28px 30px 30px; border-radius: 22px; color: #eaf1fb;
             background: linear-gradient(160deg, #0c1426 0%, #111d36 60%, #16233f 100%);
             border: 1px solid rgba(190,227,248,0.18); box-shadow: 0 40px 100px -30px rgba(0,0,0,0.7);
+            /* The TAVI note adds height — never let the card run off a short screen.
+               The card is content-box, so subtract its own 58px padding + 2px border from the cap. */
+            max-height: calc(92vh - 60px); overflow-y: auto;
             animation: caseRise 0.3s cubic-bezier(0.2,0.9,0.2,1) both;
           }
           .eco-modal-close {
@@ -9597,6 +10104,24 @@
           .eco-soon-title { font-size: 17px; font-weight: 700; color: #eaf1fb; }
           .eco-soon-sub { font-size: 13.5px; color: rgba(190,210,235,0.7); max-width: 360px; line-height: 1.5; }
 
+          /* Context note under the video — only the Structural (TAVI) demo turns it on (see openProductDemo) */
+          .eco-modal-note {
+            display: none; align-items: center; gap: 13px;
+            margin-top: 14px; padding: 12px 16px; border-radius: 13px;
+            background: linear-gradient(135deg, rgba(47,133,90,0.18) 0%, rgba(125,211,252,0.07) 100%);
+            border: 1px solid rgba(110,231,183,0.26);
+          }
+          .eco-modal-note.show { display: flex; }
+          .eco-note-ico {
+            flex: 0 0 auto; width: 34px; height: 34px; border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            color: #6ee7b7; background: rgba(110,231,183,0.12); border: 1px solid rgba(110,231,183,0.3);
+          }
+          .eco-note-ico svg { width: 18px; height: 18px; }
+          .eco-note-txt { margin: 0; font-size: 13.5px; line-height: 1.55; color: rgba(214,230,248,0.86); }
+          .eco-note-txt strong { color: #fff; font-weight: 700; }
+          .eco-note-txt em { font-style: normal; color: #6ee7b7; font-weight: 700; }
+
           /* ── Mobile: collapse the orbital into a stacked list ── */
           @media (max-width: 768px) {
             .eco-stats { flex-wrap: wrap; }
@@ -9608,6 +10133,10 @@
             .eco-core { flex-direction: row; justify-content: flex-start; text-align: left; gap: 12px; padding: 14px 16px; }
             .eco-core-live { margin-left: auto; }
             .eco-core:hover, .eco-node:hover { transform: translateY(-2px) !important; }
+            /* The note wraps to many lines on a phone — top-align the icon instead of floating it mid-block */
+            .eco-modal-note { align-items: flex-start; padding: 12px 13px; }
+            .eco-note-ico { margin-top: 1px; }
+            .eco-note-txt { font-size: 12.5px; }
           }
 
           /* ── Georgian — tighter sizing ── */
@@ -9620,6 +10149,7 @@
           body.lang-active-ka .eco-tag { font-size: 0.54em; }
           body.lang-active-ka .eco-pill { font-size: 0.44em; }
           body.lang-active-ka .eco-modal-title { font-size: 23px; }
+          body.lang-active-ka .eco-note-txt { font-size: 12.5px; }
 
           @media print {
             .eco-core, .eco-node, .eco-links, .eco-core-ring { opacity: 1 !important; }
@@ -9630,9 +10160,10 @@
           }
         </style>
         <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">05</span><span class="lang-en">THE PLATFORM</span><span class="lang-ka" style="display:none;">პლატფორმა</span></div>
+          <div class="slide-label"><span class="label-num">07</span><span class="lang-en">THE PLATFORM</span><span class="lang-ka" style="display:none;">პლატფორმა</span></div>
+          <div class="hxt-badge hxt-badge--p1" aria-hidden="true"><span class="lang-en">Phase 1 · live</span><span class="lang-ka" style="display:none;">ეტაპი 1 · აქტიური</span></div>
           <h2 class="headline-big"><span class="lang-en">Not an EMR. <em>One core, many products.</em></span><span class="lang-ka" style="display:none;">ეს არ არის უბრალოდ EMR. <em>ერთი ბირთვი, მრავალი პროდუქტი.</em></span></h2>
-          <p class="headline-sub"><span class="lang-en">What looks like an EMR is really a platform — eight products on one FHIR-native core. <strong>Tap any product to watch it run.</strong></span><span class="lang-ka" style="display:none;">ის, რაც EMR-ად გამოიყურება, სინამდვილეში პლატფორმაა — რვა პროდუქტი ერთ FHIR-ნატიურ ბირთვზე. <strong>დააჭირეთ ნებისმიერ პროდუქტს მის სამუშაო რეჟიმში სანახავად.</strong></span></p>
+          <p class="headline-sub"><span class="lang-en">Phase 1, in depth: eight products on one FHIR-native core — the Western golden standard, live today. <strong>Tap any product to watch it run.</strong></span><span class="lang-ka" style="display:none;">ეტაპი 1 დეტალურად: რვა პროდუქტი ერთ FHIR-ნატიურ ბირთვზე — დასავლური ოქროს სტანდარტი, უკვე მუშაობს. <strong>დააჭირეთ ნებისმიერ პროდუქტს მის სამუშაო რეჟიმში სანახავად.</strong></span></p>
 
           <div class="eco-stage">
             <span class="eco-core-ring r1" aria-hidden="true"></span>
@@ -9706,36 +10237,6 @@
             </button>
           </div>
 
-          <!-- The AI layer — intelligence inside every product, for clinicians AND the C-suite -->
-          <div class="hxe-band">
-            <div class="hxe-kicker"><span class="lang-en">The AI layer · inside every product</span><span class="lang-ka" style="display:none;">AI შრე · ყველა პროდუქტში</span></div>
-            <div class="hxe-chips">
-            <div class="hxe-chip">
-              <span class="hxe-ci hxe-ci--dr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1"/><line x1="12" y1="18" x2="12" y2="22"/></svg></span>
-              <span class="hxe-ct"><b>MediScribe</b><span><span class="lang-en">the visit writes itself</span><span class="lang-ka" style="display:none;">ვიზიტის ჩანაწერი ავტომატურად გენერირდება</span></span></span>
-            </div>
-            <div class="hxe-chip">
-              <span class="hxe-ci hxe-ci--dr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.4 8.5 8.5 0 0 1-3.4-.7L3 21l1.8-4.6A8.4 8.4 0 1 1 21 11.5z"/></svg></span>
-              <span class="hxe-ct"><b><span class="lang-en">Clinical AI chat</span><span class="lang-ka" style="display:none;">კლინიკური AI ჩატი</span></b><span><span class="lang-en">chart-cited answers</span><span class="lang-ka" style="display:none;">პასუხები პაციენტის ისტორიაზე დაყრდნობით</span></span></span>
-            </div>
-            <div class="hxe-chip">
-              <span class="hxe-ci hxe-ci--dr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
-              <span class="hxe-ct"><b><span class="lang-en">Early warning</span><span class="lang-ka" style="display:none;">ადრეული გაფრთხილება</span></b><span><span class="lang-en">sepsis, hours earlier</span><span class="lang-ka" style="display:none;">სეფსისის პროგნოზირება საათებით ადრე</span></span></span>
-            </div>
-            <div class="hxe-chip">
-              <span class="hxe-ci hxe-ci--biz" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="12" x2="16" y2="8"/><line x1="12" y1="7" x2="12" y2="8"/><line x1="7" y1="12" x2="8" y2="12"/><line x1="16" y1="12" x2="17" y2="12"/></svg></span>
-              <span class="hxe-ct"><b>Command Center</b><span><span class="lang-en">live flow &amp; occupancy</span><span class="lang-ka" style="display:none;">ნაკადებისა და დატვირთულობის ლაივ-კონტროლი</span></span></span>
-            </div>
-            <div class="hxe-chip">
-              <span class="hxe-ci hxe-ci--biz" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9.5 12l2 2 3.5-4"/></svg></span>
-              <span class="hxe-ct"><b><span class="lang-en">Revenue guard</span><span class="lang-ka" style="display:none;">შემოსავლის დაცვა</span></b><span><span class="lang-en">fewer claim denials</span><span class="lang-ka" style="display:none;">ნაკლები უარყოფილი მოთხოვნა (Claim)</span></span></span>
-            </div>
-            <div class="hxe-chip">
-              <span class="hxe-ci hxe-ci--biz" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><polyline points="9 14 11 16 15 12"/></svg></span>
-              <span class="hxe-ct"><b><span class="lang-en">MOH autopilot</span><span class="lang-ka" style="display:none;">MOH ავტოპილოტი</span></b><span><span class="lang-en">reports in one click</span><span class="lang-ka" style="display:none;">ანგარიშგება ერთი კლიკით</span></span></span>
-            </div>
-            </div>
-          </div>
         </div>
         <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
         <aside class="notes">
@@ -9744,14 +10245,346 @@
       </section>
 
       <!-- ═══════════════════════════════════════════════
-           SLIDE 06 · THE AI BRAIN — the 02:00 two-fates case (light)
+           SLIDE 08 · AI EVERYWHERE — Phase-2 depth: the 12-room floor plan
+           (fp-* CSS already lives in the head, keyed .scope-slide.present;
+           SVG markup imported from deck.html and bilingualized — KA SVG text
+           can't wrap, so KA strings are written to fixed character budgets).
+           Center band = FOR MANAGEMENT (the director's live screen).
+           ═══════════════════════════════════════════════ -->
+      <section class="gw-slide hxa-slide scope-slide">
+        <div class="slide-inner">
+          <div class="slide-label"><span class="label-num">08</span><span class="lang-en">AI EVERYWHERE</span><span class="lang-ka" style="display:none;">AI ყველგან</span></div>
+          <div class="hxt-badge hxt-badge--p2" aria-hidden="true"><span class="lang-en">Phase 2 · optional</span><span class="lang-ka" style="display:none;">ეტაპი 2 · არჩევითი</span></div>
+          <h2 class="headline-big"><span class="lang-en">Every room gets AI. <em>Management gets everything.</em></span><span class="lang-ka" style="display:none;">AI ყველა ოთახში. <em>მენეჯმენტს — სრული კონტროლი.</em></span></h2>
+          <p class="headline-sub"><span class="lang-en">Phase 2 puts a specialist-grade copilot in every department — and hands the director a live command center.</span><span class="lang-ka" style="display:none;">ეტაპი 2 ყველა განყოფილებას აძლევს AI თანაშემწეს — დირექტორს კი მთელი კლინიკის ლაივ მართვის ეკრანს.</span></p>
+
+          <div class="floor-plan">
+            <svg viewBox="0 0 1100 326" xmlns="http://www.w3.org/2000/svg" aria-label="Phase 2: AI in every hospital department around a central management deck">
+              <defs>
+                <linearGradient id="fpRoomGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#ffffff"/>
+                  <stop offset="100%" stop-color="#eef6ff"/>
+                </linearGradient>
+                <linearGradient id="fpRoomAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#1a365d"/>
+                  <stop offset="50%" stop-color="#2b6cb0"/>
+                  <stop offset="100%" stop-color="#3182ce"/>
+                </linearGradient>
+                <linearGradient id="fpBrainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#0f2947"/>
+                  <stop offset="50%" stop-color="#1a365d"/>
+                  <stop offset="100%" stop-color="#2b6cb0"/>
+                </linearGradient>
+                <pattern id="fpBrainPattern" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
+                  <circle cx="7" cy="7" r="0.6" fill="rgba(190, 227, 248, 0.35)"/>
+                </pattern>
+                <radialGradient id="fpBrainAura" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="rgba(190, 227, 248, 0.55)"/>
+                  <stop offset="55%" stop-color="rgba(49, 130, 206, 0.18)"/>
+                  <stop offset="100%" stop-color="rgba(49, 130, 206, 0)"/>
+                </radialGradient>
+                <radialGradient id="fpBrainCore" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
+                  <stop offset="35%" stop-color="#ffffff" stop-opacity="0.95"/>
+                  <stop offset="65%" stop-color="#bee3f8" stop-opacity="0.7"/>
+                  <stop offset="100%" stop-color="#3182ce" stop-opacity="0"/>
+                </radialGradient>
+                <symbol id="fpStar" viewBox="0 0 10 10">
+                  <polygon points="5,0.5 6.2,3.7 9.5,3.9 6.9,6 7.9,9.3 5,7.4 2.1,9.3 3.1,6 0.5,3.9 3.8,3.7" fill="currentColor"/>
+                </symbol>
+              </defs>
+
+              <!-- Foundation strip: the Phase-1 core beneath every room -->
+              <g class="fp-foundation">
+                <rect class="fp-foundation-shadow" x="2" y="298" width="1096" height="22" rx="6" fill="rgba(15, 32, 58, 0.18)"/>
+                <rect class="fp-foundation-bar" x="0" y="294" width="1100" height="26" rx="6" fill="url(#fpBrainGrad)"/>
+                <rect class="fp-foundation-pattern" x="0" y="294" width="1100" height="26" rx="6" fill="url(#fpBrainPattern)"/>
+                <text class="fp-foundation-text lang-en" x="550" y="311" text-anchor="middle">★  RUNS ON THE PHASE 1 CORE — ALREADY WIRED INTO EVERY ROOM  ★</text>
+                <text class="fp-foundation-text lang-ka" x="550" y="311" text-anchor="middle" style="display:none;">★ მუშაობს ეტაპ 1-ის ბირთვზე — უკვე ჩართულია ყველა ოთახში ★</text>
+              </g>
+
+              <!-- Row 1: clinical floor -->
+              <g class="fp-rooms-row1">
+                <g class="fp-room" transform="translate(24, 12)">
+                  <rect class="fp-room-shadow" x="2" y="5" width="192" height="64" rx="7"/>
+                  <rect class="fp-room-bg" x="0" y="0" width="192" height="68" rx="7"/>
+                  <rect class="fp-room-accent" x="0" y="0" width="192" height="2.5" rx="1.2"/>
+                  <g class="fp-room-icon" transform="translate(13, 12)">
+                    <path d="M0 8 L3 8 L5 4 L7 12 L9 6 L11 9 L14 9"/>
+                    <circle class="fp-room-icon-dot" cx="14" cy="9" r="1.4"/>
+                  </g>
+                  <text class="fp-room-name lang-en" x="36" y="22">ER</text>
+                  <text class="fp-room-name lang-ka" x="36" y="22" style="display:none;">მიმღები</text>
+                  <use href="#fpStar" x="13" y="38" width="7.5" height="7.5" class="fp-room-std-star"/>
+                  <text class="fp-room-std lang-en" x="24" y="44">AI triage + sepsis screening</text>
+                  <text class="fp-room-std lang-ka" x="24" y="44" style="display:none;">AI ტრიაჟი + სეფსისის ალერტი</text>
+                </g>
+                <g class="fp-room" transform="translate(238, 12)">
+                  <rect class="fp-room-shadow" x="2" y="5" width="192" height="64" rx="7"/>
+                  <rect class="fp-room-bg" x="0" y="0" width="192" height="68" rx="7"/>
+                  <rect class="fp-room-accent" x="0" y="0" width="192" height="2.5" rx="1.2"/>
+                  <g class="fp-room-icon" transform="translate(13, 12)">
+                    <rect x="0" y="2" width="14" height="9" rx="1.2"/>
+                    <path d="M2 7 L4 7 L5 4 L7 9 L9 5 L11 7 L13 7"/>
+                  </g>
+                  <text class="fp-room-name lang-en" x="36" y="22">ICU</text>
+                  <text class="fp-room-name lang-ka" x="36" y="22" style="display:none;">რეანიმაცია</text>
+                  <use href="#fpStar" x="13" y="38" width="7.5" height="7.5" class="fp-room-std-star"/>
+                  <text class="fp-room-std lang-en" x="24" y="44">Early warning, hours ahead</text>
+                  <text class="fp-room-std lang-ka" x="24" y="44" style="display:none;">გაფრთხილება საათებით ადრე</text>
+                </g>
+                <g class="fp-room" transform="translate(452, 12)">
+                  <rect class="fp-room-shadow" x="2" y="5" width="192" height="64" rx="7"/>
+                  <rect class="fp-room-bg" x="0" y="0" width="192" height="68" rx="7"/>
+                  <rect class="fp-room-accent" x="0" y="0" width="192" height="2.5" rx="1.2"/>
+                  <g class="fp-room-icon" transform="translate(13, 12)">
+                    <path d="M0 11 L9 2"/>
+                    <path d="M8 1 L11 4 L13 6 L11 8 L8 5 z"/>
+                    <circle class="fp-room-icon-dot" cx="1" cy="11" r="1"/>
+                  </g>
+                  <text class="fp-room-name lang-en" x="36" y="22">OR</text>
+                  <text class="fp-room-name lang-ka" x="36" y="22" style="display:none;">საოპერაციო</text>
+                  <use href="#fpStar" x="13" y="38" width="7.5" height="7.5" class="fp-room-std-star"/>
+                  <text class="fp-room-std lang-en" x="24" y="44">Op notes that write themselves</text>
+                  <text class="fp-room-std lang-ka" x="24" y="44" style="display:none;">ოქმები თავად იწერება</text>
+                </g>
+                <g class="fp-room" transform="translate(666, 12)">
+                  <rect class="fp-room-shadow" x="2" y="5" width="192" height="64" rx="7"/>
+                  <rect class="fp-room-bg" x="0" y="0" width="192" height="68" rx="7"/>
+                  <rect class="fp-room-accent" x="0" y="0" width="192" height="2.5" rx="1.2"/>
+                  <g class="fp-room-icon" transform="translate(13, 12)">
+                    <path d="M0 11 L0 6 L4 6 L4 4 L14 4 L14 11"/>
+                    <circle class="fp-room-icon-dot" cx="3.5" cy="8" r="1.2"/>
+                    <path d="M5 8 L14 8"/>
+                  </g>
+                  <text class="fp-room-name lang-en" x="36" y="22">WARDS</text>
+                  <text class="fp-room-name lang-ka" x="36" y="22" style="display:none;">პალატები</text>
+                  <use href="#fpStar" x="13" y="38" width="7.5" height="7.5" class="fp-room-std-star"/>
+                  <text class="fp-room-std lang-en" x="24" y="44">AI handoffs + bed flow</text>
+                  <text class="fp-room-std lang-ka" x="24" y="44" style="display:none;">AI გადაბარება + საწოლები</text>
+                </g>
+                <g class="fp-room" transform="translate(880, 12)">
+                  <rect class="fp-room-shadow" x="2" y="5" width="192" height="64" rx="7"/>
+                  <rect class="fp-room-bg" x="0" y="0" width="192" height="68" rx="7"/>
+                  <rect class="fp-room-accent" x="0" y="0" width="192" height="2.5" rx="1.2"/>
+                  <g class="fp-room-icon" transform="translate(13, 12)">
+                    <rect x="0" y="0" width="14" height="12" rx="1"/>
+                    <circle cx="7" cy="6" r="3"/>
+                    <path d="M7 3 L7 6 L9 8"/>
+                  </g>
+                  <text class="fp-room-name lang-en" x="36" y="22">RADIOLOGY</text>
+                  <text class="fp-room-name lang-ka" x="36" y="22" style="display:none;">რადიოლოგია</text>
+                  <use href="#fpStar" x="13" y="38" width="7.5" height="7.5" class="fp-room-std-star"/>
+                  <text class="fp-room-std lang-en" x="24" y="44">Urgent studies flagged first</text>
+                  <text class="fp-room-std lang-ka" x="24" y="44" style="display:none;">სასწრაფო კვლევა პირველ რიგში</text>
+                </g>
+              </g>
+
+              <!-- Row 2: LAB · MANAGEMENT DECK · PHARMACY -->
+              <g class="fp-rooms-row2">
+                <g class="fp-room" transform="translate(24, 92)">
+                  <rect class="fp-room-shadow" x="2" y="5" width="192" height="100" rx="7"/>
+                  <rect class="fp-room-bg" x="0" y="0" width="192" height="106" rx="7"/>
+                  <rect class="fp-room-accent" x="0" y="0" width="192" height="2.5" rx="1.2"/>
+                  <g class="fp-room-icon" transform="translate(13, 14)">
+                    <path d="M5 0 L5 4 L1 12 Q 1 14 3 14 L11 14 Q 13 14 13 12 L9 4 L9 0 Z"/>
+                    <path d="M3 0 L11 0"/>
+                    <circle class="fp-room-icon-dot" cx="6" cy="10" r="0.7"/>
+                    <circle class="fp-room-icon-dot" cx="9" cy="9" r="0.7"/>
+                  </g>
+                  <text class="fp-room-name lang-en" x="36" y="24">LAB · LIS</text>
+                  <text class="fp-room-name lang-ka" x="36" y="24" style="display:none;">ლაბორატორია</text>
+                  <use href="#fpStar" x="13" y="46" width="7.5" height="7.5" class="fp-room-std-star"/>
+                  <text class="fp-room-std lang-en" x="24" y="52">Critical values, auto-routed</text>
+                  <text class="fp-room-std lang-ka" x="24" y="52" style="display:none;">კრიტიკული შედეგი — მყისვე</text>
+                  <use href="#fpStar" x="13" y="64" width="7.5" height="7.5" class="fp-room-std-star"/>
+                  <text class="fp-room-std lang-en" x="24" y="70">Specimen tracking end-to-end</text>
+                  <text class="fp-room-std lang-ka" x="24" y="70" style="display:none;">სინჯის სრული ტრეკინგი</text>
+                </g>
+
+                <!-- ★ FOR MANAGEMENT — the director's live screen (center band) -->
+                <g class="fp-brain" transform="translate(238, 92)">
+                  <rect class="fp-brain-shadow" x="4" y="8" width="618" height="98" rx="13"/>
+                  <rect class="fp-brain-bg" x="0" y="0" width="618" height="106" rx="13"/>
+                  <rect class="fp-brain-pattern" x="0" y="0" width="618" height="106" rx="13"/>
+                  <ellipse class="fp-brain-aura" cx="309" cy="53" rx="280" ry="68"/>
+                  <circle class="fp-brain-ring r3" cx="309" cy="53" r="60"/>
+                  <circle class="fp-brain-ring r2" cx="309" cy="53" r="48"/>
+                  <circle class="fp-brain-ring r1" cx="309" cy="53" r="36"/>
+                  <circle class="fp-brain-core" cx="309" cy="53" r="30"/>
+                  <g>
+                    <rect x="298" y="42" width="4" height="4" rx="0.9" fill="#1a365d" opacity="1"/>
+                    <rect x="304" y="42" width="4" height="4" rx="0.9" fill="#1a365d" opacity="1"/>
+                    <rect x="310" y="42" width="4" height="4" rx="0.9" fill="#1a365d" opacity="1"/>
+                    <rect x="316" y="42" width="4" height="4" rx="0.9" fill="#1a365d" opacity="1"/>
+                    <rect x="298" y="48" width="4" height="4" rx="0.9" fill="#1a365d" opacity="0.845"/>
+                    <rect x="304" y="48" width="4" height="4" rx="0.9" fill="#1a365d" opacity="0.845"/>
+                    <rect x="310" y="48" width="4" height="4" rx="0.9" fill="#1a365d" opacity="0.845"/>
+                    <rect x="316" y="48" width="4" height="4" rx="0.9" fill="#1a365d" opacity="0.845"/>
+                    <rect x="298" y="54" width="4" height="4" rx="0.9" fill="#1a365d" opacity="0.69"/>
+                    <rect x="304" y="54" width="4" height="4" rx="0.9" fill="#1a365d" opacity="0.69"/>
+                    <rect x="310" y="54" width="4" height="4" rx="0.9" fill="#1a365d" opacity="0.69"/>
+                    <rect x="316" y="54" width="4" height="4" rx="0.9" fill="#1a365d" opacity="0.69"/>
+                    <rect x="298" y="60" width="4" height="4" rx="0.9" fill="#1a365d" opacity="0.535"/>
+                    <rect x="304" y="60" width="4" height="4" rx="0.9" fill="#1a365d" opacity="0.535"/>
+                    <rect x="310" y="60" width="4" height="4" rx="0.9" fill="#1a365d" opacity="0.535"/>
+                    <rect x="316" y="60" width="4" height="4" rx="0.9" fill="#1a365d" opacity="0.535"/>
+                  </g>
+                  <text class="fp-brain-tagline lang-en" x="309" y="18">FOR MANAGEMENT — THE DIRECTOR'S LIVE SCREEN</text>
+                  <text class="fp-brain-tagline lang-ka" x="309" y="18" style="display:none;">მენეჯმენტისთვის — დირექტორის ლაივ ეკრანი</text>
+                  <text class="fp-brain-title lang-en" x="309" y="92">THE WHOLE HOSPITAL</text>
+                  <text class="fp-brain-title lang-ka" x="309" y="92" style="display:none;">მთელი კლინიკა</text>
+                  <text class="fp-brain-sub lang-en" x="309" y="102">at a glance: command center · live bed board · revenue cycle · one-click MOH</text>
+                  <text class="fp-brain-sub lang-ka" x="309" y="102" style="display:none;">ერთ ეკრანზე: მართვის ცენტრი · საწოლების რუკა · შემოსავლები · MOH ერთი კლიკით</text>
+                </g>
+
+                <g class="fp-room" transform="translate(880, 92)">
+                  <rect class="fp-room-shadow" x="2" y="5" width="192" height="100" rx="7"/>
+                  <rect class="fp-room-bg" x="0" y="0" width="192" height="106" rx="7"/>
+                  <rect class="fp-room-accent" x="0" y="0" width="192" height="2.5" rx="1.2"/>
+                  <g class="fp-room-icon" transform="translate(13, 14)">
+                    <rect x="2" y="0" width="10" height="14" rx="2"/>
+                    <path d="M2 5 L12 5"/>
+                    <path d="M5 8 L9 8 M 7 7 L 7 11"/>
+                  </g>
+                  <text class="fp-room-name lang-en" x="36" y="24">PHARMACY</text>
+                  <text class="fp-room-name lang-ka" x="36" y="24" style="display:none;">აფთიაქი</text>
+                  <use href="#fpStar" x="13" y="46" width="7.5" height="7.5" class="fp-room-std-star"/>
+                  <text class="fp-room-std lang-en" x="24" y="52">Interaction + dose checks</text>
+                  <text class="fp-room-std lang-ka" x="24" y="52" style="display:none;">დოზა + ურთიერთქმედება</text>
+                  <use href="#fpStar" x="13" y="64" width="7.5" height="7.5" class="fp-room-std-star"/>
+                  <text class="fp-room-std lang-en" x="24" y="70">Every dose barcode-checked</text>
+                  <text class="fp-room-std lang-ka" x="24" y="70" style="display:none;">შტრიხკოდით გადამოწმება</text>
+                </g>
+              </g>
+
+              <!-- Row 3: operations & patient -->
+              <g class="fp-rooms-row3">
+                <g class="fp-room" transform="translate(24, 218)">
+                  <rect class="fp-room-shadow" x="2" y="5" width="192" height="64" rx="7"/>
+                  <rect class="fp-room-bg" x="0" y="0" width="192" height="68" rx="7"/>
+                  <rect class="fp-room-accent" x="0" y="0" width="192" height="2.5" rx="1.2"/>
+                  <g class="fp-room-icon" transform="translate(13, 12)">
+                    <rect x="0" y="2" width="14" height="11" rx="1"/>
+                    <path d="M0 5 L14 5"/>
+                    <path d="M3 0 L3 4 M 11 0 L 11 4"/>
+                    <path d="M3 9 L5 11 L9 7"/>
+                  </g>
+                  <text class="fp-room-name lang-en" x="36" y="22">COORDINATOR</text>
+                  <text class="fp-room-name lang-ka" x="36" y="22" style="display:none;">კოორდინატორი</text>
+                  <use href="#fpStar" x="13" y="38" width="7.5" height="7.5" class="fp-room-std-star"/>
+                  <text class="fp-room-std lang-en" x="24" y="44">Capacity foresight + slots</text>
+                  <text class="fp-room-std lang-ka" x="24" y="44" style="display:none;">დატვირთვის პროგნოზი</text>
+                </g>
+                <g class="fp-room" transform="translate(238, 218)">
+                  <rect class="fp-room-shadow" x="2" y="5" width="192" height="64" rx="7"/>
+                  <rect class="fp-room-bg" x="0" y="0" width="192" height="68" rx="7"/>
+                  <rect class="fp-room-accent" x="0" y="0" width="192" height="2.5" rx="1.2"/>
+                  <g class="fp-room-icon" transform="translate(13, 12)">
+                    <rect x="2" y="0" width="11" height="13" rx="0.5"/>
+                    <path d="M5 4 L10 4 M 5 7 L 10 7 M 5 10 L 8 10"/>
+                  </g>
+                  <text class="fp-room-name lang-en" x="36" y="22">BILLING</text>
+                  <text class="fp-room-name lang-ka" x="36" y="22" style="display:none;">ბილინგი</text>
+                  <use href="#fpStar" x="13" y="38" width="7.5" height="7.5" class="fp-room-std-star"/>
+                  <text class="fp-room-std lang-en" x="24" y="44">Denial patterns + AI appeals</text>
+                  <text class="fp-room-std lang-ka" x="24" y="44" style="display:none;">უარყოფები + AI აპელაცია</text>
+                </g>
+                <g class="fp-room" transform="translate(452, 218)">
+                  <rect class="fp-room-shadow" x="2" y="5" width="192" height="64" rx="7"/>
+                  <rect class="fp-room-bg" x="0" y="0" width="192" height="68" rx="7"/>
+                  <rect class="fp-room-accent" x="0" y="0" width="192" height="2.5" rx="1.2"/>
+                  <g class="fp-room-icon" transform="translate(13, 12)">
+                    <rect x="0" y="0" width="6" height="6" rx="0.5"/>
+                    <rect x="8" y="0" width="6" height="6" rx="0.5"/>
+                    <rect x="4" y="7" width="6" height="6" rx="0.5"/>
+                  </g>
+                  <text class="fp-room-name lang-en" x="36" y="22">WAREHOUSE</text>
+                  <text class="fp-room-name lang-ka" x="36" y="22" style="display:none;">საწყობი</text>
+                  <use href="#fpStar" x="13" y="38" width="7.5" height="7.5" class="fp-room-std-star"/>
+                  <text class="fp-room-std lang-en" x="24" y="44">Predictive ordering</text>
+                  <text class="fp-room-std lang-ka" x="24" y="44" style="display:none;">პროგნოზული შეკვეთები</text>
+                </g>
+                <g class="fp-room" transform="translate(666, 218)">
+                  <rect class="fp-room-shadow" x="2" y="5" width="192" height="64" rx="7"/>
+                  <rect class="fp-room-bg" x="0" y="0" width="192" height="68" rx="7"/>
+                  <rect class="fp-room-accent" x="0" y="0" width="192" height="2.5" rx="1.2"/>
+                  <g class="fp-room-icon" transform="translate(13, 12)">
+                    <circle cx="4" cy="3.5" r="2"/>
+                    <path d="M0 12 Q 0 7 4 7 Q 8 7 8 12"/>
+                    <circle cx="11" cy="4.5" r="1.5"/>
+                    <path d="M8 12 Q 8 8 11 8 Q 14 8 14 12"/>
+                  </g>
+                  <text class="fp-room-name lang-en" x="36" y="22">HR · STAFF</text>
+                  <text class="fp-room-name lang-ka" x="36" y="22" style="display:none;">პერსონალი</text>
+                  <use href="#fpStar" x="13" y="38" width="7.5" height="7.5" class="fp-room-std-star"/>
+                  <text class="fp-room-std lang-en" x="24" y="44">Fair shifts, burnout signals</text>
+                  <text class="fp-room-std lang-ka" x="24" y="44" style="display:none;">ცვლები + გადაღლის სიგნალი</text>
+                </g>
+                <g class="fp-room" transform="translate(880, 218)">
+                  <rect class="fp-room-shadow" x="2" y="5" width="192" height="64" rx="7"/>
+                  <rect class="fp-room-bg" x="0" y="0" width="192" height="68" rx="7"/>
+                  <rect class="fp-room-accent" x="0" y="0" width="192" height="2.5" rx="1.2"/>
+                  <g class="fp-room-icon" transform="translate(13, 12)">
+                    <rect x="2" y="0" width="10" height="14" rx="1.5"/>
+                    <path d="M5 11 L9 11"/>
+                    <path d="M4 2 L10 2"/>
+                  </g>
+                  <text class="fp-room-name lang-en" x="36" y="22">PORTAL</text>
+                  <text class="fp-room-name lang-ka" x="36" y="22" style="display:none;">პორტალი</text>
+                  <use href="#fpStar" x="13" y="38" width="7.5" height="7.5" class="fp-room-std-star"/>
+                  <text class="fp-room-std lang-en" x="24" y="44">Patient messages, AI-graded</text>
+                  <text class="fp-room-std lang-ka" x="24" y="44" style="display:none;">AI-შეტყობინებები პაციენტს</text>
+                </g>
+              </g>
+            </svg>
+
+            <!-- Mobile-native fallback: replaces the SVG on narrow viewports -->
+            <div class="fp-mobile" aria-hidden="false">
+              <div class="fp-mobile-brain">
+                <div class="fp-mobile-brain-tagline"><span class="lang-en">FOR MANAGEMENT · LIVE</span><span class="lang-ka" style="display:none;">მენეჯმენტისთვის · ლაივ</span></div>
+                <h3 class="fp-mobile-brain-title"><span class="lang-en">THE WHOLE HOSPITAL</span><span class="lang-ka" style="display:none;">მთელი კლინიკა</span></h3>
+                <p class="fp-mobile-brain-sub"><span class="lang-en">command center · beds · revenue · MOH — at a glance</span><span class="lang-ka" style="display:none;">მართვის ცენტრი · საწოლები · შემოსავლები · MOH — ერთ ეკრანზე</span></p>
+              </div>
+              <div class="fp-mobile-grid">
+                <article class="fp-mobile-room"><h4><span class="lang-en">ER</span><span class="lang-ka" style="display:none;">მიმღები</span></h4><p><span class="lang-en">AI triage + sepsis screening</span><span class="lang-ka" style="display:none;">AI ტრიაჟი + სეფსისის ალერტი</span></p></article>
+                <article class="fp-mobile-room"><h4><span class="lang-en">ICU</span><span class="lang-ka" style="display:none;">რეანიმაცია</span></h4><p><span class="lang-en">Early warning, hours ahead</span><span class="lang-ka" style="display:none;">გაფრთხილება საათებით ადრე</span></p></article>
+                <article class="fp-mobile-room"><h4><span class="lang-en">OR</span><span class="lang-ka" style="display:none;">საოპერაციო</span></h4><p><span class="lang-en">Op notes that write themselves</span><span class="lang-ka" style="display:none;">ოქმები თავად იწერება</span></p></article>
+                <article class="fp-mobile-room"><h4><span class="lang-en">WARDS</span><span class="lang-ka" style="display:none;">პალატები</span></h4><p><span class="lang-en">AI handoffs + bed flow</span><span class="lang-ka" style="display:none;">AI გადაბარება + საწოლები</span></p></article>
+                <article class="fp-mobile-room"><h4><span class="lang-en">RADIOLOGY</span><span class="lang-ka" style="display:none;">რადიოლოგია</span></h4><p><span class="lang-en">Urgent studies flagged first</span><span class="lang-ka" style="display:none;">სასწრაფო კვლევა პირველ რიგში</span></p></article>
+                <article class="fp-mobile-room"><h4><span class="lang-en">LAB · LIS</span><span class="lang-ka" style="display:none;">ლაბორატორია</span></h4><p><span class="lang-en">Critical values, auto-routed</span><span class="lang-ka" style="display:none;">კრიტიკული შედეგი — მყისვე</span></p></article>
+                <article class="fp-mobile-room"><h4><span class="lang-en">PHARMACY</span><span class="lang-ka" style="display:none;">აფთიაქი</span></h4><p><span class="lang-en">Interaction + dose checks</span><span class="lang-ka" style="display:none;">დოზა + ურთიერთქმედება</span></p></article>
+                <article class="fp-mobile-room"><h4><span class="lang-en">COORDINATOR</span><span class="lang-ka" style="display:none;">კოორდინატორი</span></h4><p><span class="lang-en">Capacity foresight + slots</span><span class="lang-ka" style="display:none;">დატვირთვის პროგნოზი</span></p></article>
+                <article class="fp-mobile-room"><h4><span class="lang-en">BILLING</span><span class="lang-ka" style="display:none;">ბილინგი</span></h4><p><span class="lang-en">Denial patterns + AI appeals</span><span class="lang-ka" style="display:none;">უარყოფები + AI აპელაცია</span></p></article>
+                <article class="fp-mobile-room"><h4><span class="lang-en">WAREHOUSE</span><span class="lang-ka" style="display:none;">საწყობი</span></h4><p><span class="lang-en">Predictive ordering</span><span class="lang-ka" style="display:none;">პროგნოზული შეკვეთები</span></p></article>
+                <article class="fp-mobile-room"><h4><span class="lang-en">HR · STAFF</span><span class="lang-ka" style="display:none;">პერსონალი</span></h4><p><span class="lang-en">Fair shifts, burnout signals</span><span class="lang-ka" style="display:none;">ცვლები + გადაღლის სიგნალი</span></p></article>
+                <article class="fp-mobile-room"><h4><span class="lang-en">PORTAL</span><span class="lang-ka" style="display:none;">პორტალი</span></h4><p><span class="lang-en">Patient messages, AI-graded</span><span class="lang-ka" style="display:none;">AI-შეტყობინებები პაციენტს</span></p></article>
+              </div>
+              <div class="fp-mobile-foundation"><span class="lang-en">★  RUNS ON THE PHASE 1 CORE — ALREADY WIRED INTO EVERY ROOM  ★</span><span class="lang-ka" style="display:none;">★ მუშაობს ეტაპ 1-ის ბირთვზე — უკვე ჩართულია ყველა ოთახში ★</span></div>
+            </div>
+          </div>
+
+          <div class="hxa-strip">
+            <span class="hxa-chip"><span class="hxa-chip-dot" aria-hidden="true"></span><span class="lang-en">Optional · when ready</span><span class="lang-ka" style="display:none;">არჩევითი · როცა მზად ხართ</span></span>
+            <p class="hxa-strip-t"><span class="lang-en">No new project, no integrators — the Phase 1 core already feeds every room. <strong>Each feature switches on per department, when you say go.</strong></span><span class="lang-ka" style="display:none;">არც ახალი პროექტი, არც ინტეგრატორები — ეტაპ 1-ის ბირთვი უკვე კვებავს ყველა ოთახს. <strong>თითოეული ფუნქცია ირთვება განყოფილებების მიხედვით, როგორც კი იტყვით.</strong></span></p>
+          </div>
+        </div>
+        <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
+        <aside class="notes">
+          <span class="lang-en">Phase two, in one picture. Around the edge — every department of this hospital, and in every one of them a green star: the AI that department gets. Triage in the ER, early warning in the ICU, notes that write themselves in the OR, appeal packets in billing, predictive ordering in the warehouse. And in the middle — the part for the people in this room: the director's live screen. Command center, live bed board, the revenue view, ministry reporting in one click. Full control of the whole hospital, on one screen. None of this is an integration project. The Phase 1 core is already wired into every room — each feature is a switch we flip per department, when you say go.</span><span class="lang-ka" style="display:none;">ეტაპი ორი — ერთ სურათში. კიდეებზე — ამ კლინიკის ყველა განყოფილება, და თითოეულში მწვანე ვარსკვლავი: AI, რომელსაც ეს განყოფილება იღებს. ტრიაჟი მიმღებში, ადრეული გაფრთხილება რეანიმაციაში, ოქმები, რომლებიც თავად იწერება საოპერაციოში, სააპელაციო პაკეტები ბილინგში, პროგნოზული შეკვეთები საწყობში. შუაში კი — ის ნაწილი, ვინც ამ ოთახში ზის: დირექტორის ლაივ ეკრანი. მართვის ცენტრი, საწოლების რუკა, შემოსავლების ხედი, სამინისტროს ანგარიშგება ერთი კლიკით. მთელი კლინიკის სრული კონტროლი — ერთ ეკრანზე. არაფერი აქედან ინტეგრაციის პროექტი არ არის. ეტაპ 1-ის ბირთვი უკვე ჩართულია ყველა ოთახში — თითოეული ფუნქცია ჩამრთველია, რომელსაც განყოფილებების მიხედვით ვაჭერთ, როგორც კი იტყვით.</span>
+        </aside>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════
+           SLIDE 09 · THE AI BRAIN — the 02:00 two-fates case (light)
            + clickable clinical / business case modals below.
            ═══════════════════════════════════════════════ -->
       <section class="csx-slide hx-brain">
         <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">06</span><span class="lang-en">THE AI BRAIN</span><span class="lang-ka" style="display:none;">AI ტვინი</span></div>
+          <div class="slide-label"><span class="label-num">09</span><span class="lang-en">THE AI BRAIN</span><span class="lang-ka" style="display:none;">AI ტვინი</span></div>
+          <div class="hxt-badge hxt-badge--p3" aria-hidden="true"><span class="lang-en">Phase 3 · world-first</span><span class="lang-ka" style="display:none;">ეტაპი 3 · პირველი მსოფლიოში</span></div>
           <h2 class="headline-big"><span class="lang-en">At 02:00, people miss things. <em>MediMind doesn't.</em></span><span class="lang-ka" style="display:none;">ღამის 02:00 საათზე ადამიანებს შეიძლება რაღაც გამორჩეთ. <em>MediMind-ს — არა.</em></span></h2>
-          <p class="headline-sub"><span class="lang-en">It reads every patient in real time. The AI flags — your doctors decide.</span><span class="lang-ka" style="display:none;">ის რეალურ დროში აანალიზებს ყველა პაციენტს. AI გაძლევთ სიგნალს — გადაწყვეტილებას კი თქვენი ექიმი იღებს.</span></p>
+          <p class="headline-sub"><span class="lang-en">It reads every patient in real time — the AI flags, your doctors decide. The hospitals that switch it on run among the first in the world.</span><span class="lang-ka" style="display:none;">ის რეალურ დროში აანალიზებს ყველა პაციენტს — AI გაძლევთ სიგნალს, გადაწყვეტილებას თქვენი ექიმი იღებს. კლინიკები, რომლებიც ამას ჩართავენ, მსოფლიოში პირველთა შორის არიან.</span></p>
 
           <div class="csb-stage">
             <div class="csb-origin">
@@ -9820,7 +10653,7 @@
            ═══════════════════════════════════════════════ -->
       <section class="bm-slide hx-offer">
         <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">07</span><span class="lang-en">THE OFFER</span><span class="lang-ka" style="display:none;">შეთავაზება</span></div>
+          <div class="slide-label"><span class="label-num">10</span><span class="lang-en">THE OFFER</span><span class="lang-ka" style="display:none;">შეთავაზება</span></div>
           <h2 class="headline-big"><span class="lang-en">All of it — at <em>what you already pay today</em>.</span><span class="lang-ka" style="display:none;">ეს ყველაფერი — <em>იმავე ფასად, რასაც დღეს უკვე იხდით</em>.</span></h2>
           <p class="headline-sub"><span class="lang-en">One codebase replaces four vendors. That's the whole trick — same bill, one contract, no integrators.</span><span class="lang-ka" style="display:none;">ერთი კოდბაზა ანაცვლებს ოთხ ვენდორს. მთელი საიდუმლოც ეს არის — იგივე გადასახადი, ერთი კონტრაქტი, ინტეგრატორების გარეშე.</span></p>
 
@@ -9854,7 +10687,7 @@
                 </span>
               </div>
               <ul class="hxo2-new-list">
-                <li><span class="hxo2-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><span class="lang-en">An AI brain across every ward</span><span class="lang-ka" style="display:none;">AI ტვინი ყველა განყოფილებაში</span></span></li>
+                <li><span class="hxo2-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><span class="lang-en">The full path: Phase 1 today — Phases 2 &amp; 3 the moment you say go</span><span class="lang-ka" style="display:none;">სრული გზა: ეტაპი 1 დღეს — ეტაპები 2 და 3, როგორც კი იტყვით</span></span></li>
                 <li><span class="hxo2-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><span class="lang-en">Unlimited feature requests — you ask, we build it</span><span class="lang-ka" style="display:none;">შეუზღუდავი მოთხოვნები — თქვენ ითხოვთ, ჩვენ ვაშენებთ</span></span></li>
                 <li><span class="hxo2-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><span class="lang-en">Every future product, included</span><span class="lang-ka" style="display:none;">ყველა მომავალი პროდუქტი — პაკეტშივე</span></span></li>
                 <li><span class="hxo2-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><span class="lang-en">One contract, one phone number</span><span class="lang-ka" style="display:none;">ერთი კონტრაქტი, ერთი ტელეფონის ნომერი</span></span></li>
@@ -9889,7 +10722,7 @@
            ═══════════════════════════════════════════════ -->
       <section class="gw-slide gw-switch">
         <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">08</span><span class="lang-en">THE SWITCH</span><span class="lang-ka" style="display:none;">გადასვლა</span></div>
+          <div class="slide-label"><span class="label-num">11</span><span class="lang-en">THE SWITCH</span><span class="lang-ka" style="display:none;">გადასვლა</span></div>
           <h2 class="headline-big"><span class="lang-en">We prove it works. Then switch you in <em>one day</em>.</span><span class="lang-ka" style="display:none;">ჯერ დავამტკიცებთ, რომ მუშაობს — შემდეგ გადმოგიყვანთ <em>ერთ დღეში</em>.</span></h2>
           <p class="headline-sub"><span class="lang-en">The move is our risk, not yours — you don't lose an hour of operations.</span><span class="lang-ka" style="display:none;">გადასვლა ჩვენი რისკია, არა თქვენი — თქვენ ოპერაციების არც ერთ საათს არ კარგავთ.</span></p>
 
@@ -9913,7 +10746,7 @@
                 <div class="gw-card-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                 </div>
-                <h3><span class="lang-en">We train every department</span><span class="lang-ka" style="display:none;">ვწვრთნით ყველა დეპარტამენტს</span></h3>
+                <h3><span class="lang-en">We train every department</span><span class="lang-ka" style="display:none;">ვატრენინგებთ ყველა დეპარტამენტს</span></h3>
               </div>
               <p><span class="lang-en">Georgian UI, on-site training, ongoing support — 1,000+ doctors have already made this jump.</span><span class="lang-ka" style="display:none;">ქართული ინტერფეისი, ტრენინგი ადგილზე, მუდმივი მხარდაჭერა — 1,000+ ექიმმა ეს ნახტომი უკვე გააკეთა.</span></p>
             </div>
@@ -9933,7 +10766,7 @@
                 </div>
                 <h3><span class="lang-en">Coexistence path</span><span class="lang-ka" style="display:none;">პარალელური რეჟიმი</span></h3>
               </div>
-              <p><span class="lang-en">Nervous? Run both systems in parallel and cut over only when you're ready.</span><span class="lang-ka" style="display:none;">ღელავთ? ამუშავეთ ორივე სისტემა პარალელურად და გადადით მხოლოდ მაშინ, როცა მზად იქნებით.</span></p>
+              <p><span class="lang-en">Nervous? Run both systems in parallel and cut over only when you're ready.</span><span class="lang-ka" style="display:none;">ამუშავეთ ორივე სისტემა პარალელურად და გადადით მხოლოდ მაშინ, როცა მზად იქნებით.</span></p>
             </div>
           </div>
 
@@ -9953,9 +10786,9 @@
            ═══════════════════════════════════════════════ -->
       <section class="gw-slide hxg-slide">
         <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">09</span><span class="lang-en">IN WRITING</span><span class="lang-ka" style="display:none;">წერილობით</span></div>
+          <div class="slide-label"><span class="label-num">12</span><span class="lang-en">IN WRITING</span><span class="lang-ka" style="display:none;">წერილობით</span></div>
           <h2 class="headline-big"><span class="lang-en">The first vendor that's <em>easy to leave</em>.</span><span class="lang-ka" style="display:none;">პირველი ვენდორი, რომლის დატოვებაც <em>მარტივია</em>.</span></h2>
-          <p class="headline-sub"><span class="lang-en">Everything the old vendors never put on paper — signed.</span><span class="lang-ka" style="display:none;">ყველაფერი, რასაც ძველი ვენდორები ქაღალდზე არასდროს წერდნენ — ხელმოწერილი.</span></p>
+          <p class="headline-sub"><span class="lang-en">Everything the old vendors never put on paper — signed.</span><span class="lang-ka" style="display:none;"></span></p>
 
           <div class="gw-cards">
             <div class="gw-card">
@@ -9991,7 +10824,7 @@
         </div>
         <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
         <aside class="notes">
-          <span class="lang-en">This slide exists because every person in this room has been burned by a software vendor. Two slides ago I told you the old vendors hold your database hostage — so the fair question is: aren't we just the new hostage-taker? No, and here it is in writing. One: your data is yours — stored in FHIR R4, the world standard, exportable in full any day you ask. Two: source-code escrow — if we ever stop operating, the code and your running system stay with you. Three: a signed SLA — support, uptime, Ministry of Health form updates — with a multi-year price lock in the contract. We make it easy to leave, because that's the only honest way to ask you to stay. [CONFIRM before presenting: escrow mechanics, price-lock duration, and SLA numbers with counsel.]</span><span class="lang-ka" style="display:none;">ეს სლაიდი იმიტომ არსებობს, რომ ამ ოთახში ყველა ნამწვარია პროგრამული ვენდორისგან. ორი სლაიდის წინ გითხარით, რომ ძველ ვენდორებს თქვენი მონაცემთა ბაზა მძევლად ჰყავთ — ამიტომ სამართლიანი კითხვაა: ჩვენ ხომ არ ვართ უბრალოდ ახალი მძევლის ამყვანი? არა — და აი, წერილობით. პირველი: თქვენი მონაცემები თქვენია — ინახება FHIR R4-ში, მსოფლიო სტანდარტში, და სრულად ექსპორტირებადია ნებისმიერ დღეს. მეორე: კოდის დეპონირება — თუ ოდესმე შევწყვიტეთ მუშაობა, კოდი და თქვენი მომუშავე სისტემა თქვენთან რჩება. მესამე: ხელმოწერილი SLA — მხარდაჭერა, სისტემის მუშაობა, სამინისტროს ფორმების განახლებები — მრავალწლიანი ფასის ფიქსაციით კონტრაქტში. ჩვენ წასვლას მარტივს ვხდით, რადგან დარჩენის თხოვნის ერთადერთი პატიოსანი გზა ეს არის. [CONFIRM: ესქროუს მექანიზმი, ფასის ფიქსაციის ვადა და SLA ციფრები იურისტთან პრეზენტაციამდე.]</span>
+          <span class="lang-en">This slide exists because every person in this room has been burned by a software vendor. Earlier in this deck I told you the old vendors hold your database hostage — so the fair question is: aren't we just the new hostage-taker? No, and here it is in writing. One: your data is yours — stored in FHIR R4, the world standard, exportable in full any day you ask. Two: source-code escrow — if we ever stop operating, the code and your running system stay with you. Three: a signed SLA — support, uptime, Ministry of Health form updates — with a multi-year price lock in the contract. We make it easy to leave, because that's the only honest way to ask you to stay. [CONFIRM before presenting: escrow mechanics, price-lock duration, and SLA numbers with counsel.]</span><span class="lang-ka" style="display:none;">ეს სლაიდი იმიტომ არსებობს, რომ ამ ოთახში ყველა ნამწვარია პროგრამული ვენდორისგან. ამ პრეზენტაციაში უკვე გითხარით, რომ ძველ ვენდორებს თქვენი მონაცემთა ბაზა მძევლად ჰყავთ — ამიტომ სამართლიანი კითხვაა: ჩვენ ხომ არ ვართ უბრალოდ ახალი მძევლის ამყვანი? არა — და აი, წერილობით. პირველი: თქვენი მონაცემები თქვენია — ინახება FHIR R4-ში, მსოფლიო სტანდარტში, და სრულად ექსპორტირებადია ნებისმიერ დღეს. მეორე: კოდის დეპონირება — თუ ოდესმე შევწყვიტეთ მუშაობა, კოდი და თქვენი მომუშავე სისტემა თქვენთან რჩება. მესამე: ხელმოწერილი SLA — მხარდაჭერა, სისტემის მუშაობა, სამინისტროს ფორმების განახლებები — მრავალწლიანი ფასის ფიქსაციით კონტრაქტში. ჩვენ წასვლას მარტივს ვხდით, რადგან დარჩენის თხოვნის ერთადერთი პატიოსანი გზა ეს არის. [CONFIRM: ესქროუს მექანიზმი, ფასის ფიქსაციის ვადა და SLA ციფრები იურისტთან პრეზენტაციამდე.]</span>
         </aside>
       </section>
 
@@ -10000,10 +10833,10 @@
            ═══════════════════════════════════════════════ -->
       <section class="hc-dark hc-close">
         <div class="slide-inner center">
-          <div class="slide-label" style="align-self:flex-start;"><span class="label-num">10</span><span class="lang-en">THE INVITATION</span><span class="lang-ka" style="display:none;">მოწვევა</span></div>
+          <div class="slide-label" style="align-self:flex-start;"><span class="label-num">13</span><span class="lang-en">THE INVITATION</span><span class="lang-ka" style="display:none;">მოწვევა</span></div>
           <span class="hxv-halo" aria-hidden="true"></span>
           <h2 class="headline-big" style="text-align:center; max-width: 1040px;"><span class="lang-en">Same spend. <em>A generation ahead.</em></span><span class="lang-ka" style="display:none;">იგივე ხარჯი. <em>თაობით წინ.</em></span></h2>
-          <p class="hxv-sub"><span class="lang-en">The software standard for Georgian healthcare is being written now — by the hospitals that join first.</span><span class="lang-ka" style="display:none;">ქართული ჯანდაცვის პროგრამული სტანდარტი ახლა იწერება — იმ კლინიკების მიერ, რომლებიც პირველები შემოდიან.</span></p>
+          <p class="hxv-sub"><span class="lang-en">The software standard for Georgian healthcare is being written now — and the hospitals that switch on the brain will run among the first in the world.</span><span class="lang-ka" style="display:none;">ქართული ჯანდაცვის პროგრამული სტანდარტი ახლა იწერება — და კლინიკები, რომლებიც AI ტვინს ჩართავენ, მსოფლიოში პირველთა შორის იქნებიან.</span></p>
 
           <div class="hxv-card">
             <div class="hxv-cta"><span class="lang-en">Partner with us.</span><span class="lang-ka" style="display:none;">გახდით ჩვენი პარტნიორი.</span></div>
@@ -10382,6 +11215,15 @@
           <div class="eco-soon-sub"><span class="lang-en">A short walkthrough of this product will play here.</span><span class="lang-ka" style="display:none;">აქ ჩაირთვება ამ პროდუქტის მოკლე მიმოხილვა.</span></div>
         </div>
       </div>
+
+      <!-- Context note — shown only for the Structural (TAVI) demo, toggled in openProductDemo() -->
+      <div class="eco-modal-note" id="eco-modal-note">
+        <span class="eco-note-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+        <p class="eco-note-txt">
+          <span class="lang-en">Without software like this, a TAVI cannot be planned at all. The industry standard, <strong>3mensio</strong>, costs <strong>~$6,000 per seat for a 12-month licence</strong>. We built the medical-grade equivalent in-house — and for our partner hospital it is <em>free</em>.</span>
+          <span class="lang-ka" style="display:none;">ამგვარი პროგრამის გარეშე TAVI-ის დაგეგმვა შეუძლებელია. ინდუსტრიის სტანდარტი <strong>3mensio</strong> ერთ სამუშაო ადგილზე <strong>~$6,000-ად ფასობს 12-თვიან ლიცენზიაზე</strong>. ჩვენ მისი სამედიცინო დონის ალტერნატივა საკუთარი ძალებით ავაშენეთ — და ჩვენი პარტნიორი კლინიკისთვის ის <em>უფასოა</em>.</span>
+        </p>
+      </div>
     </div>
   </div>
 
@@ -10730,6 +11572,7 @@
       var soon  = document.getElementById('eco-modal-soon');
       var title = document.getElementById('eco-modal-title');
       var frame = document.getElementById('eco-modal-frame');
+      var note  = document.getElementById('eco-modal-note');
 
       function showSoon()  { frame.style.display = 'none'; video.style.display = 'none'; soon.style.display = 'flex'; }
       function showVideo() { frame.style.display = 'none'; soon.style.display = 'none'; video.style.display = 'block'; }
@@ -10745,6 +11588,8 @@
       window.openProductDemo = function (btn) {
         title.textContent = btn.getAttribute('data-title') || '';
         var frameSrc = btn.getAttribute('data-iframe');
+        // Only the Structural demo carries the TAVI price/licence note.
+        if (note) note.classList.toggle('show', (btn.getAttribute('data-video') || '').indexOf('structural') >= 0);
         if (frameSrc) {                 // walkthrough / embedded-page mode (e.g. the OS core)
           try { video.pause(); } catch (e) {}
           video.removeAttribute('src');

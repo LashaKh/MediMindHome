@@ -2809,22 +2809,28 @@
     }
 
     /* Bigger, more substantial guarantee cards (clean — no top hairline) */
-    .gw-switch .gw-cards { gap: 20px; margin-bottom: 0; }
+    /* Title-only guarantee cards: compact, and floated to the optical centre of
+       the space left under the rail (margin:auto 0) so the slide doesn't bottom-dump. */
+    .gw-switch .gw-cards { gap: 20px; margin: auto 0; }
     .gw-switch .gw-card {
-      padding: 30px 28px; border-radius: 18px; gap: 16px;
-      min-height: 200px; justify-content: center;
+      padding: 30px 24px; border-radius: 18px; gap: 16px;
+      min-height: 168px; justify-content: center;
       border: 1px solid var(--emr-border);
       box-shadow: 0 16px 36px -18px rgba(26,54,93,0.30);
     }
     .gw-switch .gw-card::after { display: none; }
-    .gw-switch .gw-card-head { gap: 14px; }
+    /* No body copy on these cards, so the head becomes a centred lockup:
+       icon over title. Keeps the trio from reading as three empty boxes. */
+    .gw-switch .gw-card-head {
+      flex-direction: column; align-items: center; text-align: center; gap: 16px;
+    }
     .gw-switch .gw-card-icon {
       width: 52px; height: 52px; border-radius: 14px;
       background: var(--emr-gradient-primary); color: #fff;
       box-shadow: 0 8px 18px -6px rgba(26,54,93,0.45);
     }
     .gw-switch .gw-card-icon svg { width: 26px; height: 26px; stroke-width: 1.9; }
-    .gw-switch .gw-card h3 { font-size: 0.84em; letter-spacing: 0.1em; }
+    .gw-switch .gw-card h3 { font-size: 0.84em; letter-spacing: 0.06em; }
     .gw-switch .gw-card p { font-size: 0.8em; line-height: 1.55; }
 
     /* Stats — 2-column hero (the visual climax) */
@@ -7037,6 +7043,10 @@
         top: auto !important; bottom: -2px !important; right: auto !important; left: 50% !important;
         transform: translateX(-50%) rotate(135deg) !important;
       }
+      /* Title-only cards: the desktop min-height leaves a phone-sized void */
+      .gw-switch .gw-cards { margin: 0 0 14px !important; }
+      .gw-switch .gw-card { min-height: 0 !important; padding: 18px 16px !important; }
+      .gw-switch .gw-card-head { gap: 12px !important; }
 
       /* AI-brain slide — outcomes stack to one column; scale band stacks vertically */
       .ab-outcomes { grid-template-columns: 1fr !important; gap: 12px !important; }
@@ -9525,7 +9535,6 @@
         <div class="slide-inner">
           <div class="slide-label"><span class="label-num">01</span><span class="lang-en">THE PROMISE</span><span class="lang-ka" style="display:none;">დაპირება</span></div>
           <h2 class="headline-big"><span class="lang-en">The whole deal, <em>up front</em>.</span><span class="lang-ka" style="display:none;">მთელი შეთავაზება — <em>თავიდანვე</em>.</span></h2>
-          <p class="headline-sub"><span class="lang-en">Five commitments that answer every question before you ask it.</span><span class="lang-ka" style="display:none;">ხუთი ვალდებულება, რომელიც ყველა კითხვას წინასწარ პასუხობს.</span></p>
 
           <div class="hxd-hero">
             <span class="hxd-hero-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span>
@@ -9567,7 +9576,7 @@
                 <span class="hxd-tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
                 <b><span class="lang-en">One-day, <em>painless</em> migration</span><span class="lang-ka" style="display:none;">ერთდღიანი, <em>უმტკივნეულო</em> გადასვლა</span></b>
               </div>
-              <p><span class="lang-en">Prepared in advance, switched in a day — nobody stops working.</span><span class="lang-ka" style="display:none;">წინასწარ მომზადებული, ერთ დღეში გადართული — მუშაობა არ ჩერდება.</span></p>
+              <p><span class="lang-en">Prepared in advance, integrated in a day — nobody stops working.</span><span class="lang-ka" style="display:none;">წინასწარ მომზადებული, ერთ დღეში ინტეგრირებული — მუშაობა არ ჩერდება.</span></p>
             </div>
             <div class="hxd-card hxd-card--future">
               <span class="hxd-num" aria-hidden="true">05</span>
@@ -9633,7 +9642,7 @@
             </div>
 
             <div class="hxr3-row">
-              <div class="hxr3-cell hxr3-cell--them"><span class="hxr3-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span class="hxr3-cell-t"><span class="lang-en">Frozen in time — updates cost extra, if they ever come.</span><span class="lang-ka" style="display:none;">დროში გაყინული — განახლებები ცალკე ფასია, თუ საერთოდ მოვა.</span></span></div>
+              <div class="hxr3-cell hxr3-cell--them"><span class="hxr3-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span class="hxr3-cell-t"><span class="lang-en">Frozen in time — updates cost extra, if they ever come.</span><span class="lang-ka" style="display:none;">დროში გაყინული — განახლებები ცალკე ფასია, თუ საერთოდ მიიღებთ.</span></span></div>
               <div class="hxr3-axis"><span class="hxr3-axis-pill"><span class="lang-en">Updates</span><span class="lang-ka" style="display:none;">განახლებები</span></span></div>
               <div class="hxr3-cell hxr3-cell--us"><span class="hxr3-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="hxr3-cell-t"><span class="lang-en"><strong>Evolves every month</strong> — new features land automatically, included.</span><span class="lang-ka" style="display:none;"><strong>ყოველთვიურად ვითარდება</strong> — ახალი ფუნქციები ავტომატურად ემატება, ფასშივე.</span></span></div>
             </div>
@@ -9661,7 +9670,7 @@
       <section class="gw-slide hxs-slide">
         <div class="slide-inner">
           <div class="slide-label"><span class="label-num">03</span><span class="lang-en">THE PATH · 3 PHASES</span><span class="lang-ka" style="display:none;">გზა · 3 ეტაპი</span></div>
-          <h2 class="headline-big"><span class="lang-en">Start solid. <em>End ahead of the world.</em></span><span class="lang-ka" style="display:none;">დაიწყეთ მყარად. <em>დაასრულეთ მსოფლიოზე წინ.</em></span></h2>
+          <h2 class="headline-big"><span class="lang-en">Start solid. <em>End ahead of the world.</em></span><span class="lang-ka" style="display:none;">დაიწყეთ სწორად. <em>დაასრულეთ მსოფლიოზე წინ.</em></span></h2>
           <p class="headline-sub"><span class="lang-en">Phase 1 is today's offer. Phases 2 and 3 stay optional.</span><span class="lang-ka" style="display:none;">ეტაპი 1 — დღევანდელი შეთავაზება. ეტაპები 2 და 3 არჩევითია.</span></p>
 
           <div class="hxs-stair">
@@ -9685,7 +9694,7 @@
 
             <div class="hxs-riser hxs-riser--1" aria-hidden="true">
               <span class="hxs-riser-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-              <span class="hxs-riser-label"><span class="lang-en">switch on</span><span class="lang-ka" style="display:none;">ჩართვა</span></span>
+              <span class="hxs-riser-label"><span class="lang-en">integrate</span><span class="lang-ka" style="display:none;">ინტეგრაცია</span></span>
             </div>
 
             <span class="hxs-zone hxs-zone--later"><b><span class="lang-en">Optional, later</span><span class="lang-ka" style="display:none;">არჩევითი, მოგვიანებით</span></b> — <span class="lang-en">your call, agreed separately if and when you want it.</span><span class="lang-ka" style="display:none;">თქვენი გადაწყვეტილებაა და ცალკე შესათანხმებელი — თუ და როცა მოისურვებთ.</span></span>
@@ -9698,9 +9707,9 @@
               <h3 class="hxs-title"><span class="lang-en">Efficiency gains</span><span class="lang-ka" style="display:none;">ეფექტიანობა</span></h3>
               <div class="hxs-sub"><span class="lang-en">AI introduced workflow by workflow</span><span class="lang-ka" style="display:none;">AI ინერგება ეტაპობრივად</span></div>
               <ul class="hxs-list">
-                <li><span class="hxs-li-dot" aria-hidden="true"></span><span class="hxs-li-t"><span class="lang-en">Draft notes, signed off by the doctor.</span><span class="lang-ka" style="display:none;">ჩანაწერის პროექტი — ექიმის ხელმოწერით.</span></span></li>
-                <li><span class="hxs-li-dot" aria-hidden="true"></span><span class="hxs-li-t"><span class="lang-en">Answers cited from the patient's chart.</span><span class="lang-ka" style="display:none;">პასუხები პაციენტის ისტორიიდან.</span></span></li>
-                <li><span class="hxs-li-dot" aria-hidden="true"></span><span class="hxs-li-t"><span class="lang-en">Early warnings reach the team on duty.</span><span class="lang-ka" style="display:none;">ადრეული გაფრთხილება გუნდამდე.</span></span></li>
+                <li><span class="hxs-li-dot" aria-hidden="true"></span><span class="hxs-li-t"><span class="lang-en">AI scribe — minimal paperwork for doctors.</span><span class="lang-ka" style="display:none;">AI სქრაიბი — მინიმალური ქაღალდის სამუშაო ექიმებისთვის.</span></span></li>
+                <li><span class="hxs-li-dot" aria-hidden="true"></span><span class="hxs-li-t"><span class="lang-en">AI analysis of the patient's full history.</span><span class="lang-ka" style="display:none;">პაციენტის სრული ისტორიის AI ანალიზი.</span></span></li>
+                <li><span class="hxs-li-dot" aria-hidden="true"></span><span class="hxs-li-t"><span class="lang-en">AI early-warning systems.</span><span class="lang-ka" style="display:none;">ადრეული გაფრთხილების AI სისტემები.</span></span></li>
                 <li><span class="hxs-li-dot" aria-hidden="true"></span><span class="hxs-li-t"><span class="lang-en">Management sees the whole hospital.</span><span class="lang-ka" style="display:none;">მენეჯმენტი მთელ კლინიკას ხედავს.</span></span></li>
               </ul>
               <div class="hxs-foot"><b class="hxs-foot-num"><span class="lang-en">YOU</span><span class="lang-ka" style="display:none;">თქვენ</span></b><span class="hxs-foot-t"><span class="lang-en">decide which department starts — and when</span><span class="lang-ka" style="display:none;">წყვეტთ, საიდან და როდის დაიწყება</span></span></div>
@@ -9708,7 +9717,7 @@
 
             <div class="hxs-riser hxs-riser--2" aria-hidden="true">
               <span class="hxs-riser-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-              <span class="hxs-riser-label"><span class="lang-en">switch on</span><span class="lang-ka" style="display:none;">ჩართვა</span></span>
+              <span class="hxs-riser-label"><span class="lang-en">integrate</span><span class="lang-ka" style="display:none;">ინტეგრაცია</span></span>
             </div>
 
             <article class="hxs-card hxs-card--p3">
@@ -9734,7 +9743,7 @@
 
           <div class="hxs-closer">
             <span class="hxs-rule" aria-hidden="true"></span>
-            <p class="hxs-closer-line"><span class="lang-en">Phase 1 lays the rails — FHIR R4 under everything. <strong>So if you ever want more, it's a switch, not a rebuild.</strong></span><span class="lang-ka" style="display:none;">ეტაპი 1 აგებს რელსებს — FHIR R4 ყველაფრის ქვეშ. <strong>ამიტომ თუ ოდესმე მეტს მოისურვებთ, ეს იქნება ჩართვა და არა თავიდან შენება.</strong></span></p>
+            <p class="hxs-closer-line"><span class="lang-en">Phase 1 lays the rails — FHIR R4 under everything. <strong>So if you ever want more, it's an integration, not a rebuild.</strong></span><span class="lang-ka" style="display:none;">ეტაპი 1 აგებს რელსებს — FHIR R4 ყველაფრის ქვეშ. <strong>ამიტომ თუ ოდესმე მეტს მოისურვებთ, ეს იქნება ინტეგრაცია და არა თავიდან შენება.</strong></span></p>
             <span class="hxs-rule" aria-hidden="true"></span>
           </div>
         </div>
@@ -9980,7 +9989,7 @@
           </div>
 
           <div class="hxm-closer">
-            <div class="hxm-closer-line"><span class="lang-en">It's not that they won't rebuild. <em>They can't.</em></span><span class="lang-ka" style="display:none;">საქმე ის კი არ არის, რომ არ სურთ ახლიდან შექმნა. <em>უბრალოდ ვერ შეძლებენ.</em></span></div>
+            <div class="hxm-closer-line"><span class="lang-en">It's not that they won't rebuild. <em>They can't.</em></span><span class="lang-ka" style="display:none;">საქმე ის კი არ არის, რომ არ სურთ ძველი სისტემების განახლება. <em>უბრალოდ ვერ შეძლებენ.</em></span></div>
           </div>
         </div>
         <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
@@ -10616,7 +10625,7 @@
           <div class="slide-label"><span class="label-num">09</span><span class="lang-en">THE AI BRAIN</span><span class="lang-ka" style="display:none;">AI ტვინი</span></div>
           <div class="hxt-badge hxt-badge--p3" aria-hidden="true"><span class="lang-en">Phase 3 · world-first</span><span class="lang-ka" style="display:none;">ეტაპი 3 · პირველი მსოფლიოში</span></div>
           <h2 class="headline-big"><span class="lang-en">At 02:00, people miss things. <em>MediMind doesn't.</em></span><span class="lang-ka" style="display:none;">ღამის 02:00 საათზე ადამიანებს შეიძლება რაღაც გამორჩეთ. <em>MediMind-ს — არა.</em></span></h2>
-          <p class="headline-sub"><span class="lang-en">It reads every patient in real time — the AI flags, your doctors decide. The hospitals that switch it on run among the first in the world.</span><span class="lang-ka" style="display:none;">ის რეალურ დროში აანალიზებს ყველა პაციენტს — AI გაძლევთ სიგნალს, გადაწყვეტილებას თქვენი ექიმი იღებს. კლინიკები, რომლებიც ამას ჩართავენ, მსოფლიოში პირველთა შორის არიან.</span></p>
+          <p class="headline-sub"><span class="lang-en">It reads every patient in real time — the AI flags, your doctors decide. The hospitals that switch it on run among the first in the world.</span><span class="lang-ka" style="display:none;">ის რეალურ დროში აანალიზებს ყველა პაციენტს — AI გაძლევთ სიგნალს, გადაწყვეტილებას თქვენი ექიმი იღებს. კლინიკები, რომლებიც ამას ჩართავენ, მსოფლიოში პირველთა შორის იქნებიან.</span></p>
 
           <div class="csb-stage">
             <div class="csb-origin">
@@ -10755,20 +10764,20 @@
       <section class="gw-slide gw-switch">
         <div class="slide-inner">
           <div class="slide-label"><span class="label-num">11</span><span class="lang-en">THE SWITCH</span><span class="lang-ka" style="display:none;">გადასვლა</span></div>
-          <h2 class="headline-big"><span class="lang-en">We prove it works. Then go live in <em>one day</em>.</span><span class="lang-ka" style="display:none;">ჯერ დავამტკიცებთ, რომ მუშაობს — შემდეგ <em>ერთ დღეში</em> გაგიშვებთ.</span></h2>
+          <h2 class="headline-big"><span class="lang-en">We prove it works. Then go live in <em>one day</em>.</span><span class="lang-ka" style="display:none;">ჯერ დავამტკიცებთ, რომ მუშაობს — შემდეგ <em>ერთ დღეში</em> ჩავრთავთ მთელს სისტემას.</span></h2>
           <p class="headline-sub"><span class="lang-en">The move is our risk, not yours — you don't lose an hour of operations.</span><span class="lang-ka" style="display:none;">გადასვლა ჩვენი რისკია, არა თქვენი — თქვენ ოპერაციების არც ერთ საათს არ კარგავთ.</span></p>
 
           <div class="gw-switch-rail" aria-hidden="true">
             <div class="gw-rail-node gw-rail-from">
               <span class="gw-rail-dot"></span>
-              <span class="lang-en">Legacy EMR or paper</span><span class="lang-ka" style="display:none;">ძველი EMR ან ქაღალდი</span>
+              <span class="lang-en">Legacy EMR</span><span class="lang-ka" style="display:none;">ძველი EMR</span>
             </div>
             <div class="gw-rail-track">
               <span class="gw-rail-pill"><span class="lang-en">we handle the entire move</span><span class="lang-ka" style="display:none;">მთელ პროცესს ჩვენ ვუძღვებით</span></span>
             </div>
             <div class="gw-rail-node gw-rail-to">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span class="lang-en">Live on MediMind</span><span class="lang-ka" style="display:none;">MediMind-ზე ჩართული</span>
+              <span class="lang-en">Live on MediMind</span><span class="lang-ka" style="display:none;">MediMind-ზე გადმორთული</span>
             </div>
           </div>
 
@@ -10780,7 +10789,6 @@
                 </div>
                 <h3><span class="lang-en">We train your team on-site</span><span class="lang-ka" style="display:none;">ვამზადებთ თქვენს გუნდს ადგილზე</span></h3>
               </div>
-              <p><span class="lang-en">Georgian UI, hands-on sessions per department, and a named owner on your side we support long-term — 1,000+ doctors have already made this jump.</span><span class="lang-ka" style="display:none;">ქართული ინტერფეისი, პრაქტიკული სესიები განყოფილებების მიხედვით და თქვენი მხრიდან სისტემის კონკრეტული პასუხისმგებელი, რომელსაც მუდმივად ვუწევთ მხარდაჭერას — 1,000+ ექიმმა ეს ნახტომი უკვე გააკეთა.</span></p>
             </div>
             <div class="gw-card">
               <div class="gw-card-head">
@@ -10789,21 +10797,15 @@
                 </div>
                 <h3><span class="lang-en">We migrate your data</span><span class="lang-ka" style="display:none;">ჩვენ გადმოგვაქვს თქვენი მონაცემები</span></h3>
               </div>
-              <p><span class="lang-en">We move every record ourselves, and if the old vendor resists, we route around them.</span><span class="lang-ka" style="display:none;">ჩვენ თავად გადმოგვაქვს ყველა ჩანაწერი — და თუ ძველი ვენდორი წინააღმდეგობას გაგიწევთ, გვერდს ავუვლით.</span></p>
             </div>
             <div class="gw-card">
               <div class="gw-card-head">
                 <div class="gw-card-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
                 </div>
-                <h3><span class="lang-en">Your pace, either way</span><span class="lang-ka" style="display:none;">თქვენი ტემპით — ორივე შემთხვევაში</span></h3>
+                <h3><span class="lang-en">Integration tailored to your needs</span><span class="lang-ka" style="display:none;">თქვენს საჭიროებებზე მორგებული ინტეგრაცია</span></h3>
               </div>
-              <p><span class="lang-en">Replacing a legacy system? Run both in parallel until you're ready. Starting from scratch? We bring you live department by department.</span><span class="lang-ka" style="display:none;">ცვლით ძველ სისტემას? ორივე პარალელურად იმუშავებს, სანამ მზად არ იქნებით. ნულიდან იწყებთ? განყოფილება განყოფილებაზე გაგიშვებთ.</span></p>
             </div>
-          </div>
-
-          <div class="chip-row" style="margin-top: 14px; justify-content: center;">
-            <span class="chip"><span class="lang-en">Prefer to start small? Pilot one department first.</span><span class="lang-ka" style="display:none;">გირჩევნიათ მცირედით დაწყება? დაიწყეთ პილოტით — ერთი დეპარტამენტით.</span></span>
           </div>
         </div>
         <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
@@ -10868,7 +10870,7 @@
           <div class="slide-label" style="align-self:flex-start;"><span class="label-num">13</span><span class="lang-en">THE INVITATION</span><span class="lang-ka" style="display:none;">მოწვევა</span></div>
           <span class="hxv-halo" aria-hidden="true"></span>
           <h2 class="headline-big" style="text-align:center; max-width: 1040px;"><span class="lang-en">Same spend. <em>A generation ahead.</em></span><span class="lang-ka" style="display:none;">იგივე ხარჯი. <em>თაობით წინ.</em></span></h2>
-          <p class="hxv-sub"><span class="lang-en">The software standard for Georgian healthcare is being written now — and the hospitals that switch on the brain will run among the first in the world.</span><span class="lang-ka" style="display:none;">ქართული ჯანდაცვის პროგრამული სტანდარტი ახლა იწერება — და კლინიკები, რომლებიც AI ტვინს ჩართავენ, მსოფლიოში პირველთა შორის იქნებიან.</span></p>
+          <p class="hxv-sub"><span class="lang-en">The software standard for Georgian healthcare is being written now — and the hospitals that integrate the AI brain will run among the first in the world.</span><span class="lang-ka" style="display:none;">ქართული ჯანდაცვის პროგრამული სტანდარტი ახლა იწერება — და კლინიკები, რომლებიც AI ტვინს დააინტეგრირებენ, მსოფლიოში პირველთა შორის იქნებიან.</span></p>
 
           <div class="hxv-card">
             <div class="hxv-cta"><span class="lang-en">Partner with us.</span><span class="lang-ka" style="display:none;">გახდით ჩვენი პარტნიორი.</span></div>
@@ -11194,12 +11196,12 @@
 
           <div class="biz-item">
             <span class="biz-item-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/></svg></span>
-            <div><span class="biz-lead"><span class="lang-en">Clean claims, first time</span><span class="lang-ka" style="display:none;">სუფთა ანგარიშები, პირველივე ჯერზე</span></span><p><span class="lang-en">Coded right at the point of care — nothing bounces back.</span><span class="lang-ka" style="display:none;">სწორად კოდირებული მკურნალობისას — არაფერი ბრუნდება.</span></p></div>
+            <div><span class="biz-lead"><span class="lang-en">Clean claims, first time</span><span class="lang-ka" style="display:none;">უშეცდომო ისტორიები, პირველივე ჯერზე</span></span><p><span class="lang-en">Coded right at the point of care — nothing bounces back.</span><span class="lang-ka" style="display:none;">სწორად კოდირებული მკურნალობისას — კორექტირდება.</span></p></div>
           </div>
 
           <div class="biz-item">
             <span class="biz-item-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41 11 3.83V3H4v7l9.59 9.59a2 2 0 0 0 2.82 0l4.18-4.18a2 2 0 0 0 0-2.82z"/><circle cx="7.5" cy="7.5" r="1.3"/></svg></span>
-            <div><span class="biz-lead"><span class="lang-en">Capture every billable</span><span class="lang-ka" style="display:none;">დააფიქსირე ყველა ასანაზღაურებელი</span></span><p><span class="lang-en">Every service and supply billed — nothing slips.</span><span class="lang-ka" style="display:none;">ყველა მომსახურება და მასალა ანაზღაურდება — არაფერი იკარგება.</span></p></div>
+            <div><span class="biz-lead"><span class="lang-en">Capture every billable</span><span class="lang-ka" style="display:none;">თანამედროვე უშეცდომო ბილინგ სისტემა</span></span><p><span class="lang-en">Every service and supply billed — nothing slips.</span><span class="lang-ka" style="display:none;">ყველა ხარჯი და ასანაზღაურებელი სერვისი დაფიქსირებულია.</span></p></div>
           </div>
 
           <div class="biz-item">
@@ -11213,7 +11215,7 @@
 
           <div class="biz-item">
             <span class="biz-item-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
-            <div><span class="biz-lead"><span class="lang-en">More patients, same doctors</span><span class="lang-ka" style="display:none;">მეტი პაციენტი, იგივე ექიმები</span></span><p><span class="lang-en">Less time on notes — more patients per day.</span><span class="lang-ka" style="display:none;">ნაკლები დრო ჩანაწერებზე — მეტი პაციენტი დღეში.</span></p></div>
+            <div><span class="biz-lead"><span class="lang-en">More patients, same doctors</span><span class="lang-ka" style="display:none;">მეტი პაციენტი, იგივე რაოდენობის ექიმზე</span></span><p><span class="lang-en">Less time on notes — more patients per day.</span><span class="lang-ka" style="display:none;">ნაკლები დრო ჩანაწერებზე — მეტი პაციენტი დღეში.</span></p></div>
           </div>
 
           <div class="biz-item">

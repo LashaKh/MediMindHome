@@ -85,7 +85,7 @@
       padding: 30px 40px 0;
       display: flex; align-items: center; justify-content: space-between;
     }
-    .top img { height: 44px; display: block; filter: drop-shadow(0 2px 14px rgba(49,130,206,.35)); }
+    .top img { height: 60px; display: block; filter: drop-shadow(0 2px 14px rgba(49,130,206,.35)); }
     .lang-switch {
       display: flex; gap: 2px; padding: 3px;
       background: rgba(255,255,255,.05); border: 1px solid var(--hair); border-radius: 999px;
@@ -127,6 +127,17 @@
       font-size: clamp(1.05rem, 1.7vw, 1.2rem); line-height: 1.75;
     }
     .lede strong { color: var(--ink); font-weight: 600; }
+    .herochips { display: flex; flex-direction: column; align-items: flex-start; gap: 11px; padding-bottom: 18px; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 9px;
+      font-size: .86rem; font-weight: 600; color: var(--mist);
+      padding: 9px 17px; border-radius: 999px;
+      background: rgba(99,164,224,.08); border: 1px solid rgba(99,164,224,.28);
+      backdrop-filter: blur(6px);
+    }
+    .chip .dot { width: 7px; height: 7px; border-radius: 50%; background: #68d391; box-shadow: 0 0 0 0 rgba(104,211,145,.5); animation: live 2.2s ease-out infinite; }
+    .chip .dot.blue { background: var(--sky); animation: none; }
+    .chip .dot.gold { background: #ecc94b; animation: none; }
 
     /* ═══ the story — one continuous thread ═══ */
     .story {
@@ -243,7 +254,7 @@
     }
     .seal { position: relative; margin-top: 60px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
     .seal-rule { width: 1px; height: 48px; background: linear-gradient(180deg, transparent, var(--sky)); }
-    .seal img { height: 42px; filter: drop-shadow(0 2px 14px rgba(49,130,206,.35)); }
+    .seal img { height: 54px; filter: drop-shadow(0 2px 14px rgba(49,130,206,.35)); }
     .seal .contact { font-size: .9rem; color: var(--dim); }
     .seal .contact a { color: var(--sky); text-decoration: none; font-weight: 600; }
     .foot-pad { height: 48px; }
@@ -253,7 +264,7 @@
     .top { animation-delay: .05s; }
     .hero .eyebrow { animation-delay: .18s; }
     .hero h1 { animation-delay: .3s; }
-    .hero .lede { animation-delay: .48s; }
+    .hero .lede, .hero .herochips { animation-delay: .48s; }
     @keyframes rise { to { opacity: 1; transform: none; } }
     .rv { opacity: 0; transform: translateY(30px); transition: opacity 1s cubic-bezier(.2,.6,.2,1), transform 1s cubic-bezier(.2,.6,.2,1); }
     .rv.on { opacity: 1; transform: none; }
@@ -270,7 +281,7 @@
     }
     @media (max-width: 900px) {
       .top { padding: 24px 22px 0; }
-      .top img { height: 34px; }
+      .top img { height: 44px; }
       .hero { grid-template-columns: 1fr; padding: 54px 22px 48px; }
       .lede { padding-bottom: 0; margin-top: 22px; }
       .story { padding: 0 22px; }
@@ -309,10 +320,11 @@
         <span class="en">The <span class="grad">iPhone&nbsp;moment</span> for the hospital.</span>
         <span class="ka">საავადმყოფოს <span class="grad">iPhone-მომენტი.</span></span>
       </h1>
-      <p class="lede">
-        <span class="en"><strong>One operating system replaces all 40</strong> — with AI built into its core, watching every patient across every department at once.</span>
-        <span class="ka"><strong>ერთი ოპერაციული სისტემა ცვლის ორმოცივეს.</strong> მის გულში ჩაშენებული ხელოვნური ინტელექტი ერთდროულად აკონტროლებს თითოეულ პაციენტს ყველა განყოფილებაში.</span>
-      </p>
+      <div class="herochips">
+        <span class="chip"><span class="dot"></span><span class="en">Live in real hospitals today</span><span class="ka">უკვე მუშაობს რეალურ საავადმყოფოებში</span></span>
+        <span class="chip"><span class="dot blue"></span><span class="en">Georgia's second-largest hospital network</span><span class="ka">საქართველოს სიდიდით მეორე სამედიცინო ქსელი</span></span>
+        <span class="chip"><span class="dot gold"></span><span class="en">State grant · "Innovative Startup" status</span><span class="ka">სახელმწიფო გრანტი · „ინოვაციური სტარტაპის" სტატუსი</span></span>
+      </div>
     </section>
 
     <!-- ═══ one continuous story ═══ -->
@@ -323,7 +335,7 @@
         <span class="mark"><span class="en">The story</span><span class="ka">ისტორია</span></span>
         <span class="ghost g40" aria-hidden="true">40</span>
         <span class="en">Before the iPhone, you carried five gadgets that couldn't talk to each other — a phone, a camera, an MP3 player, a map, a flashlight. Hospitals are still stuck in that "before": <strong>40-odd separate programs</strong> for records, orders, pharmacy, labs, scans, and billing, held together with <span class="u">logins and luck</span>.</span>
-        <span class="ka">iPhone-ის გამოჩენამდე თან დაგქონდათ ხუთი სხვადასხვა მოწყობილობა, რომლებსაც ერთმანეთთან კავშირი არ ჰქონდათ — ტელეფონი, კამერა, MP3 პლეერი, რუკა და ფანარი. საავადმყოფოები დღემდე იმ „წარსულში" არიან ჩარჩენილები: <strong>40-მდე სხვადასხვა პროგრამა</strong> სამედიცინო ბარათების, დანიშნულებების, აფთიაქის, ლაბორატორიების, კვლევებისა და ბილინგისთვის — რომლებსაც მხოლოდ <span class="u">პაროლები და ბედის იმედიღა</span> აკავშირებს.</span>
+        <span class="ka">iPhone-ის გამოჩენამდე თან დაგვქონდა ხუთი სხვადასხვა მოწყობილობა, რომლებსაც ერთმანეთთან კავშირი არ ჰქონდათ — ტელეფონი, კამერა, MP3 პლეერი, რუკა და ფანარი. საავადმყოფოები დღემდე იმ „წარსულში" არიან ჩარჩენილები: <strong>სხვადასხვა ვენდორის 40-მდე იზოლირებული პროგრამა</strong>, რომლებიც <span class="u">ერთიან სისტემას ვერ ქმნის</span>.</span>
       </p>
 
       <div class="pull rv">
@@ -332,28 +344,28 @@
       </div>
 
       <p class="prose rv">
-        <span class="en"><strong>MediMind is the iPhone moment for the hospital.</strong> One operating system replaces all 40, with AI built into its core, watching every patient across every department at once. So when a doctor is exhausted at 2 a.m. and about to miss something, the system doesn't: it spots the danger early, orders the right tests, flags the risky drug combination, books the bed, and clears the paperwork — <span class="u">before anyone falls through the cracks</span>.</span>
-        <span class="ka"><strong>MediMind-ი კლინიკებისთვის სწორედ ისეთივე რევოლუციაა, როგორიც თავის დროზე iPhone გახდა.</strong> ერთი ოპერაციული სისტემა ცვლის ორმოცივეს. მის გულში ჩაშენებული ხელოვნური ინტელექტი ერთდროულად აკონტროლებს თითოეულ პაციენტს ყველა განყოფილებაში. ამიტომ, როდესაც ღამის 2 საათზე გადაღლილ ექიმს შეიძლება რამე გამოეპაროს, სისტემას არაფერი ეპარება: ის ადრეულ ეტაპზევე ხედავს საფრთხეს, უკვეთავს საჭირო კვლევებს, აფრთხილებს წამლების რისკიან კომბინაციაზე, ჯავშნის საწოლს და აწესრიგებს დოკუმენტაციას — <span class="u">სანამ ვინმე ყურადღების მიღმა დარჩება</span>.</span>
+        <span class="en"><strong>MediMind is the iPhone moment for the hospital.</strong> One operating system replaces all 40, with AI built into its core, watching every patient across every department at once. So when a doctor is exhausted at 2 a.m. and about to miss something, the system doesn't: it spots the danger early, orders the right tests, flags the risky drug combination, books the bed, and clears the paperwork — <span class="u">before anyone falls through the cracks</span>. And it doesn't work for clinicians alone — the same proactive brain <strong>serves the whole business</strong>: fewer errors and complications, faster patient flow, cleaner billing, and a real-time operational picture for hospital management.</span>
+        <span class="ka"><strong>MediMind-ი კლინიკებისთვის სწორედ ისეთივე რევოლუციაა, როგორიც თავის დროზე iPhone გახდა.</strong> ერთი ოპერაციული სისტემა ცვლის ორმოცივეს. მის გულში ჩაშენებული ხელოვნური ინტელექტი ერთდროულად აკონტროლებს თითოეულ პაციენტს ყველა განყოფილებაში. ამიტომ, როდესაც ღამის 2 საათზე გადაღლილ ექიმს შეიძლება რამე გამოეპაროს, სისტემას არაფერი ეპარება: ის ადრეულ ეტაპზევე ხედავს საფრთხეს, უკვეთავს საჭირო კვლევებს, აფრთხილებს წამლების რისკიან კომბინაციაზე, ჯავშნის საწოლს და აწესრიგებს დოკუმენტაციას — <span class="u">სანამ ვინმე ყურადღების მიღმა დარჩება</span>. ეს კი მხოლოდ ექიმების სასარგებლოდ არ მუშაობს — იგივე პროაქტიული ტვინი <strong>მთელ ბიზნესსაც ემსახურება</strong>: ნაკლები შეცდომა და გართულება, პაციენტების უფრო სწრაფი ნაკადი, გამართული ბილინგი და კლინიკის მენეჯმენტისთვის სრული ოპერაციული სურათი რეალურ დროში.</span>
       </p>
 
       <p class="prose rv">
-        <span class="en">And here's why no one can just copy it. We didn't bolt AI onto old software — <strong>we built the hospital new, from the first line, as one connected system</strong>. That's the whole trick: because everything lives in one place, the AI can actually see and act across the entire hospital. A competitor stapling AI onto decades-old software can't —</span>
-        <span class="ka">აი, რატომ ვერ შეძლებს ვერავინ ამის უბრალოდ დაკოპირებას: ჩვენ AI ძველ სისტემაზე კი არ მიგვიწებებია — <strong>ჩვენ კლინიკის პროგრამული უზრუნველყოფა ნულიდან, პირველივე სტრიქონიდან შევქმენით, როგორც ერთიანი ეკოსისტემა</strong>. საიდუმლოც სწორედ ეს არის: რადგან ყველაფერი ერთ სივრცეშია მოქცეული, ხელოვნურ ინტელექტს რეალურად ძალუძს დაინახოს და იმოქმედოს მთელი საავადმყოფოს მასშტაბით. კონკურენტი, რომელიც ათწლეულების წინანდელ სისტემაზე AI-ის მიკერებას შეეცდება, ამას ვერ შეძლებს —</span>
+        <span class="en">And here's why this is so hard to replicate. We didn't bolt AI onto old software — <strong>we built the hospital new, from the first line of code, as one connected system</strong>. Because everything lives in one place, the AI can actually see and act across the entire hospital. A competitor trying to staple AI onto decades-old software won't get there easily —</span>
+        <span class="ka">და აი, რატომ არის ამის გამეორება ასეთი რთული: ჩვენ AI ძველ სისტემაზე კი არ დაგვიშენებია — <strong>ჩვენ კლინიკის პროგრამული უზრუნველყოფა ნულიდან, პირველივე კოდის ხაზიდან შევქმენით, როგორც ერთიანი ეკოსისტემა</strong>. რადგან ყველაფერი ერთ სივრცეშია მოქცეული, ხელოვნურ ინტელექტს რეალურად შეუძლია დაინახოს და იმოქმედოს მთელი საავადმყოფოს მასშტაბით. კონკურენტს, რომელიც ათწლეულების წინანდელ სისტემაზე AI-ის დაშენებას შეეცდება, ეს ასე მარტივად არ გამოუვა —</span>
       </p>
 
       <div class="pull rv">
         <span class="en">They'd have to <span class="grad">tear out their foundations</span> and start over.</span>
-        <span class="ka">მათ მოუწევთ <span class="grad">საძირკველი დაანგრიონ</span> და ყველაფერი თავიდან დაიწყონ.</span>
+        <span class="ka">მას მოუწევს <span class="grad">საძირკვლის დანგრევა</span> და ყველაფრის თავიდან დაწყება.</span>
       </div>
 
       <p class="prose rv">
-        <span class="en"><strong>We're doctors building for doctors</strong> — our founder is a practicing cardiologist who tests every feature on his own patients before it ships. We build in Georgia, which lets us put real, decision-making medical AI into live hospitals <strong>now</strong>, while the rest of the world waits years for approval — and every month we run becomes <span class="u">proof no rival can go back and recreate</span>.</span>
-        <span class="ka"><strong>ჩვენ ვართ ექიმები, რომლებიც ვქმნით ექიმებისთვის</strong> — ჩვენი დამფუძნებელი მოქმედი კარდიოლოგია, რომელიც თითოეულ ფუნქციას საკუთარ პაციენტებზე ტესტავს, სანამ ის სისტემაში ჩაეშვება. ჩვენ პროდუქტს საქართველოში ვქმნით — ეს საშუალებას გვაძლევს, რეალური, გადაწყვეტილების მიმღები სამედიცინო AI უკვე <strong>დღესვე</strong> დავნერგოთ მოქმედ კლინიკებში, სანამ დანარჩენი სამყარო წლობით ელოდება ავტორიზაციას. ყოველი გასული თვე კი ხდება <span class="u">გამოცდილება და მტკიცებულება, რომელსაც ვერცერთი კონკურენტი ვერ დაეწევა</span>.</span>
+        <span class="en"><strong>We're doctors building for doctors</strong> — our founder is a practicing cardiologist who tests every feature on real cases, in his own clinic and daily practice, before it ships. That's a rare combination no rival can hire their way into: <strong>medical insight, technical depth, and direct access to real hospitals — inside one team</strong>. On top of it sits our regulatory freedom: we build in Georgia, which lets us put real, decision-making medical AI into live hospitals <strong>now</strong>, while the rest of the world waits years for approval — and every month we run becomes <span class="u">proof no rival can go back and recreate</span>.</span>
+        <span class="ka"><strong>ჩვენ ვართ ექიმები, რომლებიც ვქმნით ექიმებისთვის</strong> — ჩვენი დამფუძნებელი მოქმედი კარდიოლოგია, რომელიც თითოეულ ფუნქციას საკუთარ კლინიკაში და სამუშაო სივრცეში რეალურ ქეისებზე ტესტავს, სანამ ის სისტემაში ჩაეშვება. ეს იშვიათი კომბინაციაა, რომელსაც ვერცერთი კონკურენტი ვერ იყიდის: <strong>სამედიცინო ცოდნა, ტექნოლოგიური სიღრმე და რეალურ საავადმყოფოებზე პირდაპირი წვდომა — ერთ გუნდში</strong>. ამას ემატება ჩვენი მარეგულირებელი თავისუფლება: პროდუქტს საქართველოში ვქმნით, რაც საშუალებას გვაძლევს, რეალური, გადაწყვეტილების მიმღები სამედიცინო AI უკვე <strong>დღესვე</strong> დავნერგოთ მოქმედ კლინიკებში, სანამ დანარჩენი სამყარო წლობით ელოდება ავტორიზაციას. ყოველი გასული თვე კი ხდება <span class="u">გამოცდილება და მტკიცებულება, რომელსაც ვერცერთი კონკურენტი ვერ დაეწევა</span>.</span>
       </p>
 
       <p class="prose rv">
-        <span class="en"><strong>The results so far:</strong> in just 13 months, a team of four built what took the giants 40 years and thousands of engineers — and signed <strong>Georgia's second-largest hospital chain</strong>. Already live in real hospitals today, with the full network going live next month. The government has already backed us with a grant and named us one of the first companies in the country to earn its "Innovative Startup" status.</span>
-        <span class="ka"><strong>შედეგები დღეისათვის:</strong> სულ რაღაც 13 თვეში, ოთხკაციანმა გუნდმა შექმნა ის, რასაც ინდუსტრიის გიგანტებმა 40 წელი და ათასობით ინჟინერი მოანდომეს — და ხელშეკრულება გააფორმა <strong>საქართველოს სიდიდით მეორე სამედიცინო ქსელთან</strong>. სისტემა უკვე მუშაობს რეალურ საავადმყოფოებში, ხოლო მთლიანი ქსელი მომავალ თვეში ჩაერთვება. სახელმწიფომ უკვე დაგვიჭირა მხარი გრანტით და ქვეყანაში პირველებს მიგვანიჭა „ინოვაციური სტარტაპის" სტატუსი.</span>
+        <span class="en"><strong>The results so far:</strong> in just 13 months, a team of four built what took the giants decades and hundreds of engineers — and signed <strong>Georgia's second-largest hospital chain</strong>. Already live in real hospitals today. The government has already backed us with a grant and named us one of the first companies in the country to earn its "Innovative Startup" status.</span>
+        <span class="ka"><strong>შედეგები დღეისათვის:</strong> სულ რაღაც 13 თვეში, ოთხკაციანმა გუნდმა შექმნა ის, რასაც ინდუსტრიის გიგანტებმა ათწლეულები და ასობით ინჟინერი მოანდომეს — და ხელშეკრულება გააფორმა <strong>საქართველოს სიდიდით მეორე სამედიცინო ქსელთან</strong>. სისტემა უკვე მუშაობს რეალურ საავადმყოფოებში. სახელმწიფომ უკვე დაგვიჭირა მხარი გრანტით და ქვეყანაში ერთ-ერთ პირველებს მოგვანიჭა „ინოვაციური სტარტაპის" სტატუსი.</span>
       </p>
 
       <div class="statline rv">
@@ -365,16 +377,16 @@
 
       <p class="prose rv">
         <span class="ghost g30" aria-hidden="true">$30B</span>
-        <span class="en"><strong>Every hospital on earth needs this.</strong> It's a $30-billion-a-year market about to be rebuilt from zero — and we intend to be what it's rebuilt into. We start where hospitals could never afford the old giants, and we don't stop there. The best doctor in the world can only be in one room at a time.</span>
-        <span class="ka"><strong>ეს დედამიწის ყველა კლინიკას სჭირდება.</strong> ეს არის წლიურად $30-მილიარდიანი ბაზარი, რომელიც ნულიდან გარდაქმნის ზღვარზეა — და ჩვენ ვაპირებთ გავხდეთ ამ ახალი ეპოქის სტანდარტი. ჩვენ ვიწყებთ იქ, სადაც კლინიკებს ძველი გიგანტების ფუფუნება არასდროს ჰქონიათ, თუმცა ამით არ ვჩერდებით. მსოფლიოში საუკეთესო ექიმსაც კი ერთდროულად მხოლოდ ერთ ოთახში ყოფნა შეუძლია.</span>
+        <span class="en"><strong>Every hospital on earth needs this.</strong> It's a $30-billion-a-year market about to be rebuilt from zero — and we intend to be what it's rebuilt into. We start where hospitals could never afford the old Western giants, and we don't stop there. The best doctor in the world can only be in one room at a time.</span>
+        <span class="ka"><strong>ეს დედამიწის ყველა კლინიკას სჭირდება.</strong> ეს არის წლიურად $30-მილიარდიანი ბაზარი, რომელიც ნულიდან გარდაქმნის ზღვარზეა — და ჩვენ ვაპირებთ გავხდეთ ამ ახალი ეპოქის სტანდარტი. ჩვენ ვიწყებთ იქ, სადაც კლინიკებს დასავლური სტანდარტის გიგანტების ფუფუნება არასდროს ჰქონიათ, თუმცა ამით არ ვჩერდებით. მსოფლიოში საუკეთესო ექიმსაც კი ერთდროულად მხოლოდ ერთ ოთახში ყოფნა შეუძლია.</span>
       </p>
     </article>
 
     <!-- ═══ finale ═══ -->
     <section class="finale">
       <div class="bigquote rv">
-        <span class="en">MediMind is in <span class="grad">every room, in every hospital</span> — and that's the difference between saving thousands of lives and saving <span class="grad">millions</span>.</span>
-        <span class="ka">MediMind-ი კი <span class="grad">ყველა ოთახშია, ყველა საავადმყოფოში</span> — და სწორედ ეს არის განსხვავება ათასობით და <span class="grad">მილიონობით</span> გადარჩენილ სიცოცხლეს შორის.</span>
+        <span class="en">MediMind is in <span class="grad">every room, in every hospital</span> — and that's the difference between one doctor saving thousands of lives, and MediMind saving <span class="grad">millions</span>.</span>
+        <span class="ka">MediMind-ი კი <span class="grad">ყველა ოთახშია, ყველა საავადმყოფოში</span> — და სწორედ ეს არის განსხვავება ერთი ექიმის მიერ ათასობით ადამიანისა და MediMind-ის მიერ <span class="grad">მილიონობით</span> გადარჩენილ სიცოცხლეს შორის.</span>
       </div>
       <div class="seal rv">
         <div class="seal-rule"></div>

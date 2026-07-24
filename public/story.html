@@ -6,7 +6,7 @@
   <title>MediMind — The iPhone Moment for the Hospital</title>
   <meta name="description" content="One operating system replaces 40. AI at the core, watching every patient across every department at once. Already live in real hospitals.">
   <meta name="author" content="MediMind">
-  <meta name="theme-color" content="#f8f7f3">
+  <meta name="theme-color" content="#060f1e">
 
   <link rel="icon" href="/deck-assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/deck-assets/apple-touch-icon.png">
@@ -19,189 +19,390 @@
 
   <style>
     :root {
+      --bg0:   #060f1e;
+      --bg1:   #0b1f3a;
       --navy:  #1a365d;
-      --deep:  #0b1f3a;
       --blue:  #3182ce;
       --sky:   #63a4e0;
-      --mist:  #d9ebfa;
-      --paper: #f8f7f3;
-      --ink:   #22334d;
-      --muted: #6b7a92;
-      --line:  #e3ded2;
+      --mist:  #bee3f8;
+      --ink:   #eaf2fb;      /* headings on dark */
+      --body:  #b9c9de;      /* body text on dark */
+      --dim:   #7d92ac;      /* labels */
+      --hair:  rgba(148, 186, 224, .16);
+      --glass: rgba(255, 255, 255, .028);
       --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
               Arial, 'Noto Sans', 'Noto Sans Georgian', sans-serif;
       --serif: 'Iowan Old Style', 'Palatino Nova', Palatino, Georgia,
                'Noto Serif Georgian', 'Noto Sans Georgian', serif;
+      --mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: var(--serif);
-      background: var(--paper);
-      color: var(--ink);
+      font-family: var(--sans);
+      color: var(--body);
+      background: var(--bg0);
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
+      line-height: 1.65;
     }
     body.lang-ka { --serif: 'Noto Serif Georgian', var(--sans); }
     body.lang-en .ka { display: none !important; }
     body.lang-ka .en { display: none !important; }
 
-    /* ── top bar ── */
+    /* ═══ atmosphere: aurora + grain, fixed behind everything ═══ */
+    .sky {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        radial-gradient(58% 42% at 18% -6%,  rgba(49,130,206,.34), transparent 62%),
+        radial-gradient(46% 38% at 88% 12%,  rgba(26,54,93,.55),  transparent 60%),
+        radial-gradient(70% 52% at 50% 118%, rgba(49,130,206,.20), transparent 60%),
+        linear-gradient(180deg, var(--bg0), var(--bg1) 52%, var(--bg0));
+    }
+    .sky::before { /* hairline grid */
+      content: ''; position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(190,227,248,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(190,227,248,.04) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: radial-gradient(80% 55% at 50% 20%, #000 25%, transparent 100%);
+      -webkit-mask-image: radial-gradient(80% 55% at 50% 20%, #000 25%, transparent 100%);
+    }
+    .sky::after { /* film grain */
+      content: ''; position: absolute; inset: 0; opacity: .5;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    .page { position: relative; z-index: 1; }
+
+    /* ═══ header ═══ */
     .top {
-      max-width: 780px; margin: 0 auto; padding: 30px 28px 0;
+      max-width: 1140px; margin: 0 auto;
+      padding: 26px 28px 0;
       display: flex; align-items: center; justify-content: space-between;
     }
-    .top img { height: 26px; }
+    .top img { height: 27px; display: block; }
     .lang-switch {
       display: flex; gap: 2px; padding: 3px;
-      background: #efece4; border: 1px solid var(--line); border-radius: 999px;
+      background: rgba(255,255,255,.05); border: 1px solid var(--hair); border-radius: 999px;
+      backdrop-filter: blur(8px);
     }
     .lang-switch button {
-      font-family: var(--sans); font-size: .7rem; font-weight: 700;
-      letter-spacing: .08em; padding: 5px 12px; border: 0; border-radius: 999px;
-      background: transparent; color: var(--muted); cursor: pointer; transition: all .2s;
+      font-family: var(--mono); font-size: .68rem; font-weight: 600;
+      letter-spacing: .1em; padding: 6px 13px; border: 0; border-radius: 999px;
+      background: transparent; color: var(--dim); cursor: pointer; transition: all .25s;
     }
-    .lang-switch button.on { background: var(--navy); color: #fff; }
+    .lang-switch button.on { background: var(--mist); color: var(--navy); }
 
-    /* ── the letter ── */
-    .letter { max-width: 780px; margin: 0 auto; padding: 64px 28px 40px; }
+    /* ═══ hero ═══ */
+    .hero { max-width: 1140px; margin: 0 auto; padding: 96px 28px 72px; }
     .eyebrow {
-      font-family: var(--sans); font-size: .72rem; font-weight: 800;
-      letter-spacing: .26em; text-transform: uppercase; color: var(--blue);
-      margin-bottom: 22px;
+      display: flex; align-items: center; gap: 14px;
+      font-family: var(--mono); font-size: .72rem; letter-spacing: .3em;
+      text-transform: uppercase; color: var(--sky); margin-bottom: 30px;
     }
+    .eyebrow::before { content: ''; width: 44px; height: 1px; background: linear-gradient(90deg, var(--sky), transparent); }
     h1 {
-      font-weight: 600; font-size: clamp(2.3rem, 6vw, 3.6rem);
-      line-height: 1.1; letter-spacing: -.02em; color: var(--navy);
-      margin-bottom: 44px;
+      font-family: var(--serif); font-weight: 600;
+      font-size: clamp(2.8rem, 7.2vw, 5.4rem);
+      line-height: 1.04; letter-spacing: -.025em; color: var(--ink);
+      max-width: 15ch;
     }
-    h1 .accent { color: var(--blue); }
-    .rule { width: 64px; height: 3px; background: var(--blue); border-radius: 2px; margin-bottom: 44px; }
+    h1 .grad {
+      background: linear-gradient(95deg, var(--sky) 5%, var(--mist) 55%, #e9f5ff);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .lede {
+      margin-top: 34px; max-width: 560px;
+      font-size: clamp(1.02rem, 1.8vw, 1.16rem); line-height: 1.75; color: var(--body);
+    }
+    .lede strong { color: var(--ink); font-weight: 600; }
 
-    .letter p {
-      font-size: clamp(1.08rem, 2vw, 1.24rem);
-      line-height: 1.8; margin-bottom: 1.6em;
+    /* ═══ bento ═══ */
+    .bento {
+      max-width: 1140px; margin: 0 auto; padding: 0 28px;
+      display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px;
     }
-    .letter p strong { color: var(--navy); font-weight: 700; }
-    em.hl {
-      font-style: normal;
-      background: linear-gradient(transparent 64%, var(--mist) 64%);
-      padding: 0 1px;
+    .card {
+      position: relative; border-radius: 22px; padding: 40px 38px 38px;
+      background:
+        linear-gradient(var(--glass), var(--glass)) padding-box,
+        linear-gradient(150deg, rgba(190,227,248,.28), rgba(148,186,224,.07) 38%, rgba(148,186,224,.05) 62%, rgba(49,130,206,.26)) border-box;
+      border: 1px solid transparent;
+      backdrop-filter: blur(6px);
+      overflow: hidden;
+      transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 24px 60px -18px rgba(3, 12, 26, .8); }
+    .card::before { /* inner top sheen */
+      content: ''; position: absolute; inset: 0 0 auto 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(233,245,255,.35), transparent);
+    }
+    .c7 { grid-column: span 7; }
+    .c5 { grid-column: span 5; }
+    .c12 { grid-column: span 12; }
+
+    .tag {
+      display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px;
+      font-family: var(--mono); font-size: .68rem; letter-spacing: .24em;
+      text-transform: uppercase; color: var(--dim);
+    }
+    .tag b { color: var(--sky); font-weight: 600; }
+    .card h3 {
+      font-family: var(--serif); font-weight: 600;
+      font-size: clamp(1.35rem, 2.5vw, 1.75rem); line-height: 1.25;
+      letter-spacing: -.01em; color: var(--ink); margin-bottom: 16px;
+    }
+    .card p { font-size: .99rem; line-height: 1.78; }
+    .card p strong { color: var(--ink); font-weight: 600; }
+    .card p .u {
+      color: var(--mist);
+      border-bottom: 1px solid rgba(190,227,248,.45); padding-bottom: 1px;
+    }
+    .ghost {
+      position: absolute; right: 18px; bottom: -34px; z-index: -1;
+      font-family: var(--serif); font-weight: 600; line-height: 1;
+      font-size: clamp(8rem, 16vw, 13rem); letter-spacing: -.04em;
+      background: linear-gradient(180deg, rgba(99,164,224,.16), rgba(99,164,224,0) 78%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      pointer-events: none; user-select: none;
     }
 
-    /* ── inline stat strip (one thin line, not a section) ── */
-    .statline {
-      display: flex; flex-wrap: wrap; gap: 8px 0; align-items: center;
-      border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
-      padding: 18px 0; margin: 2.2em 0;
-      font-family: var(--sans);
+    /* ecg hairline inside 2am card */
+    .ecg { margin-top: 26px; }
+    .ecg svg { display: block; width: 100%; height: 44px; }
+    .ecg path {
+      fill: none; stroke: var(--sky); stroke-width: 1.6;
+      stroke-linecap: round; stroke-linejoin: round; opacity: .85;
+      filter: drop-shadow(0 0 6px rgba(99,164,224,.55));
+      stroke-dasharray: 900; stroke-dashoffset: 900;
+      animation: ecg 3.4s cubic-bezier(.4,0,.3,1) 1s forwards;
     }
-    .statline .s { flex: 1; min-width: 130px; text-align: center; }
-    .statline .n { font-family: var(--serif); font-size: 1.7rem; font-weight: 600; color: var(--navy); line-height: 1.1; }
-    .statline .n span { color: var(--blue); font-size: .7em; }
-    .statline .l { font-size: .68rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-top: 3px; }
+    @keyframes ecg { to { stroke-dashoffset: 0; } }
 
-    /* ── closing quote ── */
-    .quote {
-      margin: 2.6em 0 0; padding-left: 26px; border-left: 4px solid var(--blue);
-      font-size: clamp(1.35rem, 3vw, 1.8rem); line-height: 1.45;
-      color: var(--navy); font-weight: 600;
+    /* proof card */
+    .proof { display: grid; grid-template-columns: 1.15fr .85fr; gap: 40px; align-items: center; }
+    .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 28px; }
+    .stat { padding: 14px 0 10px; border-top: 1px solid var(--hair); }
+    .stat .n {
+      font-family: var(--serif); font-weight: 600; line-height: 1;
+      font-size: clamp(2.2rem, 4vw, 3rem); letter-spacing: -.02em;
+      background: linear-gradient(180deg, #f2f8fe, var(--mist) 70%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
     }
-    .quote .accent { color: var(--blue); }
-
-    /* ── footer ── */
-    .foot {
-      max-width: 780px; margin: 0 auto; padding: 36px 28px 56px;
-      border-top: 1px solid var(--line);
-      display: flex; align-items: center; justify-content: space-between; gap: 16px;
-      font-family: var(--sans); font-size: .88rem; color: var(--muted);
+    .stat .n em { font-style: normal; font-size: .55em; color: var(--sky); -webkit-text-fill-color: var(--sky); }
+    .stat .l {
+      margin-top: 8px; font-family: var(--mono); font-size: .64rem;
+      letter-spacing: .2em; text-transform: uppercase; color: var(--dim);
     }
-    .foot a { color: var(--blue); text-decoration: none; font-weight: 600; }
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: .78rem; font-weight: 600; color: var(--mist);
+      padding: 8px 15px; border-radius: 999px;
+      background: rgba(99,164,224,.08); border: 1px solid rgba(99,164,224,.25);
+    }
+    .chip .dot { width: 6px; height: 6px; border-radius: 50%; background: #68d391; box-shadow: 0 0 0 0 rgba(104,211,145,.5); animation: live 2.2s ease-out infinite; }
+    .chip .dot.gold { background: #ecc94b; animation: none; }
+    @keyframes live { 70% { box-shadow: 0 0 0 7px rgba(104,211,145,0); } 100% { box-shadow: 0 0 0 0 rgba(104,211,145,0); } }
 
-    /* gentle load-in, nothing scroll-driven */
-    .letter, .foot { opacity: 0; transform: translateY(14px); animation: in .8s ease .1s forwards; }
-    .foot { animation-delay: .25s; }
-    @keyframes in { to { opacity: 1; transform: none; } }
+    /* ═══ finale ═══ */
+    .finale { max-width: 1140px; margin: 0 auto; padding: 110px 28px 40px; text-align: center; }
+    .finale .setup {
+      max-width: 640px; margin: 0 auto 40px;
+      font-size: clamp(1rem, 1.9vw, 1.14rem); line-height: 1.8;
+    }
+    .finale .setup strong { color: var(--ink); }
+    .finale .last {
+      font-family: var(--serif); font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+      color: var(--sky); font-style: italic; margin-bottom: 30px;
+    }
+    .bigquote {
+      font-family: var(--serif); font-weight: 600;
+      font-size: clamp(1.9rem, 4.8vw, 3.4rem); line-height: 1.24; letter-spacing: -.02em;
+      color: var(--ink); max-width: 940px; margin: 0 auto;
+    }
+    .bigquote .grad {
+      background: linear-gradient(95deg, var(--sky), var(--mist) 70%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .seal { margin-top: 64px; display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .seal-rule { width: 1px; height: 56px; background: linear-gradient(180deg, transparent, var(--sky)); }
+    .seal img { height: 30px; }
+    .seal .contact { font-size: .88rem; color: var(--dim); }
+    .seal .contact a { color: var(--sky); text-decoration: none; font-weight: 600; }
+    .foot-pad { height: 70px; }
+
+    /* ═══ load-in choreography (once, on load — no scroll tricks) ═══ */
+    .top, .hero > *, .card, .finale > *, .seal { opacity: 0; transform: translateY(22px); animation: rise .9s cubic-bezier(.2,.65,.2,1) forwards; }
+    .top { animation-delay: .05s; }
+    .hero .eyebrow { animation-delay: .15s; }
+    .hero h1 { animation-delay: .25s; }
+    .hero .lede { animation-delay: .4s; }
+    .card:nth-child(1) { animation-delay: .5s; }
+    .card:nth-child(2) { animation-delay: .62s; }
+    .card:nth-child(3) { animation-delay: .74s; }
+    .card:nth-child(4) { animation-delay: .86s; }
+    .card:nth-child(5) { animation-delay: .98s; }
+    .finale .setup { animation-delay: 1.1s; }
+    .finale .last { animation-delay: 1.2s; }
+    .finale .bigquote { animation-delay: 1.3s; }
+    .seal { animation-delay: 1.45s; }
+    @keyframes rise { to { opacity: 1; transform: none; } }
     @media (prefers-reduced-motion: reduce) {
-      .letter, .foot { animation: none; opacity: 1; transform: none; }
+      * { animation-duration: .01ms !important; animation-delay: 0s !important; transition: none !important; }
     }
 
-    @media (max-width: 600px) {
-      .letter { padding: 44px 22px 28px; }
-      h1 { margin-bottom: 32px; }
-      .rule { margin-bottom: 32px; }
-      .statline .s { min-width: 46%; padding: 6px 0; }
-      .foot { flex-direction: column; align-items: flex-start; gap: 8px; }
+    /* ═══ responsive ═══ */
+    @media (max-width: 900px) {
+      .c7, .c5 { grid-column: span 12; }
+      .proof { grid-template-columns: 1fr; gap: 26px; }
+      .hero { padding: 72px 22px 52px; }
+      .bento { padding: 0 22px; gap: 14px; }
+      .card { padding: 32px 26px 30px; border-radius: 18px; }
+      .finale { padding: 84px 22px 30px; }
+      .ghost { font-size: 8rem; bottom: -26px; }
     }
   </style>
 </head>
 <body class="lang-en">
+  <div class="sky" aria-hidden="true"></div>
 
-  <div class="top">
-    <img src="/deck-assets/logo-horizontal-light.svg" alt="MediMind">
-    <div class="lang-switch" role="group" aria-label="Language">
-      <button type="button" data-lang="en" class="on">ENG</button>
-      <button type="button" data-lang="ka">ქარ</button>
-    </div>
+  <div class="page">
+
+    <header class="top">
+      <img src="/deck-assets/logo-horizontal-dark.svg" alt="MediMind">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-lang="en" class="on">ENG</button>
+        <button type="button" data-lang="ka">ქარ</button>
+      </div>
+    </header>
+
+    <!-- ═══ hero ═══ -->
+    <section class="hero">
+      <div class="eyebrow">
+        <span class="en">The AI-Native Hospital OS</span>
+        <span class="ka">AI-ზე აგებული საავადმყოფოს ოპერაციული სისტემა</span>
+      </div>
+      <h1>
+        <span class="en">The <span class="grad">iPhone&nbsp;moment</span> for the hospital.</span>
+        <span class="ka">საავადმყოფოს <span class="grad">iPhone-მომენტი.</span></span>
+      </h1>
+      <p class="lede">
+        <span class="en"><strong>One operating system replaces all 40</strong> — with AI built into its core, watching every patient across every department at once.</span>
+        <span class="ka"><strong>ერთი ოპერაციული სისტემა ცვლის ორმოცივეს</strong> — ბირთვში ჩაშენებული ხელოვნური ინტელექტით, რომელიც ყველა პაციენტს ყველა განყოფილებაში ერთდროულად აკვირდება.</span>
+      </p>
+    </section>
+
+    <!-- ═══ bento ═══ -->
+    <section class="bento">
+
+      <article class="card c7">
+        <div class="ghost">40</div>
+        <div class="tag"><b>01</b><span class="en">The Before</span><span class="ka">მანამდელი ეპოქა</span></div>
+        <h3>
+          <span class="en">Hospitals are still stuck before the iPhone.</span>
+          <span class="ka">საავადმყოფოები დღემდე iPhone-მდელ ეპოქაში არიან.</span>
+        </h3>
+        <p>
+          <span class="en">Before the iPhone, you carried five gadgets that couldn't talk to each other — a phone, a camera, an MP3 player, a map, a flashlight. Hospitals are still stuck in that "before": <strong>40-odd separate programs</strong> for records, orders, pharmacy, labs, scans, and billing, held together with <span class="u">logins and luck</span>. Nothing sees the whole patient — so the one who has to, the doctor, carries it all in their head.</span>
+          <span class="ka">iPhone-მდე ხუთი გაჯეტი დაგვქონდა, რომლებიც ერთმანეთს ვერ ელაპარაკებოდნენ — ტელეფონი, კამერა, MP3-ფლეერი, რუკა, ფანარი. საავადმყოფოები დღემდე იმ „მანამდელ" ეპოქაში არიან გაჭედილი: <strong>40-მდე ცალკეული პროგრამა</strong> ჩანაწერებისთვის, დანიშნულებებისთვის, აფთიაქის, ლაბორატორიის, კვლევებისა და ბილინგისთვის — ერთმანეთზე <span class="u">პაროლებითა და იღბლით</span> გადაბმული. ვერცერთი ვერ ხედავს პაციენტს მთლიანად — ამიტომ ის, ვისაც ეს ევალება — ექიმი — ყველაფერს საკუთარ თავში ატარებს.</span>
+        </p>
+      </article>
+
+      <article class="card c5">
+        <div class="tag"><b>02</b><span class="en">The System</span><span class="ka">სისტემა</span></div>
+        <h3>
+          <span class="en">At 2 a.m., the system doesn't miss.</span>
+          <span class="ka">ღამის 2 საათზე სისტემა არაფერს უშვებს.</span>
+        </h3>
+        <p>
+          <span class="en">When a doctor is exhausted at 2 a.m. and about to miss something, the system doesn't: it <strong>spots the danger early</strong>, orders the right tests, flags the risky drug combination, books the bed, and clears the paperwork — <span class="u">before anyone falls through the cracks</span>.</span>
+          <span class="ka">როცა ღამის 2 საათზე გადაღლილი ექიმი რაღაცის გამოტოვების ზღვარზეა, სისტემა არ უშვებს: <strong>საფრთხეს ადრევე ამჩნევს</strong>, საჭირო კვლევებს ნიშნავს, სახიფათო წამლების კომბინაციაზე აფრთხილებს, საწოლს ჯავშნის და საბუთებს ასუფთავებს — <span class="u">სანამ ვინმე უყურადღებოდ დარჩება</span>.</span>
+        </p>
+        <div class="ecg" aria-hidden="true">
+          <svg viewBox="0 0 420 44" preserveAspectRatio="none">
+            <path d="M0,26 H70 l9,-5 9,5 h28 l6,-17 7,32 6,-29 5,14 h42 l8,-4 8,4 h34 l6,-15 7,29 6,-27 5,13 h50 l9,-5 9,5 h76"/>
+          </svg>
+        </div>
+      </article>
+
+      <article class="card c5">
+        <div class="tag"><b>03</b><span class="en">The Moat</span><span class="ka">დაცვითი ზღუდე</span></div>
+        <h3>
+          <span class="en">Why no one can just copy it.</span>
+          <span class="ka">რატომ ვერ დაგვაკოპირებს ვერავინ.</span>
+        </h3>
+        <p>
+          <span class="en">We didn't bolt AI onto old software — <strong>we built the hospital new, from the first line, as one connected system</strong>. That's the whole trick: because everything lives in one place, the AI can actually see and act across the entire hospital. A competitor stapling AI onto decades-old software can't — they'd have to tear out their foundations and start over.</span>
+          <span class="ka">ჩვენ AI ძველ პროგრამას არ მივაკარით — <strong>საავადმყოფო თავიდან ავაშენეთ, პირველივე ხაზიდან, როგორც ერთი შეკრული სისტემა</strong>. მთელი საიდუმლო ესაა: რადგან ყველაფერი ერთ ადგილას ცხოვრობს, AI-ს რეალურად შეუძლია დაინახოს და იმოქმედოს მთელ საავადმყოფოში. კონკურენტი, რომელიც AI-ს ათწლეულების წინანდელ პროგრამებს აკერებს, ამას ვერ შეძლებს — მას საძირკვლის დანგრევა და ნულიდან დაწყება მოუწევდა.</span>
+        </p>
+      </article>
+
+      <article class="card c7">
+        <div class="ghost">MD</div>
+        <div class="tag"><b>04</b><span class="en">The Builders</span><span class="ka">ვინ აშენებს</span></div>
+        <h3>
+          <span class="en">Doctors building for doctors — in Georgia.</span>
+          <span class="ka">ექიმები ვაშენებთ ექიმებისთვის — საქართველოში.</span>
+        </h3>
+        <p>
+          <span class="en">Our founder is a <strong>practicing cardiologist</strong> who tests every feature on his own patients before it ships. We build in Georgia, which lets us put real, decision-making medical AI into live hospitals <strong>now</strong>, while the rest of the world waits years for approval — and every month we run becomes <span class="u">proof no rival can go back and recreate</span>.</span>
+          <span class="ka">ჩვენი დამფუძნებელი <strong>მოქმედი კარდიოლოგია</strong>, რომელიც ყოველ ფუნქციას ჯერ საკუთარ პაციენტებზე ამოწმებს და მერე უშვებს. ვაშენებთ საქართველოში, რაც საშუალებას გვაძლევს, რეალური, გადაწყვეტილების მიმღები სამედიცინო AI ცოცხალ საავადმყოფოებში <strong>დღესვე</strong> ჩავრთოთ — მაშინ, როცა დანარჩენი მსოფლიო ნებართვას წლობით ელოდება. და ყოველი ნამუშევარი თვე იქცევა <span class="u">მტკიცებულებად, რომელსაც ვერცერთი კონკურენტი ვერ აღიდგენს</span>.</span>
+        </p>
+      </article>
+
+      <article class="card c12">
+        <div class="proof">
+          <div>
+            <div class="tag"><b>05</b><span class="en">The Proof</span><span class="ka">მტკიცებულება</span></div>
+            <h3>
+              <span class="en">13 months. A team of four. What took the giants 40 years.</span>
+              <span class="ka">13 თვე. ოთხკაციანი გუნდი. ის, რასაც გიგანტებს 40 წელი დასჭირდათ.</span>
+            </h3>
+            <p>
+              <span class="en">In just 13 months, a team of four built what took the giants 40 years and thousands of engineers — and signed <strong>Georgia's second-largest hospital chain</strong>. Already live in real hospitals today, with the full network going live next month. The government has already backed us with a grant and named us one of the first companies in the country to earn its "Innovative Startup" status.</span>
+              <span class="ka">სულ რაღაც 13 თვეში ოთხკაციანმა გუნდმა ააშენა ის, რასაც გიგანტებს 40 წელი და ათასობით ინჟინერი დასჭირდათ — და ხელი მოვაწერეთ <strong>საქართველოს სიდიდით მეორე საავადმყოფოთა ქსელთან</strong>. სისტემა უკვე მუშაობს რეალურ საავადმყოფოებში, სრული ქსელი კი მომავალ თვეს ერთვება. სახელმწიფომ უკვე დაგვიჭირა მხარი გრანტით და ქვეყანაში ერთ-ერთ პირველს მოგვანიჭა „ინოვაციური სტარტაპის" სტატუსი.</span>
+            </p>
+            <div class="chips">
+              <span class="chip"><span class="dot"></span><span class="en">Live in real hospitals today</span><span class="ka">უკვე მუშაობს რეალურ საავადმყოფოებში</span></span>
+              <span class="chip"><span class="dot gold"></span><span class="en">Government grant · "Innovative Startup"</span><span class="ka">სახელმწიფო გრანტი · „ინოვაციური სტარტაპი"</span></span>
+            </div>
+          </div>
+          <div class="stats">
+            <div class="stat"><div class="n">13</div><div class="l"><span class="en">Months</span><span class="ka">თვე</span></div></div>
+            <div class="stat"><div class="n">25</div><div class="l"><span class="en">Hospitals</span><span class="ka">საავადმყოფო</span></div></div>
+            <div class="stat"><div class="n"><em>~</em>1,000</div><div class="l"><span class="en">Doctors</span><span class="ka">ექიმი</span></div></div>
+            <div class="stat"><div class="n">4</div><div class="l"><span class="en">Builders</span><span class="ka">შემქმნელი</span></div></div>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- ═══ finale ═══ -->
+    <section class="finale">
+      <p class="setup">
+        <span class="en"><strong>Every hospital on earth needs this.</strong> It's a <strong>$30-billion-a-year market</strong> about to be rebuilt from zero — and we intend to be what it's rebuilt into. We start where hospitals could never afford the old giants, and we don't stop there.</span>
+        <span class="ka"><strong>ეს ყველა საავადმყოფოს სჭირდება დედამიწაზე.</strong> ეს არის <strong>წელიწადში 30-მილიარდიანი ბაზარი</strong>, რომელიც ახლა ნულიდან შენდება თავიდან — და ჩვენ ვაპირებთ ვიყოთ ის, რადაც აშენდება. ვიწყებთ იქ, სადაც საავადმყოფოებს ძველი გიგანტების ფასი არასდროს შეეძლოთ — და აქ არ ვჩერდებით.</span>
+      </p>
+      <p class="last">
+        <span class="en">The best doctor in the world can only be in one room at a time.</span>
+        <span class="ka">მსოფლიოში საუკეთესო ექიმი ერთდროულად მხოლოდ ერთ ოთახში შეიძლება იყოს.</span>
+      </p>
+      <div class="bigquote">
+        <span class="en">MediMind is in <span class="grad">every room, in every hospital</span> — and that's the difference between saving thousands of lives and saving <span class="grad">millions</span>.</span>
+        <span class="ka">MediMind <span class="grad">ყველა ოთახშია, ყველა საავადმყოფოში</span> — და ეს არის განსხვავება ათასობით სიცოცხლის გადარჩენასა და <span class="grad">მილიონობით</span> სიცოცხლის გადარჩენას შორის.</span>
+      </div>
+
+      <div class="seal">
+        <div class="seal-rule"></div>
+        <img src="/deck-assets/logo-horizontal-dark.svg" alt="MediMind">
+        <div class="contact"><a href="mailto:team@medimind.md">team@medimind.md</a> · <a href="https://medimind.md">medimind.md</a></div>
+      </div>
+      <div class="foot-pad"></div>
+    </section>
+
   </div>
-
-  <main class="letter">
-    <div class="eyebrow">
-      <span class="en">MediMind · The AI-Native Hospital OS</span>
-      <span class="ka">MediMind · AI-ზე აგებული საავადმყოფოს ოპერაციული სისტემა</span>
-    </div>
-    <h1>
-      <span class="en">The <span class="accent">iPhone moment</span> for the hospital.</span>
-      <span class="ka">საავადმყოფოს <span class="accent">iPhone-მომენტი.</span></span>
-    </h1>
-    <div class="rule"></div>
-
-    <p>
-      <span class="en">Before the iPhone, you carried five gadgets that couldn't talk to each other — a phone, a camera, an MP3 player, a map, a flashlight. Hospitals are still stuck in that "before": <strong>40-odd separate programs</strong> for records, orders, pharmacy, labs, scans, and billing, held together with <em class="hl">logins and luck</em>. Nothing sees the whole patient — so the one who has to, the doctor, carries it all in their head.</span>
-      <span class="ka">iPhone-მდე ხუთი გაჯეტი დაგვქონდა, რომლებიც ერთმანეთს ვერ ელაპარაკებოდნენ — ტელეფონი, კამერა, MP3-ფლეერი, რუკა, ფანარი. საავადმყოფოები დღემდე იმ „მანამდელ" ეპოქაში არიან გაჭედილი: <strong>40-მდე ცალკეული პროგრამა</strong> ჩანაწერებისთვის, დანიშნულებებისთვის, აფთიაქისთვის, ლაბორატორიის, კვლევებისა და ბილინგისთვის — ერთმანეთზე <em class="hl">პაროლებითა და იღბლით</em> გადაბმული. ვერცერთი ვერ ხედავს პაციენტს მთლიანად — ამიტომ ის, ვისაც ეს ევალება — ექიმი — ყველაფერს საკუთარ თავში ატარებს.</span>
-    </p>
-
-    <p>
-      <span class="en"><strong>MediMind is the iPhone moment for the hospital.</strong> One operating system replaces all 40, with AI built into its core, watching every patient across every department at once. So when a doctor is exhausted at 2 a.m. and about to miss something, the system doesn't: it spots the danger early, orders the right tests, flags the risky drug combination, books the bed, and clears the paperwork — <em class="hl">before anyone falls through the cracks</em>.</span>
-      <span class="ka"><strong>MediMind საავადმყოფოს iPhone-მომენტია.</strong> ერთი ოპერაციული სისტემა ცვლის ორმოცივეს — ბირთვში ჩაშენებული ხელოვნური ინტელექტით, რომელიც ყველა პაციენტს ყველა განყოფილებაში ერთდროულად აკვირდება. და როცა ღამის 2 საათზე გადაღლილი ექიმი რაღაცის გამოტოვების ზღვარზეა, სისტემა არ უშვებს: საფრთხეს ადრევე ამჩნევს, საჭირო კვლევებს ნიშნავს, სახიფათო წამლების კომბინაციაზე აფრთხილებს, საწოლს ჯავშნის და საბუთებს ასუფთავებს — <em class="hl">სანამ ვინმე უყურადღებოდ დარჩება</em>.</span>
-    </p>
-
-    <p>
-      <span class="en">And here's why no one can just copy it. <strong>We didn't bolt AI onto old software — we built the hospital new, from the first line, as one connected system.</strong> That's the whole trick: because everything lives in one place, the AI can actually see and act across the entire hospital. A competitor stapling AI onto decades-old software can't — they'd have to tear out their foundations and start over.</span>
-      <span class="ka">და აი, რატომ ვერ დაგვაკოპირებს ვერავინ. <strong>ჩვენ AI ძველ პროგრამას არ მივაკარით — საავადმყოფო თავიდან ავაშენეთ, პირველივე ხაზიდან, როგორც ერთი შეკრული სისტემა.</strong> მთელი საიდუმლო ესაა: რადგან ყველაფერი ერთ ადგილას ცხოვრობს, AI-ს რეალურად შეუძლია დაინახოს და იმოქმედოს მთელ საავადმყოფოში. კონკურენტი, რომელიც AI-ს ათწლეულების წინანდელ პროგრამებს აკერებს, ამას ვერ შეძლებს — მას საძირკვლის დანგრევა და ნულიდან დაწყება მოუწევდა.</span>
-    </p>
-
-    <p>
-      <span class="en"><strong>We're doctors building for doctors</strong> — our founder is a practicing cardiologist who tests every feature on his own patients before it ships. We build in Georgia, which lets us put real, decision-making medical AI into live hospitals now, while the rest of the world waits years for approval — and every month we run becomes proof no rival can go back and recreate.</span>
-      <span class="ka"><strong>ჩვენ ექიმები ვართ და ექიმებისთვის ვაშენებთ</strong> — ჩვენი დამფუძნებელი მოქმედი კარდიოლოგია, რომელიც ყოველ ფუნქციას ჯერ საკუთარ პაციენტებზე ამოწმებს და მერე უშვებს. ვაშენებთ საქართველოში, რაც საშუალებას გვაძლევს, რეალური, გადაწყვეტილების მიმღები სამედიცინო AI ცოცხალ საავადმყოფოებში დღესვე ჩავრთოთ — მაშინ, როცა დანარჩენი მსოფლიო ნებართვას წლობით ელოდება. და ყოველი ნამუშევარი თვე იქცევა მტკიცებულებად, რომელსაც ვერცერთი კონკურენტი ვერ აღიდგენს.</span>
-    </p>
-
-    <p>
-      <span class="en"><strong>The results so far:</strong> in just 13 months, a team of four built what took the giants 40 years and thousands of engineers — and signed Georgia's second-largest hospital chain. Already live in real hospitals today, with the full network going live next month. The government has already backed us with a grant and named us one of the first companies in the country to earn its "Innovative Startup" status.</span>
-      <span class="ka"><strong>შედეგები აქამდე:</strong> სულ რაღაც 13 თვეში ოთხკაციანმა გუნდმა ააშენა ის, რასაც გიგანტებს 40 წელი და ათასობით ინჟინერი დასჭირდათ — და ხელი მოვაწერეთ საქართველოს სიდიდით მეორე საავადმყოფოთა ქსელთან. სისტემა უკვე მუშაობს რეალურ საავადმყოფოებში, სრული ქსელი კი მომავალ თვეს ერთვება. სახელმწიფომ უკვე დაგვიჭირა მხარი გრანტით და ქვეყანაში ერთ-ერთ პირველს მოგვანიჭა „ინოვაციური სტარტაპის" სტატუსი.</span>
-    </p>
-
-    <div class="statline">
-      <div class="s"><div class="n">13</div><div class="l"><span class="en">Months</span><span class="ka">თვე</span></div></div>
-      <div class="s"><div class="n">25</div><div class="l"><span class="en">Hospitals</span><span class="ka">საავადმყოფო</span></div></div>
-      <div class="s"><div class="n"><span>~</span>1,000</div><div class="l"><span class="en">Doctors</span><span class="ka">ექიმი</span></div></div>
-      <div class="s"><div class="n">4</div><div class="l"><span class="en">Builders</span><span class="ka">შემქმნელი</span></div></div>
-    </div>
-
-    <p>
-      <span class="en"><strong>Every hospital on earth needs this.</strong> It's a $30-billion-a-year market about to be rebuilt from zero — and we intend to be what it's rebuilt into. We start where hospitals could never afford the old giants, and we don't stop there. The best doctor in the world can only be in one room at a time.</span>
-      <span class="ka"><strong>ეს ყველა საავადმყოფოს სჭირდება დედამიწაზე.</strong> ეს არის წელიწადში 30-მილიარდიანი ბაზარი, რომელიც ახლა ნულიდან შენდება თავიდან — და ჩვენ ვაპირებთ ვიყოთ ის, რადაც აშენდება. ვიწყებთ იქ, სადაც საავადმყოფოებს ძველი გიგანტების ფასი არასდროს შეეძლოთ — და აქ არ ვჩერდებით. მსოფლიოში საუკეთესო ექიმი ერთდროულად მხოლოდ ერთ ოთახში შეიძლება იყოს.</span>
-    </p>
-
-    <div class="quote">
-      <span class="en">MediMind is in <span class="accent">every room, in every hospital</span> — and that's the difference between saving thousands of lives and saving <span class="accent">millions</span>.</span>
-      <span class="ka">MediMind <span class="accent">ყველა ოთახშია, ყველა საავადმყოფოში</span> — და ეს არის განსხვავება ათასობით სიცოცხლის გადარჩენასა და <span class="accent">მილიონობით</span> სიცოცხლის გადარჩენას შორის.</span>
-    </div>
-  </main>
-
-  <footer class="foot">
-    <span>© MediMind</span>
-    <span><a href="mailto:team@medimind.md">team@medimind.md</a> · <a href="https://medimind.md">medimind.md</a></span>
-  </footer>
 
   <script>
     (function () {

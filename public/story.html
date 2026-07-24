@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediMind — The iPhone Moment for the Hospital</title>
+  <meta name="description" content="One operating system replaces 40. AI at the core, watching every patient across every department at once. Already live in real hospitals.">
+  <meta name="author" content="MediMind">
+  <meta name="theme-color" content="#0b1f3a">
+
+  <link rel="icon" href="/deck-assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/deck-assets/apple-touch-icon.png">
+
+  <meta property="og:title" content="MediMind — The iPhone Moment for the Hospital">
+  <meta property="og:description" content="One operating system replaces 40. AI at the core, watching every patient across every department at once.">
+  <meta property="og:image" content="https://medimind.md/og-image.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <style>
+    /* ============ tokens ============ */
+    :root {
+      --navy:   #1a365d;
+      --deep:   #0b1f3a;
+      --deeper: #071527;
+      --blue:   #3182ce;
+      --sky:    #63a4e0;
+      --mist:   #bee3f8;
+      --paper:  #f8fafd;
+      --card:   #ffffff;
+      --ink:    #17263c;
+      --muted:  #5a6b84;
+      --line:   #dfe7f1;
+      --gold:   #d9a441;
+      --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+              Arial, 'Noto Sans', 'Noto Sans Georgian', sans-serif;
+      --serif: 'Iowan Old Style', 'Palatino Nova', Palatino, Georgia,
+               'Noto Serif Georgian', 'Noto Sans Georgian', serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      background: var(--paper);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    /* Georgian display type falls back to sans (serif faces rarely carry Mkhedruli) */
+    body.lang-ka { --serif: 'Noto Serif Georgian', var(--sans); }
+
+    /* ============ language toggle ============ */
+    body.lang-en .ka { display: none !important; }
+    body.lang-ka .en { display: none !important; }
+    .lang-switch {
+      position: fixed; top: 18px; right: 18px; z-index: 90;
+      display: flex; gap: 2px; padding: 3px;
+      background: rgba(10, 25, 47, .55); backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,.18); border-radius: 999px;
+    }
+    .lang-switch button {
+      font-family: var(--sans); font-size: .72rem; font-weight: 700;
+      letter-spacing: .08em; padding: 6px 13px; border: 0; border-radius: 999px;
+      background: transparent; color: rgba(255,255,255,.75); cursor: pointer;
+      transition: all .25s;
+    }
+    .lang-switch button.on { background: #fff; color: var(--navy); }
+
+    /* ============ scroll progress ============ */
+    #progress {
+      position: fixed; top: 0; left: 0; height: 3px; width: 0;
+      background: linear-gradient(90deg, var(--blue), var(--sky));
+      z-index: 99; transition: width .1s linear;
+    }
+
+    /* ============ reveal machinery ============ */
+    .rv { opacity: 0; transform: translateY(28px); transition: opacity .9s cubic-bezier(.2,.6,.2,1), transform .9s cubic-bezier(.2,.6,.2,1); }
+    .rv.on { opacity: 1; transform: none; }
+    .rv.d1 { transition-delay: .12s; } .rv.d2 { transition-delay: .24s; }
+    .rv.d3 { transition-delay: .36s; } .rv.d4 { transition-delay: .48s; }
+    .rv.d5 { transition-delay: .60s; } .rv.d6 { transition-delay: .72s; }
+
+    /* ============ shared layout ============ */
+    section { position: relative; padding: 120px 24px; }
+    .wrap { max-width: 880px; margin: 0 auto; }
+    .wrap-wide { max-width: 1060px; margin: 0 auto; }
+    .kicker {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: .72rem; font-weight: 800; letter-spacing: .22em;
+      text-transform: uppercase; color: var(--blue); margin-bottom: 26px;
+    }
+    .kicker::before { content: ''; width: 34px; height: 2px; background: var(--blue); border-radius: 2px; }
+    h2 {
+      font-family: var(--serif); font-weight: 600;
+      font-size: clamp(1.9rem, 4.4vw, 3rem); line-height: 1.18;
+      letter-spacing: -.015em; color: var(--navy); margin-bottom: 28px;
+    }
+    .prose { font-size: clamp(1.05rem, 1.9vw, 1.22rem); color: var(--ink); line-height: 1.75; }
+    .prose + .prose { margin-top: 1.2em; }
+    .prose strong { color: var(--navy); }
+    em.hl {
+      font-style: normal;
+      background: linear-gradient(transparent 62%, var(--mist) 62%);
+      padding: 0 2px;
+    }
+    .dark-sec { background: var(--deep); color: #dbe7f5; }
+    .dark-sec h2 { color: #fff; }
+    .dark-sec .prose { color: #c3d3e8; }
+    .dark-sec .prose strong { color: #fff; }
+    .dark-sec .kicker { color: var(--sky); }
+    .dark-sec .kicker::before { background: var(--sky); }
+
+    /* ============ HERO ============ */
+    .hero {
+      min-height: 100svh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; text-align: center;
+      background:
+        radial-gradient(1100px 520px at 50% -8%, rgba(49,130,206,.32), transparent 60%),
+        radial-gradient(900px 600px at 85% 110%, rgba(49,130,206,.14), transparent 55%),
+        linear-gradient(180deg, var(--deeper) 0%, var(--deep) 55%, #0e2748 100%);
+      color: #fff; overflow: hidden; padding: 90px 24px 70px;
+    }
+    .hero::before { /* faint grid */
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: radial-gradient(75% 60% at 50% 40%, #000 30%, transparent 100%);
+      -webkit-mask-image: radial-gradient(75% 60% at 50% 40%, #000 30%, transparent 100%);
+    }
+    .hero-logo { height: 30px; margin-bottom: 58px; opacity: .95; }
+
+    /* --- five gadgets converge into one tile --- */
+    .converge { position: relative; height: 168px; width: min(620px, 92vw); margin: 0 auto 20px; }
+    .gadget {
+      position: absolute; top: 50%; left: 50%;
+      padding: 9px 16px; border-radius: 999px; white-space: nowrap;
+      font-size: .8rem; font-weight: 600; letter-spacing: .04em;
+      color: rgba(255,255,255,.85);
+      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.22);
+      backdrop-filter: blur(6px);
+      transform: translate(-50%, -50%) translate(var(--gx), var(--gy));
+      animation: gadget-in 1.1s cubic-bezier(.2,.7,.2,1) backwards,
+                 gadget-merge 1.3s cubic-bezier(.65,0,.35,1) 2.3s forwards;
+    }
+    .gadget:nth-child(1) { --gx: -220px; --gy: -52px; animation-delay: .15s, 2.30s; }
+    .gadget:nth-child(2) { --gx:  218px; --gy: -46px; animation-delay: .30s, 2.42s; }
+    .gadget:nth-child(3) { --gx: -168px; --gy:  56px; animation-delay: .45s, 2.36s; }
+    .gadget:nth-child(4) { --gx:  158px; --gy:  60px; animation-delay: .60s, 2.48s; }
+    .gadget:nth-child(5) { --gx:    0px; --gy: -78px; animation-delay: .75s, 2.54s; }
+    @keyframes gadget-in {
+      from { opacity: 0; transform: translate(-50%, -50%) translate(calc(var(--gx) * 1.35), calc(var(--gy) * 1.35)); }
+      to   { opacity: 1; transform: translate(-50%, -50%) translate(var(--gx), var(--gy)); }
+    }
+    @keyframes gadget-merge {
+      to { opacity: 0; transform: translate(-50%, -50%) translate(0, 0) scale(.35); }
+    }
+    .one-tile {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(.6);
+      width: 96px; height: 96px; border-radius: 24px; opacity: 0;
+      background: linear-gradient(145deg, #2b6cb0, #3182ce 55%, #4f9ede);
+      box-shadow: 0 0 0 1px rgba(255,255,255,.25) inset, 0 18px 50px rgba(49,130,206,.55);
+      display: flex; align-items: center; justify-content: center;
+      animation: tile-in .9s cubic-bezier(.2,.8,.3,1.2) 3.3s forwards;
+    }
+    .one-tile img { width: 54px; height: 54px; }
+    .one-tile::after {
+      content: ''; position: absolute; inset: -14px; border-radius: 34px;
+      border: 1px solid rgba(99,164,224,.5); opacity: 0;
+      animation: pulse-ring 2.6s ease-out 4.1s infinite;
+    }
+    @keyframes tile-in { to { opacity: 1; transform: translate(-50%, -50%) scale(1); } }
+    @keyframes pulse-ring {
+      0% { opacity: .8; transform: scale(.92); }
+      70%, 100% { opacity: 0; transform: scale(1.35); }
+    }
+    .hero-pre {
+      font-size: .78rem; font-weight: 700; letter-spacing: .3em; text-transform: uppercase;
+      color: var(--sky); margin-bottom: 22px;
+      opacity: 0; animation: fade-up 1s ease 3.7s forwards;
+    }
+    .hero h1 {
+      font-family: var(--serif); font-weight: 600;
+      font-size: clamp(2.5rem, 7vw, 4.6rem); line-height: 1.08; letter-spacing: -.02em;
+      max-width: 860px; margin: 0 auto 26px;
+      opacity: 0; animation: fade-up 1.1s ease 3.95s forwards;
+    }
+    .hero h1 .grad {
+      background: linear-gradient(100deg, #8fc1ec, #cfe6f9);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .hero-sub {
+      max-width: 620px; margin: 0 auto; font-size: clamp(1rem, 2vw, 1.18rem);
+      color: rgba(214,229,245,.85); line-height: 1.7;
+      opacity: 0; animation: fade-up 1.1s ease 4.25s forwards;
+    }
+    @keyframes fade-up { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+    .scroll-cue {
+      position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%);
+      width: 26px; height: 42px; border: 2px solid rgba(255,255,255,.35); border-radius: 14px;
+      opacity: 0; animation: fade-up 1s ease 4.8s forwards;
+    }
+    .scroll-cue::after {
+      content: ''; position: absolute; top: 7px; left: 50%; margin-left: -2px;
+      width: 4px; height: 8px; border-radius: 3px; background: rgba(255,255,255,.75);
+      animation: cue 1.8s ease-in-out 5s infinite;
+    }
+    @keyframes cue { 0%,100% { transform: translateY(0); opacity: 1; } 55% { transform: translateY(14px); opacity: 0; } }
+
+    /* ============ ACT I — the wall of 40 ============ */
+    .wall {
+      display: grid; grid-template-columns: repeat(8, 1fr); gap: 10px;
+      margin: 52px 0 18px; perspective: 700px;
+    }
+    .app {
+      aspect-ratio: 1; border-radius: 13px; background: var(--card);
+      border: 1px solid var(--line);
+      box-shadow: 0 3px 10px rgba(23, 38, 60, .05);
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+      font-size: .56rem; font-weight: 700; letter-spacing: .04em; color: var(--muted);
+      opacity: 0; transform: translateY(18px) rotate(var(--tilt, 0deg)) scale(.9);
+      transition: opacity .6s ease, transform .6s cubic-bezier(.2,.7,.3,1.1);
+      transition-delay: calc(var(--i) * 38ms);
+      text-align: center; padding: 4px;
+    }
+    .wall.on .app { opacity: 1; transform: translateY(0) rotate(var(--tilt, 0deg)) scale(1); }
+    .app i {
+      width: 17px; height: 17px; border-radius: 5px; font-style: normal;
+      background: linear-gradient(135deg, var(--c1, #a9bdd6), var(--c2, #8ba6c7));
+      opacity: .85;
+    }
+    .app:nth-child(3n)   { --tilt: -2.2deg; }
+    .app:nth-child(4n)   { --tilt: 1.8deg; }
+    .app:nth-child(7n)   { --tilt: 2.6deg; --c1: #d6b8a9; --c2: #c79b8b; }
+    .app:nth-child(5n)   { --c1: #b3cbb2; --c2: #93b394; }
+    .app:nth-child(11n)  { --c1: #cdb6d3; --c2: #ab90b5; }
+    .wall-caption {
+      text-align: center; font-size: .95rem; color: var(--muted); font-style: italic;
+    }
+
+    /* ============ ACT II — 2 A.M. ============ */
+    .night { overflow: hidden; }
+    .night::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(900px 420px at 50% 0%, rgba(49,130,206,.16), transparent 65%);
+    }
+    .clock {
+      font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+      font-size: clamp(3.2rem, 9vw, 5.4rem); font-weight: 300; letter-spacing: .04em;
+      color: #eaf3fc; text-align: center; margin-bottom: 6px;
+      text-shadow: 0 0 44px rgba(99,164,224,.45);
+    }
+    .clock .blink { animation: blink 1.6s steps(1) infinite; }
+    @keyframes blink { 50% { opacity: .15; } }
+    .night-label { text-align: center; font-size: .78rem; letter-spacing: .3em; text-transform: uppercase; color: var(--sky); margin-bottom: 40px; }
+    .ecg-box { max-width: 680px; margin: 0 auto 48px; }
+    .ecg-box svg { width: 100%; height: 74px; display: block; }
+    .ecg-path {
+      fill: none; stroke: var(--sky); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round;
+      filter: drop-shadow(0 0 7px rgba(99,164,224,.75));
+      stroke-dasharray: 1400; stroke-dashoffset: 1400;
+    }
+    .on .ecg-path { animation: ecg-draw 3.2s cubic-bezier(.4,0,.3,1) forwards; }
+    @keyframes ecg-draw { to { stroke-dashoffset: 0; } }
+    .acts { max-width: 560px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+    .act-row {
+      display: flex; align-items: center; gap: 15px; padding: 15px 20px;
+      border-radius: 14px; background: rgba(255,255,255,.045);
+      border: 1px solid rgba(190,227,248,.14);
+      font-size: 1.02rem; color: #dcE9f7;
+    }
+    .act-row .tick {
+      flex: none; width: 25px; height: 25px; border-radius: 50%;
+      background: rgba(56,161,105,.16); border: 1.5px solid rgba(104,211,145,.65);
+      color: #68d391; display: flex; align-items: center; justify-content: center;
+      font-size: .78rem; font-weight: 800;
+    }
+    .night-close {
+      text-align: center; margin-top: 42px; font-family: var(--serif);
+      font-size: clamp(1.25rem, 2.8vw, 1.7rem); color: #fff; line-height: 1.4;
+    }
+    .night-close .u { border-bottom: 2px solid var(--sky); padding-bottom: 2px; }
+
+    /* ============ ACT III — moat ============ */
+    .moat-pull {
+      font-family: var(--serif); font-size: clamp(1.5rem, 3.4vw, 2.2rem);
+      line-height: 1.35; color: var(--navy); margin: 44px 0;
+      padding-left: 26px; border-left: 4px solid var(--blue);
+    }
+    .flow { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; margin-top: 48px; }
+    .flow-chip {
+      padding: 13px 26px; border-radius: 14px; background: var(--card);
+      border: 1px solid var(--line); box-shadow: 0 6px 18px rgba(23,38,60,.06);
+      font-weight: 700; font-size: .95rem; color: var(--navy);
+    }
+    .flow-chip small { display: block; font-weight: 500; font-size: .74rem; color: var(--muted); margin-top: 2px; }
+    .flow-arrow { color: var(--blue); font-size: 1.15rem; font-weight: 700; }
+
+    /* ============ ACT IV — doctors & Georgia ============ */
+    .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 52px; }
+    .duo-card {
+      background: var(--card); border: 1px solid var(--line); border-radius: 20px;
+      padding: 38px 34px; box-shadow: 0 10px 34px rgba(23,38,60,.07);
+    }
+    .duo-card .badge {
+      display: inline-block; font-size: .68rem; font-weight: 800; letter-spacing: .16em;
+      text-transform: uppercase; color: var(--blue); background: #e8f2fb;
+      padding: 6px 13px; border-radius: 999px; margin-bottom: 20px;
+    }
+    .duo-card h3 { font-family: var(--serif); font-size: 1.45rem; color: var(--navy); margin-bottom: 14px; line-height: 1.3; }
+    .duo-card p { font-size: .99rem; color: var(--ink); line-height: 1.7; }
+
+    /* ============ ACT V — traction ============ */
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin: 56px 0 48px; }
+    .stat {
+      text-align: center; background: var(--card); border: 1px solid var(--line);
+      border-radius: 20px; padding: 34px 12px 28px;
+      box-shadow: 0 10px 34px rgba(23,38,60,.06);
+    }
+    .stat .num {
+      font-family: var(--serif); font-size: clamp(2.3rem, 5vw, 3.4rem);
+      font-weight: 600; color: var(--navy); line-height: 1; letter-spacing: -.02em;
+    }
+    .stat .num .pre, .stat .num .post { font-size: .55em; color: var(--blue); }
+    .stat .lbl { margin-top: 10px; font-size: .8rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+    .gov-strip {
+      display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-top: 44px;
+    }
+    .gov-chip {
+      display: flex; align-items: center; gap: 10px; padding: 12px 22px;
+      border-radius: 999px; background: #fdf6e9; border: 1px solid #ecd9b0;
+      font-size: .9rem; font-weight: 600; color: #7c5c1e;
+    }
+    .gov-chip .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+    .live-chip {
+      background: #e9f7ef; border-color: #bfe3cd; color: #1f7a46;
+    }
+    .live-chip .dot { background: #38a169; box-shadow: 0 0 0 0 rgba(56,161,105,.5); animation: live 2s ease-out infinite; }
+    @keyframes live { 70% { box-shadow: 0 0 0 9px rgba(56,161,105,0); } 100% { box-shadow: 0 0 0 0 rgba(56,161,105,0); } }
+
+    /* ============ ACT VI — close ============ */
+    .close-sec {
+      background:
+        radial-gradient(1000px 500px at 50% 115%, rgba(49,130,206,.3), transparent 62%),
+        linear-gradient(180deg, var(--deep), var(--deeper));
+      text-align: center; padding: 150px 24px 110px;
+    }
+    .market-line { font-size: clamp(1.05rem, 2.1vw, 1.25rem); color: #c3d3e8; max-width: 700px; margin: 0 auto 64px; line-height: 1.75; }
+    .market-line strong { color: #fff; }
+    .big-quote {
+      font-family: var(--serif); font-weight: 600;
+      font-size: clamp(1.8rem, 4.6vw, 3.1rem); line-height: 1.28; letter-spacing: -.015em;
+      color: #fff; max-width: 880px; margin: 0 auto 26px;
+    }
+    .big-quote .grad {
+      background: linear-gradient(100deg, #8fc1ec, #d9ecfb);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .quote-bar { width: 60px; height: 3px; border-radius: 2px; background: var(--blue); margin: 0 auto 44px; }
+    .close-logo { height: 34px; margin-top: 64px; opacity: .95; }
+    .contact { margin-top: 22px; font-size: .92rem; color: rgba(195,211,232,.75); }
+    .contact a { color: var(--sky); text-decoration: none; font-weight: 600; }
+
+    /* ============ responsive ============ */
+    @media (max-width: 768px) {
+      section { padding: 84px 20px; }
+      .wall { grid-template-columns: repeat(5, 1fr); gap: 8px; }
+      .app { font-size: .5rem; border-radius: 10px; }
+      .duo { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+      .gadget { font-size: .68rem; padding: 7px 12px; }
+      .gadget:nth-child(1) { --gx: -118px; --gy: -54px; }
+      .gadget:nth-child(2) { --gx:  116px; --gy: -48px; }
+      .gadget:nth-child(3) { --gx:  -96px; --gy:  54px; }
+      .gadget:nth-child(4) { --gx:   92px; --gy:  58px; }
+      .gadget:nth-child(5) { --gx:    0px; --gy: -84px; }
+      .converge { height: 190px; }
+      .moat-pull { padding-left: 18px; }
+      .close-sec { padding: 100px 20px 80px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-delay: 0s !important; transition-duration: .01ms !important; }
+      .rv { opacity: 1; transform: none; }
+      .gadget { opacity: 0; }
+      .one-tile, .hero-pre, .hero h1, .hero-sub { opacity: 1; }
+      .one-tile { transform: translate(-50%, -50%) scale(1); }
+      .ecg-path { stroke-dashoffset: 0; }
+    }
+  </style>
+</head>
+<body class="lang-en">
+
+  <div id="progress"></div>
+
+  <div class="lang-switch" role="group" aria-label="Language">
+    <button type="button" data-lang="en" class="on">ENG</button>
+    <button type="button" data-lang="ka">ქარ</button>
+  </div>
+
+  <!-- ================= HERO ================= -->
+  <header class="hero">
+    <img class="hero-logo" src="/deck-assets/logo-horizontal-dark.svg" alt="MediMind">
+
+    <div class="converge" aria-hidden="true">
+      <div class="gadget"><span class="en">📞 Phone</span><span class="ka">📞 ტელეფონი</span></div>
+      <div class="gadget"><span class="en">📷 Camera</span><span class="ka">📷 კამერა</span></div>
+      <div class="gadget"><span class="en">🎵 MP3 Player</span><span class="ka">🎵 MP3-ფლეერი</span></div>
+      <div class="gadget"><span class="en">🗺️ Map</span><span class="ka">🗺️ რუკა</span></div>
+      <div class="gadget"><span class="en">🔦 Flashlight</span><span class="ka">🔦 ფანარი</span></div>
+      <div class="one-tile"><img src="/deck-assets/logo-icon-light.svg" alt=""></div>
+    </div>
+
+    <div class="hero-pre">
+      <span class="en">MediMind · The AI-Native Hospital OS</span>
+      <span class="ka">MediMind · AI-ზე აგებული საავადმყოფოს ოპერაციული სისტემა</span>
+    </div>
+    <h1>
+      <span class="en">The <span class="grad">iPhone moment</span><br>for the hospital.</span>
+      <span class="ka">საავადმყოფოს<br><span class="grad">iPhone-მომენტი.</span></span>
+    </h1>
+    <p class="hero-sub">
+      <span class="en">One operating system replaces forty. AI at the core — watching every patient, across every department, at once.</span>
+      <span class="ka">ერთი ოპერაციული სისტემა ცვლის ორმოცს. ბირთვში — ხელოვნური ინტელექტი, რომელიც ყველა პაციენტს, ყველა განყოფილებაში, ერთდროულად აკვირდება.</span>
+    </p>
+    <div class="scroll-cue" aria-hidden="true"></div>
+  </header>
+
+  <!-- ================= ACT I — THE BEFORE ================= -->
+  <section>
+    <div class="wrap">
+      <div class="kicker rv"><span class="en">The Before</span><span class="ka">„მანამდელი" ეპოქა</span></div>
+      <h2 class="rv d1">
+        <span class="en">Hospitals are still living before the iPhone.</span>
+        <span class="ka">საავადმყოფოები დღემდე iPhone-მდელ ეპოქაში ცხოვრობენ.</span>
+      </h2>
+      <p class="prose rv d2">
+        <span class="en">Before the iPhone, you carried five gadgets that couldn't talk to each other — a phone, a camera, an MP3 player, a map, a flashlight. Hospitals are still stuck in that "before": <strong>40-odd separate programs</strong> for records, orders, pharmacy, labs, scans, and billing, held together with <em class="hl">logins and luck</em>.</span>
+        <span class="ka">iPhone-მდე ხუთი გაჯეტი დაგვქონდა, რომლებიც ერთმანეთს ვერ ელაპარაკებოდნენ — ტელეფონი, კამერა, MP3-ფლეერი, რუკა, ფანარი. საავადმყოფოები დღემდე იმ „მანამდელ" ეპოქაში არიან გაჭედილი: <strong>40-მდე ცალკეული პროგრამა</strong> ჩანაწერებისთვის, დანიშნულებებისთვის, აფთიაქისთვის, ლაბორატორიისთვის, კვლევებისა და ბილინგისთვის — ერთმანეთზე <em class="hl">პაროლებითა და იღბლით</em> გადაბმული.</span>
+      </p>
+
+      <div class="wall rv d2" id="wall" aria-hidden="true"></div>
+      <p class="wall-caption rv d3">
+        <span class="en">Forty screens. Forty logins. Not one of them sees the whole patient.</span>
+        <span class="ka">ორმოცი ეკრანი. ორმოცი პაროლი. ვერცერთი ვერ ხედავს პაციენტს მთლიანად.</span>
+      </p>
+
+      <p class="prose rv d3" style="margin-top: 44px;">
+        <span class="en"><strong>Nothing sees the whole patient</strong> — so the one who has to, the doctor, carries it all in their head.</span>
+        <span class="ka"><strong>ვერცერთი სისტემა ვერ ხედავს პაციენტს მთლიანად</strong> — ამიტომ ის, ვისაც ეს ევალება — ექიმი — ყველაფერს საკუთარ თავში ატარებს.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= ACT II — 2 A.M. ================= -->
+  <section class="dark-sec night">
+    <div class="wrap">
+      <div class="clock rv">2<span class="blink">:</span>00 <span style="font-size:.45em; vertical-align: middle;">AM</span></div>
+      <div class="night-label rv d1">
+        <span class="en">When exhaustion meets a missed signal</span>
+        <span class="ka">როცა გადაღლა შემჩნეულ საფრთხეს ხვდება</span>
+      </div>
+
+      <p class="prose rv d2" style="text-align:center; max-width: 640px; margin: 0 auto 46px;">
+        <span class="en">When a doctor is exhausted at 2 a.m. and about to miss something — <strong>the system doesn't.</strong></span>
+        <span class="ka">როცა ღამის 2 საათზე გადაღლილი ექიმი რაღაცის გამოტოვების ზღვარზეა — <strong>სისტემა არ უშვებს.</strong></span>
+      </p>
+
+      <div class="ecg-box rv d2">
+        <svg viewBox="0 0 680 74" preserveAspectRatio="none" aria-hidden="true">
+          <path class="ecg-path" d="M0,40 H120 l14,-7 14,7 h40 l8,-26 10,50 8,-46 8,22 h60 l12,-6 12,6 h50 l8,-24 10,46 8,-42 8,20 h70 l14,-8 14,8 h92"/>
+        </svg>
+      </div>
+
+      <div class="acts">
+        <div class="act-row rv"><span class="tick">✓</span><span><span class="en">Spots the danger early</span><span class="ka">საფრთხეს ადრევე ამჩნევს</span></span></div>
+        <div class="act-row rv d1"><span class="tick">✓</span><span><span class="en">Orders the right tests</span><span class="ka">საჭირო კვლევებს ნიშნავს</span></span></div>
+        <div class="act-row rv d2"><span class="tick">✓</span><span><span class="en">Flags the risky drug combination</span><span class="ka">სახიფათო წამლების კომბინაციაზე აფრთხილებს</span></span></div>
+        <div class="act-row rv d3"><span class="tick">✓</span><span><span class="en">Books the bed</span><span class="ka">საწოლს ჯავშნის</span></span></div>
+        <div class="act-row rv d4"><span class="tick">✓</span><span><span class="en">Clears the paperwork</span><span class="ka">საბუთებს ასუფთავებს</span></span></div>
+      </div>
+
+      <p class="night-close rv d5">
+        <span class="en">— before anyone <span class="u">falls through the cracks</span>.</span>
+        <span class="ka">— სანამ ვინმე <span class="u">უყურადღებოდ დარჩება</span>.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= ACT III — THE MOAT ================= -->
+  <section>
+    <div class="wrap">
+      <div class="kicker rv"><span class="en">Why no one can copy it</span><span class="ka">რატომ ვერ დაგვაკოპირებენ</span></div>
+      <h2 class="rv d1">
+        <span class="en">We didn't bolt AI onto old software.<br>We built the hospital new — from the first line.</span>
+        <span class="ka">ჩვენ AI ძველ პროგრამას არ მივაკარით.<br>საავადმყოფო თავიდან ავაშენეთ — პირველივე ხაზიდან.</span>
+      </h2>
+      <p class="prose rv d2">
+        <span class="en">That's the whole trick: because everything lives in <em class="hl">one place</em>, the AI can actually <strong>see and act across the entire hospital</strong>. A competitor stapling AI onto decades-old software can't — they'd have to tear out their foundations and start over.</span>
+        <span class="ka">მთელი საიდუმლო ესაა: რადგან ყველაფერი <em class="hl">ერთ სისტემაში</em> ცხოვრობს, AI-ს რეალურად შეუძლია <strong>დაინახოს და იმოქმედოს მთელ საავადმყოფოში</strong>. კონკურენტი, რომელიც AI-ს ათწლეულების წინანდელ პროგრამებს აკერებს, ამას ვერ შეძლებს — მას საძირკვლის დანგრევა და ნულიდან დაწყება მოუწევდა.</span>
+      </p>
+      <div class="flow rv d3" aria-hidden="true">
+        <div class="flow-chip"><span class="en">One system</span><span class="ka">ერთი სისტემა</span><small><span class="en">everything lives here</span><span class="ka">ყველაფერი აქ ცხოვრობს</span></small></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-chip"><span class="en">AI sees everything</span><span class="ka">AI ყველაფერს ხედავს</span><small><span class="en">every patient, every dept</span><span class="ka">ყველა პაციენტი, ყველა განყოფილება</span></small></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-chip"><span class="en">AI acts</span><span class="ka">AI მოქმედებს</span><small><span class="en">across the whole hospital</span><span class="ka">მთელ საავადმყოფოში</span></small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ACT IV — DOCTORS & GEORGIA ================= -->
+  <section style="padding-top: 40px;">
+    <div class="wrap-wide">
+      <div class="duo">
+        <div class="duo-card rv">
+          <span class="badge"><span class="en">Who's building it</span><span class="ka">ვინ აშენებს</span></span>
+          <h3><span class="en">Doctors building for doctors.</span><span class="ka">ექიმები ვაშენებთ ექიმებისთვის.</span></h3>
+          <p>
+            <span class="en">Our founder is a practicing cardiologist who tests every feature on his own patients before it ships. Nothing reaches a hospital that hasn't survived a real ward first.</span>
+            <span class="ka">ჩვენი დამფუძნებელი მოქმედი კარდიოლოგია, რომელიც ყოველ ფუნქციას ჯერ საკუთარ პაციენტებზე ამოწმებს და მხოლოდ ამის შემდეგ უშვებს. საავადმყოფოში ვერაფერი მოხვდება, რასაც რეალური პალატა არ გაუვლია.</span>
+          </p>
+        </div>
+        <div class="duo-card rv d2">
+          <span class="badge"><span class="en">Where — and why it matters</span><span class="ka">სად — და რატომ აქვს ამას მნიშვნელობა</span></span>
+          <h3><span class="en">Georgia is our unfair advantage.</span><span class="ka">საქართველო ჩვენი უპირატესობაა.</span></h3>
+          <p>
+            <span class="en">Building in Georgia lets us put real, decision-making medical AI into live hospitals <strong>now</strong>, while the rest of the world waits years for approval — and every month we run becomes proof no rival can go back and recreate.</span>
+            <span class="ka">საქართველოში მუშაობა საშუალებას გვაძლევს, რეალური, გადაწყვეტილების მიმღები სამედიცინო AI ცოცხალ საავადმყოფოებში <strong>დღესვე</strong> ჩავრთოთ — მაშინ, როცა დანარჩენი მსოფლიო ნებართვას წლობით ელოდება. და ყოველი ნამუშევარი თვე იქცევა მტკიცებულებად, რომელსაც ვერცერთი კონკურენტი უკან დაბრუნებით ვერ აღიდგენს.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ACT V — TRACTION ================= -->
+  <section style="background: linear-gradient(180deg, var(--paper), #eef4fb 60%, var(--paper));">
+    <div class="wrap-wide">
+      <div class="kicker rv"><span class="en">The results so far</span><span class="ka">შედეგები აქამდე</span></div>
+      <h2 class="rv d1">
+        <span class="en">Thirteen months. Four people.<br>What took the giants forty years.</span>
+        <span class="ka">ცამეტი თვე. ოთხი ადამიანი.<br>ის, რასაც გიგანტებს ორმოცი წელი დასჭირდათ.</span>
+      </h2>
+      <p class="prose rv d2">
+        <span class="en">In just 13 months, a team of four built what took the giants 40 years and thousands of engineers — and signed <strong>Georgia's second-largest hospital chain</strong>. Already live in real hospitals today, with the full network going live next month.</span>
+        <span class="ka">სულ რაღაც 13 თვეში ოთხკაციანმა გუნდმა ააშენა ის, რასაც გიგანტებს 40 წელი და ათასობით ინჟინერი დასჭირდათ — და ხელი მოვაწერეთ <strong>საქართველოს სიდიდით მეორე საავადმყოფოთა ქსელთან</strong>. სისტემა უკვე მუშაობს რეალურ საავადმყოფოებში, სრული ქსელი კი მომავალ თვეს ერთვება.</span>
+      </p>
+
+      <div class="stats">
+        <div class="stat rv"><div class="num"><span data-count="13">0</span></div><div class="lbl"><span class="en">Months</span><span class="ka">თვე</span></div></div>
+        <div class="stat rv d1"><div class="num"><span data-count="25">0</span></div><div class="lbl"><span class="en">Hospitals</span><span class="ka">საავადმყოფო</span></div></div>
+        <div class="stat rv d2"><div class="num"><span class="pre">~</span><span data-count="1000">0</span></div><div class="lbl"><span class="en">Doctors</span><span class="ka">ექიმი</span></div></div>
+        <div class="stat rv d3"><div class="num"><span data-count="4">0</span></div><div class="lbl"><span class="en">Builders</span><span class="ka">შემქმნელი</span></div></div>
+      </div>
+
+      <div class="gov-strip">
+        <div class="gov-chip live-chip rv d3"><span class="dot"></span><span class="en">Live in real hospitals today</span><span class="ka">უკვე მუშაობს რეალურ საავადმყოფოებში</span></div>
+        <div class="gov-chip rv d4"><span class="dot"></span><span class="en">Government grant — backed by the state</span><span class="ka">სახელმწიფო გრანტი — მთავრობის მხარდაჭერა</span></div>
+        <div class="gov-chip rv d5"><span class="dot"></span><span class="en">Among the first "Innovative Startup" status holders in the country</span><span class="ka">ქვეყანაში ერთ-ერთი პირველი „ინოვაციური სტარტაპის" სტატუსით</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ACT VI — THE CLOSE ================= -->
+  <section class="close-sec dark-sec">
+    <div class="kicker rv" style="justify-content:center; display:flex;"><span class="en">The market</span><span class="ka">ბაზარი</span></div>
+    <p class="market-line rv d1">
+      <span class="en"><strong>Every hospital on earth needs this.</strong> It's a <strong>$30-billion-a-year market</strong> about to be rebuilt from zero — and we intend to be what it's rebuilt into. We start where hospitals could never afford the old giants, and we don't stop there.</span>
+      <span class="ka"><strong>ეს ყველა საავადმყოფოს სჭირდება დედამიწაზე.</strong> ეს არის <strong>წელიწადში 30-მილიარდიანი ბაზარი</strong>, რომელიც ახლა ნულიდან შენდება თავიდან — და ჩვენ ვაპირებთ ვიყოთ ის, რადაც აშენდება. ვიწყებთ იქ, სადაც საავადმყოფოებს ძველი გიგანტების ფასი არასდროს შეეძლოთ — და აქ არ ვჩერდებით.</span>
+    </p>
+
+    <p class="market-line rv d2" style="margin-bottom: 34px;">
+      <span class="en">The best doctor in the world can only be in one room at a time.</span>
+      <span class="ka">მსოფლიოში საუკეთესო ექიმი ერთდროულად მხოლოდ ერთ ოთახში შეიძლება იყოს.</span>
+    </p>
+
+    <div class="big-quote rv d3">
+      <span class="en">MediMind is in <span class="grad">every room, in every hospital</span> — and that's the difference between saving thousands of lives and saving <span class="grad">millions</span>.</span>
+      <span class="ka">MediMind <span class="grad">ყველა ოთახშია, ყველა საავადმყოფოში</span> — და ეს არის განსხვავება ათასობით სიცოცხლის გადარჩენასა და <span class="grad">მილიონობით</span> სიცოცხლის გადარჩენას შორის.</span>
+    </div>
+    <div class="quote-bar rv d4"></div>
+
+    <img class="close-logo rv d4" src="/deck-assets/logo-horizontal-dark.svg" alt="MediMind">
+    <p class="contact rv d5">
+      <a href="mailto:team@medimind.md">team@medimind.md</a> · <a href="https://medimind.md">medimind.md</a>
+    </p>
+  </section>
+
+  <script>
+    // ---- language toggle (persisted) ----
+    (function () {
+      var btns = document.querySelectorAll('.lang-switch button');
+      function setLang(l) {
+        document.body.className = 'lang-' + l;
+        document.documentElement.lang = l;
+        btns.forEach(function (b) { b.classList.toggle('on', b.dataset.lang === l); });
+        try { localStorage.setItem('mm_story_lang', l); } catch (_) {}
+      }
+      btns.forEach(function (b) { b.addEventListener('click', function () { setLang(b.dataset.lang); }); });
+      var saved = null;
+      try { saved = localStorage.getItem('mm_story_lang'); } catch (_) {}
+      if (saved === 'ka' || saved === 'en') setLang(saved);
+    })();
+
+    // ---- build the wall of 40 apps ----
+    (function () {
+      var names = ['EMR','Orders','Pharmacy','LIS','PACS','Billing','ADT','Scheduling',
+                   'RIS','Nursing','ICU','ER','Blood Bank','Dietary','HR','Inventory',
+                   'Claims','Referrals','Pathology','Cardiology','Dialysis','OR','Anesthesia','Wards',
+                   'Archive','Reports','Coding','Triage','Vitals','Consents','Portal','Telemetry',
+                   'Assets','Transport','Sterile','Imaging','Rx Check','Discharge','Audit','Backup'];
+      var wall = document.getElementById('wall');
+      names.forEach(function (n, i) {
+        var d = document.createElement('div');
+        d.className = 'app';
+        d.style.setProperty('--i', i);
+        d.innerHTML = '<i></i>' + n;
+        wall.appendChild(d);
+      });
+    })();
+
+    // ---- reveal on scroll ----
+    (function () {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('on');
+            io.unobserve(e.target);
+            e.target.querySelectorAll('[data-count]').forEach(countUp);
+          }
+        });
+      }, { threshold: 0.18, rootMargin: '0px 0px -6% 0px' });
+      document.querySelectorAll('.rv, .wall, .ecg-box').forEach(function (el) { io.observe(el); });
+
+      function countUp(el) {
+        var target = parseInt(el.dataset.count, 10);
+        var dur = 1400, t0 = null;
+        function step(t) {
+          if (!t0) t0 = t;
+          var p = Math.min((t - t0) / dur, 1);
+          var eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.round(target * eased).toLocaleString('en-US');
+          if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+    })();
+
+    // ---- scroll progress bar ----
+    (function () {
+      var bar = document.getElementById('progress');
+      addEventListener('scroll', function () {
+        var h = document.documentElement;
+        bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+      }, { passive: true });
+    })();
+  </script>
+</body>
+</html>

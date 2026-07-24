@@ -38,6 +38,13 @@
     Cache-Control = "no-store, must-revalidate"
     X-Robots-Tag  = "noindex, nofollow"
 
+# ─── Investor story page (story.html) — never cache, never index ───
+[[headers]]
+  for = "/story.html"
+  [headers.values]
+    Cache-Control = "no-store, must-revalidate"
+    X-Robots-Tag  = "noindex, nofollow"
+
 # ─── Hospital partnership deck — same treatment: never cache, never index ───
 [[headers]]
   for = "/hospitals.html"

@@ -10,10 +10,10 @@ export const RecognitionSection: React.FC = () => {
   return (
     <SectionShell id="proof" variant="gradient" ambient className="border-t border-surface-border">
       <GradientHeading
-        eyebrow={{ icon: ShieldCheck, label: 'Trusted, recognized, deployed', tone: 'light' }}
+        eyebrow={{ icon: ShieldCheck, label: 'Proof', tone: 'light' }}
         title="Backed by doctors."
-        highlight="Recognized by government. Deployed in hospitals."
-        subhead="From idea to a 25-hospital contract in twelve months."
+        highlight="Recognized by government. Live in hospitals."
+        subhead="From idea to a 25-hospital network in 13 months."
       />
 
       <div className="mt-12 sm:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">

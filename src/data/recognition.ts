@@ -28,8 +28,8 @@ export const recognitionTiles: RecognitionTile[] = [
   {
     id: 'chain-contract',
     icon: Handshake,
-    title: '25-hospital chain — signed contract',
-    body: 'Multi-site rollout across Georgia, planned go-live August 2026.',
+    title: '25-hospital chain — live',
+    body: 'Georgia’s second-largest hospital chain, running on MediMind network-wide.',
   },
   {
     id: 'doctor-built',

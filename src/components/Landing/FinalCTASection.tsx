@@ -26,7 +26,7 @@ export const FinalCTASection: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="mt-5 text-base sm:text-lg text-text-muted leading-relaxed"
         >
-          A 30-minute demo shows you one login, one chart, one data model — the live MediScribe in Georgian, the command center, and specialty-routed AI, all on the same screen, on the same patient.
+          A 30-minute demo shows one login, one chart, one patient — the scribe writing in Georgian, the command center live, and AI on the same screens your doctors would use.
         </motion.p>
 
         <motion.div

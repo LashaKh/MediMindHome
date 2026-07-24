@@ -104,15 +104,6 @@ const timelineOptions = [
   { value: 'exploring', label: 'Just exploring options' }
 ];
 
-const budgetRangeOptions = [
-  { value: 'startup', label: 'Startup Budget (< $10K annually)' },
-  { value: 'small', label: 'Small Practice ($10K - $50K annually)' },
-  { value: 'medium', label: 'Medium Organization ($50K - $200K annually)' },
-  { value: 'large', label: 'Large Organization ($200K - $500K annually)' },
-  { value: 'enterprise', label: 'Enterprise ($500K+ annually)' },
-  { value: 'discuss', label: 'Prefer to discuss' }
-];
-
 export const RequestDemo: React.FC = () => {
   const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(1);
@@ -289,12 +280,11 @@ export const RequestDemo: React.FC = () => {
           </div>
           
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            Schedule Your Personalized Demo
+            See MediMind on your hospital’s workflows
           </h1>
-          
+
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Experience how MediMind can transform your healthcare organization. 
-            Get a tailored demonstration based on your specific needs.
+            30 minutes. One login, one chart, one patient — live. We’ll tailor the walkthrough to your hospital.
           </p>
         </motion.div>
 
@@ -442,7 +432,7 @@ export const RequestDemo: React.FC = () => {
                               ? 'border-red-300 focus:border-red-500' 
                               : 'border-gray-200 dark:border-gray-600 focus:border-accent'
                           } bg-white/50 dark:bg-gray-700/50 focus:outline-none focus:ring-2 focus:ring-accent/30 transition-colors`}
-                          placeholder="+1 (555) 123-4567"
+                          placeholder="+995 555 12 34 56"
                         />
                       </div>
                       {errors.phone && (
@@ -650,7 +640,7 @@ export const RequestDemo: React.FC = () => {
                         value={formData.currentEHR}
                         onChange={(e) => handleInputChange('currentEHR', e.target.value)}
                         className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 focus:border-accent bg-white/50 dark:bg-gray-700/50 focus:outline-none focus:ring-2 focus:ring-accent/30 transition-colors"
-                        placeholder="e.g., Epic, Cerner, Allscripts, or 'None'"
+                        placeholder="e.g., your current EMR, LIS, or PACS vendors"
                       />
                     </div>
                   </div>
@@ -719,18 +709,14 @@ export const RequestDemo: React.FC = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
         >
-          <div className="flex items-center justify-center gap-8 text-sm text-gray-600 dark:text-gray-400">
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-gray-600 dark:text-gray-400">
             <div className="flex items-center gap-2">
-              <Shield className="h-4 w-4" />
-              HIPAA Compliant
+              <CheckCircle className="h-4 w-4 text-accent" />
+              Live in 25 hospitals
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle className="h-4 w-4" />
-              SOC 2 Certified
-            </div>
-            <div className="flex items-center gap-2">
-              <HeartHandshake className="h-4 w-4" />
-              Trusted by 500+ Providers
+              <Shield className="h-4 w-4 text-accent" />
+              “Innovative Startup” status — Government of Georgia
             </div>
           </div>
         </motion.div>

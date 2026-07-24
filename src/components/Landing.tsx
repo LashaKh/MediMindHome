@@ -1,8 +1,8 @@
 import React from 'react';
 import { LampHeroSection } from './Landing/LampHeroSection';
 import { FortySystemsSection } from './Landing/FortySystemsSection';
+import { ThreePhaseSection } from './Landing/ThreePhaseSection';
 import { PlatformPillarsSection } from './Landing/PlatformPillarsSection';
-import { AnatomySection } from './Landing/AnatomySection';
 import { AISubstrateSection } from './Landing/AISubstrateSection';
 import { SafetySection } from './Landing/SafetySection';
 import { RecognitionSection } from './Landing/RecognitionSection';
@@ -11,21 +11,22 @@ import { FinalCTASection } from './Landing/FinalCTASection';
 /**
  * MediMind landing — one hospital, one operating system.
  *
- * Narrative arc (aligned with positioning doc):
- *   Hero → Pain (forty systems) → Capabilities (9 pillars) → Anatomy (5 layers)
- *        → AI demo → Safety (AI works, people decide) → Recognition → CTA
+ * Narrative arc — the 3-phase deployment path is the spine:
+ *   Hero → Problem (forty systems) → The Path (3 phases)
+ *        → Platform (Phase 1 depth) → AI demo (Phase 2 in action)
+ *        → Safety (AI works, people decide) → Proof → CTA
  *
- * TeamSection and AmbitionSection remain in the codebase but are not
- * rendered — re-enable once founders are named and ambition copy is
- * re-written in full positioning alignment.
+ * AnatomySection, TeamSection and AmbitionSection remain in the codebase
+ * but are not rendered — Anatomy is internal-architecture framing, and the
+ * other two re-enable once founders are named / ambition copy is aligned.
  */
 export const Landing: React.FC = () => {
   return (
     <div className="w-full bg-surface-page text-text">
       <LampHeroSection />
       <FortySystemsSection />
+      <ThreePhaseSection />
       <PlatformPillarsSection />
-      <AnatomySection />
       <AISubstrateSection />
       <SafetySection />
       <RecognitionSection />

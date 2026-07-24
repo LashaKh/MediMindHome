@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { MediMindLogo } from '../ui/MediMindLogo';
 
 const navigationSections = [
+  { id: 'path', label: 'The Path' },
   { id: 'platform', label: 'Platform' },
   { id: 'ai', label: 'AI' },
   { id: 'safety', label: 'Safety' },

@@ -14,10 +14,10 @@ export const PlatformPillarsSection: React.FC = () => {
   return (
     <SectionShell id="platform" variant="gradient" ambient>
       <GradientHeading
-        eyebrow={{ icon: Layers, label: 'Capabilities at a glance', tone: 'accent' }}
-        title="Everything a hospital needs."
-        highlight="Built into one operating system."
-        subhead="Nine capabilities. One codebase. One FHIR data model. One AI substrate."
+        eyebrow={{ icon: Layers, label: 'Phase 1 · Live today', tone: 'accent' }}
+        title="The foundation:"
+        highlight="everything a hospital needs, built in."
+        subhead="Six capability areas. One system. Nothing to integrate, no vendors to glue together."
       />
 
       <div className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">

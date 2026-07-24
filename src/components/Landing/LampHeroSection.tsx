@@ -5,7 +5,7 @@ import { ArrowRight, FileCheck, Award } from 'lucide-react';
 import { LampContainer } from '../ui/lamp';
 
 const trustChips = [
-  { icon: FileCheck, label: 'Contracted with 25-hospital chain' },
+  { icon: FileCheck, label: 'Live in 25 hospitals' },
   { icon: Award, label: '“Innovative Startup” status — Government of Georgia' },
 ];
 
@@ -44,7 +44,7 @@ export const LampHeroSection: React.FC = () => {
           viewport={{ once: true }}
           className="text-base sm:text-lg md:text-xl text-text-muted leading-relaxed max-w-2xl mx-auto mb-8 sm:mb-10"
         >
-          One of the first hospital operating systems built ground-up on FHIR R4 — every clinical, operational, and financial workflow in a single codebase, a single login, a single data model. Built by doctors. Live in Georgia.
+          Hospitals run on dozens of programs that don’t talk to each other. MediMind replaces them all — every department, every workflow, one system with AI at its core. Built by doctors. Live across Georgia’s second-largest hospital chain.
         </motion.p>
 
         {/* Trust chips */}
@@ -87,12 +87,12 @@ export const LampHeroSection: React.FC = () => {
           </motion.button>
 
           <motion.button
-            onClick={() => scrollTo('platform')}
+            onClick={() => scrollTo('path')}
             className="rounded-full border border-accent/30 bg-accent/5 px-7 py-3.5 text-base font-semibold text-text hover:border-accent/60 hover:bg-accent/10 transition-colors w-full sm:w-auto"
             whileHover={{ scale: 1.03, y: -1 }}
             whileTap={{ scale: 0.97 }}
           >
-            See the operating system
+            See the path
           </motion.button>
         </motion.div>
       </div>

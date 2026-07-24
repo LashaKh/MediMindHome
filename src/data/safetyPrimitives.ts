@@ -13,7 +13,7 @@ export const safetyPrimitives: SafetyPrimitive[] = [
     id: 'prn',
     icon: ShieldAlert,
     title: 'PRN dose enforcement is fail-closed.',
-    body: 'If the dose-limit query can\u2019t reach the server, the dose is BLOCKED — not retried, not silently allowed. Safety over availability.',
+    body: 'If the safety check can\u2019t complete, the dose is blocked — not retried, not silently allowed. Safety over availability.',
   },
   {
     id: 'ddi',
@@ -43,6 +43,6 @@ export const safetyPrimitives: SafetyPrimitive[] = [
     id: 'audit',
     icon: FileLock2,
     title: 'Immutable audit trail.',
-    body: 'Every clinical mutation, every AI generation, every doctor confirmation creates a FHIR AuditEvent + Provenance resource. Standard format, exportable, regulator-ready.',
+    body: 'Every change, every AI suggestion, every doctor confirmation is permanently logged — who did what, and when. Standard format, exportable, regulator-ready.',
   },
 ];

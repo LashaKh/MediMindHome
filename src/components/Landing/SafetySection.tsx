@@ -13,7 +13,7 @@ export const SafetySection: React.FC = () => {
         eyebrow={{ icon: ShieldCheck, label: 'Doctor-Grade Safety', tone: 'success' }}
         title="Built like the operating room."
         highlight="Not the marketing department."
-        subhead="Specific, technical safety primitives — not “we care about safety” theater."
+        subhead="Six hard safety rules built into the system’s core. Each one fails safe: when in doubt, the system stops and a human decides."
       />
 
       <motion.p

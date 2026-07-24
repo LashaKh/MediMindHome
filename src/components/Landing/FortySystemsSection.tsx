@@ -9,19 +9,19 @@ const stats = [
     icon: KeyRound,
     before: '6+ logins',
     after: '1',
-    caption: 'The coordinator stops swivel-chairing between the EMR, portal, regulator, SMS, and email.',
+    caption: 'Your coordinators stop re-typing the same patient into five different screens.',
   },
   {
     icon: Building,
     before: '40+ vendors',
     after: '1',
-    caption: 'The CEO stops paying a monthly fee to every system that half-talks to the next one.',
+    caption: 'One contract, one bill — instead of a monthly fee to every system that half-talks to the next.',
   },
   {
     icon: Cable,
     before: 'Dozens of integrations',
     after: '0',
-    caption: 'The CTO stops firefighting broken interfaces between systems that were never designed to meet.',
+    caption: 'Nothing to glue together, nothing to break. It’s all one system.',
   },
 ];
 
@@ -32,7 +32,7 @@ export const FortySystemsSection: React.FC = () => {
         eyebrow={{ icon: ServerCrash, label: 'The problem', tone: 'accent' }}
         title="Forty systems run hospitals today."
         highlight="One runs them tomorrow."
-        subhead="A modern hospital runs on dozens of disconnected systems — each with its own login, its own data model, its own update cycle. The cost isn't licenses. It's the integrations between them that break every sprint. MediMind replaces the stack."
+        subhead="Every department runs its own program — separate logins, separate vendors, separate bills. None of them see the whole patient. The gaps between those systems are where time, money, and lives get lost."
       />
 
       <div className="mt-12 sm:mt-14 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">

@@ -8,25 +8,25 @@ const stages = [
     id: 'capture',
     icon: Mic,
     title: 'Capture',
-    caption: 'Live consultation, dual-STT race: Enagram (fast) vs. Google Chirp 2 (accurate). Fastest valid result wins.',
+    caption: 'The visit is recorded live — in Georgian or English.',
   },
   {
     id: 'structure',
     icon: FileText,
     title: 'Structure',
-    caption: 'Gemini 2.0 Flash structures the transcript into Subjective / Objective / Assessment / Plan with confidence scoring.',
+    caption: 'AI turns the conversation into a structured clinical note.',
   },
   {
     id: 'code',
     icon: Tags,
     title: 'Code',
-    caption: 'ICD-10 codes generated directly, not narrative prose: I10 — Essential hypertension, E11.9 — Type 2 diabetes.',
+    caption: 'Diagnosis codes are generated automatically — no manual lookup.',
   },
   {
     id: 'persist',
     icon: Database,
     title: 'Persist',
-    caption: 'Composable FHIR. Provenance logged. Government reporting form drafted in parallel. Ready to submit.',
+    caption: 'Saved to the patient’s record with a full audit trail — government form drafted in parallel.',
   },
 ] as const;
 

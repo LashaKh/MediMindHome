@@ -55,8 +55,13 @@ export default {
         'fade-in': 'fadeIn 0.3s ease-in-out',
         'slide-up': 'slideUp 0.3s ease-out',
         'pulse-soft': 'pulseSoft 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'shimmer': 'shimmer 3.5s linear infinite',
       },
       keyframes: {
+        shimmer: {
+          from: { backgroundPosition: '0% 0' },
+          to: { backgroundPosition: '-200% 0' },
+        },
         fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },

@@ -79,6 +79,12 @@ export default {
         navy: '#0f172a',
         'surface-page': 'var(--emr-bg-page)',
       },
+      fontFamily: {
+        // Display serif — editorial "human" voice (headings, pull-quotes, big numerals).
+        serif: ['"Fraunces Variable"', 'Iowan Old Style', 'Georgia', 'Palatino', 'serif'],
+        // Technical mono — "system" voice (eyebrows, indices, data, thread ticks).
+        mono: ['"IBM Plex Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Consolas', 'monospace'],
+      },
     },
   },
   plugins: [],

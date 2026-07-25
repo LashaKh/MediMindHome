@@ -36,11 +36,7 @@ const Waveform: React.FC<{ active: boolean }> = ({ active }) => (
       <motion.div
         key={i}
         className="w-1 rounded-full bg-gradient-to-t from-accent to-light-accent"
-        animate={
-          active
-            ? { height: [6, 22 + (i % 5) * 8, 12, 30 - (i % 4) * 5, 8] }
-            : { height: 6 }
-        }
+        animate={active ? { height: [6, 22 + (i % 5) * 8, 12, 30 - (i % 4) * 5, 8] } : { height: 6 }}
         transition={{ duration: 1.2, repeat: active ? Infinity : 0, ease: 'easeInOut', delay: i * 0.05 }}
       />
     ))}
@@ -64,10 +60,10 @@ const SoapCard: React.FC = () => {
           transition={{ duration: 0.35, delay: i * 0.25 }}
           className="flex items-start gap-2"
         >
-          <span className="mt-0.5 inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded bg-accent/20 text-[10px] font-bold text-accent ring-1 ring-accent/30">
+          <span className="mt-0.5 inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-sm bg-accent/20 font-mono text-[10px] font-bold text-accent ring-1 ring-accent/30">
             {line.tag}
           </span>
-          <p className="text-xs sm:text-sm text-text leading-relaxed">{line.text}</p>
+          <p className="text-xs leading-relaxed text-text sm:text-sm">{line.text}</p>
         </motion.div>
       ))}
     </div>
@@ -88,10 +84,10 @@ const IcdChips: React.FC = () => {
           initial={{ opacity: 0, scale: 0.9, y: 8 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.35, delay: i * 0.2 }}
-          className="flex items-center gap-3 rounded-lg border border-accent/20 bg-accent/5 px-3 py-2"
+          className="flex items-center gap-3 rounded-md border border-accent/20 bg-accent/5 px-3 py-2"
         >
-          <span className="rounded bg-accent/25 px-2 py-0.5 text-xs font-bold text-secondary dark:text-light-accent">{c.code}</span>
-          <span className="text-xs sm:text-sm text-text">{c.label}</span>
+          <span className="rounded-sm bg-accent/25 px-2 py-0.5 font-mono text-xs font-bold text-secondary dark:text-light-accent">{c.code}</span>
+          <span className="text-xs text-text sm:text-sm">{c.label}</span>
         </motion.div>
       ))}
     </div>
@@ -119,7 +115,7 @@ const FhirJson: React.FC = () => {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
-      className="rounded-lg border border-success/30 bg-surface-page/80 p-3 text-[10px] sm:text-xs text-success/90 leading-relaxed overflow-x-auto"
+      className="overflow-x-auto rounded-md border border-success/30 bg-surface-page/80 p-3 text-[10px] leading-relaxed text-success/90 sm:text-xs"
     >
       <code>{json}</code>
     </motion.pre>
@@ -139,81 +135,104 @@ export const MediScribeWalkthrough: React.FC = () => {
   const StageIcon = stages[stage].icon;
 
   return (
-    <div className="rounded-3xl border border-surface-border bg-gradient-to-br from-surface-card/80 to-surface-page/80 p-5 sm:p-8 backdrop-blur-md">
-      {/* Stage tabs */}
-      <div className="mb-6 flex flex-wrap items-center justify-center gap-2">
-        {stages.map((s, i) => {
-          const Icon = s.icon;
-          return (
+    <div className="overflow-hidden rounded-xl border border-surface-border bg-surface-card">
+      {/* console status bar */}
+      <div className="flex items-center justify-between border-b border-surface-border px-4 py-2.5 sm:px-5">
+        <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-text-subtle">
+          MediScribe · Live simulation
+        </span>
+        <span className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-text-subtle">
+          <span className={cn('h-1.5 w-1.5 rounded-full', playing ? 'animate-pulse bg-success' : 'bg-text-subtle')} />
+          {playing ? 'Running' : 'Paused'}
+        </span>
+      </div>
+
+      {/* segmented steps + live progress */}
+      <div className="border-b border-surface-border">
+        <div className="flex flex-wrap items-stretch">
+          {stages.map((s, i) => {
+            const Icon = s.icon;
+            const active = stage === i;
+            return (
+              <button
+                key={s.id}
+                onClick={() => {
+                  setStage(i);
+                  setPlaying(false);
+                }}
+                className={cn(
+                  'flex items-center gap-2 px-3.5 py-3 font-mono text-[11px] uppercase tracking-[0.12em] transition-colors sm:px-5',
+                  active ? 'bg-accent/[0.06] text-accent' : 'text-text-subtle hover:text-text'
+                )}
+              >
+                <span className="tabular-nums opacity-60">{String(i + 1).padStart(2, '0')}</span>
+                <Icon className="h-3.5 w-3.5" strokeWidth={1.75} />
+                <span className="hidden sm:inline">{s.title}</span>
+              </button>
+            );
+          })}
+          <div className="ml-auto flex items-center gap-1 px-3">
             <button
-              key={s.id}
-              onClick={() => {
-                setStage(i);
-                setPlaying(false);
-              }}
-              className={cn(
-                'inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-xs sm:text-sm font-medium transition-colors',
-                stage === i
-                  ? 'bg-accent/20 text-secondary dark:text-light-accent ring-1 ring-accent/40'
-                  : 'text-text-subtle hover:text-text'
-              )}
+              onClick={() => setPlaying((p) => !p)}
+              className="inline-flex h-7 w-7 items-center justify-center rounded-sm text-text-subtle transition-colors hover:bg-surface-hover hover:text-accent"
+              aria-label={playing ? 'Pause' : 'Play'}
             >
-              <Icon className="h-3.5 w-3.5" />
-              <span>
-                <span className="text-text-subtle mr-1">{i + 1}.</span>
-                {s.title}
-              </span>
+              {playing ? <Pause className="h-3.5 w-3.5" /> : <Play className="h-3.5 w-3.5" />}
             </button>
-          );
-        })}
-        <div className="ml-1 flex items-center gap-1">
-          <button
-            onClick={() => setPlaying((p) => !p)}
-            className="inline-flex h-7 w-7 items-center justify-center rounded-full text-text-subtle hover:bg-surface-hover hover:text-accent"
-            aria-label={playing ? 'Pause' : 'Play'}
-          >
-            {playing ? <Pause className="h-3.5 w-3.5" /> : <Play className="h-3.5 w-3.5" />}
-          </button>
-          <button
-            onClick={() => {
-              setStage(0);
-              setPlaying(true);
-            }}
-            className="inline-flex h-7 w-7 items-center justify-center rounded-full text-text-subtle hover:bg-surface-hover hover:text-accent"
-            aria-label="Restart"
-          >
-            <RotateCcw className="h-3.5 w-3.5" />
-          </button>
+            <button
+              onClick={() => {
+                setStage(0);
+                setPlaying(true);
+              }}
+              className="inline-flex h-7 w-7 items-center justify-center rounded-sm text-text-subtle transition-colors hover:bg-surface-hover hover:text-accent"
+              aria-label="Restart"
+            >
+              <RotateCcw className="h-3.5 w-3.5" />
+            </button>
+          </div>
+        </div>
+        {/* progress segment under the active step (fills over the 4.5s auto-advance) */}
+        <div className="relative h-0.5 w-full bg-surface-border/50">
+          <motion.div
+            key={`${stage}-${playing}`}
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: playing ? 1 : 0 }}
+            transition={{ duration: playing ? 4.5 : 0.25, ease: 'linear' }}
+            className="absolute top-0 h-full origin-left bg-accent"
+            style={{ left: `${(100 / stages.length) * stage}%`, width: `${100 / stages.length}%` }}
+          />
         </div>
       </div>
 
-      {/* Stage content */}
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 items-center">
-        <div className="lg:col-span-2 space-y-4">
-          <div className="flex items-center gap-3">
-            <div className="inline-flex rounded-xl bg-gradient-to-br from-accent/30 to-secondary/20 p-2.5 ring-1 ring-accent/30">
-              <StageIcon className="h-5 w-5 text-secondary dark:text-light-accent" />
+      {/* stage content */}
+      <div className="p-5 sm:p-8">
+        <div className="grid grid-cols-1 items-center gap-6 lg:grid-cols-5">
+          <div className="space-y-4 lg:col-span-2">
+            <div className="flex items-center gap-3">
+              <div className="inline-flex rounded-md border border-accent/30 bg-accent/10 p-2.5 text-secondary dark:text-light-accent">
+                <StageIcon className="h-5 w-5" strokeWidth={1.75} />
+              </div>
+              <h3 className="font-serif text-xl font-semibold text-text sm:text-2xl">{stages[stage].title}</h3>
             </div>
-            <h3 className="text-xl sm:text-2xl font-semibold text-text">{stages[stage].title}</h3>
+            <p className="text-sm leading-relaxed text-text-muted sm:text-base">{stages[stage].caption}</p>
           </div>
-          <p className="text-sm sm:text-base text-text-muted leading-relaxed">{stages[stage].caption}</p>
-        </div>
 
-        <div className="lg:col-span-3 min-h-[200px] sm:min-h-[260px] rounded-2xl border border-surface-border bg-surface-page/60 p-5 sm:p-6">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={stage}
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.35, ease: 'easeOut' }}
-            >
-              {stage === 0 && <Waveform active={playing} />}
-              {stage === 1 && <SoapCard />}
-              {stage === 2 && <IcdChips />}
-              {stage === 3 && <FhirJson />}
-            </motion.div>
-          </AnimatePresence>
+          <div className="min-h-[200px] rounded-lg border border-surface-border bg-surface-page/60 p-5 sm:min-h-[260px] sm:p-6 lg:col-span-3">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={stage}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.35, ease: 'easeOut' }}
+              >
+                {stage === 0 && <Waveform active={playing} />}
+                {stage === 1 && <SoapCard />}
+                {stage === 2 && <IcdChips />}
+                {stage === 3 && <FhirJson />}
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
       </div>
     </div>

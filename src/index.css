@@ -119,6 +119,43 @@ html:not(.dark) .bg-surface-card\/80 {
   }
 }
 
+/* ============================================================
+   Editorial headings — solid ink + one-shot light sweep
+   ============================================================
+   Highlight phrases are solid ink (no gradient-clip). On first
+   view a single band of brighter light sweeps across the phrase
+   once, then rests at the base color. Reduced-motion: the global
+   kill-switch collapses the animation to its end (uniform ink).
+   ============================================================ */
+.heading-highlight {
+  color: #2b6cb0; /* light mode — secondary */
+}
+html.dark .heading-highlight {
+  color: #bee3f8; /* dark mode — light-accent */
+}
+.heading-highlight.sweep {
+  background-image: linear-gradient(
+    100deg,
+    #2b6cb0 0%, #2b6cb0 42%, #7cc2ff 50%, #2b6cb0 58%, #2b6cb0 100%
+  );
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: heading-sweep 1.15s cubic-bezier(0.22, 1, 0.36, 1) 1 both;
+}
+html.dark .heading-highlight.sweep {
+  background-image: linear-gradient(
+    100deg,
+    #bee3f8 0%, #bee3f8 42%, #ffffff 50%, #bee3f8 58%, #bee3f8 100%
+  );
+}
+@keyframes heading-sweep {
+  from { background-position: 175% 0; }
+  to   { background-position: -55% 0; }
+}
+
 /* Custom scrollbar */
 .scrollbar-thin {
   scrollbar-width: thin;
@@ -135,4 +172,69 @@ html:not(.dark) .bg-surface-card\/80 {
 }
 .scrollbar-thin::-webkit-scrollbar-thumb:hover {
   background-color: rgba(148, 163, 184, 0.6);
+}
+
+/* ============================================================
+   Hero — technical grid + ECG filament + luminous buttons
+   ============================================================ */
+
+/* Fine engineering grid that fades beneath the lamp light. Lives OUTSIDE the
+   lamp's scale-y-125 wrapper so cells stay square. Colors bypass the accent/*
+   utility remap so both themes read identically. */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(49, 130, 206, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(49, 130, 206, 0.07) 1px, transparent 1px);
+  background-size: 54px 54px;
+  -webkit-mask-image: radial-gradient(ellipse 60% 46% at 50% 40%, #000 12%, transparent 76%);
+  mask-image: radial-gradient(ellipse 60% 46% at 50% 40%, #000 12%, transparent 76%);
+}
+html:not(.dark) .hero-grid {
+  background-image:
+    linear-gradient(to right, rgba(26, 54, 93, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(26, 54, 93, 0.08) 1px, transparent 1px);
+}
+
+/* ECG trace glow + a signal pulse that sweeps the line (CSS → reduced-motion
+   kill-switch stops it automatically). */
+.ecg-line {
+  filter: drop-shadow(0 0 6px rgba(190, 227, 248, 0.95)) drop-shadow(0 0 2px rgba(255, 255, 255, 0.8));
+}
+.ecg-sweep {
+  animation: ecg-sweep 3.2s linear infinite;
+}
+@keyframes ecg-sweep {
+  0%   { left: 0%;   opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { left: 100%; opacity: 0; }
+}
+
+/* Luminous button language — squared, brand-gradient, lit edge + glow.
+   Reused across hero, header, and final CTA. */
+.btn-luminous {
+  position: relative;
+  border-radius: 0.5rem;
+  background-image: linear-gradient(135deg, #1a365d 0%, #2b6cb0 50%, #3182ce 100%);
+  color: #fff;
+  box-shadow: inset 0 0 0 1px rgba(190, 227, 248, 0.18), 0 10px 30px -10px rgba(49, 130, 206, 0.75);
+  transition: box-shadow 0.28s ease;
+}
+html.dark .btn-luminous {
+  background-image: linear-gradient(135deg, #2b6cb0 0%, #3182ce 60%, #4c9fe0 100%);
+}
+.btn-luminous:hover {
+  box-shadow: inset 0 0 0 1px rgba(190, 227, 248, 0.4), 0 14px 36px -8px rgba(49, 130, 206, 0.95);
+}
+.btn-ghost {
+  border-radius: 0.5rem;
+  border: 1px solid rgba(49, 130, 206, 0.35);
+  transition: border-color 0.28s ease, background-color 0.28s ease;
+}
+.btn-ghost:hover {
+  border-color: rgba(49, 130, 206, 0.7);
+  background-color: rgba(49, 130, 206, 0.08);
 }

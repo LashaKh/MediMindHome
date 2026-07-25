@@ -50,7 +50,7 @@ export const Header: React.FC = () => {
                 <motion.button
                   key={section.id}
                   onClick={() => scrollToSection(section.id)}
-                  className="group relative px-4 py-2 text-sm font-medium text-text-muted hover:text-text transition-colors rounded-lg hover:bg-surface-hover"
+                  className="group relative rounded-md px-3 py-2 font-mono text-xs uppercase tracking-[0.12em] text-text-muted transition-colors hover:bg-surface-hover hover:text-text"
                   initial={{ opacity: 0, y: -16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: index * 0.06 }}
@@ -62,7 +62,7 @@ export const Header: React.FC = () => {
 
               <motion.button
                 onClick={goToDemo}
-                className="group relative overflow-hidden ml-4 px-5 py-2.5 brand-gradient text-white text-sm font-semibold rounded-full shadow-lg shadow-accent/30 hover:shadow-accent/50 transition-all"
+                className="btn-luminous group ml-4 px-5 py-2.5 text-sm font-semibold"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: 0.3 }}
@@ -130,7 +130,7 @@ export const Header: React.FC = () => {
 
                 <motion.button
                   onClick={goToDemo}
-                  className="w-full mt-4 px-6 py-3.5 brand-gradient text-white font-semibold rounded-full shadow-lg shadow-accent/30 transition-all"
+                  className="btn-luminous mt-4 w-full px-6 py-3.5 font-semibold"
                   whileTap={{ scale: 0.98 }}
                 >
                   <span className="flex items-center justify-center gap-2">

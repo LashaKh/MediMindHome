@@ -59,7 +59,9 @@ export const phases: Phase[] = [
     scope: 'The hospital that thinks ahead',
     bullets: [
       'Reads every patient in the building, in real time.',
-      'Catches problems before they escalate.',
+      'Spots deterioration early — a live warning score on every patient.',
+      'Orders the right tests, books the bed, clears the paperwork.',
+      'Most watchful at 2 a.m., when the team is stretched thinnest.',
       'The AI flags. Your doctors decide.',
     ],
     proof: { value: '1st', label: 'hospitals that switch it on run among the first in the world' },

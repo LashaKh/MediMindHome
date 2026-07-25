@@ -1,12 +1,12 @@
 import React from 'react';
 import { cn } from '../../utils/cn';
-import { AmbientBlobs } from './ambient-blobs';
 
 type Variant = 'light' | 'dark' | 'gradient' | 'transparent';
 
 interface SectionShellProps {
   id: string;
   variant?: Variant;
+  /** Retained for API compatibility. Ambient blobs were removed in the redesign. */
   ambient?: boolean;
   className?: string;
   innerClassName?: string;
@@ -23,7 +23,6 @@ const variantClasses: Record<Variant, string> = {
 export const SectionShell: React.FC<SectionShellProps> = ({
   id,
   variant = 'transparent',
-  ambient = false,
   className,
   innerClassName,
   children,
@@ -32,12 +31,11 @@ export const SectionShell: React.FC<SectionShellProps> = ({
     <section
       id={id}
       className={cn(
-        'relative overflow-hidden py-16 sm:py-20 md:py-24 lg:py-28',
+        'relative overflow-hidden py-20 sm:py-24 md:py-28 lg:py-32',
         variantClasses[variant],
         className
       )}
     >
-      {ambient && <AmbientBlobs />}
       <div className={cn('relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8', innerClassName)}>
         {children}
       </div>

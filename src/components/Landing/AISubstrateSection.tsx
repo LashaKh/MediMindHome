@@ -8,6 +8,7 @@ export const AISubstrateSection: React.FC = () => {
   return (
     <SectionShell id="ai" variant="dark" ambient className="border-t border-surface-border">
       <GradientHeading
+        align="left"
         eyebrow={{ icon: Sparkles, label: 'Phase 2 · AI in action', tone: 'navy' }}
         title="Watch one visit"
         highlight="document itself."

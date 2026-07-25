@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { motion } from "framer-motion";
 import { cn } from "../../utils/cn";
@@ -21,6 +20,10 @@ export const LampContainer = ({
         className
       )}
     >
+      {/* Fine technical grid, fading beneath the light. Outside the scale-y-125
+          wrapper so cells stay square; the lamp's masks fade it under the beam. */}
+      <div className="hero-grid" aria-hidden />
+
       <div className="relative flex w-full flex-1 scale-y-125 items-center justify-center isolate z-0 ">
         {/* Left conic light */}
         <motion.div
@@ -57,12 +60,32 @@ export const LampContainer = ({
           transition={{ delay: 0.3, duration: 0.8, ease: "easeInOut" }}
           className="absolute inset-auto z-30 h-36 w-[80vw] -translate-y-[6rem] rounded-full bg-[#bee3f8] blur-2xl"
         />
+        {/* ECG heartbeat filament — the luminescence given medical meaning.
+            scale-y-[0.8] cancels the wrapper's scale-y-125 (0.8×1.25 = 1) so the
+            trace is undistorted; non-scaling-stroke keeps it hairline as the
+            width animates in. A signal pulse sweeps along it. */}
         <motion.div
           initial={{ width: "60vw" }}
           whileInView={{ width: "100vw" }}
           transition={{ delay: 0.3, duration: 0.8, ease: "easeInOut" }}
-          className="absolute inset-auto z-50 h-0.5 w-full -translate-y-[7rem] bg-[#bee3f8]"
-        />
+          className="absolute inset-auto z-50 h-8 w-full -translate-y-[7rem] scale-y-[0.8]"
+        >
+          <svg viewBox="0 0 1200 32" preserveAspectRatio="none" className="ecg-line h-full w-full overflow-visible">
+            <path
+              d="M0 16 H440 l10 0 6 -4 6 4 8 0 3 5 4 -20 4 24 4 -9 10 0 8 -5 8 5 H1200"
+              fill="none"
+              stroke="#bee3f8"
+              strokeWidth={2}
+              strokeLinejoin="round"
+              strokeLinecap="round"
+              vectorEffect="non-scaling-stroke"
+            />
+          </svg>
+          <span
+            aria-hidden
+            className="ecg-sweep absolute top-1/2 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white shadow-[0_0_10px_3px_rgba(190,227,248,0.9)]"
+          />
+        </motion.div>
 
         <div className="absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem] bg-surface-page" />
       </div>

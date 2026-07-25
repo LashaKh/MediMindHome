@@ -1,4 +1,5 @@
 import React from 'react';
+import { LightThread } from './Landing/LightThread';
 import { LampHeroSection } from './Landing/LampHeroSection';
 import { FortySystemsSection } from './Landing/FortySystemsSection';
 import { ThreePhaseSection } from './Landing/ThreePhaseSection';
@@ -23,6 +24,7 @@ import { FinalCTASection } from './Landing/FinalCTASection';
 export const Landing: React.FC = () => {
   return (
     <div className="w-full bg-surface-page text-text">
+      <LightThread />
       <LampHeroSection />
       <FortySystemsSection />
       <ThreePhaseSection />

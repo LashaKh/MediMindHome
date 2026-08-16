@@ -8792,7 +8792,15 @@
     .pk-val--live { font-size: 2.9em; color: var(--emr-success); }
     .pk-val--num  { font-size: 3.05em; }
     .pk-val--num i { color: var(--emr-accent); font-style: normal; font-size: .5em; font-weight: 800; vertical-align: .58em; margin-left: 2px; }
-    .pk-val--eta  { font-size: 2.85em; }
+    .pk-val--eta  {
+      font-size: 2.85em;
+      display: flex; align-items: baseline; gap: 8px;
+      white-space: nowrap;
+    }
+    .pk-val--eta i {
+      color: var(--emr-accent); font-style: normal;
+      font-size: .4em; font-weight: 800; letter-spacing: 0;
+    }
     .pk-label { font-size: .98em; font-weight: 700; color: var(--emr-text-primary); line-height: 1.18; }
     .pk-sub { font-size: .76em; color: var(--emr-text-muted); line-height: 1.35; }
     .pk-foot { display: flex; flex-direction: column; gap: 9px; }
@@ -8866,13 +8874,9 @@
       background: linear-gradient(180deg, transparent, var(--emr-border) 22%, var(--emr-border) 78%, transparent);
     }
     .pk-panel .pk-val { font-size: 2.55em; }
-    .pk-panel .pk-prog { margin-top: 7px; max-width: 150px; }
-    /* reserve 2 lines for label + sub so all three stats center-align row-by-row
-       (col-3 "To full go-live" + its sub are naturally 1 line, which threw the trio off-level) */
+    /* Reserve consistent label and context rows so all three proof points align. */
     .pk-panel .pk-label { min-height: 2.36em; }
     .pk-panel .pk-sub   { min-height: 2.7em; }
-    /* equalize stat heights so all three values share one baseline despite col-3's bar */
-    .pk-stat:not(:last-child)::after { content: ''; display: block; height: 12px; }
 
     /* ── MOBILE <=768 ────────────────────────────────────── */
     @media (max-width: 768px) {
@@ -8894,9 +8898,7 @@
       .pk-stat + .pk-stat::before { display: none; }
       .pk-stat + .pk-stat { border-top: 1px solid var(--emr-border); }
       .pk-panel .pk-val { font-size: 2.7em; }
-      .pk-panel .pk-prog { max-width: 240px; }
       .pk-panel .pk-label, .pk-panel .pk-sub { min-height: 0; }
-      .pk-stat:not(:last-child)::after { display: none; }
     }
     </style>
 
@@ -9626,7 +9628,7 @@
       <section class="prog-slide">
         <div class="slide-inner">
           <div class="slide-label"><span class="label-num">01</span>VALIDATION</div>
-          <h2 class="headline-big pk-headline">13 months. From idea to <em>live in 25 hospitals</em>.</h2>
+          <h2 class="headline-big pk-headline">13 months. From idea to <em>live across all 25 hospitals</em>.</h2>
 
           <!-- KPI BOARD · the four proof points (prominent) -->
           <div class="pk-board">
@@ -9652,26 +9654,25 @@
 
             <!-- UNIFIED · live-scale panel (the three live proofs, one surface) -->
             <div class="pk-panel">
-              <div class="pk-panel-head"><span class="pk-dot"></span>Shipped &amp; scaling</div>
+              <div class="pk-panel-head"><span class="pk-dot"></span>Live now &middot; full rollout underway</div>
               <div class="pk-panel-grid">
 
                 <div class="pk-stat">
                   <span class="pk-val pk-val--live">Live</span>
                   <span class="pk-label">Labs &amp; Imaging live</span>
-                  <span class="pk-sub">Running in 25 hospitals today.</span>
+                  <span class="pk-sub">Labs &amp; Imaging in production.</span>
                 </div>
 
                 <div class="pk-stat">
                   <span class="pk-val pk-val--num">1,000<i>+</i></span>
                   <span class="pk-label">Doctors using daily</span>
-                  <span class="pk-sub">Active across pilot sites.</span>
+                  <span class="pk-sub">50 doctors use the deepest pilot daily.</span>
                 </div>
 
                 <div class="pk-stat">
-                  <span class="pk-val pk-val--eta">2 mo</span>
-                  <span class="pk-label">To full go-live</span>
-                  <span class="pk-sub">All 25 sites &middot; Aug 2026.</span>
-                  <div class="pk-prog"><i></i></div>
+                  <span class="pk-val pk-val--eta"><b>&lt; 1</b><i>month</i></span>
+                  <span class="pk-label">Full platform rollout</span>
+                  <span class="pk-sub">Across all 25 sites.</span>
                 </div>
 
               </div>
@@ -9692,7 +9693,7 @@
         </div>
         <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
         <aside class="notes">
-          13 months from idea to contract — and we can prove it. Started as an idea last March. Cardiology pilot with 50 doctors in May. ₾150K Gita grant in September, validating clinical readiness. Pivoted to the full AI-native ecosystem in October. LOI with a 25-hospital chain in January. February: awarded "Innovative Startup" status by the Government of Georgia. Signed the actual 25-hospital contract in April — Georgia's 2nd largest hospital chain. Full go-live August. This is what momentum looks like.
+          13 months from idea to a live 25-hospital network — and we can prove it. Started as an idea last March. Cardiology pilot with 50 doctors in May. ₾150K Gita grant in September, validating clinical readiness. Pivoted to the full AI-native ecosystem in October. LOI with a 25-hospital chain in January. February: awarded "Innovative Startup" status by the Government of Georgia. Signed the actual 25-hospital contract in April — Georgia's 2nd largest hospital chain. Today, Labs and Imaging are already live in production across all 25 hospitals, with more than 1,000 clinician accounts provisioned and 50 doctors using the deepest pilot daily. The remaining milestone is full MediMind platform rollout across the network, which is less than one month away. We are already live; now we are expanding the scope. This is what momentum looks like.
         </aside>
       </section>
 
@@ -10580,7 +10581,7 @@
               </div>
               <div class="pclose-card">
                 <span class="pclose-card-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17"/><path d="M12 3.5c2.6 2.3 2.6 14.7 0 17M12 3.5c-2.6 2.3-2.6 14.7 0 17"/></svg></span>
-                <span>Enter Kazakhstan</span>
+                <span>Enter Central Asia</span>
               </div>
             </div>
             <a class="pclose-cta" href="https://medimind.md" target="_blank" rel="noopener noreferrer">Join the round <span aria-hidden="true">→</span></a>
@@ -10588,7 +10589,7 @@
         </div>
         <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
         <aside class="notes">
-          The ask. We're opening a $200K pre-seed round. The money goes four places: dominate Georgia, collect deep clinical validation and case studies, publish peer-reviewed papers, and enter Kazakhstan with a few targeted regional integrations.
+          The ask. We're opening a $200K pre-seed round. The money goes four places: dominate Georgia, collect deep clinical validation and case studies, publish peer-reviewed papers, and enter Central Asia with a few targeted regional integrations.
         </aside>
       </section>
 
@@ -10624,12 +10625,12 @@
           <h1 class="divider-title">Thank you.</h1>
           <div class="divider-rule" aria-hidden="true"></div>
           <div class="divider-tag">Appendix ahead</div>
-          <div class="divider-sub">Architecture · competition · Q&amp;A</div>
+          <div class="divider-sub">Pricing · investor Q&amp;A · technical backup</div>
           <div class="divider-arrow" aria-hidden="true">→</div>
         </div>
         <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
         <aside class="notes">
-          End of the main deck. Thank you. The slides that follow are appendix material — market math, architecture, competition, Q&amp;A. Happy to take questions here or between sections.
+          End of the main deck. Thank you. The slides that follow are appendix material — pricing, focused investor Q&amp;A, then the original architecture and technical backup slides. Happy to take questions here or between sections.
         </aside>
       </section>
 
@@ -10697,6 +10698,16 @@
   .ptx-punch { font-size: 0.92em; }
   .ptx-esc { font-size: 0.8em; }
 }
+@media (max-width: 360px) {
+  .ptx-grid > div,
+  .ptx-tiers,
+  .ptx-stack { width: 100%; min-width: 0; }
+  .ptx-tier,
+  .ptx-row { width: 100%; max-width: 100%; min-width: 0; box-sizing: border-box; }
+  .ptx-tier-top,
+  .ptx-row { flex-wrap: wrap; }
+  .ptx-row-v { white-space: normal; }
+}
       </style>
       <section class="ptx-slide">
         <div class="slide-inner">
@@ -10748,6 +10759,616 @@
       </section>
 
       <!-- ═══════════════════════════════════════════════
+           APPENDIX · INVESTOR Q&A — founder-supplied answers,
+           distilled for both live delivery and send-ahead reading.
+           One question per slide; full talk track lives in notes.
+           ═══════════════════════════════════════════════ -->
+      <style>
+        /* ===== APPENDIX · INVESTOR Q&A — invqa- namespace ===== */
+        .invqa-slide .slide-inner { padding: 46px 86px 40px; }
+        .invqa-topline { display: flex; align-items: flex-start; gap: 13px; margin-bottom: 13px; }
+        .invqa-index {
+          display: inline-flex; align-items: center; justify-content: center;
+          width: 34px; height: 24px; border-radius: 999px;
+          background: var(--emr-light-accent); color: var(--emr-secondary);
+          font-size: .56em; font-weight: 800; letter-spacing: .06em;
+          margin-top: 1px;
+        }
+        .invqa-question {
+          margin: 0; color: var(--emr-text-muted); font-size: .68em; font-weight: 700;
+          letter-spacing: .03em; line-height: 1.25;
+        }
+        .invqa-title {
+          margin: 0; max-width: 1120px; color: var(--emr-text-primary);
+          font-size: 1.86em; line-height: 1.04; letter-spacing: -.03em; font-weight: 760;
+        }
+        .invqa-title em { color: var(--emr-secondary); font-style: italic; }
+
+        .invqa-layout {
+          display: grid; grid-template-columns: .76fr 1.24fr; gap: 38px;
+          align-items: stretch; margin-top: 24px;
+        }
+        .invqa-anchor {
+          min-height: 300px; padding: 28px 30px; border-radius: 22px;
+          display: flex; flex-direction: column; justify-content: space-between;
+          color: #fff; background: var(--emr-gradient-primary);
+          box-shadow: 0 22px 48px rgba(26,54,93,.24); overflow: hidden;
+          position: relative;
+        }
+        .invqa-anchor::after {
+          content: ""; position: absolute; width: 220px; height: 220px; border-radius: 50%;
+          right: -95px; bottom: -110px; border: 1px solid rgba(255,255,255,.22);
+          box-shadow: 0 0 0 26px rgba(255,255,255,.035), 0 0 0 52px rgba(255,255,255,.025);
+        }
+        .invqa-anchor-label {
+          position: relative; z-index: 1; font-size: .58em; font-weight: 800;
+          letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.66);
+        }
+        .invqa-anchor-main {
+          position: relative; z-index: 1; display: block; max-width: 340px;
+          font-size: 2.05em; line-height: .98; font-weight: 800; letter-spacing: -.045em;
+        }
+        .reveal .invqa-anchor .invqa-anchor-main {
+          color: #fff; -webkit-text-fill-color: #fff; background: none;
+        }
+        .invqa-anchor-sub {
+          position: relative; z-index: 1; max-width: 330px;
+          font-size: .75em; line-height: 1.4; font-weight: 560; color: rgba(255,255,255,.82);
+        }
+        .invqa-lines { align-self: center; width: 100%; border-top: 1px solid var(--emr-border); }
+        .invqa-line {
+          display: grid; grid-template-columns: 34px 1fr; gap: 14px; align-items: start;
+          padding: 16px 0; border-bottom: 1px solid var(--emr-border);
+        }
+        .invqa-line-num {
+          display: inline-flex; align-items: center; justify-content: center;
+          width: 30px; height: 30px; border-radius: 50%; background: var(--emr-bg-tint);
+          color: var(--emr-secondary); font-size: .63em; font-weight: 800;
+        }
+        .invqa-line p { margin: 0; color: var(--emr-text-body); font-size: .83em; line-height: 1.38; }
+        .invqa-line b { color: var(--emr-text-primary); font-weight: 760; }
+        .invqa-bottom {
+          margin-top: 18px; padding-top: 13px; border-top: 2px solid var(--emr-light-accent);
+          display: flex; align-items: baseline; gap: 12px; color: var(--emr-text-primary);
+          font-size: .82em; line-height: 1.35;
+        }
+        .invqa-bottom b {
+          flex: 0 0 auto; color: var(--emr-secondary); font-size: .72em; font-weight: 850;
+          letter-spacing: .1em; text-transform: uppercase;
+        }
+
+        /* Metrics: large numbers on a shared baseline, not a dashboard. */
+        .invqa-metrics {
+          display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 32px;
+          padding: 22px 0 20px; border-top: 1px solid var(--emr-border); border-bottom: 1px solid var(--emr-border);
+        }
+        .invqa-metric { min-width: 0; min-height: 130px; padding: 0 28px; display: flex; flex-direction: column; justify-content: center; }
+        .invqa-metric:first-child { padding-left: 0; }
+        .invqa-metric + .invqa-metric { border-left: 1px solid var(--emr-border); }
+        .invqa-metric-value { color: var(--emr-secondary); font-size: 2.28em; line-height: .95; font-weight: 820; letter-spacing: -.045em; }
+        .invqa-metric-label { margin-top: 9px; color: var(--emr-text-primary); font-size: .76em; line-height: 1.28; font-weight: 740; }
+        .invqa-metric-note { margin-top: 5px; color: var(--emr-text-muted); font-size: .62em; line-height: 1.35; }
+        .invqa-explain { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-top: 20px; }
+        .invqa-explain p { margin: 0; color: var(--emr-text-body); font-size: .76em; line-height: 1.42; }
+        .invqa-explain b { color: var(--emr-text-primary); }
+
+        /* Process: three calm stages with a single connecting rule. */
+        .invqa-steps {
+          display: grid; grid-template-columns: repeat(3, 1fr); position: relative;
+          gap: 26px; margin-top: 38px;
+        }
+        .invqa-steps::before {
+          content: ""; position: absolute; left: 8%; right: 8%; top: 24px; height: 2px;
+          background: linear-gradient(90deg, var(--emr-light-accent), var(--emr-secondary), var(--emr-light-accent));
+        }
+        .invqa-step { position: relative; padding-top: 56px; }
+        .invqa-step-num {
+          position: absolute; z-index: 1; top: 0; left: 0;
+          width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center;
+          background: var(--emr-gradient-primary); color: #fff; box-shadow: 0 9px 22px rgba(26,54,93,.20);
+          font-size: .72em; font-weight: 820;
+        }
+        .invqa-step h3 { margin: 7px 0 6px; color: var(--emr-text-primary); font-size: .93em; line-height: 1.15; }
+        .invqa-step p { margin: 0; color: var(--emr-text-body); font-size: .72em; line-height: 1.42; }
+        .invqa-proofrail {
+          display: flex; align-items: center; justify-content: space-between; gap: 20px;
+          margin-top: 34px; padding: 17px 20px; border-radius: 15px;
+          background: var(--emr-bg-tint); border: 1px solid var(--emr-light-accent);
+          color: var(--emr-text-body); font-size: .72em; line-height: 1.35;
+        }
+        .invqa-proofrail strong { color: var(--emr-text-primary); font-size: 1.08em; }
+
+        /* Competitor map: three clean columns plus the category claim. */
+        .invqa-rivals {
+          display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 28px;
+          border-top: 1px solid var(--emr-border); border-bottom: 1px solid var(--emr-border);
+        }
+        .invqa-rival { padding: 22px 26px 20px; min-height: 190px; }
+        .invqa-rival:first-child { padding-left: 0; }
+        .invqa-rival + .invqa-rival { border-left: 1px solid var(--emr-border); }
+        .invqa-rival-num { color: var(--emr-secondary); font-size: .66em; font-weight: 850; letter-spacing: .08em; }
+        .invqa-rival h3 { margin: 9px 0 9px; color: var(--emr-text-primary); font-size: .92em; line-height: 1.15; }
+        .invqa-rival p { margin: 0; color: var(--emr-text-body); font-size: .69em; line-height: 1.42; }
+        .invqa-rival small { display: block; margin-top: 9px; color: var(--emr-text-muted); font-size: .58em; line-height: 1.35; }
+
+        @media (max-width: 768px) {
+          .invqa-slide .slide-inner { padding: 72px 20px 36px; }
+          .invqa-topline { align-items: flex-start; margin-bottom: 10px; }
+          .invqa-question { font-size: .78em; }
+          .invqa-title { font-size: 1.45em; line-height: 1.08; }
+          .invqa-layout { grid-template-columns: 1fr; gap: 18px; margin-top: 18px; }
+          .invqa-anchor { min-height: 190px; padding: 22px 24px; }
+          .invqa-anchor-main { font-size: 1.8em; max-width: 90%; }
+          .invqa-anchor-sub { font-size: .86em; }
+          .invqa-line { padding: 13px 0; }
+          .invqa-line p { font-size: .9em; }
+          .invqa-bottom { align-items: flex-start; flex-direction: column; gap: 5px; font-size: .9em; }
+          .invqa-metrics { grid-template-columns: 1fr; margin-top: 22px; padding: 0; }
+          .invqa-metric { min-height: 0; padding: 16px 0; }
+          .invqa-metric + .invqa-metric { border-left: 0; border-top: 1px solid var(--emr-border); }
+          .invqa-metric-value { font-size: 1.9em; }
+          .invqa-metric-label { font-size: .9em; }
+          .invqa-metric-note { font-size: .78em; }
+          .invqa-explain { grid-template-columns: 1fr; gap: 12px; }
+          .invqa-explain p { font-size: .88em; }
+          .invqa-steps { grid-template-columns: 1fr; gap: 18px; margin-top: 22px; }
+          .invqa-steps::before { left: 23px; right: auto; top: 22px; bottom: 24px; width: 2px; height: auto; }
+          .invqa-step { padding: 0 0 0 62px; min-height: 58px; }
+          .invqa-step-num { width: 44px; height: 44px; }
+          .invqa-step h3 { margin-top: 0; font-size: 1em; }
+          .invqa-step p { font-size: .86em; }
+          .invqa-proofrail { align-items: flex-start; flex-direction: column; gap: 7px; font-size: .84em; }
+          .invqa-rivals { grid-template-columns: 1fr; margin-top: 20px; }
+          .invqa-rival { min-height: 0; padding: 16px 0; }
+          .invqa-rival + .invqa-rival { border-left: 0; border-top: 1px solid var(--emr-border); }
+          .invqa-rival h3 { font-size: 1em; }
+          .invqa-rival p { font-size: .84em; }
+          .invqa-rival small { font-size: .74em; }
+        }
+      </style>
+
+      <!-- A3 · Why are you unique? -->
+      <section class="invqa-slide">
+        <div class="slide-inner">
+          <div class="invqa-topline"><span class="invqa-index">A3</span><p class="invqa-question">What makes MediMind or its approach unique?</p></div>
+          <h2 class="invqa-title">The advantage is not one feature. <em>It compounds every day.</em></h2>
+          <div class="invqa-layout">
+            <div class="invqa-anchor">
+              <span class="invqa-anchor-label">Built from the inside</span>
+              <strong class="invqa-anchor-main">Hospital-first.<br>AI-native.</strong>
+              <span class="invqa-anchor-sub">A practicing doctor, a live hospital environment, and one system designed around AI from day one.</span>
+            </div>
+            <div class="invqa-lines">
+              <div class="invqa-line"><span class="invqa-line-num">1</span><p><b>One shared codebase and data foundation</b> across every department — not AI placed on top of old software.</p></div>
+              <div class="invqa-line"><span class="invqa-line-num">2</span><p><b>Feedback becomes working software in hours or days</b>, then gets validated directly with hospital teams.</p></div>
+              <div class="invqa-line"><span class="invqa-line-num">3</span><p><b>Georgia creates the head start;</b> product depth, evidence, hospital knowledge and trust become the moat.</p></div>
+            </div>
+          </div>
+          <div class="invqa-bottom"><b>Bottom line</b><span>Regulation opens the window. What we build and prove during that window is the durable advantage.</span></div>
+        </div>
+        <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
+        <aside class="notes">
+          What makes MediMind different is that we are not adding AI on top of old hospital software. We built the whole hospital operating system around AI from day one, on one shared codebase and data foundation. I am a practicing doctor building from inside a real hospital, so our feedback loop is unusually fast: we see the problem, turn it into working software in hours or days, and validate it directly with hospital teams. Georgia gives us a head start, but regulation is not the moat. The moat is the complete product, hospital knowledge, real-world evidence and trusted relationships we build during this window. That advantage compounds every day.
+
+          [Sources] Founder-supplied investor Q&amp;A, 16 Aug 2026.
+        </aside>
+      </section>
+
+      <!-- A4 · International adaptability -->
+      <section class="invqa-slide">
+        <div class="slide-inner">
+          <div class="invqa-topline"><span class="invqa-index">A4</span><p class="invqa-question">Can MediMind adapt to different countries and regions?</p></div>
+          <h2 class="invqa-title">One global engine. <em>A local rulebook for each market.</em></h2>
+          <div class="invqa-layout">
+            <div class="invqa-anchor">
+              <span class="invqa-anchor-label">The stable core</span>
+              <strong class="invqa-anchor-main">FHIR R4</strong>
+              <span class="invqa-anchor-sub">A global healthcare data standard means the core does not need to be rebuilt country by country.</span>
+            </div>
+            <div class="invqa-lines">
+              <div class="invqa-line"><span class="invqa-line-num">1</span><p><b>Localize the edge:</b> language, forms, codes, billing, government reporting and regulation.</p></div>
+              <div class="invqa-line"><span class="invqa-line-num">2</span><p><b>Feed official requirements into our engineering system</b> to map every affected workflow, specification, test and code change.</p></div>
+              <div class="invqa-line"><span class="invqa-line-num">3</span><p><b>Clinical, legal and engineering review every release</b> before it reaches a hospital.</p></div>
+            </div>
+          </div>
+          <div class="invqa-bottom"><b>Result</b><span>Many software-level adaptations can be completed in days instead of months — without forking the product.</span></div>
+        </div>
+        <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
+        <aside class="notes">
+          MediMind was designed from the beginning to work across countries. Think of it as one global engine with a different local rulebook for each market. The core stays the same; language, forms, medical codes, billing, government reporting and regulation adapt locally. When a new official requirement appears, our engineering system maps it, identifies every affected part of the product, prepares the specification, and generates code and tests. Clinical, legal and engineering teams review the result before deployment. Because the core is built on FHIR R4, many local adaptations can be completed in days rather than months without rebuilding the system.
+
+          [Sources] Founder-supplied investor Q&amp;A, 16 Aug 2026.
+        </aside>
+      </section>
+
+      <!-- A5 · Moat -->
+      <section class="invqa-slide">
+        <div class="slide-inner">
+          <div class="invqa-topline"><span class="invqa-index">A5</span><p class="invqa-question">What is the hardest part of MediMind to copy?</p></div>
+          <h2 class="invqa-title">Features can be copied. <em>History cannot.</em></h2>
+          <div class="invqa-layout">
+            <div class="invqa-anchor">
+              <span class="invqa-anchor-label">The real moat</span>
+              <strong class="invqa-anchor-main">Evidence<br>+ trust</strong>
+              <span class="invqa-anchor-sub">A growing record of what happened after the system identified a risk and the hospital acted.</span>
+            </div>
+            <div class="invqa-lines">
+              <div class="invqa-line"><span class="invqa-line-num">1</span><p><b>Clinical validation:</b> earlier detection, faster response, fewer errors and better patient flow.</p></div>
+              <div class="invqa-line"><span class="invqa-line-num">2</span><p><b>Operational proof:</b> lower administrative workload and measurable hospital outcomes.</p></div>
+              <div class="invqa-line"><span class="invqa-line-num">3</span><p><b>Embedded trust:</b> published research, regulatory evidence and deeply adopted workflows.</p></div>
+            </div>
+          </div>
+          <div class="invqa-bottom"><b>Compounding moat</b><span>A competitor can reproduce a feature. It cannot instantly reproduce years of evidence, workflow learning and relationships.</span></div>
+        </div>
+        <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
+        <aside class="notes">
+          The hardest thing to copy is not the code. In the AI era, code is becoming a commodity. The hard part is the history created by building and deploying inside real hospitals. We can measure the complete journey: MediMind identifies a problem, the clinician decides, the hospital acts, and we measure the outcome. Over time, those outcomes become peer-reviewed research, regulatory evidence, embedded workflows and trusted hospital relationships. Someone can copy a feature. They cannot copy that history.
+
+          [Sources] Founder-supplied investor Q&amp;A, 16 Aug 2026.
+        </aside>
+      </section>
+
+      <!-- A6 · LTV -->
+      <section class="invqa-slide invqa-slide--metrics">
+        <div class="slide-inner">
+          <div class="invqa-topline"><span class="invqa-index">A6</span><p class="invqa-question">What is the predicted lifetime value?</p></div>
+          <h2 class="invqa-title"><em>~$200K</em> five-year revenue LTV at home — <em>$3–5M</em> abroad.</h2>
+          <div class="invqa-metrics">
+            <div class="invqa-metric"><span class="invqa-metric-value">110</span><span class="invqa-metric-label">paying physicians</span><span class="invqa-metric-note">Target hospital in Georgia</span></div>
+            <div class="invqa-metric"><span class="invqa-metric-value">~$40K</span><span class="invqa-metric-label">annual recurring revenue</span><span class="invqa-metric-note">110 × $30 × 12 months</span></div>
+            <div class="invqa-metric"><span class="invqa-metric-value">~$200K</span><span class="invqa-metric-label">five-year revenue LTV</span><span class="invqa-metric-note">Conservative planning horizon</span></div>
+          </div>
+          <div class="invqa-explain">
+            <p><b>Developed markets:</b> 50–80 physicians at ~$1,000 per month produce roughly $600K–$960K ARR and $3–5M over five years.</p>
+            <p><b>Expansion upside:</b> a core hospital system can remain for 10+ years, with more staff, capabilities and locations added over time.</p>
+          </div>
+          <div class="invqa-bottom"><b>Planning rule</b><span>Use five years for discipline; the natural life of a core hospital system can be materially longer.</span></div>
+        </div>
+        <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
+        <aside class="notes">
+          Our projected five-year revenue LTV for a target hospital in Georgia is about $200,000. Around 110 paying physicians at $30 per month gives us roughly $40,000 in annual recurring revenue; over five years, about $200,000. Five years is conservative because a core hospital system can remain in place for ten years or longer. In developed markets, at roughly $1,000 per physician per month, a 50- to 80-physician hospital produces $600,000 to $960,000 annually and approximately $3–5 million over five years, before expansion to more staff, modules or locations.
+
+          [Sources] Founder-supplied investor Q&amp;A, 16 Aug 2026.
+        </aside>
+      </section>
+
+      <!-- A7 · Current revenue -->
+      <section class="invqa-slide invqa-slide--metrics">
+        <div class="slide-inner">
+          <div class="invqa-topline"><span class="invqa-index">A7</span><p class="invqa-question">What is your current revenue?</p></div>
+          <h2 class="invqa-title"><em>~30K GEL ARR today</em> — priced to remove the switching objection.</h2>
+          <div class="invqa-metrics">
+            <div class="invqa-metric"><span class="invqa-metric-value">2.5K GEL</span><span class="invqa-metric-label">monthly recurring revenue</span><span class="invqa-metric-note">Initial hospital network</span></div>
+            <div class="invqa-metric"><span class="invqa-metric-value">30K GEL</span><span class="invqa-metric-label">annual recurring revenue</span><span class="invqa-metric-note">Current contracted run rate</span></div>
+            <div class="invqa-metric"><span class="invqa-metric-value">0%</span><span class="invqa-metric-label">legacy-budget increase</span><span class="invqa-metric-note">Matched existing software spend</span></div>
+          </div>
+          <div class="invqa-explain">
+            <p><b>Why price low now:</b> remove the budget objection, make switching easy and deploy a much broader product without increasing hospital software spend.</p>
+            <p><b>What it unlocks:</b> faster Georgian adoption, clinical evidence, operating metrics and reference customers for regional expansion.</p>
+          </div>
+          <div class="invqa-bottom"><b>Positioning</b><span>Georgia makes the operation sustainable and proves the model; larger markets create the financial upside.</span></div>
+        </div>
+        <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
+        <aside class="notes">
+          Our initial hospital network generates approximately 30,000 GEL in annual recurring revenue, or about 2,500 GEL per month. That price is intentionally not representative of our long-term pricing. We matched the hospital's existing legacy-software spend, removed the budget objection, and made it easy to deploy a much broader product. For the next six months, we plan to use that aggressive strategy in Georgia to win adoption and produce the clinical evidence, operating metrics and reference customers needed for international expansion. Georgia is primarily our validation market; the larger financial upside comes from Central Asia and later developed markets.
+
+          [Sources] Founder-supplied investor Q&amp;A, 16 Aug 2026.
+        </aside>
+      </section>
+
+      <!-- A8 · Deployment and integrations -->
+      <section class="invqa-slide">
+        <div class="slide-inner">
+          <div class="invqa-topline"><span class="invqa-index">A8</span><p class="invqa-question">Hospital integrations are slow and risky. How can MediMind deploy and scale?</p></div>
+          <h2 class="invqa-title">Give us access and <em>10 days.</em> See your hospital running before you switch.</h2>
+          <div class="invqa-steps">
+            <div class="invqa-step"><span class="invqa-step-num">1</span><h3>Run in parallel</h3><p>Configure MediMind around the hospital's real data, devices and operations while the legacy system stays live.</p></div>
+            <div class="invqa-step"><span class="invqa-step-num">2</span><h3>Test with real work</h3><p>Hospital teams validate every critical area side by side. Nothing stops and nothing is deleted.</p></div>
+            <div class="invqa-step"><span class="invqa-step-num">3</span><h3>Switch after approval</h3><p>Go live only when the hospital signs off. The old system remains available as a one-click fallback.</p></div>
+          </div>
+          <div class="invqa-proofrail"><span><strong>Proven on the hardest interfaces:</strong> 20+ laboratory analyzers connected in days without stopping operations.</span><span>Every deployment creates reusable mappings and tests.</span></div>
+          <div class="invqa-bottom"><b>Offer</b><span>We prove MediMind on the hospital's own operations before asking the hospital to commit.</span></div>
+        </div>
+        <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
+        <aside class="notes">
+          Integration is one of our biggest advantages because we are not adding one more tool to the existing mess. Give us authorized access and ten days. We bring MediMind up alongside the legacy system using the hospital's real data, devices and operations. Nothing stops and nothing is deleted. Hospital teams test both systems side by side, and they switch only after every critical area is approved. The old system remains available as a backup, with one-click fallback. We have already connected more than 20 laboratory analyzers in days without stopping operations. Our AI engineering system accelerates custom integrations, and each deployment makes the next one faster.
+
+          [Sources] Founder-supplied investor Q&amp;A, 16 Aug 2026.
+        </aside>
+      </section>
+
+      <!-- A9 · Market entry -->
+      <section class="invqa-slide">
+        <div class="slide-inner">
+          <div class="invqa-topline"><span class="invqa-index">A9</span><p class="invqa-question">How will you enter other markets?</p></div>
+          <h2 class="invqa-title">Georgia proves it. <em>Central Asia scales it.</em></h2>
+          <div class="invqa-steps">
+            <div class="invqa-step"><span class="invqa-step-num">1</span><h3>Win Georgia</h3><p>Create a national reference market with adoption at scale, real clinical evidence and measurable results.</p></div>
+            <div class="invqa-step"><span class="invqa-step-num">2</span><h3>Scale Central Asia</h3><p>Enter through one strong hospital, localize the rulebook, prove with local data, then reference-sell nationally.</p></div>
+            <div class="invqa-step"><span class="invqa-step-num">3</span><h3>Unlock Europe &amp; the U.S.</h3><p>Use regional evidence, regulatory progress and live outcomes to earn higher-value contracts.</p></div>
+          </div>
+          <div class="invqa-proofrail"><span><strong>The core stays intact.</strong> Languages, documentation, standards, reporting and regulation adapt at the local layer.</span><span>Focused expansion — not scattered pilots.</span></div>
+          <div class="invqa-bottom"><b>Repeatable playbook</b><span>One anchor hospital becomes the trusted reference for the next hospital and the wider market.</span></div>
+        </div>
+        <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
+        <aside class="notes">
+          Our expansion strategy is focused, not scattered. First, we win Georgia and turn it into a national reference market with adoption at scale and measurable clinical results. Central Asia is the natural next market because it shares many of Georgia's problems: fragmented legacy systems, limited modern alternatives and hospitals underserved by Western vendors. We have mapped the important local differences and already started promising conversations. The playbook is repeatable: enter through one strong hospital partner, deploy in parallel, prove the system with local data, and use that hospital as the reference for national expansion. Georgia proves the model; Central Asia scales it; Europe and the U.S. provide the largest long-term value.
+
+          [Sources] Founder-supplied investor Q&amp;A, 16 Aug 2026.
+        </aside>
+      </section>
+
+      <!-- A10 · Proactive AI and safety -->
+      <section class="invqa-slide">
+        <div class="slide-inner">
+          <div class="invqa-topline"><span class="invqa-index">A10</span><p class="invqa-question">What is a proactive AI-native hospital, and how do you keep it safe?</p></div>
+          <h2 class="invqa-title">Digital &rarr; intelligent &rarr; proactive. <em>Humans remain in control.</em></h2>
+          <div class="invqa-steps">
+            <div class="invqa-step"><span class="invqa-step-num">1</span><h3>One reliable foundation</h3><p>Replace fragmented systems with high-quality software and one shared hospital data layer.</p></div>
+            <div class="invqa-step"><span class="invqa-step-num">2</span><h3>AI inside each workflow</h3><p>Documentation, decision support, coding, billing, scheduling, inventory, quality and analytics.</p></div>
+            <div class="invqa-step"><span class="invqa-step-num">3</span><h3>The proactive hospital</h3><p>The Brain finds what needs attention, explains why, prepares next steps and coordinates the right teams.</p></div>
+          </div>
+          <div class="invqa-proofrail"><span><strong>Safety rule:</strong> AI identifies, explains, recommends and prepares. The doctor decides.</span><span>Low-risk repetitive operations may automate; every action is checked and recorded.</span></div>
+          <div class="invqa-bottom"><b>Architecture</b><span>Model-agnostic: use the best commercial models or capable open-source models privately inside the hospital.</span></div>
+        </div>
+        <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
+        <aside class="notes">
+          MediMind has a three-phase path. Phase one replaces fragmented legacy systems with one reliable operating system and unified data foundation. Phase two brings the best AI directly into the workflows people already use — clinical documentation, patient-history analysis, decision support, coding, billing, scheduling, inventory, quality and analytics. Phase three is the proactive hospital: the Brain sees the whole data structure, identifies what needs attention, explains why, prepares the next steps and coordinates relevant departments. Doctors still confirm medical decisions. The AI identifies, explains, recommends and prepares; the doctor decides. Low-risk repetitive operations can be automated. Every action is checked and recorded, and the system is model-agnostic so it can use commercial or private open-source models.
+
+          [Sources] Founder-supplied investor Q&amp;A, 16 Aug 2026.
+        </aside>
+      </section>
+
+      <!-- A11 · Full-time commitment -->
+      <section class="invqa-slide">
+        <div class="slide-inner">
+          <div class="invqa-topline"><span class="invqa-index">A11</span><p class="invqa-question">Are you working on MediMind full-time?</p></div>
+          <h2 class="invqa-title">Full-time focus. <em>The hospital is our development environment.</em></h2>
+          <div class="invqa-layout">
+            <div class="invqa-anchor">
+              <span class="invqa-anchor-label">Founder commitment</span>
+              <strong class="invqa-anchor-main">All-in</strong>
+              <span class="invqa-anchor-sub">Clinical presence is kept deliberately small and close to the product — not treated as a second career.</span>
+            </div>
+            <div class="invqa-lines">
+              <div class="invqa-line"><span class="invqa-line-num">1</span><p><b>MediMind is Lasha's full-time focus;</b> clinical hours are minimal and the hospital time is primarily for building and validation.</p></div>
+              <div class="invqa-line"><span class="invqa-line-num">2</span><p><b>Two junior developers work full-time</b> on the product and live hospital deployments.</p></div>
+              <div class="invqa-line"><span class="invqa-line-num">3</span><p><b>Irakli has a small number of outside commitments,</b> while remaining central to MediMind's product and success.</p></div>
+            </div>
+          </div>
+          <div class="invqa-bottom"><b>Why it matters</b><span>The hospital is not a distraction. It is our strongest feedback loop and development advantage.</span></div>
+        </div>
+        <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
+        <aside class="notes">
+          MediMind is my full-time focus. I still spend most of my time physically inside the hospital, but my clinical hours are minimal. I am there primarily to build and validate MediMind in the environment where it will actually be used. We also have two junior developers working full-time on the product and live deployments. Irakli has some commitments outside the company, but he remains a major contributor to MediMind's product and the company's success. The hospital is not a distraction from the company; it is our strongest development and feedback environment.
+
+          [Sources] Founder-supplied investor Q&amp;A, 16 Aug 2026.
+        </aside>
+      </section>
+
+      <!-- A12 · Four-year vision -->
+      <section class="invqa-slide invqa-slide--metrics">
+        <div class="slide-inner">
+          <div class="invqa-topline"><span class="invqa-index">A12</span><p class="invqa-question">Where do you see MediMind in three or four years?</p></div>
+          <h2 class="invqa-title">A regional leader — with evidence strong enough to <em>go global.</em></h2>
+          <div class="invqa-metrics">
+            <div class="invqa-metric"><span class="invqa-metric-value">100+</span><span class="invqa-metric-label">hospitals</span><span class="invqa-metric-note">Across five to seven regional markets</span></div>
+            <div class="invqa-metric"><span class="invqa-metric-value">5–7</span><span class="invqa-metric-label">countries</span><span class="invqa-metric-note">Central Asia, post-Soviet region and Middle East</span></div>
+            <div class="invqa-metric"><span class="invqa-metric-value">$14–18M</span><span class="invqa-metric-label">base annual recurring revenue</span><span class="invqa-metric-note">15K–20K clinicians at ~$75 per month</span></div>
+          </div>
+          <div class="invqa-explain">
+            <p><b>15,000–20,000 clinicians</b> supported across the region on one FHIR-native hospital operating system.</p>
+            <p><b>Clinical and regulatory depth:</b> major peer-reviewed studies, selected FDA progress, EU MDR CE marking and AI Act readiness.</p>
+          </div>
+          <div class="invqa-bottom"><b>Four-year arc</b><span>Become the regional leader. Use Georgia as the proven launch market. Let evidence and clearance unlock global expansion.</span></div>
+        </div>
+        <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
+        <aside class="notes">
+          In four years, we see MediMind as the regional leader in AI-native hospital operating systems across Central Asia, the post-Soviet region and the Middle East. Our target is five to seven countries, more than 100 hospitals and 15,000 to 20,000 clinicians. Georgia is our proven launch market: it gives us the deployment experience, clinical evidence and reference customers to scale across the region. We expect major peer-reviewed clinical studies showing better outcomes, lower costs and greater efficiency; selected clinical AI capabilities should have FDA clearance or be well advanced, alongside EU MDR CE marking and AI Act compliance. Financially, the regional base model is 15,000 to 20,000 clinicians at about $75 per month, which equals $13.5 to $18 million ARR — shown here as a rounded $14 to $18 million target. First contracts in Europe and the U.S. are upside beyond that base, not required to make the model work.
+
+          [Sources] Founder-supplied investor Q&amp;A, 16 Aug 2026.
+        </aside>
+      </section>
+
+      <!-- A13 · Burn rate -->
+      <section class="invqa-slide invqa-slide--metrics">
+        <div class="slide-inner">
+          <div class="invqa-topline"><span class="invqa-index">A13</span><p class="invqa-question">What is the monthly burn rate?</p></div>
+          <h2 class="invqa-title"><em>~10K GEL per month.</em> Capital-efficient by design.</h2>
+          <div class="invqa-metrics">
+            <div class="invqa-metric"><span class="invqa-metric-value">10K GEL</span><span class="invqa-metric-label">current monthly burn</span><span class="invqa-metric-note">Bootstrap operating mode</span></div>
+            <div class="invqa-metric"><span class="invqa-metric-value">6 mo</span><span class="invqa-metric-label">Georgia execution focus</span><span class="invqa-metric-note">More deployments, evidence and market share</span></div>
+            <div class="invqa-metric"><span class="invqa-metric-value">Next</span><span class="invqa-metric-label">Central Asia preparation</span><span class="invqa-metric-note">Partners, localization and commercial capacity</span></div>
+          </div>
+          <div class="invqa-explain">
+            <p><b>Funding now:</b> grow the Georgian deployment team and accelerate hospital adoption while building stronger clinical and operational proof.</p>
+            <p><b>Spend discipline:</b> remain lean, but spend more aggressively when each lari directly accelerates adoption or market entry.</p>
+          </div>
+          <div class="invqa-bottom"><b>Sequence</b><span>First, win Georgia. Then take the proven model into Central Asia.</span></div>
+        </div>
+        <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
+        <aside class="notes">
+          Our current burn is approximately 10,000 GEL per month. That is our bootstrap mode and shows how efficiently we can build and operate. Over the next six months, the focus is Georgia: more deployments, a major share of the local market, and strong clinical and operational evidence. Funding allows us to grow the Georgian deployment team now while preparing the partnerships, localization and commercial team required for Central Asia. We want to remain capital-efficient, but we are ready to spend more aggressively when the capital directly accelerates hospital adoption. First we win Georgia; then we take the proven model into Central Asia.
+
+          [Sources] Founder-supplied investor Q&amp;A, 16 Aug 2026.
+        </aside>
+      </section>
+
+      <!-- A14 · Main challenge -->
+      <section class="invqa-slide">
+        <div class="slide-inner">
+          <div class="invqa-topline"><span class="invqa-index">A14</span><p class="invqa-question">What is the main challenge right now?</p></div>
+          <h2 class="invqa-title">Our bottleneck is <em>trust and decision speed</em> — not delivery.</h2>
+          <div class="invqa-layout">
+            <div class="invqa-anchor">
+              <span class="invqa-anchor-label">The expectation gap</span>
+              <strong class="invqa-anchor-main">We build fast.<br>Hospitals trust slowly.</strong>
+              <span class="invqa-anchor-sub">Healthcare caution is rational; the answer is visible proof, not a bigger promise.</span>
+            </div>
+            <div class="invqa-lines">
+              <div class="invqa-line"><span class="invqa-line-num">1</span><p><b>Hospitals expect projects to take months or years,</b> so speed and breadth initially sound unbelievable.</p></div>
+              <div class="invqa-line"><span class="invqa-line-num">2</span><p><b>We show, not tell:</b> deploy beside the legacy system and prove each capability with the hospital's own operations.</p></div>
+              <div class="invqa-line"><span class="invqa-line-num">3</span><p><b>The next constraint is alignment</b> across leadership, IT and clinicians so decisions can match our execution pace.</p></div>
+            </div>
+          </div>
+          <div class="invqa-bottom"><b>What changes minds</b><span>Seeing laboratory, imaging and clinical workflows run without disruption turns disbelief into a decision.</span></div>
+        </div>
+        <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
+        <aside class="notes">
+          Our biggest challenge is closing the gap between how fast we can deliver and how fast hospitals believe change is possible. Hospitals are used to software projects taking months or years, so our timelines and breadth can sound unbelievable. In healthcare, that caution is understandable. Our answer is to show, not tell: run MediMind alongside the legacy system, use the hospital's own operations and prove each capability before asking anyone to switch. Once teams see laboratory, imaging and clinical workflows running without disruption, the conversation changes. The next challenge is aligning hospital leadership, IT and clinicians around the same execution pace. The bottleneck is no longer whether we can build it; it is how quickly trust and decision-making catch up.
+
+          [Sources] Founder-supplied investor Q&amp;A, 16 Aug 2026.
+        </aside>
+      </section>
+
+      <!-- A15 · CAC -->
+      <section class="invqa-slide invqa-slide--metrics">
+        <div class="slide-inner">
+          <div class="invqa-topline"><span class="invqa-index">A15</span><p class="invqa-question">What is your customer acquisition cost?</p></div>
+          <h2 class="invqa-title">CAC is not repeatable yet. <em>Today, it is mostly founder time.</em></h2>
+          <div class="invqa-metrics">
+            <div class="invqa-metric"><span class="invqa-metric-value">$0</span><span class="invqa-metric-label">paid marketing</span><span class="invqa-metric-note">Founder-led, relationship-driven sales</span></div>
+            <div class="invqa-metric"><span class="invqa-metric-value">Low</span><span class="invqa-metric-label">direct cash acquisition cost</span><span class="invqa-metric-note">No dedicated sales team yet</span></div>
+            <div class="invqa-metric"><span class="invqa-metric-value">Not zero</span><span class="invqa-metric-label">true acquisition cost</span><span class="invqa-metric-note">Time, travel, demos and onboarding count</span></div>
+          </div>
+          <div class="invqa-explain">
+            <p><b>Next six months:</b> build a repeatable Georgian hospital-sales process and measure the full acquisition cost.</p>
+            <p><b>Before regional scale:</b> establish real CAC and payback-period data, then design the Central Asia sales engine around it.</p>
+          </div>
+          <div class="invqa-bottom"><b>Honest answer</b><span>We will not call CAC zero. The next phase turns founder-led selling into a measurable, scalable process.</span></div>
+        </div>
+        <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
+        <aside class="notes">
+          We do not yet have a reliable, repeatable CAC because sales are still founder-led and relationship-driven. Direct cash acquisition cost has been very low: no paid marketing and no dedicated sales team. But CAC is not zero because it includes our time, travel, demonstrations and onboarding. Over the next six months, as we expand across Georgia, we will build a repeatable process and measure the full cost of acquiring each hospital. That gives us real CAC and payback-period data before Central Asia. Today CAC is mainly founder time; the next phase turns it into a measurable and scalable sales engine.
+
+          [Sources] Founder-supplied investor Q&amp;A, 16 Aug 2026.
+        </aside>
+      </section>
+
+      <!-- A16 · Competition -->
+      <section class="invqa-slide">
+        <div class="slide-inner">
+          <div class="invqa-topline"><span class="invqa-index">A16</span><p class="invqa-question">Who are your competitors?</p></div>
+          <h2 class="invqa-title">Three competitor groups. <em>No one owns the whole system.</em></h2>
+          <div class="invqa-rivals">
+            <div class="invqa-rival"><span class="invqa-rival-num">01</span><h3>Legacy hospital systems</h3><p>They run hospitals, but remain fragmented and were not designed around AI.</p><small>WebMed · Doctra · Epic · Oracle Health</small></div>
+            <div class="invqa-rival"><span class="invqa-rival-num">02</span><h3>Individual AI tools</h3><p>They improve one workflow — documentation, imaging or a narrow task — but do not run the hospital.</p><small>Radium · Abridge · Suki · Dragon Copilot · ScribeAmerica</small></div>
+            <div class="invqa-rival"><span class="invqa-rival-num">03</span><h3>AI overlays</h3><p>They analyze existing hospital data and surface warnings, while the legacy system remains underneath.</p><small>Palantir · Bayesian Health</small></div>
+          </div>
+          <div class="invqa-proofrail"><span><strong>Closest emerging whole-system players:</strong> InterSystems IntelliCare and Superhealth's SuperOS.</span><span>Our proof: a signed 25-hospital network contract.</span></div>
+          <div class="invqa-bottom"><b>Category claim</b><span>MediMind replaces the fragmented stack with one proactive, AI-native hospital operating system built ground-up on FHIR R4.</span></div>
+        </div>
+        <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
+        <aside class="notes">
+          We compete with three groups. First are legacy hospital systems — locally WebMed and Doctra, globally Epic and Oracle Health. They run hospitals, but they are fragmented and were not designed around AI. Second are individual AI tools such as Radium, Abridge, Suki, Microsoft Dragon Copilot and ScribeAmerica; they improve one workflow but do not run the hospital. Third are AI overlays such as Palantir and Bayesian Health; they analyze existing data but still sit on a legacy system. The closest emerging whole-system competitors are InterSystems IntelliCare and Superhealth's SuperOS. We believe MediMind defines the proactive AI-native hospital operating-system category: one FHIR R4 system replacing the fragmented stack. Our signed 25-hospital network contract shows the category is becoming commercially real.
+
+          [Sources] Founder-supplied investor Q&amp;A, 16 Aug 2026.
+        </aside>
+      </section>
+
+      <!-- A17 · Fundraising plan -->
+      <section class="invqa-slide invqa-slide--metrics">
+        <div class="slide-inner">
+          <div class="invqa-topline"><span class="invqa-index">A17</span><p class="invqa-question">What is your fundraising plan?</p></div>
+          <h2 class="invqa-title">A focused $200K round — enough to turn proof into <em>regional scale.</em></h2>
+          <div class="invqa-metrics">
+            <div class="invqa-metric"><span class="invqa-metric-value">$200K</span><span class="invqa-metric-label">pre-seed target</span><span class="invqa-metric-note">A deliberately focused round</span></div>
+            <div class="invqa-metric"><span class="invqa-metric-value">SAFE</span><span class="invqa-metric-label">financing instrument</span><span class="invqa-metric-note">Simple, standard and fast to close</span></div>
+            <div class="invqa-metric"><span class="invqa-metric-value">$5M</span><span class="invqa-metric-label">valuation cap</span><span class="invqa-metric-note">Clear terms for early investors</span></div>
+          </div>
+          <div class="invqa-explain">
+            <p><b>Use of funds:</b> expand Georgian deployment capacity, produce stronger clinical evidence and prepare Central Asia entry.</p>
+            <p><b>Timing:</b> target a first close by 30 September 2026, prioritizing investors who understand healthcare and regional expansion.</p>
+          </div>
+          <div class="invqa-bottom"><b>Capital purpose</b><span>This round buys speed — it converts a working hospital deployment into repeatable proof and regional readiness.</span></div>
+        </div>
+        <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
+        <aside class="notes">
+          We are raising $200,000 on a SAFE with a $5 million valuation cap, and we intend to complete the round by September 30, 2026. It is a deliberately focused pre-seed round. The capital expands Georgian deployment capacity, strengthens our clinical evidence and prepares our first Central Asia market entry. We are prioritizing investors who can help with healthcare, evidence and regional expansion. The round does not fund an idea; it accelerates a working product with a signed hospital network.
+
+          [Sources] Founder-supplied interview preparation, 16 Aug 2026.
+        </aside>
+      </section>
+
+      <!-- A18 · Other ideas -->
+      <section class="invqa-slide">
+        <div class="slide-inner">
+          <div class="invqa-topline"><span class="invqa-index">A18</span><p class="invqa-question">What other ideas are you exploring?</p></div>
+          <h2 class="invqa-title">No unrelated startup bets. <em>Adjacent ideas strengthen MediMind.</em></h2>
+          <div class="invqa-layout">
+            <div class="invqa-anchor">
+              <span class="invqa-anchor-label">Focus rule</span>
+              <strong class="invqa-anchor-main">One company.<br>One thesis.</strong>
+              <span class="invqa-anchor-sub">We do not split execution across parallel startups.</span>
+            </div>
+            <div class="invqa-lines">
+              <div class="invqa-line"><span class="invqa-line-num">1</span><p><b>Our curiosity stays inside healthcare:</b> clinical AI, diagnostics and care coordination.</p></div>
+              <div class="invqa-line"><span class="invqa-line-num">2</span><p><b>Promising ideas become modules or research paths</b> only when they strengthen MediMind's platform and outcomes.</p></div>
+              <div class="invqa-line"><span class="invqa-line-num">3</span><p><b>There is no second startup in development.</b> Product priority is decided by hospital demand and evidence.</p></div>
+            </div>
+          </div>
+          <div class="invqa-bottom"><b>Honest answer</b><span>Our curiosity is broad, but our execution is concentrated entirely on MediMind.</span></div>
+        </div>
+        <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
+        <aside class="notes">
+          I naturally see many opportunities because I work inside a hospital, especially in clinical AI, diagnostics and care coordination. But I am not building another startup in parallel. If an adjacent idea is valuable, we treat it as a MediMind module or research path and prioritize it only when it improves hospital adoption, clinical outcomes or the platform. So the honest answer is that my curiosity is broad, but my execution is concentrated on one company and one thesis: MediMind.
+
+          [Sources] Founder-supplied interview preparation, 16 Aug 2026.
+        </aside>
+      </section>
+
+      <!-- A19 · Revenue last month -->
+      <section class="invqa-slide invqa-slide--metrics">
+        <div class="slide-inner">
+          <div class="invqa-topline"><span class="invqa-index">A19</span><p class="invqa-question">What was the revenue last month?</p></div>
+          <h2 class="invqa-title">August revenue: <em>2.5K GEL.</em> Know the number, then explain the strategy.</h2>
+          <div class="invqa-metrics">
+            <div class="invqa-metric"><span class="invqa-metric-value">2.5K GEL</span><span class="invqa-metric-label">August revenue</span><span class="invqa-metric-note">Initial hospital network</span></div>
+            <div class="invqa-metric"><span class="invqa-metric-value">30K GEL</span><span class="invqa-metric-label">annualized run rate</span><span class="invqa-metric-note">Current contracted ARR</span></div>
+            <div class="invqa-metric"><span class="invqa-metric-value">0%</span><span class="invqa-metric-label">legacy-budget increase</span><span class="invqa-metric-note">Matched existing software spend</span></div>
+          </div>
+          <div class="invqa-explain">
+            <p><b>Reconcile immediately:</b> this is the same figure in the application — 2.5K GEL, not U.S. dollars.</p>
+            <p><b>Why it is low:</b> Georgian pricing removes the switching objection and creates proof; it is not the ceiling for regional pricing.</p>
+          </div>
+          <div class="invqa-bottom"><b>Delivery cue</b><span>Answer the number first. Add currency, annualized run rate and pricing logic only after it lands.</span></div>
+        </div>
+        <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
+        <aside class="notes">
+          Last month — August — revenue was 2,500 GEL. That is the same figure reflected in our application, and it annualizes to approximately 30,000 GEL in current contracted recurring revenue. The currency is GEL, not U.S. dollars. Our Georgian price is intentionally low because we matched the hospital's existing software spend to remove the switching objection, deploy broadly and create strong clinical proof. It is not the price ceiling for Central Asia or developed markets.
+
+          [Sources] Founder-supplied interview preparation, 16 Aug 2026.
+        </aside>
+      </section>
+
+      <!-- A20 · Questions for the interviewer -->
+      <section class="invqa-slide">
+        <div class="slide-inner">
+          <div class="invqa-topline"><span class="invqa-index">A20</span><p class="invqa-question">What will you ask the interviewer?</p></div>
+          <h2 class="invqa-title">Use your questions to learn how this batch defines <em>a strong candidate.</em></h2>
+          <div class="invqa-layout">
+            <div class="invqa-anchor">
+              <span class="invqa-anchor-label">Lead question</span>
+              <strong class="invqa-anchor-main" style="font-size:1.18em; line-height:1.16;">What separates the strongest candidates in this batch?</strong>
+              <span class="invqa-anchor-sub">Ask for the standard, not reassurance.</span>
+            </div>
+            <div class="invqa-lines">
+              <div class="invqa-line"><span class="invqa-line-num">1</span><p><b>For hospital infrastructure,</b> what evidence would make you most confident before the next stage?</p></div>
+              <div class="invqa-line"><span class="invqa-line-num">2</span><p><b>Which part of our case</b> should we make more concrete?</p></div>
+              <div class="invqa-line"><span class="invqa-line-num">3</span><p><b>What should a strong candidate accomplish</b> in the next 60–90 days?</p></div>
+            </div>
+          </div>
+          <div class="invqa-bottom"><b>Interview tactic</b><span>Ask the lead question first. Use the follow-ups only if time allows, then listen closely.</span></div>
+        </div>
+        <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
+        <aside class="notes">
+          My first question would be: what separates the strongest candidates in this batch from companies that are merely interesting? If there is time, I would ask: for a hospital-infrastructure company like MediMind, what evidence would make you most confident before the next stage? Which part of our case should we make more concrete? And what would you want a strong candidate to accomplish in the next 60 to 90 days? Ask the first question cleanly, use only one or two follow-ups if time permits, and listen rather than turning the answer into another pitch.
+
+          [Sources] Founder-supplied interview preparation, 16 Aug 2026.
+        </aside>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════
            APPENDIX A · ARCHITECTURE — isometric "operating system" diagram.
            Shown after the live walkthrough, before the platform gallery.
            (Copied from the hidden Solution slide above; that original stays
@@ -10756,7 +11377,7 @@
            ════════════════════════════════════════════════ -->
       <section class="arch-iso-slide">
         <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">A3</span>APPENDIX · ARCHITECTURE</div>
+          <div class="slide-label"><span class="label-num">A21</span>APPENDIX · ARCHITECTURE</div>
           <h2 class="headline-big" style="font-size: 1.85em; line-height: 1.05;">One hospital. <em>One operating system.</em></h2>
           <p class="sub-head" style="font-size: 0.88em; margin-top: 6px; max-width: 920px;">Every department. Every workflow. One AI-native codebase, built ground-up on FHIR.</p>
 
@@ -11196,7 +11817,7 @@
 
       <section class="cat-slide">
         <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">A4</span>APPENDIX · COMPETITION</div>
+          <div class="slide-label"><span class="label-num">A22</span>APPENDIX · COMPETITION</div>
           <h2 class="headline-big">Palantir reads Epic. We replace <em>Both</em>.</h2>
           <p class="headline-sub">Three crowded categories all sit on top of the hospital. None of them <em>is</em> the operating system the hospital runs on.</p>
 
@@ -11331,12 +11952,12 @@
             <div class="qax-point"><p><b>25 hospitals = one binding, counter-signed contract</b> — Georgia's second-largest chain, not an LOI.</p></div>
             <div class="qax-point"><p><b>1,000+ clinician accounts provisioned</b> — PACS and labs live in production today.</p></div>
             <div class="qax-point"><p><b>50 cardiologists, daily, since May 2025</b> — the pilot, our deepest signal.</p></div>
-            <div class="qax-point"><p><b>Pre-revenue by choice</b> — first revenue at the August go-live, ~$45K/yr from one network (the floor, not the ceiling).</p></div>
+            <div class="qax-point"><p><b>Current network revenue</b> — ~30K GEL ARR today, deliberately matched to legacy spend (the floor, not the ceiling).</p></div>
           </div>
         </div>
         <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
         <aside class="notes">
-          Q1 — "$0 revenue; is 25 hospitals / 1,000 doctors real or vanity?" Honest breakdown: 25 hospitals is one binding, counter-signed contract with Georgia's second-largest chain — not an LOI. 1,000+ clinician accounts provisioned; PACS and labs in live production. Deepest signal: 50 cardiologists using it daily since May 2025. Pre-revenue by choice — we don't charge during integration. First revenue is the August go-live, ~$45K/yr from that one network — the floor of our pricing, not the ceiling. SAY "provisioned accounts + 50 daily at the pilot" — NOT "1,000 daily active."
+          Q1 — "Is 25 hospitals / 1,000 doctors real or vanity?" Honest breakdown: 25 hospitals is one binding, counter-signed contract with Georgia's second-largest chain — not an LOI. 1,000+ clinician accounts are provisioned; PACS and labs are in live production. The deepest signal is 50 cardiologists using it daily since May 2025. Current network revenue is about 30,000 GEL ARR, deliberately matched to the hospital's legacy spend — the floor of our pricing, not the ceiling. SAY "provisioned accounts + 50 daily at the pilot" — NOT "1,000 daily active."
         </aside>
       </section>
 

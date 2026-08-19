@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAdminStore } from "../store/useAdminStore";
+import { DECKS, type Deck } from "../data/decks";
 import "./BriefingGate.css";
 import "./AdminDashboard.css";
 
@@ -161,6 +162,8 @@ export const AdminDashboard: React.FC = () => {
         </div>
       )}
 
+      <PresentationsPanel />
+
       {errorMsg && <div className="adm-empty">{errorMsg}</div>}
 
       <div className="adm-table-wrap">
@@ -232,6 +235,84 @@ export const AdminDashboard: React.FC = () => {
           onCreated={fetchData}
         />
       )}
+    </div>
+  );
+};
+
+/* Every presentation this deploy serves, one click from the dashboard. Gated
+   decks show their password inline so link + password can be sent in one go. */
+const PresentationsPanel: React.FC = () => (
+  <div className="adm-decks">
+    <div className="adm-decks-head">
+      <span className="adm-decks-title">Presentations</span>
+      <span className="adm-decks-hint">open or copy any link to share</span>
+    </div>
+    <div className="adm-decks-grid">
+      {DECKS.map((deck) => (
+        <DeckCard key={deck.id} deck={deck} />
+      ))}
+    </div>
+  </div>
+);
+
+const DeckCard: React.FC<{ deck: Deck }> = ({ deck }) => {
+  const url = `${window.location.origin}${deck.path}`;
+  const [copied, setCopied] = useState(false);
+  const [pwdCopied, setPwdCopied] = useState(false);
+
+  const copyUrl = async () => {
+    try {
+      await navigator.clipboard.writeText(url);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch { /* */ }
+  };
+
+  const copyPassword = async () => {
+    if (!deck.gate || deck.gatePerInvite) return;
+    try {
+      await navigator.clipboard.writeText(deck.gate);
+      setPwdCopied(true);
+      setTimeout(() => setPwdCopied(false), 1500);
+    } catch { /* */ }
+  };
+
+  return (
+    <div className="adm-deck-card">
+      <div className="adm-deck-top">
+        <span className="adm-deck-name">{deck.label}</span>
+        {deck.gate === null ? (
+          <span className="adm-deck-pill adm-deck-pill-open">No password</span>
+        ) : (
+          <span className="adm-deck-pill">Password</span>
+        )}
+      </div>
+      <div className="adm-deck-blurb">{deck.blurb}</div>
+      <div className="adm-deck-url">{deck.path}</div>
+
+      {deck.gate !== null && (
+        <div className="adm-deck-gate">
+          {deck.gatePerInvite ? (
+            <span className="adm-deck-gate-note">{deck.gate}</span>
+          ) : (
+            <>
+              <code className="adm-deck-gate-code">{deck.gate}</code>
+              <button className="adm-btn adm-btn-ghost adm-deck-mini" onClick={copyPassword}>
+                {pwdCopied ? "Copied" : "Copy password"}
+              </button>
+            </>
+          )}
+        </div>
+      )}
+
+      <div className="adm-deck-actions">
+        <a className="adm-btn adm-btn-primary adm-deck-mini" href={deck.path} target="_blank" rel="noopener noreferrer">
+          Open
+        </a>
+        <button className="adm-btn adm-deck-mini" onClick={copyUrl}>
+          {copied ? "Copied" : "Copy link"}
+        </button>
+      </div>
     </div>
   );
 };

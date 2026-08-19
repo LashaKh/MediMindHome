@@ -2,6 +2,7 @@
 /deck.html                /deck.html              200
 /pitch.html               /pitch.html             200
 /hospitals.html           /hospitals.html         200
+/long.html                /long.html              200
 
 # Static deck assets (logos, screenshots, team photos)
 /deck-assets/*            /deck-assets/:splat     200

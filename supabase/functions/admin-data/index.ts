@@ -30,7 +30,7 @@ async function verifyAdminJwt(req: Request): Promise<boolean> {
   }
 }
 
-Deno.serve(async (req) => {
+export async function handleAdminData(req: Request): Promise<Response> {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
@@ -123,7 +123,11 @@ Deno.serve(async (req) => {
     console.error("admin-data error:", err);
     return json({ error: "server" }, 500);
   }
-});
+}
+
+if (import.meta.main) {
+  Deno.serve(handleAdminData);
+}
 
 function json(body: unknown, status: number) {
   return new Response(JSON.stringify(body), {

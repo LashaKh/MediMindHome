@@ -21,7 +21,7 @@ async function getSigningKey(): Promise<CryptoKey> {
   );
 }
 
-Deno.serve(async (req) => {
+export async function handleAdminLogin(req: Request): Promise<Response> {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
@@ -53,7 +53,11 @@ Deno.serve(async (req) => {
     console.error("admin-login error:", err);
     return json({ ok: false, error: "server" }, 500);
   }
-});
+}
+
+if (import.meta.main) {
+  Deno.serve(handleAdminLogin);
+}
 
 function json(body: unknown, status: number) {
   return new Response(JSON.stringify(body), {

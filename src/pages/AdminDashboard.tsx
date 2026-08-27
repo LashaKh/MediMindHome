@@ -9,8 +9,8 @@ const SUPABASE_URL =
   (import.meta.env.VITE_SUPABASE_URL as string | undefined) ??
   "https://kvsqtolsjggpyvdtdpss.supabase.co";
 
-const ADMIN_DATA_URL = `${SUPABASE_URL}/functions/v1/admin-data`;
-const ADMIN_WRITE_URL = `${SUPABASE_URL}/functions/v1/admin-write`;
+const ADMIN_DATA_URL = `${SUPABASE_URL}/functions/v1/track-event?route=admin-data`;
+const ADMIN_WRITE_URL = `${SUPABASE_URL}/functions/v1/track-event?route=admin-write`;
 
 interface Invite {
   id: string;

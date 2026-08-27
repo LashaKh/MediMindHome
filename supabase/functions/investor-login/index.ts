@@ -7,7 +7,7 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.39.3";
 import { corsHeaders, getClientIp, hashIp } from "../_shared/cors.ts";
 
-Deno.serve(async (req) => {
+export async function handleInvestorLogin(req: Request): Promise<Response> {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
@@ -92,7 +92,11 @@ Deno.serve(async (req) => {
     console.error("investor-login error:", err);
     return json({ ok: false, error: "server" }, 500);
   }
-});
+}
+
+if (import.meta.main) {
+  Deno.serve(handleInvestorLogin);
+}
 
 function json(body: unknown, status: number) {
   return new Response(JSON.stringify(body), {

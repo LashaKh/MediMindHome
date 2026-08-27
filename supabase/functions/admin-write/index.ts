@@ -59,7 +59,7 @@ function generatePassword(fullName: string): string {
   return `${parts[0]}${parts[parts.length - 1][0].toUpperCase()}`;
 }
 
-Deno.serve(async (req) => {
+export async function handleAdminWrite(req: Request): Promise<Response> {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
@@ -191,7 +191,11 @@ Deno.serve(async (req) => {
     console.error("admin-write error:", err);
     return json({ error: "server" }, 500);
   }
-});
+}
+
+if (import.meta.main) {
+  Deno.serve(handleAdminWrite);
+}
 
 function json(body: unknown, status: number) {
   return new Response(JSON.stringify(body), {

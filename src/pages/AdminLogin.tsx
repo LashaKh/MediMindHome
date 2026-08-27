@@ -38,7 +38,7 @@ export const AdminLogin: React.FC = () => {
     setHelperText("Verifying…");
 
     try {
-      const res = await fetch(`${SUPABASE_URL}/functions/v1/admin-login`, {
+      const res = await fetch(`${SUPABASE_URL}/functions/v1/track-event?route=admin-login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ password: value }),

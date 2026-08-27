@@ -6,7 +6,7 @@ const SUPABASE_URL =
   "https://kvsqtolsjggpyvdtdpss.supabase.co";
 
 const TRACK_URL = `${SUPABASE_URL}/functions/v1/track-event`;
-const INVESTOR_LOGIN_URL = `${SUPABASE_URL}/functions/v1/investor-login`;
+const INVESTOR_LOGIN_URL = `${SUPABASE_URL}/functions/v1/track-event?route=investor-login`;
 
 export async function trackEvent(
   token: string,

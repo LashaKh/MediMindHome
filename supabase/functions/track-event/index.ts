@@ -5,8 +5,32 @@
 
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.39.3";
 import { corsHeaders, getClientIp, hashIp } from "../_shared/cors.ts";
+import { handleAdminData } from "../admin-data/index.ts";
+import { handleAdminLogin } from "../admin-login/index.ts";
+import { handleAdminWrite } from "../admin-write/index.ts";
+import { handleInvestorLogin } from "../investor-login/index.ts";
 
-Deno.serve(async (req) => {
+export type LandingRoute =
+  | "track-event"
+  | "admin-login"
+  | "admin-data"
+  | "admin-write"
+  | "investor-login";
+
+const LANDING_ROUTES = new Set<LandingRoute>([
+  "track-event",
+  "admin-login",
+  "admin-data",
+  "admin-write",
+  "investor-login",
+]);
+
+export function resolveLandingRoute(url: string): LandingRoute | null {
+  const route = new URL(url).searchParams.get("route") ?? "track-event";
+  return LANDING_ROUTES.has(route as LandingRoute) ? route as LandingRoute : null;
+}
+
+export async function handleTrackEvent(req: Request): Promise<Response> {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
@@ -54,4 +78,29 @@ Deno.serve(async (req) => {
     console.error("track-event error:", err);
     return new Response(null, { status: 204, headers: corsHeaders });
   }
-});
+}
+
+export async function handleLandingApi(req: Request): Promise<Response> {
+  const route = resolveLandingRoute(req.url);
+  switch (route) {
+    case "admin-login":
+      return handleAdminLogin(req);
+    case "admin-data":
+      return handleAdminData(req);
+    case "admin-write":
+      return handleAdminWrite(req);
+    case "investor-login":
+      return handleInvestorLogin(req);
+    case "track-event":
+      return handleTrackEvent(req);
+    default:
+      return new Response(JSON.stringify({ error: "route_not_found" }), {
+        status: 404,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+  }
+}
+
+if (import.meta.main) {
+  Deno.serve(handleLandingApi);
+}

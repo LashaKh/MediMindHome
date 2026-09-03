@@ -326,7 +326,7 @@
       border-bottom: 1px solid var(--rule);
     }
     table.mx th:first-child { text-align: left; }
-    table.mx td { padding: 6.5px 5px; border-bottom: 1px solid var(--hair); text-align: center; }
+    table.mx td { padding: 5px 5px; border-bottom: 1px solid var(--hair); text-align: center; }
     table.mx td:first-child { text-align: left; color: var(--ink); white-space: nowrap; }
     table.mx tr:last-child td { border-bottom: 0; }
     table.mx tr.me td { background: var(--tint); font-weight: 600; }
@@ -335,7 +335,7 @@
     .d-h { background: linear-gradient(90deg, var(--accent) 50%, transparent 50%); }
     .d-n { border-color: var(--rule); }
     .d-x { border: 0; width: auto; height: auto; color: var(--light); }
-    .reveal p.mx-key { font-size: 11.5px; color: var(--light); margin-top: 10px; line-height: 1.45; }
+    .reveal p.mx-key { font-size: 11.5px; color: var(--light); margin-top: 8px; line-height: 1.45; }
     .comp-side { display: flex; flex-direction: column; gap: 16px; }
     .comp-side p { font-size: 12.5px; line-height: 1.45; }
     .comp-side ul { font-size: 12.5px; margin-top: 6px; }
@@ -848,16 +848,16 @@
       <section id="competition">
         <div class="slide-inner">
           <div class="eyebrow"><b>10</b> &nbsp;·&nbsp; Competitive landscape</div>
-          <h2 class="hl">Nobody we found satisfies all six conditions.</h2>
-          <p class="lede">Three groups: AI scribes and assistants, AI overlays, and legacy EMRs. We have not found another company combining all six conditions below. The closest structural analogue is Oracle's next-generation EHR, and it is the one we watch most carefully.</p>
+          <h2 class="hl">Where we lead, and where we do not.</h2>
+          <p class="lede">Three groups: AI scribes, AI overlays, and legacy EMRs. We have not found another company built on all six architectural conditions below. Our own row is scored as shipped today rather than as designed, and on everything scale buys the incumbents are ahead of us.</p>
           <div class="body">
             <div class="comp">
               <div>
                 <table class="mx">
                   <thead><tr><th>Checked against primary sources, 19 August 2026</th><th>Full hospital breadth</th><th>FHIR R4 as storage primitive</th><th>AI in the write path</th><th>Single codebase</th><th>Cloud + on-prem</th><th>Multi-market pricing</th></tr></thead>
                   <tbody>
-                    <tr class="me"><td>MediMind</td><td><i class="d d-f"></i></td><td><i class="d d-f"></i></td><td><i class="d d-f"></i></td><td><i class="d d-f"></i></td><td><i class="d d-f"></i></td><td><i class="d d-f"></i></td></tr>
-                    <tr><td>Epic</td><td><i class="d d-f"></i></td><td><i class="d d-n"></i></td><td><i class="d d-n"></i></td><td><i class="d d-h"></i></td><td><i class="d d-f"></i></td><td><i class="d d-n"></i></td></tr>
+                    <tr class="me"><td>MediMind</td><td><i class="d d-f"></i></td><td><i class="d d-f"></i></td><td><i class="d d-h" title="Architecture built; Phase 3 in testing, not live"></i></td><td><i class="d d-f"></i></td><td><i class="d d-f"></i></td><td><i class="d d-h" title="One tier contracted; the rest is intended list price"></i></td></tr>
+                    <tr><td>Epic</td><td><i class="d d-f"></i></td><td><i class="d d-n"></i></td><td><i class="d d-h"></i></td><td><i class="d d-h"></i></td><td><i class="d d-f"></i></td><td><i class="d d-n"></i></td></tr>
                     <tr><td>Oracle Health (Cerner)</td><td><i class="d d-f"></i></td><td><i class="d d-h"></i></td><td><i class="d d-h"></i></td><td><i class="d d-n"></i></td><td><i class="d d-f"></i></td><td><i class="d d-n"></i></td></tr>
                     <tr><td>athenahealth</td><td><i class="d d-h"></i></td><td><i class="d d-n"></i></td><td><i class="d d-n"></i></td><td><i class="d d-h"></i></td><td><i class="d d-h"></i></td><td><i class="d d-n"></i></td></tr>
                     <tr><td>InterSystems IntelliCare</td><td><i class="d d-f"></i></td><td><i class="d d-h"></i></td><td><i class="d d-h"></i></td><td><i class="d d-f"></i></td><td><i class="d d-f"></i></td><td><i class="d d-h"></i></td></tr>
@@ -867,24 +867,25 @@
                     <tr><td>Webmed · Doctra · Wabaco · Softmed <span class="muted">(Georgia)</span></td><td><i class="d d-h"></i></td><td><i class="d d-n"></i></td><td><i class="d d-n"></i></td><td><i class="d d-n"></i></td><td><i class="d d-h"></i></td><td><i class="d d-h"></i></td></tr>
                   </tbody>
                 </table>
-                <p class="mx-key">● full &nbsp;·&nbsp; ◐ partial &nbsp;·&nbsp; ○ no &nbsp;·&nbsp; – not applicable. &nbsp; Medplum is our data layer, not a competitor; it published the case study on our deployment. The Georgian incumbents sit on 1C and other legacy foundations, none on FHIR.</p>
+                <p class="mx-key">● full &nbsp;·&nbsp; ◐ partial &nbsp;·&nbsp; ○ no &nbsp;·&nbsp; – not applicable. &nbsp; <strong>Our own two partials are deliberate:</strong> the proactive layer is in testing rather than live, and only one pricing tier is contracted. Medplum is our data layer, not a competitor; it published the case study on our deployment.</p>
+                <div class="callout" style="margin-top:12px">
+                  <div class="lab">Why all six conditions matter</div>
+                  <p style="font-size:13px;line-height:1.45">Owning the system of record is what lets one intelligence observe a lab event, reason over the record, coordinate the next workflow and close the billing loop, without stitching five vendors together.</p>
+                </div>
               </div>
               <div class="comp-side">
                 <div>
-                  <div class="lab">Three groups, none runs a hospital proactively</div>
+                  <div class="lab">Where the incumbents lead us</div>
                   <ul class="ledger">
-                    <li class="row"><strong>AI scribes and assistants</strong> document on top of an EHR.</li>
-                    <li class="row"><strong>AI overlays</strong> reason over EHR data without replacing it.</li>
-                    <li class="row"><strong>Legacy EMRs</strong> retrofit AI onto pre-AI cores.</li>
+                    <li class="row"><strong>Installed base.</strong> Thousands of hospitals against our one, with 25 contracted.</li>
+                    <li class="row"><strong>Regulatory clearance.</strong> FDA and CE marking we will not hold before 2029.</li>
+                    <li class="row"><strong>Published evidence.</strong> Decades of outcome studies; our first are targeted for 2028.</li>
+                    <li class="row"><strong>Specialty depth.</strong> Forty years of clinical content we have not built.</li>
                   </ul>
                 </div>
                 <div class="callout warn">
                   <div class="lab">The one we watch most carefully</div>
-                  <p><strong>Oracle's next-generation EHR</strong>, described as built from the ground up with the latest AI. "AI-native" alone no longer differentiates. What survives that comparison: FHIR R4 as the storage primitive rather than an API layer, proactive whole-hospital coordination as the design goal, full hospital-OS breadth, demonstrated deployment speed, and our market focus.</p>
-                </div>
-                <div class="callout">
-                  <div class="lab">Why all six conditions matter</div>
-                  <p>Owning the system of record is what lets one intelligence observe a lab event, reason over the longitudinal record, coordinate the next clinical workflow, and close the administrative loop, without stitching together five independent vendors.</p>
+                  <p><strong>Oracle's next-generation EHR</strong>, described as built ground-up with the latest AI. "AI-native" alone no longer differentiates. What survives the comparison: FHIR R4 as the storage primitive rather than an API layer, whole-hospital coordination as the design goal, and demonstrated deployment speed.</p>
                 </div>
               </div>
             </div>

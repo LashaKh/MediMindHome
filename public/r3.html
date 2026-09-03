@@ -227,6 +227,28 @@
     .phase .w { font-size: 13.5px; line-height: 1.5; }
     .phase .n { font-size: 13px; line-height: 1.55; }
 
+    /* 04 proactive */
+    .lvls { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .lvl { padding: 0 26px 0 0; border-right: 1px solid var(--hair); }
+    .lvl:last-child { border-right: 0; padding-right: 0; }
+    .lvl:not(:first-child) { padding-left: 26px; }
+    .lvl .k { font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--light); }
+    .lvl h3 { font-size: 21px; margin: 7px 0 9px; }
+    .lvl p { font-size: 12.5px; line-height: 1.45; }
+    .lvl .who { margin-top: 9px; font-size: 12px; color: var(--light); }
+    .lvl--us h3 { color: var(--accent); }
+    .lvl--us .who { color: var(--accent); }
+    .casc { margin-top: 20px; padding-top: 15px; border-top: 1px solid var(--rule); }
+    .casc-line { display: grid; grid-template-columns: auto 22px 1fr; gap: 0; align-items: baseline; margin-top: 9px; }
+    .casc-line .sig { font-family: var(--serif); font-size: 16px; font-weight: 600; color: var(--ink); }
+    .casc-line .to { font-family: var(--mono); font-size: 13px; color: var(--accent); text-align: center; }
+    .casc-line .core { font-size: 13px; line-height: 1.45; }
+    .acts { display: grid; grid-template-columns: repeat(6, 1fr); margin-top: 14px; border-top: 1px solid var(--hair); }
+    .act { padding: 11px 14px 0; border-left: 1px solid var(--hair); }
+    .act:first-child { border-left: 0; padding-left: 0; }
+    .act .k { font-family: var(--mono); font-size: 9px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--accent); }
+    .act p { margin-top: 5px; font-size: 12px; line-height: 1.4; }
+
     /* 04 roadmap */
     .rail { position: relative; margin-top: 118px; }
     .rail::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px; background: var(--rule); }
@@ -419,14 +441,17 @@
       .nav-contents { top: 12px; right: 14px; }
       .thread { display: none; }
 
-      .toc-cols, .steps, .dep, .figs, .figs-4, .phase, .layer, .val, .room,
+      .toc-cols, .steps, .lvls, .acts, .dep, .figs, .figs-4, .phase, .layer, .val, .room,
       .against-grid, .wedge, .cred, .price, .arith, .terms, .comp, .facts,
       .ev-foot, .metrics ul, .bought ul { grid-template-columns: 1fr !important; }
-      .step, .fig, .room > div, .facts > div {
+      .casc-line { grid-template-columns: 1fr; gap: 6px; }
+      .casc-line .to { text-align: left; }
+      .step, .fig, .lvl, .act, .room > div, .facts > div {
         border-left: 0 !important; padding-left: 0 !important; padding-right: 0 !important;
         border-top: 1px solid var(--hair); padding-top: 14px; margin-top: 14px;
       }
-      .steps .step:first-child, .figs .fig:first-child,
+      .lvl { border-right: 0; }
+      .steps .step:first-child, .figs .fig:first-child, .lvls .lvl:first-child, .acts .act:first-child,
       .room > div:first-child, .facts > div:first-child { border-top: 0; margin-top: 0; padding-top: 0; }
       .step { border-right: 0; }
       .figs-4 .fig:nth-child(3), .figs-4 .fig:nth-child(4) { margin-top: 14px; }
@@ -495,16 +520,17 @@
           <div class="body" style="margin-top:18px">
             <div class="toc-cols">
               <a class="toc-row" href="#/stage"><span class="i">01</span><span class="w"><span class="t">Stage</span><span class="sub">Built, deployed, measured, proven: where we stand</span></span></a>
-              <a class="toc-row" href="#/buyer"><span class="i">07</span><span class="w"><span class="t">The buying committee</span><span class="sub">Who buys, and what he buys against</span></span></a>
+              <a class="toc-row" href="#/validation"><span class="i">07</span><span class="w"><span class="t">Model validation</span><span class="sub">How model efficacy will be validated</span></span></a>
               <a class="toc-row" href="#/deployment"><span class="i">02</span><span class="w"><span class="t">Deployment status</span><span class="sub">What is built, and where it runs today</span></span></a>
-              <a class="toc-row" href="#/wedge"><span class="i">08</span><span class="w"><span class="t">Winning the next hospital</span><span class="sub">The ten-day parallel run, and relationships beyond the anchor</span></span></a>
+              <a class="toc-row" href="#/buyer"><span class="i">08</span><span class="w"><span class="t">The buying committee</span><span class="sub">Who buys, and what he buys against</span></span></a>
               <a class="toc-row" href="#/phases"><span class="i">03</span><span class="w"><span class="t">Product phases</span><span class="sub">What is live, what is starting, what is not</span></span></a>
-              <a class="toc-row" href="#/contract"><span class="i">09</span><span class="w"><span class="t">The design-partner contract</span><span class="sub">Why the anchor price is what it is, and what list looks like</span></span></a>
-              <a class="toc-row" href="#/roadmap"><span class="i">04</span><span class="w"><span class="t">Roadmap</span><span class="sub">From go-live to the first publications</span></span></a>
-              <a class="toc-row" href="#/competition"><span class="i">10</span><span class="w"><span class="t">Competitive landscape</span><span class="sub">Six conditions nobody else meets together</span></span></a>
-              <a class="toc-row" href="#/evidence"><span class="i">05</span><span class="w"><span class="t">Evidence</span><span class="sub">How evidence accumulates from go-live</span></span></a>
-              <a class="toc-row" href="#/facts"><span class="i">11</span><span class="w"><span class="t">Company facts</span><span class="sub">Team, cash, raise and structure</span></span></a>
-              <a class="toc-row" href="#/validation"><span class="i">06</span><span class="w"><span class="t">Model validation</span><span class="sub">How model efficacy will be validated</span></span></a>
+              <a class="toc-row" href="#/wedge"><span class="i">09</span><span class="w"><span class="t">Winning the next hospital</span><span class="sub">The ten-day parallel run, and relationships beyond the anchor</span></span></a>
+              <a class="toc-row" href="#/proactive"><span class="i">04</span><span class="w"><span class="t">Proactive AI</span><span class="sub">The three levels, and the one nobody ships yet</span></span></a>
+              <a class="toc-row" href="#/contract"><span class="i">10</span><span class="w"><span class="t">The design-partner contract</span><span class="sub">Why the anchor price is what it is, and what list looks like</span></span></a>
+              <a class="toc-row" href="#/roadmap"><span class="i">05</span><span class="w"><span class="t">Roadmap</span><span class="sub">From go-live to the first publications</span></span></a>
+              <a class="toc-row" href="#/competition"><span class="i">11</span><span class="w"><span class="t">Competitive landscape</span><span class="sub">The six conditions, and where the incumbents lead us</span></span></a>
+              <a class="toc-row" href="#/evidence"><span class="i">06</span><span class="w"><span class="t">Evidence</span><span class="sub">How evidence accumulates from go-live</span></span></a>
+              <a class="toc-row" href="#/facts"><span class="i">12</span><span class="w"><span class="t">Company facts</span><span class="sub">Team, cash, raise and structure</span></span></a>
             </div>
           </div>
           <div class="foot"><span>Figures as of 20 August 2026 · deployment numbers updated at go-live</span><span>MediMind</span></div>
@@ -541,7 +567,7 @@
             </div>
             <p class="stage-line">Georgia is our first market and our proving ground, not the ceiling. That speed does not replace FDA or EU approval where it is required. It means we arrive there with evidence already in hand.</p>
           </div>
-          <div class="foot"><span>MediMind</span><span>01 / 11</span></div>
+          <div class="foot"><span>MediMind</span><span>01 / 12</span></div>
         </div>
       </section>
 
@@ -592,7 +618,7 @@
               </div>
             </div>
           </div>
-          <div class="foot"><span>MediMind</span><span>02 / 11</span></div>
+          <div class="foot"><span>MediMind</span><span>02 / 12</span></div>
         </div>
       </section>
 
@@ -621,13 +647,61 @@
             </div>
             <p class="note" style="margin-top:16px;padding-top:14px;border-top:1px solid var(--hair)">The case described in our materials, a patient seen at 2 am, is real and comes from our CTO's own practice. MediMind's response to it was simulated in our system. Phase 3 is not live.</p>
           </div>
-          <div class="foot"><span>MediMind</span><span>03 / 11</span></div>
+          <div class="foot"><span>MediMind</span><span>03 / 12</span></div>
+        </div>
+      </section>
+
+      <section id="proactive">
+        <div class="slide-inner">
+          <div class="eyebrow"><b>04</b> &nbsp;·&nbsp; Proactive AI</div>
+          <h2 class="hl">AI in a hospital is not AI running one.</h2>
+          <p class="lede">Three levels, not one. Only the third acts on the hospital's own signals across every department at once. We have not found anyone shipping it: it is our Phase 3, in testing, not live.</p>
+          <div class="body">
+            <div class="lvls">
+              <div class="lvl">
+                <div class="k">Level 01 · assistive</div>
+                <h3>AI tools</h3>
+                <p>Standalone scribes, chatbots and copilots. They sit beside the record and produce text when a person asks for it. Someone still has to carry the output to wherever it needs to go.</p>
+                <div class="who">Abridge · Suki · Dragon Copilot</div>
+              </div>
+              <div class="lvl">
+                <div class="k">Level 02 · integrated</div>
+                <h3>AI inside the workflow</h3>
+                <p>The model reads the record and suggests inside the application the clinician is already in. Genuinely useful, but bounded by one department, and still reactive: it answers, it does not notice.</p>
+                <div class="who">The incumbents' AI features · the overlays · our own Phase 2</div>
+              </div>
+              <div class="lvl lvl--us">
+                <div class="k">Level 03 · proactive</div>
+                <h3>AI that runs the hospital</h3>
+                <p>Nobody asks it anything. It watches the hospital's own signals, and one event moves every department that event touches. The doctor stays the decision maker; the coordination stops being manual.</p>
+                <div class="who">We have not found anyone shipping this</div>
+              </div>
+            </div>
+            <div class="casc">
+              <div class="lab">What the third level means in practice</div>
+              <div class="casc-line">
+                <span class="sig">A lipase result returns at three times the upper limit</span>
+                <span class="to">→</span>
+                <span class="core">MediMind reads the longitudinal record, matches the applicable guideline, and determines what has to happen next. In the case from our own practice, connecting those dots took twelve hours.</span>
+              </div>
+              <div class="acts">
+                <div class="act"><div class="k">Clinical</div><p>Flags the pancreatitis pathway and requests the gastroenterology consult</p></div>
+                <div class="act"><div class="k">Laboratory</div><p>Orders the confirming panel without waiting to be asked</p></div>
+                <div class="act"><div class="k">Imaging</div><p>Books the imaging slot the pathway requires</p></div>
+                <div class="act"><div class="k">Bed flow</div><p>Holds an ICU bed against the likely escalation</p></div>
+                <div class="act"><div class="k">Supply</div><p>Checks that the pathway's medication and stock are on hand</p></div>
+                <div class="act"><div class="k">Billing</div><p>Attaches the coding that makes the episode reimbursable at full value</p></div>
+              </div>
+            </div>
+            <p class="note" style="margin-top:14px;padding-top:12px;border-top:1px solid var(--hair)"><strong>None of this runs in production today.</strong> The layer is in development and testing, launches in shadow mode at network go-live, is excluded from the anchor contract, and the doctor remains the decision maker in every pipeline.</p>
+          </div>
+          <div class="foot"><span>MediMind</span><span>04 / 12</span></div>
         </div>
       </section>
 
       <section id="roadmap">
         <div class="slide-inner">
-          <div class="eyebrow"><b>04</b> &nbsp;·&nbsp; Roadmap</div>
+          <div class="eyebrow"><b>05</b> &nbsp;·&nbsp; Roadmap</div>
           <h2 class="hl">The next six to thirty-six months.</h2>
           <p class="lede">Go-live starts the baselines and shadow mode on the same day. Operational signals follow within weeks, then the next hospitals, Central Asia, studies in 2027 and publications in 2028.</p>
           <div class="body">
@@ -645,13 +719,13 @@
             </div>
             <p class="road-note">Georgian speed does not substitute for FDA or EU approval where it is required. It means we arrive with published evidence already in hand, which is why the West is deliberately last.</p>
           </div>
-          <div class="foot"><span>MediMind</span><span>04 / 11</span></div>
+          <div class="foot"><span>MediMind</span><span>05 / 12</span></div>
         </div>
       </section>
 
       <section id="evidence">
         <div class="slide-inner">
-          <div class="eyebrow"><b>05</b> &nbsp;·&nbsp; Evidence</div>
+          <div class="eyebrow"><b>06</b> &nbsp;·&nbsp; Evidence</div>
           <h2 class="hl">Evidence accumulates from go-live, in four layers.</h2>
           <p class="lede">We do not start collecting evidence in 2027. It accumulates from deployment. 2027 is when the dataset is mature enough for formal retrospective studies, and 2028 is the publication milestone.</p>
           <div class="body">
@@ -683,13 +757,13 @@
               <div><strong>What we do not claim yet:</strong> a dollar-saving number. Operational attribution is measurable relatively quickly. Clinical causality requires a higher evidence bar, and that is what the shadow-mode and publication track is for.</div>
             </div>
           </div>
-          <div class="foot"><span>MediMind</span><span>05 / 11</span></div>
+          <div class="foot"><span>MediMind</span><span>06 / 12</span></div>
         </div>
       </section>
 
       <section id="validation">
         <div class="slide-inner">
-          <div class="eyebrow"><b>06</b> &nbsp;·&nbsp; Model validation</div>
+          <div class="eyebrow"><b>07</b> &nbsp;·&nbsp; Model validation</div>
           <h2 class="hl">Not a number yet. A framework, per intervention.</h2>
           <p class="lede">We do not have clinically valid false-positive and false-negative rates, because Phase 3 is not live. The framework is explicit: intervention-specific, risk-weighted, and launched in shadow mode so we measure sensitivity and false-alert burden per workflow before any clinician depends on it.</p>
           <div class="body">
@@ -726,13 +800,13 @@
               </div>
             </div>
           </div>
-          <div class="foot"><span>MediMind</span><span>06 / 11</span></div>
+          <div class="foot"><span>MediMind</span><span>07 / 12</span></div>
         </div>
       </section>
 
       <section id="buyer">
         <div class="slide-inner">
-          <div class="eyebrow"><b>07</b> &nbsp;·&nbsp; The buying committee</div>
+          <div class="eyebrow"><b>08</b> &nbsp;·&nbsp; The buying committee</div>
           <h2 class="hl">Three people in the room. One is losing money.</h2>
           <p class="lede">The one hospital network we sold was bought by its owner and CEO, against money he was already losing, not against the software line, which is small in this market. The clinical case and the commercial case are sold together, to different people in the same room.</p>
           <div class="body">
@@ -762,13 +836,13 @@
               </div>
             </div>
           </div>
-          <div class="foot"><span>MediMind</span><span>07 / 11</span></div>
+          <div class="foot"><span>MediMind</span><span>08 / 12</span></div>
         </div>
       </section>
 
       <section id="wedge">
         <div class="slide-inner">
-          <div class="eyebrow"><b>08</b> &nbsp;·&nbsp; Winning the next hospital</div>
+          <div class="eyebrow"><b>09</b> &nbsp;·&nbsp; Winning the next hospital</div>
           <h2 class="hl">We never ask a hospital to believe a promise.</h2>
           <p class="lede">GeoHospitals is our only signed customer, but not our only hospital relationship. Several conversations are already deep into implementation discussion. We count none of it as pipeline until it is signed.</p>
           <div class="body">
@@ -797,13 +871,13 @@
               </div>
             </div>
           </div>
-          <div class="foot"><span>MediMind</span><span>08 / 11</span></div>
+          <div class="foot"><span>MediMind</span><span>09 / 12</span></div>
         </div>
       </section>
 
       <section id="contract">
         <div class="slide-inner">
-          <div class="eyebrow"><b>09</b> &nbsp;·&nbsp; The design-partner contract</div>
+          <div class="eyebrow"><b>10</b> &nbsp;·&nbsp; The design-partner contract</div>
           <h2 class="hl">We bought a national reference deployment cheaply.</h2>
           <p class="lede">That contract tells us what a highly strategic design partner could negotiate before we had evidence. It does not tell us what the market will pay once the product is deployed and the risk has fallen. That is what the next hospitals test.</p>
           <div class="body">
@@ -841,13 +915,13 @@
               </div>
             </div>
           </div>
-          <div class="foot"><span>MediMind</span><span>09 / 11</span></div>
+          <div class="foot"><span>MediMind</span><span>10 / 12</span></div>
         </div>
       </section>
 
       <section id="competition">
         <div class="slide-inner">
-          <div class="eyebrow"><b>10</b> &nbsp;·&nbsp; Competitive landscape</div>
+          <div class="eyebrow"><b>11</b> &nbsp;·&nbsp; Competitive landscape</div>
           <h2 class="hl">Where we lead, and where we do not.</h2>
           <p class="lede">Three groups: AI scribes, AI overlays, and legacy EMRs. We have not found another company built on all six architectural conditions below. Our own row is scored as shipped today rather than as designed, and on everything scale buys the incumbents are ahead of us.</p>
           <div class="body">
@@ -890,13 +964,13 @@
               </div>
             </div>
           </div>
-          <div class="foot"><span>MediMind</span><span>10 / 11</span></div>
+          <div class="foot"><span>MediMind</span><span>11 / 12</span></div>
         </div>
       </section>
 
       <section id="facts">
         <div class="slide-inner">
-          <div class="eyebrow"><b>11</b> &nbsp;·&nbsp; Company facts</div>
+          <div class="eyebrow"><b>12</b> &nbsp;·&nbsp; Company facts</div>
           <h2 class="hl">Team, cash, raise and structure.</h2>
           <p class="lede">Burn is about 10,000 GEL a month, with zero equity taken to date and a 150,000 GEL non-dilutive grant the only outside money. Contracted revenue starts at go-live, and we are raising $200K on a standard SAFE.</p>
           <div class="body">
@@ -943,7 +1017,7 @@
               </div>
             </div>
           </div>
-          <div class="foot"><span>MediMind</span><span>11 / 11</span></div>
+          <div class="foot"><span>MediMind</span><span>12 / 12</span></div>
         </div>
       </section>
 

@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 500 Global Eurasia · Batch 11 · R3 (2026-09-04) — Q&A visual support deck.
+       Open file (no /briefing guard), like pitch.html. Not a linear pitch:
+       slide 0 is a clickable question index; every slide has a "↩ index" pill.
+       Every number here comes from the 20 Aug 2026 diligence pack. -->
+
+  <title>MediMind — 500 Global R3 · Q&amp;A support</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#1a365d">
+  <link rel="icon" href="/deck-assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/deck-assets/apple-touch-icon.png">
+  <meta property="og:title" content="MediMind — R3 Q&amp;A support">
+  <meta property="og:image" content="/deck-assets/og-image.png">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.css">
+
+  <style>
+    :root {
+      --emr-primary: #1a365d;
+      --emr-secondary: #2b6cb0;
+      --emr-accent: #3182ce;
+      --emr-light-accent: #bee3f8;
+      --emr-success: #38a169;
+      --emr-success-bg: #e6f4ea;
+      --emr-warning: #dd6b20;
+      --emr-warning-bg: #feebc8;
+      --emr-info-bg: #dbeafe;
+      --emr-bg-page: #ffffff;
+      --emr-bg-subtle: #f8fafc;
+      --emr-bg-tint: #f0f7ff;
+      --emr-text-primary: #1a365d;
+      --emr-text-body: #334155;
+      --emr-text-muted: #64748b;
+      --emr-text-light: #94a3b8;
+      --emr-border: #e2e8f0;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+
+    .reveal {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Noto Sans Georgian', sans-serif;
+      font-weight: 400;
+      color: var(--emr-text-body);
+      font-size: 22px;
+      background: var(--emr-bg-page);
+    }
+    .reveal .slides { text-align: left; }
+    .reveal .slides section { padding: 0; height: 100%; box-sizing: border-box; }
+    .reveal h1, .reveal h2, .reveal h3 {
+      font-weight: 700; color: var(--emr-text-primary); line-height: 1.1;
+      margin: 0; letter-spacing: -0.02em; text-transform: none;
+    }
+    .reveal h2 { font-size: 2.2em; }
+    .reveal p { line-height: 1.45; margin: 0; }
+    .reveal strong { color: var(--emr-text-primary); font-weight: 600; }
+    .reveal ul { margin: 0; padding: 0; list-style: none; }
+    .reveal li { margin: 0; line-height: 1.4; }
+    .reveal a { color: inherit; text-decoration: none; }
+    .reveal .progress { color: var(--emr-secondary); }
+    .reveal .controls { color: var(--emr-accent); }
+
+    /* ── r3x · slide frame ─────────────────────────────────────────── */
+    .slide-inner {
+      height: 100%; padding: 64px 90px 48px; box-sizing: border-box;
+      display: flex; flex-direction: column;
+    }
+    .r3x-eyebrow {
+      font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--emr-text-muted); margin-bottom: 8px;
+    }
+    .r3x-eyebrow b { color: var(--emr-accent); font-weight: 600; }
+    .r3x-title { font-size: 2.2em; margin: 0 0 18px 0 !important; white-space: nowrap; }
+    .r3x-sub { font-size: 1em; color: var(--emr-text-muted); margin: -8px 0 18px; }
+    .r3x-body { flex: 1; min-height: 0; font-size: 0.78em; }
+    .r3x-say {
+      margin-top: 14px; padding: 9px 14px; border-left: 3px solid var(--emr-accent);
+      background: var(--emr-bg-tint); border-radius: 0 8px 8px 0;
+      font-size: 0.72em; line-height: 1.4; color: var(--emr-text-body);
+    }
+    .r3x-say b {
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em;
+      color: var(--emr-accent); margin-right: 10px; font-weight: 600;
+    }
+    .r3x-home {
+      position: fixed; top: 16px; right: 18px; z-index: 60;
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em;
+      padding: 6px 12px; border-radius: 999px; border: 1px solid var(--emr-border);
+      background: rgba(255,255,255,0.9); color: var(--emr-text-muted);
+      text-decoration: none; transition: color .15s, border-color .15s;
+    }
+    .r3x-home:hover { color: var(--emr-accent); border-color: var(--emr-accent); }
+
+    /* chips */
+    .chip {
+      display: inline-block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 3px 8px; border-radius: 4px; font-weight: 600;
+      white-space: nowrap; vertical-align: middle;
+    }
+    .chip-live { background: var(--emr-success-bg); color: #276749; }
+    .chip-amber { background: var(--emr-warning-bg); color: #9c4221; }
+    .chip-blue { background: var(--emr-info-bg); color: #1e4e8c; }
+    .chip-grey { background: #edf2f7; color: #4a5568; }
+    .chip-navy { background: var(--emr-primary); color: #fff; }
+
+    .card {
+      background: var(--emr-bg-subtle); border: 1px solid var(--emr-border);
+      border-radius: 10px; padding: 14px 16px; box-sizing: border-box;
+    }
+    .num { font-size: 1.9em; font-weight: 700; color: var(--emr-text-primary); letter-spacing: -0.02em; line-height: 1; }
+    .lab { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--emr-text-muted); }
+    .muted { color: var(--emr-text-muted); }
+    .small { font-size: 0.86em; }
+
+    /* ── 00 · index ───────────────────────────────────────────────── */
+    .r3x-index .slide-inner { padding-top: 48px; }
+    .r3x-index-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+    .r3x-index-head img { height: 34px; }
+    .r3x-index-head .lab { text-align: right; line-height: 1.6; }
+    .r3x-index h2 { font-size: 1.5em; margin-bottom: 14px !important; }
+    .r3x-qgrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; flex: 1; }
+    .r3x-q {
+      display: flex; flex-direction: column; justify-content: space-between;
+      background: var(--emr-bg-subtle); border: 1px solid var(--emr-border); border-radius: 10px;
+      padding: 12px 14px; font-size: 0.72em; line-height: 1.3; color: var(--emr-text-primary);
+      transition: border-color .15s, background .15s;
+    }
+    .r3x-q:hover { border-color: var(--emr-accent); background: var(--emr-bg-tint); }
+    .r3x-q .lab { color: var(--emr-accent); margin-bottom: 6px; }
+    .r3x-q .who { font-family: var(--mono); font-size: 10px; color: var(--emr-text-light); margin-top: 8px; }
+    .r3x-q.r3x-q--thesis { background: var(--emr-primary); color: #fff; border-color: var(--emr-primary); }
+    .r3x-q.r3x-q--thesis .lab, .r3x-q.r3x-q--thesis .who { color: var(--emr-light-accent); }
+    .r3x-index-foot { margin-top: 12px; font-size: 0.62em; color: var(--emr-text-light); font-family: var(--mono); }
+
+    /* ── 01 · stage ───────────────────────────────────────────────── */
+    .r3x-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; margin-top: 18px; }
+    .r3x-steps::before { content: ""; position: absolute; left: 6%; right: 6%; top: 25px; height: 2px; background: var(--emr-border); }
+    .r3x-step { position: relative; padding: 0 16px; text-align: center; }
+    .r3x-step .dot {
+      width: 52px; height: 52px; border-radius: 50%; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center;
+      font-family: var(--mono); font-size: 14px; font-weight: 700; background: #fff; border: 2px solid var(--emr-border); color: var(--emr-text-light);
+    }
+    .r3x-step--done .dot { background: var(--emr-primary); border-color: var(--emr-primary); color: #fff; }
+    .r3x-step--designed .dot { border-color: var(--emr-accent); color: var(--emr-accent); }
+    .r3x-step--next .dot { border-style: dashed; }
+    .r3x-step h3 { font-size: 1.5em; margin-bottom: 8px; }
+    .r3x-step .chip { margin-bottom: 12px; }
+    .r3x-step p { font-size: 0.72em; color: var(--emr-text-body); }
+    .r3x-step p b { display: block; color: var(--emr-text-primary); }
+    .reveal .r3x-stage.present .r3x-step { animation: r3xUp .5s ease both; }
+    .reveal .r3x-stage.present .r3x-step:nth-child(2) { animation-delay: .12s; }
+    .reveal .r3x-stage.present .r3x-step:nth-child(3) { animation-delay: .24s; }
+    .reveal .r3x-stage.present .r3x-step:nth-child(4) { animation-delay: .36s; }
+    @keyframes r3xUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+    .reveal p.r3x-stage-line { margin-top: 34px; text-align: center; font-size: 0.95em; color: var(--emr-text-primary); }
+
+    /* ── 02 · built ───────────────────────────────────────────────── */
+    .r3x-built { display: grid; grid-template-columns: 1.05fr 1fr; gap: 28px; height: 100%; }
+    .r3x-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; align-content: start; }
+    .r3x-stats .card { padding: 12px 14px; }
+    .r3x-stats .card .lab { margin-bottom: 6px; }
+    .r3x-stats .card .sub { font-size: 0.8em; color: var(--emr-text-muted); margin-top: 4px; }
+    .r3x-stats .card--wide { grid-column: 1 / -1; display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: center; }
+    .r3x-stats .card--wide .vs { font-size: 0.8em; line-height: 1.35; }
+    .r3x-stats .card--wide .vs b { color: var(--emr-warning); }
+    .r3x-net { display: flex; flex-direction: column; }
+    .r3x-net svg { width: 100%; height: auto; }
+    .r3x-net-legend { display: grid; grid-template-columns: 1fr; gap: 6px; font-size: 0.8em; margin-top: 4px; }
+    .r3x-net-legend div { display: flex; align-items: center; gap: 10px; }
+    .r3x-net-legend i { width: 12px; height: 12px; border-radius: 50%; display: inline-block; flex: none; }
+    .r3x-net-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+    .r3x-net-head img { height: 22px; opacity: 0.85; }
+
+    /* ── 03 · phases ──────────────────────────────────────────────── */
+    .r3x-phases { display: flex; flex-direction: column; gap: 10px; }
+    .r3x-phase { display: grid; grid-template-columns: 200px 1fr 250px; gap: 18px; align-items: start; padding: 14px 18px; }
+    .r3x-phase .ph { font-size: 1.05em; font-weight: 700; color: var(--emr-text-primary); }
+    .r3x-phase .ph small { display: block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--emr-text-muted); margin-bottom: 4px; }
+    .r3x-phase .ph .chip { margin-top: 8px; }
+    .r3x-phase .what { font-size: 0.86em; line-height: 1.4; }
+    .r3x-phase .when { font-size: 0.82em; line-height: 1.4; }
+    .r3x-phase .when .chip { margin: 0 2px 4px 0; }
+    .reveal p.r3x-foot-note { margin-top: 10px; font-size: 0.72em; color: var(--emr-text-muted); }
+
+    /* ── 04 · timeline ────────────────────────────────────────────── */
+    .r3x-rail { position: relative; margin-top: 180px; }
+    .r3x-rail::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: var(--emr-border); }
+    .r3x-rail-grid { display: grid; grid-template-columns: repeat(8, 1fr); }
+    .r3x-ms { position: relative; padding: 0 6px; }
+    .r3x-ms::before { content: ""; position: absolute; left: 50%; top: -8px; width: 16px; height: 16px; margin-left: -8px; border-radius: 50%; background: #fff; border: 3px solid var(--emr-accent); box-sizing: border-box; }
+    .r3x-ms--done::before { background: var(--emr-primary); border-color: var(--emr-primary); }
+    .r3x-ms--far::before { border-color: var(--emr-text-light); }
+    .r3x-ms .box { position: absolute; left: 4px; right: 4px; font-size: 0.7em; line-height: 1.3; }
+    .r3x-ms .box b { display: block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; color: var(--emr-accent); margin-bottom: 4px; text-transform: uppercase; }
+    .r3x-ms--far .box b { color: var(--emr-text-muted); }
+    .r3x-ms:nth-child(odd) .box { bottom: 22px; }
+    .r3x-ms:nth-child(even) .box { top: 22px; }
+    .r3x-ms .chip { margin-top: 5px; }
+    .reveal p.r3x-timeline-note { margin-top: 205px; font-size: 0.78em; text-align: center; color: var(--emr-text-primary); }
+
+    /* ── 05 · evidence ────────────────────────────────────────────── */
+    .r3x-layers { display: flex; flex-direction: column; gap: 6px; }
+    .r3x-layer { display: grid; grid-template-columns: 200px 1.15fr 1fr; gap: 14px; padding: 7px 14px; align-items: center; }
+    .r3x-layer .ln { font-weight: 700; color: var(--emr-text-primary); font-size: 0.88em; line-height: 1.2; }
+    .r3x-layer .ln small { display: block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--emr-accent); margin-bottom: 3px; }
+    .r3x-layer .g, .r3x-layer .c { font-size: 0.74em; line-height: 1.3; }
+    .r3x-layer .g::before, .r3x-layer .c::before { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; display: block; margin-bottom: 2px; }
+    .r3x-layer .g::before { content: "GIVES US"; color: #276749; }
+    .r3x-layer .c::before { content: "WE SAY OURSELVES"; color: var(--emr-warning); }
+    .r3x-layer--l1 { border-left: 4px solid var(--emr-text-light); }
+    .r3x-layer--l2 { border-left: 4px solid var(--emr-secondary); }
+    .r3x-layer--l3 { border-left: 4px solid var(--emr-accent); }
+    .r3x-layer--l4 { border-left: 4px solid var(--emr-primary); }
+    .r3x-evidence-foot { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 8px; font-size: 0.7em; line-height: 1.3; }
+    .r3x-evidence-foot div { padding: 7px 12px; background: var(--emr-bg-tint); border-radius: 8px; }
+
+    /* ── 06 · efficacy ────────────────────────────────────────────── */
+    .r3x-eff { display: grid; grid-template-columns: 1.1fr 1fr; gap: 30px; }
+    .r3x-ladder { display: flex; flex-direction: column-reverse; gap: 6px; position: relative; }
+    .r3x-rung { display: grid; grid-template-columns: 30px 1fr; gap: 12px; align-items: center; padding: 9px 14px; border-radius: 8px; background: var(--emr-bg-subtle); border: 1px solid var(--emr-border); }
+    .r3x-rung i { font-family: var(--mono); font-size: 12px; font-weight: 700; color: var(--emr-accent); font-style: normal; }
+    .r3x-rung b { display: block; color: var(--emr-text-primary); font-size: 0.9em; }
+    .r3x-rung span { font-size: 0.74em; color: var(--emr-text-muted); }
+    .r3x-rung:nth-child(1) { margin-left: 0; }
+    .r3x-rung:nth-child(2) { margin-left: 18px; }
+    .r3x-rung:nth-child(3) { margin-left: 36px; }
+    .r3x-rung:nth-child(4) { margin-left: 54px; }
+    .r3x-rung:nth-child(5) { margin-left: 72px; background: var(--emr-bg-tint); border-color: var(--emr-light-accent); }
+    .r3x-ladder-cap { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--emr-text-muted); margin-bottom: 8px; display: flex; justify-content: space-between; }
+    .r3x-princ { display: flex; flex-direction: column; gap: 9px; }
+    .r3x-princ li { font-size: 0.82em; padding-left: 18px; position: relative; line-height: 1.35; }
+    .r3x-princ li::before { content: ""; position: absolute; left: 0; top: 9px; width: 8px; height: 8px; border-radius: 50%; background: var(--emr-accent); }
+    .r3x-princ li b { color: var(--emr-text-primary); }
+    .r3x-metrics { margin-top: 14px; padding: 10px 14px; }
+    .r3x-metrics .lab { margin-bottom: 6px; }
+    .r3x-metrics ul { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 12px; font-size: 0.78em; }
+    .r3x-metrics li::before { content: "· "; color: var(--emr-accent); }
+    .r3x-draft { margin-top: 10px; }
+
+    /* ── 07 · buyer ───────────────────────────────────────────────── */
+    .r3x-room { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .r3x-room .card { padding: 14px 16px; min-height: 150px; }
+    .r3x-room .role { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 6px; }
+    .r3x-room .who { font-weight: 700; color: var(--emr-text-primary); font-size: 0.95em; margin-bottom: 8px; }
+    .r3x-room p { font-size: 0.8em; line-height: 1.38; }
+    .r3x-room .card--buyer { border-top: 4px solid var(--emr-primary); }
+    .r3x-room .card--buyer .role { color: var(--emr-primary); }
+    .r3x-room .card--champ { border-top: 4px solid var(--emr-accent); }
+    .r3x-room .card--champ .role { color: var(--emr-accent); }
+    .r3x-room .card--block { border-top: 4px solid var(--emr-text-light); }
+    .r3x-room .card--block .role { color: var(--emr-text-muted); }
+    .r3x-against { margin-top: 16px; }
+    .r3x-against .lab { margin-bottom: 8px; }
+    .r3x-against-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .r3x-against-grid div { padding: 10px 14px; border-radius: 8px; background: var(--emr-bg-tint); font-size: 0.8em; line-height: 1.35; }
+    .r3x-against-grid div b { display: block; color: var(--emr-text-primary); margin-bottom: 2px; }
+
+    /* ── 08 · wedge ───────────────────────────────────────────────── */
+    .r3x-wedge { display: grid; grid-template-columns: 1.15fr 1fr; gap: 30px; }
+    .r3x-flow { display: flex; flex-direction: column; gap: 8px; }
+    .r3x-fstep { display: grid; grid-template-columns: 44px 1fr; gap: 12px; align-items: center; padding: 10px 14px; }
+    .r3x-fstep i { width: 34px; height: 34px; border-radius: 50%; background: var(--emr-primary); color: #fff; font-family: var(--mono); font-size: 12px; font-weight: 700; font-style: normal; display: flex; align-items: center; justify-content: center; }
+    .r3x-fstep b { display: block; color: var(--emr-text-primary); font-size: 0.9em; }
+    .r3x-fstep span { font-size: 0.76em; color: var(--emr-text-muted); }
+    .r3x-fstep--ask { background: var(--emr-bg-tint); border-color: var(--emr-light-accent); }
+    .r3x-fstep--ask i { background: var(--emr-accent); }
+    .r3x-cred { margin-top: 10px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .r3x-cred div { font-size: 0.7em; line-height: 1.3; padding: 8px 10px; border-radius: 8px; background: var(--emr-bg-subtle); border: 1px solid var(--emr-border); }
+    .r3x-cred div b { display: block; color: var(--emr-text-primary); }
+    .r3x-funnel { display: flex; flex-direction: column; gap: 8px; }
+    .r3x-funnel .lab { margin-bottom: 2px; }
+    .r3x-fl { padding: 10px 14px; border-radius: 8px; background: var(--emr-bg-subtle); border: 1px solid var(--emr-border); }
+    .r3x-fl:nth-child(2) { margin: 0 0; }
+    .r3x-fl:nth-child(3) { margin: 0 14px; }
+    .r3x-fl:nth-child(4) { margin: 0 28px; }
+    .r3x-fl:nth-child(5) { margin: 0 42px; background: var(--emr-primary); border-color: var(--emr-primary); color: #fff; }
+    .r3x-fl b { display: block; font-size: 0.86em; color: var(--emr-text-primary); }
+    .r3x-fl:nth-child(5) b { color: #fff; }
+    .r3x-fl span { font-size: 0.72em; color: var(--emr-text-muted); }
+    .r3x-fl:nth-child(5) span { color: var(--emr-light-accent); }
+    .reveal p.r3x-funnel-note { font-size: 0.7em; color: var(--emr-text-muted); margin-top: 4px; }
+
+    /* ── 09 · price ───────────────────────────────────────────────── */
+    .r3x-price { display: grid; grid-template-columns: 1.1fr 1fr; gap: 28px; }
+    .r3x-arith { padding: 16px 18px; }
+    .r3x-arith-row { display: grid; grid-template-columns: 1fr auto 1fr; gap: 14px; align-items: center; text-align: center; }
+    .r3x-arith-row .num { font-size: 1.7em; }
+    .r3x-arith-row .vs { font-family: var(--mono); font-size: 11px; color: var(--emr-text-light); }
+    .r3x-arith-row .sub { font-size: 0.74em; color: var(--emr-text-muted); margin-top: 6px; line-height: 1.3; }
+    .r3x-terms { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 14px; }
+    .r3x-terms div { font-size: 0.68em; text-align: center; padding: 7px 6px; border-radius: 6px; background: #fff; border: 1px solid var(--emr-border); color: var(--emr-text-primary); line-height: 1.25; }
+    .r3x-bought { margin-top: 12px; }
+    .r3x-bought .lab { margin-bottom: 6px; }
+    .r3x-bought ul { display: grid; grid-template-columns: 1fr 1fr; gap: 3px 14px; font-size: 0.78em; }
+    .r3x-bought li::before { content: "· "; color: var(--emr-accent); }
+    .r3x-ladder2 { display: flex; flex-direction: column; gap: 10px; }
+    .r3x-tier { padding: 12px 16px; display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: center; }
+    .r3x-tier .t { font-weight: 700; color: var(--emr-text-primary); font-size: 0.9em; }
+    .r3x-tier .t small { display: block; font-weight: 400; font-size: 0.8em; color: var(--emr-text-muted); margin-top: 2px; }
+    .r3x-tier .num { font-size: 1.5em; }
+    .r3x-tier .num small { font-size: 0.42em; font-weight: 500; color: var(--emr-text-muted); }
+    .r3x-tier--us { background: var(--emr-primary); border-color: var(--emr-primary); }
+    .r3x-tier--us .t, .r3x-tier--us .num { color: #fff; }
+    .r3x-tier--us .t small, .r3x-tier--us .num small { color: var(--emr-light-accent); }
+    .reveal p.r3x-tier-note { font-size: 0.7em; color: var(--emr-text-muted); }
+
+    /* ── 10 · competition ─────────────────────────────────────────── */
+    .r3x-comp { display: grid; grid-template-columns: 1.5fr 1fr; gap: 26px; }
+    .r3x-matrix { width: 100%; border-collapse: collapse; font-size: 0.72em; }
+    .r3x-matrix th { font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--emr-text-muted); font-weight: 600; text-align: center; padding: 0 4px 6px; line-height: 1.2; vertical-align: bottom; }
+    .r3x-matrix th:first-child { text-align: left; }
+    .r3x-matrix td { padding: 5px 4px; border-top: 1px solid var(--emr-border); text-align: center; }
+    .r3x-matrix td:first-child { text-align: left; color: var(--emr-text-primary); white-space: nowrap; }
+    .r3x-matrix tr.me td { background: var(--emr-bg-tint); font-weight: 700; }
+    .r3x-matrix .d { display: inline-block; width: 11px; height: 11px; border-radius: 50%; border: 1.5px solid var(--emr-secondary); box-sizing: border-box; vertical-align: middle; }
+    .r3x-matrix .d-f { background: var(--emr-secondary); }
+    .r3x-matrix .d-h { background: linear-gradient(90deg, var(--emr-secondary) 50%, #fff 50%); }
+    .r3x-matrix .d-n { border-color: var(--emr-border); }
+    .r3x-matrix .d-x { border: 0; width: auto; height: auto; color: var(--emr-text-light); }
+    .r3x-matrix-key { font-size: 0.62em; color: var(--emr-text-muted); margin-top: 6px; }
+    .r3x-comp-side { display: flex; flex-direction: column; gap: 10px; }
+    .r3x-comp-side .card { padding: 12px 14px; }
+    .r3x-comp-side .card .lab { margin-bottom: 6px; }
+    .r3x-comp-side .card p { font-size: 0.78em; line-height: 1.38; }
+    .r3x-comp-side .card--watch { border-left: 4px solid var(--emr-warning); }
+    .r3x-comp-side .card--watch .lab { color: var(--emr-warning); }
+    .r3x-comp-side ul { font-size: 0.76em; }
+    .r3x-comp-side li::before { content: "· "; color: var(--emr-accent); }
+
+    /* ── 11 · facts ───────────────────────────────────────────────── */
+    .r3x-facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .r3x-facts .card { padding: 12px 14px; }
+    .r3x-facts .card .lab { margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid var(--emr-border); }
+    .r3x-facts dl { margin: 0; font-size: 0.74em; display: flex; flex-direction: column; gap: 7px; }
+    .r3x-facts dt { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--emr-text-muted); }
+    .r3x-facts dd { margin: 0; color: var(--emr-text-primary); line-height: 1.3; }
+    .r3x-facts dd small { display: block; color: var(--emr-text-muted); font-size: 0.86em; }
+    .r3x-facts .card--raise { border-top: 4px solid var(--emr-accent); }
+
+    /* ── print ────────────────────────────────────────────────────── */
+    @media print { .r3x-home, .mobile-nav { display: none !important; } }
+
+    /* ── mobile · Reveal transform-scale bypass (copied from pitch.html; do not simplify) ── */
+    @media (max-width: 768px) {
+      html, body { font-size: 16px; overflow: hidden; }
+      .reveal .controls { display: none !important; }
+      .reveal .progress { z-index: 50; height: 4px; bottom: 0; }
+      .reveal {
+        width: 100% !important;
+        height: 100vh !important;
+        height: 100dvh !important;
+        position: fixed;
+        top: 0; left: 0;
+        overflow: hidden;
+      }
+      .reveal .slides {
+        width: 100% !important;
+        height: 100% !important;
+        top: 0 !important;
+        left: 0 !important;
+        transform: none !important;
+        zoom: 1 !important;
+        perspective: none !important;
+        overflow: visible !important;
+      }
+      .reveal .slides > section,
+      .reveal .slides > section.stack {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100vh !important;
+        height: 100dvh !important;
+        max-height: 100dvh !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        transform: translate3d(0, 0, 0) !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        -webkit-overflow-scrolling: touch;
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        font-size: inherit !important;
+      }
+      .reveal .slides > section.past {
+        transform: translate3d(-100%, 0, 0) !important;
+        pointer-events: none !important;
+        visibility: hidden !important;
+      }
+      .reveal .slides > section.future {
+        transform: translate3d(100%, 0, 0) !important;
+        pointer-events: none !important;
+        visibility: hidden !important;
+      }
+      .reveal .slides > section.present {
+        transform: translate3d(0, 0, 0) !important;
+        z-index: 2;
+      }
+
+      .reveal { font-size: 16px; }
+      .slide-inner { height: auto; min-height: 100%; padding: 56px 18px 80px; }
+      .r3x-title { white-space: normal; font-size: 1.5em; }
+      .r3x-body { font-size: 0.9em; }
+      .r3x-home { top: 10px; right: 10px; }
+      .r3x-index .slide-inner { padding-top: 56px; }
+      .r3x-qgrid, .r3x-steps, .r3x-built, .r3x-stats, .r3x-phase, .r3x-layer, .r3x-eff, .r3x-room,
+      .r3x-against-grid, .r3x-wedge, .r3x-cred, .r3x-price, .r3x-terms, .r3x-comp, .r3x-facts,
+      .r3x-evidence-foot, .r3x-metrics ul, .r3x-bought ul { grid-template-columns: 1fr !important; }
+      .r3x-stats .card--wide { grid-template-columns: 1fr; }
+      .r3x-steps::before { display: none; }
+      .r3x-step { margin-bottom: 22px; }
+      .r3x-rail { margin-top: 0; }
+      .r3x-rail::before { display: none; }
+      .r3x-rail-grid { grid-template-columns: 1fr; gap: 10px; }
+      .r3x-ms::before { display: none; }
+      .r3x-ms .box { position: static; padding: 10px 12px; background: var(--emr-bg-subtle); border: 1px solid var(--emr-border); border-radius: 8px; }
+      .reveal p.r3x-timeline-note { margin-top: 16px; }
+      .r3x-rung, .r3x-fl { margin-left: 0 !important; margin-right: 0 !important; }
+      .r3x-matrix { font-size: 0.62em; }
+      .r3x-comp > div:first-child { overflow-x: auto; }
+      .r3x-comp-side { min-width: 0; }
+      .r3x-matrix td:first-child { white-space: normal; }
+
+      /* Mobile nav arrows — bottom corners */
+      .mobile-nav {
+        display: flex !important;
+        position: fixed;
+        bottom: 12px;
+        z-index: 100;
+        width: 36px;
+        height: 36px;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        border: 0;
+        color: var(--emr-primary, #1a365d);
+        opacity: 0.42;
+        cursor: pointer;
+        padding: 0;
+        -webkit-tap-highlight-color: transparent;
+        transition: opacity 0.15s ease, transform 0.12s ease;
+        filter: drop-shadow(0 1px 2px rgba(255,255,255,0.85));
+      }
+      .mobile-nav:active { opacity: 0.95; transform: scale(0.92); }
+      .mobile-nav-prev { left: 8px; }
+      .mobile-nav-next { right: 8px; }
+      .mobile-nav svg { width: 28px; height: 28px; }
+    }
+    /* Default: hide nav arrows on desktop */
+    .mobile-nav { display: none; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- ═══ 00 · QUESTION INDEX ═══════════════════════════════════════ -->
+      <section id="index" class="r3x-index">
+        <div class="slide-inner">
+          <div class="r3x-index-head">
+            <img src="/deck-assets/logo-horizontal-light.svg" alt="MediMind">
+            <div class="lab">500 Global Eurasia · Batch 11 · R3<br>Friday 4 Sep 2026 · Q&amp;A support</div>
+          </div>
+          <h2>Pick the question. Land on the slide.</h2>
+          <div class="r3x-qgrid">
+            <a class="r3x-q r3x-q--thesis" href="#/stage"><div><div class="lab">01 · The stage we are at</div>Built → Deployed → Measured → Proven</div><div class="who">the backbone</div></a>
+            <a class="r3x-q" href="#/built"><div><div class="lab">02 · Live in the 25?</div>What is built, and where it runs today</div><div class="who">Lasha</div></a>
+            <a class="r3x-q" href="#/phases"><div><div class="lab">03 · Which modules?</div>Phase 1 · 2 · 3 status, honestly labelled</div><div class="who">Lasha</div></a>
+            <a class="r3x-q" href="#/timeline"><div><div class="lab">04 · What's next?</div>Go-live → signals → hospitals → Central Asia → studies</div><div class="who">Irakli</div></a>
+            <a class="r3x-q" href="#/evidence"><div><div class="lab">05 · Cost &amp; time savings?</div>How evidence accumulates from go-live</div><div class="who">Irakli</div></a>
+            <a class="r3x-q" href="#/efficacy"><div><div class="lab">06 · False positives / negatives?</div>The validation framework, no numbers</div><div class="who">Lasha</div></a>
+            <a class="r3x-q" href="#/buyer"><div><div class="lab">07 · User isn't the payer</div>Who buys, and what he buys against</div><div class="who">Irakli</div></a>
+            <a class="r3x-q" href="#/wedge"><div><div class="lab">08 · The next hospital</div>The 10-day parallel run, and conversations beyond GeoHospitals</div><div class="who">Irakli · Lasha</div></a>
+            <a class="r3x-q" href="#/price"><div><div class="lab">09 · "Holy." 30K GEL a year?</div>Why the price is that low, and what list looks like</div><div class="who">Irakli</div></a>
+            <a class="r3x-q" href="#/competition"><div><div class="lab">10 · Competition in the West</div>Six conditions nobody else meets together</div><div class="who">Irakli</div></a>
+            <a class="r3x-q" href="#/facts"><div><div class="lab">11 · Team · cash · raise · structure</div>The fact sheet, straight from the pack</div><div class="who">Irakli</div></a>
+            <div class="r3x-q" style="border-style:dashed;justify-content:center;color:var(--emr-text-light)">Numbers are as of 20 Aug 2026 (the diligence pack). Updated deployment numbers after go-live.</div>
+          </div>
+          <div class="r3x-index-foot">answer first · then stop · press ↩ index (top-right) to come back</div>
+        </div>
+      </section>
+
+      <!-- ═══ 01 · STAGE ══════════════════════════════════════════════ -->
+      <section id="stage" class="r3x-stage">
+        <div class="slide-inner">
+          <div class="r3x-eyebrow"><b>01</b> · Where are you, really?</div>
+          <h2 class="r3x-title">Built. Deployed. Measured. Proven, next.</h2>
+          <div class="r3x-body">
+            <div class="r3x-steps">
+              <div class="r3x-step r3x-step--done">
+                <div class="dot">✓</div>
+                <h3>Built</h3>
+                <span class="chip chip-live">done</span>
+                <p><b>A complete AI-native hospital OS, by four people.</b>Forked from Medplum onto FHIR R4. 1,147,535 patients migrated, zero gaps, zero duplicates. 80+ FHIR resource types in production.</p>
+              </div>
+              <div class="r3x-step r3x-step--done">
+                <div class="dot">✓</div>
+                <h3>Deployed</h3>
+                <span class="chip chip-amber">finishing now</span>
+                <p><b>Backend across the 25-hospital network.</b>Central hospital live on everything except billing. First regional hospital in integration. Full go-live second half of September.</p>
+              </div>
+              <div class="r3x-step r3x-step--designed">
+                <div class="dot">3</div>
+                <h3>Measured</h3>
+                <span class="chip chip-blue">designed · starts at go-live</span>
+                <p><b>The unified system of record is the instrument.</b>Legacy baseline, clean Phase 1 baseline, Phase 2 impact, Phase 3 in shadow mode. Evidence starts at deployment, not in 2027.</p>
+              </div>
+              <div class="r3x-step r3x-step--next">
+                <div class="dot">4</div>
+                <h3>Proven</h3>
+                <span class="chip chip-grey">what this stage exists to produce</span>
+                <p><b>Operational attribution in weeks. Clinical causality at a higher bar.</b>2027 retrospective studies. 2028 first peer-reviewed publications.</p>
+              </div>
+            </div>
+            <p class="r3x-stage-line">Georgia is the proving ground, not the ceiling. We arrive in the West with evidence already in hand.</p>
+          </div>
+          <div class="r3x-say"><b>SAY THIS</b>We have unusually strong evidence on the first two. We deliberately designed the machinery for the third. The fourth is what the next stage exists to produce.</div>
+        </div>
+      </section>
+
+      <!-- ═══ 02 · BUILT / DEPLOYED ══════════════════════════════════ -->
+      <section id="built" class="r3x-builtslide">
+        <div class="slide-inner">
+          <div class="r3x-eyebrow"><b>02</b> · Are you live in the 25? What is actually built?</div>
+          <h2 class="r3x-title">One hospital live. Backend network-wide.</h2>
+          <div class="r3x-body">
+            <div class="r3x-built">
+              <div class="r3x-stats">
+                <div class="card"><div class="lab">Patients in FHIR</div><div class="num">1,147,535</div><div class="sub">zero gaps · zero duplicates</div></div>
+                <div class="card"><div class="lab">Visits · Observations</div><div class="num">3.14M · 3.7M</div><div class="sub">migrated behind them</div></div>
+                <div class="card"><div class="lab">FHIR resource types</div><div class="num">80+</div><div class="sub">in production use</div></div>
+                <div class="card"><div class="lab">Doctors registered</div><div class="num">~1,000</div><div class="sub">our count, approximate</div></div>
+                <div class="card card--wide">
+                  <div><div class="lab">Lab analyzers connected</div><div class="num">20+ <span style="font-size:0.5em;font-weight:500;color:var(--emr-text-muted)">in &lt; 3 days</span></div></div>
+                  <div class="vs">One junior engineer on site, the rest remote.<br>The incumbent: <b>~4 months, ~70% connected.</b><br>Stack live the day after server handover. Feedback to testable product in hours.</div>
+                </div>
+              </div>
+              <div class="r3x-net">
+                <div class="r3x-net-head"><div class="lab">GeoHospitals · 25-site network</div><img src="/deck-assets/geo-hospitals-logo.png" alt="GeoHospitals"></div>
+                <svg viewBox="0 0 520 300" aria-label="Network rollout status">
+                  <g stroke="#e2e8f0" stroke-width="1.5">
+                    <line x1="260" y1="150" x2="70" y2="60"/><line x1="260" y1="150" x2="140" y2="40"/><line x1="260" y1="150" x2="210" y2="30"/><line x1="260" y1="150" x2="300" y2="28"/><line x1="260" y1="150" x2="380" y2="40"/><line x1="260" y1="150" x2="450" y2="70"/>
+                    <line x1="260" y1="150" x2="480" y2="130"/><line x1="260" y1="150" x2="470" y2="200"/><line x1="260" y1="150" x2="430" y2="255"/><line x1="260" y1="150" x2="360" y2="278"/><line x1="260" y1="150" x2="280" y2="285"/><line x1="260" y1="150" x2="200" y2="280"/>
+                    <line x1="260" y1="150" x2="120" y2="260"/><line x1="260" y1="150" x2="60" y2="210"/><line x1="260" y1="150" x2="40" y2="140"/><line x1="260" y1="150" x2="110" y2="110"/><line x1="260" y1="150" x2="170" y2="80"/><line x1="260" y1="150" x2="330" y2="75"/>
+                    <line x1="260" y1="150" x2="400" y2="120"/><line x1="260" y1="150" x2="395" y2="190"/><line x1="260" y1="150" x2="330" y2="230"/><line x1="260" y1="150" x2="190" y2="220"/><line x1="260" y1="150" x2="130" y2="170"/><line x1="260" y1="150" x2="250" y2="60"/>
+                  </g>
+                  <g fill="#e2e8f0" stroke="#cbd5e0" stroke-width="1">
+                    <circle cx="70" cy="60" r="8"/><circle cx="140" cy="40" r="8"/><circle cx="210" cy="30" r="8"/><circle cx="300" cy="28" r="8"/><circle cx="380" cy="40" r="8"/><circle cx="450" cy="70" r="8"/>
+                    <circle cx="480" cy="130" r="8"/><circle cx="470" cy="200" r="8"/><circle cx="430" cy="255" r="8"/><circle cx="360" cy="278" r="8"/><circle cx="280" cy="285" r="8"/><circle cx="200" cy="280" r="8"/>
+                    <circle cx="120" cy="260" r="8"/><circle cx="60" cy="210" r="8"/><circle cx="40" cy="140" r="8"/><circle cx="170" cy="80" r="8"/><circle cx="330" cy="75" r="8"/>
+                    <circle cx="400" cy="120" r="8"/><circle cx="395" cy="190" r="8"/><circle cx="330" cy="230" r="8"/><circle cx="190" cy="220" r="8"/><circle cx="130" cy="170" r="8"/><circle cx="250" cy="60" r="8"/>
+                  </g>
+                  <!-- first regional hospital · in integration -->
+                  <circle cx="110" cy="110" r="11" fill="#feebc8" stroke="#dd6b20" stroke-width="2"/>
+                  <text x="110" y="135" text-anchor="middle" font-size="10" font-family="ui-monospace,Menlo,monospace" fill="#9c4221">REGIONAL #1 · INTEGRATING</text>
+                  <!-- central hospital · live -->
+                  <circle cx="260" cy="150" r="30" fill="#e6f4ea" stroke="#38a169" stroke-width="3"/>
+                  <text x="260" y="146" text-anchor="middle" font-size="11" font-weight="700" font-family="-apple-system,Segoe UI,Roboto,sans-serif" fill="#1a365d">CENTRAL</text>
+                  <text x="260" y="159" text-anchor="middle" font-size="9" font-family="ui-monospace,Menlo,monospace" fill="#276749">LIVE</text>
+                </svg>
+                <div class="r3x-net-legend">
+                  <div><i style="background:#38a169"></i><span><strong>Central hospital, largest in the chain:</strong> live on all modules except billing (final adjustment).</span></div>
+                  <div><i style="background:#dd6b20"></i><span><strong>First regional hospital:</strong> in integration.</span></div>
+                  <div><i style="background:#cbd5e0"></i><span><strong>Remaining sites:</strong> shared backend already deployed; each is configuration plus staff training, not a new deployment. <strong>Full go-live: second half of September. Payment starts then.</strong></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="r3x-say"><b>SAY THIS</b>Backend deployed across the 25-hospital network. Central hospital live on everything except billing. First regional hospital being integrated. Full go-live second half of September.</div>
+        </div>
+      </section>
+
+      <!-- ═══ 03 · PHASES ═════════════════════════════════════════════ -->
+      <section id="phases" class="r3x-phasesslide">
+        <div class="slide-inner">
+          <div class="r3x-eyebrow"><b>03</b> · Of all these modules, which are live?</div>
+          <h2 class="r3x-title">Three phases. Status labelled exactly as in your folder.</h2>
+          <div class="r3x-body">
+            <div class="r3x-phases">
+              <div class="card r3x-phase">
+                <div class="ph"><small>PHASE 1</small>Foundation<br><span class="chip chip-amber">finishing now</span></div>
+                <div class="what">One unified FHIR-R4-native codebase replacing every system the hospital runs: registration, EMR, CPOE, lab (LIS), imaging (PACS), pharmacy, warehouse, bed flow, scheduling, billing, HR, patient portal, ministry reporting.</div>
+                <div class="when"><span class="chip chip-live">live</span> all modules except billing, central hospital<br><span class="chip chip-amber">final adjustment</span> billing<br><strong>Full 25-hospital go-live: 2H Sep 2026.</strong></div>
+              </div>
+              <div class="card r3x-phase">
+                <div class="ph"><small>PHASE 2</small>Intelligent workflows<br><span class="chip chip-blue">experiments starting</span></div>
+                <div class="what">Departmental AI in daily practice: voice-assisted documentation, specialty copilots, assistants for C-level management and billing heads. Not operating the hospital as a whole.</div>
+                <div class="when">Rolled out with hospital management, step by step, after the Phase 1 cutover. Measured against the legacy and Phase 1 baselines.</div>
+              </div>
+              <div class="card r3x-phase">
+                <div class="ph"><small>PHASE 3</small>Proactive layer<br><span class="chip chip-grey">in development · testing</span></div>
+                <div class="what">Departmental AI harnesses (medical, billing, HR, warehouse): agents with the full context of the shared FHIR record and the tools to <em>suggest</em>, and on approval <em>act</em>. The doctor is the decision maker in every pipeline.</div>
+                <div class="when">Not yet in any clinical setting. No AI decisions run in production. <strong>Launches in shadow mode</strong> when the network rollout completes and telemetry flows. Excluded from the anchor contract.</div>
+              </div>
+            </div>
+            <p class="r3x-foot-note">The 2 am case: a real patient from Lasha's own practice. MediMind's response to it was simulated in our system. Phase 3 is not live.</p>
+          </div>
+          <div class="r3x-say"><b>SAY THIS</b>Phase 1 is finishing now. Some Phase 2 experiments have started. Phase 3 is in development and testing, not integrated in any clinical setting, and launches in shadow mode.</div>
+        </div>
+      </section>
+
+      <!-- ═══ 04 · TIMELINE ═══════════════════════════════════════════ -->
+      <section id="timeline" class="r3x-timelineslide">
+        <div class="slide-inner">
+          <div class="r3x-eyebrow"><b>04</b> · What happens next? Central Asia? The regulatory queue?</div>
+          <h2 class="r3x-title">The next 6–36 months as one sequence.</h2>
+          <div class="r3x-body">
+            <div class="r3x-rail">
+              <div class="r3x-rail-grid">
+                <div class="r3x-ms r3x-ms--done"><div class="box"><b>Now</b>Backend network-wide. Central hospital live. First regional hospital integrating.</div></div>
+                <div class="r3x-ms"><div class="box"><b>2H Sep 2026</b>Full 25-hospital go-live. Contracted payment begins. Phase 1 baseline and Phase 3 shadow mode start the same day.</div></div>
+                <div class="r3x-ms"><div class="box"><b>Weeks after</b>First Phase 2 operational signals on high-volume workflows.</div></div>
+                <div class="r3x-ms"><div class="box"><b>Next ~6 months</b>Additional Georgian hospitals at the $30 list. Tests conversion and price. <span class="chip chip-blue">georgia first</span></div></div>
+                <div class="r3x-ms"><div class="box"><b>After Georgia</b>Uzbekistan / Kazakhstan. Rulebooks researched, platform multilingual. <span class="chip chip-grey">exploratory · no commitments</span></div></div>
+                <div class="r3x-ms r3x-ms--far"><div class="box"><b>2027</b>Dataset mature for formal retrospective outcome studies.</div></div>
+                <div class="r3x-ms r3x-ms--far"><div class="box"><b>2028</b>First peer-reviewed publications on patient and business outcomes.</div></div>
+                <div class="r3x-ms r3x-ms--far"><div class="box"><b>2029–30</b>FDA pathway work for selected capabilities. EU MDR CE in progress. Premium-market preparation.</div></div>
+              </div>
+            </div>
+            <p class="r3x-timeline-note">Georgian speed does not substitute for FDA or EU approval where it is required. It means we arrive there with published evidence already in hand. That is why the West is deliberately last.</p>
+          </div>
+          <div class="r3x-say"><b>SAY THIS</b>Go-live → baselines and shadow mode → operational signals in weeks → next hospitals test conversion and price → Central Asia → 2027 studies → 2028 publications.</div>
+        </div>
+      </section>
+
+      <!-- ═══ 05 · EVIDENCE ═══════════════════════════════════════════ -->
+      <section id="evidence" class="r3x-evidenceslide">
+        <div class="slide-inner">
+          <div class="r3x-eyebrow"><b>05</b> · Cost and time savings for the hospital owner?</div>
+          <h2 class="r3x-title">Evidence accumulates from go-live, in four layers.</h2>
+          <div class="r3x-body">
+            <div class="r3x-layers">
+              <div class="card r3x-layer r3x-layer--l1">
+                <div class="ln"><small>LAYER 1</small>Historical legacy baseline</div>
+                <div class="g">The hospital's pre-MediMind data, which we hold because we migrated it: throughput, turnaround, utilisation, reimbursement outcomes, documentation completeness, length of stay.</div>
+                <div class="c">Fragmented, incomplete, sometimes poorly structured. Context, not clean ground truth.</div>
+              </div>
+              <div class="card r3x-layer r3x-layer--l2">
+                <div class="ln"><small>LAYER 2 · PHASE 1</small>Clean prospective baseline</div>
+                <div class="g">One system of record observes orders, labs, documentation, billing, timestamps, resource use, clinician actions and outcomes. A consistent baseline the legacy stack could never produce.</div>
+                <div class="c">Quality depends on completing the rollout; billing and ministry reporting must be live for the economic lines.</div>
+              </div>
+              <div class="card r3x-layer r3x-layer--l3">
+                <div class="ln"><small>LAYER 3 · PHASE 2</small>AI workflow impact</div>
+                <div class="g">The same processes measured against both baselines as departmental AI goes live, controlling for volume and case mix. The fastest evidence: weeks on high-volume workflows.</div>
+                <div class="c">Operational attribution, not causal proof. "Plausibly attributable to MediMind," never "caused by."</div>
+              </div>
+              <div class="card r3x-layer r3x-layer--l4">
+                <div class="ln"><small>LAYER 4 · PHASE 3</small>Clinical decision support in shadow mode</div>
+                <div class="g">What MediMind would have detected or recommended, compared against actual care, outcomes and clinician review, per intervention class, before that class is enabled.</div>
+                <div class="c">Horizons differ: process and safety signals in weeks, rarer clinical events in months, publications longer.</div>
+              </div>
+            </div>
+            <div class="r3x-evidence-foot">
+              <div><strong>Where the owner already loses money:</strong> physician overspend on DRG treatment paths · documentation failing government reimbursement at full value · ICU days from delayed diagnosis, paid by the hospital.</div>
+              <div><strong>What we do not claim yet:</strong> a dollar-saving number. Operational attribution is measurable quickly; clinical causality needs a higher bar and gets it: the Phase 3 and publication track.</div>
+            </div>
+          </div>
+          <div class="r3x-say"><b>SAY THIS</b>We don't start collecting evidence in 2027. Evidence accumulates from deployment. 2027 is when the dataset is mature enough for formal retrospective studies; 2028 is the publication milestone.</div>
+        </div>
+      </section>
+
+      <!-- ═══ 06 · EFFICACY ═══════════════════════════════════════════ -->
+      <section id="efficacy" class="r3x-efficacyslide">
+        <div class="slide-inner">
+          <div class="r3x-eyebrow"><b>06</b> · What are your false-positive and false-negative rates?</div>
+          <h2 class="r3x-title">Not a number yet. A framework, per intervention.</h2>
+          <div class="r3x-body">
+            <div class="r3x-eff">
+              <div>
+                <div class="r3x-ladder-cap"><span>ESCALATION LADDER · ACCEPTABLE ERROR CHANGES AT EVERY RUNG</span><span>human control ↑ · evidence bar ↑</span></div>
+                <div class="r3x-ladder">
+                  <div class="r3x-rung"><i>1</i><div><b>Detect and observe</b><span>Shadow mode. Record what would have been flagged; score against outcomes and clinician review.</span></div></div>
+                  <div class="r3x-rung"><i>2</i><div><b>Surface a flag</b><span>Advisory only. Design bias toward sensitivity for catastrophic misses; false-positive cost stays low because nothing acts.</span></div></div>
+                  <div class="r3x-rung"><i>3</i><div><b>Recommend an action</b><span>"Consider pancreatitis, order lipase." Sourced from established guidelines and rules; AI connects the patient context.</span></div></div>
+                  <div class="r3x-rung"><i>4</i><div><b>Require clinician confirmation</b><span>Disruptive, expensive or clinically consequential actions: higher evidence threshold, explicit human control.</span></div></div>
+                  <div class="r3x-rung"><i>5</i><div><b>Automate, narrowly</b><span>Only validated, narrowly defined actions, eventually. The doctor stays the decision maker in every pipeline.</span></div></div>
+                </div>
+              </div>
+              <div>
+                <ul class="r3x-princ">
+                  <li><b>The unit of measurement is the intervention, not the model.</b> "Which rate?" is answered with "for which action, in which risk class."</li>
+                  <li><b>The threshold depends on the cost of being wrong.</b> Consequence classified, threshold and human-control requirement defined, validated with clinical leadership before activation.</li>
+                  <li><b>Ground truth depends on the workflow.</b> Objective events where they exist (lab result, interaction, rejection, confirmed diagnosis); otherwise the subsequent record plus retrospective clinician adjudication. The original clinician action is not treated as truth.</li>
+                  <li><b>Shadow mode creates the evidence before dependence.</b> From network go-live, per class of intervention, before that class is enabled.</li>
+                </ul>
+                <div class="card r3x-metrics">
+                  <div class="lab">Metrics we will report · no targets stated</div>
+                  <ul>
+                    <li>Sensitivity · false-negative rate</li>
+                    <li>PPV · false-positive rate</li>
+                    <li>False alerts per patient / per clinician shift</li>
+                    <li>Time-to-detection vs existing workflow</li>
+                  </ul>
+                </div>
+                <div class="r3x-draft"><span class="chip chip-amber">framework status</span> <span class="small muted">Draft, based on international clinical-AI practice. Pending validation with clinical leadership. Can be sent.</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="r3x-say"><b>SAY THIS</b>We don't have clinically valid rates yet because Phase 3 isn't live, but the validation framework is explicit: intervention-specific, risk-weighted, launched in shadow mode so we measure sensitivity and false-alert burden per workflow before anyone depends on it.</div>
+        </div>
+      </section>
+
+      <!-- ═══ 07 · BUYER ══════════════════════════════════════════════ -->
+      <section id="buyer" class="r3x-buyerslide">
+        <div class="slide-inner">
+          <div class="r3x-eyebrow"><b>07</b> · The user is not the payer. Who buys, and why?</div>
+          <h2 class="r3x-title">Three people in the room. One of them is losing money.</h2>
+          <div class="r3x-body">
+            <div class="r3x-room">
+              <div class="card card--buyer">
+                <div class="role">Economic buyer</div>
+                <div class="who">Hospital owner · CEO · CFO</div>
+                <p>Buys money already being lost, <strong>not</strong> the software line item, which is small here. Unified data and stopped leakage, visible only once the data is unified. In this market the owner is usually in the room and understands DRG overspend.</p>
+              </div>
+              <div class="card card--champ">
+                <div class="role">Clinical champion</div>
+                <div class="who">Department heads · lab lead · nursing lead</div>
+                <p>Hours returned. One login, one chart. Unlimited feature requests turned into testable product in hours; no incumbent offers that. Lasha sells here from inside the profession.</p>
+              </div>
+              <div class="card card--block">
+                <div class="role">Blocker</div>
+                <div class="who">IT function · incumbent vendor</div>
+                <p>Not argued with. Neutralised structurally by the parallel run: nothing is switched off until the hospital chooses.</p>
+              </div>
+            </div>
+            <div class="r3x-against">
+              <div class="lab">What the one owner who signed buys against · our thesis, in our own words</div>
+              <div class="r3x-against-grid">
+                <div><b>DRG overspend</b>Physicians overspending on treatment paths; extras the reimbursement never covers.</div>
+                <div><b>Reimbursement shortfall</b>Unstructured, low-quality documentation means the government does not reimburse at full value.</div>
+                <div><b>ICU days</b>The 2 am case: a missed diagnosis cost 20 ICU days. The hospital pays for those days.</div>
+              </div>
+            </div>
+          </div>
+          <div class="r3x-say"><b>SAY THIS</b>The one network we sold was bought by its owner and CEO, against money he was already losing, not against the software line. The clinical case and the commercial case are sold together, to different people in the same room.</div>
+        </div>
+      </section>
+
+      <!-- ═══ 08 · WEDGE ══════════════════════════════════════════════ -->
+      <section id="wedge" class="r3x-wedgeslide">
+        <div class="slide-inner">
+          <div class="r3x-eyebrow"><b>08</b> · How do you win the next hospital? Anything beyond GeoHospitals?</div>
+          <h2 class="r3x-title">We never ask a hospital to believe a promise.</h2>
+          <div class="r3x-body">
+            <div class="r3x-wedge">
+              <div>
+                <div class="lab" style="margin-bottom:8px">The onboarding wedge · one sentence to a new hospital</div>
+                <div class="r3x-flow">
+                  <div class="card r3x-fstep"><i>0</i><div><b>"Give us 10 days and a copy of your legacy database."</b><span>Nothing in their operations is touched.</span></div></div>
+                  <div class="card r3x-fstep"><i>1</i><div><b>We launch MediMind in parallel with the existing stack.</b><span>Their data, migrated. Zero disruption. Rollback is a thirty-second decision.</span></div></div>
+                  <div class="card r3x-fstep"><i>2</i><div><b>They test it side by side, themselves.</b><span>Register a patient. Complete an encounter. Compare two running systems.</span></div></div>
+                  <div class="card r3x-fstep r3x-fstep--ask"><i>3</i><div><b>Only after that do we ask for commitment.</b><span>The sale inverts: compare, don't believe.</span></div></div>
+                </div>
+                <div class="r3x-cred">
+                  <div><b>20+ analyzers · &lt; 3 days</b>vs ~4 months, ~70% by the incumbent</div>
+                  <div><b>Stack live next day</b>after the server handover</div>
+                  <div><b>Feedback → product</b>in hours, several times</div>
+                </div>
+              </div>
+              <div class="r3x-funnel">
+                <div class="lab">Hospital relationships today · nothing counted until signed</div>
+                <div class="r3x-fl"><b>Introductory conversations</b><span>Multiple, active. Founder-led: direct access to essentially every C-level buyer in Tbilisi.</span></div>
+                <div class="r3x-fl"><b>Multi-hour implementation discussions</b><span>Several have expanded past the intro, with additional hospital stakeholders joining.</span></div>
+                <div class="r3x-fl"><b>Verbal intent</b><span>A few: "come back once the reference rollout is further along." Not counted as pipeline.</span></div>
+                <div class="r3x-fl"><b>Signed · 1</b><span>GeoHospitals, 25-hospital network. Its CEO has agreed to act as reference to other hospitals.</span></div>
+                <p class="r3x-funnel-note">One additional conversation starts Tuesday 8 Sep. The next sales processes test conversion and the $30 list price.</p>
+              </div>
+            </div>
+          </div>
+          <div class="r3x-say"><b>SAY THIS</b>GeoHospitals is our only signed customer, but not our only hospital relationship. Several conversations are deep into implementation discussion. We count none of it until it is signed.</div>
+        </div>
+      </section>
+
+      <!-- ═══ 09 · PRICE ══════════════════════════════════════════════ -->
+      <section id="price" class="r3x-priceslide">
+        <div class="slide-inner">
+          <div class="r3x-eyebrow"><b>09</b> · "Holy." 30,000 GEL a year for 25 hospitals?</div>
+          <h2 class="r3x-title">We bought a national reference deployment cheaply.</h2>
+          <div class="r3x-body">
+            <div class="r3x-price">
+              <div>
+                <div class="card r3x-arith">
+                  <div class="r3x-arith-row">
+                    <div><div class="lab">At list, fully seated</div><div class="num">~$30K <small style="font-size:0.4em;font-weight:500;color:var(--emr-text-muted)">/ month</small></div><div class="sub">~1,000 registered doctors × $30</div></div>
+                    <div class="vs">VS</div>
+                    <div><div class="lab">Contracted</div><div class="num">30K GEL <small style="font-size:0.4em;font-weight:500;color:var(--emr-text-muted)">/ year</small></div><div class="sub">≈ $11.5K · payment starts at full go-live</div></div>
+                  </div>
+                  <div class="r3x-terms">
+                    <div>Price-protected<br>~4 years</div>
+                    <div>Phase 3<br>excluded</div>
+                    <div>Nobody else<br>inherits it</div>
+                    <div>Never a<br>model input</div>
+                  </div>
+                </div>
+                <div class="r3x-bought">
+                  <div class="lab">What that price bought, before we had evidence</div>
+                  <ul>
+                    <li>25 sites, one contract</li>
+                    <li>A 1.1M-patient migration</li>
+                    <li>Every department as a lab</li>
+                    <li>Two engineers living in the wards</li>
+                    <li>A CEO who is our reference to other hospitals</li>
+                    <li>Speed: integration started Feb 2026</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="r3x-ladder2">
+                <div class="lab">Intended list price · tested by the next hospitals</div>
+                <div class="card r3x-tier"><div class="t">Georgia<small>243 hospitals · ~9,600 hospital doctors · priced at what they already pay for legacy software</small></div><div class="num">$30<small> / seat / mo</small></div></div>
+                <div class="card r3x-tier"><div class="t">Region · Central Asia, post-Soviet<small>~255,000 doctors · by country capability · ~$150 blended</small></div><div class="num">$100–200<small> / seat / mo</small></div></div>
+                <div class="card r3x-tier r3x-tier--us"><div class="t">U.S. / E.U.<small>Value-based · replaces the whole fragmented stack · deliberately last</small></div><div class="num">$1,000<small> / seat / mo</small></div></div>
+                <p class="r3x-tier-note">All tiers get the full platform; price and SLA flex. Long-term: value-share, as measured outcomes accumulate. Intent, not contract.</p>
+              </div>
+            </div>
+          </div>
+          <div class="r3x-say"><b>SAY THIS</b>That contract tells us what a highly strategic design partner could negotiate before we had evidence. It does not tell us what the market pays after the product is deployed and the risk has fallen. That is what the next hospitals test.</div>
+        </div>
+      </section>
+
+      <!-- ═══ 10 · COMPETITION ════════════════════════════════════════ -->
+      <section id="competition" class="r3x-compslide">
+        <div class="slide-inner">
+          <div class="r3x-eyebrow"><b>10</b> · Competition in the West, even adjacent?</div>
+          <h2 class="r3x-title">Nobody we found satisfies all six conditions.</h2>
+          <div class="r3x-body">
+            <div class="r3x-comp">
+              <div>
+                <table class="r3x-matrix">
+                  <thead><tr><th>Checked against primary sources · 19 Aug 2026</th><th>Full hospital breadth</th><th>FHIR R4 as storage primitive</th><th>AI in the write path</th><th>Single codebase</th><th>Cloud + on-prem</th><th>Multi-market pricing</th></tr></thead>
+                  <tbody>
+                    <tr class="me"><td>MediMind</td><td><i class="d d-f"></i></td><td><i class="d d-f"></i></td><td><i class="d d-f"></i></td><td><i class="d d-f"></i></td><td><i class="d d-f"></i></td><td><i class="d d-f"></i></td></tr>
+                    <tr><td>Epic</td><td><i class="d d-f"></i></td><td><i class="d d-n"></i></td><td><i class="d d-n"></i></td><td><i class="d d-h"></i></td><td><i class="d d-f"></i></td><td><i class="d d-n"></i></td></tr>
+                    <tr><td>Oracle Health (Cerner)</td><td><i class="d d-f"></i></td><td><i class="d d-h"></i></td><td><i class="d d-h"></i></td><td><i class="d d-n"></i></td><td><i class="d d-f"></i></td><td><i class="d d-n"></i></td></tr>
+                    <tr><td>athenahealth</td><td><i class="d d-h"></i></td><td><i class="d d-n"></i></td><td><i class="d d-n"></i></td><td><i class="d d-h"></i></td><td><i class="d d-h"></i></td><td><i class="d d-n"></i></td></tr>
+                    <tr><td>InterSystems IntelliCare</td><td><i class="d d-f"></i></td><td><i class="d d-h"></i></td><td><i class="d d-h"></i></td><td><i class="d d-f"></i></td><td><i class="d d-f"></i></td><td><i class="d d-h"></i></td></tr>
+                    <tr><td>SuperOS (Superhealth, India)</td><td><i class="d d-f"></i></td><td><i class="d d-n"></i></td><td><i class="d d-h"></i></td><td><i class="d d-f"></i></td><td><i class="d d-h"></i></td><td><i class="d d-h"></i></td></tr>
+                    <tr><td>Abridge · Suki · Dragon Copilot</td><td><i class="d d-n"></i></td><td><i class="d d-n"></i></td><td><i class="d d-n"></i></td><td><i class="d d-x">–</i></td><td><i class="d d-n"></i></td><td><i class="d d-n"></i></td></tr>
+                    <tr><td>Palantir · Regard · Glass Health</td><td><i class="d d-n"></i></td><td><i class="d d-n"></i></td><td><i class="d d-n"></i></td><td><i class="d d-x">–</i></td><td><i class="d d-h"></i></td><td><i class="d d-n"></i></td></tr>
+                    <tr><td>Webmed · Doctra · Wabaco · Softmed <span class="muted">(Georgia)</span></td><td><i class="d d-h"></i></td><td><i class="d d-n"></i></td><td><i class="d d-n"></i></td><td><i class="d d-n"></i></td><td><i class="d d-h"></i></td><td><i class="d d-h"></i></td></tr>
+                  </tbody>
+                </table>
+                <div class="r3x-matrix-key">● full · ◐ partial · ○ no · – not applicable. Medplum is our data layer, not a competitor; it published the case study on us. Georgian incumbents sit on 1C / legacy foundations, none on FHIR.</div>
+              </div>
+              <div class="r3x-comp-side">
+                <div class="card">
+                  <div class="lab">Three groups, none runs a hospital proactively</div>
+                  <ul>
+                    <li><strong>AI scribes and assistants</strong> document on top of an EHR.</li>
+                    <li><strong>AI overlays</strong> reason over EHR data without replacing it.</li>
+                    <li><strong>Legacy EMRs</strong> retrofit AI onto pre-AI cores.</li>
+                  </ul>
+                </div>
+                <div class="card card--watch">
+                  <div class="lab">The one we watch most carefully</div>
+                  <p><strong>Oracle's next-generation EHR</strong>, described as built ground-up with AI. "AI-native" alone no longer differentiates. What survives that comparison: FHIR R4 as the storage primitive, not an API layer · proactive whole-hospital coordination as the design goal · full hospital-OS breadth · demonstrated deployment speed · our market focus.</p>
+                </div>
+                <div class="card">
+                  <div class="lab">Why all six, not "a bad idea nobody tries"</div>
+                  <p>Owning the system of record is what lets one intelligence observe a lab event, reason over the longitudinal record, coordinate the next workflow, and close the billing loop, without stitching five vendors together.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="r3x-say"><b>SAY THIS</b>Three groups: scribes, overlays, legacy EMRs. We haven't found another company combining all six. The closest structural analogue is Oracle's next-generation EHR, and we watch it most carefully.</div>
+        </div>
+      </section>
+
+      <!-- ═══ 11 · FACTS ══════════════════════════════════════════════ -->
+      <section id="facts" class="r3x-factsslide">
+        <div class="slide-inner">
+          <div class="r3x-eyebrow"><b>11</b> · Team · burn · cash · raise · structure</div>
+          <h2 class="r3x-title">The fact sheet, as of 20 August 2026.</h2>
+          <div class="r3x-body">
+            <div class="r3x-facts">
+              <div class="card">
+                <div class="lab">Team · four people built this</div>
+                <dl>
+                  <dt>Lasha Khoshtaria · CTO</dt><dd>Full-time. Practising interventional cardiologist embedded in the hospital; clinical hours minimal, kept to stay inside the workflows.</dd>
+                  <dt>Irakli Pkhovelishvili · CEO</dt><dd>Full-time by 31 Dec 2026. <small>Handover at FoxPrep already under way, involvement declining monthly; December is the final boundary.</small></dd>
+                  <dt>Rati Khoshtaria · Giorgi Kochlamazashvili</dt><dd>Developers, full-time, salaried, no equity. Living in the wards.</dd>
+                  <dt>Advisory board</dt><dd>Predominantly clinical: heads of interventional cardiology and cardiology at the pilot site; transplant / HPB surgery lead, University of Regensburg.</dd>
+                </dl>
+              </div>
+              <div class="card">
+                <div class="lab">Money · bootstrapped</div>
+                <dl>
+                  <dt>Monthly burn</dt><dd>~10,000 GEL <small>≈ $3.8K all-in: salaries, subscriptions, integration</small></dd>
+                  <dt>Bank balance</dt><dd>9,621 GEL <small>as of 20 Aug. Founders bridge expenses out of pocket through year-end.</small></dd>
+                  <dt>Revenue</dt><dd>0 GEL collected. 30,000 GEL/yr contracted, paid from full go-live.</dd>
+                  <dt>Equity raised · debt</dt><dd>$0 · none</dd>
+                  <dt>Non-dilutive</dt><dd>150,000 GEL GITA grant, Sep 2025</dd>
+                  <dt>Innovative Startup Status</dt><dd>Granted 25 Feb 2026, second-ever batch. <small>0% income tax on salaries for 3 years, capped 10,000 GEL/mo per employee. Every hire from this round is cheaper.</small></dd>
+                </dl>
+              </div>
+              <div class="card card--raise">
+                <div class="lab">The raise · open</div>
+                <dl>
+                  <dt>Size</dt><dd>$200,000</dd>
+                  <dt>Instrument</dt><dd>Standard YC post-money SAFE</dd>
+                  <dt>Cap · discount · MFN</dt><dd>$5M post-money · 20% · yes</dd>
+                  <dt>Committed · wired</dt><dd>$0 · $0</dd>
+                  <dt>Use of proceeds</dt><dd>Network rollout, telemetry and publications, first Central Asian steps. Founder-led motion; no sales team ahead of its time.</dd>
+                  <dt>Prior rounds</dt><dd>None. The $5M cap is an ask, not an established price.</dd>
+                </dl>
+              </div>
+              <div class="card">
+                <div class="lab">Structure · clean</div>
+                <dl>
+                  <dt>Entity</dt><dd>LLC MediMind, Georgia · ID 405783095 · registered 16 Jun 2025</dd>
+                  <dt>Cap table</dt><dd>Lasha 50% · Irakli 50% · nothing else. <small>No option pool, no convertibles, no advisor equity. GeoHospitals' CEO holds no equity.</small></dd>
+                  <dt>Holding company</dt><dd>Open to a parent in any of your six jurisdictions. Delaware default. <small>One item for counsel before executing: whether the payroll exemption survives the flip.</small></dd>
+                  <dt>Post-SAFE, illustrative</dt><dd>48% · 48% · 4% SAFE holders</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+          <div class="r3x-say"><b>SAY THIS</b>Burn is about 10,000 GEL a month, zero equity taken to date, the only outside money a 150,000 GEL non-dilutive grant. Founders bridge through year-end, revenue starts at go-live, and we are raising $200K on a standard SAFE, $5M cap, 20% discount, MFN.</div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <a class="r3x-home" href="#/index" onclick="Reveal.slide(0); return false;">↩ index</a>
+
+  <!-- Mobile-only transparent nav arrows -->
+  <button class="mobile-nav mobile-nav-prev" type="button" aria-label="Previous slide" onclick="Reveal.prev()">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+  </button>
+  <button class="mobile-nav mobile-nav-next" type="button" aria-label="Next slide" onclick="Reveal.next()">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
+  <script>
+    const __isMobileDeck = window.matchMedia('(max-width: 768px)').matches;
+    if (__isMobileDeck) document.documentElement.classList.add('is-mobile-deck');
+    Reveal.initialize({
+      hash: true,
+      controls: !__isMobileDeck,
+      progress: true,
+      slideNumber: false,
+      transition: __isMobileDeck ? 'none' : 'fade',
+      transitionSpeed: 'fast',
+      backgroundTransition: 'none',
+      keyboard: true,
+      overview: !__isMobileDeck,
+      touch: true,
+      center: false,
+      width: 1280,
+      height: 720,
+      margin: 0,
+      minScale: 0.2,
+      maxScale: 2.0
+    });
+    // Keyboard shortcut: "i" or "0" jumps back to the question index.
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'i' || e.key === '0') Reveal.slide(0);
+    });
+  </script>
+</body>
+</html>

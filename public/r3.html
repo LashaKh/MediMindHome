@@ -15,13 +15,16 @@
   <meta property="og:image" content="/deck-assets/og-image.png">
   <meta property="og:type" content="website">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.css">
 
   <style>
     :root {
       --paper:  #ffffff;
-      --ink:    #1a365d;
-      --body:   #334155;
+      --ink:    #1f2937;
+      --body:   #475569;
       --muted:  #64748b;
       --light:  #94a3b8;
       --rule:   #cbd5e1;
@@ -30,8 +33,9 @@
       --tint:   #f0f7ff;
       --live:   #38a169;
       --prog:   #dd6b20;
+      --serif: 'Fraunces', 'Iowan Old Style', Georgia, Palatino, serif;
       --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Noto Sans Georgian', sans-serif;
-      --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
       --ease: cubic-bezier(0.22, 1, 0.36, 1);
     }
 
@@ -45,8 +49,9 @@
     .reveal .slides { text-align: left; }
     .reveal .slides section { padding: 0; height: 100%; box-sizing: border-box; }
     .reveal h1, .reveal h2, .reveal h3 {
-      font-weight: 700; color: var(--ink); line-height: 1.08;
-      margin: 0; letter-spacing: -0.025em; text-transform: none;
+      font-family: var(--serif); font-weight: 600; color: var(--ink);
+      line-height: 1.08; margin: 0; letter-spacing: -0.02em; text-transform: none;
+      font-optical-sizing: auto;
     }
     .reveal p { margin: 0; line-height: 1.45; }
     .reveal ul { margin: 0; padding: 0; list-style: none; }
@@ -70,7 +75,7 @@
       padding-bottom: 12px; margin-bottom: 20px;
     }
     .eyebrow b { color: var(--accent); font-weight: 600; }
-    .hl { font-size: 40px; white-space: nowrap; }
+    .hl { font-size: 42px; white-space: nowrap; }
     .reveal p.lede {
       font-size: 18px; line-height: 1.5; color: var(--body);
       max-width: 78ch; margin-top: 14px;
@@ -83,6 +88,27 @@
       text-transform: uppercase; color: var(--light);
     }
 
+    /* left thread rail — the landing page's section thread, as slide wayfinding */
+    .thread {
+      position: fixed; left: 30px; top: 96px; bottom: 74px; width: 14px; z-index: 55;
+      display: flex; flex-direction: column; justify-content: space-between; align-items: center;
+    }
+    .thread-rail {
+      position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; margin-left: -0.5px;
+      background: rgba(43, 108, 176, 0.16);
+    }
+    .thread-dot {
+      position: relative; width: 5px; height: 5px; padding: 0; border: 0; border-radius: 50%;
+      background: var(--rule); cursor: pointer; -webkit-appearance: none; appearance: none;
+      transition: width 0.3s var(--ease), height 0.3s var(--ease), background 0.3s var(--ease), box-shadow 0.3s var(--ease);
+    }
+    .thread-dot:hover { background: rgba(43, 108, 176, 0.55); }
+    .thread-dot.past { background: rgba(43, 108, 176, 0.42); }
+    .thread-dot.on {
+      width: 9px; height: 9px; background: var(--accent);
+      box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.13);
+    }
+
     .nav-contents {
       position: fixed; top: 22px; right: 26px; z-index: 60;
       font-family: var(--mono); font-size: 10px; font-weight: 500;
@@ -92,7 +118,7 @@
     .nav-contents:hover { color: var(--accent); }
 
     /* motion: one gesture, repeated */
-    @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+    @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
     .reveal section.present .eyebrow,
     .reveal section.present .hl   { animation: rise 0.5s var(--ease) both; }
     .reveal section.present .lede { animation: rise 0.5s var(--ease) 0.12s both; }
@@ -127,8 +153,8 @@
     .fig { padding: 15px 22px 0; border-left: 1px solid var(--hair); }
     .fig:first-child { border-left: 0; padding-left: 0; }
     .fig .n {
-      font-size: 36px; font-weight: 700; color: var(--ink);
-      letter-spacing: -0.03em; line-height: 1; font-variant-numeric: tabular-nums;
+      font-family: var(--serif); font-size: 38px; font-weight: 600; color: var(--ink);
+      letter-spacing: -0.02em; line-height: 1; font-variant-numeric: tabular-nums;
     }
     .fig .n small { font-size: 0.44em; font-weight: 500; color: var(--muted); letter-spacing: 0; }
     .fig .l { margin-top: 9px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); }
@@ -160,7 +186,7 @@
     }
     .toc-row:hover::before { transform: scaleY(1); }
     .toc-row .i { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; color: var(--accent); }
-    .toc-row .t { display: block; font-size: 18px; font-weight: 600; color: var(--ink); line-height: 1.25; transition: color 0.2s ease; }
+    .toc-row .t { display: block; font-family: var(--serif); font-size: 19px; font-weight: 600; color: var(--ink); line-height: 1.25; transition: color 0.2s ease; }
     .toc-row:hover .t { color: var(--accent); }
     .toc-row .sub { display: block; font-size: 13px; color: var(--muted); margin-top: 3px; line-height: 1.35; }
 
@@ -182,7 +208,7 @@
     .figs-4 .fig:nth-child(3), .figs-4 .fig:nth-child(4) { margin-top: 18px; padding-top: 15px; border-top: 1px solid var(--hair); }
     .figs-4 .fig:nth-child(3) { border-left: 0; padding-left: 0; }
     .speed { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--rule); display: grid; grid-template-columns: auto 1fr; gap: 26px; align-items: start; }
-    .speed .n { font-size: 32px; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; line-height: 1; white-space: nowrap; }
+    .speed .n { font-family: var(--serif); font-size: 33px; font-weight: 600; color: var(--ink); letter-spacing: -0.02em; line-height: 1; white-space: nowrap; }
     .speed .n small { font-size: 0.4em; font-weight: 500; color: var(--muted); }
     .speed p { font-size: 13px; line-height: 1.45; }
     .speed b { color: var(--prog); }
@@ -195,9 +221,9 @@
     .net-key i { width: 7px; height: 7px; border-radius: 50%; margin-top: 5px; }
 
     /* 03 phases */
-    .phase { display: grid; grid-template-columns: 200px 1fr 250px; gap: 28px; padding: 15px 0; align-items: start; }
+    .phase { display: grid; grid-template-columns: 210px 1fr 250px; gap: 26px; padding: 13px 0; align-items: start; }
     .phase .k { font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; color: var(--light); }
-    .phase .t { font-size: 18px; font-weight: 600; color: var(--ink); margin: 6px 0 9px; }
+    .phase .t { font-family: var(--serif); font-size: 19px; font-weight: 600; color: var(--ink); margin: 6px 0 9px; }
     .phase .w { font-size: 13.5px; line-height: 1.5; }
     .phase .n { font-size: 13px; line-height: 1.55; }
 
@@ -221,13 +247,13 @@
     .reveal p.road-note { margin-top: 142px; padding-top: 18px; border-top: 1px solid var(--hair); font-size: 15px; color: var(--ink); }
 
     /* 05 evidence */
-    .layer { display: grid; grid-template-columns: 200px 1.2fr 1fr; gap: 30px; padding: 12px 0; align-items: baseline; }
+    .layer { display: grid; grid-template-columns: 232px 1.2fr 1fr; gap: 26px; padding: 9px 0; align-items: baseline; }
     .layer .k { font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; color: var(--accent); }
-    .layer .t { font-size: 15.5px; font-weight: 600; color: var(--ink); margin-top: 5px; line-height: 1.25; }
+    .layer .t { font-family: var(--serif); font-size: 16px; font-weight: 600; color: var(--ink); margin-top: 4px; line-height: 1.2; }
     .layer .g, .layer .c { font-size: 12.5px; line-height: 1.45; }
     .layer .c { color: var(--muted); }
-    .ev-head { display: grid; grid-template-columns: 200px 1.2fr 1fr; gap: 30px; padding-bottom: 8px; border-bottom: 1px solid var(--rule); }
-    .ev-foot { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--rule); font-size: 12.5px; line-height: 1.45; }
+    .ev-head { display: grid; grid-template-columns: 232px 1.2fr 1fr; gap: 26px; padding-bottom: 7px; border-bottom: 1px solid var(--rule); }
+    .ev-foot { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 10px; padding-top: 11px; border-top: 1px solid var(--rule); font-size: 12.5px; line-height: 1.45; }
 
     /* 06 validation */
     .val { display: grid; grid-template-columns: 6fr 5fr; gap: 46px; }
@@ -247,14 +273,14 @@
     .room > div { padding: 16px 26px 0; border-left: 1px solid var(--hair); }
     .room > div:first-child { border-left: 0; padding-left: 0; }
     .room .r { font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; }
-    .room .w { font-size: 16.5px; font-weight: 600; color: var(--ink); margin: 7px 0 9px; line-height: 1.25; }
+    .room .w { font-family: var(--serif); font-size: 17.5px; font-weight: 600; color: var(--ink); margin: 7px 0 9px; line-height: 1.25; }
     .room p { font-size: 13px; line-height: 1.45; }
     .room .buyer .r { color: var(--ink); }
     .room .champ .r { color: var(--accent); }
     .room .block .r { color: var(--light); }
     .against { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--rule); }
     .against-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 12px; }
-    .against-grid b { display: block; color: var(--ink); font-size: 14.5px; margin-bottom: 4px; }
+    .against-grid b { display: block; font-family: var(--serif); color: var(--ink); font-size: 15.5px; margin-bottom: 4px; }
     .against-grid p { font-size: 13px; line-height: 1.45; }
 
     /* 08 wedge */
@@ -275,7 +301,7 @@
     /* 09 contract */
     .price { display: grid; grid-template-columns: 6fr 5fr; gap: 46px; }
     .arith { display: grid; grid-template-columns: 1fr auto 1fr; gap: 22px; align-items: start; border-top: 1px solid var(--rule); padding-top: 15px; }
-    .arith .n { font-size: 34px; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; line-height: 1; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .arith .n { font-family: var(--serif); font-size: 35px; font-weight: 600; color: var(--ink); letter-spacing: -0.02em; line-height: 1; font-variant-numeric: tabular-nums; white-space: nowrap; }
     .arith .n small { font-size: 0.36em; font-weight: 500; color: var(--muted); letter-spacing: 0; }
     .arith .s { font-size: 12.5px; color: var(--muted); margin-top: 7px; line-height: 1.35; }
     .arith .v { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; color: var(--light); padding-top: 14px; }
@@ -284,9 +310,9 @@
     .bought ul { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 28px; margin-top: 9px; font-size: 12.5px; }
     .tier { display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid var(--hair); }
     .tier:last-of-type { border-bottom: 0; }
-    .tier .t { font-size: 14.5px; font-weight: 600; color: var(--ink); }
+    .tier .t { font-family: var(--serif); font-size: 15.5px; font-weight: 600; color: var(--ink); }
     .tier .t small { display: block; font-weight: 400; font-size: 12.5px; color: var(--muted); margin-top: 3px; line-height: 1.35; }
-    .tier .n { font-size: 25px; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .tier .n { font-family: var(--serif); font-size: 26px; font-weight: 600; color: var(--ink); letter-spacing: -0.02em; white-space: nowrap; font-variant-numeric: tabular-nums; }
     .tier .n small { font-size: 0.42em; font-weight: 500; color: var(--muted); letter-spacing: 0; }
     .tier.us .t, .tier.us .n { color: var(--accent); }
 
@@ -391,6 +417,7 @@
       .lede { font-size: 16px; margin-top: 12px; }
       .body { margin-top: 22px; font-size: 15px; }
       .nav-contents { top: 12px; right: 14px; }
+      .thread { display: none; }
 
       .toc-cols, .steps, .dep, .figs, .figs-4, .phase, .layer, .val, .room,
       .against-grid, .wedge, .cred, .price, .arith, .terms, .comp, .facts,
@@ -554,7 +581,7 @@
                   </g>
                   <circle cx="112" cy="108" r="8" fill="#ffffff" stroke="#dd6b20" stroke-width="2"/>
                   <circle cx="262" cy="146" r="26" fill="#ffffff" stroke="#38a169" stroke-width="2"/>
-                  <text x="262" y="143" text-anchor="middle" font-size="10" font-weight="700" font-family="-apple-system,Segoe UI,Roboto,sans-serif" fill="#1a365d">CENTRAL</text>
+                  <text x="262" y="143" text-anchor="middle" font-size="10" font-weight="700" font-family="-apple-system,Segoe UI,Roboto,sans-serif" fill="#1f2937">CENTRAL</text>
                   <text x="262" y="156" text-anchor="middle" font-size="8" letter-spacing="1" font-family="ui-monospace,Menlo,monospace" fill="#38a169">LIVE</text>
                 </svg>
                 <div class="net-key">
@@ -922,6 +949,8 @@
     </div>
   </div>
 
+  <nav class="thread" aria-label="Sections"><span class="thread-rail"></span></nav>
+
   <a class="nav-contents" href="#/index" onclick="Reveal.slide(0); return false;">Contents</a>
 
   <button class="mobile-nav mobile-nav-prev" type="button" aria-label="Previous slide" onclick="Reveal.prev()">
@@ -956,6 +985,28 @@
     document.addEventListener('keydown', function (e) {
       if (e.key === 'i' || e.key === '0') Reveal.slide(0);
     });
+
+    (function buildThread() {
+      var nav = document.querySelector('.thread');
+      if (!nav || window.matchMedia('(max-width: 768px)').matches) return;
+      var sections = document.querySelectorAll('.reveal .slides > section');
+      sections.forEach(function (sec, i) {
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'thread-dot';
+        dot.title = i === 0 ? 'Contents' : (sec.querySelector('.hl') || {}).textContent || ('Section ' + i);
+        dot.addEventListener('click', function () { Reveal.slide(i); });
+        nav.appendChild(dot);
+      });
+      function sync() {
+        var cur = Reveal.getIndices().h;
+        nav.querySelectorAll('.thread-dot').forEach(function (d, k) {
+          d.className = 'thread-dot' + (k === cur ? ' on' : (k < cur ? ' past' : ''));
+        });
+      }
+      Reveal.on('slidechanged', sync);
+      sync();
+    })();
   </script>
 </body>
 </html>

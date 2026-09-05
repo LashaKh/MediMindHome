@@ -42,6 +42,9 @@
   <meta name="twitter:description" content="Investor pitch: $200K pre-seed, $5M cap SAFE.">
   <meta name="twitter:image" content="assets/og-image.png">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.css">
 
   <style>
@@ -11840,5 +11843,32 @@
       }, true);
     })();
   </script>
+  <style>
+    /* Editorial type system, shared with /r3.html and the marketing site.
+       Loaded last on purpose so it wins the cascade over the per-slide blocks.
+       Typography only: no layout, spacing or colour rules live here. */
+    :root {
+      --ed-serif: 'Fraunces', 'Iowan Old Style', Georgia, Palatino, serif;
+      --ed-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4,
+    .reveal .headline-big, .reveal .hook-headline,
+    .reveal .gallery-headline, .reveal .stage-title {
+      font-family: var(--ed-serif) !important;
+      font-weight: 600 !important;
+      letter-spacing: -0.02em !important;
+      font-optical-sizing: auto;
+    }
+    .reveal .slide-label, .reveal .label-num, .reveal .plate-label,
+    .reveal .term-label, .reveal .qax-eyebrow,
+    .reveal .invqa-anchor-label, .reveal .invqa-metric-label {
+      font-family: var(--ed-mono) !important;
+    }
+    .reveal .invqa-metric-value, .reveal .stage-stat-value {
+      font-family: var(--ed-serif) !important;
+      font-weight: 600 !important;
+      font-variant-numeric: tabular-nums;
+    }
+  </style>
 </body>
 </html>

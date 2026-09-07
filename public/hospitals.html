@@ -2758,10 +2758,9 @@
     .gw-card strong { color: var(--emr-primary); font-weight: 700; }
 
     /* ════════════════════════════════════════════════════════
-       SLIDE 03 · THE SWITCH — "journey" upgrade (scoped to .gw-switch).
-       Emotion = RELIEF: a Legacy→MediMind rail makes the migration feel
-       visible and handled; three bigger gradient-iconed guarantee cards
-       fill the frame and explain why it's painless.
+       SLIDE 11 · THE 14-DAY PROOF (scoped to .gw-switch).
+       The rail shows the limited input and proof period. The three cards
+       explain parallel operation, real workflow testing and commitment.
        ════════════════════════════════════════════════════════ */
     .gw-switch {
       background:
@@ -2771,7 +2770,7 @@
     }
     .gw-switch .headline-sub { max-width: 820px; margin-bottom: 6px; }
 
-    /* Migration rail: muted "Legacy" node → gradient track + pill → bright "MediMind" node */
+    /* Proof rail: database backup, 14-day parallel run, team verification */
     .gw-switch-rail {
       display: flex; align-items: center; gap: 22px;
       margin: 38px 0 36px; max-width: 1040px;
@@ -2808,9 +2807,7 @@
       box-shadow: 0 6px 18px rgba(26,54,93,0.10);
     }
 
-    /* Bigger, more substantial guarantee cards (clean — no top hairline) */
-    /* Title-only guarantee cards: compact, and floated to the optical centre of
-       the space left under the rail (margin:auto 0) so the slide doesn't bottom-dump. */
+    /* Bigger, more substantial proof cards (clean, with no top hairline). */
     .gw-switch .gw-cards { gap: 20px; margin: auto 0; }
     .gw-switch .gw-card {
       padding: 30px 24px; border-radius: 18px; gap: 16px;
@@ -2819,8 +2816,6 @@
       box-shadow: 0 16px 36px -18px rgba(26,54,93,0.30);
     }
     .gw-switch .gw-card::after { display: none; }
-    /* No body copy on these cards, so the head becomes a centred lockup:
-       icon over title. Keeps the trio from reading as three empty boxes. */
     .gw-switch .gw-card-head {
       flex-direction: column; align-items: center; text-align: center; gap: 16px;
     }
@@ -2831,7 +2826,10 @@
     }
     .gw-switch .gw-card-icon svg { width: 26px; height: 26px; stroke-width: 1.9; }
     .gw-switch .gw-card h3 { font-size: 0.84em; letter-spacing: 0.06em; }
-    .gw-switch .gw-card p { font-size: 0.8em; line-height: 1.55; }
+    .gw-switch .gw-card p {
+      max-width: 300px; margin: 0 auto; text-align: center;
+      font-size: 0.8em; line-height: 1.55;
+    }
 
     /* Stats — 2-column hero (the visual climax) */
     .gw-stats {
@@ -7031,10 +7029,10 @@
       .hc-hostage { margin-top: 14px !important; padding: 18px 18px !important; gap: 14px !important; align-items: flex-start !important; }
       .hc-hostage-icon { width: 46px !important; height: 46px !important; }
 
-      /* Switch slide — the Legacy→MediMind rail flows vertically (the horizontal
+      /* Switch slide — the 14-day proof rail flows vertically (the horizontal
          track + pill won't fit a phone); cards already stack via .gw-cards. */
       .gw-switch-rail { flex-direction: column !important; align-items: center !important; gap: 0 !important; margin: 22px 0 !important; }
-      .gw-rail-node { width: 100% !important; justify-content: center !important; }
+      .gw-rail-node { width: 100% !important; box-sizing: border-box !important; justify-content: center !important; }
       .gw-rail-track {
         width: 2px !important; height: 58px !important; flex: none !important; margin: 9px 0 !important;
         background: linear-gradient(180deg, var(--emr-border), var(--emr-accent)) !important;
@@ -7043,7 +7041,7 @@
         top: auto !important; bottom: -2px !important; right: auto !important; left: 50% !important;
         transform: translateX(-50%) rotate(135deg) !important;
       }
-      /* Title-only cards: the desktop min-height leaves a phone-sized void */
+      /* Proof cards: the desktop min-height leaves a phone-sized void */
       .gw-switch .gw-cards { margin: 0 0 14px !important; }
       .gw-switch .gw-card { min-height: 0 !important; padding: 18px 16px !important; }
       .gw-switch .gw-card-head { gap: 12px !important; }
@@ -8612,7 +8610,7 @@
     .hxw-name svg { flex: none; width: 17px; height: 17px; color: #7dd3fc; }
     .hxw-role { margin-top: 3px; font-size: 0.56em; font-weight: 800; letter-spacing: 0.11em; text-transform: uppercase; color: #bee3f8; }
     .hxw2-grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 14px; min-width: 0; min-height: 0; }
-    .hxw2-card { position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center; gap: 7px;
+    .hxw2-card { position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-start; gap: 7px;
       padding: 14px 18px; border-radius: 16px; border: 1px solid var(--emr-border); background: #fff;
       box-shadow: 0 2px 10px rgba(15,32,58,0.04); }
     .hxw2-card::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: var(--emr-gradient-primary); }
@@ -8623,6 +8621,7 @@
       color: #fff; background: var(--emr-gradient-primary); box-shadow: 0 8px 18px -6px rgba(43,108,176,0.55); }
     .hxw2-card--gov .hxw2-icon { background: linear-gradient(135deg, #276749, #38a169); box-shadow: 0 8px 18px -6px rgba(56,161,105,0.55); }
     .hxw2-icon svg { width: 20px; height: 20px; }
+    .hxw2-card > b { display: flex; align-items: flex-start; min-height: 2.1em; }
     .hxw2-card b { font-size: 0.9em; font-weight: 800; color: var(--emr-text-primary); letter-spacing: -0.01em; }
     .hxw2-card p { margin: 0; font-size: 0.7em; line-height: 1.45; color: var(--emr-text-body); }
     .hxw2-card p strong { color: var(--emr-secondary); font-weight: 800; }
@@ -8647,6 +8646,7 @@
     @media (max-width: 768px) {
       .hxw2-grid { grid-template-columns: 1fr; grid-template-rows: none; gap: 10px; }
       .hxw2-card { padding: 12px 16px; }
+      .hxw2-card > b { min-height: 0; }
       .hxw2-quote { margin-top: 12px; }
     }
 
@@ -8669,7 +8669,7 @@
     .hxd-hero-chips { margin-left: auto; display: flex; flex-wrap: wrap; gap: 7px; justify-content: flex-end; max-width: 320px; position: relative; z-index: 1; }
     .hxd-chip { font-size: 0.58em; font-weight: 800; letter-spacing: 0.06em; padding: 5px 12px; border-radius: 999px; background: rgba(255,255,255,0.13); border: 1px solid rgba(255,255,255,0.32); color: #eaf4ff; white-space: nowrap; }
     .hxd-grid { flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-top: 14px; }
-    .hxd-card { position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center; gap: 9px; padding: 15px 16px; border-radius: 16px; border: 1px solid var(--emr-border); background: #fff; box-shadow: 0 2px 10px rgba(15,32,58,0.04); transition: transform 0.18s ease, box-shadow 0.18s ease; }
+    .hxd-card { position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-start; gap: 9px; padding: 83px 16px 15px; border-radius: 16px; border: 1px solid var(--emr-border); background: #fff; box-shadow: 0 2px 10px rgba(15,32,58,0.04); transition: transform 0.18s ease, box-shadow 0.18s ease; }
     .hxd-card:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(26,54,93,0.14); }
     /* Keyline that draws itself along each card's top edge */
     .hxd-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; transform-origin: 0 50%; background: linear-gradient(90deg, #38a169, #3182ce); opacity: 0.85; }
@@ -8677,13 +8677,13 @@
       background: linear-gradient(180deg, #f7fbff, #ffffff) padding-box, var(--emr-gradient-primary) border-box;
       box-shadow: 0 3px 10px rgba(15,32,58,0.06), 0 22px 44px -18px rgba(26,54,93,0.32); }
     .hxd-card--future::before { left: 2px; right: 2px; border-radius: 0 0 2px 2px; background: var(--emr-gradient-section); }
-    .hxd-card-head { display: flex; align-items: center; gap: 9px; position: relative; z-index: 1; }
+    .hxd-card-head { display: flex; align-items: flex-start; gap: 9px; min-height: 80px; position: relative; z-index: 1; }
     .hxd-tick { flex: none; width: 26px; height: 26px; border-radius: 999px; display: flex; align-items: center; justify-content: center; color: #fff; background: linear-gradient(135deg, #276749, #38a169); box-shadow: 0 6px 14px -4px rgba(56,161,105,0.5); }
     .hxd-tick svg { width: 13px; height: 13px; }
     .hxd-num { position: absolute; bottom: 6px; right: 12px; z-index: 0; font-size: 2.5em; font-weight: 900; line-height: 1; letter-spacing: -0.04em; color: rgba(26,54,93,0.06); pointer-events: none; }
     .hxd-card b { font-size: 0.8em; font-weight: 800; color: var(--emr-text-primary); letter-spacing: -0.01em; line-height: 1.2; }
     .hxd-card b em { font-style: normal; color: var(--emr-secondary); }
-    .hxd-card p { position: relative; z-index: 1; margin: 0; font-size: 0.65em; line-height: 1.45; color: var(--emr-text-body); }
+    .hxd-card p { position: relative; z-index: 1; min-height: 116px; margin: 0; font-size: 0.65em; line-height: 1.45; color: var(--emr-text-body); }
     .hxd-closer { margin-top: 13px; text-align: center; font-size: 0.8em; font-weight: 700; color: var(--emr-text-primary); }
     .hxd-closer em { font-style: normal; font-weight: 800; background: var(--emr-gradient-section); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
     /* Card cascade timing */
@@ -8713,7 +8713,8 @@
       .hxd-hero { flex-wrap: wrap; gap: 12px; }
       .hxd-hero-chips { margin-left: 0; justify-content: flex-start; max-width: none; }
       .hxd-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
-      .hxd-card { min-height: 108px; }
+      .hxd-card { min-height: 108px; padding: 15px 16px; justify-content: center; }
+      .hxd-card-head, .hxd-card p { min-height: 0; }
       .hxd-card--future { grid-column: 1 / -1; }
     }
 
@@ -9574,9 +9575,9 @@
               <span class="hxd-num" aria-hidden="true">04</span>
               <div class="hxd-card-head">
                 <span class="hxd-tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-                <b><span class="lang-en">One-day, <em>painless</em> migration</span><span class="lang-ka" style="display:none;">ერთდღიანი, <em>უმტკივნეულო</em> გადასვლა</span></b>
+                <b><span class="lang-en"><em>14-day proof.</em> One-day switch.</span><span class="lang-ka" style="display:none;"><em>14-დღიანი შემოწმება.</em> ერთდღიანი გადასვლა.</span></b>
               </div>
-              <p><span class="lang-en">Prepared in advance, integrated in a day — nobody stops working.</span><span class="lang-ka" style="display:none;">წინასწარ მომზადებული, ერთ დღეში ინტეგრირებული — მუშაობა არ ჩერდება.</span></p>
+              <p><span class="lang-en">Test both systems in parallel, then decide. The final switch takes one prepared day.</span><span class="lang-ka" style="display:none;">ორივე სისტემა პარალელურად გამოცადეთ და შემდეგ გადაწყვიტეთ. საბოლოო გადასვლას ერთი მომზადებული დღე სჭირდება.</span></p>
             </div>
             <div class="hxd-card hxd-card--future">
               <span class="hxd-num" aria-hidden="true">05</span>
@@ -9592,7 +9593,7 @@
         </div>
         <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
         <aside class="notes">
-          <span class="lang-en">Before anything else, here is the whole deal — so no question hangs in the air. Deployment is free: we install, configure, migrate and train your key users on-site. [If asked about training: it is real and hands-on, but it works because each department names someone who owns the system and learns it properly with us — we support that person indefinitely, we don't run endless open training.] Development is free and limitless: you ask, we build, no invoices. The platform covers everything the hospital runs — EMR, lab, PACS, pharmacy, billing — at what you already pay today. You hold the first version of the source code in writing, as insurance. And the migration is one prepared day — painless, no downtime. Everything after this slide is just proof of these five sentences.</span><span class="lang-ka" style="display:none;">სანამ რამეს გაჩვენებთ, აი მთელი შეთავაზება — რომ არცერთი კითხვა ჰაერში არ დარჩეს. დანერგვა უფასოა: ვაინსტალირებთ, ვაწყობთ, გადმოგვაქვს მონაცემები და ადგილზე ვამზადებთ თქვენს ძირითად მომხმარებლებს. [თუ ტრენინგზე იკითხავენ: ტრენინგი რეალური და პრაქტიკულია, მაგრამ მუშაობს იმიტომ, რომ თითოეული განყოფილება ასახელებს ადამიანს, რომელიც სისტემას ჩაიბარებს და კარგად გაერკვევა — ამ ადამიანს მუდმივად ვუწევთ მხარდაჭერას; დაუსრულებელ ღია ტრენინგებს არ ვატარებთ.] დეველოპმენტი უფასო და შეუზღუდავია: თქვენ ითხოვთ, ჩვენ ვაშენებთ — ინვოისების გარეშე. პლატფორმა ფარავს ყველაფერს — EMR, ლაბორატორია, PACS, აფთიაქი, ბილინგი — იმავე ფასად, რასაც დღეს იხდით. პირველი ვერსიის საწყის კოდს წერილობით ფლობთ, როგორც დაზღვევას. და მიგრაცია ერთი მომზადებული დღეა — უმტკივნეულო, შეფერხების გარეშე. ყველაფერი ამ სლაიდის შემდეგ უბრალოდ ამ ხუთი წინადადების მტკიცებულებაა.</span>
+          <span class="lang-en">Before anything else, here is the whole deal, so no question hangs in the air. Deployment is free: we install, configure, migrate and train your key users on-site. [If asked about training: it is real and hands-on, but it works because each department names someone who owns the system and learns it properly with us. We support that person indefinitely; we do not run endless open training.] Development is free and limitless: you ask, we build, no invoices. The platform covers everything the hospital runs, including EMR, lab, PACS, pharmacy and billing, at what you already pay today. You hold the first version of the source code in writing, as insurance. We run a 14-day parallel proof before asking you to commit. Once your team verifies it, the final switch takes one prepared day with no downtime. Everything after this slide is proof of these five commitments.</span><span class="lang-ka" style="display:none;">სანამ რამეს გაჩვენებთ, აი მთელი შეთავაზება, რომ არცერთი კითხვა ჰაერში არ დარჩეს. დანერგვა უფასოა: ვაინსტალირებთ, ვაწყობთ, გადმოგვაქვს მონაცემები და ადგილზე ვამზადებთ თქვენს ძირითად მომხმარებლებს. [თუ ტრენინგზე იკითხავენ: ტრენინგი რეალური და პრაქტიკულია, მაგრამ მუშაობს იმიტომ, რომ თითოეული განყოფილება ასახელებს ადამიანს, რომელიც სისტემას ჩაიბარებს და კარგად გაერკვევა. ამ ადამიანს მუდმივად ვუწევთ მხარდაჭერას; დაუსრულებელ ღია ტრენინგებს არ ვატარებთ.] დეველოპმენტი უფასო და შეუზღუდავია: თქვენ ითხოვთ, ჩვენ ვაშენებთ, ინვოისების გარეშე. პლატფორმა ფარავს ყველაფერს, მათ შორის EMR-ს, ლაბორატორიას, PACS-ს, აფთიაქსა და ბილინგს, იმავე ფასად, რასაც დღეს იხდით. პირველი ვერსიის საწყის კოდს წერილობით ფლობთ, როგორც დაზღვევას. გადაწყვეტილებამდე 14-დღიან პარალელურ შემოწმებას ვატარებთ. მას შემდეგ, რაც თქვენი გუნდი სისტემას დაადასტურებს, საბოლოო გადასვლას ერთი მომზადებული დღე სჭირდება, შეფერხების გარეშე. ყველაფერი ამ სლაიდის შემდეგ ამ ხუთი ვალდებულების მტკიცებულებაა.</span>
         </aside>
       </section>
 
@@ -9860,7 +9861,7 @@
         <div class="slide-inner">
           <div class="slide-label"><span class="label-num">05</span><span class="lang-en">WHO WE ARE</span><span class="lang-ka" style="display:none;">ვინ ვართ ჩვენ</span></div>
           <h2 class="headline-big"><span class="lang-en">Doctors, building <em>for doctors</em>.</span><span class="lang-ka" style="display:none;">ექიმების მიერ შექმნილი <em>ექიმებისთვის</em>.</span></h2>
-          <p class="headline-sub"><span class="lang-en">Founded by a Georgian physician.</span><span class="lang-ka" style="display:none;"></span></p>
+          <p class="headline-sub"><span class="lang-en">Founded by a Georgian physician. Backed to scale across the region.</span><span class="lang-ka" style="display:none;">ქართველი ექიმის მიერ დაფუძნებული და რეგიონში გასაფართოებლად დაფინანსებული.</span></p>
 
           <div class="hxw-grid">
             <div class="hxw-photo">
@@ -9891,9 +9892,9 @@
               </div>
               <div class="hxw2-card hxw2-card--gov">
                 <span class="hxw2-num" aria-hidden="true">04</span>
-                <span class="hxw2-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
-                <b><span class="lang-en">Government-backed</span><span class="lang-ka" style="display:none;">სახელმწიფოს მხარდაჭერით</span></b>
-                <p><span class="lang-en"><strong>GITA-granted</strong> and recognized as an Innovative Startup.</span><span class="lang-ka" style="display:none;"><strong>GITA-ს გრანტის მფლობელი</strong> და სახელმწიფოს მიერ აღიარებული ინოვაციური სტარტაპი.</span></p>
+                <span class="hxw2-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="14 7 21 7 21 14"/></svg></span>
+                <b><span class="lang-en">Backed to expand</span><span class="lang-ka" style="display:none;">გაფართოებისთვის დაფინანსებული</span></b>
+                <p><span class="lang-en">Raised <strong>$100,000 from Eurasia500.</strong> Next: aggressive expansion across the region and Central Asia.</span><span class="lang-ka" style="display:none;">Eurasia500-ისგან <strong>$100,000 მოვიზიდეთ.</strong> ვემზადებით რეგიონსა და ცენტრალურ აზიაში აქტიური გაფართოებისთვის.</span></p>
               </div>
             </div>
           </div>
@@ -9904,7 +9905,7 @@
         </div>
         <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
         <aside class="notes">
-          <span class="lang-en">I'm a physician. I built this because I lived it — the missing lab at 2 a.m., the paper forms, the system that fights you instead of helping. My co-founder Irakli scaled product at Riot Games to ten million players; now he scales care with me. And the people shaping this product every day are department heads you know personally — Dr. Gogorishvili, Dr. Kobalava, Dr. Levan. They use it on real patients, they break it, and we fix it the same week. This isn't foreign software parachuted into Georgia. It's built here, in your language, for your wards, by your colleagues.</span><span class="lang-ka" style="display:none;">მე ექიმი ვარ. ეს იმიტომ შევქმენი, რომ თავად განვიცადე — გამორჩენილი ანალიზი ღამის 2 საათზე, ქაღალდის ფორმები, სისტემა, რომელიც გეხმარება კი არა, ხელს გიშლის. ჩემმა თანადამფუძნებელმა ირაკლიმ Riot Games-ში პროდუქტი ათ მილიონ მომხმარებლამდე გაზარდა; ახლა ის ჩემთან ერთად ზრდის ჯანდაცვის ხარისხს. ამ პროდუქტს ყოველდღიურად ავითარებენ დეპარტამენტების ხელმძღვანელები, რომლებსაც პირადად იცნობთ — ექიმი გოგორიშვილი, ექიმი კობალავა, ექიმი ლევანი. ისინი მას რეალურ პაციენტებზე იყენებენ, პოულობენ ხარვეზებს და ჩვენ მათ იმავე კვირაში ვასწორებთ. ეს არ არის საქართველოში გარედან თავსმოხვეული უცხოური პროგრამა. ის შექმნილია აქ, თქვენს ენაზე, თქვენი განყოფილებებისთვის, თქვენი კოლეგების მიერ.</span>
+          <span class="lang-en">I'm a physician. I built this because I lived it: the missing lab at 2 a.m., the paper forms, the system that fights you instead of helping. My co-founder Irakli scaled product at Riot Games to more than ten million players. Now he scales care with me. Eurasia500 has invested $100,000, on top of our GITA backing. That capital is preparing us for aggressive expansion across the region and Central Asia. The product remains grounded here, in your language, in real wards and in the hands of clinicians who use it every day.</span><span class="lang-ka" style="display:none;">მე ექიმი ვარ. ეს იმიტომ შევქმენი, რომ თავად განვიცადე: გამორჩენილი ანალიზი ღამის 2 საათზე, ქაღალდის ფორმები და სისტემა, რომელიც გეხმარება კი არა, ხელს გიშლის. ჩემმა თანადამფუძნებელმა ირაკლიმ Riot Games-ში პროდუქტი ათ მილიონზე მეტ მომხმარებლამდე გაზარდა. ახლა ის ჩემთან ერთად ზრდის ჯანდაცვის ხარისხს. GITA-ს მხარდაჭერის შემდეგ Eurasia500-მა ჩვენში $100,000 დააბანდა. ამ კაპიტალით რეგიონსა და ცენტრალურ აზიაში აქტიური გაფართოებისთვის ვემზადებით. პროდუქტი კვლავ აქ, თქვენს ენაზე, რეალურ განყოფილებებსა და იმ ექიმებთან ერთად ვითარდება, რომლებიც მას ყოველდღე იყენებენ.</span>
         </aside>
       </section>
 
@@ -10759,25 +10760,25 @@
       </section>
 
       <!-- ═══════════════════════════════════════════════
-           SLIDE 3 · <span class="lang-en">THE SWITCH</span><span class="lang-ka" style="display:none;">გადასვლა</span> IS PAINLESS
+           SLIDE 11 · 14-DAY PARALLEL PROOF
            ═══════════════════════════════════════════════ -->
       <section class="gw-slide gw-switch">
         <div class="slide-inner">
-          <div class="slide-label"><span class="label-num">11</span><span class="lang-en">THE SWITCH</span><span class="lang-ka" style="display:none;">გადასვლა</span></div>
-          <h2 class="headline-big"><span class="lang-en">We prove it works. Then go live in <em>one day</em>.</span><span class="lang-ka" style="display:none;">ჯერ დავამტკიცებთ, რომ მუშაობს — შემდეგ <em>ერთ დღეში</em> ჩავრთავთ მთელს სისტემას.</span></h2>
-          <p class="headline-sub"><span class="lang-en">The move is our risk, not yours — you don't lose an hour of operations.</span><span class="lang-ka" style="display:none;">გადასვლა ჩვენი რისკია, არა თქვენი — თქვენ ოპერაციების არც ერთ საათს არ კარგავთ.</span></p>
+          <div class="slide-label"><span class="label-num">11</span><span class="lang-en">14-DAY PROOF</span><span class="lang-ka" style="display:none;">14-დღიანი შემოწმება</span></div>
+          <h2 class="headline-big"><span class="lang-en">Give us <em>14 days</em> and access to a backup of your legacy database.</span><span class="lang-ka" style="display:none;">მოგვეცით <em>14 დღე</em> და წვდომა ძველი სისტემის მონაცემთა ბაზის სარეზერვო ასლზე.</span></h2>
+          <p class="headline-sub"><span class="lang-en">The full MediMind system runs beside your current system. Your team tests both before making any commitment.</span><span class="lang-ka" style="display:none;">სრული MediMind მოქმედ სისტემასთან პარალელურად მუშაობს. გადაწყვეტილებამდე თქვენი გუნდი ორივეს გამოცდის.</span></p>
 
           <div class="gw-switch-rail" aria-hidden="true">
             <div class="gw-rail-node gw-rail-from">
               <span class="gw-rail-dot"></span>
-              <span class="lang-en">Legacy EMR</span><span class="lang-ka" style="display:none;">ძველი EMR</span>
+              <span class="lang-en">Database backup</span><span class="lang-ka" style="display:none;">ბაზის სარეზერვო ასლი</span>
             </div>
             <div class="gw-rail-track">
-              <span class="gw-rail-pill"><span class="lang-en">we handle the entire move</span><span class="lang-ka" style="display:none;">მთელ პროცესს ჩვენ ვუძღვებით</span></span>
+              <span class="gw-rail-pill"><span class="lang-en">14 days, systems run in parallel</span><span class="lang-ka" style="display:none;">14 დღე, სისტემები პარალელურად</span></span>
             </div>
             <div class="gw-rail-node gw-rail-to">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span class="lang-en">Live on MediMind</span><span class="lang-ka" style="display:none;">MediMind-ზე გადმორთული</span>
+              <span class="lang-en">Your team verifies it</span><span class="lang-ka" style="display:none;">თქვენი გუნდი ამოწმებს</span>
             </div>
           </div>
 
@@ -10785,32 +10786,35 @@
             <div class="gw-card">
               <div class="gw-card-head">
                 <div class="gw-card-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                </div>
-                <h3><span class="lang-en">We train your team on-site</span><span class="lang-ka" style="display:none;">ვამზადებთ თქვენს გუნდს ადგილზე</span></h3>
-              </div>
-            </div>
-            <div class="gw-card">
-              <div class="gw-card-head">
-                <div class="gw-card-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg>
-                </div>
-                <h3><span class="lang-en">We migrate your data</span><span class="lang-ka" style="display:none;">ჩვენ გადმოგვაქვს თქვენი მონაცემები</span></h3>
-              </div>
-            </div>
-            <div class="gw-card">
-              <div class="gw-card-head">
-                <div class="gw-card-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
                 </div>
-                <h3><span class="lang-en">Integration tailored to your needs</span><span class="lang-ka" style="display:none;">თქვენს საჭიროებებზე მორგებული ინტეგრაცია</span></h3>
+                <h3><span class="lang-en">Operations continue</span><span class="lang-ka" style="display:none;">მუშაობა არ ჩერდება</span></h3>
               </div>
+              <p><span class="lang-en">Your current system stays live while the full MediMind system runs beside it.</span><span class="lang-ka" style="display:none;">მოქმედი სისტემა არ ჩერდება. სრული MediMind მის პარალელურად მუშაობს.</span></p>
+            </div>
+            <div class="gw-card">
+              <div class="gw-card-head">
+                <div class="gw-card-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+                </div>
+                <h3><span class="lang-en">Your team tests real work</span><span class="lang-ka" style="display:none;">თქვენი გუნდი რეალურ პროცესს ცდის</span></h3>
+              </div>
+              <p><span class="lang-en">Register a patient in both systems. Then complete the same encounter.</span><span class="lang-ka" style="display:none;">დაარეგისტრირეთ პაციენტი ორივე სისტემაში და დაასრულეთ იგივე ვიზიტი.</span></p>
+            </div>
+            <div class="gw-card">
+              <div class="gw-card-head">
+                <div class="gw-card-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="8 12 11 15 16 9"/></svg>
+                </div>
+                <h3><span class="lang-en">You decide after the proof</span><span class="lang-ka" style="display:none;">გადაწყვეტილებას შემოწმების შემდეგ იღებთ</span></h3>
+              </div>
+              <p><span class="lang-en">We ask for commitment only after your team has verified the result.</span><span class="lang-ka" style="display:none;">თანხმობას მხოლოდ მას შემდეგ გთხოვთ, რაც თქვენი გუნდი შედეგს თავად დაადასტურებს.</span></p>
             </div>
           </div>
         </div>
         <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
         <aside class="notes">
-          <span class="lang-en">The only real reason to stay on a system you know is broken is that switching feels dangerous. So we take that off the table. We go live in a single day. We scrape and migrate your data ourselves — even if the legacy vendor resists, we route around them. You don't wait on their goodwill, and you don't lose a day of operations. The thing that's kept you stuck is the exact thing we make trivial. [If this hospital has no system to replace — new build, or still on paper — say it plainly: then there is nothing to migrate and nothing to run in parallel. We stand you up department by department, at your pace, and the first one is live within a day of being ready.] On training, be honest about the shape of it: hands-on sessions per department, plus one named owner on your side who learns it properly — that person we support indefinitely.</span><span class="lang-ka" style="display:none;">ერთადერთი რეალური მიზეზი, დარჩეთ სისტემაზე, რომელიც იცით რომ გაფუჭებულია, გადასვლის შიშია. ჩვენ ამ შიშს ვხსნით. გადაგვყავხართ ერთ დღეში. ჩვენ თავად ვიღებთ და გადმოგვაქვს თქვენი მონაცემები — თუნდაც ძველი ვენდორი წინააღმდეგობას გიწევდეთ, ჩვენ მათ გვერდს ავუვლით. თქვენ არ გჭირდებათ მათი კეთილი ნების ლოდინი და არ კარგავთ არცერთ სამუშაო დღეს. ის, რაც გაფერხებდათ, ჩვენთვის ტრივიალური ამოცანაა.</span>
+          <span class="lang-en">Here is the ask: give us 14 days and access to a backup of your legacy database. We build the full MediMind environment without touching the system your hospital uses every day. Both systems run in parallel, so operations continue normally. Then your team tests the same real workflow in each system. Register a patient, then complete an encounter. You do not have to take our word for it. We ask for a commitment only after your team has verified the result themselves. If the hospital has no legacy system, use the same 14-day period to configure the environment and test the workflow from first registration through encounter completion.</span><span class="lang-ka" style="display:none;">ჩვენი თხოვნა მარტივია: მოგვეცით 14 დღე და წვდომა ძველი სისტემის მონაცემთა ბაზის სარეზერვო ასლზე. MediMind-ის სრულ გარემოს ისე ვაწყობთ, რომ კლინიკის ყოველდღიურ სისტემას არ ვეხებით. ორივე სისტემა პარალელურად მუშაობს და ოპერაციები ჩვეულებრივ გრძელდება. შემდეგ თქვენი გუნდი ორივე სისტემაში ერთსა და იმავე რეალურ პროცესს ცდის: არეგისტრირებს პაციენტს და ასრულებს ვიზიტს. მხოლოდ ჩვენს სიტყვას არ უნდა ენდოთ. თანხმობას მხოლოდ მას შემდეგ გთხოვთ, რაც თქვენი გუნდი შედეგს თავად დაადასტურებს. თუ კლინიკას ძველი სისტემა არ აქვს, იმავე 14 დღეს გარემოს კონფიგურაციასა და სრული პროცესის გამოცდას ვუთმობთ, პირველი რეგისტრაციიდან ვიზიტის დასრულებამდე.</span>
         </aside>
       </section>
 

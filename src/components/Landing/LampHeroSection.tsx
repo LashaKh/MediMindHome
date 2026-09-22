@@ -1,12 +1,22 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight, FileCheck, Award } from 'lucide-react';
+import { ArrowRight, Check } from 'lucide-react';
 import { LampContainer } from '../ui/lamp';
 
-const trustChips = [
-  { icon: FileCheck, label: 'Live in 25 hospitals' },
-  { icon: Award, label: '“Innovative Startup” status — Government of Georgia' },
+const benefits = [
+  {
+    title: 'A better hospital today.',
+    description: 'Connected information, simpler work, and AI that helps your people make better decisions.',
+  },
+  {
+    title: 'Your own AI brain tomorrow.',
+    description: 'Built around your hospital’s needs—progressing toward AI that anticipates risks and coordinates care and business decisions, with your team in control.',
+  },
+  {
+    title: 'A team that keeps building for you.',
+    description: 'Unlimited future development included. New features ready to test in three business days.',
+  },
 ];
 
 export const LampHeroSection: React.FC = () => {
@@ -21,53 +31,66 @@ export const LampHeroSection: React.FC = () => {
   };
 
   return (
-    <LampContainer className="bg-surface-page">
-      <div className="mx-auto max-w-5xl px-4 pt-16 pb-16 text-center sm:px-6 sm:pt-20 sm:pb-20 md:px-8 md:pt-24 md:pb-24 lg:pt-28">
-        {/* Headline — the human voice (serif) and the system voice (mono). */}
+    <LampContainer
+      className="min-h-0 bg-surface-page"
+      contentClassName="w-full translate-y-0 px-0 sm:translate-y-0 md:translate-y-0"
+    >
+      <section aria-labelledby="hero-heading" className="mx-auto w-full max-w-6xl px-5 py-8 text-center sm:px-8 lg:px-12">
         <motion.h1
+          id="hero-heading"
           initial={{ opacity: 0.5, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8, ease: 'easeInOut' }}
           viewport={{ once: true }}
-          className="mb-6 leading-[1.02] sm:mb-8"
+          className="mb-4 font-serif text-4xl font-semibold leading-[1.08] tracking-[-0.02em] text-text sm:text-5xl lg:text-[3.5rem]"
         >
-          <span className="block font-serif text-5xl font-semibold tracking-[-0.02em] text-text sm:text-6xl lg:text-7xl">
-            One hospital.
+          <span className="block">
+            Your hospital deserves a future.
           </span>
-          <span className="mt-2 block font-mono text-2xl font-medium tracking-tight text-secondary sm:text-3xl lg:text-5xl dark:text-light-accent">
-            One operating system.
+          <span className="mt-2 block text-secondary dark:text-light-accent">
+            Your patients deserve better today.
           </span>
         </motion.h1>
 
-        {/* Subhead — one line */}
         <motion.p
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.5 }}
           viewport={{ once: true }}
-          className="mx-auto mb-8 max-w-2xl text-base leading-relaxed text-text-muted sm:mb-10 sm:text-lg md:text-xl"
+          className="mx-auto max-w-3xl text-base leading-relaxed text-text-muted sm:text-lg"
         >
-          Hospitals run on dozens of programs that don’t talk to each other. MediMind replaces them all — every department, every workflow, one system with AI at its core. Built by doctors. Live across Georgia’s second-largest hospital chain.
+          Replace disconnected software with one intelligent hospital system—built for better care, more revenue, and less waste.
         </motion.p>
 
-        {/* Trust chips — squared, mono */}
-        <motion.div
+        <motion.ul
           initial={{ y: 16, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.65 }}
           viewport={{ once: true }}
-          className="mb-8 flex flex-wrap items-center justify-center gap-2 sm:mb-10 sm:gap-3"
+          className="my-5 grid gap-5 border-y border-surface-border py-5 text-left md:grid-cols-3 md:gap-6"
         >
-          {trustChips.map(({ icon: Icon, label }) => (
-            <span
-              key={label}
-              className="inline-flex items-center gap-2 border border-accent/25 bg-accent/[0.06] px-3 py-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-text-muted"
-            >
-              <Icon className="h-3.5 w-3.5 text-accent" />
-              {label}
-            </span>
+          {benefits.map(({ title, description }) => (
+            <li key={title} className="flex items-start gap-3">
+              <Check aria-hidden="true" className="mt-1 h-4 w-4 shrink-0 text-accent" />
+              <div>
+                <h2 className="text-base font-semibold leading-snug text-text">{title}</h2>
+                <p className="mt-2 text-sm leading-relaxed text-text-muted">{description}</p>
+              </div>
+            </li>
           ))}
-        </motion.div>
+        </motion.ul>
+
+        <div className="mx-auto mb-5 max-w-3xl">
+          <p className="text-xl font-semibold leading-snug text-text sm:text-2xl">
+            Move first. At the software price you already pay.
+          </p>
+          <p className="mt-2 text-sm leading-relaxed text-text-muted">
+            We match your current software price for early hospital partners. This offer won’t be available indefinitely.
+          </p>
+          <p className="mt-4 text-sm font-medium leading-relaxed text-text sm:text-base">
+            Test it beside your current system in two weeks. Keep running. Commit after you see the difference.
+          </p>
+        </div>
 
         {/* CTAs — squared luminous language */}
         <motion.div
@@ -84,7 +107,7 @@ export const LampHeroSection: React.FC = () => {
             whileTap={{ scale: 0.97 }}
           >
             <span className="flex items-center justify-center gap-2">
-              Book a 30-min demo
+              Build my hospital’s future
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </span>
           </motion.button>
@@ -98,7 +121,7 @@ export const LampHeroSection: React.FC = () => {
             See the path
           </motion.button>
         </motion.div>
-      </div>
+      </section>
     </LampContainer>
   );
 };

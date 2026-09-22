@@ -9,9 +9,11 @@ import { cn } from "../../utils/cn";
 export const LampContainer = ({
   children,
   className,
+  contentClassName,
 }: {
   children: React.ReactNode;
   className?: string;
+  contentClassName?: string;
 }) => {
   return (
     <div
@@ -90,7 +92,7 @@ export const LampContainer = ({
         <div className="absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem] bg-surface-page" />
       </div>
 
-      <div className="relative z-50 flex -translate-y-24 sm:-translate-y-28 md:-translate-y-32 flex-col items-center px-5">
+      <div className={cn("relative z-50 flex -translate-y-24 sm:-translate-y-28 md:-translate-y-32 flex-col items-center px-5", contentClassName)}>
         {children}
       </div>
     </div>

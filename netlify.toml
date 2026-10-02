@@ -18,6 +18,12 @@
     Cache-Control = "no-store, must-revalidate"
     X-Robots-Tag = "noindex, nofollow"
 
+[[headers]]
+  for = "/share/funnel-metrics.pdf"
+  [headers.values]
+    Cache-Control = "no-store, must-revalidate"
+    X-Robots-Tag = "noindex, nofollow"
+
 # ─── Long cache on stable hashed assets (Vite emits content-hashed files) ───
 [[headers]]
   for = "/assets/*"

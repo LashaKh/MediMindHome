@@ -5,6 +5,13 @@
   publish = "dist"
   command = "npm run build"
 
+# Shareable workshop brief: always serve the latest version, without search indexing.
+[[headers]]
+  for = "/share/core-positioning.pdf"
+  [headers.values]
+    Cache-Control = "no-store, must-revalidate"
+    X-Robots-Tag = "noindex, nofollow"
+
 # ─── Long cache on stable hashed assets (Vite emits content-hashed files) ───
 [[headers]]
   for = "/assets/*"

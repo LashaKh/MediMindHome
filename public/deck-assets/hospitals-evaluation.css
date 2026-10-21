@@ -1,0 +1,57 @@
+/* Hospital-specific evaluation, isolated from the deck's other guarantees. */
+.reveal .heval-slide { background: radial-gradient(ellipse at 5% 85%, #eaf4ff 0, transparent 55%), linear-gradient(160deg, #fff 45%, #f5f9fd); }
+.reveal .heval-slide .slide-inner { padding: 62px 90px 26px; }
+.reveal .heval-slide .heval-headline,
+body.lang-active-ka .reveal .heval-slide .heval-headline { font-size: 37px !important; line-height: 1.2 !important; letter-spacing: -.028em; margin: 16px 0 13px; max-width: none; }
+.reveal .heval-headline em { color: var(--emr-secondary); }
+.reveal .heval-subtitle { font-size: 15px; line-height: 1.55; color: var(--emr-text-body); max-width: 1010px; margin: 0 0 23px; }
+.heval-layout { display: grid; grid-template-columns: 1.32fr 1fr; gap: 40px; align-items: center; flex: 1; min-height: 0; }
+.heval-experience { padding: 25px 28px; border-left: 3px solid var(--emr-secondary); background: linear-gradient(120deg, #eaf3fc, #f6faff); border-radius: 0 16px 16px 0; }
+.reveal .heval-experience h3 { font-size: 28px; line-height: 1.3; letter-spacing: -.02em; font-weight: 800; margin: 0 0 17px; }
+.heval-experience h3 em { color: var(--emr-secondary); font-style: normal; }
+.heval-continuity { display: flex; align-items: center; gap: 8px; font-size: 12px; line-height: 1.45; color: var(--emr-primary); font-weight: 650; margin-top: 13px; }
+.heval-live-dot { flex: 0 0 7px; height: 7px; border-radius: 50%; background: #298564; box-shadow: 0 0 0 4px #e6f4ee; margin: 0 4px; }
+.reveal .heval-criteria h3 { font-size: 21px; line-height: 1.35; font-weight: 750; letter-spacing: -.02em; margin: 0 0 17px; }
+.heval-criteria dl { margin: 0; display: grid; gap: 22px; }
+.heval-criteria dl > div { border-bottom: 1px solid #dce7f2; padding-bottom: 22px; }
+.heval-criteria dl > div:last-child { border: 0; padding: 0; }
+.heval-criteria dt { display: flex; gap: 10px; align-items: baseline; font-size: 19px; line-height: 1.35; font-weight: 750; color: var(--emr-primary); }
+.heval-number { flex: 0 0 20px; color: var(--emr-secondary); font-size: 10px; font-weight: 750; letter-spacing: .03em; }
+.heval-offer { display: flex; align-items: center; gap: 26px; margin-top: 18px; padding: 17px 24px; background: linear-gradient(110deg, #1a365d, #2b6cb0 72%, #3182ce); border-radius: 14px; color: white; box-shadow: 0 12px 25px #1a365d20; flex: none; }
+.heval-offer-number { display: flex; gap: 14px; align-items: center; flex: none; padding-right: 26px; border-right: 1px solid #ffffff4d; }
+.heval-offer-number strong { font-size: 52px; line-height: 1; color: #a7f3d0; font-weight: 800; }
+.heval-offer-number > .lang-en, .heval-offer-number > .lang-ka { font-size: 10px; font-weight: 700; line-height: 1.5; }
+.heval-offer-copy { display: flex; flex: 1; align-items: center; justify-content: space-between; gap: 20px; }
+.heval-offer-copy > strong { font-size: 15px; line-height: 1.45; font-weight: 750; color: white; }
+.heval-free { font-size: 12px; line-height: 1.45; color: #c6f8e5; font-weight: 650; max-width: 220px; }
+body.lang-active-en .heval-slide .lang-en, body.lang-active-ka .heval-slide .lang-ka { display: inline !important; }
+body.lang-active-ka .heval-slide { word-break: normal; hyphens: none; }
+
+@media (max-width: 768px) {
+  .reveal .heval-slide .slide-inner { padding: 29px 22px 78px !important; }
+  .reveal .heval-slide .heval-headline, body.lang-active-ka .reveal .heval-slide .heval-headline { font-size: clamp(29px, 5vw, 39px) !important; line-height: 1.22 !important; margin: 18px 0 17px; }
+  .reveal .heval-subtitle { font-size: 16px; line-height: 1.65; margin-bottom: 26px; }
+  .heval-layout { grid-template-columns: 1fr; gap: 29px; flex: none; }
+  .heval-experience { padding: 23px 20px; }
+  .reveal .heval-experience h3 { font-size: 28px; }
+  .heval-continuity { font-size: 14px; line-height: 1.5; margin-top: 17px; }
+  .reveal .heval-criteria h3 { font-size: 24px; margin-bottom: 24px; }
+  .heval-criteria h3 br { display: none; }
+  .heval-criteria dl { gap: 21px; }
+  .heval-criteria dl > div { padding-bottom: 21px; }
+  .heval-criteria dt { font-size: 17px; }
+  .heval-number { font-size: 11px; }
+  .heval-offer { flex-direction: column; align-items: stretch; gap: 19px; margin-top: 31px; padding: 22px; }
+  .heval-offer-number { padding: 0 0 17px; border-right: 0; border-bottom: 1px solid #ffffff4d; gap: 18px; }
+  .heval-offer-number strong { font-size: 65px; }
+  .heval-offer-number > .lang-en, .heval-offer-number > .lang-ka { font-size: 13px; }
+  .heval-offer-copy { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .heval-offer-copy > strong { font-size: 18px; line-height: 1.6; }
+  .heval-free { font-size: 15px; line-height: 1.6; max-width: none; }
+}
+@media (max-width: 360px) {
+  .reveal .heval-slide .slide-inner { padding: 27px 16px 78px !important; }
+  .reveal .heval-experience h3 { font-size: 25px; }
+  .heval-offer { padding: 20px; }
+}
+@media print { .heval-offer { box-shadow: none; } }

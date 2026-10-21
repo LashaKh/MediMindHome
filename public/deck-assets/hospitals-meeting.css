@@ -1,0 +1,29 @@
+/* One closing action, with three concrete reasons to take the meeting. */
+.reveal .hmeeting-slide .slide-inner { padding: 68px 90px 42px; justify-content: center; }
+.reveal .hmeeting-slide .hmeeting-title,
+body.lang-active-ka .reveal .hmeeting-slide .hmeeting-title { max-width: none; font-size: 58px !important; line-height: 1.2 !important; letter-spacing: -.025em; text-align: center; margin: 0 0 20px; color: #fff; }
+.reveal .hmeeting-subtitle { margin: 0; font-size: 17px; line-height: 1.6; color: #c2d5ea; text-align: center; }
+.reveal .hmeeting-outcomes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px; width: 100%; max-width: 1030px; padding: 0; margin: 56px 0 43px; list-style: none; text-align: left; }
+.hmeeting-outcomes > li { margin: 0; padding: 20px 0 0; border-top: 1px solid #89bde45c; }
+.hmeeting-number { display: block; margin-bottom: 12px; color: #8fd7f3; font-size: 12px; line-height: 1.4; font-weight: 750; letter-spacing: .05em; }
+.reveal .hmeeting-outcomes p { margin: 0; color: #f2f7fd; font-size: 19px; line-height: 1.65; font-weight: 650; }
+.reveal .hmeeting-reply { margin: 0; color: #a7f3d0; font-size: 23px; line-height: 1.5; font-weight: 750; text-align: center; }
+body.lang-active-en .hmeeting-slide .lang-en, body.lang-active-ka .hmeeting-slide .lang-ka { display: inline !important; }
+body.lang-active-ka .hmeeting-slide { word-break: normal; hyphens: none; }
+
+@media (max-width: 768px) {
+  .reveal .hmeeting-slide .slide-inner { padding: 29px 24px 78px !important; justify-content: flex-start; }
+  .reveal .hmeeting-slide .hmeeting-title,
+  body.lang-active-ka .reveal .hmeeting-slide .hmeeting-title { font-size: clamp(37px, 6.7vw, 58px) !important; line-height: 1.25 !important; margin: 27px 0 20px; }
+  .reveal .hmeeting-subtitle { font-size: 16px; line-height: 1.65; }
+  .reveal .hmeeting-outcomes { grid-template-columns: 1fr; gap: 25px; margin: 36px 0; }
+  .hmeeting-outcomes > li { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 12px; padding-top: 22px; }
+  .hmeeting-number { margin: 5px 0 0; }
+  .reveal .hmeeting-outcomes p { font-size: 18px; line-height: 1.65; }
+  .hmeeting-outcomes br { display: none; }
+  .reveal .hmeeting-reply { font-size: 21px; line-height: 1.6; }
+}
+@media (max-width: 360px) {
+  .reveal .hmeeting-slide .slide-inner { padding: 27px 18px 78px !important; }
+  .reveal .hmeeting-outcomes p { font-size: 17px; }
+}

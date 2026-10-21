@@ -1,0 +1,34 @@
+/* Three written commitments, without the legacy guarantee-card typography. */
+.reveal .hguar-slide { background: radial-gradient(ellipse at 94% 92%, #edf5fd, transparent 60%), #fff; }
+.reveal .hguar-slide .slide-inner { padding: 62px 90px 55px; }
+.reveal .hguar-slide .hguar-headline,
+body.lang-active-ka .reveal .hguar-slide .hguar-headline { font-size: 44px !important; line-height: 1.2 !important; letter-spacing: -.025em; margin: 28px 0 17px; max-width: none; }
+.hguar-headline em { color: var(--emr-secondary); }
+.reveal .hguar-subtitle { margin: 0; color: var(--emr-text-body); font-size: 17px; line-height: 1.6; }
+.hguar-columns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 38px; margin: auto 0; padding: 42px 0 0; }
+.hguar-column { border-top: 2px solid #b8d5ef; padding: 25px 12px 0 0; }
+.hguar-icon { width: 42px; height: 42px; border-radius: 11px; display: grid; place-items: center; background: #eaf3fc; color: var(--emr-secondary); margin-bottom: 23px; }
+.hguar-icon svg { width: 23px; height: 23px; stroke-width: 1.8; }
+.reveal .hguar-column h3,
+body.lang-active-ka .reveal .hguar-column h3 { font-size: 27px !important; line-height: 1.35 !important; letter-spacing: -.015em !important; font-weight: 800; margin: 0 0 17px !important; text-transform: none; }
+.reveal .hguar-column p,
+body.lang-active-ka .reveal .hguar-column p { font-size: 16px !important; line-height: 1.65 !important; letter-spacing: 0; color: var(--emr-text-body); margin: 0; }
+body.lang-active-en .hguar-slide .lang-en, body.lang-active-ka .hguar-slide .lang-ka { display: inline !important; }
+body.lang-active-ka .hguar-slide { word-break: normal; hyphens: none; }
+
+@media (max-width: 768px) {
+  .reveal .hguar-slide .slide-inner { padding: 29px 22px 78px !important; }
+  .reveal .hguar-slide .hguar-headline,
+  body.lang-active-ka .reveal .hguar-slide .hguar-headline { font-size: clamp(32px, 5vw, 44px) !important; line-height: 1.25 !important; margin: 21px 0 19px; }
+  .reveal .hguar-subtitle { font-size: 16px; line-height: 1.65; }
+  .hguar-columns { grid-template-columns: 1fr; gap: 32px; margin: 0; padding-top: 34px; }
+  .hguar-column { padding: 23px 0 0; }
+  .hguar-icon { margin-bottom: 15px; }
+  .reveal .hguar-column h3,
+  body.lang-active-ka .reveal .hguar-column h3 { font-size: 26px !important; margin-bottom: 12px !important; }
+  .reveal .hguar-column p,
+  body.lang-active-ka .reveal .hguar-column p { font-size: 16px !important; }
+}
+@media (max-width: 360px) {
+  .reveal .hguar-slide .slide-inner { padding: 27px 16px 78px !important; }
+}

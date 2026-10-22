@@ -3,8 +3,8 @@ import {
   applyRules,
   cleanAccountFields,
   cleanDemoRequest,
-  escapeLike,
   isIsoDate,
+  sameName,
   tbilisiToday,
 } from "./validate.ts";
 
@@ -40,6 +40,13 @@ Deno.test("rejects bad values instead of saving them", () => {
     notes: "x".repeat(10001),
   });
   assertEquals(errors.length, 7);
+});
+
+Deno.test("errors use the names people see in the CRM", () => {
+  assertEquals(cleanAccountFields({ amount_gel: "lots" }).errors, [
+    "Deal amount must be a number (0 or more), like 30000",
+  ]);
+  assertEquals(cleanAccountFields({ name: " " }).errors, ["Name is required"]);
 });
 
 Deno.test("isIsoDate rejects impossible dates", () => {
@@ -83,6 +90,13 @@ Deno.test("undo restores the old dates exactly, even when they were empty", () =
   assertEquals(out.sql_at, null);
 });
 
+Deno.test("a deal entered as already lost gets no status; reopening it gets Active", () => {
+  const lost = applyRules(null, { kind: "deal", name: "X", stage: "lost", lost_reason: "Bad fit" }, TODAY);
+  assertEquals("status" in lost, false);
+  const reopened = applyRules({ kind: "deal", stage: "lost", status: null }, { stage: "discovery" }, TODAY);
+  assertEquals(reopened.status, "active");
+});
+
 Deno.test("an unchanged stage leaves the stage clock alone", () => {
   const out = applyRules({ kind: "deal", stage: "proposal", status: "active" }, { owner: "Irakli" }, TODAY);
   assertEquals("stage_since" in out, false);
@@ -104,8 +118,16 @@ Deno.test("demo request needs a name, a valid email and an organization", () => 
   ]);
 });
 
-Deno.test("company names with LIKE wildcards match literally", () => {
-  assertEquals(escapeLike("50%_Clinic\\"), "50\\%\\_Clinic\\\\");
+Deno.test("a website request finds its hospital by name, never by wildcard", () => {
+  assertEquals(sameName("  Aversi   clinic ", "Aversi Clinic"), true);
+  assertEquals(sameName("*", "Aversi Clinic"), false);
+  assertEquals(sameName("50%_Clinic", "500 Clinic"), false);
+});
+
+Deno.test("numbers: decimal commas are refused, blanks are empty, sites fit the column", () => {
+  assertEquals(cleanAccountFields({ team_hours: "2,5" }).errors, ["Team hours: use a dot for decimals, like 2.5"]);
+  assertEquals(cleanAccountFields({ amount_gel: "30,000", team_hours: "   " }).patch, { amount_gel: 30000, team_hours: null });
+  assertEquals(cleanAccountFields({ sites: "3000000000" }).errors.length, 1);
 });
 
 Deno.test("Tbilisi date is ahead of UTC late in the evening", () => {

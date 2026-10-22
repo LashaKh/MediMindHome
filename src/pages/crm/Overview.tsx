@@ -1,7 +1,11 @@
 import React from "react";
 import {
+  type Activity,
+  ACTIVITY_LABEL,
   type CrmData,
+  dayLabel,
   formatDate,
+  isOpenDeal,
   type Metrics,
   OPEN_STAGES,
   relativeDay,
@@ -21,10 +25,12 @@ interface Props {
 }
 
 const plural = (n: number, word: string) => `${word}${n === 1 ? "" : "s"}`;
+/** "Status: Stalled", "Message: To Tamar…"; an "Added" entry already reads as a sentence. */
+const feedText = (a: Activity) => (a.type === "created" ? a.body : `${ACTIVITY_LABEL[a.type] ?? a.type}: ${a.body ?? ""}`);
 
 function briefing(m: Metrics): string[] {
   const open = m.openDeals.length;
-  const flagged = m.attention.filter((x) => x.account.kind === "deal").length;
+  const flagged = m.attention.filter((x) => isOpenDeal(x.account)).length;
   const targets = m.targets.length;
   const tests = m.last30.first_test_at;
 
@@ -39,9 +45,17 @@ function briefing(m: Metrics): string[] {
       : `${open} hospitals in the pipeline, and all ${open} need attention.`;
   } else pipeline = `${open} ${plural(open, "hospital")} in the pipeline; ${flagged} ${flagged === 1 ? "needs" : "need"} attention.`;
 
-  const research = targets === 0
-    ? "Every researched hospital has been contacted."
-    : `${targets} researched ${plural(targets, "hospital")} ${targets === 1 ? "has" : "have"} not been contacted yet.`;
+  const waiting = m.contacted.length;
+  const fresh = targets - waiting;
+  let research: string;
+  if (targets === 0) research = "No targets are waiting to be contacted.";
+  else if (waiting === 0) {
+    research = `${fresh} researched ${plural(fresh, "hospital")} ${fresh === 1 ? "has" : "have"} not been contacted yet.`;
+  } else if (fresh === 0) {
+    research = `${waiting} ${plural(waiting, "target")} ${waiting === 1 ? "is" : "are"} waiting for a reply.`;
+  } else {
+    research = `${waiting} ${plural(waiting, "target")} ${waiting === 1 ? "is" : "are"} waiting for a reply, and ${fresh} more ${fresh === 1 ? "hasn't" : "haven't"} been contacted.`;
+  }
 
   const metric = `${tests === 0 ? "No" : tests} new ${plural(tests, "hospital")} ran a first hands-on test in the last 30 days.`;
   return [pipeline, research, metric];
@@ -57,8 +71,10 @@ export const Overview: React.FC<Props> = ({ data, metrics, today, onOpen, onTab 
     { label: "Parallel versions delivered", n: metrics.last30.delivered_at },
     { label: "Purchase agreements signed", n: metrics.last30.signed_at },
   ];
+  const monthAgo = Date.now() - 30 * 86400_000;
   const recent = data.activities
     .filter((a) => names.has(a.account_id) && !(a.type === "created" && a.author === "Import"))
+    .filter((a) => Date.parse(a.occurred_at) >= monthAgo)
     .slice(0, 12);
 
   return (
@@ -112,7 +128,7 @@ export const Overview: React.FC<Props> = ({ data, metrics, today, onOpen, onTab 
           <h2 id="crm-attention-title" className="crm-panel-title">Needs attention</h2>
           {metrics.attention.length === 0 ? (
             <p className="crm-quiet">
-              Nothing is waiting. Every open deal has an owner, a dated next step and recent contact.
+              Nothing to fix. Every open deal has an owner, a dated next step and recent contact, and every follow-up is on time.
             </p>
           ) : (
             <ul className="crm-attention">
@@ -134,9 +150,33 @@ export const Overview: React.FC<Props> = ({ data, metrics, today, onOpen, onTab 
                       )}
                     </span>
                     <span className="crm-attention-side">
-                      {a.kind !== "target" && <StatusTag status={a.status} />}
-                      <Owner name={a.owner} />
+                      {a.kind === "target" ? <span className="crm-quiet">Target</span> : <StatusTag status={a.status} />}
+                      {(a.kind !== "target" || a.owner) && <Owner name={a.owner} />}
                     </span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+
+        <section className="crm-panel" aria-labelledby="crm-upcoming-title">
+          <h2 id="crm-upcoming-title" className="crm-panel-title">Coming up, next 7 days</h2>
+          {metrics.upcoming.length === 0 ? (
+            <p className="crm-quiet">No other next steps are due in the next 7 days.</p>
+          ) : (
+            <ul className="crm-agenda">
+              {metrics.upcoming.map((a) => (
+                <li key={a.id}>
+                  <button className="crm-agenda-row" onClick={() => onOpen(a.id)}>
+                    <span className={`crm-agenda-day${a.next_step_date === today ? " is-today" : ""}`}>
+                      {dayLabel(a.next_step_date!, today)}
+                    </span>
+                    <span className="crm-attention-main">
+                      <span className="crm-attention-name">{a.name}</span>
+                      <span className="crm-attention-next">{a.next_step ?? "No next step written"}</span>
+                    </span>
+                    {a.owner && <Owner name={a.owner} />}
                   </button>
                 </li>
               ))}
@@ -163,14 +203,14 @@ export const Overview: React.FC<Props> = ({ data, metrics, today, onOpen, onTab 
         <section className="crm-panel" aria-labelledby="crm-recent-title">
           <h2 id="crm-recent-title" className="crm-panel-title">Recent activity</h2>
           {recent.length === 0 ? (
-            <p className="crm-quiet">Nothing logged yet.</p>
+            <p className="crm-quiet">Nothing logged in the last 30 days.</p>
           ) : (
             <ul className="crm-feed">
               {recent.map((a) => (
                 <li key={a.id}>
                   <button className="crm-feed-row" onClick={() => onOpen(a.account_id)}>
                     <strong>{names.get(a.account_id)}</strong>
-                    <span className="crm-feed-text">{a.body}</span>
+                    <span className="crm-feed-text">{feedText(a)}</span>
                     <time dateTime={a.occurred_at}>{timeAgo(a.occurred_at)}</time>
                   </button>
                 </li>

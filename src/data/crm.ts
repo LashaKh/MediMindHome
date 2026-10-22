@@ -18,7 +18,7 @@ export type OpenStageId = Exclude<StageId, "won" | "lost">;
 export type StatusId = "active" | "waiting_on_us" | "waiting_on_it" | "stalled" | "on_hold";
 export type SourceId = "founder_network" | "warm_intro" | "direct_outreach" | "inbound";
 export type OrgType = "group" | "single" | "clinic" | "government";
-export type LogType = "note" | "call" | "meeting" | "email";
+export type LogType = "note" | "call" | "meeting" | "email" | "message";
 export type ActivityType =
   | LogType
   | "created"
@@ -165,7 +165,7 @@ export const STAGE_LABEL: Record<StageId, string> = {
 export const STATUSES: { id: StatusId; label: string; hint: string }[] = [
   { id: "active", label: "Active", hint: "Moving, and the next step has a date." },
   { id: "waiting_on_us", label: "Waiting on us", hint: "We are building or preparing. Our work is a status, not a stage." },
-  { id: "waiting_on_it", label: "Waiting on hospital IT", hint: "Data access, security or approvals on their side." },
+  { id: "waiting_on_it", label: "Waiting on the hospital", hint: "The next move is theirs: a reply, data access or an approval." },
   { id: "stalled", label: "Stalled", hint: "No hospital activity for 14 days or more." },
   { id: "on_hold", label: "On hold", hint: "Paused on purpose. Put the review date in the next step." },
 ];
@@ -194,18 +194,38 @@ export const LOST_REASONS = [
   "No budget",
   "The group decides elsewhere",
   "Staying with their current system",
+  "They built their own system",
   "Chose another vendor",
   "Data or security approval refused",
   "Evaluation missed the success criteria",
   "Bad fit",
 ];
 
-export const LOG_TYPES: { id: LogType; label: string; verb: string }[] = [
-  { id: "note", label: "Note", verb: "Add note" },
-  { id: "call", label: "Call", verb: "Log call" },
-  { id: "meeting", label: "Meeting", verb: "Log meeting" },
-  { id: "email", label: "Email", verb: "Log email" },
+export const LOG_TYPES: { id: LogType; label: string; verb: string; hint: string }[] = [
+  { id: "message", label: "Message", verb: "Log message", hint: "What did you send or get back? WhatsApp, Messenger, SMS or LinkedIn." },
+  { id: "call", label: "Call", verb: "Log call", hint: "What was said on the call? What did they agree to?" },
+  { id: "meeting", label: "Meeting", verb: "Log meeting", hint: "Who was there, what was said, what did they agree to?" },
+  { id: "email", label: "Email", verb: "Log email", hint: "What did you send or get back?" },
+  { id: "note", label: "Note", verb: "Add note", hint: "Internal note. The hospital never sees it, and it doesn't count as contact." },
 ];
+
+/** What each timeline entry is called, everywhere it is shown. */
+export const ACTIVITY_LABEL: Record<ActivityType, string> = {
+  note: "Note",
+  call: "Call",
+  meeting: "Meeting",
+  email: "Email",
+  message: "Message",
+  created: "Added",
+  stage: "Stage",
+  status: "Status",
+  owner: "Owner",
+  next_step: "Next step",
+  moved: "Moved",
+  archived: "Archived",
+  restored: "Restored",
+  inbound: "Website request",
+};
 
 export const MILESTONES: { key: MilestoneKey; label: string }[] = [
   { key: "first_contact_at", label: "First contact" },
@@ -268,6 +288,17 @@ export function relativeDay(iso: string, today: string): string {
   return n > 0 ? `in ${n} days` : `${-n} days ago`;
 }
 
+const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+/** "Today", "Tomorrow" or "Tue 27 Oct": for a to-do list, where the weekday matters. */
+export function dayLabel(iso: string, today: string): string {
+  const n = daysBetween(today, iso);
+  if (n === 0) return "Today";
+  if (n === 1) return "Tomorrow";
+  const weekday = WEEKDAYS[new Date(`${iso.slice(0, 10)}T00:00:00Z`).getUTCDay()];
+  return `${weekday} ${formatDate(iso, today)}`;
+}
+
 export function timeAgo(isoTime: string, now = Date.now()): string {
   const s = Math.max(0, Math.round((now - Date.parse(isoTime)) / 1000));
   if (s < 60) return "just now";
@@ -276,6 +307,7 @@ export function timeAgo(isoTime: string, now = Date.now()): string {
   const h = Math.round(m / 60);
   if (h < 24) return `${h} h ago`;
   const d = Math.round(h / 24);
+  if (d === 1) return "yesterday";
   if (d < 30) return `${d} days ago`;
   return formatDate(isoTime.slice(0, 10));
 }
@@ -306,13 +338,25 @@ export function isOpenDeal(a: Account): boolean {
   return a.kind === "deal" && a.stage !== "won" && a.stage !== "lost";
 }
 
+/** When we last reached a target (a logged message, call, meeting or email). Null: not contacted yet. */
+export function contactedOn(a: Account): string | null {
+  return a.last_touch ?? a.first_contact_at;
+}
+
+function lateFlag(date: string, today: string): Flag {
+  const late = daysBetween(date, today);
+  return { label: `Next step ${late} ${late === 1 ? "day" : "days"} late`, tone: "red" };
+}
+
 /** Everything wrong with a record, most urgent first. Empty when it is in good shape. */
 export function flagsFor(a: Account, today: string): Flag[] {
   const flags: Flag[] = [];
   if (a.kind === "target") {
-    if (a.source === "inbound" && !a.owner && !a.excluded) {
-      flags.push({ label: "Website request: needs an owner", tone: "red" });
-    }
+    if (a.excluded) return flags;
+    if (a.source === "inbound" && !a.owner) flags.push({ label: "Website request: needs an owner", tone: "red" });
+    // A target we already wrote to needs a dated follow-up, or the conversation quietly dies.
+    if (a.next_step_date && a.next_step_date < today) flags.push(lateFlag(a.next_step_date, today));
+    else if (contactedOn(a) && !a.next_step_date) flags.push({ label: "No follow-up date", tone: "amber" });
     return flags;
   }
   if (a.kind === "deal" && a.stage === "won" && !a.signed_at) flags.push({ label: "Add the signed date", tone: "amber" });
@@ -323,12 +367,13 @@ export function flagsFor(a: Account, today: string): Flag[] {
   if (!a.next_step_date) {
     flags.push({ label: "No next step date", tone: "red" });
   } else if (a.next_step_date < today) {
-    const late = daysBetween(a.next_step_date, today);
-    flags.push({ label: `Next step ${late} ${late === 1 ? "day" : "days"} late`, tone: "red" });
+    flags.push(lateFlag(a.next_step_date, today));
   }
   if (a.kind === "deal") {
-    if (a.last_touch && daysBetween(a.last_touch, today) >= 14) {
-      flags.push({ label: `No contact for ${daysBetween(a.last_touch, today)} days`, tone: "amber" });
+    // With nothing logged yet, the clock starts when the deal entered its stage.
+    const since = contactedOn(a) ?? a.stage_since;
+    if (since && daysBetween(since, today) >= 14) {
+      flags.push({ label: `No contact for ${daysBetween(since, today)} days`, tone: "amber" });
     }
     if ((a.stage === "proposal" || a.stage === "negotiation") && (a.amount_gel === null || !a.decision_date)) {
       flags.push({ label: "Needs amount and decision date", tone: "amber" });
@@ -342,6 +387,10 @@ export function flagsFor(a: Account, today: string): Flag[] {
 export interface Metrics {
   openDeals: Account[];
   targets: Account[];
+  /** Targets we already wrote to or called, waiting for a reply. */
+  contacted: Account[];
+  /** In good shape, with a next step due in the next 7 days, soonest first. */
+  upcoming: Account[];
   excluded: Account[];
   anchors: Account[];
   won: Account[];
@@ -408,9 +457,18 @@ export function computeMetrics(accounts: Account[], today: string): Metrics {
     .filter((a) => a.eval_agreed_at && a.first_test_at)
     .map((a) => daysBetween(a.eval_agreed_at!, a.first_test_at!));
 
+  const flagged = new Set(attention.map((x) => x.account.id));
+  const upcoming = live
+    .filter((a) => !a.excluded && !flagged.has(a.id) && (a.kind !== "deal" || isOpenDeal(a)))
+    .filter((a) => a.next_step_date && daysBetween(today, a.next_step_date) >= 0 && daysBetween(today, a.next_step_date) <= 7)
+    .sort((x, y) => x.next_step_date!.localeCompare(y.next_step_date!) || x.name.localeCompare(y.name));
+  const targets = live.filter((a) => a.kind === "target" && !a.excluded);
+
   return {
     openDeals,
-    targets: live.filter((a) => a.kind === "target" && !a.excluded),
+    targets,
+    contacted: targets.filter((a) => contactedOn(a) !== null),
+    upcoming,
     excluded: live.filter((a) => a.kind === "target" && a.excluded),
     anchors: live.filter((a) => a.kind === "anchor"),
     won,
@@ -445,8 +503,10 @@ const CSV_COLUMNS: (keyof Account)[] = [
 
 export function toCsv(accounts: Account[]): string {
   const cell = (v: unknown) => {
-    const s = v === null || v === undefined ? "" : String(v);
-    return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+    let s = v === null || v === undefined ? "" : String(v);
+    // A cell that starts like a formula would run as one in Excel or Sheets: keep it plain text.
+    if (/^[=+\-@\t\r]/.test(s)) s = `'${s}`;
+    return /[",\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
   };
   return [CSV_COLUMNS.join(","), ...accounts.map((a) => CSV_COLUMNS.map((c) => cell(a[c])).join(","))].join("\n");
 }

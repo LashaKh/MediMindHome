@@ -172,11 +172,14 @@ Both have RLS enabled with all anon/authenticated access revoked. Edge functions
 
 ## Sales CRM (`/admin/crm`, added 2026-10-22)
 
+- **Read `.claude/skills/sales-crm/SKILL.md` before touching CRM data or code.** Agents read and change CRM data with `deno run -A scripts/crm.ts …` (the CRM's own API code in-process, same rules and timeline as the website), never with raw SQL writes.
 - UI: `src/pages/AdminCrm.tsx` + `src/pages/crm/*`, vocabulary and metrics in `src/data/crm.ts`, API client `src/lib/crmApi.ts`.
-- API: `supabase/functions/crm/` served through the `track-event` router (`?route=crm`, admin JWT). Rules live in `crm/validate.ts` and are unit-tested (`deno test --allow-env --no-check supabase/functions/crm/validate.test.ts`).
+- API: `supabase/functions/crm/` served through the `track-event` router (`?route=crm`, admin JWT). Rules live in `crm/validate.ts` and are unit-tested (`deno test --allow-env --no-check supabase/functions/crm/validate.test.ts supabase/functions/track-event/routing.test.ts`).
 - Stages are things the HOSPITAL did (500 Global W5D2): discovery, qualified, evaluation_agreed, evaluating, proposal, negotiation, won, lost. Our own work is a status (`waiting_on_us`), never a stage. Entering a stage fills its milestone date once.
-- Every update sends `expected_updated_at`; a stale save gets 409 with the other version, so two founders never overwrite each other silently.
-- The public "Request demo" form posts to `?route=demo-request`: honeypot field `website`, 3/hour per IP hash, 50/day total. Each request becomes an inbound target.
+- Every update sends `expected_updated_at`; a stale save gets 409 with the other version, so two founders never overwrite each other silently. In the browser, writes to one hospital run one at a time with the newest stamp (`queue`/`update` in `AdminCrm.tsx`), so quick clicks never conflict with each other.
+- Timeline types include `message` (WhatsApp/Messenger/SMS/LinkedIn, migration 0004). Message, call, meeting and email move "last contact"; deleting the newest one moves it back. A target with a last contact counts as contacted and needs a dated follow-up.
+- The public "Request demo" form posts to `?route=demo-request`: honeypot field `website`, 5/day per IP hash, 50/day total. Each request becomes an inbound target. IPs come from `cf-connecting-ip` first (`_shared/cors.ts`).
+- Admin login: 10 wrong passwords from one IP hash in 15 minutes returns 429 (`admin_login_failures`, migration 0005).
 - Real pipeline data lives only in the database. Never commit seed files with deal notes or prices.
 
 ## Deployment

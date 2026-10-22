@@ -5,9 +5,18 @@
 // Response: { ok: boolean, token?: string, exp?: number }
 
 import { create, getNumericDate } from "https://deno.land/x/djwt@v3.0.2/mod.ts";
-import { corsHeaders } from "../_shared/cors.ts";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.39.3";
+import { corsHeaders, getClientIp, hashIp } from "../_shared/cors.ts";
 
 const enc = new TextEncoder();
+
+// After this many wrong passwords from one connection, it waits out the window.
+const MAX_FAILURES = 10;
+const WINDOW_MS = 15 * 60_000;
+
+function db() {
+  return createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
+}
 
 async function getSigningKey(): Promise<CryptoKey> {
   const secret = Deno.env.get("ADMIN_JWT_SECRET");
@@ -35,8 +44,20 @@ export async function handleAdminLogin(req: Request): Promise<Response> {
     if (!expected) {
       return json({ ok: false, error: "not_configured" }, 500);
     }
+    const ip_hash = await hashIp(getClientIp(req));
+    if (ip_hash) {
+      const { count, error } = await db()
+        .from("admin_login_failures")
+        .select("id", { count: "exact", head: true })
+        .eq("ip_hash", ip_hash)
+        .gte("at", new Date(Date.now() - WINDOW_MS).toISOString());
+      if (error) console.error("admin-login failure count:", error);
+      else if ((count ?? 0) >= MAX_FAILURES) return json({ ok: false, error: "rate_limit" }, 429);
+    }
     if (typeof password !== "string" || password !== expected) {
       // Constant-time compare not critical here — single-secret system
+      const { error } = await db().from("admin_login_failures").insert({ ip_hash });
+      if (error) console.error("admin-login failure log:", error);
       return json({ ok: false, error: "invalid" }, 401);
     }
 

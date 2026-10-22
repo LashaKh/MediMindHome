@@ -18,7 +18,7 @@ interface Props {
   accounts: Account[];
   today: string;
   onOpen: (id: string) => void;
-  onMoveStage: (a: Account, stage: StageId) => Promise<void>;
+  onMoveStage: (a: Account, stage: StageId) => Promise<boolean>;
 }
 
 type SortKey = "name" | "stage" | "next" | "touch" | "amount";
@@ -92,11 +92,11 @@ export const Pipeline: React.FC<Props> = ({ accounts, today, onOpen, onMoveStage
   return (
     <div className="crm-pipeline">
       <div className="crm-toolbar">
-        <div className="crm-seg" role="radiogroup" aria-label="View">
-          <button role="radio" aria-checked={view === "board"} className={view === "board" ? "is-on" : ""} onClick={() => setView("board")}>
+        <div className="crm-seg" role="group" aria-label="View">
+          <button aria-pressed={view === "board"} className={view === "board" ? "is-on" : ""} onClick={() => setView("board")}>
             Board
           </button>
-          <button role="radio" aria-checked={view === "list"} className={view === "list" ? "is-on" : ""} onClick={() => setView("list")}>
+          <button aria-pressed={view === "list"} className={view === "list" ? "is-on" : ""} onClick={() => setView("list")}>
             List
           </button>
         </div>
@@ -224,17 +224,29 @@ export const Pipeline: React.FC<Props> = ({ accounts, today, onOpen, onMoveStage
             <tbody>
               {sorted.map((a) => {
                 const flags = flagsFor(a, today);
+                const closed = !isOpenDeal(a);
                 return (
                   <tr key={a.id} onClick={() => onOpen(a.id)}>
                     <th scope="row">
-                      <button className="crm-link" onClick={(e) => { e.stopPropagation(); onOpen(a.id); }}>
-                        {a.name}
-                      </button>
-                      {flags[0] && <FlagText flag={flags[0]} />}
+                      <span className="crm-table-name">
+                        <button className="crm-link" onClick={(e) => { e.stopPropagation(); onOpen(a.id); }}>
+                          {a.name}
+                        </button>
+                        {flags[0] && <FlagText flag={flags[0]} />}
+                      </span>
                     </th>
                     <td>{a.stage ? STAGE_LABEL[a.stage] : "—"}</td>
-                    <td><StatusTag status={a.status} /></td>
-                    <td><Owner name={a.owner} /></td>
+                    <td>{closed ? "—" : <StatusTag status={a.status} />}</td>
+                    <td>
+                      {closed && !a.owner ? (
+                        "—"
+                      ) : (
+                        <span className="crm-owner-cell">
+                          <Owner name={a.owner} />
+                          {a.owner ?? "Nobody"}
+                        </span>
+                      )}
+                    </td>
                     <td className="crm-table-next">
                       {a.next_step ?? "—"}
                       {a.next_step_date && <span className="crm-quiet"> {relativeDay(a.next_step_date, today)}</span>}
@@ -259,7 +271,7 @@ const SortHeader: React.FC<{ label: string; k: SortKey; sort: SortKey; onSort: (
   sort,
   onSort,
 }) => (
-  <th scope="col" aria-sort={sort === k ? "ascending" : undefined}>
+  <th scope="col" aria-sort={sort === k ? (k === "amount" ? "descending" : "ascending") : undefined}>
     <button className={`crm-sort${sort === k ? " is-on" : ""}`} onClick={() => onSort(k)}>
       {label}
     </button>

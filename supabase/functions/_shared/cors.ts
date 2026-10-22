@@ -20,13 +20,13 @@ export async function hashIp(ip: string | null): Promise<string | null> {
     .join("");
 }
 
-/** Extract the first IP from x-forwarded-for, falling back to direct headers. */
+/** The visitor's IP. Cloudflare's header comes first: Cloudflare sets it itself, while a
+ *  visitor can put anything in x-forwarded-for, which would dodge the per-IP limits. */
 export function getClientIp(req: Request): string | null {
+  const direct = req.headers.get("cf-connecting-ip") ?? req.headers.get("x-real-ip");
+  if (direct) return direct.trim();
   const xff = req.headers.get("x-forwarded-for");
-  if (xff) return xff.split(",")[0].trim();
-  return req.headers.get("cf-connecting-ip") ??
-    req.headers.get("x-real-ip") ??
-    null;
+  return xff ? xff.split(",")[0].trim() : null;
 }
 
 /** Build a Supabase service-role client (bypasses RLS). */

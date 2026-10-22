@@ -12,12 +12,13 @@ import {
   applyRules,
   cleanAccountFields,
   cleanDemoRequest,
-  escapeLike,
   formatDemoRequest,
   isIsoDate,
   isUuid,
   LOG_TYPES,
+  NAME_REQUIRED,
   type Patch,
+  sameName,
   tbilisiToday,
   TOUCH_TYPES,
 } from "./validate.ts";
@@ -35,7 +36,7 @@ const STAGE_LABEL: Record<string, string> = {
 const STATUS_LABEL: Record<string, string> = {
   active: "Active",
   waiting_on_us: "Waiting on us",
-  waiting_on_it: "Waiting on hospital IT",
+  waiting_on_it: "Waiting on the hospital",
   stalled: "Stalled",
   on_hold: "On hold",
 };
@@ -56,12 +57,8 @@ export async function handleCrm(req: Request): Promise<Response> {
   if (!(await verifyAdminJwt(req))) return json({ error: "unauthorized" }, 401);
   if (req.method !== "POST") return json({ error: "method" }, 405);
 
-  let body: Row;
-  try {
-    body = await req.json();
-  } catch {
-    return json({ error: "bad_json" }, 400);
-  }
+  const body = await readBody(req);
+  if (!body) return json({ error: "bad_json" }, 400);
   const db = client();
   const author = typeof body.author === "string" && body.author.trim()
     ? body.author.trim().slice(0, 60)
@@ -136,7 +133,7 @@ async function activities(db: Db, body: Row): Promise<Response> {
 
 async function create(db: Db, body: Row, author: string | null): Promise<Response> {
   const { patch, errors } = cleanAccountFields(body.fields);
-  if (!patch.name && !errors.includes("name is required")) errors.push("name is required");
+  if (!patch.name && !errors.includes(NAME_REQUIRED)) errors.push(NAME_REQUIRED);
   if (errors.length) return json({ error: "invalid", details: errors }, 400);
 
   const row = applyRules(null, { kind: "target", ...patch }, tbilisiToday());
@@ -145,7 +142,7 @@ async function create(db: Db, body: Row, author: string | null): Promise<Respons
   const { data: account, error } = await db.from("crm_accounts").insert(row).select().single();
   if (error) throw error;
 
-  await db.from("crm_activities").insert({
+  await addTimeline(db, {
     account_id: account.id,
     type: "created",
     body: `New in ${KIND_LABEL[account.kind as string] ?? "the CRM"}`,
@@ -195,12 +192,28 @@ async function update(db: Db, body: Row, author: string | null): Promise<Respons
   }
 
   const events = describeChanges(current, final);
-  if (events.length) {
-    await db.from("crm_activities").insert(
-      events.map((e) => ({ account_id: updated.id, author, ...e })),
-    );
-  }
+  if (events.length) await addTimeline(db, events.map((e) => ({ account_id: updated.id, author, ...e })));
   return json({ ok: true, account: updated }, 200);
+}
+
+/**
+ * Write timeline rows that record a change already saved. A failure here must not
+ * turn a saved change into an error (the person would retry and save it twice),
+ * so it is logged for us instead.
+ */
+async function addTimeline(db: Db, rows: Row | Row[]): Promise<void> {
+  const { error } = await db.from("crm_activities").insert(rows);
+  if (error) console.error("crm timeline insert failed:", error);
+}
+
+/** Parse a JSON object body. Anything else (bad JSON, null, an array) is null. */
+async function readBody(req: Request): Promise<Row | null> {
+  try {
+    const body = await req.json();
+    return body && typeof body === "object" && !Array.isArray(body) ? body as Row : null;
+  } catch {
+    return null;
+  }
 }
 
 /** Turn the changes that matter for the timeline into activity rows. */
@@ -268,6 +281,32 @@ async function logActivity(db: Db, body: Row, author: string | null): Promise<Re
   if (readErr) throw readErr;
   if (!account) return json({ error: "not_found" }, 404);
 
+  // A message, call, meeting or email moves "last contact" forward; a note is internal and does not.
+  // The first call or meeting logged while a deal sits in Discovery is its discovery call.
+  // The account is updated before the entry is written, so a failed attempt retried by the
+  // person never leaves the same entry twice.
+  const change: Row = {};
+  if ((TOUCH_TYPES as readonly string[]).includes(type) && (!account.last_touch || on > account.last_touch)) {
+    change.last_touch = on;
+  }
+  if (
+    account.kind === "deal" && account.stage === "discovery" && !account.discovery_at &&
+    (type === "call" || type === "meeting")
+  ) {
+    change.discovery_at = on;
+  }
+  let latest = account;
+  if (Object.keys(change).length) {
+    const { data: touched, error: touchErr } = await db
+      .from("crm_accounts")
+      .update({ ...change, updated_at: new Date().toISOString() })
+      .eq("id", account.id)
+      .select()
+      .single();
+    if (touchErr) throw touchErr;
+    latest = touched;
+  }
+
   const occurred_at = on === today ? new Date().toISOString() : `${on}T12:00:00+04:00`;
   const { data: activity, error } = await db
     .from("crm_activities")
@@ -275,19 +314,6 @@ async function logActivity(db: Db, body: Row, author: string | null): Promise<Re
     .select()
     .single();
   if (error) throw error;
-
-  // A call, meeting or email with the hospital moves "last touch" forward. A note does not.
-  let latest = account;
-  if ((TOUCH_TYPES as readonly string[]).includes(type) && (!account.last_touch || on > account.last_touch)) {
-    const { data: touched, error: touchErr } = await db
-      .from("crm_accounts")
-      .update({ last_touch: on, updated_at: new Date().toISOString() })
-      .eq("id", account.id)
-      .select()
-      .single();
-    if (touchErr) throw touchErr;
-    latest = touched;
-  }
   return json({ ok: true, activity, account: latest }, 200);
 }
 
@@ -299,10 +325,42 @@ async function deleteActivity(db: Db, body: Row): Promise<Response> {
     .delete()
     .eq("id", body.id)
     .in("type", [...LOG_TYPES])
-    .select("id");
+    .select("id, account_id, type, occurred_at");
   if (error) throw error;
   if (!data?.length) return json({ error: "not_found" }, 404);
-  return json({ ok: true }, 200);
+
+  // Deleting the newest contact (say, a message logged on the wrong hospital) takes
+  // "last contact" back to the newest contact that is left.
+  const removed = data[0];
+  if (!(TOUCH_TYPES as readonly string[]).includes(removed.type)) return json({ ok: true, account: null }, 200);
+  const { data: account, error: readErr } = await db
+    .from("crm_accounts")
+    .select("*")
+    .eq("id", removed.account_id)
+    .maybeSingle();
+  if (readErr) throw readErr;
+  if (!account || account.last_touch !== tbilisiToday(new Date(removed.occurred_at))) {
+    return json({ ok: true, account: null }, 200);
+  }
+  const { data: left, error: leftErr } = await db
+    .from("crm_activities")
+    .select("occurred_at")
+    .eq("account_id", removed.account_id)
+    .in("type", [...TOUCH_TYPES])
+    .order("occurred_at", { ascending: false })
+    .limit(1);
+  if (leftErr) throw leftErr;
+  const { data: updated, error: writeErr } = await db
+    .from("crm_accounts")
+    .update({
+      last_touch: left?.length ? tbilisiToday(new Date(left[0].occurred_at)) : null,
+      updated_at: new Date().toISOString(),
+    })
+    .eq("id", account.id)
+    .select()
+    .single();
+  if (writeErr) throw writeErr;
+  return json({ ok: true, account: updated }, 200);
 }
 
 async function setArchived(db: Db, body: Row, author: string | null, archived: boolean): Promise<Response> {
@@ -315,7 +373,7 @@ async function setArchived(db: Db, body: Row, author: string | null, archived: b
     .maybeSingle();
   if (error) throw error;
   if (!account) return json({ error: "not_found" }, 404);
-  await db.from("crm_activities").insert({
+  await addTimeline(db, {
     account_id: account.id,
     type: archived ? "archived" : "restored",
     body: archived ? "Archived" : "Restored",
@@ -326,19 +384,16 @@ async function setArchived(db: Db, body: Row, author: string | null, archived: b
 
 // ─── Public: website "Request demo" form ────────────────────────────────────
 
-const PER_IP_PER_HOUR = 3;
+// One sender can never use up the day's allowance, so real hospitals still get through.
+const PER_IP_PER_DAY = 5;
 const PER_DAY_TOTAL = 50;
 
 export async function handleDemoRequest(req: Request): Promise<Response> {
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
   if (req.method !== "POST") return json({ error: "method" }, 405);
 
-  let body: Row;
-  try {
-    body = await req.json();
-  } catch {
-    return json({ error: "bad_json" }, 400);
-  }
+  const body = await readBody(req);
+  if (!body) return json({ error: "bad_json" }, 400);
   // Honeypot: people never see this field, bots fill it. Pretend it worked.
   if (typeof body.website === "string" && body.website.trim() !== "") {
     return json({ ok: true }, 200);
@@ -348,6 +403,7 @@ export async function handleDemoRequest(req: Request): Promise<Response> {
 
   try {
     const db = client();
+    const dayAgo = new Date(Date.now() - 86400_000).toISOString();
     const ip_hash = await hashIp(getClientIp(req));
     if (ip_hash) {
       const { count } = await db
@@ -355,24 +411,21 @@ export async function handleDemoRequest(req: Request): Promise<Response> {
         .select("id", { count: "exact", head: true })
         .eq("type", "inbound")
         .eq("meta->>ip_hash", ip_hash)
-        .gte("occurred_at", new Date(Date.now() - 3600_000).toISOString());
-      if ((count ?? 0) >= PER_IP_PER_HOUR) return json({ error: "rate_limited" }, 429);
+        .gte("occurred_at", dayAgo);
+      if ((count ?? 0) >= PER_IP_PER_DAY) return json({ error: "rate_limited" }, 429);
     }
     const { count: today } = await db
       .from("crm_activities")
       .select("id", { count: "exact", head: true })
       .eq("type", "inbound")
-      .gte("occurred_at", new Date(Date.now() - 86400_000).toISOString());
+      .gte("occurred_at", dayAgo);
     if ((today ?? 0) >= PER_DAY_TOTAL) return json({ error: "rate_limited" }, 429);
 
     // One row per buying organization: attach to an existing account with the same name.
-    const { data: existing } = await db
-      .from("crm_accounts")
-      .select("id")
-      .ilike("name", escapeLike(request.companyName))
-      .eq("archived", false)
-      .limit(1)
-      .maybeSingle();
+    // Compared here rather than with a database pattern, so "*" or "%" can never match everything.
+    const { data: live, error: liveErr } = await db.from("crm_accounts").select("id, name").eq("archived", false);
+    if (liveErr) throw liveErr;
+    const existing = (live ?? []).find((a) => sameName(String(a.name), request.companyName));
 
     let accountId = existing?.id as string | undefined;
     if (!accountId) {
@@ -394,6 +447,7 @@ export async function handleDemoRequest(req: Request): Promise<Response> {
     }
 
     const { error: actErr } = await db.from("crm_activities").insert({
+      // The request itself is the only copy of what they asked for, so this one must succeed.
       account_id: accountId,
       type: "inbound",
       body: formatDemoRequest(request),

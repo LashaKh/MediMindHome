@@ -15,6 +15,7 @@ Read it before doing anything else.
 | `medimind.md/briefing/<token>`   | Per-investor password gate (React route)                    |
 | `medimind.md/deck.html`          | Investor pitch deck (single-file Reveal.js, gated)          |
 | `medimind.md/admin/dashboard`    | Admin panel — create / edit / track invites                 |
+| `medimind.md/admin/crm`          | Sales CRM — hospital pipeline, targets, anchor customer     |
 
 There is NO separate pitch-deck repo any more. Everything lives here.
 
@@ -135,6 +136,17 @@ The four-segment horizontal bar (MediMind OS / GTM / AI depth / Regional entry) 
 - [ ] Test mobile at 390×844 (iPhone 14 Pro) — walk every slide, verify scroll
 - [ ] Test mobile at 320×568 (iPhone SE) — boundary case
 - [ ] If you touched a heavy graphic, also check at 768px (tablet boundary)
+
+---
+
+## Sales CRM (`/admin/crm`)
+
+The founders' hospital pipeline. **Read `.claude/skills/sales-crm/SKILL.md` before touching CRM data or code.**
+
+- Read and change CRM data with `deno run -A scripts/crm.ts …`. It needs `SUPABASE_ACCESS_TOKEN`. It runs the CRM's own API code, so stage dates, the timeline and conflict checks match the website.
+- Always pass `--as <person>`.
+- Never write CRM rows with raw SQL.
+- Never commit files with deal notes or prices.
 
 ---
 

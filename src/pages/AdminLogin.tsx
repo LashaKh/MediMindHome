@@ -62,7 +62,9 @@ export const AdminLogin: React.FC = () => {
       setTimeout(() => setShake(false), 500);
       setValue("");
       setHelperKind("error");
-      setHelperText("Incorrect password.");
+      setHelperText(
+        res.status === 429 ? "Too many wrong passwords from this connection. Wait 15 minutes, then try again." : "Incorrect password.",
+      );
     } catch {
       setPending(false);
       setHelperKind("error");

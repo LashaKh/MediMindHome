@@ -77,11 +77,12 @@ export async function crmCall<T>(jwt: string, action: string, payload: Record<st
   return json as T;
 }
 
-/** Same check as the admin login page. Returns the session, or null for a wrong password. */
-export async function adminLogin(password: string): Promise<{ token: string; exp: number } | null> {
-  const { json } = await post("admin-login", { password });
+/** Same check as the admin login page. "locked" means too many wrong passwords from this connection. */
+export async function adminLogin(password: string): Promise<{ token: string; exp: number } | "wrong" | "locked"> {
+  const { status, json } = await post("admin-login", { password });
   const b = (json ?? {}) as { ok?: boolean; token?: string; exp?: number };
-  return b.ok && b.token && b.exp ? { token: b.token, exp: b.exp } : null;
+  if (b.ok && b.token && b.exp) return { token: b.token, exp: b.exp };
+  return status === 429 ? "locked" : "wrong";
 }
 
 export function describeError(e: unknown): string {

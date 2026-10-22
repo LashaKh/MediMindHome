@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { type Account, type Kind, ORG_TYPES, OWNERS, SOURCES } from "../../data/crm";
 import { type Api, describeError } from "../../lib/crmApi";
 import { useEscape } from "./useEscape";
@@ -7,11 +7,25 @@ interface Props {
   kind: Kind;
   author: string;
   api: Api;
+  /** Everything already in the CRM, to warn before a duplicate is added. */
+  accounts: Account[];
   onClose: () => void;
+  onOpenExisting: (id: string) => void;
   onCreated: (a: Account) => void;
 }
 
-export const NewAccountModal: React.FC<Props> = ({ kind: initialKind, author, api, onClose, onCreated }) => {
+/** Lowercase letters and digits only, so "Helsicore" finds "HelsiCore (Healthycore)". Georgian letters stay. */
+const squash = (s: string) => s.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, "");
+
+export const NewAccountModal: React.FC<Props> = ({
+  kind: initialKind,
+  author,
+  api,
+  accounts,
+  onClose,
+  onOpenExisting,
+  onCreated,
+}) => {
   const [kind, setKind] = useState<Kind>(initialKind === "anchor" ? "deal" : initialKind);
   const [name, setName] = useState("");
   const [source, setSource] = useState("");
@@ -23,7 +37,18 @@ export const NewAccountModal: React.FC<Props> = ({ kind: initialKind, author, ap
   const [notes, setNotes] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  useEscape(onClose, !busy);
+  // Escape or a click outside only closes an empty form; with something typed, Cancel does.
+  const empty = !name.trim() && !city.trim() && !nextStep.trim() && !notes.trim();
+  useEscape(onClose, !busy && empty);
+
+  const similar = useMemo(() => {
+    const typed = squash(name);
+    if (typed.length < 3) return [];
+    return accounts.filter((a) => {
+      const existing = squash(a.name);
+      return existing.length >= 3 && (existing.includes(typed) || typed.includes(existing));
+    }).slice(0, 3);
+  }, [accounts, name]);
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -52,17 +77,17 @@ export const NewAccountModal: React.FC<Props> = ({ kind: initialKind, author, ap
   };
 
   return (
-    <div className="adm-modal-bg" onMouseDown={(e) => e.target === e.currentTarget && !busy && onClose()}>
+    <div className="adm-modal-bg" onMouseDown={(e) => e.target === e.currentTarget && !busy && empty && onClose()}>
       <form className="adm-modal crm-new" onSubmit={submit} role="dialog" aria-modal="true" aria-labelledby="crm-new-title">
         <h2 id="crm-new-title">Add a hospital</h2>
         <p className="adm-modal-sub">One row per buying organization. A group that buys centrally is one hospital here.</p>
 
-        <div className="crm-seg crm-new-kind" role="radiogroup" aria-label="Where does it go">
-          <button type="button" role="radio" aria-checked={kind === "target"} className={kind === "target" ? "is-on" : ""} onClick={() => setKind("target")}>
-            Researched, not contacted
+        <div className="crm-seg crm-new-kind" role="group" aria-label="Where does it go">
+          <button type="button" aria-pressed={kind === "target"} className={kind === "target" ? "is-on" : ""} onClick={() => setKind("target")}>
+            Target: not talking yet
           </button>
-          <button type="button" role="radio" aria-checked={kind === "deal"} className={kind === "deal" ? "is-on" : ""} onClick={() => setKind("deal")}>
-            They replied: pipeline
+          <button type="button" aria-pressed={kind === "deal"} className={kind === "deal" ? "is-on" : ""} onClick={() => setKind("deal")}>
+            Pipeline: they agreed to talk
           </button>
         </div>
 
@@ -71,6 +96,16 @@ export const NewAccountModal: React.FC<Props> = ({ kind: initialKind, author, ap
             <span className="crm-field-label">Hospital or group name</span>
             <input autoFocus required maxLength={200} value={name} onChange={(e) => setName(e.target.value)} />
           </label>
+          {similar.length > 0 && (
+            <div className="crm-similar crm-span-2" role="status">
+              <span>Already in the CRM:</span>
+              {similar.map((a) => (
+                <button type="button" key={a.id} className="crm-text-btn" onClick={() => onOpenExisting(a.id)}>
+                  Open {a.name}
+                </button>
+              ))}
+            </div>
+          )}
           <label className="crm-field">
             <span className="crm-field-label">How we got in</span>
             <select value={source} onChange={(e) => setSource(e.target.value)}>

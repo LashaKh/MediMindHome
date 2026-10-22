@@ -15,10 +15,10 @@ export const STAGES = [
 ] as const;
 export const STATUSES = ["active", "waiting_on_us", "waiting_on_it", "stalled", "on_hold"] as const;
 export const PAIN_STATUSES = ["hypothesis", "confirmed"] as const;
-/** Activity types a person can log by hand (and delete again). */
-export const LOG_TYPES = ["note", "call", "meeting", "email"] as const;
+/** Activity types a person can log by hand (and delete again). A message is WhatsApp, Messenger, SMS or LinkedIn. */
+export const LOG_TYPES = ["note", "call", "meeting", "email", "message"] as const;
 /** Logged contact with the hospital — these move "last touch". A note is internal. */
-export const TOUCH_TYPES = ["call", "meeting", "email"] as const;
+export const TOUCH_TYPES = ["call", "meeting", "email", "message"] as const;
 
 const TEXT_LIMITS: Record<string, number> = {
   name: 200,
@@ -66,7 +66,56 @@ const ENUM_FIELDS: Record<string, readonly string[]> = {
 };
 const BOOL_FIELDS = new Set(["excluded"]);
 
+/** The names people see in the CRM, so an error reads "Deal amount must be…", not "amount_gel must be…". */
+const FIELD_LABEL: Record<string, string> = {
+  name: "Name",
+  city: "City",
+  owner: "Owner",
+  next_step: "Next step",
+  connector: "Connector",
+  champion: "Champion",
+  buyer: "Buyer",
+  roles_reached: "Roles we have met",
+  pain: "Pain",
+  objections: "Objections",
+  last_sent: "Last thing we sent",
+  current_software: "Current software",
+  price_reaction: "Price reaction",
+  concessions: "Concessions",
+  lost_reason: "Lost reason",
+  evidence_link: "Evidence link",
+  notes: "Notes",
+  sites: "Sites",
+  current_spend_gel: "Current spend",
+  amount_gel: "Deal amount",
+  team_hours: "Team hours",
+  kind: "Kind",
+  org_type: "Type",
+  source: "Source",
+  stage: "Stage",
+  status: "Status",
+  pain_status: "Pain status",
+  excluded: "Bad fit",
+  stage_since: "In this stage since",
+  next_step_date: "Next step date",
+  last_touch: "Last contact",
+  decision_date: "Decision date",
+  first_contact_at: "First contact",
+  discovery_at: "Discovery call held",
+  sql_at: "Qualified date",
+  data_access_at: "Data access date",
+  eval_agreed_at: "Evaluation agreed date",
+  delivered_at: "Parallel version delivered",
+  first_test_at: "First hands-on test",
+  results_reviewed_at: "Results reviewed",
+  signed_at: "Signed date",
+  researched_on: "Researched on",
+};
+const label = (key: string) => FIELD_LABEL[key] ?? key;
+
 export type Patch = Record<string, string | number | boolean | null>;
+
+export const NAME_REQUIRED = "Name is required";
 
 /** Copy only known account fields, normalised. Unknown keys are ignored; bad values are errors. */
 export function cleanAccountFields(input: unknown): { patch: Patch; errors: string[] } {
@@ -80,9 +129,9 @@ export function cleanAccountFields(input: unknown): { patch: Patch; errors: stri
       if (raw === null || raw === undefined) {
         patch[key] = null;
       } else if (typeof raw !== "string") {
-        errors.push(`${key} must be text`);
+        errors.push(`${label(key)} must be text`);
       } else if (raw.trim().length > TEXT_LIMITS[key]) {
-        errors.push(`${key} is too long (max ${TEXT_LIMITS[key]} characters)`);
+        errors.push(`${label(key)} is too long (max ${TEXT_LIMITS[key]} characters)`);
       } else {
         patch[key] = raw.trim() === "" ? null : raw.trim();
       }
@@ -90,42 +139,44 @@ export function cleanAccountFields(input: unknown): { patch: Patch; errors: stri
       if (raw === null || raw === undefined || raw === "") {
         patch[key] = null;
       } else if (typeof raw !== "string" || !isIsoDate(raw)) {
-        errors.push(`${key} must be a date (YYYY-MM-DD)`);
+        errors.push(`${label(key)} must be a date (YYYY-MM-DD)`);
       } else {
         patch[key] = raw;
       }
     } else if (NUMBER_FIELDS.has(key)) {
-      if (raw === null || raw === undefined || raw === "") {
+      const text = typeof raw === "string" ? raw.replace(/\s/g, "") : raw;
+      if (text === null || text === undefined || text === "") {
         patch[key] = null;
         continue;
       }
-      const n = typeof raw === "number"
-        ? raw
-        : typeof raw === "string"
-        ? Number(raw.replace(/[\s,]/g, ""))
-        : Number.NaN;
-      if (!Number.isFinite(n) || n < 0 || n > 1e12) {
-        errors.push(`${key} must be a positive number`);
+      // "2,5" is a decimal comma on Georgian and Russian keyboards, not two and a half thousand.
+      if (typeof text === "string" && /,\d{1,2}$/.test(text)) {
+        errors.push(`${label(key)}: use a dot for decimals, like 2.5`);
+        continue;
+      }
+      const n = typeof text === "number" ? text : typeof text === "string" ? Number(text.replace(/,/g, "")) : Number.NaN;
+      if (!Number.isFinite(n) || n < 0 || n > (key === "sites" ? 2147483647 : 1e12)) {
+        errors.push(`${label(key)} must be a number (0 or more), like 30000`);
       } else if (key === "sites" && !Number.isInteger(n)) {
-        errors.push("sites must be a whole number");
+        errors.push("Sites must be a whole number");
       } else {
         patch[key] = n;
       }
     } else if (key in ENUM_FIELDS) {
       if (raw === null || raw === undefined || raw === "") {
-        if (key === "kind") errors.push("kind is required");
+        if (key === "kind") errors.push("Kind is required");
         else patch[key] = null;
       } else if (typeof raw !== "string" || !ENUM_FIELDS[key].includes(raw)) {
-        errors.push(`${key} has an unknown value`);
+        errors.push(`${label(key)} has an unknown value`);
       } else {
         patch[key] = raw;
       }
     } else if (BOOL_FIELDS.has(key)) {
-      if (typeof raw !== "boolean") errors.push(`${key} must be true or false`);
+      if (typeof raw !== "boolean") errors.push(`${label(key)} must be true or false`);
       else patch[key] = raw;
     }
   }
-  if ("name" in patch && !patch.name) errors.push("name is required");
+  if ("name" in patch && !patch.name) errors.push(NAME_REQUIRED);
   return { patch, errors };
 }
 
@@ -194,7 +245,10 @@ export function applyRules(
 
   const promoted = kind === "deal" && current !== null && current.kind !== "deal";
   if (promoted && !current?.first_contact_at && !("first_contact_at" in patch)) out.first_contact_at = today;
-  if (kind === "deal" && !("status" in out ? out.status : current?.status)) out.status = "active";
+  // An open deal always has a status; a closed one needs none.
+  const finalStage = "stage" in out ? out.stage : currentStage;
+  const closed = finalStage === "won" || finalStage === "lost";
+  if (kind === "deal" && !closed && !("status" in out ? out.status : current?.status)) out.status = "active";
 
   return out;
 }
@@ -267,7 +321,8 @@ export function formatDemoRequest(r: DemoRequest): string {
   return lines.filter(Boolean).join("\n");
 }
 
-/** Escape LIKE wildcards so a company name matches literally. */
-export function escapeLike(s: string): string {
-  return s.replace(/[\\%_]/g, (c) => `\\${c}`);
+/** Same organization name, ignoring case and extra spaces: "Aversi  clinic" is "Aversi Clinic". */
+export function sameName(a: string, b: string): boolean {
+  const norm = (s: string) => s.trim().replace(/\s+/g, " ").toLowerCase();
+  return norm(a) === norm(b);
 }

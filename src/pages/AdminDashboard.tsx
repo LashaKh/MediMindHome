@@ -125,6 +125,9 @@ export const AdminDashboard: React.FC = () => {
           <span className="adm-brand-title">Briefing Analytics</span>
         </div>
         <div className="adm-actions">
+          <button className="adm-btn" onClick={() => navigate("/admin/crm")}>
+            Sales CRM
+          </button>
           <button className="adm-btn adm-btn-ghost" onClick={fetchData}>
             ↻ Refresh
           </button>

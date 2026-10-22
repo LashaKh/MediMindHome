@@ -8,6 +8,7 @@ import { corsHeaders, getClientIp, hashIp } from "../_shared/cors.ts";
 import { handleAdminData } from "../admin-data/index.ts";
 import { handleAdminLogin } from "../admin-login/index.ts";
 import { handleAdminWrite } from "../admin-write/index.ts";
+import { handleCrm, handleDemoRequest } from "../crm/index.ts";
 import { handleInvestorLogin } from "../investor-login/index.ts";
 
 export type LandingRoute =
@@ -15,7 +16,9 @@ export type LandingRoute =
   | "admin-login"
   | "admin-data"
   | "admin-write"
-  | "investor-login";
+  | "investor-login"
+  | "crm"
+  | "demo-request";
 
 const LANDING_ROUTES = new Set<LandingRoute>([
   "track-event",
@@ -23,6 +26,8 @@ const LANDING_ROUTES = new Set<LandingRoute>([
   "admin-data",
   "admin-write",
   "investor-login",
+  "crm",
+  "demo-request",
 ]);
 
 export function resolveLandingRoute(url: string): LandingRoute | null {
@@ -91,6 +96,10 @@ export async function handleLandingApi(req: Request): Promise<Response> {
       return handleAdminWrite(req);
     case "investor-login":
       return handleInvestorLogin(req);
+    case "crm":
+      return handleCrm(req);
+    case "demo-request":
+      return handleDemoRequest(req);
     case "track-event":
       return handleTrackEvent(req);
     default:

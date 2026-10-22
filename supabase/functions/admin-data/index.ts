@@ -9,7 +9,7 @@ import { corsHeaders } from "../_shared/cors.ts";
 
 const enc = new TextEncoder();
 
-async function verifyAdminJwt(req: Request): Promise<boolean> {
+export async function verifyAdminJwt(req: Request): Promise<boolean> {
   const auth = req.headers.get("authorization") ?? "";
   const m = auth.match(/^Bearer\s+(.+)$/i);
   if (!m) return false;

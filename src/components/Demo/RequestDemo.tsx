@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { submitDemoRequest } from '../../lib/crmApi';
 import {
   Building2,
   User,
@@ -110,6 +111,9 @@ export const RequestDemo: React.FC = () => {
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  // Spam trap: people never see this field; bots fill it in.
+  const [website, setWebsite] = useState('');
   const [errors, setErrors] = useState<Partial<FormData>>({});
 
   const totalSteps = 3;
@@ -165,15 +169,20 @@ export const RequestDemo: React.FC = () => {
     if (!validateStep(3)) return;
 
     setIsSubmitting(true);
-    
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    // Here you would typically send the data to your backend
-    console.log('Form submitted:', formData);
-    
+    setSubmitError(null);
+    const result = await submitDemoRequest({ ...formData, website });
     setIsSubmitting(false);
-    setIsSubmitted(true);
+    if (result === 'ok') {
+      setIsSubmitted(true);
+      return;
+    }
+    setSubmitError(
+      result === 'rate_limited'
+        ? 'Too many requests from this connection. Please try again in an hour.'
+        : result === 'invalid'
+          ? 'Some details look incomplete. Please check the form and try again.'
+          : 'We could not send your request. Please check your connection and try again.',
+    );
   };
 
   const handleBackHome = () => {
@@ -699,6 +708,21 @@ export const RequestDemo: React.FC = () => {
                 </AnimatedButton>
               )}
             </div>
+            {submitError && (
+              <p role="alert" className="mt-4 text-sm text-red-600 dark:text-red-400">
+                {submitError}
+              </p>
+            )}
+            <input
+              type="text"
+              name="website"
+              value={website}
+              onChange={(e) => setWebsite(e.target.value)}
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              style={{ position: 'absolute', left: '-10000px', width: 1, height: 1, opacity: 0 }}
+            />
           </div>
         </motion.div>
 

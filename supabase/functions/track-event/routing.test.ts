@@ -14,6 +14,8 @@ Deno.test("routes every consolidated Landing API operation", () => {
     "admin-data",
     "admin-write",
     "investor-login",
+    "crm",
+    "demo-request",
   ] as const) {
     assertEquals(
       resolveLandingRoute(`https://example.test/functions/v1/track-event?route=${route}`),

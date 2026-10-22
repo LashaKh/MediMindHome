@@ -7,7 +7,7 @@ Read it before doing anything else.
 
 ## What this repo is
 
-**One Netlify deploy at `medimind.md` that serves four things:**
+**One Netlify deploy at `medimind.md` that serves five things:**
 
 | URL                              | What renders                                                |
 | -------------------------------- | ----------------------------------------------------------- |
@@ -15,6 +15,7 @@ Read it before doing anything else.
 | `medimind.md/briefing/<token>`   | Per-investor password gate (React route)                    |
 | `medimind.md/deck.html`          | Investor pitch deck (single-file Reveal.js, gated)          |
 | `medimind.md/admin/dashboard`    | Admin panel — create / edit / track invites                 |
+| `medimind.md/admin/crm`          | Sales CRM — hospital pipeline, targets, anchor customer     |
 
 There is NO separate pitch-deck repo any more. Everything lives here.
 
@@ -56,6 +57,7 @@ supabase/
     ├── admin-data/                     Bearer JWT → invite list, events, summary
     ├── admin-write/                    Bearer JWT → create / toggle_active / update / regenerate_password / update_password
     ├── investor-login/                 POST {token, password} → unlock the gate
+    ├── crm/                            Sales CRM API (route=crm, admin JWT) + public route=demo-request
     └── track-event/                    Public analytics ingest from deck
 
 netlify.toml                            Cache headers; deck.html is no-store
@@ -162,10 +164,20 @@ curl -s -X POST "https://api.supabase.com/v1/projects/kvsqtolsjggpyvdtdpss/datab
 
 - `investor_invites(id, token, full_name, first_name, organization, email, notes, created_at, active, password)`
 - `investor_events(id, token, event_type, metadata, ip_hash, user_agent, occurred_at)`
+- `crm_accounts` (one row per buying organization; `kind` = target | deal | anchor) and `crm_activities` (timeline) — migration `0003_crm.sql`
 
 Both have RLS enabled with all anon/authenticated access revoked. Edge functions use the service-role key.
 
 ---
+
+## Sales CRM (`/admin/crm`, added 2026-10-22)
+
+- UI: `src/pages/AdminCrm.tsx` + `src/pages/crm/*`, vocabulary and metrics in `src/data/crm.ts`, API client `src/lib/crmApi.ts`.
+- API: `supabase/functions/crm/` served through the `track-event` router (`?route=crm`, admin JWT). Rules live in `crm/validate.ts` and are unit-tested (`deno test --allow-env --no-check supabase/functions/crm/validate.test.ts`).
+- Stages are things the HOSPITAL did (500 Global W5D2): discovery, qualified, evaluation_agreed, evaluating, proposal, negotiation, won, lost. Our own work is a status (`waiting_on_us`), never a stage. Entering a stage fills its milestone date once.
+- Every update sends `expected_updated_at`; a stale save gets 409 with the other version, so two founders never overwrite each other silently.
+- The public "Request demo" form posts to `?route=demo-request`: honeypot field `website`, 3/hour per IP hash, 50/day total. Each request becomes an inbound target.
+- Real pipeline data lives only in the database. Never commit seed files with deal notes or prices.
 
 ## Deployment
 

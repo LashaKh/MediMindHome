@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { useAdminStore } from "../store/useAdminStore";
 import "./BriefingGate.css";
 
@@ -9,6 +9,10 @@ const SUPABASE_URL =
 
 export const AdminLogin: React.FC = () => {
   const navigate = useNavigate();
+  const [params] = useSearchParams();
+  // Only send people back to another admin page, never to an outside address.
+  const requested = params.get("next") ?? "";
+  const next = requested.startsWith("/admin/") ? requested : "/admin/dashboard";
   const setSession = useAdminStore((s) => s.setSession);
   const isValid = useAdminStore((s) => s.isValid);
 
@@ -22,8 +26,8 @@ export const AdminLogin: React.FC = () => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    if (isValid()) navigate("/admin/dashboard", { replace: true });
-  }, [isValid, navigate]);
+    if (isValid()) navigate(next, { replace: true });
+  }, [isValid, navigate, next]);
 
   useEffect(() => {
     if (!matchMedia("(max-width: 640px)").matches) inputRef.current?.focus();
@@ -49,7 +53,7 @@ export const AdminLogin: React.FC = () => {
         setSession(json.token, json.exp);
         setHelperKind("success");
         setHelperText("Authenticated — loading dashboard…");
-        setTimeout(() => navigate("/admin/dashboard", { replace: true }), 400);
+        setTimeout(() => navigate(next, { replace: true }), 400);
         return;
       }
 

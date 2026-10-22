@@ -8,6 +8,7 @@ import { BriefingGate } from './pages/BriefingGate';
 import { BriefingLocked } from './pages/BriefingLocked';
 import { AdminLogin } from './pages/AdminLogin';
 import { AdminDashboard } from './pages/AdminDashboard';
+import { AdminCrm } from './pages/AdminCrm';
 import { Walkthrough } from './pages/Walkthrough';
 import { FounderDemo } from './pages/FounderDemo';
 
@@ -29,6 +30,7 @@ function App() {
         <Route path="/briefing/:token" element={<BriefingGate />} />
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
+        <Route path="/admin/crm" element={<AdminCrm />} />
         <Route path="/walkthrough" element={<Walkthrough />} />
         <Route path="/founder-demo" element={<FounderDemo />} />
 

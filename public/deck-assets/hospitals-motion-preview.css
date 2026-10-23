@@ -1,0 +1,154 @@
+/* Shared treatments for the selected outcome journeys and the comparison variants. */
+.hm-preview { --hm-accent: #367e9d; }
+body:has(.hm-comparison) .mobile-nav { display: none !important; }
+.hm-preview .hai-benefit { transition: opacity 180ms ease; }
+.hm-preview .hai-benefit.is-selected::before { border-color: var(--hm-accent); box-shadow: 0 12px 36px #1a365d0c; }
+.hm-preview .hai-benefit-indicator { visibility: visible; }
+.hm-preview .hai-route.is-active .hai-route-signal { stroke: var(--hm-accent); }
+.hm-preview .hai-route.is-active .hai-route-node { fill: var(--hm-accent); }
+.hm-preview .hai-hospital-art { isolation: isolate; }
+.hm-preview .hai-hospital-art > img { z-index: 1; }
+.hm-preview .hai-hospital-overview .hai-interaction-hint { display: none; }
+.hm-preview .hai-hospital-kicker { z-index: 6; }
+.hm-preview .hai-hospital-caption { z-index: 6; }
+.hm-preview [hidden] { display: none !important; }
+.hm-preview button { -webkit-tap-highlight-color: transparent; }
+.hm-preview .hai-benefit:hover { transform: none; }
+.hm-preview .hai-benefit:active { transform: none; }
+.hm-preview[data-hm-input="keyboard"] *,
+.hm-preview[data-hm-input="keyboard"] *::before { transition: none !important; }
+
+/* Coordinates are relative to the original image, including its transparent margin. */
+.hm-hotspots { position: absolute; z-index: 5; width: 100%; aspect-ratio: 1671 / 941; left: 0; top: 50%; transform: translateY(-50%); pointer-events: none; }
+.hm-room-glow { position: absolute; width: 15%; height: 14%; opacity: 0; transform: translate(-50%, -50%); background: radial-gradient(ellipse, #ffd89ab3, #f7c88030 45%, transparent 72%); mix-blend-mode: screen; pointer-events: none; }
+.hm-marker { position: absolute; width: 23px; height: 23px; display: grid; place-items: center; padding: 0; border: 2px solid white; border-radius: 50%; background: #fff; color: var(--hm-accent); box-shadow: 0 2px 8px #1a365d24; transform: translate(-50%, -50%); cursor: pointer; pointer-events: auto; }
+.hm-marker::before { content: ''; position: absolute; inset: -5px; border: 1px solid var(--hm-accent); border-radius: inherit; opacity: 0; transition: opacity 160ms ease; }
+.hm-marker svg { width: 12px; height: 12px; }
+.hm-marker.is-selected { background: var(--hm-accent); color: #fff; }
+.hm-marker.is-selected::before { opacity: .35; }
+.hm-marker:focus-visible { outline: 3px solid #80b1d4; outline-offset: 4px; }
+.hm-marker-label { position: absolute; left: 50%; bottom: 30px; transform: translateX(-50%); width: max-content; max-width: 140px; padding: 5px 8px; border: 1px solid #d6e3ed; border-radius: 7px; background: #fffffff5; color: #314e6b; box-shadow: 0 4px 16px #1a365d0d; font-size: 9px; line-height: 1.5; font-weight: 650; opacity: 0; pointer-events: none; }
+.hm-marker.is-selected .hm-marker-label, .hm-marker:focus-visible .hm-marker-label { opacity: 1; }
+.hm-route-token { fill: #fff; stroke: var(--hm-accent); stroke-width: 2.5; opacity: 0; pointer-events: none; }
+.hm-route-token-halo { fill: var(--hm-accent); opacity: 0; pointer-events: none; }
+.hm-preview .hm-detail { box-sizing: border-box; position: relative; width: 100%; max-width: 340px; justify-self: center; padding: 11px 13px; border: 1px solid #d6e4ee; border-radius: 13px; background: #ffffffed; box-shadow: 0 8px 28px #1a365d08; text-align: left; }
+.hm-detail-heading { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+.reveal .hm-detail h4 { color: #284763; font-size: 11px; line-height: 1.5; font-weight: 700; margin: 0; }
+.hm-detail-controls { display: flex; align-items: center; gap: 4px; }
+.hm-detail-controls button { display: grid; place-items: center; flex: none; width: 23px; height: 23px; border: 1px solid #dce7ef; border-radius: 50%; padding: 0; color: #5e7e99; background: #fff; font-size: 14px; cursor: pointer; }
+.hm-detail-controls button:focus-visible { outline: 2px solid #78add7; outline-offset: 2px; }
+.reveal .hm-steps { display: grid; gap: 3px; padding: 0; margin: 0; list-style: none; }
+.reveal .hm-step { position: relative; display: flex; align-items: center; gap: 8px; margin: 0; padding: 4px 5px; min-height: 23px; color: #60758b; font-size: 10px; line-height: 1.5; }
+.hm-step::before { content: ''; position: absolute; inset: 0; border: 1px solid #d7e9ed; border-radius: 7px; background: #f0f8f8; opacity: 0; transition: opacity 160ms ease; }
+.hm-step.is-current::before { opacity: 1; }
+.hm-step-number { position: relative; display: grid; place-items: center; width: 17px; height: 17px; flex: none; border: 1px solid #d6e3ec; border-radius: 50%; color: #6e889f; font-size: 8px; background: #fff; }
+.hm-step.is-current .hm-step-number, .hm-step.is-done .hm-step-number { border-color: var(--hm-accent); color: var(--hm-accent); }
+.hm-step.is-current { color: #264d67; }
+.hm-step-text { position: relative; }
+.hm-example-label { margin-top: 6px; color: #7d90a3; font-size: 8px; line-height: 1.4; }
+.hm-journey-home { display: none; }
+
+/* 01: local activity, with a finite sequence on selection. */
+.hm-mode-active .hm-marker { opacity: 1; }
+.hm-mode-active .hai-hospital-kicker { color: #3c7087; }
+.hm-mode-active .hai-hospital-art::after { content: ''; position: absolute; z-index: 0; left: 8%; right: 8%; height: 12%; top: 72%; border-radius: 50%; background: #83b8c52b; filter: blur(10px); }
+
+/* 02: one wide explanatory sequence, keeping the building at the center. */
+.reveal .hm-mode-journeys .hai-headline,
+body.lang-active-ka .reveal .hm-mode-journeys .hai-headline { font-size: 32px !important; margin: 14px 0 15px; }
+.hm-mode-journeys .hai-map { gap: 12px 36px; }
+.hm-mode-journeys .hai-benefit { padding: 15px 18px 13px; }
+.reveal .hm-mode-journeys .hai-benefit h3,
+body.lang-active-ka .reveal .hm-mode-journeys .hai-benefit h3 { font-size: 20px !important; margin-bottom: 8px !important; }
+.reveal .hm-mode-journeys .hai-benefit p { font-size: 12px; line-height: 1.5; margin-bottom: 10px; }
+.hm-mode-journeys .hai-department-line { padding-top: 8px; font-size: 9px; }
+.hm-mode-journeys .hai-hospital figcaption { min-height: 90px; }
+.hm-mode-journeys .hm-marker:not(.is-selected) { opacity: .6; }
+.hm-mode-journeys .hm-journey-home { display: block; margin-top: 13px; flex: none; min-height: 88px; }
+.hm-mode-journeys .hm-journey-home .hm-detail { display: grid; grid-template-columns: 180px 1fr; align-items: center; column-gap: 22px; max-width: none; padding: 13px 20px; min-height: 88px; border-radius: 14px; background: linear-gradient(110deg, #f5fafb, #fff 55%); }
+.hm-mode-journeys .hm-detail-heading { grid-column: 1; grid-row: 1; margin: 0; flex-direction: column; align-items: flex-start; gap: 7px; }
+.reveal .hm-mode-journeys .hm-detail h4 { font-size: 13px; }
+.hm-mode-journeys .hm-detail-controls { position: absolute; right: 12px; top: -11px; }
+.hm-mode-journeys .hm-detail-controls button { background: #fff; width: 24px; height: 24px; }
+.reveal .hm-mode-journeys .hm-steps { grid-column: 2; grid-row: 1; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.reveal .hm-mode-journeys .hm-step { padding: 7px 9px; min-height: 42px; font-size: 12px; line-height: 1.5; }
+.hm-mode-journeys .hm-step-number { width: 25px; height: 25px; font-size: 10px; }
+.hm-mode-journeys .hm-step:not(:last-child)::after { content: '→'; position: absolute; right: -18px; color: #a8c0d0; }
+.hm-mode-journeys .hm-example-label { grid-column: 1; grid-row: 2; margin-top: 2px; }
+.hm-mode-journeys .hai-footer { margin-top: 11px; padding-top: 8px; }
+.hm-progress-track { display: none; }
+.hm-mode-journeys .hm-progress-track { display: block; grid-column: 2; height: 2px; margin: 5px 10px 0; background: #e5edf2; overflow: hidden; }
+.hm-progress-fill { display: block; width: 100%; height: 100%; background: var(--hm-accent); transform: scaleX(0); transform-origin: left; }
+
+/* 03: depth lives around the original building; the building stays anchored. */
+.hm-depth-back, .hm-depth-front { display: none; position: absolute; inset: 0; pointer-events: none; }
+.hm-mode-depth .hm-depth-back, .hm-mode-depth .hm-depth-front { display: block; }
+.hm-depth-back { z-index: 0; }
+.hm-depth-front { z-index: 4; }
+.hm-depth-platform { position: absolute; left: -7%; right: -7%; top: 48%; bottom: -4%; border: 1px solid #c5dcecb3; border-radius: 50%; background-image: linear-gradient(#abc9df22 1px, transparent 1px), linear-gradient(90deg, #abc9df22 1px, transparent 1px), radial-gradient(ellipse, #e5f2fc, #fff0 75%); background-size: 24px 24px, 24px 24px, 100% 100%; transform: perspective(500px) rotateX(62deg); box-shadow: 0 16px 24px #75a5c70c; }
+.hm-depth-platform::after { content: ''; position: absolute; inset: 13%; border: 1px solid #bfd6e7; border-radius: inherit; }
+.hm-depth-atmosphere { position: absolute; inset: 5% -20% 8%; background: radial-gradient(ellipse at center, #bedbf547, transparent 70%); }
+.hm-depth-badge { position: absolute; display: flex; align-items: center; gap: 7px; width: max-content; padding: 8px 11px; border: 1px solid #cbddebbf; border-radius: 10px; color: #527493; background: #ffffffed; box-shadow: 0 10px 28px #20476b0c; font-size: 9px; line-height: 1.5; font-weight: 600; }
+.hm-depth-badge i { position: relative; display: grid; place-items: center; width: 19px; height: 19px; flex: none; border-radius: 6px; color: #559382; background: #e9f5ef; font-style: normal; font-size: 10px; }
+.hm-depth-badge--data { left: -1%; top: 14%; }
+.hm-depth-badge--team { right: -4%; top: 28%; }
+.hm-depth-badge--view { right: 2%; top: 77%; }
+.hm-mode-depth .hm-hotspots { opacity: 0; pointer-events: none; }
+.hm-mode-depth .hm-marker { pointer-events: none; }
+.hm-mode-depth .hai-hospital-kicker { top: calc(50% - 119px); }
+.hm-mode-depth .hai-hospital-art { width: calc(100% + 24px); }
+.hm-mode-depth .hai-hospital-overview > span { color: #5a7c99; }
+.hm-mode-depth .hai-route-base { stroke: #c6daea; }
+.hm-mode-depth .hai-benefit { box-shadow: 0 12px 36px #1a365d08, 0 1px 3px #1a365d03; }
+
+/* 04: animation is scheduled in JS so replay and interruption are deterministic. */
+.hm-mode-cinematic .hm-hotspots { display: none; }
+.hm-mode-cinematic .hai-hospital-art::after { content: ''; position: absolute; z-index: 0; inset: 4% -14%; background: radial-gradient(ellipse, #cbe5f85c, transparent 68%); }
+
+@media (hover: hover) and (pointer: fine) {
+  .hm-marker:hover .hm-marker-label { opacity: 1; }
+  .hm-marker:hover::before { opacity: .4; }
+  .hm-preview .hai-benefit-trigger:hover .hai-benefit-indicator { border-color: #9cbacf; }
+}
+@media (max-width: 768px) {
+  .hm-preview .hai-map { grid-template-areas: 'hospital' 'revenue' 'resources' 'time' 'care'; }
+  .reveal .hm-preview .hai-hospital { margin: 0 0 14px; }
+  .hm-preview .hai-hospital-art { height: 245px; }
+  .hm-preview .hai-hospital-kicker { position: relative; top: auto; }
+  .hm-preview .hai-hospital figcaption { min-height: 0; }
+  .hm-preview .hm-detail { max-width: none; margin-top: 16px; padding: 14px; }
+  .hm-preview .hm-detail h4 { font-size: 13px; }
+  .hm-preview .hm-step { font-size: 12px; min-height: 32px; }
+  .hm-preview .hm-step-number { width: 22px; height: 22px; font-size: 10px; }
+  .hm-preview .hm-detail-controls button { width: 32px; height: 32px; }
+  .hm-preview .hm-example-label { font-size: 10px; }
+  .hm-preview .hm-marker { width: 30px; height: 30px; }
+  .hm-preview .hm-marker::after { content: ''; position: absolute; inset: -7px; }
+  .hm-preview .hm-marker-label { bottom: 36px; font-size: 10px; }
+  .hm-mode-journeys .hm-journey-home { display: none; }
+  .reveal .hm-mode-journeys .hai-headline,
+  body.lang-active-ka .reveal .hm-mode-journeys .hai-headline { font-size: 30px !important; margin: 18px 0 25px; }
+  .hm-mode-journeys .hai-map { gap: 19px; }
+  .hm-mode-journeys .hai-benefit { padding: 21px; }
+  .reveal .hm-mode-journeys .hai-benefit h3,
+  body.lang-active-ka .reveal .hm-mode-journeys .hai-benefit h3 { font-size: 25px !important; margin-bottom: 13px !important; }
+  .reveal .hm-mode-journeys .hai-benefit p { font-size: 15px; line-height: 1.65; margin-bottom: 19px; }
+  .hm-mode-journeys .hai-department-line { font-size: 12px; padding-top: 14px; }
+  .hm-mode-journeys .hm-detail-heading { flex-direction: row; align-items: center; }
+  .hm-mode-journeys .hm-detail-controls { position: static; }
+  .reveal .hm-mode-journeys .hm-steps { grid-template-columns: 1fr; gap: 3px; }
+  .hm-mode-journeys .hm-step:not(:last-child)::after { display: none; }
+  .hm-mode-journeys .hm-progress-track { display: none; }
+  .hm-mode-depth .hai-hospital-kicker { top: auto; }
+  .hm-mode-depth .hai-hospital-art { width: 100%; }
+  .hm-depth-badge { padding: 7px 8px; font-size: 8px; }
+  .hm-depth-badge--data { left: 0; }
+  .hm-depth-badge--team { right: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hm-preview .hm-depth-front, .hm-preview .hm-depth-back { transform: none !important; }
+  .hm-preview .hm-marker::before, .hm-preview .hm-step::before { transition-duration: 125ms; }
+}
+@media print {
+  .hm-hotspots, .hm-depth-back, .hm-depth-front, .hm-detail, .hm-journey-home { display: none !important; }
+}

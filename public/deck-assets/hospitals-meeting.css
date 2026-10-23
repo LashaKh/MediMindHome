@@ -1,29 +1,144 @@
-/* One closing action, with three concrete reasons to take the meeting. */
-.reveal .hmeeting-slide .slide-inner { padding: 68px 90px 42px; justify-content: center; }
-.reveal .hmeeting-slide .hmeeting-title,
-body.lang-active-ka .reveal .hmeeting-slide .hmeeting-title { max-width: none; font-size: 58px !important; line-height: 1.2 !important; letter-spacing: -.025em; text-align: center; margin: 0 0 20px; color: #fff; }
-.reveal .hmeeting-subtitle { margin: 0; font-size: 17px; line-height: 1.6; color: #c2d5ea; text-align: center; }
-.reveal .hmeeting-outcomes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px; width: 100%; max-width: 1030px; padding: 0; margin: 56px 0 43px; list-style: none; text-align: left; }
-.hmeeting-outcomes > li { margin: 0; padding: 20px 0 0; border-top: 1px solid #89bde45c; }
-.hmeeting-number { display: block; margin-bottom: 12px; color: #8fd7f3; font-size: 12px; line-height: 1.4; font-weight: 750; letter-spacing: .05em; }
-.reveal .hmeeting-outcomes p { margin: 0; color: #f2f7fd; font-size: 19px; line-height: 1.65; font-weight: 650; }
-.reveal .hmeeting-reply { margin: 0; color: #a7f3d0; font-size: 23px; line-height: 1.5; font-weight: 750; text-align: center; }
-body.lang-active-en .hmeeting-slide .lang-en, body.lang-active-ka .hmeeting-slide .lang-ka { display: inline !important; }
-body.lang-active-ka .hmeeting-slide { word-break: normal; hyphens: none; }
-
+/* Closing invitation: intentionally scoped to this slide. */
+#hospital-meeting {
+  --hmeeting-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  background: transparent;
+}
+/* Paint the full viewport, outside Reveal’s centered 16:9 content canvas. */
+.reveal .slide-background.hmeeting-slide {
+  background: radial-gradient(ellipse at 92% 14%, #23537d66, transparent 52%), linear-gradient(125deg, #071526, #102e4b);
+}
+#hospital-meeting::before { display: none; }
+.reveal .slide-background.hmeeting-slide::before { opacity: .35; }
+#hospital-meeting .slide-inner {
+  display: grid; grid-template-columns: 1.12fr 1fr; grid-template-rows: auto 1fr;
+  align-items: center; gap: 24px 64px; padding: 54px 88px 54px; text-align: left;
+}
+#hospital-meeting .slide-label { position: static; grid-column: 1 / -1; margin: 0; color: #bfd1e1; }
+#hospital-meeting .hmeeting-intro { min-width: 0; }
+#hospital-meeting .hmeeting-title,
+body.lang-active-ka #hospital-meeting .hmeeting-title {
+  max-width: none; margin: 0 0 22px; color: #fff; font-size: 76px !important;
+  line-height: 1.12 !important; letter-spacing: -.045em; font-weight: 750;
+}
+#hospital-meeting .hmeeting-title em {
+  display: block; font-style: normal; color: #9ce4ee;
+  background: linear-gradient(110deg, #b4e2ff, #78ded2);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+#hospital-meeting .hmeeting-subtitle { max-width: 430px; margin: 0 0 26px; font-size: 20px; line-height: 1.65; color: #c1d1df; }
+#hospital-meeting .hmeeting-format { padding: 0; margin: 0 0 22px; border: 0; min-width: 0; }
+#hospital-meeting .hmeeting-format legend { padding: 0; margin-bottom: 10px; font-size: 12px; line-height: 1.5; color: #c1d1df; }
+#hospital-meeting .hmeeting-options { display: inline-flex; gap: 6px; padding: 5px; border: 1px solid #ffffff26; border-radius: 12px; background: #06132166; }
+#hospital-meeting .hmeeting-option { position: relative; display: flex; align-items: center; cursor: pointer; }
+#hospital-meeting .hmeeting-option input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+#hospital-meeting .hmeeting-option-text { display: flex; align-items: center; justify-content: center; gap: 9px; min-height: 44px; padding: 0 17px; border-radius: 8px; font-size: 15px; font-weight: 600; color: #c5d7e7; }
+#hospital-meeting .hmeeting-option svg { width: 18px; height: 18px; flex: 0 0 auto; }
+#hospital-meeting .hmeeting-option input:checked + .hmeeting-option-text { background: #254768; color: #fff; }
+#hospital-meeting .hmeeting-option input:focus-visible + .hmeeting-option-text { outline: 2px solid #94e6ef; outline-offset: 3px; }
+#hospital-meeting .hmeeting-booking {
+  display: inline-flex; align-items: center; justify-content: space-between; gap: 24px;
+  min-height: 62px; padding: 0 24px; border-radius: 12px; background: #e0f6f8;
+  color: #0a2a42; text-decoration: none; font-size: 18px; font-weight: 750;
+  box-shadow: 0 8px 30px #03101d40; transition: transform 160ms var(--hmeeting-ease-out);
+}
+#hospital-meeting .hmeeting-booking svg { width: 23px; height: 23px; flex: 0 0 auto; }
+#hospital-meeting .hmeeting-booking:focus-visible { outline: 3px solid #8edfe8; outline-offset: 5px; }
+#hospital-meeting .hmeeting-help { max-width: 400px; margin: 13px 0 0; font-size: 12px; line-height: 1.6; color: #b4c9db; }
+#hospital-meeting .hmeeting-agenda {
+  position: relative; min-width: 0; padding: 30px 32px 26px; border: 1px solid #ffffff26; border-radius: 24px;
+  background: linear-gradient(145deg, #ffffff0e, #ffffff03); box-shadow: 0 24px 70px #020e1a33;
+}
+#hospital-meeting .hmeeting-agenda-brand { display: flex; align-items: center; gap: 14px; margin-bottom: 27px; }
+#hospital-meeting .hmeeting-logo { width: 68px; height: 68px; margin: 0; }
+#hospital-meeting .hmeeting-wordmark { display: block; color: #f6fbff; font-size: 25px; font-weight: 700; letter-spacing: -.035em; }
+#hospital-meeting .hmeeting-duration { display: block; margin-top: 3px; color: #b2c9dd; font-size: 13px; line-height: 1.5; }
+#hospital-meeting .hmeeting-agenda-title { margin: 0 0 5px; font-size: 13px; line-height: 1.6; font-weight: 500; color: #b2c9dd; }
+#hospital-meeting .hmeeting-outcomes { display: block; margin: 0; padding: 0; list-style: none; }
+#hospital-meeting .hmeeting-outcomes > li { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 14px; margin: 0; padding: 19px 0; border-bottom: 1px solid #ffffff20; }
+#hospital-meeting .hmeeting-outcomes > li:last-child { border-bottom: 0; padding-bottom: 0; }
+#hospital-meeting .hmeeting-number { padding-top: 4px; color: #8edfe8; font-size: 12px; line-height: 1.5; font-variant-numeric: tabular-nums; }
+#hospital-meeting .hmeeting-outcomes h3 { margin: 0 0 5px; font-size: 20px; font-weight: 650; line-height: 1.4; letter-spacing: -.02em; color: #f2f7fd; }
+#hospital-meeting .hmeeting-outcomes p { margin: 0; font-size: 14px; line-height: 1.65; color: #c1d1df; }
+body.lang-active-en #hospital-meeting .lang-en,
+body.lang-active-ka #hospital-meeting .lang-ka { display: inline !important; }
+body.lang-active-ka #hospital-meeting { word-break: normal; hyphens: none; }
+#hospital-meeting [hidden] { display: none !important; }
+@media (hover: hover) and (pointer: fine) {
+  #hospital-meeting .hmeeting-booking:hover { transform: translateY(-2px); }
+  #hospital-meeting .hmeeting-booking:active { transform: scale(.98); }
+  #hospital-meeting .hmeeting-option:hover .hmeeting-option-text { color: #fff; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  #hospital-meeting.present .hmeeting-intro { animation: hmeeting-enter 500ms var(--hmeeting-ease-out) both; }
+  #hospital-meeting.present .hmeeting-agenda { animation: hmeeting-enter 500ms 60ms var(--hmeeting-ease-out) both; }
+}
+@keyframes hmeeting-enter { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) {
+  #hospital-meeting .hmeeting-booking { transition: none; }
+  #hospital-meeting .hmeeting-booking:hover, #hospital-meeting .hmeeting-booking:active { transform: none; }
+}
 @media (max-width: 768px) {
-  .reveal .hmeeting-slide .slide-inner { padding: 29px 24px 78px !important; justify-content: flex-start; }
-  .reveal .hmeeting-slide .hmeeting-title,
-  body.lang-active-ka .reveal .hmeeting-slide .hmeeting-title { font-size: clamp(37px, 6.7vw, 58px) !important; line-height: 1.25 !important; margin: 27px 0 20px; }
-  .reveal .hmeeting-subtitle { font-size: 16px; line-height: 1.65; }
-  .reveal .hmeeting-outcomes { grid-template-columns: 1fr; gap: 25px; margin: 36px 0; }
-  .hmeeting-outcomes > li { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 12px; padding-top: 22px; }
-  .hmeeting-number { margin: 5px 0 0; }
-  .reveal .hmeeting-outcomes p { font-size: 18px; line-height: 1.65; }
-  .hmeeting-outcomes br { display: none; }
-  .reveal .hmeeting-reply { font-size: 21px; line-height: 1.6; }
+  #hospital-meeting .slide-inner { display: flex; align-items: stretch; gap: 0; height: auto; min-height: 100%; padding: 29px 25px 78px !important; }
+  #hospital-meeting .slide-label { align-self: flex-start; margin-bottom: 32px; }
+  #hospital-meeting .hmeeting-title,
+  body.lang-active-ka #hospital-meeting .hmeeting-title { margin: 0 0 15px; font-size: clamp(43px, 9.8vw, 65px) !important; line-height: 1.15 !important; }
+  #hospital-meeting .hmeeting-subtitle { max-width: 420px; font-size: 16px; line-height: 1.65; margin-bottom: 20px; }
+  #hospital-meeting .hmeeting-format { margin-bottom: 17px; }
+  #hospital-meeting .hmeeting-options { display: flex; }
+  #hospital-meeting .hmeeting-option { flex: 1; }
+  #hospital-meeting .hmeeting-option-text { width: 100%; padding: 0 10px; font-size: 14px; }
+  #hospital-meeting .hmeeting-booking { box-sizing: border-box; width: 100%; min-height: 58px; padding: 0 19px; font-size: 17px; }
+  #hospital-meeting .hmeeting-help { margin-top: 11px; font-size: 12px; }
+  #hospital-meeting .hmeeting-agenda { margin-top: 28px; padding: 20px 21px; border-radius: 18px; }
+  #hospital-meeting .hmeeting-agenda-brand { gap: 11px; margin-bottom: 17px; }
+  #hospital-meeting .hmeeting-logo { width: 47px; height: 47px; }
+  #hospital-meeting .hmeeting-wordmark { font-size: 21px; }
+  #hospital-meeting .hmeeting-duration { margin-top: 1px; font-size: 12px; }
+  #hospital-meeting .hmeeting-agenda-title { font-size: 12px; }
+  #hospital-meeting .hmeeting-outcomes > li { grid-template-columns: 20px minmax(0, 1fr); gap: 10px; padding: 15px 0; }
+  #hospital-meeting .hmeeting-outcomes h3 { font-size: 17px; }
+  #hospital-meeting .hmeeting-outcomes p { font-size: 13px; line-height: 1.6; }
 }
 @media (max-width: 360px) {
-  .reveal .hmeeting-slide .slide-inner { padding: 27px 18px 78px !important; }
-  .reveal .hmeeting-outcomes p { font-size: 17px; }
+  #hospital-meeting .slide-inner { padding: 27px 19px 78px !important; }
+  #hospital-meeting .slide-label { margin-bottom: 26px; }
+  #hospital-meeting .hmeeting-option-text { gap: 7px; padding: 0 8px; font-size: 13px; }
+  #hospital-meeting .hmeeting-booking { font-size: 15px; padding: 0 16px; gap: 12px; }
+  #hospital-meeting .hmeeting-agenda { padding: 18px; }
+}
+
+/* Native booking overlay, deliberately outside Reveal's scaled canvas. */
+.hmeeting-dialog {
+  box-sizing: border-box; width: min(1080px, 94vw); height: min(900px, 94dvh); max-width: none; max-height: none;
+  margin: auto; padding: 0; border: 1px solid #c5d7e4; border-radius: 20px; background: #fff; color: #16334c;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, 'Noto Sans Georgian', sans-serif;
+  box-shadow: 0 28px 100px #0006; overflow: hidden;
+}
+.hmeeting-dialog[open] { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; }
+.hmeeting-dialog:not([open]) { display: none; }
+.hmeeting-dialog::backdrop { background: #031324b8; }
+.hmeeting-dialog-header { display: flex; justify-content: space-between; align-items: center; gap: 15px; padding: 21px 25px; border-bottom: 1px solid #e2e8ef; }
+.hmeeting-dialog-header h2 { margin: 0 0 6px; font-size: 21px; font-weight: 700; line-height: 1.4; }
+.hmeeting-dialog-header p { margin: 0; color: #526a7c; font-size: 13px; line-height: 1.6; }
+.hmeeting-dialog-close { display: grid; place-items: center; flex-shrink: 0; width: 44px; height: 44px; min-height: 44px; padding: 0; border: 1px solid #d6e0ea; border-radius: 50%; background: #f3f7fb; color: #173c58; font-family: inherit; font-size: 28px; line-height: 1; cursor: pointer; }
+.hmeeting-dialog-calendar { position: relative; min-height: 0; }
+.hmeeting-dialog-frame, .hmeeting-dialog-frame iframe { display: block; width: 100%; height: 100%; border: 0; }
+.hmeeting-dialog-status { position: absolute; z-index: 1; top: 15px; left: 15px; right: 15px; width: fit-content; margin: 0 auto; padding: 11px 16px; border: 1px solid #d6e0ea; border-radius: 10px; background: #f4f8fc; color: #234862; font-size: 14px; line-height: 1.5; box-shadow: 0 5px 15px #173c5812; pointer-events: none; }
+.hmeeting-dialog-footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 18px; padding: 13px 25px; border-top: 1px solid #e2e8ef; background: #f6f9fc; }
+.hmeeting-dialog-footer p { margin: 0; color: #526a7c; font-size: 12px; line-height: 1.5; }
+.hmeeting-dialog-footer a { display: inline-flex; align-items: center; min-height: 36px; color: #215d8d; font-size: 13px; line-height: 1.5; font-weight: 650; text-underline-offset: 3px; }
+.hmeeting-dialog :focus-visible { outline: 3px solid #3182ce; outline-offset: 3px; }
+.hmeeting-dialog [hidden] { display: none !important; }
+body.lang-active-en .hmeeting-dialog .lang-en, body.lang-active-ka .hmeeting-dialog .lang-ka { display: inline !important; }
+@media (max-width: 768px) {
+  .hmeeting-dialog { width: calc(100vw - 16px); height: calc(100dvh - 16px); border-radius: 14px; }
+  .hmeeting-dialog-header { padding: 15px; gap: 9px; }
+  .hmeeting-dialog-header h2 { font-size: 16px; }
+  .hmeeting-dialog-header p { font-size: 12px; }
+  .hmeeting-dialog-footer { padding: 10px 15px; gap: 0; }
+  .hmeeting-dialog-footer a { font-size: 12px; min-height: 40px; }
+}
+
+@media (max-width: 360px) {
+  .hmeeting-dialog { width: 100vw; height: 100dvh; border: 0; border-radius: 0; }
 }

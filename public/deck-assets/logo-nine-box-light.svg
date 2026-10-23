@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-labelledby="nine-box-title">
+  <title id="nine-box-title">MediMind nine-square mark</title>
+  <g fill="none" stroke="#fff">
+    <circle cx="50" cy="50" r="36" stroke-width="2.2" opacity=".9"/>
+    <circle cx="50" cy="50" r="43" stroke-width="1.4" opacity=".42"/>
+    <circle cx="50" cy="50" r="49" stroke-width=".8" opacity=".18"/>
+  </g>
+  <g fill="#fff">
+    <rect x="26" y="26" width="12" height="12" rx="2.4"/>
+    <rect x="44" y="26" width="12" height="12" rx="2.4"/>
+    <rect x="62" y="26" width="12" height="12" rx="2.4"/>
+    <rect x="26" y="44" width="12" height="12" rx="2.4" opacity=".92"/>
+    <rect x="44" y="44" width="12" height="12" rx="2.4" opacity=".92"/>
+    <rect x="62" y="44" width="12" height="12" rx="2.4" opacity=".92"/>
+    <rect x="26" y="62" width="12" height="12" rx="2.4" opacity=".82"/>
+    <rect x="44" y="62" width="12" height="12" rx="2.4" opacity=".82"/>
+    <rect x="62" y="62" width="12" height="12" rx="2.4" opacity=".82"/>
+  </g>
+</svg>

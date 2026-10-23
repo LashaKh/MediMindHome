@@ -1,12 +1,14 @@
 (() => {
   const dialog = document.getElementById('hbd-player');
-  const opener = document.querySelector('[data-hbd-play]');
-  if (!dialog || !opener) return;
+  const openers = document.querySelectorAll('[data-hbd-play]');
+  if (!dialog || !openers.length) return;
 
   const frame = dialog.querySelector('[data-hbd-frame]');
   let keyboardBeforeOpen;
-  opener.addEventListener('click', () => {
+  let activeOpener;
+  openers.forEach((opener) => opener.addEventListener('click', () => {
     if (dialog.open) return;
+    activeOpener = opener;
     keyboardBeforeOpen = window.Reveal.getConfig().keyboard;
     window.Reveal.configure({ keyboard: false });
     const player = document.createElement('iframe');
@@ -17,7 +19,7 @@
     player.referrerPolicy = 'strict-origin-when-cross-origin';
     frame.replaceChildren(player);
     dialog.showModal();
-  });
+  }));
   dialog.querySelector('[data-hbd-close]').addEventListener('click', () => dialog.close());
   dialog.addEventListener('click', (event) => {
     if (event.target !== dialog) return;
@@ -28,7 +30,7 @@
   dialog.addEventListener('close', () => {
     frame.replaceChildren();
     window.Reveal.configure({ keyboard: keyboardBeforeOpen });
-    opener.focus({ preventScroll: true });
+    activeOpener?.focus({ preventScroll: true });
   });
   window.Reveal.on('slidechanged', () => { if (dialog.open) dialog.close(); });
 

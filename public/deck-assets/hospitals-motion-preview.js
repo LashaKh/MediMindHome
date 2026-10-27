@@ -1,10 +1,10 @@
 // Shared hospital motion controller. Comparison controls are opt-in at the caller.
 export const MODES = ['active', 'journeys', 'depth', 'cinematic'];
 export const DEPARTMENTS = {
-  revenue: { x: 24, y: 47, accent: '#398d75', en: 'Finance', ka: 'ფინანსები', icon: 'M4 5h12v10H4z M7 8h6 M7 11h3' },
-  resources: { x: 77, y: 48, accent: '#447ca4', en: 'Resources', ka: 'რესურსები', icon: 'M4 5h5v5H4z M11 5h5v5h-5z M4 12h5v4H4z M11 12h5v4h-5z' },
-  time: { x: 35, y: 65, accent: '#737ca3', en: 'Clinical team', ka: 'სამედიცინო გუნდი', icon: 'M7 5a3 3 0 1 0 6 0a3 3 0 1 0-6 0 M4 17v-2a6 6 0 0 1 12 0v2' },
-  care: { x: 63, y: 64, accent: '#3b8799', en: 'Patient care', ka: 'პაციენტზე ზრუნვა', icon: 'M3 10h4l2-5l3 10l2-5h3' }
+  revenue: { x: 24, y: 47, accent: '#398d75', en: 'Finance', ka: 'ფინანსები', ru: 'Финансы', icon: 'M4 5h12v10H4z M7 8h6 M7 11h3' },
+  resources: { x: 77, y: 48, accent: '#447ca4', en: 'Resources', ka: 'რესურსები', ru: 'Ресурсы', icon: 'M4 5h5v5H4z M11 5h5v5h-5z M4 12h5v4H4z M11 12h5v4h-5z' },
+  time: { x: 35, y: 65, accent: '#737ca3', en: 'Clinical team', ka: 'სამედიცინო გუნდი', ru: 'Медицинская команда', icon: 'M7 5a3 3 0 1 0 6 0a3 3 0 1 0-6 0 M4 17v-2a6 6 0 0 1 12 0v2' },
+  care: { x: 63, y: 64, accent: '#3b8799', en: 'Patient care', ka: 'პაციენტზე ზრუნვა', ru: 'Помощь пациенту', icon: 'M3 10h4l2-5l3 10l2-5h3' }
 };
 const SVG_NS = 'http://www.w3.org/2000/svg';
 
@@ -30,8 +30,9 @@ export function createPreview(slide, env = window, options = {}) {
   const doc = slide.ownerDocument;
   const params = new URLSearchParams(env.location.search);
   const comparison = options.comparison !== false;
-  let lang = doc.body.classList.contains('lang-active-ka') ? 'ka' :
-    doc.body.classList.contains('lang-active-en') ? 'en' : params.get('lang') === 'en' ? 'en' : 'ka';
+  const requestedLanguage = params.get('lang');
+  let lang = ['en', 'ka', 'ru'].find(value => doc.body.classList.contains('lang-active-' + value))
+    ?? (['en', 'ka', 'ru'].includes(requestedLanguage) ? requestedLanguage : 'ka');
   const reduced = env.matchMedia('(prefers-reduced-motion: reduce)');
   const mobile = env.matchMedia('(max-width: 768px)');
   const fine = env.matchMedia('(hover: hover) and (pointer: fine)');
@@ -54,7 +55,7 @@ export function createPreview(slide, env = window, options = {}) {
   let lastFrame = 0;
   let disposed = false;
   const position = { x: 0, y: 0, vx: 0, vy: 0, tx: 0, ty: 0 };
-  const t = (en, ka) => lang === 'ka' ? ka : en;
+  const t = (en, ka) => lang === 'ka' ? ka : lang === 'ru' ? env.mmHospitalI18n.text(en) : en;
 
   function element(tag, className, text, attributes = {}) {
     const node = doc.createElement(tag);
@@ -324,7 +325,7 @@ export function createPreview(slide, env = window, options = {}) {
   }
 
   function setLanguage(value) {
-    if ((value !== 'ka' && value !== 'en') || value === lang) return;
+    if (!['en', 'ka', 'ru'].includes(value) || value === lang) return;
     lang = value;
     markers.forEach((marker, key) => {
       marker.setAttribute('aria-label', DEPARTMENTS[key][lang]);

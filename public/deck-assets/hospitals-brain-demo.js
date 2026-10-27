@@ -13,7 +13,7 @@
     window.Reveal.configure({ keyboard: false });
     const player = document.createElement('iframe');
     player.src = 'https://www.youtube-nocookie.com/embed/v7lRW_ZYDmc?autoplay=1&rel=0&playsinline=1';
-    player.title = document.documentElement.lang === 'ka' ? 'MediMind AI ტვინის დემო' : 'MediMind AI Brain demo';
+    player.title = document.documentElement.lang === 'ka' ? 'MediMind AI ტვინის დემო' : window.mmHospitalI18n.text('MediMind AI Brain demo');
     player.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
     player.allowFullscreen = true;
     player.referrerPolicy = 'strict-origin-when-cross-origin';

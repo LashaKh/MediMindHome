@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/hospitals-i18n/check.mjs && node scripts/hospitals-i18n/build.mjs",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"

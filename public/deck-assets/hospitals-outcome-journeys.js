@@ -1,4 +1,4 @@
-import { createPreview } from './hospitals-motion-preview.js?v=587728f69a';
+import { createPreview } from './hospitals-motion-preview.js?v=45052f0d82';
 
 // The chosen comparison becomes the ordinary slide, with normal deck navigation.
 export function connectJourneys(slide, reveal, env = window) {
@@ -8,7 +8,7 @@ export function connectJourneys(slide, reveal, env = window) {
     comparison: false, mode: 'journeys', startImmediately: false, static: printExport
   });
   let keyboard = false;
-  const language = () => doc.body.classList.contains('lang-active-ka') ? 'ka' : 'en';
+  const language = () => doc.documentElement.lang;
   function onSlide({ currentSlide }) {
     experience.setLanguage(language());
     if (currentSlide === slide) experience.setMode('journeys', !keyboard && !printExport);

@@ -1,0 +1,44 @@
+/* Generated Russian counterparts of existing language rules. */
+.lang-ru { display: none !important; }
+body.lang-active-ru .lang-ru { display: inherit !important; }
+body.lang-active-ru .case-timeline .lang-ru { display: inline !important; }
+body.lang-active-ru .hxm-closer-line .lang-ru { display: inline !important; }
+body.lang-active-ru .hxe-band .lang-ru { display: inline !important; }
+body.lang-active-ru .hxs-slide .lang-ru { display: inline !important; }
+body.lang-active-ru .hxa-slide .lang-ru { display: inline !important; }
+body.lang-active-ru .hxa-slide text.lang-ru { display: inline !important; }
+body.lang-active-ru .hxt-badge .lang-ru { display: inline !important; }
+body.lang-active-ru .lang-ru { display: inherit !important; }
+body.lang-active-ru .btn-ru { background: rgba(255,255,255,0.95) !important; color: #1a365d !important; }
+body.lang-active-ru .arch-scene text.lang-ru,
+body.lang-active-ru .arch-scene tspan.lang-ru { display: inline !important; }
+.hxc-case-t .lang-ru,
+.hxm-box .lang-ru { font-size: inherit !important; color: inherit; }
+@media (max-width: 768px) {
+  .hxv-step .lang-ru { display: block !important; min-width: 0; }
+}
+body.lang-active-ru :is(.hot-slide, .hot-dialog) .lang-ru { display: inline !important; }
+@media (max-width: 600px) {
+  .hxr3-slide .hcmp-brand-caption > .lang-ru { display: none !important; }
+}
+body.lang-active-ru :is(.hri2-slide,.hri2-dialog) .lang-ru { display: inline !important; }
+body.lang-active-ru :is(.hroad-slide,.hroad-dialog) .lang-ru { display: inline !important; }
+body.lang-active-ru .hbd-slide .lang-ru,
+body.lang-active-ru .hbd-player .lang-ru,
+body.lang-active-ru .hbd-finance-link .lang-ru { display: inline !important; }
+body.lang-active-ru .hdev-slide .lang-ru { display: inline !important; }
+body.lang-active-ru :is(.heval2-slide,.heval2-dialog) .lang-ru { display: inline !important; }
+body.lang-active-ru .hguar-slide .lang-ru { display: inline !important; }
+body.lang-active-ru #hospital-meeting .lang-ru { display: inline !important; }
+body.lang-active-ru .hmeeting-dialog .lang-ru { display: inline !important; }
+body.lang-active-ru .hai-slide .lang-ru,
+body.lang-active-ru .hai-dialog .lang-ru { display: inline !important; }
+/* Russian-specific layout changes belong here, not in the generated stylesheet. */
+@media (max-width: 768px) {
+  body.lang-active-ru .divider-thanks .divider-title { font-size: clamp(48px, 16vw, 80px) !important; }
+  body.lang-active-ru .divider-thanks .divider-kicker { font-size: 10px; letter-spacing: .12em; }
+}
+
+html:not([lang="ru"]) body .lang-ru, body.lang-active-ru .lang-en, body.lang-active-ru .lang-ka { display: none !important; }
+body.lang-active-ru .btn-ru { background: rgba(255,255,255,.95) !important; color: #1a365d !important; }
+body.lang-active-ru { overflow-wrap: break-word; }

@@ -36,6 +36,8 @@
   const email = dialog.querySelector('[data-hmeeting-email]');
   const formatDescription = dialog.querySelector('[data-hmeeting-dialog-format]');
 
+  const t = en => window.mmHospitalI18n.text(en);
+
   function updateBooking() {
     const hospital = slide.querySelector('input[name="hmeeting-format"]:checked')?.value === 'hospital';
     const configuredUrl = ((hospital ? booking.dataset.bookingUrlHospital : booking.dataset.bookingUrlOnline) || booking.dataset.bookingUrl || '').trim();
@@ -46,10 +48,12 @@
       catch { calendarUrl = undefined; /* Malformed configuration keeps the email-request fallback. */ }
     }
     const georgian = document.documentElement.lang === 'ka';
-    const format = georgian ? (hospital ? 'ჩვენს კლინიკაში' : 'ვიდეოზარი') : (hospital ? 'At our hospital' : 'Video call');
-    const subject = georgian ? '30-წუთიანი შეხვედრა MediMind-ის გუნდთან' : '30-minute meeting with the MediMind team';
+    const format = georgian ? (hospital ? 'ჩვენს კლინიკაში' : 'ვიდეოზარი') : (hospital ? t('At our hospital') : t('Video call'));
+    const subject = georgian ? '30-წუთიანი შეხვედრა MediMind-ის გუნდთან' : t('30-minute meeting with the MediMind team');
     const body = georgian
       ? `გამარჯობა,\n\nმსურს MediMind-ის გუნდთან 30-წუთიანი შეხვედრა.\nფორმატი: ${format}\nკლინიკა: \nმოსახერხებელი დრო: \nმთავარი საჭიროება: \n\nგთხოვთ, დამიდასტუროთ დრო.\n`
+      : document.documentElement.lang === 'ru'
+      ? `Здравствуйте!\n\nХочу договориться о 30-минутной встрече с командой MediMind.\nФормат: ${format}\nКлиника: \nУдобное время: \nОсновная задача: \n\nПожалуйста, подтвердите подходящее время.\n`
       : `Hello,\n\nI would like to request a 30-minute meeting with the MediMind team.\nFormat: ${format}\nHospital: \nPreferred times: \nMain need: \n\nPlease confirm a suitable time.\n`;
     requestHref = `mailto:team@medimind.md?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     booking.href = calendarUrl ? '#hmeeting-booking-dialog' : requestHref;
@@ -63,7 +67,7 @@
     requestHelp.hidden = Boolean(calendarUrl);
     bookingHelp.hidden = !calendarUrl;
     email.href = requestHref;
-    formatDescription.textContent = georgian ? (hospital ? 'თქვენს კლინიკაში' : 'ვიდეოზარი') : (hospital ? 'At your hospital' : 'Video call');
+    formatDescription.textContent = georgian ? (hospital ? 'თქვენს კლინიკაში' : 'ვიდეოზარი') : (hospital ? t('At your hospital') : t('Video call'));
   }
 
   function showLoadFallback() {
@@ -71,7 +75,7 @@
     status.hidden = false;
     status.textContent = document.documentElement.lang === 'ka'
       ? 'თუ კალენდარი არ გამოჩნდა, შეხვედრა ელფოსტით მოითხოვეთ. ბმული ქვემოთაა.'
-      : 'If the calendar stays blank, request a meeting by email below.';
+      : t('If the calendar stays blank, request a meeting by email below.');
   }
 
   booking.addEventListener('click', (event) => {
@@ -82,11 +86,11 @@
     keyboardBeforeOpen = window.Reveal.getConfig().keyboard;
     window.Reveal.configure({ keyboard: false });
     status.hidden = false;
-    status.textContent = document.documentElement.lang === 'ka' ? 'კალენდარი იტვირთება…' : 'Loading calendar…';
+    status.textContent = document.documentElement.lang === 'ka' ? 'კალენდარი იტვირთება…' : t('Loading calendar…');
     const player = document.createElement('iframe');
     const embedUrl = new URL(calendarUrl);
     embedUrl.searchParams.set('gv', 'true');
-    player.title = document.documentElement.lang === 'ka' ? 'MediMind-თან შეხვედრის კალენდარი' : 'MediMind meeting booking calendar';
+    player.title = document.documentElement.lang === 'ka' ? 'MediMind-თან შეხვედრის კალენდარი' : t('MediMind meeting booking calendar');
     player.referrerPolicy = 'strict-origin-when-cross-origin';
     player.addEventListener('load', () => { if (frame.firstElementChild !== player) return; clearTimeout(loadTimer); status.hidden = true; }, { once: true });
     player.addEventListener('error', () => { if (frame.firstElementChild !== player) return; clearTimeout(loadTimer); showLoadFallback(); }, { once: true });

@@ -23,6 +23,31 @@ inbound target.
 Everything here is real customer data. Never invent a fact. If something is unknown, write "(to add)". If a date
 is a guess, say so in the timeline text.
 
+## Working through conversation
+
+This is the shared CRM skill for Claude and Codex. Codex discovers it through
+`.agents/skills/sales-crm`, a relative symlink to this folder, following
+[Codex's repository skill discovery](https://learn.chatgpt.com/docs/build-skills). For a new teammate, login instructions,
+access requirements and a ready-to-paste agent prompt are in `docs/crm-handover.md`.
+
+- Treat a request such as "log my call", "add this hospital" or "update the next step" as authorization
+  for that CRM change. A request for a report only reads data. Drafting outreach does not authorize
+  sending it, and logging an already-sent message does not send another message.
+- Establish who is speaking once per session. For Irakli, use `--as Irakli`; the deal's `owner` is a
+  separate field and need not be the person logging the update.
+- Read the current row and timeline with `show` before changing an existing hospital. Match the
+  buying organization, use its `#ref`, and ask a short question if several records could fit.
+- Turn the supplied facts into a timeline entry and the relevant fields. A reply alone does not
+  qualify a deal: only advance its stage when the hospital has met the stage's criteria below.
+- Resolve relative dates using today's date in `Asia/Tbilisi` and report the exact saved date.
+  If a missing follow-up date is chosen using the 3–5 working day recipe, say it was a suggested date.
+  Ask when missing information would change the hospital, attribution, stage or an agreed commitment.
+- After a write, run `show` again and check the fields and timeline. Briefly report the hospital,
+  activity, stage/status, owner and dated next step that actually saved. If one command fails after
+  another succeeds, report the partial result and re-read before retrying so activities aren't duplicated.
+- When the user corrects a reusable CRM workflow or adds a feature, update this skill and the handover
+  where relevant. Customer-specific facts belong in the CRM, not in repository instructions.
+
 ## The rules (500 Global, Week 5 Day 2)
 
 - **One row per buying organization.** A group that buys centrally is one row.
@@ -69,6 +94,8 @@ is a guess, say so in the timeline text.
 
 The tool runs the CRM's own API code in-process. Stage dates, timeline entries and conflict checks therefore
 behave exactly as on the website. It needs Deno and a Supabase personal access token in `SUPABASE_ACCESS_TOKEN`.
+An already provisioned `SUPABASE_SERVICE_ROLE_KEY` also works; it grants privileged project access, so keep it private.
+The browser's admin password and GitHub collaboration alone do not grant command-line access.
 On the founder's Mac, `~/.zshrc` exports the token. A shell that skipped it can run the tool through
 `zsh -ic '…'`. On another machine, create a token at supabase.com → Account → Access Tokens, from an account that
 can open the project.
@@ -85,6 +112,7 @@ deno run -A scripts/crm.ts add target "<name>" city=Tbilisi source=warm_intro ow
 deno run -A scripts/crm.ts set "<hospital>" field=value ... --as Lasha    # "field=" clears a field
 deno run -A scripts/crm.ts log "<hospital>" message --file msg.txt --as Lasha   # or: ... call "text" --on 2026-10-20
 deno run -A scripts/crm.ts archive "<hospital>" --as Lasha                # restorable; prints the restore command
+deno run -A scripts/crm.ts restore "<archived-id>" --as Lasha
 deno run -A scripts/crm.ts fields                                          # every field you can set
 ```
 
@@ -136,6 +164,8 @@ deno run -A scripts/crm.ts fields                                          # eve
   - API: `supabase/functions/crm/` (rules in `validate.ts`), served through the `track-event` router (`?route=crm`).
   - Tables: `supabase/migrations/0003`–`0005`.
 - **Tests:** `deno test --allow-env --no-check supabase/functions/crm/validate.test.ts supabase/functions/track-event/routing.test.ts`.
+- **Frontend build:** `npm run build`. Check CRM files with
+  `npx eslint src/pages/AdminCrm.tsx src/pages/crm src/data/crm.ts src/lib/crmApi.ts scripts/crm.ts supabase/functions/crm supabase/functions/track-event`.
 - **Deploy the API:** `supabase functions deploy track-event --project-ref kvsqtolsjggpyvdtdpss --no-verify-jwt`.
   Development edge-function deploys are pre-authorized.
 - **Publish the website:** push `main`; Netlify publishes medimind.md within a minute or two. Commit only your own

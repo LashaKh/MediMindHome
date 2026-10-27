@@ -1,43 +1,55 @@
-# MediMind
+# MediMind website and Sales CRM
 
-An advanced AI medical assistant for enhanced clinical decision-making. 
+This repository contains the public MediMind website, presentation decks, investor invitations and
+the founders' hospital Sales CRM. The medical records application is maintained in a separate repository.
 
-## Important Note
+- **GitHub owner:** [LashaKh/MediMindHome](https://github.com/LashaKh/MediMindHome).
+- **Website:** [medimind.md](https://medimind.md), served by Netlify. Pushing `main` triggers a website deployment.
+- **CRM:** [medimind.md/admin/crm](https://medimind.md/admin/crm).
+- **Backend:** Supabase project `kvsqtolsjggpyvdtdpss`; CRM records live in the database, not in Git.
 
-When opening in StackBlitz, please follow these steps:
-1. Wait for the project to fully load (you'll see "Dependencies installed" in the terminal)
-2. Click the "Connect to Supabase" button in the top right corner
-3. Create a new Supabase project or connect to an existing one
-4. Wait for the preview to load - this may take a few moments
-5. If the preview doesn't load automatically, try refreshing the preview window
+## Start here
 
-## Getting Started
+- **Using the CRM or handing it to Irakli:** [CRM handover, login and agent prompt](docs/crm-handover.md).
+- **Working on the repository:** read [AGENTS.md](AGENTS.md) and, for CRM work,
+  [.claude/skills/sales-crm/SKILL.md](.claude/skills/sales-crm/SKILL.md).
+- **Agent discovery:** Claude uses `.claude/skills/sales-crm`; Codex uses the linked
+  `.agents/skills/sales-crm` folder. Both read the same instructions.
 
-### In StackBlitz
-1. The project will automatically install dependencies when loaded
-2. Once you see "Dependencies installed" in the terminal, proceed with Supabase connection
-3. If you encounter any issues:
-   - Try refreshing the preview window
-   - Make sure all dependencies are installed
-   - Check that Supabase is properly connected
+## What is included
 
+| Path | Purpose |
+| --- | --- |
+| `/` | Public marketing website and demo-request form |
+| `/admin/crm` | This week, Pipeline, Targets and Anchor views |
+| `/admin/dashboard` | Investor invites and briefing analytics |
+| `/briefing/<token>` | Investor password gate |
+| `/deck.html` | Gated investor pitch deck |
+| `/hospitals.html`, `/partner.html` | Hospital and partnership presentations |
 
-[Edit in StackBlitz ⚡️](https://stackblitz.com/~/github.com/LashaKh/MediMind)
+The frontend uses React 18, Vite 5 and TypeScript. Supabase Edge Functions (server-side API handlers)
+serve CRM and admin operations through `track-event?route=…`.
 
-## Features
+## Local development
 
-- AI-powered medical assistance
-- Real-time bed management
-- Voice-enabled note-taking
-- Seamless shift handovers
-- ABG Analysis with AI interpretation
-- Patient data management
-- Clinical notes system
+Use Node.js with npm. Deno is also needed for the CRM command-line tool and backend tests.
 
-## Environment Variables
+```bash
+git clone https://github.com/LashaKh/MediMindHome.git
+cd MediMindHome
+npm ci
+npm run dev
+```
 
-The following environment variables are required and will be automatically configured when you connect to Supabase in StackBlitz:
+Core CRM/admin pages default to the existing Supabase project. Local CRM actions use the live database
+unless `VITE_SUPABASE_URL` points to a separately configured backend. Keep credentials in private
+environment configuration; never commit `.env` files or customer exports.
 
-```env
-VITE_SUPABASE_URL=your_supabase_url
-VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+```bash
+npm run build
+npm run lint
+deno test --allow-env --no-check supabase/functions/crm/validate.test.ts supabase/functions/track-event/routing.test.ts
+```
+
+Netlify builds `dist/` automatically from `main`. Backend changes require a separate Supabase deployment;
+see the CRM skill before changing or deploying the API. Database migrations are in `supabase/migrations/`.

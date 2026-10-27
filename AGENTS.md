@@ -23,7 +23,7 @@ There is NO separate pitch-deck repo any more. Everything lives here.
 
 ## Tech stack
 
-- **Frontend**: React 19 + Vite 5 + TypeScript + react-router-dom + Zustand
+- **Frontend**: React 18 + Vite 5 + TypeScript + react-router-dom 6 + Zustand
 - **Backend**: Supabase (Postgres + Edge Functions in Deno), project ref `kvsqtolsjggpyvdtdpss`
 - **Hosting**: Netlify, auto-deploys from `main` branch on `LashaKh/MediMindHome`
 - **Pitch deck**: Reveal.js 4.6.1 loaded from CDN; everything else is one big inline-styled HTML file at `public/deck.html`
@@ -154,6 +154,9 @@ The four-segment horizontal bar (MediMind OS / GTM / AI depth / Regional entry) 
 
 The founders' hospital pipeline. **Read `.claude/skills/sales-crm/SKILL.md` before touching CRM data or code.**
 
+- Codex discovers the same skill through `.agents/skills/sales-crm` (a relative symlink). Keep one shared skill source.
+- Login, teammate setup and a ready-to-paste agent prompt: `docs/crm-handover.md`.
+- Conversation requests can add hospitals, log activity and update next steps. Read the current record first, attribute the change to the speaker, and verify saved fields/timeline afterwards. Keep the skill current when reusable workflows change.
 - Read and change CRM data with `deno run -A scripts/crm.ts …`. It needs `SUPABASE_ACCESS_TOKEN`. It runs the CRM's own API code, so stage dates, the timeline and conflict checks match the website.
 - Always pass `--as <person>`.
 - Never write CRM rows with raw SQL.
@@ -163,7 +166,7 @@ The founders' hospital pipeline. **Read `.claude/skills/sales-crm/SKILL.md` befo
 
 ## Supabase access
 
-- **Project ref**: `kvsqtolsjggpyvdtdpss` (same project as the EMR — but only `investor_*` tables and the four invite-related edge functions belong to this repo)
+- **Project ref**: `kvsqtolsjggpyvdtdpss` (shared with the EMR). This repo owns the investor tables, `crm_accounts`, `crm_activities`, `admin_login_failures` and its landing API handlers. CRM/admin routes are served through `track-event?route=…`.
 - **CLI**: `supabase` v1.131.4, already authenticated. Access token in env: `SUPABASE_ACCESS_TOKEN`
 
 ### Common operations

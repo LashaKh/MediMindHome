@@ -23,7 +23,7 @@ There is NO separate pitch-deck repo any more. Everything lives here.
 
 ## Tech stack
 
-- **Frontend**: React 19 + Vite 5 + TypeScript + react-router-dom + Zustand
+- **Frontend**: React 18 + Vite 5 + TypeScript + react-router-dom 6 + Zustand
 - **Backend**: Supabase (Postgres + Edge Functions in Deno), project ref `kvsqtolsjggpyvdtdpss`
 - **Hosting**: Netlify, auto-deploys from `main` branch on `LashaKh/MediMindHome`
 - **Pitch deck**: Reveal.js 4.6.1 loaded from CDN; everything else is one big inline-styled HTML file at `public/deck.html`
@@ -153,7 +153,7 @@ The four-segment horizontal bar (MediMind OS / GTM / AI depth / Regional entry) 
 
 ## Supabase access
 
-- **Project ref**: `kvsqtolsjggpyvdtdpss` (same project as the EMR — but only `investor_*` tables and the four invite-related edge functions belong to this repo)
+- **Project ref**: `kvsqtolsjggpyvdtdpss` (shared with the EMR). This repo owns the investor tables, `crm_accounts`, `crm_activities`, `admin_login_failures` and its landing API handlers. CRM/admin routes are served through `track-event?route=…`.
 - **CLI**: `supabase` v1.131.4, already authenticated. Access token in env: `SUPABASE_ACCESS_TOKEN`
 
 ### Common operations
@@ -184,6 +184,9 @@ Both have RLS enabled with all anon/authenticated access revoked. Edge functions
 ## Sales CRM (`/admin/crm`, added 2026-10-22)
 
 - **Read `.claude/skills/sales-crm/SKILL.md` before touching CRM data or code.** Agents read and change CRM data with `deno run -A scripts/crm.ts …` (the CRM's own API code in-process, same rules and timeline as the website), never with raw SQL writes.
+- Codex discovers the same skill through `.agents/skills/sales-crm` (a relative symlink). Keep one shared skill source.
+- Login, teammate setup and a ready-to-paste agent prompt: `docs/crm-handover.md`.
+- Conversation requests can add hospitals, log activity and update next steps. Read the current record first, attribute the change to the speaker, and verify saved fields/timeline afterwards. Keep the skill current when reusable workflows change.
 - UI: `src/pages/AdminCrm.tsx` + `src/pages/crm/*`, vocabulary and metrics in `src/data/crm.ts`, API client `src/lib/crmApi.ts`.
 - API: `supabase/functions/crm/` served through the `track-event` router (`?route=crm`, admin JWT). Rules live in `crm/validate.ts` and are unit-tested (`deno test --allow-env --no-check supabase/functions/crm/validate.test.ts supabase/functions/track-event/routing.test.ts`).
 - Stages are things the HOSPITAL did (500 Global W5D2): discovery, qualified, evaluation_agreed, evaluating, proposal, negotiation, won, lost. Our own work is a status (`waiting_on_us`), never a stage. Entering a stage fills its milestone date once.

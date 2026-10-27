@@ -1,0 +1,261 @@
+# 20261020 medimind justina jastrzebska
+# 2026-10-20 12:38:36
+#
+
+[00:00:01] Justina Jastrzebska: I'm in Bali. Oh nice. Yes, it's late afternoon for me.
+
+[00:00:08] Lasha: Cool.
+
+[00:00:10] Justina Jastrzebska: All right how can I help you guys?
+
+[00:00:15] Lasha: Right now we are working on the version of the deck that I am sending to the hospitals before requesting a meeting We could share this screen and read through it
+
+[00:00:32] Justina Jastrzebska: yeah
+
+[00:00:33] Lasha: let's do it Read through it. Yeah, let's do it. Um yeah visible yeah So this is a beta updated version of what we had and here how it goes We say that for our next five hospital partners we offer them deployment source code ownership of the initial version we give them one
+
+[00:01:21] Justina Jastrzebska: thing so i have a context so you already had some kind of discussion with them or this is the first touch point um
+
+[00:01:29] Lasha: I mean, this is kind of first but they know who we are. Who's our intro? Who introduced us and then I mean uh this is kind of first but they know who we are well who's our intro who introduced us and that they have the context what what we do so
+
+[00:01:41] Justina Jastrzebska: what what do they know about
+
+[00:01:43] Irakli: you So it's usually a warm introduction through someone. They know we are creating medical software that replaces the current stack and that we are working on modern standards, but because it's from someone else, they don't have deep context on us. Okay. And you already established the problems that they have or not? Because right now
+
+[00:02:02] Justina Jastrzebska: it just writes into the offer. So I'm just thinking if this is... context on us okay and you already established the problems that they have or not because right now it just writes into the offer so I'm just thinking if this is if this needs more context as well of like
+
+[00:02:15] Lasha: those hospitals we are approaching and sending uh this deck we know that they have the uh they want to change their current stack the reasons could be different But yeah, before we approach them, we have done research done and know that at some level they are ready to accept.
+
+[00:02:40] Justina Jastrzebska: Okay, let's go through this. I just probably after the whole thing, I will see if we need to come back to the beginning and maybe add one more slide in terms of you know because you want to have them feeling when they just start is like oh wow how did you know? This is
+
+[00:02:54] Lasha: a slide we could
+
+[00:02:55] Justina Jastrzebska: possibly do first yeah probably because
+
+[00:02:55] Lasha: it sounds like you know it sounds a little bit like you're starting like okay this is what we have for next five hospitals and i'm
+
+[00:03:00] Justina Jastrzebska: like who are you do i need you Yeah, probably because it sounds like you know It sounds a little bit like you're starting like okay. This is what we have for next five hospitals and I'm like Who are you do? Need you like I have a lot of questions Yeah, so maybe we need to Because this is what changes
+
+[00:03:16] Lasha: So this slide basically tells them what they have currently and what we are offering
+
+[00:03:26] Justina Jastrzebska: challenges yeah
+
+[00:03:28] Lasha: uh so every their requested change feature update is there separate quote well separated by budget um their requested change feature update is their separate quote separate by budget and parallel to this we we offer them unlimited free feature requests basically and we tell them that
+
+[00:03:50] Justina Jastrzebska: as what to what system your system today like are we talking like is there a specification about the system once
+
+[00:03:57] Lasha: we once we establish our system in their hospital they they can take request so they can ask us to tailor and uh
+
+[00:04:06] Justina Jastrzebska: i understand that but do you like should we that's missing one slide at very beginning right like What is your challenge? Like you said, it must be different for different hospitals. But I'm missing something at the very beginning, like this is the challenges you have or this is the system you have and this is the challenges you have. And then you show me how you're going to fix it so that makes sense. Because when you say typical legacy setup of what am I accounting in ops or admin like too broad of a description Like, you know, I feel like you need to define more the ICP here problems of like,
+
+[00:04:51] Irakli: you know for problem
+
+[00:04:51] Justina Jastrzebska: hospitals struggle with this is the current setup this is what we offer and then you go with the offer that you have on at first page it somehow logically makes more sense otherwise um you kind of lost me off like why are you talking to me like this about
+
+[00:05:10] Irakli: this what our software has and then where their problems are or just their problems with the code
+
+[00:05:18] Justina Jastrzebska: no no you can have you can have how you're gonna solve the problems but like for them to have an interest in even reading this they'll be like yes you know they need to acknowledge like oh yeah we have those problem how did you know um we have those challenges how did you know and then you say well we can solve it for them right so this is what you had replace it with so this this slide definitely makes sense and then the next one would be the offer but i'm i'm missing like the connection between where they are and what are you talking to them about okay yeah it's like they open it and they're like what what is it uh yeah
+
+[00:05:59] Lasha: agree uh so yeah it could be part of this slide as well but yeah kind of yeah I don't think he could be part of this side because it's Yeah, agree. So yeah it could be part of this slide as well But yeah kind of yeah
+
+[00:06:07] Justina Jastrzebska: I don't think you could be part of the slide because it's like You know first is like the general and here you go into details
+
+[00:06:13] Lasha: right? Okay so should we go through these
+
+[00:06:19] Justina Jastrzebska: points
+
+[00:06:21] Lasha: Yeah, so they have like separate divided systems and every entered information is Like entering information done multiple times Also, they are locked to their current vendor because if they decide to leave they Enter information done multiple times. Also they are locked to their current vendor because if they decide to leave, they they they leave them without anything and we give them this opportunity to uh... if we stop uh... or if you stop being active in this market like just disappear they legally own the first version of the source code so pretty protected uh and yeah we we we offer them these separate ai tools and the future of the proactive AI brain that makes
+
+[00:07:12] Justina Jastrzebska: Tools for what? Tools like for example, like when you use the software the vendor owns the source code So what you said here the word that they are protected. It's more important for me than what it says here right so The protection levels that they will probably be talking about then um ai needs separate tools and additional integration i have no idea what you're talking about so you what tools uh
+
+[00:07:36] Lasha: so yeah ida we need to make it clear the idea is that layer uh... is not included in their offering ever for these legacy systems in these legacy systems and uh... they are not ready for that AI infrastructure at all.
+
+[00:07:59] Justina Jastrzebska: Do you think they will understand what is AI? That's the first version,
+
+[00:08:01] Lasha: right now going to change. And yeah. they will understand what is that's the first version and yeah gonna change uh and um yeah we so
+
+[00:08:12] Justina Jastrzebska: i think we need to do it in a little bit different way because i don't understand anything though what you're saying here right so typical legacy setup so uh if you can categorize this into like i don't know five problems right many tools are not integrated security breach something like that then every time they need a new tool, they have to integrate it or it's not integrated. You give them the layer whatever that is, right? Each product has own update and support. So, so it is also time they need a new tool they have to integrate it or it's not integrated you give them the layer whatever that is right um each product has own update and support so so it is all happening automated you don't have to worry about it like you know no not technical i don't know knowledge required your team coordinates several software supplies so it's it sounds like it's a little bit all over the place right so like if you look at the system like that you are trying to fix for them does the system Has some form of elements like I don't tools So first is tools. The other one is the repetitive work Right which for the repetitive work, you have the updates you have form of elements like I don't know tools uh so first is tools the other one is the repetitive work right which for the repetitive work you have the updates you have the data entry you have something else and the third one will be I don't know the technical skills knowledge that's required right so if you come to me with those three elements like this is the three three departments that you have problem with or three layers And then you can go into details. Then it, and then it makes more sense to me versus like right now it's a little all over the place. Okay. Yeah. You need to think about it like when they read it or when they leave any form of conversation with you, like what are the I would remember this uh that you know it's about too many tools is about the work of people optimization of the work people automation whatever you're gonna call and the third one is that you know the technical aspect of it is taken care of so that's probably what they will remember and that translates also to problems and values for them. Justina, if we start
+
+[00:10:00] Irakli: with too many problems, will they get defensive because in a way hospitals stand on these hospitals okay um justina if we start with too many problems will they get defensive because in a way hospital stands on this hospital and if we're saying hey your security is not there and then efficiency is bad and then you cannot understand anything about your current status quo because reporting is slow uh am i coming in way too aggressive because yes it's a vendor but that's how the hospital is running today so like where do I balance that
+
+[00:10:36] Justina Jastrzebska: So, yes, people will get defensive every single time. not every single time but most of the time right because they will have to admit that they have some problem so people will discuss with opinions but people do not discuss with data right so if you have a data somewhere that 75 percent of hospitals operates like this then it's a data and I cannot disc- And then, you know, while you're having discussions with them and um, then you say, Is this something that you experience too? They say, Yes. So it's, you know, um, but you know while you having discussions with them and um then you say is this something that you experienced too they say yes so it's you know um but it's not even about like them having to admit to all the problems that they have but um this presentation it's not to sell the product fully with all the benefits and feature and you know and this presentation is get you a conversation right So, you need to think about it. This is to get you a conversation. You cannot overload it with information because they will not be able to process all of it right now because they don't need all the information right now to be interested for the next step. is an warm intro. The best thing you can do is to pre-qualify them and then show them the problem, right? So if you can show the problems that hospitals have problems between those three departments or for whatever that number is, and then you can go into details but don't try to overload it with like explanation on how you're going to solve it all of this because it's impossible that first they will read all of it, they understand it and um and they will say yes I want this tool right this has to be them to feel like oh I wanna learn more about it. That's where you're at now or like oh yeah I feel the problem thank you for you know making it so clear for me um I even maybe didn't know I have this problem but now I feel like I have this problem. So you'll have a many different people with different opinions about the problem um Yeah, but then don't overload them with the information in that one presentation.
+
+[00:12:37] Lasha: Okay, got it. quickly about this stuff over here so tailored product personalized clinical record based on the best standards what does this mean?
+
+[00:12:56] Justina Jastrzebska: Yeah I mean
+
+[00:12:59] Lasha: we uh we organize the database uh based on the fire r4 which is the golden standard for markets so basically right now they have the mess every migration every feature addition is like a headache for them because of that so
+
+[00:13:24] Irakli: yeah we kind of solve this problem. So their database today is a mass that no one understands it's just working on the software but how the database is organized which tables the naming we are saying is we are bringing you international standard where everything goes where it should go um and and it's transferable you're no longer vendor locked in and so on that's okay
+
+[00:13:55] Justina Jastrzebska: try to explain it more like the international standards that definitely i mean you have the name but at that word definitely is look at the best word i want to hear right here yeah okay uh
+
+[00:14:04] Lasha: so yeah oh it's built for ai have the name but that word definitely is like the best word I want to hear right here yeah okay so yeah it's built for AI and the future we promise and this what does he
+
+[00:14:14] Justina Jastrzebska: do I'm sorry that I'm being so because that's what I don't even know why this is good
+
+[00:14:18] Irakli: yeah so if you try to build on top of the legacy tools Because they are disconnected, because the database is not structured, it's very hard to operate on top of that layer. And what we are saying is that we're seeing these standards like mcp from claud uh this r4 being ai optimized where If you send two patient histories, one through the legacy system and one with this international standard, AI performs much better faster efficiently on the standardized data and tools. Okay Talk to me here about the benefits right like the faster or something because when he feels for a
+
+[00:15:03] Justina Jastrzebska: I don't on the standardized data and tools. Okay, so talk to me here about the benefits right like the faster or something because when it's built for AI I don't understand what is the benefit for me here right but if you if you say something about you know the system I don't know difficult to break or like whatever errors and it's gonna increase the speed of work two times faster if you know that the system normally will be breaking like more from the benefits perspective because bill for ai they are absolutely probably not a technical people that will not understand what that means so like you know in all those like in one slide right now there's so many words almost for every single one I have to ask an additional question right it needs to be done in a way that nobody has to ask any questions because it's all self-explanatory okay
+
+[00:15:53] Lasha: Yeah, got it. And yeah, the system that keeps improving, the unlimited feature request and our ability and readiness to give them what they want gives creates this ecosystem uh feature and constantly improving system for tailored system for the hospital so it's
+
+[00:16:19] Justina Jastrzebska: data collection and an optimization right sorry So, it's like a data collection and optimization. It is improvement loop
+
+[00:16:26] Lasha: of functionality
+
+[00:16:28] Justina Jastrzebska: of the system? Yeah. Okay. Not just a system but because nowadays... loop of functionality
+
+[00:16:36] Irakli: of the system yeah okay not just a system but because now data is structured and processed through AI you understand where you have inefficiencies like maybe in same department, in different shifts doctors are performing at different levels so system can self-improve the process, understand what's going on there. Okay. And so on. Is this
+
+[00:16:58] Justina Jastrzebska: happening on monthly basis? Weekly basis? Yearly basis? We yet have to figure that part out but ideally like something weekly basis yearly
+
+[00:17:03] Irakli: basis we yet have to figure that part out but ideally like something like monthly would make sense so so okay
+
+[00:17:12] Justina Jastrzebska: so so what I want to understand from this is that there's a data collection happening there is an analyze how it happened as well and then i will get on a monthly basis reports of what has been improved or or suggestions for what should be improved or it's improved automatically uh
+
+[00:17:32] Lasha: the way it works right now for the current modules they just report uh the feature or thing I don't know like anything they want for their department and within couple of days that feature is shipped and ready to be used. So it took a dynamic process where today have one interface where they can report and request some stuff and our system automatically delivers it. Okay, so it's a dynamic system optimization for
+
+[00:17:58] Justina Jastrzebska: better performance blah blah blah whatever that is, right? Kind of Better processes system optimization for better performance blah blah blah whatever that is right kind of better processes better performance better results something like that
+
+[00:18:14] Lasha: more like the way they want to where they way they want this system to work or feature yeah okay so but so it's based on
+
+[00:18:21] Justina Jastrzebska: the end user usability or experience Yeah, like, OK. See you see? That does not speak about it, OK? So we need to use a lot of like a human way of talking. Got it. Yeah, OK. And then one... like okay so see that does not speak about it okay so we we need to use a lot of like a human way of talking yeah okay and then one implementation team sorry no
+
+[00:18:41] Lasha: but it was
+
+[00:18:42] Justina Jastrzebska: uh free setup migration and key user training okay
+
+[00:18:49] Lasha: sounds good Yeah. So, yeah, less coordination, more control and one system built around your hospital is ready. Uh, so here the three paths, the three phase that Implementation. Yeah. I mean, Phase 1 is like straight up the first offer we are giving them
+
+[00:19:02] Justina Jastrzebska: to phase that implementation
+
+[00:19:04] Lasha: yeah I mean phase one is like straight up the first offer we are giving them to change this legacy stack with our product but phase two and three is not included in our initial offering and that's we need first to get the readiness of from the hospital to implement those tools So phase two and three are on demand and
+
+[00:19:27] Justina Jastrzebska: they're very customized. Uh-huh. So don't say it optional when ready because that means you're building a product, right? So it's customized on demand. are on demand and that's customized so don't say it optional when ready because that means you're building a product right so it's customized on demands but it it's
+
+[00:19:40] Irakli: true that phase two and three are also being built like phase three does not exist today in phase two we have like some parts of it ready but because phase one is enabler We have to spend time and energy on that for now, and we're testing a little bit of Phase 2. But I think the message here should be that those Phase 2 and 3 are being planned for you a little bit of phase two but I think the message here should be that those phase
+
+[00:20:13] Justina Jastrzebska: two and three are being planned for you and will become available yeah so even when you say um on you know on demand mm-hmm even if you're building it for everyone else you will still build for them right so the timeline will not change But on-demand part is like AI scares
+
+[00:20:28] Irakli: a lot of operators right now. And if I say, I'm gonna become the brain who is running your hospital. AI scares a lot of operators right now and if I say I'm gonna become the brain who is running your hospital uh I could get negative sentiment or way i don't want to implement this yeah all right let's see
+
+[00:20:44] Justina Jastrzebska: they're better better worse than when ready because it's when ready sounds like you building a product and i don't want to get involved with even though that's the case no no when really
+
+[00:20:54] Lasha: means when they are ready not us i see no
+
+[00:20:57] Justina Jastrzebska: so i see like when the product will be ready and i'm like i don't want to get involved with a company that it's still doing something
+
+[00:21:04] Lasha: we'll change that
+
+[00:21:08] Justina Jastrzebska: yeah um okay so the foundation stack goes i don't understand that sentence oh which
+
+[00:21:19] Lasha: okay uh so yeah the legacy system will go away we replace that because it
+
+[00:21:25] Justina Jastrzebska: says ghost but there might be something missing here Yeah, basically. Can you tell me how
+
+[00:21:28] Lasha: that means work? Okay. We're just repeating that message again. Still grant app on the web access control and add-ons. And they are basically clinical and administrative work,
+
+[00:21:31] Justina Jastrzebska: okay? We're just
+
+[00:21:34] Lasha: repeating that message. Still grant
+
+[00:21:36] Justina Jastrzebska: app on with access control and other 25 hospitals covered by one signed network agreement, okay? Efficiency gains.
+
+[00:21:48] Lasha: So here basically we introduce AI assistance tools scribe tools into each department medical or administrative and this is not the one coordinator ai brain yet this is just uh tools that we believe And this is not the one coordinator AI brain yet. This is just tools that we believe will improve the operational efficiency and After that comes the Phase three, this is the product yeah
+
+[00:22:23] Justina Jastrzebska: So it's about okay so So it's basically one product but you deploy it in three phases and each phase it's priced accordingly?
+
+[00:22:36] Lasha: Yeah We don't have the pricing for phase two and three yet because and each phase it's priced accordingly yeah we don't we don't we don't have the pricing for phase two and three yet because yes so far okay but there's no
+
+[00:22:41] Justina Jastrzebska: point to implement phase one in phase two and three will be not implemented uh so
+
+[00:22:47] Lasha: come again please There is no
+
+[00:22:49] Justina Jastrzebska: point. If you only implement one, then
+
+[00:22:51] Irakli: you
+
+[00:22:52] Justina Jastrzebska: have zero benefits from it, right? No, no, you have
+
+[00:22:54] Irakli: all the benefits we talked before, which is like international standards feature implementation quickly improved UI UX Because OK there is feature implementation quickly improved UI UX because
+
+[00:23:07] Justina Jastrzebska: okay in this the reason why I'm asking is because in the efficiency gains you say AI analytics for the patient history so you give me bunch of tools where the first one almost has zero tools and you have to you have to divide it into technical setup how many people can get access to it You know, like the tools that I will get. So I can see, OK, here I'll get the tools that will
+
+[00:23:24] Irakli: do this. Here I will get
+
+[00:23:26] Justina Jastrzebska: the tool that will do this. And here I will get tools that will do this processes. you know like uh the tools that i will get so i can see okay here i'll get the tools that will do this here i will get the tool that will do this and here i will get two things that will do this processes but the
+
+[00:23:38] Irakli: intended message should be is that phase one is already amazing and should be a no-brainer for you And on top of that, you're getting an option. On phase 2 and 3, that you don't have today. That's a message we want to... Okay, right? So don't call it face because face sounds like it all has to work together. That
+
+[00:23:55] Justina Jastrzebska: one does not work together, right? So it's product 1, product 2, product 3 or system 1, system 2, system
+
+[00:23:55] Irakli: 3.
+
+[00:23:55] Justina Jastrzebska: It's not a face because if I'm talking about that one does not work together right so it's product one product two product three or system one system two system three it's not a phase because like if i'm talking about there are five phases of the moon the moon has to come up complete you know with the phases so face is like part of something um so it gives me also the feeling like you know i cannot work with one face with another one so A strong foundation, a path to the future. Like I would stay away from words like this because they bring any zero benefits, right? So I need to understand that for what I'll be able to do after the foundation, like what will be the functionality of my hospital and is you know what problems it's gonna solve um yeah we need to organize it a little bit better or
+
+[00:24:47] Lasha: what I'm thinking is I have the demo where I uh demonstrate the like possibility of the proactive brain And we could potentially include that here. Yeah, we can, but right now this is not our biggest problem yet.
+
+[00:25:01] Justina Jastrzebska: That's not going to change the state of the deck. So you guys need to stop thinking as... here yeah we can but right now this is not our biggest problem yeah that's not going to change the state of the deck so you guys need to stop thinking as a tech people because right now it sounds like a bunch of tech words and and think about a hospital owner and organize it in a way that again maybe you have the tools, the people, the activity they do, the systems. So one is the tool, the other one is the system, the third one is the updates or some kind of optimization of existing processes. So you need to think from the perspective of... And maybe the foundation is just talking about a certain part of the hospital and then if you want more than you go into the efficiency gains right so right now it's missing a little bit of like a logic behind it that if I now go to someone else and try to repeat what you just told me it's going to be very difficult also to understand why are you doing
+
+[00:25:59] Lasha: So yeah, this is just the validation slide that we are not coming from the idea. easy And that we are building from inside the hospital We know what we are doing Some details over here Okay, that's
+
+[00:26:23] Justina Jastrzebska: also good Right now, yeah, we also underline the fact
+
+[00:26:27] Lasha: that currently they have these separate systems that serve the hospital. For example, EMR is a separate system, lab is billing the fact that currently they have the separate uh separate systems that serve the hospital for example ymir is a separate system lab's billing is mostly separate in western markets there are like eight eight more separate systems right now here in georgia we kind of unify this is not common that for example this Like, this is not common that four vendors can accommodate the hospital. And what you're doing are just like they're combining even that low number into one. Okay. accommodate the hospital and what we are doing are just like
+
+[00:27:09] Justina Jastrzebska: they're combining even that's a low number into one okay so this is good but you say the cost of separation but i don't see any cost right so if there is a number that you can put on it uh-huh on average
+
+[00:27:19] Irakli: this is because
+
+[00:27:19] Justina Jastrzebska: otherwise you just show me four elements and we all want to create as much pain as possible right if you say Because also, if you were setting them up for showing them the value that you're going to provide and the ROI they will get on it or how little they have to pay to what they're already paying. So if that's the message of that slide... then you need to have like this is how much your money costs your current setup right? So again you creating the pain of like mm-hmm
+
+[00:27:48] Lasha: okay got it we have one
+
+[00:27:49] Justina Jastrzebska: minute sorry but it's only half an hour so yeah
+
+[00:27:53] Lasha: this same message building the operating system we have patient portal we have um yeah a pack system structural like uh do we really unify uh everything like every software we are working on into ecosystem and we can include that those products in our offering okay oh
+
+[00:28:18] Justina Jastrzebska: yeah same
+
+[00:28:19] Lasha: messages here every department has this ai integrated into it uh this is not relevant Those are budget. Yeah, and we offer them like with the same software budget and We build what they ask and we can build anything as the message so so
+
+[00:28:37] Justina Jastrzebska: this this if you talk about the cost then you have to talk about this right it needs to be together okay because at first you're saying this is how much money you call and this is how much am i understanding that this is what we're going to be for you and this is the price or yeah yeah right
+
+[00:28:53] Lasha: now here you have these separated vendors So, but so you don't want to go back to the problem. You already stated a problem. You already told them three times they have a separate vendor risk and this is how much costs them.
+
+[00:28:58] Justina Jastrzebska: So there's no point in repeating yourself. Okay. but so you you don't want to go back to the problem you already stated a problem you already told them three times they have a separated vendors and that is how much cost them so it's no point to repeat yourself okay because
+
+[00:29:10] Lasha: i've seen it on
+
+[00:29:10] Justina Jastrzebska: three or four slides okay
+
+[00:29:14] Lasha: uh yeah and here the important message which first build they compare and they then decide if they wanted or not so based on results Yeah, included in our next five hospital offer. Okay, when you say compare, you also have to be very specific because
+
+[00:29:25] Justina Jastrzebska: what does this mean compare?
+
+[00:29:27] Lasha: Like, you know, are they have goals to compare? Are they have numbers to compare like because hospital offer okay when you
+
+[00:29:31] Justina Jastrzebska: say compare you also have to be very specific because what does this mean compare like you know do are they have goals to compare or they have numbers to compare like because you know you want to be very specific of like what is because you know I can compare apples to apples but you will be a hospital and if it's not clear you're gonna compel apples to cherries right so it doesn't make sense you have to be very specific here uh yeah
+
+[00:29:54] Lasha: basically that's it um and the out here What is your call-to-action
+
+[00:29:58] Justina Jastrzebska: here? Like, you need to have a call-to-action. What do you want them to do next? So after they read this, what would they want them to go next? Uh, Mummy's 30-minute meeting like you need to
+
+[00:30:05] Lasha: have a call to action what do you want them to do next so after they read this what would they want them to go next uh uh mommy's 30 minute meeting should be just the headline
+
+[00:30:12] Justina Jastrzebska: should be about the call to action same spend a generation ahead again stay away from those buzzwords like romantic you know poetry blah blah let's see what changes for your hospital also like just if this is your call to action if you wanna get them on a call that should be about it Let's go in a 30 minutes call. This is what you're going to learn. This is what we're going to show you. So I need to see value from that call myself. Got it, got it. Thank you. Okay. I will send you the... on a 30 minutes
+
+[00:30:36] Lasha: call this is what you're gonna learn this is what we're gonna show you so I need to see value
+
+[00:30:38] Justina Jastrzebska: from that call myself got it thank you okay i will send you the the notes so please book one more call with me so we can like when you redo it before even doing the presentation it can be as simple as like a wordpress document with the text itself uh it was
+
+[00:30:51] Lasha: super informative thank you yeah my pleasure
+
+[00:30:54] Irakli: good
+
+[00:30:54] Justina Jastrzebska: like
+
+[00:30:55] Irakli: i think this tech needed these these destroys all right thank you yeah i mean you guys
+
+[00:31:00] Justina Jastrzebska: are not the only one like you know that's every company out there because you spend so much time thinking about it and You need to put it on the words. of the user all right cool Thank you

@@ -1,0 +1,209 @@
+{
+  "ready": true,
+  "meta": {
+    "day": "Week 2 Day 3",
+    "date": "30 September 2026",
+    "prepared_date": "8 October 2026",
+    "slug": "week2day3",
+    "destination": "/Users/toko/Desktop/500 Lectures/Week 2 Day 3 - 2026-09-30",
+    "sessions": ["Experiment prioritization and performance tracking", "One-page strategy and the numbers game", "Experiment-board workshop and questions"],
+    "transcript_caution": "Automatic recognition can mishear classroom questions, names and business terms. Session 1 after about 02:20 and Session 3 after about 00:10 contain repeated words and unclear background speech, not reliable lesson evidence. Session 2 after about 00:34 includes informal health/supplement discussion, not clinical evidence or recommendations; its closing homework instruction is retained. Check original recordings before quoting.",
+    "decks": []
+  },
+  "pages": [
+    {
+      "title": "Day 3: turn ideas into evidence",
+      "subtitle": "500 Eurasia B11 | 30 September 2026 | Three recordings, approximately 3h 33m",
+      "blocks": [
+        {"type":"card","title":"The whole day in one sentence","body":"Choose the result that matters, test the most useful next move, and turn what you learn into the next decision."},
+        {"type":"section","title":"1. A goal needs a queue of possible solutions","body":"Do not bet the company on one untested idea. Keep a visible experiment backlog, then select the few tests that can move the current bottleneck with the time and money available."},
+        {"type":"section","title":"2. Sequence matters as much as selection","body":"Ask which improvement makes the next improvement more valuable. Sending more prospects to a weak offer may amplify waste; fixing the offer first may make later outreach more productive."},
+        {"type":"section","title":"3. A result is not yet a lesson","body":"After a win or a loss, document what happened, why you think it happened, what remains uncertain, and what you will do next. Otherwise you keep paying to learn the same thing."},
+        {"type":"section","title":"4. Strategy must fit on an executable page","body":"Connect a target to a funnel, a few actions, named owners, deadlines and a review. Use the numbers to locate leverage, not to make an optimistic spreadsheet look convincing."},
+        {"type":"card","title":"For MediMind","body":"The priority is getting qualified hospitals beyond the anchor partner through a meaningful parallel-system evaluation. Test the steps blocking that journey, connect messaging to real buyer behavior, and protect the team's free-build capacity."},
+        {"type":"text","body":"<b>Fast path:</b> this page → <link href='#guide-10' color='#24718a'>MediMind's metric (p. 11)</link> → <link href='#guide-11' color='#24718a'>first experiments (p. 12)</link> → <link href='#guide-13' color='#24718a'>28-day plan (p. 14)</link> → <link href='#guide-16' color='#24718a'>assignment checklist (p. 17)</link>. The separate transcript PDF retains all recognized speech."}
+      ]
+    },
+    {
+      "title": "Find the useful moments",
+      "subtitle": "S1/S2/S3 are recordings; D1/D2 are decks. Times restart at zero in each recording.",
+      "blocks": [
+        {"type":"table","headers":["Source","What it covers","Rewatch anchors"],"widths":[1,2.2,1.5],"rows":[["<b>S1 · 2h 29m 44s</b><br/>Nicholas Ho","Experiment backlog; decision loop; prioritization; support and sales cases; personal examples.","About 00:17 main lesson<br/>00:38 experiment loop<br/>00:56 five tools<br/>01:18 support case<br/>01:47 sales case"],["<b>S2 · 38m 44s</b><br/>Justyna Jastrzebska","One-page strategy; routine work, campaigns and expansion; funnel arithmetic and questions.","About 00:03 strategy<br/>00:12 workstreams<br/>00:27 funnel metrics<br/>00:29 numbers examples<br/>00:32 / 00:37 homework"],["<b>S3 · 24m 17s</b><br/>Nicholas Ho / workshop","The shared experiment sheet: hypothesis, scoring, owner, dates, results and learning.","00:02 board walkthrough<br/>00:04 scoring rule<br/>00:06 one shared board<br/>00:08 working assignment"]]},
+        {"type":"section","title":"Two decks, not three","body":"The first and third links you supplied are identical. D1 has 24 displayed slides on experiments and performance; D2 has 19 on strategy and numbers. A spreadsheet shown in S3 supplies additional workshop detail beyond those decks."},
+        {"type":"section","title":"Three evidence labels","body":"<b>Lecture takeaway:</b> paraphrase of a recording or deck.<br/><b>Reported case:</b> an instructor's example, not an independently audited result.<br/><b>MediMind application:</b> our proposed adaptation, not the lecturer's assessment of your company."},
+        {"type":"card","title":"Read the guide, search the transcript","body":"The guide removes repetition, energizers and classroom administration. The transcript keeps the full automatic output. Search it when you need the surrounding discussion; use the original audio when wording matters."},
+        {"type":"text","body":"Rewatch times are approximate navigation aids, not exact quotation boundaries. Matching M4A and MP4 files were treated as duplicate representations of the same sessions, not six separate lectures."}
+      ]
+    },
+    {
+      "title": "The experiment loop",
+      "subtitle": "Lecture takeaway | S1 00:20-00:56 | D1 slides 4-10",
+      "blocks": [
+        {"type":"card","title":"Goal → ideas → ordered tests → results → insight → next test","body":"The loop is incomplete if you stop at choosing an idea, or if you run it and never examine the outcome. Learning must change the next decision."},
+        {"type":"table","headers":["Step","What good looks like"],"widths":[1,3.1],"rows":[["Define the target","One explicit business outcome, a time horizon and a baseline. Ask weekly what is preventing it."],["Build the backlog","Several plausible ways to move that outcome. Keep ideas visible rather than in people's heads."],["Choose and sequence","Compare likely impact, urgency, dependencies, cost and effort. Sometimes the answer is A then B, not A or B forever."],["Run the test","An owner, a hypothesis, a bounded commitment of resources and a date to inspect evidence."],["Review the result","Record the actual observations and limitations. Investigate wins as well as losses."],["Decide","Repeat, improve, expand, stop or wait for more evidence. Explain the choice and update the backlog."]]},
+        {"type":"section","title":"The 5-minute diagnostic","body":"Nicholas asks how you would tell quickly whether a team is working on the right problems. His practical inspection: can you see the target, the experiment queue, its prioritization and the learning history? Activity alone does not answer that question."},
+        {"type":"section","title":"Do not confuse an outcome with an explanation","body":"'Replies increased' is a result. 'The hospital recognized the billing problem in the opening line' is a possible explanation. Record the supporting evidence and alternative explanations; a plausible story is not proof of causation."},
+        {"type":"text","body":"The lecture argues for both useful test volume and speed. That does not mean running every idea at once or overriding safety and confidentiality. Capacity and context still govern the decision."}
+      ]
+    },
+    {
+      "title": "Five tools for better bets",
+      "subtitle": "Lecture takeaway | S1 00:56-01:17 | D1 slides 11-12",
+      "blocks": [
+        {"type":"table","headers":["Tool","What to do","MediMind translation"],"widths":[1.05,1.8,1.8],"rows":[["<b>1. Quick wins</b>","Find a small set of high-impact moves that can create momentum. Fast does not automatically mean cheap.","Unblock an already interested, qualified hospital before launching a broad new channel."],["<b>2. Adapt what works</b>","Borrow a useful mechanism from another context, then test whether it transfers.","Adapt a proven peer-introduction format; do not assume another industry's reply rate."],["<b>3. Sequence</b>","Choose the win that makes the next test easier or more valuable.","Clarify the evaluation and approval path before increasing invitations to it."],["<b>4. Short cycles</b>","Inspect a small test after roughly 7-14 days; break larger bets into learnable pieces.","Test whether a review meeting gets scheduled; do not demand a full hospital purchase in a week."],["<b>5. Keep inputs coming</b>","Replenish the idea queue and keep testing the important constraint.","Capture recurring objections and stalled-step reasons from real hospital conversations."]]},
+        {"type":"section","title":"The prioritization picture","body":"The deck places <b>impact</b> against <b>urgency</b>: high-impact work needed soon comes first. The workshop adds numerical scoring, but a score does not remove dependencies or compensate for a poorly chosen goal."},
+        {"type":"section","title":"Small samples require honest language","body":"The instructor allows directional decisions when a startup lacks enough traffic for a conclusive split test. This is a business judgment under uncertainty, not a shortcut to statistical significance. Report counts, context and uncertainty explicitly."},
+        {"type":"card","title":"Important boundary","body":"These are commercial and operating experiments. Do not transfer the 'try quickly' mindset to unapproved clinical decisions, uncontrolled patient-care experiments or unsafe data access."}
+      ]
+    },
+    {
+      "title": "Case: make the team able to win",
+      "subtitle": "Reported case | S1 support-team discussion | D1 slides 13-15",
+      "blocks": [
+        {"type":"card","title":"The underlying change","body":"A support team was treated as a cost to minimize. Nicholas reframed its work around measurable contribution: helping customers complete purchases, resolving obstacles and recovering otherwise lost business."},
+        {"type":"table","headers":["What was tested","Why it mattered"],"widths":[1.5,2.5],"rows":[["Complementary leadership","Pair customer empathy with someone who can manage systems, measurement and execution."],["Clear KPIs and ownership","Give the team a visible target, task owners and recurring check-ins."],["Repeatable work","Create a knowledge base, standard procedures and a consistent follow-up sequence."],["Feedback and motivation","Make progress visible through scoreboards and incentives; review whether the behavior actually helps the business."],["Funnel-specific improvements","Test chat wording, channel consolidation, coverage and abandoned-checkout follow-up rather than vague 'better service'."]]},
+        {"type":"section","title":"The lecturer's first move: complementary leaders","body":"In the discussion, Nicholas explicitly chooses pairing empathetic and process-oriented leaders as the upstream move that makes later work possible. Next come KPIs, tracking, shared knowledge and an execution rhythm. He distinguishes this operating foundation from narrower marketing tests; the case is not a controlled experiment isolating each change's effect."},
+        {"type":"section","title":"Do not reuse the headline as a benchmark","body":"The deck frames the example as 10X ROI and shows a 10X productivity target; the speaker also describes a revenue-producing team. Revenue, productivity and return on investment are different measures. The source does not provide enough underlying data to independently reconcile them."},
+        {"type":"card","title":"MediMind application","body":"Before adding hospital leads, make sure one person owns each opportunity, the next step has a date, the evaluation has reviewers, and the team records why progress stalled. A basic operating rhythm can make later outreach tests more useful."}
+      ]
+    },
+    {
+      "title": "Case: improve the whole path",
+      "subtitle": "Reported cases | D1 slides 16-23 | Sales, personal tracking and resource discipline",
+      "blocks": [
+        {"type":"section","title":"Sales conversion: more than a better pitch","body":"The sales case targets a move from 10% to 25% conversion. The tested levers include the first call, scripts, time to the second call, reminders, call format, salespeople, pre-call material and payment options. The target is a case goal, not a demonstrated MediMind forecast."},
+        {"type":"table","headers":["Observed lever","Useful hospital question"],"widths":[1.25,2.75],"rows":[["Delay between steps","Does the next meeting have a date before the current one ends?"],["Information before the call","Do hospital reviewers know what they are being asked to compare?"],["Salesperson / audience fit","Are we speaking with someone who can mobilize the right hospital participants?"],["A suitable next offer","Is the next step small enough to accept but concrete enough to teach us something?"],["Continued testing","When one script works, can we explain why and reproduce the useful part?"]]},
+        {"type":"section","title":"Personal examples: use the method, not the remedies","body":"Sleep and skin examples illustrate keeping a test history, tracking a target and adapting inputs. They are personal anecdotes, not controlled clinical evidence. S2 also ends with informal supplement/health discussion. None of these remarks is carried into the guide as treatment advice or an efficacy claim."},
+        {"type":"section","title":"Protect the ability to take the next bet","body":"The closing message is to limit the cost of learning and preserve runway. Test size must fit available resources. Faster learning is valuable; a costly failed test can remove the chance to try the next useful idea."},
+        {"type":"card","title":"MediMind application","body":"Count founder, engineering and support time spent on every free evaluation. A promising lead is not permission for unlimited speculative delivery. Agree scope, prerequisites and a review decision before committing scarce capacity."}
+      ]
+    },
+    {
+      "title": "Make strategy fit on one page",
+      "subtitle": "Lecture takeaway | S2 | D2 slides 2-12",
+      "blocks": [
+        {"type":"card","title":"Target + funnel + actions + owner + deadline","body":"A one-page plan is useful when the team can see the result sought, how the activities connect to it, and who is doing what next. It is not a compressed list of every idea."},
+        {"type":"table","headers":["Workstream","What belongs here","What to avoid"],"widths":[1.15,1.8,1.6],"rows":[["<b>Business as usual</b>","Improve the existing sales/marketing engine: tracking, qualification, proof, demos and follow-up.","Treating routine work as automatically effective; keep testing important assumptions."],["<b>Campaigns</b>","In this lecture: monetize existing leads or users through a coordinated offer, story or event-based reason to act.","Calling every acquisition activity a monetization campaign; distinguish the objective."],["<b>Expansion</b>","Explore new markets, partnerships, products or channels when there is a reason and capacity.","Adding a geography or channel simply because the current pipeline is difficult."]]},
+        {"type":"section","title":"Two meetings, before the next month starts","body":"Review the current month, then prepare the next month's plan. Justyna suggests around the 25th for reflection so preparation does not consume the next month's first week. If a major campaign is still pending, label the result provisional and update after it finishes. Make each team's contribution to the goal explicit."},
+        {"type":"section","title":"Make a winning campaign part of the normal funnel","body":"A useful evergreen campaign can become a repeatable follow-up for future leads. Preserve the lesson and automate a suitable winner, rather than repeatedly inventing new material. Event-specific campaigns cannot simply run unchanged all year."},
+        {"type":"card","title":"MediMind application","body":"Keep the near-term page focused on the current hospital-evaluation journey. Use a small, relevant proof campaign if it supports that journey. Defer broad expansion until you can explain what converts and what delivery costs."}
+      ]
+    },
+    {
+      "title": "Win the numbers game honestly",
+      "subtitle": "Lecture takeaway + checked interpretation | D2 slides 13-17",
+      "blocks": [
+        {"type":"card","title":"Revenue depends on several connected steps","body":"An improvement in one step can magnify improvements elsewhere. But multiplying optimistic assumptions creates a scenario, not evidence that the result will happen."},
+        {"type":"table","headers":["Calculation","Plain meaning"],"widths":[1.6,2.5],"rows":[["Leads = visits × signup rate","Keep the definition of a lead consistent; account leads and individual people are not interchangeable."],["Customers = eligible leads × sales conversion","The denominator must be the same population to which the conversion rate applies."],["Sales value = customers × average purchase value","This is sales value under the stated assumptions, not necessarily recurring revenue or cash collected."],["Stage conversion = progressed ÷ eligible × 100","Use one cohort or clearly matched stage-entry records; report the count as well as the percentage."],["Acquisition cost = acquisition spend ÷ new customers","Define which costs are included. For founder-led sales, an advertising-only cost misses important effort."]]},
+        {"type":"section","title":"Why small changes can compound","body":"If three independent sequential conversion rates each improve by 10% relative, their combined multiplier is 1.1 × 1.1 × 1.1 = 1.331, or 33.1%. This is a mathematical illustration, not a claim that the improvements are independent or achievable."},
+        {"type":"section","title":"Percent is not percentage points","body":"Going from 10% to 15% is a gain of 5 percentage points and a 50% relative increase. State which you mean; otherwise the improvement can sound much larger or smaller than it is."},
+        {"type":"section","title":"Do not confuse annualization with a forecast","body":"Multiplying a monthly sales scenario by 12 assumes the same result every month. It does not establish retention, recurring contracts, collection timing, delivery capacity, ARR or profit."}
+      ]
+    },
+    {
+      "title": "Two slide calculations corrected",
+      "subtitle": "Source audit | D2 slides 15-16 | Inputs preserved; arithmetic recomputed",
+      "blocks": [
+        {"type":"card","title":"Use the mechanism, not the unchecked totals","body":"The cumulative rows contain inconsistent intermediate counts. Correcting them makes the teaching point clearer without treating sample numbers as actual business performance."},
+        {"type":"table","headers":["Example","Printed cumulative row","Correct from its own inputs"],"widths":[1.05,1.85,1.95],"rows":[["<b>B2C · slide 15</b>","5,000 visits; 35% signup; 1,250 leads; 2% sales; $65 purchase value; $1,625/month.","5,000 × 35% = <b>1,750 leads</b>.<br/>1,750 × 2% = 35 sales.<br/>35 × $65 = <b>$2,275</b>.<br/>12 identical months = $27,300."],["<b>B2B · slide 16</b>","750 email contacts; 40% signup; 262 demos; 20% sales; $299 purchase value; $15,667/month.","750 × 40% = <b>300 demos</b>.<br/>300 × 20% = 60 sales.<br/>60 × $299 = <b>$17,940</b>.<br/>12 identical months = $215,280."]]},
+        {"type":"section","title":"What the correction does not prove","body":"It does not validate the traffic assumptions, lead quality, conversion rates, margins or buying cycles. It only reconciles the numbers shown. Several other sample tables also contain totals or percentages that do not reconcile, so they are used as layout examples rather than reliable datasets."},
+        {"type":"section","title":"A better use for MediMind","body":"Start with actual account counts and observed bottlenecks. Then calculate a clearly labeled scenario for the next cohort, including engineering capacity and decision delays. Do not transplant ecommerce signup or demo rates into hospital sales."},
+        {"type":"text","body":"The corrected amounts are illustrative sales values under the deck's assumptions. They are not MediMind revenue, validated projections, MRR or ARR. Both original tables were visually checked, not inferred solely from automatic speech recognition."}
+      ]
+    },
+    {
+      "title": "The experiment board",
+      "subtitle": "Workshop structure | S3 shared spreadsheet | Practical adaptation below",
+      "blocks": [
+        {"type":"table","headers":["Field","What to enter"],"widths":[1.25,2.85],"rows":[["Name + hypothesis","A specific change and the expected observable result: if we do X for this group, Y should change because Z."],["Category + owner","The business area affected and one person responsible. The instructor says to skip category labels for now if the framework is unfamiliar."],["Impact / Cost / Ease","All use 1-10: 10 means highest expected impact, LOWEST cost, and easiest to implement. Cost and ease are different: something can be easy but expensive."],["Start + end dates","When work starts and when evidence will be reviewed. These dates are not proof that the whole sales cycle must finish."],["Status","The visible sheet distinguishes backlog, not started, in progress and done. A finished task still needs an outcome."],["Results + learnings","Counts and observations; interpretation; uncertainty; and the next decision. Do not write only 'worked' or 'failed'."]]},
+        {"type":"section","title":"Add two fields for a usable MediMind test","body":"<b>Success / stop rule:</b> decide what observation would justify continuing, changing or stopping before the result arrives.<br/><b>Resource cap:</b> founder time, engineering time and cash. Free for the hospital is not free for the team."},
+        {"type":"section","title":"Confirmed workshop formula","body":"<b>Score = Impact + Cost + Ease</b>, maximum 30. Nicholas explains the sum at S3 about 00:04; the visible examples reconcile: 10+10+10=30, 7+10+10=27, 4+9+9=22. Higher is more attractive. Use it to start the discussion, then check sequencing, urgency and constraints."},
+        {"type":"card","title":"One board, a small active list","body":"The lecturer recommends one shared board and roughly 5-7 top tests across the company for a 1-2-week cycle, with the rest in backlog. That is a focus guideline, not a quota. For MediMind's first sprint, two active commercial tests is a proposed lower capacity limit."}
+      ]
+    },
+    {
+      "title": "MediMind: the metric and its gates",
+      "subtitle": "Proposed application | Continues the Day 1/2 focus on hospitals beyond the anchor partner",
+      "blocks": [
+        {"type":"card","title":"One metric that matters now","body":"New non-anchor hospitals completing a defined parallel-system evaluation. Review progress weekly; report the rolling 28-day completion count. A reporting window is not a promised hospital sales-cycle length."},
+        {"type":"table","headers":["Milestone","Evidence needed"],"widths":[1.2,2.9],"rows":[["Qualified hospital","A confirmed relevant problem, fit, internal sponsor, realistic approval path and mutual next step."],["Evaluation ready","Scope, baseline, success criteria, reviewers, decision date and required data/security arrangements agreed. Access alone is insufficient."],["Parallel system delivered","The agreed environment is usable and the team has completed its readiness checks. This measures MediMind's delivery."],["Evaluation completed","Hospital reviewers tested the agreed workflow, compared the evidence and recorded an outcome: proceed, revise with conditions, or decline."],["Commercial conversion","A subsequent paid agreement or purchase decision. Do not count this as already achieved when an evaluation completes."]]},
+        {"type":"section","title":"Count once, preserve the decision","body":"Use one hospital account ID, exclude the anchor partner and deduplicate repeat demos. A review meeting without the agreed test does not count. Track successful/proceed outcomes separately so a rise in completed evaluations cannot hide a rise in rejections."},
+        {"type":"section","title":"Choose tests from the stalled step","body":"Few qualified conversations → test access to the right people.<br/>Conversations but no readiness → test the evaluation brief and stakeholder alignment.<br/>Delivered but not reviewed → test reviewer participation and the scheduled decision process."},
+        {"type":"text","body":"This is a near-term learning metric, not a permanent company North Star. Revisit it when the constraint shifts to paid conversion, rollout capacity, retention or another measured bottleneck."}
+      ]
+    },
+    {
+      "title": "MediMind's first experiment queue",
+      "subtitle": "Proposed tests, not observed results | Select based on the current stalled stage",
+      "blocks": [
+        {"type":"table","headers":["Priority / test","Hypothesis","Evidence and decision"],"widths":[1.2,1.9,1.65],"rows":[["<b>1. Relevant warm intro</b>","A trusted connector introducing a specific hospital problem creates more useful conversations than a general product introduction.","Ask 5 relevant connectors. Log introductions, held conversations and fit; inspect at day 7-14."],["<b>2. One-page evaluation brief</b>","A clear workflow, comparison and decision plan helps a qualified sponsor assemble the right reviewers.","Try with 3 qualified opportunities. Record objections, reviewer names and agreed next steps."],["<b>3. Review date before build</b>","Agreeing the review participants and date early reduces delivered systems that nobody evaluates.","Use on the next 2 eligible evaluations. Track attendance, test completion and reasons for delay."],["<b>4. Specific proof asset</b>","A short, permission-cleared workflow demonstration answers a recurring objection better than a broad feature pitch.","Use in the next 3 relevant conversations. Record which objection changed and what action followed."],["<b>5. Prerequisite checklist</b>","A joint checklist reduces waiting and prevents starting the delivery clock before the hospital is ready.","Track missing items and time from agreement to readiness; do not bypass security steps."],["<b>6. Value-comparison message</b>","A measurable before/after comparison motivates the appropriate buyer more than an abstract future-AI promise.","Ask buyers to explain the offer back. Observe progression, not only message preference."]]},
+        {"type":"card","title":"These sample sizes are learning batches","body":"Five introductions or three calls can reveal objections and feasibility. They cannot establish a reliable population conversion rate or prove one message wins statistically. Keep audience, channel and relationship context in the record."},
+        {"type":"text","body":"Priorities and batch sizes are proposals. If several hospitals are already waiting for delivery, fix that constraint before generating more demand. No outreach, test or customer commitment has been executed by creating this guide."}
+      ]
+    },
+    {
+      "title": "A test you can run next week",
+      "subtitle": "MediMind experiment brief | Recommended first candidate if qualified conversations are scarce",
+      "blocks": [
+        {"type":"card","title":"Can a problem-specific warm introduction open a real evaluation conversation?","body":"Hypothesis: asking trusted connectors about a specific, costly hospital workflow will lead to better-fit conversations than asking them to introduce us to 'any hospital CEO'."},
+        {"type":"table","headers":["Element","Proposed definition"],"widths":[1.1,3],"rows":[["Audience","Five relevant connectors with a credible relationship to hospitals in the serviceable market; do not include the anchor account."],["Change","One clear problem, a tangible parallel-comparison offer, and one small request for an introduction. No unsupported savings or clinical-outcome promises."],["Owner / cap","Founder or sales lead; proposed cap of 3 preparation/outreach hours. No speculative engineering build at this stage."],["Review","Day 7: inspect responses and obstacles. Day 14: decide using conversations held and qualification evidence, not just replies."],["Directional success","At least 2 relevant introductions and 1 held, qualified conversation would justify a second small batch. This threshold is a proposed learning rule, not a forecast."],["If inconclusive","If contacts are away or meetings are booked later, retain pending status. Do not convert lack of elapsed time into a failed hypothesis."],["Next decision","Repeat with similar connectors, revise the problem/ask, or test a different route. Document why."]]},
+        {"type":"section","title":"Draft request","body":"Hi [Name] - who at [Hospital] owns [specific workflow problem]? We can build a free parallel MediMind environment for their team to compare before any purchase commitment. If this is a current priority, would you be comfortable introducing us to the person responsible?"},
+        {"type":"text","body":"Use only a verified problem or phrase it as a question. Keep patient information out of outreach. The free evaluation still requires an agreed scope and appropriate data/security arrangements before delivery work begins."}
+      ]
+    },
+    {
+      "title": "Your one-page 28-day plan",
+      "subtitle": "Proposed working plan | Relative days start when the team adopts it; not a delivery guarantee",
+      "blocks": [
+        {"type":"card","title":"Outcome to work toward","body":"Provisional aim: 2 completed, non-anchor hospital evaluations in 28 days, only if current pipeline readiness and delivery capacity support it. On day 1, replace this with a feasible count based on actual account stages. If starting cold, use the month to establish qualified, evaluation-ready opportunities without pretending completion is assured."},
+        {"type":"table","headers":["When","Work and evidence","Proposed owner"],"widths":[0.8,2.65,1],"rows":[["Days 1-2","Review every current hospital; identify the most common stalled gate; confirm capacity and baseline; select up to two tests.","Founder + delivery lead"],["Days 3-7","Run a small introduction batch OR unblock existing qualified opportunities. Prepare the one-page evaluation brief and book the next step.","Founder / sales"],["Days 8-14","Inspect results. For suitable hospitals, agree reviewers, scope, prerequisites and review date. Start only work that is actually ready.","Sponsor + delivery lead"],["Days 15-21","Deliver within the agreed scope where feasible; support reviewers; compare against the baseline; record obstacles and effort.","Delivery + hospital reviewers"],["Days 22-28","Complete feasible reviews, record proceed/revise/decline outcomes, agree commercial next steps and choose the next bottleneck.","Founder + hospital sponsor"]]},
+        {"type":"section","title":"Three workstreams, deliberately unequal","body":"<b>Core operations:</b> qualification, readiness, delivery and review receive most attention.<br/><b>Supporting campaign:</b> one relevant proof asset reused in real conversations.<br/><b>Expansion:</b> keep ideas in the backlog; open a new market only with a clear reason and capacity."},
+        {"type":"section","title":"Commercial guardrail","body":"The price-match offer for the next 10 clients should only appear with verified eligibility, scope, duration and availability. Do not invent remaining places. Track free-evaluation effort and later paid conversion so volume does not hide an unsustainable offer."},
+        {"type":"text","body":"The user-proposed two-week parallel launch should be scoped from agreed readiness, not from a first introduction. The seven-day review rhythm tracks learning; it does not shorten hospital approvals by declaration."}
+      ]
+    },
+    {
+      "title": "A small dashboard that matters",
+      "subtitle": "MediMind application | One account record; matched stages; no invented current performance",
+      "blocks": [
+        {"type":"table","headers":["Measure","Definition / use"],"widths":[1.45,2.6],"rows":[["Primary result","Distinct non-anchor hospitals completing the defined evaluation in the last 28 days."],["Quality of result","Completed evaluations split into proceed, revise and decline; record the reason. Separately count signed paid agreements."],["Leading stages","Qualified conversations held, SQLs, evaluation-ready hospitals, delivered systems and booked review dates."],["Time in stage","Days since stage entry and median completed transition time. Show still-open cases separately."],["Resource cost","Founder + delivery hours per evaluation, direct cash cost and capacity committed. Report costs even before a sale closes."],["Learning discipline","Tests reviewed with evidence and an explicit next decision. A test-count target alone can reward meaningless activity."]]},
+        {"type":"section","title":"Illustrative cohort - not a forecast","body":"20 hospitals approached → 10 conversations held → 6 qualified → 3 evaluation-ready → 3 delivered → 2 evaluations completed → 1 paid agreement. This hypothetical cohort might take longer than a month; do not mix it with a calendar-month activity report."},
+        {"type":"section","title":"Read its denominators correctly","body":"Qualified from conversations: 6/10 = 60%.<br/>Ready from qualified: 3/6 = 50%.<br/>Completed from delivered: 2/3 = 66.7%.<br/>Paid from completed: 1/2 = 50%.<br/>Paid from approached: 1/20 = 5%. These are different questions, not conflicting conversion rates."},
+        {"type":"card","title":"Minimum tracking fields","body":"Hospital ID; source/connector; sponsor; confirmed problem; stage and entry date; next action and due date; scope/readiness status; review date; outcome; time/cost; reason stalled. Use named account records, not a spreadsheet of disconnected totals."}
+      ]
+    },
+    {
+      "title": "Make the review produce a decision",
+      "subtitle": "MediMind application | Proposed 25-minute weekly rhythm",
+      "blocks": [
+        {"type":"table","headers":["Time","Question","Output"],"widths":[0.7,2.15,1.5],"rows":[["5 min","What changed in the primary metric and account stages?","Actual counts; no activity-only victory lap."],["5 min","Which step is now blocking the most useful progress?","One current bottleneck, backed by account evidence."],["10 min","What happened in the active tests, and what can we infer?","Results, limitations and continue/change/stop decisions."],["5 min","What will we do before the next review?","One owner, next action, deadline and resource cap for each chosen test."]]},
+        {"type":"section","title":"After a win","body":"Ask what changed, for which hospital or audience, and what else might explain the outcome. Decide which element can be repeated. A win with one warm relationship does not validate cold outreach or a different market."},
+        {"type":"section","title":"After a loss","body":"Distinguish a weak hypothesis from poor execution, the wrong audience, inadequate elapsed time or missing prerequisites. Fix a test only when the evidence suggests what to change; do not keep extending it to avoid a decision."},
+        {"type":"section","title":"After an inconclusive result","body":"Record why it is inconclusive and what additional observation would resolve it. Choose a bounded extension or stop for now. 'Not enough information' is a valid result; false certainty is not."},
+        {"type":"card","title":"Reusable learning note","body":"We changed [X] for [audience]. We observed [counts and examples] over [period]. We think [explanation], but [uncertainty]. We will [decision] because [evidence]. Owner: [name]. Next review: [date]."}
+      ]
+    },
+    {
+      "title": "What to bring to the assignment",
+      "subtitle": "Original course instructions + supporting MediMind preparation",
+      "blocks": [
+        {"type":"table","headers":["Deliverable","A useful MediMind version"],"widths":[1.15,2.9],"rows":[["Experiment workshop","In the two-hour work block: populate the shared experiment sheet, discuss with the team, prioritize against the chosen metric and review the order with Nicholas before the session's sign-off."],["Experiment records","Hypothesis, owner, Impact/Cost/Ease score, dates and status. After running each test, record results and learning. Leave unstarted results blank."],["One-page plan","An outcome, funnel, few actions, responsibilities and deadlines; realistic about current pipeline and capacity."],["Supporting preparation","Use actual baseline counts where known, label unknowns and check the arithmetic. This guide supplies a proposed test queue and 28-day plan, not completed experiment results."],["Follow-through","A recurring review that turns evidence into the next decision. This makes the assignment an operating habit, not just a filled template."]]},
+        {"type":"section","title":"A 30-second explanation you can use","body":"Our current bottleneck is winning hospital evaluations beyond our anchor partner. We track completed, defined evaluations, while separating qualification, readiness, delivery and paid conversion. Our first tests target the step where hospitals actually stall. We review them weekly, record learning, and cap the cost of each free evaluation."},
+        {"type":"section","title":"Explicit strategy homework in the recording","body":"Prepare the October one-page strategy plan and submit it to the company/cohort channel so mentors can see it. Justyna asks for it by Monday, following the 30 September lecture (5 October 2026). That is the original course deadline, not a new deadline assigned by this guide. Repeat the planning habit for subsequent months. Source: S2 about 00:32 and 00:37."},
+        {"type":"card","title":"The answer to remember","body":"Growth work is not a pile of ideas. It is a disciplined sequence of small, affordable decisions connected to a measurable business result."}
+      ]
+    },
+    {
+      "title": "Sources and reliability",
+      "subtitle": "One consolidated day folder | Original recordings remain untouched",
+      "blocks": [
+        {"type":"section","title":"Recordings provided by you","body":"Folder: /Users/toko/Desktop/Recordings/week2day3<br/><b>S1:</b> GMT20260930-054641_Recording_1920x1080.mp4<br/><b>S2:</b> GMT20260930-081648_Recording_1920x1080.mp4<br/><b>S3:</b> GMT20260930-090559_Recording_1920x1080.mp4<br/>Combined duration: 3h 32m 45s. Each was processed locally with automatic speech recognition; the TXT/SRT/JSON versions retain finer timestamps."},
+        {"type":"section","title":"D1: experiments and performance","body":"Nicholas Ho, <i>Experiment Prioritization Framework &amp; Performance Tracking</i>, 24 displayed slides.<br/><link href='https://docs.google.com/presentation/d/17dia1mddW12ZsHPnkuj8GfmKteBOQyiU/edit' color='#24718a'>Open the source deck</link>. The duplicate link was counted once."},
+        {"type":"section","title":"D2: strategy and numbers","body":"Justyna Jastrzebska, <i>One Page Strategy Plan / Win the Numbers Game</i>, 19 displayed slides.<br/><link href='https://docs.google.com/presentation/d/1c-2VMzP3rwS1YVfdy_XuTUN7GhhEN-fKJAajqK4iB2s/edit' color='#24718a'>Open the source deck</link>. Its download/copy/print controls were disabled; no export restriction was bypassed. Links and original analysis are included instead of an unauthorized source copy."},
+        {"type":"section","title":"How the pack was checked","body":"All recordings are transcribed in full, then the learning guide is checked against the transcript and slides. Frames sampled every minute help map visible material to the recordings; these are navigation aids, not an exhaustive frame-by-frame visual review. Image-based tables were inspected directly where they affected the analysis."},
+        {"type":"section","title":"Limits that matter","body":"Automatic text is not a human-certified verbatim transcript. Names, accents and overlapping speech can be wrong. Classroom statistics and case outcomes are attributed examples. Medical anecdotes are not treatment evidence. MediMind experiments, numerical targets and resource limits are proposals, not observed performance or commitments."},
+        {"type":"text","body":"This is a private learning pack, not a public republication of the course. The study guide is a synthesis, not a replacement for source recordings when exact wording, context or speaker intent matters."}
+      ]
+    }
+  ]
+}

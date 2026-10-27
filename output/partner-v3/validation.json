@@ -1,0 +1,103 @@
+{
+  "layout_checks": [
+    {
+      "viewport": "1280x720",
+      "language": "ka",
+      "slides": 16,
+      "pass": true
+    },
+    {
+      "viewport": "1280x720",
+      "language": "en",
+      "slides": 16,
+      "pass": true
+    },
+    {
+      "viewport": "1280x720",
+      "language": "ru",
+      "slides": 16,
+      "pass": true
+    },
+    {
+      "viewport": "390x844",
+      "language": "ka",
+      "slides": 16,
+      "pass": true
+    },
+    {
+      "viewport": "390x844",
+      "language": "en",
+      "slides": 16,
+      "pass": true
+    },
+    {
+      "viewport": "390x844",
+      "language": "ru",
+      "slides": 16,
+      "pass": true
+    },
+    {
+      "viewport": "320x568",
+      "language": "ka",
+      "slides": 16,
+      "pass": true
+    },
+    {
+      "viewport": "768x1024",
+      "language": "ka",
+      "slides": 16,
+      "pass": true
+    },
+    {
+      "viewport": "1470x956",
+      "language": "ka",
+      "slides": 16,
+      "pass": true
+    }
+  ],
+  "functional_checks": {
+    "status": "PASS",
+    "checks": [
+      "Incorrect password keeps the existing gate closed",
+      "Correct password opens the proposal",
+      "Generic clinic placeholder is omitted",
+      "All language buttons update copy and PDF links without advancing slides",
+      "Arrow, Home and End navigation and boundary buttons work",
+      "Direct slide links and contact destinations are correct",
+      "Named hospital personalization works",
+      "Phone layout exposes all slides and translated comparison labels"
+    ],
+    "pageErrors": []
+  },
+  "pdf_checks": [
+    {
+      "language": "ka",
+      "page_count": 16,
+      "missing_copy": [],
+      "bytes": 4983710
+    },
+    {
+      "language": "en",
+      "page_count": 16,
+      "missing_copy": [],
+      "bytes": 4755041
+    },
+    {
+      "language": "ru",
+      "page_count": 16,
+      "missing_copy": [],
+      "bytes": 4803793
+    }
+  ],
+  "visual_review": "All 48 PDF pages inspected, plus desktop and phone views. Final Georgian product headline verified in regenerated PDF and at 320px.",
+  "publishing": "Local files only; no publish or push performed.",
+  "sha256": {
+    "public/partner.html": "929277fbaf02b7a8e3f94c45422e67a15749aed2ab8b5646c5c7f4c41b8fb926",
+    "public/partner.css": "514081528cf2eead49b3566f4e40baf596bc262c96253b208a9cfa76f0895666",
+    "public/partner.js": "b06e75f44074ad12d810e844855188680a627f34ad4d7c886e79bb1b7be2d1b5",
+    "public/partner-i18n.js": "cb7345a00d26057683aee8556a36e359550486609b9f689cd2f1124ffcee8063",
+    "public/share/medimind-partner-ka.pdf": "2f2b2701032216d4d72a4cc738447cdbbf3a22cc4423d038da4df4204074760b",
+    "public/share/medimind-partner-en.pdf": "b5260dad4496abc885fd3730b9fad4fb03b3d9a30c2c34def5914a95d46e0c5b",
+    "public/share/medimind-partner-ru.pdf": "16d648ccb15da8dcff12aa65aee80515b2361748b2aa62d9fd225266076a648d"
+  }
+}

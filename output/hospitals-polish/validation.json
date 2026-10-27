@@ -1,0 +1,40 @@
+{
+  "deck": "http://localhost:5173/hospitals.html?lang=ka",
+  "direction": "Polish of the original 17-slide Hospitals deck, preserving layouts, diagrams and media.",
+  "files": {
+    "public/hospitals.html": "d3ae082d7ad71653758120db00a22e2dee3221154ef2e9168a36a0f52d6a4706",
+    "public/deck-assets/hospitals-polish.css": "31236385da3dce26befe189fef0f41a6dd6b6ab7a56a1cb2350be594c27147f0",
+    "public/deck-assets/hospital-vision.png": "84729374547d0bd21fcdabb943eb95261f7bcd0bd1c62c5fc4b7e5994269f66b"
+  },
+  "preserved": {
+    "slides": 17,
+    "interactiveControls": 20,
+    "svgDiagramsAndIcons": 102
+  },
+  "sourceManifest": "../partner-v3/source-manifest.json",
+  "checkedViewports": [
+    "KA 1280x720",
+    "EN 1280x720",
+    "KA 390x844",
+    "KA 320x568",
+    "KA 768x1024"
+  ],
+  "browserErrors": [],
+  "geometryNotes": [
+    "Desktop board and phase-card scrollWidth signals originate only from decorative glow elements.",
+    "At 320px the orbital illustration has no foreground child outside its stage; the reported overflow is decorative.",
+    "The final narrow cover was rechecked separately after reducing its image height."
+  ],
+  "interactionChecks": [
+    "Password gate, shared Georgian link, both language buttons and keyboard navigation passed.",
+    "All seven original video demos opened and loaded without advancing the slide.",
+    "Embedded operating-system walkthrough loaded.",
+    "Clinical and business case pop-ups opened and closed on the correct slide.",
+    "Phone next/back controls and long-slide scrolling passed.",
+    {
+      "narrowOrbitOverflow": []
+    },
+    "No browser JavaScript errors."
+  ],
+  "publication": "Local files only; no deployment or push."
+}

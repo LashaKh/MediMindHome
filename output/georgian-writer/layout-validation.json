@@ -1,0 +1,481 @@
+{
+  "desktop": [
+    {
+      "clientWidth": 1280,
+      "heading": "",
+      "height": 720,
+      "id": "cover",
+      "overflowY": "hidden",
+      "scrollHeight": 1054,
+      "scrollWidth": 1334,
+      "viewport": "1280x720"
+    },
+    {
+      "clientWidth": 1280,
+      "heading": "გუნდი იღლება.\nკლინიკა ზარალდება.",
+      "height": 720,
+      "id": "hospital-reality",
+      "overflowY": "visible",
+      "scrollHeight": 720,
+      "scrollWidth": 1280,
+      "viewport": "1280x720"
+    },
+    {
+      "clientWidth": 1280,
+      "heading": "პრემიუმ კლასის სისტემა.\nთქვენი მიმდინარე ბიუჯეტით.",
+      "height": 720,
+      "id": "hospital-partnership",
+      "overflowY": "visible",
+      "scrollHeight": 720,
+      "scrollWidth": 1280,
+      "viewport": "1280x720"
+    },
+    {
+      "clientWidth": 1280,
+      "heading": "თქვენს კლინიკაზე მორგებული სისტემა.",
+      "height": 720,
+      "id": "hospital-comparison",
+      "overflowY": "visible",
+      "scrollHeight": 720,
+      "scrollWidth": 1280,
+      "viewport": "1280x720"
+    },
+    {
+      "clientWidth": 1280,
+      "heading": "25 კლინიკის ქსელმა\nერთიანი სისტემის შექმნა MediMind-ს მიანდო.",
+      "height": 720,
+      "id": "hospital-proof",
+      "overflowY": "visible",
+      "scrollHeight": 720,
+      "scrollWidth": 1280,
+      "viewport": "1280x720"
+    },
+    {
+      "clientWidth": 1280,
+      "heading": "კლინიკური გამოცდილება. საერთაშორისო ტექნოლოგიური ცოდნა.",
+      "height": 720,
+      "id": "hospital-founders",
+      "overflowY": "visible",
+      "scrollHeight": 720,
+      "scrollWidth": 1280,
+      "viewport": "1280x720"
+    },
+    {
+      "clientWidth": 1280,
+      "heading": "კლინიკის ყველა პროგრამა.\n\nერთი პასუხისმგებელი გუნდი.",
+      "height": 720,
+      "id": "hospital-one-team",
+      "overflowY": "visible",
+      "scrollHeight": 720,
+      "scrollWidth": 1280,
+      "viewport": "1280x720"
+    },
+    {
+      "clientWidth": 1280,
+      "heading": "მეტი შემოსავალი. ხარჯების კონტროლი.\nმეტი დრო პაციენტისთვის.",
+      "height": 720,
+      "id": "hospital-ai-assistants",
+      "overflowY": "visible",
+      "scrollHeight": 721,
+      "scrollWidth": 1280,
+      "viewport": "1280x720"
+    },
+    {
+      "clientWidth": 1280,
+      "heading": "დანერგვა —\nმუშაობის შეწყვეტის გარეშე.",
+      "height": 720,
+      "id": "hospital-parallel-evaluation",
+      "overflowY": "visible",
+      "scrollHeight": 720,
+      "scrollWidth": 1280,
+      "viewport": "1280x720"
+    },
+    {
+      "clientWidth": 1280,
+      "heading": "სრული სისტემა დღეს. AI — ეტაპობრივად.",
+      "height": 720,
+      "id": "hospital-ai-path",
+      "overflowY": "visible",
+      "scrollHeight": 720,
+      "scrollWidth": 1280,
+      "viewport": "1280x720"
+    },
+    {
+      "clientWidth": 1280,
+      "heading": "ჩვენი მოდულები. რას აკეთებს თითოეული.",
+      "height": 720,
+      "id": "eco-slide",
+      "overflowY": "visible",
+      "scrollHeight": 720,
+      "scrollWidth": 1280,
+      "viewport": "1280x720"
+    },
+    {
+      "clientWidth": 1280,
+      "heading": "შევხვდეთ\n30 წუთით.",
+      "height": 720,
+      "id": "hospital-meeting",
+      "overflowY": "hidden",
+      "scrollHeight": 720,
+      "scrollWidth": 1280,
+      "viewport": "1280x720"
+    },
+    {
+      "clientWidth": 1280,
+      "heading": "გმადლობთ.",
+      "height": 720,
+      "id": "divider-slide",
+      "overflowY": "hidden",
+      "scrollHeight": 720,
+      "scrollWidth": 1280,
+      "viewport": "1280x720"
+    },
+    {
+      "clientWidth": 1280,
+      "heading": "",
+      "height": 720,
+      "id": "tour-slide",
+      "overflowY": "hidden",
+      "scrollHeight": 720,
+      "scrollWidth": 1280,
+      "viewport": "1280x720"
+    },
+    {
+      "clientWidth": 1280,
+      "heading": "რისკის აღმოჩენიდან — მოქმედებამდე.",
+      "height": 720,
+      "id": "hospital-brain-demo",
+      "overflowY": "hidden",
+      "scrollHeight": 720,
+      "scrollWidth": 1280,
+      "viewport": "1280x720"
+    },
+    {
+      "clientWidth": 1280,
+      "heading": "თქვენს გეგმებს პროგრამა არ უნდა ზღუდავდეს.",
+      "height": 720,
+      "id": "hospital-development",
+      "overflowY": "visible",
+      "scrollHeight": 720,
+      "scrollWidth": 1280,
+      "viewport": "1280x720"
+    },
+    {
+      "clientWidth": 1280,
+      "heading": "პრეზენტაციის წყაროები",
+      "height": 720,
+      "id": "hospital-sources",
+      "overflowY": "visible",
+      "scrollHeight": 720,
+      "scrollWidth": 1280,
+      "viewport": "1280x720"
+    }
+  ],
+  "mobile390": [
+    {
+      "height": 844,
+      "id": "cover",
+      "overflowY": "auto",
+      "scrollHeight": 844,
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "height": 844,
+      "id": "hospital-reality",
+      "overflowY": "auto",
+      "scrollHeight": 1401,
+      "scrollWidth": 390,
+      "width": 390,
+      "actualScrollTop": 557.5
+    },
+    {
+      "height": 844,
+      "id": "hospital-partnership",
+      "overflowY": "auto",
+      "scrollHeight": 1320,
+      "scrollWidth": 390,
+      "width": 390,
+      "actualScrollTop": 476
+    },
+    {
+      "height": 844,
+      "id": "hospital-comparison",
+      "overflowY": "auto",
+      "scrollHeight": 2038,
+      "scrollWidth": 390,
+      "width": 390,
+      "actualScrollTop": 1194
+    },
+    {
+      "height": 844,
+      "id": "hospital-proof",
+      "overflowY": "auto",
+      "scrollHeight": 1043,
+      "scrollWidth": 390,
+      "width": 390,
+      "actualScrollTop": 199
+    },
+    {
+      "height": 844,
+      "id": "hospital-founders",
+      "overflowY": "auto",
+      "scrollHeight": 1259,
+      "scrollWidth": 390,
+      "width": 390,
+      "actualScrollTop": 415
+    },
+    {
+      "height": 844,
+      "id": "hospital-one-team",
+      "overflowY": "auto",
+      "scrollHeight": 1349,
+      "scrollWidth": 390,
+      "width": 390,
+      "actualScrollTop": 505
+    },
+    {
+      "height": 844,
+      "id": "hospital-ai-assistants",
+      "overflowY": "auto",
+      "scrollHeight": 2281,
+      "scrollWidth": 390,
+      "width": 390,
+      "actualScrollTop": 1437
+    },
+    {
+      "height": 844,
+      "id": "hospital-parallel-evaluation",
+      "overflowY": "auto",
+      "scrollHeight": 1148,
+      "scrollWidth": 390,
+      "width": 390,
+      "actualScrollTop": 304
+    },
+    {
+      "height": 844,
+      "id": "hospital-ai-path",
+      "overflowY": "auto",
+      "scrollHeight": 1621,
+      "scrollWidth": 390,
+      "width": 390,
+      "actualScrollTop": 777
+    },
+    {
+      "height": 844,
+      "id": "eco-slide",
+      "overflowY": "auto",
+      "scrollHeight": 1180,
+      "scrollWidth": 390,
+      "width": 390,
+      "actualScrollTop": 336.5
+    },
+    {
+      "height": 844,
+      "id": "hospital-meeting",
+      "overflowY": "auto",
+      "scrollHeight": 975,
+      "scrollWidth": 390,
+      "width": 390,
+      "actualScrollTop": 130.5
+    },
+    {
+      "height": 844,
+      "id": "divider-slide",
+      "overflowY": "auto",
+      "scrollHeight": 844,
+      "scrollWidth": 391,
+      "width": 390
+    },
+    {
+      "height": 844,
+      "id": "tour-slide",
+      "overflowY": "auto",
+      "scrollHeight": 900,
+      "scrollWidth": 390,
+      "width": 390,
+      "actualScrollTop": 56
+    },
+    {
+      "height": 844,
+      "id": "hospital-brain-demo",
+      "overflowY": "auto",
+      "scrollHeight": 1154,
+      "scrollWidth": 390,
+      "width": 390,
+      "actualScrollTop": 310.5
+    },
+    {
+      "height": 844,
+      "id": "hospital-development",
+      "overflowY": "auto",
+      "scrollHeight": 1206,
+      "scrollWidth": 390,
+      "width": 390,
+      "actualScrollTop": 362.5
+    },
+    {
+      "height": 844,
+      "id": "hospital-sources",
+      "overflowY": "auto",
+      "scrollHeight": 2087,
+      "scrollWidth": 390,
+      "width": 390,
+      "actualScrollTop": 1243
+    }
+  ],
+  "mobile320": [
+    {
+      "height": 568,
+      "id": "cover",
+      "overflowY": "auto",
+      "scrollHeight": 568,
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "height": 568,
+      "id": "hospital-reality",
+      "overflowY": "auto",
+      "scrollHeight": 1458,
+      "scrollWidth": 320,
+      "width": 320,
+      "actualScrollTop": 890
+    },
+    {
+      "height": 568,
+      "id": "hospital-partnership",
+      "overflowY": "auto",
+      "scrollHeight": 1425,
+      "scrollWidth": 320,
+      "width": 320,
+      "actualScrollTop": 857
+    },
+    {
+      "height": 568,
+      "id": "hospital-comparison",
+      "overflowY": "auto",
+      "scrollHeight": 2322,
+      "scrollWidth": 320,
+      "width": 320,
+      "actualScrollTop": 1754.5
+    },
+    {
+      "height": 568,
+      "id": "hospital-proof",
+      "overflowY": "auto",
+      "scrollHeight": 1133,
+      "scrollWidth": 320,
+      "width": 320,
+      "actualScrollTop": 564.5
+    },
+    {
+      "height": 568,
+      "id": "hospital-founders",
+      "overflowY": "auto",
+      "scrollHeight": 1317,
+      "scrollWidth": 320,
+      "width": 320,
+      "actualScrollTop": 748.5
+    },
+    {
+      "height": 568,
+      "id": "hospital-one-team",
+      "overflowY": "auto",
+      "scrollHeight": 1401,
+      "scrollWidth": 320,
+      "width": 320,
+      "actualScrollTop": 833
+    },
+    {
+      "height": 568,
+      "id": "hospital-ai-assistants",
+      "overflowY": "auto",
+      "scrollHeight": 2442,
+      "scrollWidth": 320,
+      "width": 320,
+      "actualScrollTop": 1874
+    },
+    {
+      "height": 568,
+      "id": "hospital-parallel-evaluation",
+      "overflowY": "auto",
+      "scrollHeight": 1222,
+      "scrollWidth": 320,
+      "width": 320,
+      "actualScrollTop": 654
+    },
+    {
+      "height": 568,
+      "id": "hospital-ai-path",
+      "overflowY": "auto",
+      "scrollHeight": 1692,
+      "scrollWidth": 320,
+      "width": 320,
+      "actualScrollTop": 1124.5
+    },
+    {
+      "height": 568,
+      "id": "eco-slide",
+      "overflowY": "auto",
+      "scrollHeight": 1249,
+      "scrollWidth": 320,
+      "width": 320,
+      "actualScrollTop": 681.5
+    },
+    {
+      "height": 568,
+      "id": "hospital-meeting",
+      "overflowY": "auto",
+      "scrollHeight": 1049,
+      "scrollWidth": 320,
+      "width": 320,
+      "actualScrollTop": 481
+    },
+    {
+      "height": 568,
+      "id": "divider-slide",
+      "overflowY": "auto",
+      "scrollHeight": 689,
+      "scrollWidth": 321,
+      "width": 320,
+      "actualScrollTop": 121.5
+    },
+    {
+      "height": 568,
+      "id": "tour-slide",
+      "overflowY": "auto",
+      "scrollHeight": 900,
+      "scrollWidth": 320,
+      "width": 320,
+      "actualScrollTop": 332
+    },
+    {
+      "height": 568,
+      "id": "hospital-brain-demo",
+      "overflowY": "auto",
+      "scrollHeight": 1223,
+      "scrollWidth": 320,
+      "width": 320,
+      "actualScrollTop": 655
+    },
+    {
+      "height": 568,
+      "id": "hospital-development",
+      "overflowY": "auto",
+      "scrollHeight": 1182,
+      "scrollWidth": 320,
+      "width": 320,
+      "actualScrollTop": 614.5
+    },
+    {
+      "height": 568,
+      "id": "hospital-sources",
+      "overflowY": "auto",
+      "scrollHeight": 2320,
+      "scrollWidth": 320,
+      "width": 320,
+      "actualScrollTop": 1752
+    }
+  ]
+}

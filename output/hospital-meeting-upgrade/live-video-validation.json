@@ -1,0 +1,21 @@
+{
+  "browser": "Codex In-app Browser 3",
+  "viewports": [
+    "1280x720",
+    "390x844",
+    "320x568"
+  ],
+  "actualInlineCalendarLoaded": true,
+  "weekendSlotsVisible": true,
+  "formInspected": true,
+  "formFields": [
+    "First name",
+    "Last name",
+    "Email address",
+    "Hospital name"
+  ],
+  "submittedBooking": false,
+  "inPersonMode": "email fallback pending verified URL",
+  "smallPhoneLayout": "full-screen dialog",
+  "deckUrl": "http://localhost:5173/hospitals.html?lang=ka#/hospital-meeting"
+}

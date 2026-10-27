@@ -1,0 +1,142 @@
+[
+  {
+    "lang": "ka",
+    "width": 390,
+    "height": 844,
+    "errors": [],
+    "clipped": [],
+    "overflow": [],
+    "overlaps": [],
+    "assurances": [
+      {
+        "bottom": 1143.734375,
+        "textBottom": 1120.734375
+      },
+      {
+        "bottom": 1318.109375,
+        "textBottom": 1295.109375
+      },
+      {
+        "bottom": 1515.671875,
+        "textBottom": 1492.671875
+      }
+    ],
+    "scrollHeight": 1698,
+    "clientHeight": 844,
+    "text": "მომდევნო 5 პარტნიორი კლინიკისთვის\nმთელი კლინიკა. ერთი სისტემა.\n\nერთიანი ოპერაციული სისტემა. ერთიანი პროგრამული კოდი.\n\nკლინიკური საქმიანობა\nEMR\nლაბორატორია\nLIS\nრადიოლოგია\nPACS\nბილინგი\nპერსონალის მართვა\nHR\nაფთიაქი\nსაწყობი და მარაგები\nანალიტიკა\nშეუზღუდავი მოთხოვნები\nთქვენ ითხოვთ.\nჩვენ ვქმნით.\n\nმოითხოვეთ იმდენი ახალი ფუნქცია და ცვლილება, რამდენიც თქვენს კლინიკას სჭირდება. სისტემას თქვენზე ვარგებთ.\n\nმოთხოვნილ ფუნქციებს დამატებითი საფასურის გარეშე ვქმნით — მთელი თანამშრომლობის განმავლობაში.\n\nუფასო დანერგვა\nდა სწავლება\n\nსისტემას ვაყენებთ, ვაწყობთ და თქვენს გუნდს მუშაობას ვასწავლით.\n\nჯერ გამოცადეთ.\nშემდეგ გადაწყვიტეთ.\n\nგამოცდა უფასოა. მოქმედი სისტემა რჩება. გადასვლას თქვენ წყვეტთ.\n\nპირველი ვერსიის\nკოდი თქვენია.\n\nჩაბარებული საბაზისო ვერსიის საწყისი კოდი ხელშეკრულებით თქვენ გეკუთვნით.\n\nყველაფერი — თქვენი მიმდინარე პროგრამის ბიუჯეტით.",
+    "total": 18,
+    "language": "ka",
+    "sequence": [
+      "cover past has-dark-background",
+      "hospital-reality",
+      "gw-slide hxr-slide hxr3-slide past",
+      "hospital-partnership",
+      "gw-slide hxs-slide future"
+    ]
+  },
+  {
+    "lang": "en",
+    "width": 390,
+    "height": 844,
+    "errors": [],
+    "clipped": [],
+    "overflow": [],
+    "overlaps": [],
+    "assurances": [
+      {
+        "bottom": 1021.140625,
+        "textBottom": 998.140625
+      },
+      {
+        "bottom": 1195.515625,
+        "textBottom": 1172.515625
+      },
+      {
+        "bottom": 1369.890625,
+        "textBottom": 1346.890625
+      }
+    ],
+    "scrollHeight": 1521,
+    "clientHeight": 844,
+    "text": "FOR OUR NEXT 5 HOSPITAL PARTNERS\nThe whole hospital. One system.\n\nOne hospital operating system. One codebase.\n\nClinical care\nEMR\nLaboratory\nLIS\nImaging\nPACS\nBilling\nStaff management\nHR\nPharmacy\nInventory & warehouse\nAnalytics\nUNLIMITED FEATURE REQUESTS\nYou ask.\nWe build.\n\nRequest as many features and changes as your hospital needs. We tailor the system to the way you work.\n\nWe build them at no additional charge,\nfor as long as you remain our client.\n\nFree implementation\nand training\n\nWe install and configure the system, and train your team.\n\nEvaluate first.\nThen decide.\n\nEvaluate free alongside your current system. You decide when to switch.\n\nThe first version’s\nsource code is yours.\n\nYou own the first delivered base-system source code, under your contract.\n\nAll at your current software budget.",
+    "total": 18,
+    "language": "en",
+    "sequence": [
+      "cover past has-dark-background",
+      "hospital-reality",
+      "gw-slide hxr-slide hxr3-slide past",
+      "hospital-partnership",
+      "gw-slide hxs-slide future"
+    ]
+  },
+  {
+    "lang": "ka",
+    "width": 320,
+    "height": 568,
+    "errors": [],
+    "clipped": [],
+    "overflow": [],
+    "overlaps": [],
+    "assurances": [
+      {
+        "bottom": 1194.015625,
+        "textBottom": 1171.015625
+      },
+      {
+        "bottom": 1418.578125,
+        "textBottom": 1395.578125
+      },
+      {
+        "bottom": 1639.328125,
+        "textBottom": 1616.328125
+      }
+    ],
+    "scrollHeight": 1822,
+    "clientHeight": 568,
+    "text": "მომდევნო 5 პარტნიორი კლინიკისთვის\nმთელი კლინიკა. ერთი სისტემა.\n\nერთიანი ოპერაციული სისტემა. ერთიანი პროგრამული კოდი.\n\nკლინიკური საქმიანობა\nEMR\nლაბორატორია\nLIS\nრადიოლოგია\nPACS\nბილინგი\nპერსონალის მართვა\nHR\nაფთიაქი\nსაწყობი და მარაგები\nანალიტიკა\nშეუზღუდავი მოთხოვნები\nთქვენ ითხოვთ.\nჩვენ ვქმნით.\n\nმოითხოვეთ იმდენი ახალი ფუნქცია და ცვლილება, რამდენიც თქვენს კლინიკას სჭირდება. სისტემას თქვენზე ვარგებთ.\n\nმოთხოვნილ ფუნქციებს დამატებითი საფასურის გარეშე ვქმნით — მთელი თანამშრომლობის განმავლობაში.\n\nუფასო დანერგვა\nდა სწავლება\n\nსისტემას ვაყენებთ, ვაწყობთ და თქვენს გუნდს მუშაობას ვასწავლით.\n\nჯერ გამოცადეთ.\nშემდეგ გადაწყვიტეთ.\n\nგამოცდა უფასოა. მოქმედი სისტემა რჩება. გადასვლას თქვენ წყვეტთ.\n\nპირველი ვერსიის\nკოდი თქვენია.\n\nჩაბარებული საბაზისო ვერსიის საწყისი კოდი ხელშეკრულებით თქვენ გეკუთვნით.\n\nყველაფერი — თქვენი მიმდინარე პროგრამის ბიუჯეტით.",
+    "total": 18,
+    "language": "ka",
+    "sequence": [
+      "cover past has-dark-background",
+      "hospital-reality",
+      "gw-slide hxr-slide hxr3-slide past",
+      "hospital-partnership",
+      "gw-slide hxs-slide future"
+    ]
+  },
+  {
+    "lang": "ka",
+    "width": 768,
+    "height": 1024,
+    "errors": [],
+    "clipped": [],
+    "overflow": [],
+    "overlaps": [],
+    "assurances": [
+      {
+        "bottom": 876.25,
+        "textBottom": 853.25
+      },
+      {
+        "bottom": 1027.4375,
+        "textBottom": 1004.4375
+      },
+      {
+        "bottom": 1178.625,
+        "textBottom": 1155.625
+      }
+    ],
+    "scrollHeight": 1299,
+    "clientHeight": 1024,
+    "text": "მომდევნო 5 პარტნიორი კლინიკისთვის\nმთელი კლინიკა. ერთი სისტემა.\n\nერთიანი ოპერაციული სისტემა. ერთიანი პროგრამული კოდი.\n\nკლინიკური საქმიანობა\nEMR\nლაბორატორია\nLIS\nრადიოლოგია\nPACS\nბილინგი\nპერსონალის მართვა\nHR\nაფთიაქი\nსაწყობი და მარაგები\nანალიტიკა\nშეუზღუდავი მოთხოვნები\nთქვენ ითხოვთ.\nჩვენ ვქმნით.\n\nმოითხოვეთ იმდენი ახალი ფუნქცია და ცვლილება, რამდენიც თქვენს კლინიკას სჭირდება. სისტემას თქვენზე ვარგებთ.\n\nმოთხოვნილ ფუნქციებს დამატებითი საფასურის გარეშე ვქმნით — მთელი თანამშრომლობის განმავლობაში.\n\nუფასო დანერგვა\nდა სწავლება\n\nსისტემას ვაყენებთ, ვაწყობთ და თქვენს გუნდს მუშაობას ვასწავლით.\n\nჯერ გამოცადეთ.\nშემდეგ გადაწყვიტეთ.\n\nგამოცდა უფასოა. მოქმედი სისტემა რჩება. გადასვლას თქვენ წყვეტთ.\n\nპირველი ვერსიის\nკოდი თქვენია.\n\nჩაბარებული საბაზისო ვერსიის საწყისი კოდი ხელშეკრულებით თქვენ გეკუთვნით.\n\nყველაფერი — თქვენი მიმდინარე პროგრამის ბიუჯეტით.",
+    "total": 18,
+    "language": "ka",
+    "sequence": [
+      "cover past has-dark-background",
+      "hospital-reality",
+      "gw-slide hxr-slide hxr3-slide past",
+      "hospital-partnership",
+      "gw-slide hxs-slide future"
+    ]
+  }
+]

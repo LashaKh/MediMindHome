@@ -1,0 +1,173 @@
+{
+  "lang": "en",
+  "width": 1280,
+  "height": 720,
+  "total": 18,
+  "errors": [],
+  "slides": [
+    {
+      "slide": 1,
+      "classes": "cover has-dark-background present",
+      "text": "ENG\nქარ\nHOSPITAL OPERATING SYSTEM\nLess repeat work.\nMore time for patients.\nClinical care, laboratory and billing in one hospital operating system, tailored to the way your teams work.",
+      "overflow": [],
+      "clipped": [],
+      "scrollHeight": 1010,
+      "clientHeight": 720
+    },
+    {
+      "slide": 2,
+      "classes": "gw-slide hjb-problems present",
+      "text": "01\nTHE HOSPITAL’S DAILY WORK\nWhen software is separate, staff do the connecting.\n\nFor hospitals managing clinical care, diagnostics and billing in separate programs.\n\n01\nInformation\nOne patient. Several programs.\n\nThe history is in one place, results in another. Staff search and cross-check before they can act.\n\nTime spent finding the full picture.\n02\nStaff time\nThe same details, entered again.\n\nRegistration, test orders and billing ask staff to type the same patient details more than once.\n\nMore entry. More checking and correction.\n03\nControl\nOne change. Several suppliers.\n\nA department needs a new form. Your team coordinates suppliers, quotes and support requests.\n\nStaff adapt their work to the software.\nThe extra work sits between departments — where a patient’s information has to be passed on.\nmedimind.md",
+      "overflow": [],
+      "clipped": [],
+      "scrollHeight": 720,
+      "clientHeight": 720
+    },
+    {
+      "slide": 3,
+      "classes": "gw-slide hxr-slide hxr3-slide hjb-comparison present",
+      "text": "02\nWHAT CHANGES\nThe same daily work. Fewer handoffs.\n\nThree changes your clinical, administrative and IT teams can evaluate together.\n\nWORKING ACROSS SEPARATE PROGRAMS\nVS\nMEDIMIND\nStaff search across clinical, lab and billing programs to assemble the patient’s information.\nINFORMATION\nThe same patient information for each team.\nClinical care, results and recorded services in one system.\nThe same patient details are entered again at registration, ordering and billing.\nSTAFF TIME\nEnter details once, reuse them.\nInformation follows the patient through the agreed process.\nYour team coordinates separate suppliers for changes, training and support.\nCONTROL\nOne team takes responsibility.\nWe implement, train and adapt the agreed base system to staff needs.\nLess searching. Less retyping. One accountable team.\nmedimind.md",
+      "overflow": [
+        "hxr3-board"
+      ],
+      "clipped": [],
+      "scrollHeight": 720,
+      "clientHeight": 720
+    },
+    {
+      "slide": 4,
+      "classes": "gw-slide hjb-scope present",
+      "text": "03\nWHAT YOUR TEAM CAN USE\nThe hospital work included today.\n\nOne operating system for clinical care, diagnostics and administration. We agree your exact scope before rollout.\n\n01\nClinical teams\nFrom registration to treatment\nPatient registration and visit history\nDoctor’s notes, forms and orders\nResults available in the patient’s chart\n02\nDiagnostics\nOrders, results and images\nLaboratory orders and result management\nMedical-image storage and viewing\nInformation shared with the treating team\n03\nAdministration\nFrom service to billing\nRecord the services delivered\nPrepare billing and required documents\nReview activity and operational reports\nUseful on its own. AI services are a separate choice, with their own scope and price.\nmedimind.md",
+      "overflow": [],
+      "clipped": [],
+      "scrollHeight": 720,
+      "clientHeight": 720
+    },
+    {
+      "slide": 5,
+      "classes": "gw-slide hxp-slide present",
+      "text": "04\nPROOF · ALREADY LIVE\nAlready in use. Speak to the hospital team.\n\nCentral hospital live. Network rollout in stages.\n\nGEORGIA\nTbilisi\nKutaisi\nBatumi\n25\nnetwork\nhospitals\nSIGNED & VERIFIABLE\n25\nHospitals — one signed contract\nOne agreement covers 25 hospitals. Central hospital live; rollout continues in stages.\n1.15M\nJULY 2026\nPatient records migrated\n1,147,535 records migrated in July 2026\nHear from the team using it. We can arrange the conversation.\nInnovative Startup\nGITA ₾150K grant received\nFHIR R4 standard\nmedimind.md",
+      "overflow": [],
+      "clipped": [],
+      "scrollHeight": 720,
+      "clientHeight": 720
+    },
+    {
+      "slide": 6,
+      "classes": "bm-slide hx-offer present",
+      "text": "05\nTHE OFFER\nYour current software budget.\nImplementation included.\n\nFor the agreed base system. AI services, hardware and third-party costs are agreed separately.\n\nYOUR PRICE\nSame monthly software spend\n\nWe review your current software costs and agree which services the matched price covers.\n\nThe scope and price are written down before you decide.\n\n=\nTHE SAME MONTHLY SPEND\nINCLUDED FOR OUR NEXT 5 PARTNERS\nClinical care · Lab · Imaging · Administration\nONE HOSPITAL OPERATING SYSTEM\nFree setup, data migration and key-user training\nDevelopment, updates and support within the agreed base scope\nFree parallel evaluation before a purchase decision\nYour first delivered base source code belongs to the hospital, under contract\nYou ask\nWe build\nYOUR TEAM’S FEEDBACK SHAPES THE SYSTEM\n\nShow us what slows your staff down. We agree the changes within the included scope. Our TAVI planner began with a hospital request.\n\nWatch it run\nmedimind.md",
+      "overflow": [],
+      "clipped": [],
+      "scrollHeight": 720,
+      "clientHeight": 720
+    },
+    {
+      "slide": 7,
+      "classes": "gw-slide hjb-evaluation present",
+      "text": "06\nFREE PARALLEL EVALUATION\nOne process. Three agreed measures.\n\nYour current system stays in use. We agree the cases, targets and review date before starting.\n\nWhat we measure\tThe same measure in both systems\nStaff time\tMinutes to complete the same agreed task\nRepeated entry\tPatient fields typed again per case\nBilling completeness\tDelivered services missing from the bill\nAgree the sample + targetsRun the same processReview together, then decide\nYour numbers, your value. Cases per month × minutes saved per case ÷ 60 = staff hours saved.\nmedimind.md",
+      "overflow": [],
+      "clipped": [],
+      "scrollHeight": 720,
+      "clientHeight": 720
+    },
+    {
+      "slide": 8,
+      "classes": "hc-dark hc-close present",
+      "text": "07\nTHE INVITATION\nLet’s meet for 30 minutes.\n\nYour director and process lead, with the MediMind founders. At your hospital or online.\n\nLeave knowing what would change — and how to test it.\n\nBring one process that costs your team time. We’ll work through it together.\n\n1\nMap the work and where time is lost\n→\n2\nSee the relevant part of MediMind\n→\n3\nDefine a comparison your team can trust\n\nReply to the person who sent this deck with two times that work for you.",
+      "overflow": [],
+      "clipped": [],
+      "scrollHeight": 720,
+      "clientHeight": 720
+    },
+    {
+      "slide": 9,
+      "classes": "divider-slide divider-thanks present",
+      "text": "APPENDIX\nExplore the details.\nCHOOSE WHAT MATTERS TO YOUR TEAM\nPartner terms\nData & continuity\nThe team\nProduct demos\nAI options & future vision\nLive walkthrough\nArchitecture\n→\nmedimind.md",
+      "overflow": [],
+      "clipped": [],
+      "scrollHeight": 720,
+      "clientHeight": 720
+    },
+    {
+      "slide": 10,
+      "classes": "gw-slide hxd-slide present",
+      "text": "A1\nTHE PROMISE\nFor our next 5 hospital partners.\nEverything your hospital needs.\nOne hospital operating system — at your current software spend.\nEMR\nLAB\nPACS\n01\nFree deployment\n\nWe install, configure and train your key users on-site — the rollout costs you nothing.\n\n02\nFree, tailored development\n\nWe adapt the base system to your workflows and keep developing it — at no extra charge.\n\n03\nSource-code ownership\n\nYou own the first delivered base-system source code, under your contract.\n\n04\nFree parallel evaluation. Switch when ready.\n\nCompare both systems while your current one stays in use. Switch when your team accepts the result.\n\n05\nReady for what comes next\n\nOne shared system today. A foundation for the AI capabilities you choose tomorrow.\n\nCapacity is allocated. Evaluate first. Decide after.\nmedimind.md",
+      "overflow": [],
+      "clipped": [],
+      "scrollHeight": 720,
+      "clientHeight": 720
+    },
+    {
+      "slide": 11,
+      "classes": "gw-slide hxg-slide present",
+      "text": "A2\nIN WRITING\nKeep control if your supplier changes.\n\nData, source-code rights and service terms, agreed in writing.\n\nTAKE YOUR DATA WITH YOU\n\nYour data uses the international FHIR R4 health-data standard. Export arrangements are agreed before rollout.\n\nKEEP THE FIRST SYSTEM WE DELIVER\n\nThe first delivered agreed base-system source code belongs to your hospital under the contract.\n\nSUPPORT + PRICE TERMS\n\nSupport, service levels, form updates and any price-lock term are defined in your agreement.\n\nYour data and your first source-code version. Under your control.\nmedimind.md",
+      "overflow": [],
+      "clipped": [],
+      "scrollHeight": 720,
+      "clientHeight": 720
+    },
+    {
+      "slide": 12,
+      "classes": "gw-slide hxw-slide present",
+      "text": "A3\nWHO WE ARE\nDoctors, building for doctors.\n\nA team for implementation, training and development around your hospital.\n\nDr. Lasha Khoshtaria\nFOUNDER · PHYSICIAN\n01\nPhysician-founded\n\nBuilt at the bedside — the system a doctor wished he had on the night shift.\n\n02\nCo-founder · Product\n\nIrakli Pkhovelishvili — nine years at Riot Games. Duke MBA.\n\n03\nOne team, one codebase\n\nClinical and engineering experience. One team for implementation and support.\n\n04\nBacking & experience\n\n500 Global Eurasia accelerator. GITA ₾150K grant received.\n\n“\n\nNot foreign software parachuted into Georgia — built here, in your language, for your wards, by your colleagues.\n\nmedimind.md",
+      "overflow": [],
+      "clipped": [],
+      "scrollHeight": 720,
+      "clientHeight": 720
+    },
+    {
+      "slide": 13,
+      "classes": "gw-slide hxm-slide present",
+      "text": "A4\nTHE COST OF SEPARATION\nSeparate systems. Your team connects them.\n\nRepeated entry. Separate bills. Time spent reconciling information.\n\nAN ILLUSTRATIVE FRAGMENTED SETUP\nEMR\nseparate system\nLab system\nseparate vendor\nImaging\nseparate vendor\nBilling & forms\npaid change requests\nnothing talks to anything\nBECOMES\nWHAT WE HAND YOU INSTEAD\nEMR\nPACS\nLab\nPortal\nMediMind OS\nOne clinical core · ready for future AI\nOne shared foundation. Less work between systems.\nmedimind.md",
+      "overflow": [],
+      "clipped": [],
+      "scrollHeight": 720,
+      "clientHeight": 720
+    },
+    {
+      "slide": 14,
+      "classes": "eco-slide present",
+      "text": "A5\nTHE OPERATING SYSTEM\nPRODUCT DEMOS\nSee the products your team can evaluate.\n\nOpen a demo. Each product shows its availability; the delivered scope is agreed separately.\n\nMediMind OS\nThe hospital operating system\nLIVE\nMEDIMIND\nConnect\nTelemedicine\nLIVE\nMEDIMIND\nPACS\nDICOM imaging\nLIVE\nMEDIMIND\nLab\nLaboratory\nLIVE\nLiverRa\nLiver surgical AI\nMVP\nMEDIMIND\nStructural\nStructural heart\nBUILDING\nMEDIMIND\nPatient Portal\nPatient app\nBUILDING\nMEDIMIND\nAngio\nVascular reporting\nMVP\nmedimind.md",
+      "overflow": [],
+      "clipped": [],
+      "scrollHeight": 720,
+      "clientHeight": 720
+    },
+    {
+      "slide": 15,
+      "classes": "gw-slide hxa-slide scope-slide present",
+      "text": "A6AI EVERYWHERE\nSEPARATE AI SERVICES\nAI for every department. One view for management.\n\nExamples of AI assistance to discuss for your hospital. Availability, validation and price are agreed for each use.\n\n★ SEPARATE SCOPE · VALIDATION · PRICING ★\nER\nAI triage + sepsis screening\nICU\nConcerns flagged for clinical review\nOR\nAI-drafted operation notes\nWARDS\nAI handoffs + bed flow\nRADIOLOGY\nUrgent studies flagged first\nLAB · LIS\nCritical values, auto-routed\nSpecimen tracking end-to-end\nFOR MANAGEMENT — THE DIRECTOR'S LIVE SCREEN\nTHE WHOLE HOSPITAL\nat a glance: command center · live bed board · revenue cycle · one-click MOH\nPHARMACY\nInteraction + dose checks\nEvery dose barcode-checked\nCOORDINATOR\nCapacity foresight + slots\nBILLING\nDenial patterns + AI appeals\nWAREHOUSE\nPredictive ordering\nHR · STAFF\nFair shifts, burnout signals\nPORTAL\nPatient messages, AI-graded\nON REQUEST · SCOPE AGREED\n\nThe shared Phase 1 core provides the foundation. Choose the department, then agree scope, validation and pricing.\n\nmedimind.md",
+      "overflow": [],
+      "clipped": [],
+      "scrollHeight": 720,
+      "clientHeight": 720
+    },
+    {
+      "slide": 16,
+      "classes": "csx-slide hx-brain present",
+      "text": "A7\nTHE AI BRAIN\nFUTURE VISION\nAt 02:00, every clue matters.\n\nFuture vision: AI connects patient context and flags concerns. Your doctors decide.\n\n02:00am\nStomach pain · ER\nACTUAL CASE\nEyes on the heart\nTHE MISDIRECTION\nHours lost\nThe real cause found\n20 days in ICU\nILLUSTRATIVE MEDIMIND SCENARIO\nFlagged at 02:00\n→\nEarlier review\nThe 14-hour silence\nReal case. The AI response is illustrative, not a measured outcome.\nWhere the margin comes from\nPractical ways to protect revenue and free team capacity\nmedimind.md",
+      "overflow": [],
+      "clipped": [],
+      "scrollHeight": 720,
+      "clientHeight": 720
+    },
+    {
+      "slide": 17,
+      "classes": "tour-slide present",
+      "text": "",
+      "overflow": [],
+      "clipped": [],
+      "scrollHeight": 720,
+      "clientHeight": 720
+    },
+    {
+      "slide": 18,
+      "classes": "present",
+      "text": "A8\nAPPENDIX · ARCHITECTURE\nA hospital with a body made of software.\n\nEvery department. Every workflow. One AI-native codebase, built ground-up on FHIR R4.\n\nCLINICIANS\ndoctors & nurses\nCOORDINATORS\nadmin & operations\nPATIENTS\nportal & notifications\nSKIN — THE SURFACES OF THE HOSPITAL\n— VIEW · EDIT · WRITE —\nPatient\nEncounter\nBed\nMedication\nClaim\nCoverage\nSpecimen\nOrder\nHEART — THE LIVING HOSPITAL MODEL\n80+ FHIR R4 resources · one living model · ground-up, not an API layer\n— REASON · ACT · REMEMBER —\nAI-BRAIN\nreasons across the Heart\nMUSCLE\nacts on the real world\nNERVE\nfeels every change\nDATA FLOW\nLIVE\n↕\nSKIN\npeople read & write\n↕\nAI-BRAIN\nAI reasons & writes\n→\nMUSCLE\nexecutes commands\n←\nNERVE\nrecords every change\nHeart is the center.\nEverything else flows through it.\nOne hospital operating system. One FHIR R4 foundation.\nmedimind.md",
+      "overflow": [],
+      "clipped": [],
+      "scrollHeight": 720,
+      "clientHeight": 720
+    }
+  ]
+}

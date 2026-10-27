@@ -1,0 +1,888 @@
+{
+  "ready": true,
+  "meta": {
+    "day": "Week 5 Day 1",
+    "date": "19 October 2026",
+    "prepared_date": "20 October 2026",
+    "destination": "/Users/toko/Desktop/500 Lectures/Week 5 Day 1 - 2026-10-19",
+    "sessions": [
+      "Pricing Strategies: Capturing the Value You Create - Phuong Nguyen"
+    ],
+    "source_links": {
+      "deck_supplied": "https://drive.google.com/file/d/1RoE8OSbKzzdhyROMCH0-2xLPy06wIraw/view"
+    },
+    "review_notes": "Reviewed all 1,092 recognized segments (00:00-1:19:25), every slide shown on screen (106 frames sampled every 45 seconds plus a frame at each of 44 detected scene changes; the deck's download is disabled by its owner, so no PDF copy was made), and the meeting chat. Four passages were re-transcribed in isolation to check them (Irakli's question and answer, the price-change fear, the Nikos price story, the pitfalls). For the MediMind pages, the October partner offer (output/partner-v3), the 22 September buyer-pain research, the 16 August investor Q and A, the accelerator answer bank, the 500 Global Decision Playbook and positioning 04-language and 06-buyers were read. This is a source-informed guide, not a human-verified verbatim transcript.",
+    "transcript_caution": "Automatic speech recognition can mishear names and numbers. Likely corrections: 'Miriam/Marian' is Mariam, the 500 host; 'Victor' is Viktor; 'Dimitri/Dima' are Dmitry and Dima from the chat; 'Serhi' is Serhii; 'Yulia' is Julia; 'earlier doctor discounts' is early adopter discounts; 'Van Vestendorp' is Van Westendorp; 'lockstead' is lockstep. Room speakers are not identified beyond names said aloud. Numbers told in class (10% price rise to profit, 80% margins, 20-30% share, 70-80% in oil and gas, 3-5x ROI, the eBay $1B unit, a doubled price) are the lecturer's or classmates' claims, not verified here and not MediMind results."
+  },
+  "pages": [
+    {
+      "title": "Week 5 Day 1: pricing that captures the value you create",
+      "subtitle": "Phuong Nguyen, 500 Global mentor | One recording, 19 October 2026 | 1h 19m (lecture, a short breakout, takeaways)",
+      "blocks": [
+        {
+          "type": "card",
+          "title": "The lecture in one sentence",
+          "body": "Set your price from the value the customer gets, not from your costs or a competitor's price: list every kind of value you create, put a rough number on each, check those numbers with real customers, then decide what share of that value is fair for you to take, and keep testing it."
+        },
+        {
+          "type": "section",
+          "title": "Five points to remember",
+          "body": "<b>1.</b> Pricing is the fastest lever on profit. A 10% price rise with demand holding goes straight to the bottom line (S1 07:40; slide 'The Power of Pricing').<br/><b>2.</b> Costs are the floor, never the ceiling. Copying competitors leads to a price war, 'one of the only wars you don't want to win' (S1 20:36-22:15; slides 11, 21).<br/><b>3.</b> The value equation: identify the value, measure it roughly, validate it with customers, decide your share. The same value dimensions become the KPIs for any pilot (slide 16; S1 34:14-39:05).<br/><b>4.</b> A fair share is often 20-30% of the value in B2B software. It can be far higher when the product is hard to copy (S1 50:14-54:00).<br/><b>5.</b> 'If everyone's buying easily, you're probably too cheap.' Some tension and negotiation is healthy. Change prices openly, early and paired with new value (slides 24, 26-27; S1 56:52-1:03:20)."
+        },
+        {
+          "type": "section",
+          "title": "Where MediMind stands",
+          "body": "Our partner offer matches the hospital's current software spend and makes setup, tailored development and the parallel evaluation free. The lecture argues against all three habits: copying a price, giving value away, and doing good work for free (S1 1:08:02). Irakli asked in class whether a high price pushes a customer to build in-house (S1 54:06). Pages 11-14 apply the lecture: our pricing today, a draft hospital value equation, pricing tests, and next actions."
+        },
+        {
+          "type": "text",
+          "body": "Fast route: this page, page 6 (the value equation), page 7 (share of value and Irakli's question), page 11 (our pricing today), page 12 (hospital value equation) and page 14 (actions)."
+        },
+        {
+          "type": "card",
+          "title": "Scope of this pack",
+          "body": "One recording from Recordings/week5/day1. The audio and the video have the same soundtrack and were processed as one session. About 10 minutes of the breakout were not recorded. The 'another session later' mentioned at the end (S1 1:18:35) is not in the supplied files."
+        }
+      ]
+    },
+    {
+      "title": "Sources and review notes",
+      "subtitle": "What was read, what could not be opened, and how to use the times",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "ID",
+            "Source",
+            "How it was used"
+          ],
+          "widths": [
+            0.6,
+            2.6,
+            2.8
+          ],
+          "rows": [
+            [
+              "S1",
+              "Lecture recording, 1:19:28 (audio and video, same soundtrack)",
+              "Transcribed locally: 8 parts, 1,092 segments. Times are recording times."
+            ],
+            [
+              "D1",
+              "Deck: Pricing Strategies (Google Drive PDF, 34 numbered slides)",
+              "Download disabled by the owner. Read from the screen share: 106 sampled frames plus 44 scene-change frames. Slide numbers only where the footer was readable."
+            ],
+            [
+              "Chat",
+              "Zoom chat, 34 lines",
+              "Poll answers and takeaways. Its clock runs about 8-13 minutes ahead of the recording."
+            ],
+            [
+              "P1",
+              "MediMind partner offer, October 2026 (partner-v3)",
+              "Our current offer, its evaluation measures, what is free"
+            ],
+            [
+              "B1, Q1",
+              "Buyer pain research (22 Sep); investor Q and A (16 Aug) and answer bank",
+              "Value drivers; earlier pricing figures, which conflict (page 11)"
+            ],
+            [
+              "DP",
+              "500 Global Decision Playbook, tensions T1, T2, T4",
+              "Pricing questions already open"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Recording time",
+            "What happens"
+          ],
+          "widths": [
+            1.4,
+            4.6
+          ],
+          "rows": [
+            [
+              "00:00-09:44",
+              "Welcome, confidence poll (most: 'good enough for now'), why pricing matters, agenda"
+            ],
+            [
+              "09:44-24:30",
+              "Section 1: revenue-model quiz, choosing a model, four pricing approaches"
+            ],
+            [
+              "24:30-42:40",
+              "Section 2: value-based pricing, Spotify exercise, the value equation"
+            ],
+            [
+              "42:40-55:20",
+              "Breakout (mostly not recorded), share of value, Irakli's question"
+            ],
+            [
+              "55:20-1:04:40",
+              "Costs; Section 3: testing and changing prices, AI toolkit"
+            ],
+            [
+              "1:04:40-1:19:28",
+              "Pitfalls, 'never do it for free', key concepts, class takeaways, close"
+            ]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Limitations",
+          "body": "The transcript is automatic and not human-checked. Small slide text was read from video frames; three slides flashed by in seconds. The deck shows no 'Section 4' slide. All percentages and stories are told in class and are not verified. The MediMind pages are working hypotheses, not decisions."
+        }
+      ]
+    },
+    {
+      "title": "Why pricing matters, and choosing a revenue model",
+      "subtitle": "S1 06:22-20:12 | slides 'The Power of Pricing', 'Revenue Models', 'Choose wisely'",
+      "blocks": [
+        {
+          "type": "section",
+          "title": "Price is a signal, not only a number",
+          "body": "How customers react to a price shows <b>who wants the product, how much they want it, how good it is</b> (do they come back and pay again) and how to win more customers at a given price point (S1 06:47-07:13). Founders leave money on the table because they fear getting price wrong. Phuong's view: you will get it wrong often, and pricing should grow with the product. In 12 months the product will be much better, so the price should not stay frozen (S1 08:16-08:37)."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Brand (class quiz)",
+            "Core revenue model as discussed"
+          ],
+          "widths": [
+            1.6,
+            4.4
+          ],
+          "rows": [
+            [
+              "Netflix",
+              "Subscription, now with tiers and an ad-supported plan to separate customer segments"
+            ],
+            [
+              "Spotify",
+              "Freemium: a limited free version, paid subscription for the better one, ads fund the free tier"
+            ],
+            [
+              "Salesforce",
+              "Modular, 'a la carte': choose the parts you need, then pay per seat or per subscription. Serves the biggest enterprises and small businesses with one menu. A partner industry sells implementation around it."
+            ],
+            [
+              "AWS",
+              "Pay for what you use (usage)"
+            ],
+            [
+              "Microsoft Office",
+              "Started as a one-off boxed licence you owned forever; now subscription plus a free version. The model changed as the market changed."
+            ],
+            [
+              "LinkedIn",
+              "Data monetization: most revenue comes from subscription products built on its professional data (Sales Navigator, Premium); ads work because of that data"
+            ]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Three questions before you pick a model (S1 17:45-20:12)",
+          "body": "<b>1. How does my product create value for the customer?</b> If value arrives in small pieces, or customers run on tight margins, usage-based pricing may suit them better than a large monthly fee.<br/><b>2. What is the fairest and most natural way to charge for that value?</b> Many founders pick a model from their own costs. But <b>procurement is often the roadblock</b>: if an industry is used to paying one way, meeting buyers with that familiar model removes friction.<br/><b>3. Will it scale with usage and customer growth?</b> A common path: start per usage (low risk, feels fair), then move bigger customers to tiered or 'tranched' packages because large, swinging bills cause procurement problems."
+        }
+      ]
+    },
+    {
+      "title": "Four pricing approaches, and costs",
+      "subtitle": "S1 20:18-24:30 and 55:24-56:36 | slides 'Pricing Approaches', 11, 21",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Approach",
+            "What it means",
+            "What Phuong said about it"
+          ],
+          "widths": [
+            1.2,
+            2.2,
+            2.6
+          ],
+          "rows": [
+            [
+              "Cost plus",
+              "Cost to make it plus a markup",
+              "The most common, and simple. But it ignores value, so you likely leave money on the table."
+            ],
+            [
+              "Competitor pricing",
+              "Price set from what similar products charge",
+              "The second most common. Used alone it leads to a price war and a 'perpetual race to the bottom'. It also hides the chance to differentiate: if you deliver more value, why not charge more?"
+            ],
+            [
+              "Dynamic pricing",
+              "Prices move with demand, competition or other live data",
+              "Needs frequent, fresh data and buyers who accept daily price changes (Uber surge, ad auctions)."
+            ],
+            [
+              "Value based",
+              "Price from the value the customer perceives, and how much of it you choose to capture",
+              "The approach the session is built around."
+            ]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Section 1 key concepts (slide 11; S1 23:23)",
+          "body": "Pick a revenue model that matches how customers experience and use the product. <b>Tiered pricing works well in B2B</b>: different segments, different willingness to pay. Costs are the floor, not the ceiling. Value-based pricing captures more upside. Design pricing for growth, so it scales as the customer scales."
+        },
+        {
+          "type": "section",
+          "title": "Costs (slide 21; S1 55:24-56:36)",
+          "body": "Costs set your floor because you always have to cover them. Healthy margins differ by industry. In B2B software, investors compare against margins 'in the 80% range' (S1 55:41, re-checked). Founders 'notoriously underprice', for two reasons: they do not think about value, and they want to remove every barrier to new deals. Once customers are used to a very low price, raising it is hard. 'Compete on value, not on price', and plan how costs change as you grow."
+        },
+        {
+          "type": "card",
+          "title": "The Spotify test for costs (S1 29:03-30:22)",
+          "body": "When the class explained why they pay for Spotify, nobody mentioned label licences, cloud hosting or developer salaries. Costs are 'almost invisible' to customers. Founders think about hosting and AI tokens; customers think about what they get."
+        }
+      ]
+    },
+    {
+      "title": "Value-based pricing",
+      "subtitle": "S1 24:36-34:11 | quote slide, 'Value Based Pricing', Section 2 recap",
+      "blocks": [
+        {
+          "type": "card",
+          "title": "\"Price is what you pay. Value is what you get.\" (Warren Buffett, S1 25:09)",
+          "body": "Phuong tells the story of the Berkshire Hathaway meeting in Omaha to introduce the main idea: value is in the eye of the person paying. If customers do not agree with the value you claim, they will not pay the price (S1 05:41-06:10)."
+        },
+        {
+          "type": "section",
+          "title": "The Spotify exercise (S1 25:21-28:57)",
+          "body": "The same product, different reasons to pay: <b>unlimited songs in one place</b> and <b>offline access with no Wi-Fi or mobile data</b> (Erik); <b>freedom from ads</b>, a point Phuong said nobody had raised before (Viktor); and for Phuong, any song in your pocket the moment inspiration strikes. Lesson: different customers value different things and rank them differently, so you must ask them."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Element of value-based pricing (slide)",
+            "What it asks of you"
+          ],
+          "widths": [
+            2.0,
+            4.0
+          ],
+          "rows": [
+            [
+              "Customer-centric",
+              "Price on the benefit the customer perceives. Keep asking what the product does for this person or business."
+            ],
+            [
+              "Solving customer pain points",
+              "Understand the pain deeply, including what losing a capability would cost them. 'That's where willingness to pay comes from.'"
+            ],
+            [
+              "Quantifying economic value",
+              "The most important step. It is easier with businesses, which have clear units: more revenue, more sales, time saved, staff who stay (S1 31:42-32:06)."
+            ],
+            [
+              "Differentiation and premium",
+              "If you deliver more than the products already on the market, pricing only from their prices throws away the chance to charge a premium (S1 32:57)."
+            ]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Section 2 key concepts (shown briefly, S1 56:35)",
+          "body": "Anchor pricing to customer value, not your costs. Understand the pain points deeply. Show the impact clearly: time saved, money gained, stress reduced. Validate your value equation with real customers. <b>Be confident capturing your fair share: 20-30% of the value you create is often reasonable.</b>"
+        }
+      ]
+    },
+    {
+      "title": "The value equation",
+      "subtitle": "S1 34:14-42:40 | slides 16, 18, 19",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Step (slide 16)",
+            "What to do",
+            "Watch out"
+          ],
+          "widths": [
+            1.4,
+            2.6,
+            2.0
+          ],
+          "rows": [
+            [
+              "1. Identify the value",
+              "Brainstorm every dimension: revenue gained, costs saved, time saved, peace of mind. Be as broad as you can.",
+              "Easier for businesses than for consumers."
+            ],
+            [
+              "2. Measure the impact",
+              "Put a rough number on each: '8 hours a week', 'funnel conversion up 25%'. Add them into one money figure per month.",
+              "Steps 1-2 can be done alone or with AI, but that is only your first opinion."
+            ],
+            [
+              "3. Validate with customers",
+              "Show the customer your estimate: 'I think it is about 50 grand a month.' Let them correct it.",
+              "Even if you are wrong, the feedback refines the equation. Drop items they do not care about."
+            ],
+            [
+              "4. Decide your share",
+              "If customer and you both believe the figure, price is the share you take. If you create $100K a month, is $50K right? Maybe.",
+              "See page 7 for what the class said."
+            ]
+          ]
+        },
+        {
+          "type": "card",
+          "title": "A bonus that matters for pilots (S1 38:36-39:10)",
+          "body": "Working through the equation tells you what customers care about and <b>what KPIs to use for any pilot or new deal</b>, 'because those dimensions of value end up becoming how they grade and determine whether your product is successful or not'."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Direct value",
+            "Second-order value",
+            "Long-term value"
+          ],
+          "widths": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "rows": [
+            [
+              "Travel cost removed; employee time recovered; smaller facility footprint; IT infrastructure savings; less administrative overhead",
+              "Faster decisions; easier hiring; better meetings; better sales coaching; deeper customer engagement",
+              "Resilience; ability to enter new markets; staff retention; brand difference; faster innovation"
+            ]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Value exists in layers; capture them all (slide 18; S1 39:27-41:19)",
+          "body": "The slide's example is a video-meeting product. Direct value is 'one hop away' and the operations or finance person will agree with it. Second-order and long-term value can be 'three hops away' and are harder to put a number on, but they are real and show what customers care about."
+        },
+        {
+          "type": "section",
+          "title": "From value thinking to a number (slide 19; S1 41:24-42:36)",
+          "body": "Back-of-envelope is fine. Travel avoided = meetings x $2,500. Time saved = hours x hourly rate. Decisions faster = 2% x annual revenue. Add up the confident items and the less confident ones; together they 'open a client discussion'. AI prompt from the slide: <i>'List 10 value drivers for [my product] serving [customer type]. Estimate dollar impact for each. Show reasoning.'</i>"
+        }
+      ]
+    },
+    {
+      "title": "How big a share? And Irakli's question",
+      "subtitle": "Workshop slide 20 | S1 42:41-55:20",
+      "blocks": [
+        {
+          "type": "section",
+          "title": "The breakout (slide 20)",
+          "body": "Pairs: 3 minutes to list every value driver without editing; 4 minutes to explain them while the partner pushes ('What else? Where is the hidden value? Would your customer agree?'); 1 minute to decide: 'If this customer gets 100% of that value, what percentage would feel fair for us to capture?' Most of the breakout was not recorded."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Who (S1)",
+            "Share they named",
+            "Reasoning"
+          ],
+          "widths": [
+            1.4,
+            1.2,
+            3.4
+          ],
+          "rows": [
+            [
+              "Dmitry (50:32)",
+              "20-30%",
+              "If clients get a 3-5x return, that is a good deal for them"
+            ],
+            [
+              "Julia (51:13, by the on-screen speaker label)",
+              "10% now, maybe 20%",
+              "Found they had anchored on their current price, which was only 10% of the value the group estimated. Would test moving up."
+            ],
+            [
+              "Phuong (52:00)",
+              "No right answer",
+              "Depends on competition, room for innovation and what customers are anchored to"
+            ],
+            [
+              "Phuong (52:07-53:13)",
+              "70-80%",
+              "Markets with little innovation, such as oil and gas: a first, truly new product can take most of the value"
+            ],
+            [
+              "Phuong (53:18-53:37)",
+              "20-30%, about a third",
+              "Common in B2B SaaS; 'I take a third and share two thirds with you' feels like a fair deal. Crowded markets such as HR tools sit lower."
+            ]
+          ]
+        },
+        {
+          "type": "card",
+          "title": "Irakli's question (S1 54:06-55:17, re-checked in isolation)",
+          "body": "<b>Question:</b> if that value number is really high, how worried should we be that the customer decides to build it in-house instead of buying?<br/><b>Answer:</b> two points. First, a company confident enough to take 70-80% of the value is probably doing something unique and hard to copy; if the client cannot do it themselves or lacks the expertise, 'that's when I can charge more for that expertise'. Second, being unique and truly innovative can make you an attractive acquisition target, and you might sell to whoever gets the most value from it."
+        },
+        {
+          "type": "text",
+          "body": "The point of the exercise is not one right number. It is to decide your share on purpose, and you cannot do that until you have talked to customers about what drives the value (S1 53:42-54:03)."
+        }
+      ]
+    },
+    {
+      "title": "Testing and changing prices",
+      "subtitle": "Section 3 | slides 24-27 | S1 56:44-1:03:20",
+      "blocks": [
+        {
+          "type": "card",
+          "title": "\"If everyone's buying easily, you're probably too cheap.\" (slide 24; S1 56:52-57:37)",
+          "body": "If every proposal ends in a yes, the price is too low. If you have a clear ICP, the product is not for everyone, so some customers should say no and some should negotiate. David's chat takeaway picked this up: tension and having to negotiate is a good thing (S1 1:17:28)."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Testing approach (slide 25)",
+            "Examples",
+            "When it fits"
+          ],
+          "widths": [
+            1.5,
+            2.4,
+            2.1
+          ],
+          "rows": [
+            [
+              "Direct feedback",
+              "Pitch a price in the proposal call, watch their faces, ask how they received it and what they compare it to",
+              "Always. Every sales conversation is a data signal."
+            ],
+            [
+              "Experiments",
+              "A/B test two rate cards on 50% of traffic each; non-published pricing; feature-gated pricing",
+              "Only with enough customers or traffic"
+            ],
+            [
+              "Pilots and trials",
+              "Try new pricing on a small group first; early adopter discounts; grandfather early customers, sometimes for a longer contract",
+              "Before a full rollout, to see conversion and churn"
+            ],
+            [
+              "Structured models",
+              "Van Westendorp: ask at what price it feels too expensive and too cheap, then find a range to test",
+              "To estimate willingness to pay"
+            ]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Changing prices is normal, not scary (slide 26; S1 1:00:08-1:02:11)",
+          "body": "Founders fear half their customers will leave. In reality most start too cheap. The product will be much better in a year; 'why should your pricing stay the same?' Higher prices can signal quality; the cheapest is seen as cheap. Losing some customers after a rise is not necessarily bad: they may sit at the edge of your ICP or only came for a promotional price."
+        },
+        {
+          "type": "section",
+          "title": "Price changes done right (slide 27; S1 1:02:21-1:03:20)",
+          "body": "Be upfront and early; surprises make customers 'loathe you the most'. Reward loyalty: protect existing customers. Offer lock-ins: 'commit now, keep old price'. Pair the rise with new value. Start small with one segment. <b>The eBay example:</b> prices changed only twice a year, and new features were held back on purpose so they launched with the scheduled rise and explained it."
+        }
+      ]
+    },
+    {
+      "title": "Your AI pricing toolkit",
+      "subtitle": "Slide 28 | S1 1:03:24-1:04:40 | Phuong did not walk through each prompt",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Use",
+            "Prompts and tools from the slide",
+            "What you get"
+          ],
+          "widths": [
+            1.3,
+            3.0,
+            1.7
+          ],
+          "rows": [
+            [
+              "Test before you sell",
+              "'Act as my toughest customer: push back on my $X pricing.' 'You're comparing me to [competitor]. Why would you choose them?' 'I'm 50% more expensive than alternatives. Justify the premium.' 'Simulate a budget objection conversation.'",
+              "Hidden objections, tested value propositions, practice for hard conversations, sharper positioning"
+            ],
+            [
+              "Know your competition",
+              "'Find 5 competitors. Table: price, key feature, main customer complaint.' 'What do customers hate about [competitor]? Find review patterns.' 'Compare pricing models: subscription vs usage vs one-time.' 'Identify pricing gaps in this market.'",
+              "Positioning gaps, pricing openings, customer complaints, support for a premium"
+            ],
+            [
+              "Run scenarios",
+              "'Price increase 15%, lose 5% customers. Net revenue impact?' 'Add premium tier at 3x price. What % need to upgrade?' 'Compare: $100/month vs $1,000/year vs $0.10/usage.' 'Model customer lifetime value at different price points.'",
+              "Fast financial models, risk checks, revenue mix"
+            ],
+            [
+              "Test real customers",
+              "Surveys: conjoint.ly (free tier), usabilityhub.com/pricing, typeform.com, surveymonkey.com. Analysis: Otter.ai plus AI for call analysis, Gong.io for sales calls, win/loss interviews.",
+              "Real willingness to pay, price-sensitivity curves, which features customers value most"
+            ]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "How Phuong framed it (S1 1:03:35-1:04:35)",
+          "body": "Work that used to take months or cost a lot can now be done quickly. Use AI to find hidden objections before a real meeting, to compare yourself with competitors, and to simulate how price changes affect churn. 'Choose the right tool for the right job.' AI output is a first opinion; the value equation still has to be checked with customers (S1 36:18-36:38)."
+        },
+        {
+          "type": "card",
+          "title": "A note for MediMind",
+          "body": "Any of these prompts can be run on public competitor information and our own draft numbers. Do not paste patient data or hospital-confidential figures into an external AI tool."
+        }
+      ]
+    },
+    {
+      "title": "Traps to avoid, and the wrap-up",
+      "subtitle": "Slides 31-34 | S1 1:04:45-1:18:10",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Trap (slide 31)",
+            "Why it hurts"
+          ],
+          "widths": [
+            2.0,
+            4.0
+          ],
+          "rows": [
+            [
+              "Over-discounting, giving value away",
+              "Customers get used to promotional prices and are hard to move off them. Discount on purpose, not by habit."
+            ],
+            [
+              "Pricing too low",
+              "Undercuts you and ignores the value you create"
+            ],
+            [
+              "Not testing, ignoring signals",
+              "Value is in the eye of the customer; unless they believe it, your number is meaningless"
+            ],
+            [
+              "Selling features, not outcomes",
+              "Talk about the dimensions of value customers care about, not a list of features"
+            ],
+            [
+              "One price for all",
+              "No segmentation means no upsell and no way to serve different needs at different price points"
+            ],
+            [
+              "Confusing pricing",
+              "If a pricing page takes more than a glance or makes buyers do complex math, they do not convert"
+            ]
+          ]
+        },
+        {
+          "type": "card",
+          "title": "\"If you're good at something, never do it for free.\" (The Dark Knight; S1 1:08:02-1:09:20)",
+          "body": "Under pressure to discount or 'just get that pilot in', put a price on it if you believe in the value. A price gives the customer <b>skin in the game</b>: they care about making the pilot work and about checking whether it delivers. Engaged, paying customers stay longer."
+        },
+        {
+          "type": "section",
+          "title": "Key concepts (slide 33; S1 1:09:23-1:11:16)",
+          "body": "Pricing is one of the strongest levers on growth and profit. Anchor price to customer value; consider costs and competitors, but focus on value. Test, learn and adjust: customers expect prices to change as the product changes. Confidence matters: underpricing signals weakness, fair pricing signals quality. Be transparent so you work 'in lockstep' with customers instead of twisting their arm."
+        },
+        {
+          "type": "section",
+          "title": "Class takeaways (slide 34; S1 1:11:24-1:18:04)",
+          "body": "<b>Viktor:</b> was planning to ask less at first to win early customers; now thinking about the long-term value to the customer. Phuong: discount only on purpose, to let customers experience the value. <b>Julia:</b> show the customer the value first; consider who your customers talk to every day. <b>Dmitry:</b> calculate our value and explain it openly; Phuong: keep the calculations in one spreadsheet. <b>Nikos:</b> a job board that doubled its prices during the program; customers kept paying and revenue grew a lot. <b>David (chat):</b> tension and negotiation are a good sign."
+        }
+      ]
+    },
+    {
+      "title": "MediMind: our pricing today, seen through this lecture",
+      "subtitle": "Working hypotheses, not decisions | Sources P1, B1, Q1, DP (page 2)",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "What we do now (source)",
+            "What the lecture says",
+            "Question it raises"
+          ],
+          "widths": [
+            2.1,
+            2.0,
+            1.9
+          ],
+          "rows": [
+            [
+              "Price matched to the hospital's current software spend for the agreed base scope (P1)",
+              "Competitor and cost anchoring hides value and can start a race to the bottom (S1 21:16)",
+              "Is the match a temporary entry price or our real price? Open tension T4."
+            ],
+            [
+              "Free implementation, free tailored development, free parallel evaluation (P1)",
+              "'Never do it for free'; a price gives skin in the game (S1 1:08:44)",
+              "Which free items keep the hospital engaged, and which only cost us? Open tensions T1 and T2."
+            ],
+            [
+              "Our evaluation measures: repeated entries, admin hours per 100 admissions, discharge-to-claim time, unbilled services and returned claims (P1)",
+              "The value dimensions become the pilot KPIs (S1 38:36)",
+              "Can each measure be turned into money with the hospital's own numbers? See page 12."
+            ],
+            [
+              "Three pricing stories in our notes: price match (P1), 'one monthly fee based on your bed count' (06-buyers), $30 / $75 / $200 per seat by region (Q1)",
+              "Pick the model customers find natural; avoid confusing pricing (S1 18:13, 1:07:27)",
+              "How are Georgian hospitals used to paying: licence, per bed, per clinician? Ask procurement."
+            ],
+            [
+              "Future AI services priced separately (P1)",
+              "Tiers and segmentation let you capture different value (slide 11)",
+              "Keep Phase 1 priced on its own value; AI is not part of the base offer."
+            ]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Figures that do not agree (check before any use)",
+          "body": "The 16 August Q and A puts the first network agreement at about $30K a year, priced to match the legacy software. The older answer bank says GEL 10,000 a month (about $45K a year) against a legacy cost of GEL 5,000 a month, which is not a price match. Confirm the signed amount, currency and start date from the contract. Count independent buying organizations: GeoHospitals is one customer, not 25."
+        },
+        {
+          "type": "card",
+          "title": "What our own research already says (B1)",
+          "body": "The August buyer notes put reimbursement gaps, avoidable costs and operating visibility ahead of the software bill. 'Same software price' removes an objection; it is not the reason to buy. This matches the lecture: lead with value, and treat price as the share of that value."
+        }
+      ]
+    },
+    {
+      "title": "MediMind: a draft hospital value equation",
+      "subtitle": "Step 1 (identify) and a formula for step 2 | No numbers until a hospital gives its own baseline",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Layer",
+            "Value driver",
+            "Back-of-envelope formula",
+            "Who agrees",
+            "Evidence to collect"
+          ],
+          "widths": [
+            0.9,
+            1.5,
+            1.7,
+            0.9,
+            1.4
+          ],
+          "rows": [
+            [
+              "Direct",
+              "Revenue protected",
+              "(unbilled services found + returned claims avoided) x average value",
+              "Finance director",
+              "One month of baseline counts and reasons"
+            ],
+            [
+              "Direct",
+              "Admin time recovered",
+              "admin hours saved per 100 admissions x admissions / 100 x loaded hourly cost",
+              "Operations, HR",
+              "Timed tasks before and after"
+            ],
+            [
+              "Direct",
+              "Repeat entry removed",
+              "repeated entries per patient x patients x minutes each x hourly cost",
+              "Registration and nursing leads",
+              "Counted entries in one pathway"
+            ],
+            [
+              "Direct",
+              "Separate systems retired",
+              "current licence and support costs of the systems replaced",
+              "CFO, IT",
+              "Invoice list for 'the forty-system hospital' inventory"
+            ],
+            [
+              "Direct",
+              "Cash sooner",
+              "days saved from discharge to complete claim x daily billed value x cost of money",
+              "Finance",
+              "Baseline days; this is earlier cash, not new revenue"
+            ],
+            [
+              "Second-order",
+              "Faster, trusted management decisions",
+              "report preparation hours saved; then one dated decision that went better",
+              "CEO",
+              "A real example, not a claim"
+            ],
+            [
+              "Second-order",
+              "Changes delivered without a vendor wait",
+              "weeks waited per change request x cost of the workaround",
+              "Department heads, IT",
+              "Last year's change requests"
+            ],
+            [
+              "Second-order",
+              "Problems caught earlier",
+              "rework avoided; do not price safety outcomes as money claims",
+              "Medical director",
+              "Clinical review, not a sales number"
+            ],
+            [
+              "Long-term",
+              "Staff retention and less frustration",
+              "turnover cost x change in turnover",
+              "HR",
+              "Too slow for an evaluation; track later"
+            ],
+            [
+              "Long-term",
+              "Data portability and ownership",
+              "avoided switching and lock-in cost",
+              "CEO, IT",
+              "Contract terms (FHIR R4 export, first version)"
+            ]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "How to use it (steps 3 and 4)",
+          "body": "Take this table to one hospital's finance director and operations lead, and let them cross out and correct items (S1 36:46-37:42). Use the surviving rows as the evaluation's success criteria, which our offer already promises: 'We agree the targets together, then measure the change in your hospital.' Only then compare the validated monthly value with our fee. As an illustration only: at the 20-30% the class named, the fee would be a fifth to a third of the validated value. Phase 2 and Phase 3 AI value is left out; it is not part of the base offer."
+        }
+      ]
+    },
+    {
+      "title": "MediMind: pricing tests, and Irakli's question applied",
+      "subtitle": "Suggestions to discuss | Nothing has been changed, sent or published",
+      "blocks": [
+        {
+          "type": "section",
+          "title": "Would a hospital build it in-house? (S1 54:06)",
+          "body": "Phuong's test is whether the customer can copy it and has the expertise. Building a whole hospital operating system in-house is rare. The more likely alternatives are staying with today's separate systems or buying from another vendor, so 'do nothing' is our main competitor. One point is specific to us: the offer gives the hospital <b>ownership of the first delivered base version</b>. If they own that code, our ongoing price has to be justified by what comes after it: development, support, updates and later capabilities. What exactly transfers is already an open legal question in our notes."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "#",
+            "Pricing test",
+            "Lecture link",
+            "What would count as a signal"
+          ],
+          "widths": [
+            0.3,
+            2.6,
+            1.3,
+            1.8
+          ],
+          "rows": [
+            [
+              "1",
+              "In every proposal meeting, state the price, then log the reaction: what they compare it to, who objected, what they asked to remove.",
+              "Direct feedback (S1 57:55)",
+              "Five or more logged reactions"
+            ],
+            [
+              "2",
+              "Ask finance leads the four Van Westendorp questions (too cheap, cheap, expensive, too expensive) for the base system.",
+              "Structured models (S1 59:32)",
+              "A rough range, read as a signal only, not statistics"
+            ],
+            [
+              "3",
+              "Put a draft value figure on the table with one hospital and ask them to correct it.",
+              "Step 3 (S1 36:46)",
+              "Rows they accept, change or delete"
+            ],
+            [
+              "4",
+              "Offer one hospital an evaluation with a commitment attached, such as a pre-agreed paid scope if the agreed targets are met.",
+              "Never for free (S1 1:08:44)",
+              "Do they engage more or walk away?"
+            ],
+            [
+              "5",
+              "For the first partners, write the price-lock term as 'commit now, keep this price'.",
+              "Lock-ins (slide 27)",
+              "Longer commitments signed"
+            ],
+            [
+              "6",
+              "Test one structure, per bed or per active clinician, against what procurement already knows.",
+              "Natural way to charge (S1 18:38)",
+              "Which one procurement accepts without a fight"
+            ]
+          ]
+        },
+        {
+          "type": "card",
+          "title": "Read the 'too easy' rule carefully",
+          "body": "Phuong says that if everyone says yes, you are too cheap. Our last documented bottleneck (re-check it) was the opposite: winning evaluations beyond the anchor partner. If a free, price-matched offer still stalls, price is probably not the main blocker. The missing piece is likely proof of value, which is exactly what the value equation builds."
+        }
+      ]
+    },
+    {
+      "title": "What to do next",
+      "subtitle": "Suggested actions | None of this has been sent, booked or published",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "#",
+            "Action",
+            "Why (source)"
+          ],
+          "widths": [
+            0.4,
+            3.4,
+            2.0
+          ],
+          "rows": [
+            [
+              "1",
+              "Fill in page 12 for GeoHospitals with their own baseline numbers, using the four evaluation measures first.",
+              "Value equation (slide 16)"
+            ],
+            [
+              "2",
+              "Write a one-page decision on our pricing story: price match, per bed or per clinician. Close tension T4.",
+              "Pick a model on purpose (S1 16:16)"
+            ],
+            [
+              "3",
+              "Check the first-contract figures against the signed contract and fix the notes that disagree.",
+              "Page 11"
+            ],
+            [
+              "4",
+              "Add a price-reaction log to every hospital proposal meeting.",
+              "Every reaction is a signal (S1 58:27)"
+            ],
+            [
+              "5",
+              "Decide which free items stay free, and test a commitment-backed evaluation with one hospital.",
+              "Never for free (S1 1:08:44); T1, T2"
+            ],
+            [
+              "6",
+              "Book the 1:1 coaching session with Phuong, and send the in-house and price-match questions in advance through the booking form.",
+              "S1 1:18:23, 1:19:03"
+            ]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Three questions for Phuong's coaching session",
+          "body": "<b>1.</b> We match the hospital's current software spend to remove the budget objection. How do we move from that to value-based pricing without breaking trust with early partners?<br/><b>2.</b> The hospital owns the first version of the code. What share of value can we fairly claim for what comes after it: development, support and updates?<br/><b>3.</b> With only a few hospital buyers, how do we test price when A/B tests are impossible?"
+        },
+        {
+          "type": "section",
+          "title": "Rewatch these parts",
+          "body": "07:40 the 10% price lever. 17:45-20:12 three questions and procurement. 20:36-22:15 cost-plus and price wars. 34:14-39:10 the value equation and pilot KPIs. 50:14-55:17 share of value and Irakli's question. 56:52-1:03:20 too cheap, testing, changing prices. 1:04:45-1:09:20 traps and 'never do it for free'. 1:15:48-1:17:01 Nikos doubles his prices."
+        }
+      ]
+    }
+  ]
+}

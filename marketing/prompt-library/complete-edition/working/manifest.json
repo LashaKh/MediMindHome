@@ -1,0 +1,22 @@
+[
+  {"id":"p1-01","file":"p1-01-business-market.md","title":"Describe Your Business & Market","group":"Customer & Market Research","label":"Part 1 · Prompt 1","pages":"5–7","sections":7},
+  {"id":"p1-02","file":"p1-02-mechanics-jtbd.md","title":"Map Your Product Mechanics & JTBD","group":"Customer & Market Research","label":"Part 1 · Prompt 2","pages":"8–10","sections":6},
+  {"id":"p1-03","file":"p1-03-bfg.md","title":"Build Your Features, Benefits & Guarantees","group":"Customer & Market Research","label":"Part 1 · Prompt 3","pages":"11–12","sections":6},
+  {"id":"p1-04","file":"p1-04-uvps.md","title":"Generate Your UVPs & Map Your JTBD","group":"Customer & Market Research","label":"Part 1 · Prompt 4","pages":"13–14","sections":6},
+  {"id":"p1-05","file":"p1-05-competition.md","title":"Map Competition & Find Your Defensible Position","group":"Customer & Market Research","label":"Part 1 · Prompt 5","pages":"15–16","sections":6},
+  {"id":"p1-06","file":"p1-06-review-intelligence.md","title":"Mine Competitor Reviews & Customer Intelligence","group":"Customer & Market Research","label":"Part 1 · Prompt 6","pages":"17–18","sections":6},
+  {"id":"p1-07","file":"p1-07-user-research.md","title":"Design & Execute Your User Research","group":"Customer & Market Research","label":"Part 1 · Prompt 7","pages":"19–20","sections":8},
+  {"id":"p1-08","file":"p1-08-problems.md","title":"Define the Real Problems You Are Solving","group":"Customer & Market Research","label":"Part 1 · Prompt 8","pages":"21–22","sections":6},
+  {"id":"p1-09","file":"p1-09-avatar.md","title":"Build Your Customer Avatar","group":"Customer & Market Research","label":"Part 1 · Prompt 9","pages":"23–25","sections":6},
+  {"id":"p2-01","file":"p2-01-funnel.md","title":"Map Your Marketing Funnel Architecture","group":"Marketing Funnel & Campaign","label":"Part 2 · Prompt 1","pages":"27–31","sections":6},
+  {"id":"p2-02","file":"p2-02-angles.md","title":"Define Your Marketing Angles","group":"Marketing Funnel & Campaign","label":"Part 2 · Prompt 2","pages":"33–35","sections":6},
+  {"id":"p2-03a","file":"p2-03a-campaign-script.md","title":"Build Your Campaign Concept & Video Script","group":"Marketing Funnel & Campaign","label":"Part 2 · Prompt 3A","pages":"36–38","sections":3},
+  {"id":"p2-03b","file":"p2-03b-campaign-distribution.md","title":"Build Your Campaign Distribution","group":"Marketing Funnel & Campaign","label":"Part 2 · Prompt 3B","pages":"39–41","sections":5},
+  {"id":"p2-04","file":"p2-04-funnel-pages.md","title":"Build Your Funnel Pages","group":"Marketing Funnel & Campaign","label":"Part 2 · Prompt 4","pages":"42–45","sections":4},
+  {"id":"p2-05","file":"p2-05-traffic.md","title":"Content Distribution & Traffic Strategy","group":"Marketing Funnel & Campaign","label":"Part 2 · Prompt 5","pages":"46–50","sections":5},
+  {"id":"p2-06","file":"p2-06-tracking.md","title":"Tracking, Mapping & Implementation","group":"Marketing Funnel & Campaign","label":"Part 2 · Prompt 6","pages":"51–55","sections":6},
+  {"id":"p2-07","file":"p2-07-reporting.md","title":"Reporting","group":"Marketing Funnel & Campaign","label":"Part 2 · Prompt 7","pages":"56–58","sections":4},
+  {"id":"l0-01","file":"l0-01-demo.md","title":"Book a Demo Page","group":"Conversion Page Library #0","label":"Library #0 · Prompt 1","pages":"3–7","sections":13},
+  {"id":"l0-02","file":"l0-02-webinar.md","title":"Webinar Registration Page","group":"Conversion Page Library #0","label":"Library #0 · Prompt 2","pages":"8–13","sections":14},
+  {"id":"l0-03","file":"l0-03-trial.md","title":"Free Trial Page","group":"Conversion Page Library #0","label":"Library #0 · Prompt 3","pages":"14–20","sections":15}
+]

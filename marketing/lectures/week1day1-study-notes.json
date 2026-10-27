@@ -1,0 +1,251 @@
+{
+  "ready": true,
+  "meta": {
+    "day": "Week 1 Day 1",
+    "date": "21 September 2026",
+    "prepared_date": "19 October 2026",
+    "destination": "/Users/toko/Desktop/500 Lectures/Week 1 Day 1 - 2026-09-21",
+    "sessions": [
+      "Value proposition and JTBD - Justyna Jastrzebska"
+    ],
+    "source_links": {
+      "deck_supplied": "https://docs.google.com/presentation/d/1ttsPJ9ZH3nTomS5Wy-6lRNzCTGXyWri58TbNHE1wveY/edit",
+      "program_materials": "Program website link 'Program Curriculum + Text Recordings' (named in the recording at 01:56:19; not opened)"
+    },
+    "review_notes": "Reviewed all 1,442 recognized segments (00:00-01:56:48), the text of all 94 deck slides (extracted from the public browser view; PDF export is blocked), 78 recording frames sampled every 90 seconds plus 4 targeted frames around the MediMind review, and the meeting chat (three automated note-taker messages only). For the MediMind pages: the live homepage source (commit baf894c, 22 September), the 21-24 September copy drafts, the 22 September buyer-pain research, the 22 September UVP/JTBD draft, the 8 October product explainer and the canonical positioning files were read. This is a source-informed guide, not a human-verified verbatim transcript.",
+    "transcript_caution": "Automatic speech recognition mishears names and numbers (for example 'MediaMind' for MediMind, 'sheep' for 'ship', 'dealer' for 'drill', 'Justina' for Justyna). One line at 00:05:19 is a recognition artefact (a long run of repeated letters). Speaker identities are not assigned: when the guide says 'someone in the room', the speaker was not identified. Numbers said in the MediMind discussion (for example '25 more patients per doctor an hour' and '25% improvement in revenue collected') were classroom examples of how to quantify, not MediMind results. Check the recording before quoting."
+  },
+  "pages": [
+    {
+      "title": "Week 1 Day 1: value proposition and jobs to be done",
+      "subtitle": "Justyna Jastrzebska | One supplied lecture recorded on 21 September 2026 | 1h 56m 55s",
+      "blocks": [
+        {"type": "card", "title": "The lecture in one sentence", "body": "Stop describing your product and start describing your customer's problem: say who it is for, what they get and how you differ, in words they would use, then test it on real people instead of trusting your own opinion."},
+        {"type": "section", "title": "Five points to remember", "body": "<b>1. Customer perspective, not company perspective.</b> 'It's all about you, not about we' (S1 15:19-15:44). This is the one mindset change she asked for.<br/><b>2. Know your market sophistication level.</b> It is about how many solutions your buyer already knows, not how well they know you. The right message changes with the level (S1 17:39-21:37).<br/><b>3. People have jobs; things don't.</b> Buyers want the hole, not the drill. Every job has a functional, social and emotional side (S1 40:00-45:18).<br/><b>4. Never say 'faster' or 'better' without a number.</b> 'Two times better, 25 percent faster' (S1 08:02, 23:06-23:15).<br/><b>5. Test, don't argue.</b> Write ten genuinely different value propositions and test them. 'Your opinion doesn't matter' (S1 12:10, 01:05:17, 01:55:16)."},
+        {"type": "section", "title": "Where MediMind stands", "body": "MediMind's own homepage was reviewed in class (S1 01:12:56-01:17:24). Her verdict on the old hero, 'One hospital. One operating system': <b>'I have no idea what this company does.'</b> The advice: start with the hospital's problem, quantify the outcome, and focus on three problems instead of 'everything in the hospital'. The homepage changed the next day; pages 8-14 check what the change fixed and what is still open."},
+        {"type": "text", "body": "Fast route: this page, page 5 for what a value proposition must contain, page 8 for the MediMind review, page 9 for then-now-next, page 14 for this week's actions."},
+        {"type": "card", "title": "Scope of this pack", "body": "This pack covers the single lecture in Recordings/week1/Day1. It does not summarize the whole week. Lecture content and proposed MediMind applications are labelled separately; the MediMind pages are working hypotheses."}
+      ]
+    },
+    {
+      "title": "Sources and review notes",
+      "subtitle": "S1 is the recording. D1 is the 94-slide deck. C1 is the meeting chat.",
+      "blocks": [
+        {"type": "table", "headers": ["Source", "What it is", "Access and review"], "widths": [0.7, 2.0, 2.6], "rows": [
+          ["S1", "Zoom recording, 21 Sep 2026 (file GMT20260921-085610). Audio and video have identical soundtracks.", "Transcribed locally, 12/12 chunks complete, 1,442 segments. Read in full."],
+          ["D1", "'500 Eurasia B11 - Justyna Jastrzebska - Value proposition &amp; JTBD', 94 slides.", "PDF export refused (sign-in required). Slide text extracted from the public browser view. Picture-only slides checked against recording frames."],
+          ["C1", "Meeting chat.", "Read. Only three automated note-taker messages; no links or homework."],
+          ["F1", "82 recording frames.", "Text read locally (Apple OCR) and key frames inspected by eye."]
+        ]},
+        {"type": "section", "title": "What the recording contains", "body": "00:00-05:19 waiting room (silence). 05:19-09:45 why value propositions fail. 09:47-15:10 testing and A/B questions. 15:10-36:40 customer perspective and the five sophistication levels (Gillette, Dollar Shave Club video at 31:36-34:01, Coca-Cola). 36:40-40:00 B2B versus B2C. 40:00-47:30 jobs to be done. 47:30-53:30 who you sell to and culture. 53:32-01:02:19 what a value proposition is, with good and bad examples. 01:02:19-01:53:41 live review of batch homepages, including MediMind at 01:12:56. 01:53:43 BFG. 01:53:59 demo, webinar and free-trial pages. 01:55:16 homework."},
+        {"type": "card", "title": "Shown only in passing", "body": "Slides 42-43 (value proposition canvas, picture only) and slides 72-92 (example demo, webinar and free-trial pages, pictures only) were flicked through or left 'for you to go through' (S1 54:28, 01:53:59-01:55:00). Open the deck in a browser to study them. The hidden text layer of slides 44-54 still holds older Slack, Patagonia and Canva notes; the recording shows different examples, so trust the recording."}
+      ]
+    },
+    {
+      "title": "Market sophistication: five levels",
+      "subtitle": "Lecture evidence | S1 approximately 17:39-36:40 | D1 slides 5-18 | idea from Eugene Schwartz, 'Breakthrough Advertising'",
+      "blocks": [
+        {"type": "card", "title": "The key idea", "body": "Market sophistication is how many ways to solve the problem your buyer already knows. 'It's not about you' (S1 18:19-19:06). The more solutions they have seen, the less a plain claim works, so the message must move from <b>what</b> to <b>how</b> to <b>who you are</b>."},
+        {"type": "table", "headers": ["Level", "Situation", "What to say", "Gillette story"], "widths": [1.1, 1.8, 1.8, 1.6], "rows": [
+          ["1 Hello market", "First of its kind; nobody has seen it.", "Just make the claim.", "'Shave yourself' (no barber needed). S1 22:03"],
+          ["2 What is it", "Others copy you; still new to buyers.", "Better, faster, stronger, but put a number on it.", "A toddler picture: so safe a child could use it. S1 23:20-24:11"],
+          ["3 How does it work", "Crowded; everyone makes the same claims.", "A new mechanism: how you keep the old promise.", "Square blade, lubricant strip. S1 24:18-25:10"],
+          ["4 New mechanism", "Everyone explains how it works.", "Elaborate the mechanism and tie features to needs.", "'6 vital improvements'. S1 28:40-29:11"],
+          ["5 Experience", "Saturated; nobody believes ads.", "Stop selling the product; talk to the person and their feelings.", "Dollar Shave Club; Coca-Cola at Christmas. S1 30:35-35:55"]
+        ]},
+        {"type": "section", "title": "Stories she used", "body": "<b>Mindvalley (her claim):</b> people did not want 'meditation', but they had stress. A 'how stressed are you?' quiz led to a free audio and, she says, growth from 60,000 to half a million and a 400% jump in one test (S1 17:52, 19:16-21:11). <b>Dollar Shave Club:</b> 'You don't need all that shave tech. One dollar.' Buyers felt understood: 'how did you know?' (S1 34:04-34:58). <b>Culture codes:</b> the same product means different things in different countries; for a car in Germany it is the engine and mechanics, so the same car is advertised differently there (S1 26:43-27:28). Most batch companies, she said, are at levels 3 and 4 (S1 21:26)."},
+        {"type": "text", "body": "Rule she repeated: enter the conversation already in the buyer's head. Every buyer wakes up with a conversation about their problem; find it and join it (S1 34:37-35:06)."}
+      ]
+    },
+    {
+      "title": "Jobs to be done",
+      "subtitle": "Lecture evidence | S1 approximately 40:00-47:30 | D1 slides 19-38",
+      "blocks": [
+        {"type": "card", "title": "The key idea", "body": "'People don't want to buy a quarter-inch drill. They want a quarter-inch hole' (Theodore Levitt, slide 23). Go further: they want the picture on the wall and the memory it brings. 'People have jobs. Things don't' (slide 34, S1 44:44)."},
+        {"type": "table", "headers": ["Example", "The real job", "Lesson"], "widths": [1.3, 2.3, 2.4], "rows": [
+          ["Drill and 3M hooks", "Hang a picture, even in a rental where holes are not allowed.", "A rival can solve the job without your product (slides 21-24, S1 40:14-41:16)."],
+          ["Lawn mower", "Grass that is always short and beautiful.", "Sell the end state (slide 25)."],
+          ["Rolex", "Look successful in sales meetings, or keep a rising investment.", "The same product does different jobs for different buyers (slides 28-29, S1 41:22-41:53)."],
+          ["Cosmetics", "'In the factory we make cosmetics; in the drugstore we sell hope.'", "Emotional job (slide 30)."],
+          ["Milkshake", "A breakfast replacement parents could hand their kids.", "Real competition is the banana, the doughnut, the Snickers (slides 31-33, S1 42:06-43:30)."],
+          ["iPod / MacBook Air", "'1,000 songs in your pocket'; a laptop floated on balloons.", "Show the job in a picture or phrase (slides 38, 46, S1 45:36-46:30)."]
+        ]},
+        {"type": "table", "headers": ["Side of the job", "Question", "Note-taking example (slides 35-36)"], "widths": [1.2, 2.3, 2.5], "rows": [
+          ["Functional", "What do I want to do?", "I need something to write notes."],
+          ["Social", "How do I want others to see me while doing it?", "I want to look on the edge of tech."],
+          ["Emotional", "How do I want to feel while doing it?", "I want something that makes me want to take notes."]
+        ]},
+        {"type": "text", "body": "Job versus benefit (slide 37): the job is about the customer; features and benefits are about the product. The job stays the same for years even as products change (slide 38). She also linked the job to retention: 'what habit am I creating?' (S1 43:28-43:40)."}
+      ]
+    },
+    {
+      "title": "What a value proposition must do",
+      "subtitle": "Lecture evidence | S1 approximately 05:19-16:04, 36:40-40:00, 53:32-01:02:19, 01:53:43 | D1 slides 39-71",
+      "blocks": [
+        {"type": "card", "title": "Definition (slide 40)", "body": "A value proposition is <b>not</b> a product description. It makes clear why customers choose you instead of the competition. It can be one line or three, but a reader must recognise 'this is for me' (S1 01:02:32-01:02:58)."},
+        {"type": "table", "headers": ["In the first five seconds the visitor must know", "Her words"], "widths": [2.4, 3.2], "rows": [
+          ["Who it is for", "'Right away I need to understand that you are talking about me' (S1 09:08)."],
+          ["The value, starting from the problem", "'Why don't you just say the problem? It closes the gap between you and them' (S1 54:17)."],
+          ["How you are different", "'They have ten tabs open of ten companies solving the same problem' (S1 08:28-08:35)."],
+          ["What to do next", "If they understand but do not know the next step, 'they're gone' (S1 29:37-30:01)."]
+        ]},
+        {"type": "section", "title": "Rules", "body": "<b>Quantify.</b> 'Faster' and 'better' mean nothing; '25% better quality' does (S1 53:50-53:55). <b>No jargon.</b> 'It needs to be for your mom and your sister to understand' (S1 01:00:50). <b>Small steps.</b> Like dating, you do not open with 'will you marry me?': each message only has to earn the next step, not the sale (S1 16:38-17:20, 38:30-38:42). <b>B2B is still human.</b> A hospital buyer needs longer, involves about five people and fears changing the whole system, but humans still decide (S1 37:48-38:18). <b>Customers and investors differ.</b> For customers: 'what we will do for you'. For investors: 'who we are' (slide 55, S1 01:01:53)."},
+        {"type": "table", "headers": ["BFG (slides 68-71, S1 01:53:43)", "Meaning", "Example from the slide"], "widths": [1.2, 2.0, 2.4], "rows": [
+          ["Benefit", "Why someone should buy (emotion, outcome).", "Saves money, protects your phone."],
+          ["Feature", "What you offer.", "Easy instalments, comfort cushion."],
+          ["Guarantee", "Why they can trust it.", "Free returns, 90-day guarantee."]
+        ]},
+        {"type": "text", "body": "'Book a demo' alone means nothing. Say with whom, how long, what I will learn, and why I should show up (S1 01:47:41-01:47:51, 01:54:16-01:54:29)."}
+      ]
+    },
+    {
+      "title": "The live homepage reviews",
+      "subtitle": "Lecture evidence | S1 approximately 54:36-01:02:00 (outside examples) and 01:02:58-01:53:41 (batch companies) | D1 slides 57-67",
+      "blocks": [
+        {"type": "table", "headers": ["Homepage", "What she said", "Lesson"], "widths": [1.3, 2.6, 2.1], "rows": [
+          ["Small-business accounting", "'Seriously easy accounting for small businesses' answers the fear that accounting is hard (S1 54:36-56:01).", "Name the audience and their fear."],
+          ["monday.com", "'Your go-to work platform': no idea what it is (S1 56:02-56:31).", "A famous brand gets away with vague copy; a startup can't."],
+          ["Canva", "'What will you design today?' puts the action in the headline (S1 57:23-57:55).", "Headline can be the call to action."],
+          ["Sweat products", "'Control your sweat and wear what you want' came from interviews: women felt 'not in control of my own body' (S1 58:02-59:18).", "Use the buyer's words."],
+          ["AI-jargon pages", "'Blah blah business talk'; 'get started on what?' (S1 01:00:01-01:01:13).", "Plain language wins."],
+          ["Tax/legal AI", "Good flow (who, value, benefits, button) but no clear outcome; quantify, e.g. hours saved (S1 01:03:13-01:07:57).", "Keep the flow, add the number."],
+          ["Job matching", "'Find a job without searching' sounds wishy-washy; ask how long a job search takes now (S1 01:07:57-01:12:54).", "Define the problem first."],
+          ["MediMind", "See page 8 (S1 01:12:56-01:17:24).", "The system is the vehicle."],
+          ["Body-scan app", "Who is it for? Talking to everyone is talking to no one (S1 01:17:24-01:26:33).", "Pick a segment."],
+          ["Live-demo AI", "'Best we had today'; turn 5x demos into revenue (S1 01:26:40-01:33:24).", "Promise the outcome, not the activity."],
+          ["AI build team", "'Brief like a founder, ship like a team': jargon; 'if you have to explain for half an hour, it's not working' (S1 01:33:29-01:44:02).", "Say it in user language."]
+        ]},
+        {"type": "text", "body": "Others reviewed briefly: street-level environmental data, AI-search visibility, product-knowledge training, AI workers for franchises and a recruiting tool (S1 01:44:06-01:53:41). Repeated lesson: at level 3, explain how you do it, and state the outcome in numbers."}
+      ]
+    },
+    {
+      "title": "Homework and how to test",
+      "subtitle": "Lecture asks | S1 12:10, 01:02:12-01:02:19, 01:55:16-01:56:35 | testing rules S1 09:47-15:10",
+      "blocks": [
+        {"type": "table", "headers": ["What she asked", "Status in the recording", "Deadline she gave"], "widths": [2.6, 1.6, 1.6], "rows": [
+          ["Write <b>10 genuinely different</b> value propositions, not ten wordings of one idea.", "Required (her direct ask)", "By end of day 21 Sep"],
+          ["Start testing the new one against the current one on your website.", "Required", "'Starting tomorrow' (22 Sep)"],
+          ["Use the first prompt in the marketing prompt library (about 90 prompts) to generate them.", "Optional tool", "Shared by the program team"],
+          ["Study the example demo, webinar and free-trial pages (slides 72-92).", "Suggested", "None given"],
+          ["Write a separate value proposition for investors.", "Asked in passing", "None given"]
+        ]},
+        {"type": "section", "title": "Her testing rules", "body": "<b>Learn from every visitor, dollar and conversation</b>; if a test fails, check whether the idea or the execution was wrong (S1 10:39-11:56). <b>Test 2, at most 3 versions</b> at a time; time of week and other factors make more versions unreliable (S1 13:09-15:06). <b>Sample size:</b> ideally about 1,000 visits and 100 conversions per version (the recording also says 200 once); for a startup about 500 visits and 50 clicks. Never decide on five clicks (S1 13:49-14:34). <b>Tools:</b> Optimizely, Visual Website Optimizer. <b>Different buyers:</b> separate landing pages (S1 15:06-15:10, 50:44)."},
+        {"type": "card", "title": "When you do not know your buyer", "body": "'Get on the call with them and you learn from it.' She ran interviews in Vietnam and 'we were so wrong' about the customer (S1 50:51-53:25). Assumptions, even good ones, need checking with buyers."},
+        {"type": "text", "body": "Where to find the materials: the program website link 'Program Curriculum + Text Recordings' (S1 01:56:19)."}
+      ]
+    },
+    {
+      "title": "MediMind in class: what was said",
+      "subtitle": "Lecture evidence | S1 01:12:56-01:17:24 | D1 slide 59 (screenshot of the old homepage) | speakers not identified",
+      "blocks": [
+        {"type": "card", "title": "What was on the screen", "body": "The pre-22-September hero: <b>'One hospital. One operating system.'</b> Then: 'Hospitals run on dozens of programs that don't talk to each other. MediMind replaces them all - every department, every workflow, one system with AI at its core. Built by doctors. Live across Georgia's second-largest hospital chain.' Badges: 'Live in 25 hospitals' and 'Innovative startup status'. Buttons: 'Book a 30-min demo', 'See the path'."},
+        {"type": "table", "headers": ["Time", "What happened", "What it means for us"], "widths": [0.8, 2.9, 2.3], "rows": [
+          ["01:13:24", "She: 'I have no idea what this company does. I know that it connects something.' Someone: the design 'doesn't want me to read it'.", "Category words do not explain value."],
+          ["01:13:51", "She: 'Who is this company? What is the problem you're solving?'", "Problem first."],
+          ["01:14:12", "Someone: 'we replace legacy systems... every software a hospital needs'. She: 'That's what you do. Tell me from the customer perspective.'", "We still talk as the company."],
+          ["01:14:38", "Someone: lead with the parallel system. She: 'I'm not ready for that information yet... that's a fifth information I need.'", "The offer belongs later."],
+          ["01:15:16", "Pains named: 10-12 siloed vendors; information divided, 'no one universal brain'; hard to decide; patient outcomes can suffer.", "Raw material for problem statements."],
+          ["01:16:09", "She: quantify. Examples said: '25 more patients per doctor an hour', '25% improvement in revenue collected'.", "Illustrations only, not MediMind data."],
+          ["01:16:29", "She: 'The value is not the system. The system is the vehicle... it's about point B.'", "Sell the destination."],
+          ["01:16:48", "Someone: what if you talk to a chain of hospitals? She: you talk about everything; ask hospitals their three main problems and focus on those.", "Narrow to three problems."]
+        ]},
+        {"type": "text", "body": "She did not comment on the 'Live in 25 hospitals' badge. Our own rule still applies: branches under one buying decision count as one customer, so check that badge wording against the staged rollout before reusing it."}
+      ]
+    },
+    {
+      "title": "Then, now, next",
+      "subtitle": "MediMind review | old hero (21 Sep, shown in class) vs live hero (commit baf894c, 22 Sep) vs ten draft previews (24 Sep, not deployed)",
+      "blocks": [
+        {"type": "table", "headers": ["Her point", "Live hero today (22 Sep)", "24 Sep previews", "Still to do"], "widths": [1.4, 1.7, 1.7, 1.6], "rows": [
+          ["Say what we do and for whom", "'Your hospital deserves a future.' Still does not name a problem; our own research note says the same.", "Better: 01-04 and 08 open with a hospital problem.", "Pre-headline should name the reader, e.g. owners of private hospitals."],
+          ["Start with the problem", "Problem appears only as 'disconnected software', which is our mechanism.", "About half are problem-led.", "Use the buyer's pain words (page 10)."],
+          ["Quantify", "No numbers.", "No numbers (correctly: we have no measured data yet).", "Measure one number with the anchor partner."],
+          ["Three problems, not everything", "Care, revenue, waste, AI and development all at once.", "Most previews repeat the same AI bullets.", "Choose three pains to test (page 11)."],
+          ["Offer is 'fifth information'", "Price match in the hero.", "Offer in the eyebrow, the hero and the button.", "Move the offer to the Guarantee line (BFG)."],
+          ["Clear next step", "'Build my hospital's future'.", "'Get my free parallel system'.", "Say who, how long, what you learn (page 13)."]
+        ]},
+        {"type": "card", "title": "Scope check before any test (founder decision)", "body": "The live hero promises 'Your own AI brain tomorrow', AI that helps decisions, unlimited development and features in three business days. The 8 October explainer says the current offer is <b>Phase 1 only</b>: the connected base system, with Phase 2 AI and the Phase 3 brain excluded. The previews also list 'AI in everyday workflows'. Reconcile these before testing any version; this guide does not change the commercial promise."},
+        {"type": "text", "body": "Good news: the homework was largely drafted within three days of the lecture (10 alternatives on 21 Sep, 10 UVPs on 22 Sep, 10 previews on 24 Sep). What is missing is the second half of her ask: testing with real buyers."}
+      ]
+    },
+    {
+      "title": "Our sophistication level and the hospital buyer's jobs",
+      "subtitle": "MediMind working draft | Her worksheet applied | sources: 22 Sep buyer-pain research (R1), 22 Sep UVP/JTBD draft | hypotheses, not interview results",
+      "blocks": [
+        {"type": "card", "title": "Market sophistication: probably level 3-4", "body": "A private hospital owner in Georgia already knows several answers: the current local EMR, separate lab, billing and HR programs, spreadsheets, and large international systems that market 'all-in-one with AI'. 'One system' is a claim they have heard. So, by her rule, we must show <b>how</b> we keep the promise (one shared record, built around their workflows, side-by-side evaluation) and <b>what changes for them</b>. Our 22 Sep draft scored this 4/5; that is an editorial judgement, not a measurement."},
+        {"type": "table", "headers": ["Job side", "Hospital owner or CEO (hypothesis)", "What 'point B' looks like"], "widths": [1.0, 2.6, 2.4], "rows": [
+          ["Functional", "Get paid for the care already delivered; stop staff retyping; see a trusted picture of the hospital without waiting.", "Fewer rejected claims; hours returned to care; numbers ready for Monday's meeting."],
+          ["Social", "Be seen by owners, board and doctors as the leader who modernised safely.", "A change staff support, not resist."],
+          ["Emotional", "Move forward without risking care, money or reputation in the change.", "Confidence: nothing switches until they have seen it work."]
+        ]},
+        {"type": "section", "title": "Pain words we have and words we still need", "body": "<b>From the class (S1 01:15:16-01:16:09):</b> paying 10-12 vendors; information divided; hard to decide; outcomes can suffer. <b>From R1 (six provisional pains):</b> money lost between care and billing; staff time on repeat work; late or disputed leadership numbers; doctors chasing the patient story; slow vendor changes; rebuilding records for audits. <b>Missing:</b> the hospital's own words. R1 contains no direct buyer interviews; every buyer sentence in it is a hypothesis."},
+        {"type": "text", "body": "Her sweat-product lesson applies here: the best line came from an interview quote ('I'm not in control of my own body'). Our best hero line will probably come from a hospital owner describing a recent, specific incident."}
+      ]
+    },
+    {
+      "title": "Ten propositions to test (1-5)",
+      "subtitle": "MediMind working draft | each built with her checklist: who it is for, the problem, the benefit, then BFG | Phase 1 scope only | not approved copy",
+      "blocks": [
+        {"type": "card", "title": "How to read these", "body": "Each row is a different pain, as she asked, not a rewording. No numbers are claimed: the 'proof needed' column says what we must measure before a number can appear. The offer sits in the Guarantee, not the headline. The bold line is the headline; the plain text is the reader line and the BFG."},
+        {"type": "table", "headers": ["#", "Proposition", "Proof needed before using"], "widths": [0.3, 4.0, 1.7], "rows": [
+          ["1", "<b>Stop losing money between the ward and the billing desk.</b><br/>For private hospital owners and finance directors. B: payment for care you already gave. F: care, charges and claims in one record. G: measure it on your own cases in a free parallel evaluation.", "Rejected-claim reasons and amounts recovered at a real hospital."],
+          ["2", "<b>Enter it once. Every department sees it.</b><br/>For hospital CEOs and nursing directors. B: staff time back for patients. F: one shared patient record from admission to discharge. G: your own staff compare it side by side before you decide.", "Observed minutes per task and repeat entries, before and after."],
+          ["3", "<b>See your whole hospital from one place, without waiting for a spreadsheet.</b><br/>For CEOs of multi-profile hospitals. B: decide on beds, staff and spending with numbers everyone trusts. F: one data source for every department. G: we build reports around your own questions.", "Report preparation time and freshness at a pilot site."],
+          ["4", "<b>Your doctors should not have to phone the lab to understand their patient.</b><br/>For medical directors. B: decisions with the full picture. F: orders, results and notes on one chart. G: doctors test it on real workflows first.", "Time to find key information; doctors' feedback, with permission."],
+          ["5", "<b>Need a change in your hospital software? Test it in days, not after months of quotes.</b><br/>For owners tired of vendor delays. B: improvements while the need is still urgent. F: a physician-led team that keeps building your base system. G: ongoing base development included.", "Real request-to-test times; confirm the three-day promise and its limits."]
+        ]}
+      ]
+    },
+    {
+      "title": "Ten propositions to test (6-10)",
+      "subtitle": "MediMind working draft | continued | not approved copy",
+      "blocks": [
+        {"type": "table", "headers": ["#", "Proposition", "Proof needed before using"], "widths": [0.3, 4.0, 1.7], "rows": [
+          ["6", "<b>Change your hospital software without stopping your hospital.</b><br/>For CEOs who fear a failed switch. B: modernise without risking care or revenue. F: a parallel system while the current one keeps running. G: no obligation to buy.", "A documented staged rollout; what staff did during the parallel period."],
+          ["7", "<b>Pay for one system that talks to itself, not a dozen that don't.</b><br/>For finance directors paying many vendors. B: one bill, one team to call. F: clinical, billing, lab and HR work in one system. G: we match your current software price for the agreed scope.", "The hospital's real vendor list and costs; confirm the offer is still open."],
+          ["8", "<b>Run every branch on the same numbers and the same way of working.</b><br/>For hospital-group leaders. B: compare and improve branches fairly. F: shared records and reports across sites. G: rollout in stages, branch by branch.", "Multi-site evidence; count branches under one buyer as one customer."],
+          ["9", "<b>When an insurer or the ministry asks what happened, show them. Don't rebuild it.</b><br/>For quality and finance leads. B: less scramble before audits and reports. F: every action recorded with who and when. G: you check the records in the evaluation.", "A real audit or report request handled in the system."],
+          ["10", "<b>Hospital software built by doctors who were tired of the same screens you are.</b><br/>For physician-owners and medically led hospitals. B: a system your doctors want to use. F: built around your workflows by a physician-led team. G: your staff judge it before you commit.", "Staff quotes with permission; the founders' story."]
+        ]},
+        {"type": "section", "title": "Which three to test first", "body": "Her advice was 'three problems, not 120' (S1 01:17:04-01:17:24). R1 also says to keep the money, staff-time and leadership-visibility messages separate so we learn which one drives interest. <b>Suggested first round: #1, #2 and #3</b>, each with #6 as the guarantee line. Keep #10 for a later emotional (level 5) test. This is a recommendation, not a decision."},
+        {"type": "text", "body": "Language checks applied: no 'platform' or 'suite' wording; no 'revolutionary', 'cutting-edge' or similar; no AI promises beyond Phase 1; no clinical, revenue or cost claims without hospital evidence."}
+      ]
+    },
+    {
+      "title": "How to test with little traffic",
+      "subtitle": "MediMind proposal | adapts her testing rules (S1 09:47-15:10, 50:51) to a market with few hospital buyers",
+      "blocks": [
+        {"type": "card", "title": "The honest problem", "body": "Her A/B rule needs about 500-1,000 visits and 50-100 conversions per version. A hospital-software site in Georgia may never see that. She was clear: do not decide on five clicks. So test in two places: conversations now, the website only if traffic allows."},
+        {"type": "table", "headers": ["Test", "How", "What counts as a signal"], "widths": [1.2, 2.8, 2.0], "rows": [
+          ["Headline cards (start now)", "Print #1, #2, #3 on three cards. In a 10-minute slot with a hospital leader, ask: 'In your words, what does this company do?', 'Which of these happened in your hospital recently?', 'What would you need to see to believe it?' Write down their exact words.", "They name a recent incident without prompting and ask a next question. Agreeing politely is not a signal."],
+          ["Message variants", "Use one card's problem line as the opening of personal introductions. A person writes and sends every message.", "Replies that ask for a meeting, per variant."],
+          ["Website A/B (only if traffic allows)", "Check monthly visits first. If there is enough, run the live hero against #1 for a few weeks with one tool and one button.", "Her sample sizes, not a gut feeling."]
+        ]},
+        {"type": "section", "title": "A clearer next step (draft)", "body": "She asked: 'Book a meeting for what? How long? Who is it going to be with? What am I going to learn?' (S1 01:47:41-01:47:51). Draft button text to test: <b>'Book a 30-minute call with one of our doctors'</b>, with the line under it: 'We map your three biggest software problems and show you how they would look in one system. No preparation needed.' Check who will actually take these calls before using it."},
+        {"type": "text", "body": "Rules: count independent buying organisations, not branches. Keep patient and confidential hospital data out of every card, message and tool. Record every result in the marketing workspace with its date and source."}
+      ]
+    },
+    {
+      "title": "This week's actions",
+      "subtitle": "Lecture asks (S1 12:10, 01:55:16) and a MediMind action draft | four weeks after the lecture",
+      "blocks": [
+        {"type": "table", "headers": ["Her ask", "Status today", "Next action"], "widths": [1.8, 1.9, 2.3], "rows": [
+          ["10 different value propositions", "Drafted three times (21, 22, 24 Sep). Many share one structure and bullets.", "Use pages 11-12: ten distinct pains."],
+          ["Test against the current one", "No test result recorded in the marketing workspace; its README (23 Sep) says no buyer interviews yet.", "Run the headline-card test with at least five independent hospitals."],
+          ["Focus on three problems", "Open.", "Choose three of the ten; suggestion: #1, #2, #3."],
+          ["Quantify the outcome", "No measured number yet.", "With permission, measure one number at the anchor partner (rejected claims or minutes per task)."],
+          ["Clear next step", "Buttons say 'Build my hospital's future' or 'Get my free parallel system'.", "Test the 30-minute doctor call wording."],
+          ["(Our own) scope", "Live hero mentions AI brain and unlimited development; offer is Phase 1.", "Founder reconciles before any public test."]
+        ]},
+        {"type": "section", "title": "Questions to bring to office hours", "body": "<b>1.</b> With very little website traffic, is conversation testing enough to choose a value proposition?<br/><b>2.</b> You called the parallel evaluation 'fifth information'. Where should it appear: under the headline, on the demo page or in the meeting?<br/><b>3.</b> Should a hospital group and a single hospital get separate landing pages?<br/><b>4.</b> How do we quantify honestly before we have measured data?<br/><b>5.</b> What is the culture code for a hospital owner in Georgia, and should the Georgian page lead differently from the English one?"},
+        {"type": "table", "headers": ["To rewatch", "Recording time"], "widths": [3.6, 1.4], "rows": [
+          ["MediMind homepage review", "01:12:56-01:17:24"],
+          ["Five sophistication levels and the Dollar Shave Club video", "21:12-35:06"],
+          ["Jobs to be done (drill, Rolex, milkshake)", "40:00-45:18"],
+          ["What a value proposition must contain", "53:32-54:33"],
+          ["BFG, landing-page examples and homework", "01:53:43-01:56:35"]
+        ]}
+      ]
+    }
+  ]
+}

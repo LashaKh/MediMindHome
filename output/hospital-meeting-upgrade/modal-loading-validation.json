@@ -1,0 +1,6 @@
+{
+  "loading": true,
+  "delayedLoadFallback": true,
+  "iframeCleanup": true,
+  "realCalendarTested": false
+}

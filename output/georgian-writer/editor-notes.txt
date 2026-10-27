@@ -1,0 +1,66 @@
+Editorial assessment
+
+81 selective HTML proposals are in proposed-rewrites.json. The working tone is the user-confirmed clear, professional conversation with a hospital director. Individual Georgian phrases have not been user-approved. This is an editorial pass, not native-speaker approval or a visual layout review.
+
+The pass replaces abstract noun stacks and translated fragments with concrete actions, explains parallel evaluation and optional AI, and keeps ordinary labels that already read naturally. Customer quotations, proper names, research passages, the hospital-sources section and material outside sections were left unchanged. All source IDs and old_html values match deck-copy-source.json. Tag order, embedded English tokens, numeric sequences and scope were checked programmatically. The parent should inspect the applied text at the actual slide and dialog sizes.
+
+Two agreed refinements are included: ka-055 uses the compact 'განვითარების დამატებითი საფასურის გარეშე'; ka-251 retains the precise clinical-validation term 'კლინიკურად ვალიდირებულია'.
+
+Existing source ambiguities left for the parent
+
+- ka-001: Georgian says a unified operating system; English says an AI-native operating system. The cover meaning differs. No silent positioning change proposed.
+- ka-007: English says a record mismatch can delay payment; Georgian states the delay unconditionally. No change proposed to the certainty of this sentence.
+- ka-054/055, ka-068: the source currently promises every requested feature/change and unlimited development. The proposals preserve that commitment. The archived commercial-scope question is not resolved by copy editing.
+- ka-096: Georgian refers to international technological knowledge; English to international product expertise. These are related but different credentials. No credential change proposed.
+- ka-250: Georgian says participation/enrolment in a trial and understandable communication; English says trial matching and patient explanations. A possible faithful alternative is 'შესაბამისი კვლევის მოძებნა<br>პაციენტისთვის გასაგები ახსნა', but trial-matching scope should be confirmed rather than silently changed.
+- ka-340: Georgian asks the hospital for needs and feedback; English asks for clinical expertise and feedback. No change proposed to the hospital contribution.
+- English_context is a nearby-context field, not a guaranteed one-to-one translation. Several short labels have an adjacent English body sentence in that field; those mismatches were not treated as source defects.
+
+Targeted review of 68 JS proposals
+
+The following are concrete meaning/clarity corrections to consider before applying. I did not edit proposed-js-rewrites.json or any shared source.
+
+js-027 — Keep the current-program budget baseline. Changing singular current software to the total spent on programmes can change the price comparison. Suggested full text:
+პრემიუმ კლასის სისტემა იმ ბიუჯეტის ფარგლებში, რომელსაც ახლა მოქმედ პროგრამაზე ხარჯავთ.
+
+js-032 — 'თავის დაღწევის საშუალებას აძლევს' is a stronger escape-from-dependence result than the source's alternative. Keep the ownership limit and the existence of another choice. Suggested full text:
+პირველად ჩაბარებული საბაზისო ვერსიის საწყისი კოდი ხელშეკრულებით თქვენია. ერთ მომწოდებელზე დამოკიდებულების ნაცვლად, კლინიკას სხვა არჩევანიც აქვს.
+
+js-038 — The source connects revenue and costs for management and planning; 'სრული ფინანსური სურათი' adds completeness. Suggested full text:
+ანგარიშებში თითოეული განყოფილების შემოსავალსა და ხარჯს ერთად ხედავთ — კლინიკის მართვისა და დაგეგმვისთვის.
+
+js-047 — The revised definition ('ჯანმრთელობის მონაცემების აღწერისა და გაცვლის საერთაშორისო სტანდარტია') is clear and retains the relevant standard meaning. No further correction.
+
+js-050 — 'ერთიანად და წესრიგში შენახული' does not preserve the technical meaning of structured data, and adds a storage description. Retain 'სტრუქტურირებული'. Suggested full text:
+ერთიანი, სტრუქტურირებული მონაცემები დოკუმენტაციის მომზადებას, ანალიზსა და მომავალ AI სერვისებს ემსახურება. რომელი ფუნქცია იქნება ხელმისაწვდომი, ცალკე ვთანხმდებით. კლინიკურ გადაწყვეტილებებს ექიმი იღებს.
+
+js-068 — Separate contractual rights do not themselves state the categorical exclusion 'პირველი ვერსიის საკუთრება ამ უფლებებს არ მოიცავს'. Suggested full text:
+შემდგომ ვერსიებზე უფლებებს ხელშეკრულების ცალკე პირობები განსაზღვრავს — პირველი ვერსიისგან დამოუკიდებლად.
+
+js-109 — Preserve the measured-result and forecast distinctions rather than replacing them with the broader 'რეალური შედეგი'/'მოსალოდნელი სარგებელი'. Suggested full text:
+თანხები მხოლოდ მაგალითისთვისაა და მათი შეცვლა შეგიძლიათ. ეს გამოთვლის მაგალითია და არა კლინიკაში გაზომილი შედეგი ან სარგებლის პროგნოზი.
+
+js-142 — 'არა მუშაობა რეალურ სისტემაში' can imply that the system itself is unreal. The source only says this is not a live product session. Suggested full text:
+ეს პროცესის მაგალითია გამოგონილი პაციენტის მონაცემებით. აქ პროდუქტში რეალურ დროში მუშაობას არ ვაჩვენებთ.
+
+js-159 — 'უნდა გამართოთ' newly assigns integration work to the hospital reader. Keep the requirement without assigning a delivery owner. Suggested full text:
+ეს მონაცემთა სტრუქტურის მაგალითია. რეალური გაცვლისთვის მონაცემთა ველების შესაბამისობაც უნდა განისაზღვროს და სისტემებს შორის კავშირიც გაიმართოს.
+
+js-160 — Information available to AI is not necessarily information it will use. Suggested full text:
+აირჩიეთ, რომელ ინფორმაციაზე ექნება წვდომა AI-ს
+
+js-171 — The English source says any agreed service-level or price-lock terms. The proposal makes service level unconditional while conditionally qualifying only price lock. Suggested full text:
+გაგრძელებამდე წერილობით ვათანხმებთ ფასს, მხარდაჭერასა და მომსახურების მოცულობას. თუ მომსახურების დონესა თუ ფასის ფიქსირებაზეც შევთანხმდებით, ამ პირობებსაც წინასწარ, წერილობით დავაფიქსირებთ. პარტნიორობის შეთავაზებაში აღწერილი შეუზღუდავი შემდგომი განვითარების ვალდებულება უცვლელია.
+
+js-174 — 'MediMind-ის არსებული სისტემის პარალელურად გამოცდა' can be read as MediMind's existing system. Move the object next to its action. First sentence:
+გამართვა, მორგება, სწავლება და MediMind-ის გამოცდა არსებული სისტემის პარალელურად უფასოა.
+
+js-176 / js-183 — 'ერთხელ მიმართავთ/გვიკავშირდებით' can imply that only one contact will be necessary. The source promises one request and one accountable team, not the absence of follow-up contact. Suggested js-176:
+ერთი მიმართვა MediMind-ს. ჩვენი სისტემის ფარგლებში საკითხს ბოლომდე ერთი პასუხისმგებელი გუნდი მიჰყვება.
+Suggested js-183:
+ერთი მიმართვა. ერთი გუნდი აგებს პასუხს. შედეგს თქვენი კლინიკა ამოწმებს.
+
+js-182 — Preserve the checking result, not just what was checked. 'რას გააკეთებს შემდეგ' also assigns the next step specifically to the team, whereas the source only names a next step. Suggested full text:
+ერთი გუნდი გატყობინებთ, რა შედეგი მოჰყვა შემოწმებას და რა არის შემდეგი ნაბიჯი. საბოლოო შედეგს თქვენი კლინიკა ამოწმებს.
+
+No additional concrete corrections found in the remaining JS proposals. This review covers copy meaning and sentence flow; source execution and layout remain the parent's checks.

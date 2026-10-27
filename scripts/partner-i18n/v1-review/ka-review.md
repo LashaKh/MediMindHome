@@ -1,0 +1,98 @@
+# Georgian (`ka`) copy review — partner-i18n.js
+
+Source: `/Users/toko/Desktop/MediMind Landing Page/public/partner-i18n.js` (`ka` block, lines 352–701). 83 keys changed; corrected strings are in `ka-review.json`. The original file was not modified.
+
+## Changes (key — why)
+
+- c.h1 — "აგებული თქვენზე" reads as "built on top of you"; "თქვენზე მორგებული" is the idiom for "built around you".
+- c.sub — "სრული ხედვა" means "vision"; "სრული სურათი" is the natural phrase for management visibility.
+- p.1b — "ვაინსტალირებთ" is spoken slang; "საკვანძო" is the standard word for "key" people; "არაფერი დაგიჯდებათ" is the correct future form for "costs you nothing".
+- p.4b — "ვუტოლდებით" (we become equal to) is ungrammatical for price-matching; now "the price equals what you pay today for software"; "ტელეფონის ნომერი" is the everyday form.
+- p.5b — "ტესტავენ" is slang; "არ გაქვთ" is warmer than the bureaucratic "არ არსებობს".
+- p.6b — adjective order: "ფასის მრავალწლიანი ფიქსაცია" (multi-year lock), not "multi-year price".
+- p.closer — "წვრილი შრიფტის გარეშე" is a calque; "ფარული პირობების გარეშე" is what Georgians say; "მისი" is cleaner than "ამის".
+- w.afterK — "სანაცვლოდ" means "in exchange"; EN means "instead".
+- w.n2 — "ლაბი" is slang in a director-facing deck; "ლაბორატორია" fits where "რადიოლოგია" already sits.
+- w.oneS — "ერთ მთლიანობად" is bookish; "ერთიანად" echoes ch.h1 and is shorter.
+- w.closer — restores the won't/can't contrast ("don't want to" vs "can't") and adds "rebuild".
+- ch.1b — adds "billed" sense ("ანგარიშში"), fixes word order of "first time", "საათები გადის" replaces subject-less "სჭირდება".
+- ch.2t — follows the c.sub "სურათი" fix.
+- ch.4b — "კრიტიკული მაჩვენებლები" is what clinicians say; "მნიშვნელობა" also means "meaning".
+- s.r1 — "14-საათიანი სიჩუმე" is grammatical; "სეპტიკური შოკი" is the correct medical term (not "სეპტიური").
+- s.r2 — "ვინც მას ეხება" (touches him) and "მთლიან პაციენტს" are calques; "ვინც მას მკურნალობს ... სრულ სურათს ხედავს" is native.
+- s.r3 — a cause is "revealed" (ვლინდება), not "caught" (იჭერება).
+- s.foot — "დეიდენტიფიცირებული" is jargon; "AI მიანიშნებს" means "hints"; "აფრთხილებს" (warns/flags) is the intended meaning.
+- pr.ready — software is "ready/built" (მზადაა), not "constructed" (აშენებულია).
+- pr.spec — "ანგარიშგება" is financial/regulatory reporting; vascular reporting is "კვლევების დასკვნები"; "შექმნილი" instead of "აშენებული".
+- f.h1 — "ამოსავალი წერტილი" is the idiom for "starting point"; "მკაფიო" is the right "clear".
+- f.1t — "კლინიკის გაერთიანება" can read as a corporate merger to an owner; "ერთ სისტემაში გაერთიანება" removes the ambiguity.
+- f.1b — one over-long sentence with "ბიზნეს-სამუშაოსთვის"; restructured, "ბიზნეს-პროცესები" is standard, moat line now matches the house form "აგებული FHIR R4-ზე".
+- f.2b — "ცოცხალი ეკრანი" (living screen) is a calque; "განყოფილება-განყოფილება" replaced by "სათითაოდ".
+- f.3b — "reads every patient" is a calque; "reads every patient's data".
+- f.rail — "ყველაფრის ქვეშ" (under everything) is literal; "ყველაფრის საძირკველში" keeps the foundation metaphor.
+- ai.label — "თქვენი სიტყვით" (by your word) is odd; "ირთვება, როცა თქვენ იტყვით".
+- ai.4 — "საწოლების ნაკადი" is a calque; "საწოლების ბრუნვა" (bed turnover) is the Georgian hospital-management term.
+- ai.cB — "კლინიკასთან ერთად ახლდება" is awkward; "კლინიკის მუშაობის კვალდაკვალ" is the idiom.
+- ai.6 — term consistency: "კრიტიკული მაჩვენებლები".
+- ai.12 — case error: "გადაუდებლობის მიხედვით დალაგებული" (sorted by urgency).
+- ai.foot — "ფასდება" means "is evaluated"; "მოცულობა და ფასი ცალკე თანხმდება" matches f.2b/of.excl.
+- pf.sub — "ხელი მოაწერა" needs an object (კონტრაქტს); "კლინიკების ქსელი" per terminology; "საქართველოში სიდიდით მეორე" and "დღეს უკვე" are the natural orders.
+- pf.l2 — "ნულოვანი" is a calque of "zero"; "არც ერთი" is native.
+- pf.l4 — restores "to stand it up" (ასამუშავებლად) and fixes the order after the "0".
+- pf.f1 — "სანამ ... მზად არ გახდა" is the correct "until it was ready" construction.
+- pf.f2 — doctors say "კტ"; a CT scanner is "ტომოგრაფი", not "სკანერი".
+- pf.f3 — "უკან დაბრუნება" alone is vague; "ძველ სისტემაზე დაბრუნება" says what rolls back.
+- pf.ref — "პირველობას არავინ გთხოვთ" reads as "nobody asks you for first place"; "სარეკომენდაციო ზარს მოგიწყობთ" makes the ask concrete.
+- t.h1 — "რესურსებით, რომ შევასრულოთ" is a dangling fragment; "რესურსიც გვაქვს, რომ შევასრულოთ" is a complete, natural clause.
+- t.iB — the original dropped "scaling" and used past tense for a product still in use; "მკურნალობის მასშტაბირება" is unnatural.
+- t.advK — "ამსხვრევენ" is "shatter"; "ამტვრევენ" is the normal "break (software)".
+- t.quote — tighter order; "ჩამოგდებული" as a participle reads better than the relative clause.
+- t.b1 — official agency name is "საქართველოს ინოვაციების და ტექნოლოგიების სააგენტო".
+- t.rB — "თქვენთვის გამოყოფილი" makes "dedicated" explicit; lines of code are "სტრიქონი", not "ხაზი".
+- of.label — "დაცულია" means "protected"; "მხოლოდ ... კლინიკისთვის" is how "reserved for" is said.
+- of.sub — "ფოკუსი" means "magic trick/focus" and misleads; "მთელი საიდუმლო ეს არის" is the idiom.
+- of.todayK — "what your money buys" is a calque; "რაში მიდის თქვენი ფული" is native.
+- of.usK — same fix: "რას იძლევა იგივე ფული ჩვენთან".
+- of.t4 — "ფასიანი ცვლილებების მოთხოვნები" is clunky; "ფასიანი ცვლილებები" matches w.box4s and a1.c2.
+- of.excl — "თუ და როცა" is an English calque; "მხოლოდ მაშინ, როცა თავად მოისურვებთ" keeps both the condition and the timing.
+- of.bandB — "ინდუსტრიის სტანდარტი" as a noun is unclear; "მისი სტანდარტული ანალოგი" says what costs $6,000.
+- h.2b — future "მზად იქნება" for something that happens after agreement.
+- h.3t — "ტესტავენ" is slang; "რეალურ სამუშაოზე ამოწმებენ".
+- h.4b — "საფასური არ არსებობს" is bureaucratic and "ვალდებულება — არც" is ungrammatical; "შეფასება უფასოა. ვალდებულება — არანაირი."
+- h.c3b — "რეალურად მუშაობს" can read as "actually functions"; now "uses the system in real work".
+- h.note — "ადგილზე რჩება" is a calque of "stays in place"; "მუშაობას აგრძელებს" is the meaning.
+- wr.h1 — "მოინდომო" is informal singular "you" in a formal "თქვენ" document; impersonal rewrite removes the register clash.
+- wr.3b — adjective order "ფასის მრავალწლიანი ფიქსაციით".
+- wr.closer — stacked genitives "დარჩენის თხოვნის ... გზა" are heavy; rewritten as a plain clause.
+- n.b2 — "მუშაობისას ნახავთ" is awkward; "ნახავთ, როგორ მუშაობს სისტემა" is natural; "კლინიკურ" per terminology.
+- n.b3 — "დროდ" is the wrong case; "დროის დახარჯვა ღირს თუ არა" is the idiom.
+- n.cK — "ორი თქვენთვის მოსახერხებელი დრო" is the natural phrasing.
+- n.thanks — "მადლობა დათმობილი დროისთვის" is the standard closing.
+- a1.label — "დირექტორი" alone is ambiguous next to a2's "სამედიცინო დირექტორი"; CEO = "გენერალური დირექტორი".
+- a1.r1 — word order and verb: "პირველივე ჯერზე სწორად ბარდება"; "კოდირება ... ხდება".
+- a1.r3 — "უფრო სწრაფი ფული" is a calque; "ფული უფრო სწრაფად შემოდის".
+- a1.costK — "ეზიდებით" is hauling luggage; "ხარჯის გაღება" is the idiom for bearing a cost.
+- a1.mK — restores "we ask you" from EN.
+- a2.3b — term consistency: "კრიტიკული მაჩვენებლები".
+- a2.5b — bare "სქრაიბი" is unknown to Georgian readers; "AI სქრაიბი" links it to pr.c15.
+- a2.6b — "მიანიშნებს" (hints) → "აფრთხილებს" (flags).
+- a3.h1 — "რა უტოლდება" (what equals) is opaque; "რა ღირს" (what it costs) signposts the price block.
+- a3.p1 — same price-match fix as p.4b, plus "ეტაპი 1-ის შეთანხმებული მოცულობისთვის" word order.
+- a3.p2 — adjective order "ფასის მრავალწლიანი ფიქსაცია".
+- a3.p3 — "გადახვალთ" (go over) → "ჩვენზე გადმოხვალთ" (switch to us).
+- a3.n1 — "თუ და როცა" calque, same fix as of.excl.
+- a3.n2 — "ელემენტები" (elements) → "ხარჯები" (third-party costs); comma after "მაგალითად".
+- a3.closer — "საფასური არ არსებობს" / "— არც" fixes, same as h.4b.
+- a4.h1 — "როგორც შენახვის საძირკველზე" is stiff; "მონაცემთა შენახვის საძირკველზე" with a dash reads as native and keeps the house "აგებული FHIR R4-ზე".
+- a4.l1b — "საავადმყოფო ობიექტის" breaks the კლინიკა rule; "ანგარიშები" → "ისტორიები" per terminology for claims.
+- a4.l2b — "AI-მსჯელობა" (AI discussion) is a calque; "AI-ანალიზი" matches f.2b.
+- a4.f1 — original said interfaces exist but need no upkeep; EN says there are none to maintain.
+
+## Still risky after the fix
+
+- w.one "ერთი სიმართლე" (left as is) — poetic calque of "one truth"; defensible, but a director may pause on it.
+- pr.c15 / a2.5b "სქრაიბი" — the English word is unfamiliar in Georgian; the "ხმიდან ჩანაწერამდე" gloss carries it, but consider "AI ასისტენტი" if testers stumble.
+- f.1t — new title is longer (33 chars); check it does not wrap badly in the phase card.
+- w.n2 "ლაბორატორია" — same chip size as "რადიოლოგია", but verify the mini-diagram on mobile (200px variant).
+- ai.1d "მიმღები" for ER — correct in most Georgian hospitals, but some use "გადაუდებელი"; leave unless the target hospital uses the other word.
+- ch.2b / ai.cB "მიღებები" for admissions — understood, though "ჰოსპიტალიზაციები" is what hospital managers more often report.

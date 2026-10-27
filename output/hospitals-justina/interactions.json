@@ -1,0 +1,17 @@
+{
+  "checks": [
+    "Password gate and direct Georgian meeting link",
+    "Language buttons, keyboard navigation, final opening slide fit",
+    "All 7 appendix links",
+    "TAVI demo loads, plays and closes",
+    "Product demo loads and closes",
+    "Readable evaluation rows: ka, 390px",
+    "Readable evaluation rows: ka, 320px",
+    "Readable evaluation rows: en, 390px"
+  ],
+  "playback": {
+    "duration": 70.308005,
+    "readyState": 4
+  },
+  "errors": []
+}

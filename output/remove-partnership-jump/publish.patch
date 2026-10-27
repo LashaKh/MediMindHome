@@ -1,0 +1,37 @@
+--- a/public/deck-assets/hospitals-partnership.js
++++ b/public/deck-assets/hospitals-partnership.js
+@@ -17,7 +17,7 @@
+   dialog.id = 'hpo2-details';
+   dialog.setAttribute('aria-labelledby', 'hpo2-dialog-title');
+   dialog.setAttribute('aria-describedby', 'hpo2-dialog-description');
+-  dialog.innerHTML = `<header class="hpo2-dialog-head"><div><h2 id="hpo2-dialog-title">${copy('What your partner terms include', 'რა შედის თქვენს საპარტნიორო პირობებში')}</h2><p id="hpo2-dialog-description">${copy('Premium hospital software, within your current software budget.', 'პრემიუმ სისტემა, თქვენი მიმდინარე პროგრამის ბიუჯეტის ფარგლებში.')}</p></div><button type="button" class="hpo2-dialog-close" data-hpo2-close aria-label="Close offer details / პირობების დახურვა">×</button></header><div class="hpo2-dialog-body"><div class="hpo2-receipt">${terms.map((term, i) => `<details class="hpo2-term" data-hpo2-term="${term.key}"><summary><span class="hpo2-term-number">0${i + 1}</span><span>${copy(...term.title)}</span><span class="hpo2-term-status">${copy(...term.status)}</span></summary><p>${copy(...term.description)}</p></details>`).join('')}</div><footer class="hpo2-dialog-footer"><p>${copy('3 partner places · 1 taken · 2 available. These special terms apply to these three partnerships.', 'პარტნიორობის 3 ადგილი · 1 დაკავებულია · 2 თავისუფალია. განსაკუთრებული პირობები ამ სამ პარტნიორობაზე ვრცელდება.')}</p><a class="hpo2-route" href="#/hospital-parallel-evaluation" data-hpo2-route>${copy('See the rollout path', 'ნახეთ დანერგვის გზა')} <span aria-hidden="true">→</span></a></footer></div>`;
++  dialog.innerHTML = `<header class="hpo2-dialog-head"><div><h2 id="hpo2-dialog-title">${copy('What your partner terms include', 'რა შედის თქვენს საპარტნიორო პირობებში')}</h2><p id="hpo2-dialog-description">${copy('Premium hospital software, within your current software budget.', 'პრემიუმ სისტემა, თქვენი მიმდინარე პროგრამის ბიუჯეტის ფარგლებში.')}</p></div><button type="button" class="hpo2-dialog-close" data-hpo2-close aria-label="Close offer details / პირობების დახურვა">×</button></header><div class="hpo2-dialog-body"><div class="hpo2-receipt">${terms.map((term, i) => `<details class="hpo2-term" data-hpo2-term="${term.key}"><summary><span class="hpo2-term-number">0${i + 1}</span><span>${copy(...term.title)}</span><span class="hpo2-term-status">${copy(...term.status)}</span></summary><p>${copy(...term.description)}</p></details>`).join('')}</div><footer class="hpo2-dialog-footer"><p>${copy('3 partner places · 1 taken · 2 available. These special terms apply to these three partnerships.', 'პარტნიორობის 3 ადგილი · 1 დაკავებულია · 2 თავისუფალია. განსაკუთრებული პირობები ამ სამ პარტნიორობაზე ვრცელდება.')}</p></footer></div>`;
+   document.body.append(dialog);
+   const rows = Array.from(dialog.querySelectorAll('[data-hpo2-term]'));
+   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+@@ -72,14 +72,6 @@
+     window.Reveal.configure({ keyboard: keyboardBeforeOpen });
+     opener?.focus({ preventScroll: true });
+   });
+-  dialog.querySelector('[data-hpo2-route]').addEventListener('click', event => {
+-    const slides = Array.from(document.querySelectorAll('.reveal .slides > section'));
+-    const targetIndex = slides.findIndex(section => section.id === 'hospital-parallel-evaluation');
+-    if (targetIndex < 0) return;
+-    event.preventDefault();
+-    close(true);
+-    window.Reveal.slide(targetIndex);
+-  });
+   document.addEventListener('keydown', () => { slide.dataset.hpo2Input = 'keyboard'; });
+   document.addEventListener('pointerdown', () => { slide.dataset.hpo2Input = 'pointer'; });
+   window.Reveal.on('slidechanged', () => { if (dialog.open) close(true); });
+--- a/public/hospitals.html
++++ b/public/hospitals.html
+@@ -11200,7 +11200,7 @@
+   <script src="/deck-assets/hospitals-meeting.js?v=92359f3710"></script>
+   <script src="/deck-assets/hospitals-evaluation.js?v=8532440178"></script>
+   <script src="/deck-assets/hospitals-one-team.js?v=47dda574e5"></script>
+-  <script src="/deck-assets/hospitals-partnership.js?v=64355d6dce"></script>
++  <script src="/deck-assets/hospitals-partnership.js?v=4c2984bbb4"></script>
+   <script src="/deck-assets/hospitals-comparison.js?v=dc05492ce9"></script>
+   <script src="/deck-assets/hospitals-reality.js?v=6beb51f904"></script>
+   <script src="/deck-assets/hospitals-roadmap.js?v=7c451dc1a6"></script>

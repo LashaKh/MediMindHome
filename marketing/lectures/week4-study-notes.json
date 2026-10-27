@@ -1,0 +1,786 @@
+{
+  "ready": true,
+  "meta": {
+    "day": "Week 4",
+    "date": "12 October 2026",
+    "prepared_date": "14 October 2026",
+    "destination": "/Users/toko/Desktop/500 Lectures/Week 4 - 2026-10-12",
+    "sessions": [
+      "AI-Powered User Acquisition - Graham Kennedy"
+    ],
+    "source_links": {
+      "deck_supplied": "https://docs.google.com/presentation/d/161w6JFvRLQhxRGuDScEEO5OSLoFHBQZnJq0kOWM1fNQ/edit?usp=sharing",
+      "deck_from_chat": "https://docs.google.com/presentation/d/1IRM4FLjxuL_q2yFb28PkdkTM5rlwwJvZ7ebxUuwVvbs/edit",
+      "prompt_doc_from_chat": "https://docs.google.com/document/d/1kKeYvR3jP5Fl0z8DVFqEiuTOW48n6sgiwkfzriwcUV0/edit"
+    },
+    "review_notes": "Reviewed all 755 recognized segments (00:00-59:02), all 32 pages of the deck the lecturer posted in chat, the prompt document he linked, the meeting chat, and 30 recording frames sampled every two minutes. The recorded slides match the downloaded deck. The deck link supplied with the request opens in a browser but its PDF export is not available to us. For the MediMind activities, the founder's in-class output (W1, 12 October), the 8 October product explainer (X1) and the 22 September buyer-pain research (R1) were read in full. This is a source-informed guide, not a human-verified verbatim transcript.",
+    "transcript_caution": "Automatic speech recognition can mishear names, products and numbers (for example 'Cards' for the CARDS database, 'Task Room' for Taskroom, 'post-hug' for PostHog, 'flight book' for what is probably Flight Path). About 11 isolated 'Thank you.' lines fall inside silent exercise breaks and are probably recognition artefacts, not speech. Speaker identities are not assigned. Check the recording before quoting. Examples from the lecture are not verified MediMind results."
+  },
+  "pages": [
+    {
+      "title": "Week 4: AI-powered user acquisition",
+      "subtitle": "Graham Kennedy | One supplied lecture recorded on 12 October 2026 | 59m 04s",
+      "blocks": [
+        {
+          "type": "card",
+          "title": "The lecture in one sentence",
+          "body": "Let AI watch public signals, rank and verify who might need you now, and draft the first message; keep the human on choosing sources, checking every lead and sending every message."
+        },
+        {
+          "type": "section",
+          "title": "Five points to remember",
+          "body": "<b>1.</b> Below $1M ARR, network and intros are still the strongest channel; signal-based outreach is the fourth (S1 09:16; slide 5).<br/><b>2.</b> Four steps: <b>Watch, Rank, Verify, Reach</b>. Think of it as a funnel: about 115 names became 5 worth contacting in his example (S1 12:53-17:35, 31:21; slides 7, 11).<br/><b>3.</b> Before a clear ICP, use signals as research: find repeated pain and ask, do not pitch. After ICP, look for fit plus a trigger and name the signal (S1 17:53-21:20; slide 8).<br/><b>4.</b> AI does the searching, ranking, research and first drafts. You verify every lead and send every message yourself, for roughly the first 500-1,000 drafts (S1 25:49-30:00, 45:38-48:10; slide 18).<br/><b>5.</b> Turn the prompt into a system: context files, reusable skills, orchestration and integrations, improved by your feedback each run (S1 48:12-54:15; slides 19-27)."
+        },
+        {
+          "type": "section",
+          "title": "Where MediMind stands",
+          "body": "You already ran Prompt #1 in class (W1). It found seven related records and <b>no</b> prospect that passed all three verification tests. That is an honest result: hospital leaders in a small market leave few public traces. Activities 1-5 (pages 7-11) redo the lecture's exercises as MediMind, using the 8 October product explainer and the 22 September buyer-pain research."
+        },
+        {
+          "type": "text",
+          "body": "Fast route: this page, page 4 for the before/after-ICP table, page 7 for our company brief, page 9 for our signal library, page 12 for this week's actions."
+        },
+        {
+          "type": "card",
+          "title": "Scope of this pack",
+          "body": "This pack covers the single lecture supplied in Recordings/week4. It does not claim to summarize the whole week. Lecture content and proposed MediMind applications are labelled separately."
+        }
+      ]
+    },
+    {
+      "title": "Sources and review notes",
+      "subtitle": "S1 is the recording. D1 is the 32-slide deck. P1 is the prompt document.",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Source",
+            "What it is",
+            "Access and review"
+          ],
+          "widths": [
+            1,
+            2.2,
+            2.4
+          ],
+          "rows": [
+            [
+              "S1",
+              "Zoom recording, 12 October 2026, 59m 04s. Audio and video have identical soundtracks and were processed once.",
+              "Transcribed locally on this Mac. All 6 chunks complete, 755 segments, every segment read."
+            ],
+            [
+              "D1",
+              "Deck: <i>AI-Powered User Acquisition</i>, 500 Global in Eurasia Accelerator, Batch 11. Posted by the lecturer in chat at 01:05:11 (chat clock).",
+              "Downloaded as PDF; all 32 slides read, image slides inspected visually. Matches the slides seen in 30 sampled recording frames."
+            ],
+            [
+              "D1 (your link)",
+              "The deck link sent with this request. Its browser title names the same lecture.",
+              "Opens in a browser; PDF export returned a web page instead. Not separately reviewed; D1 used instead."
+            ],
+            [
+              "P1",
+              "Prompt document: Prompt #1 (pre-ICP/PMF) and Prompt #2 (post-ICP/PMF). Posted in chat at 00:12:13.",
+              "Exported and read in full. Saved in Source decks."
+            ],
+            [
+              "Chat",
+              "Meeting chat, including the build-or-buy question and the lecturer's answers.",
+              "Read in full. Chat clock times do not line up with recording times."
+            ],
+            [
+              "W1",
+              "Your own Prompt #1 output, <i>MediMind - AI-Powered Customer Discovery - 2026-10-12.pdf</i>.",
+              "Read as context. Not re-verified here."
+            ],
+            [
+              "X1, R1",
+              "MediMind product explainer (8 October 2026) and hospital buyer-pain research (22 September 2026), from the marketing workspace.",
+              "Read in full for the MediMind activities. Both are internal working documents; R1's pains are hypotheses."
+            ]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "What the recording contains",
+          "body": "00:00-09:10 introduction and the in-class prompt exercise (mostly silent while people work). 09:16-21:20 signals and the four steps. 21:30-34:10 the Taskroom example. 34:10-40:30 silent review break. 40:37-45:30 a participant shares results. 45:38-58:10 building the system and Workspace Studio. 58:10-59:04 close and logistics."
+        },
+        {
+          "type": "card",
+          "title": "Not discussed in the recording",
+          "body": "Slide 28 (54% of B2B buyers use LLMs for vendor shortlisting; search volume to drop 25% in 2026, citing a Gartner forecast) is in the deck but not spoken about. The lecturer says he skipped a few slides (S1 54:20). Treat it as deck-only material."
+        }
+      ]
+    },
+    {
+      "title": "Signals and the four steps",
+      "subtitle": "Lecture evidence | S1 approximately 09:16-17:35 | D1 slides 5-7",
+      "blocks": [
+        {
+          "type": "card",
+          "title": "What a signal is",
+          "body": "Observable evidence that someone may be ready to buy, convert or stay. Signals are no longer rare; acting on them well still is (slide 6). Everyone can see the same public signals, so they help you and your competitors equally (S1 13:17)."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "",
+            "Internal signals",
+            "External signals"
+          ],
+          "widths": [
+            1.1,
+            2,
+            2
+          ],
+          "rows": [
+            [
+              "Source",
+              "Your own data: CRM, customer interviews, product analytics",
+              "The market: news, hiring, funding, reviews, regulation, forums"
+            ],
+            [
+              "Use",
+              "Score and understand existing customers",
+              "Find future customers"
+            ],
+            [
+              "Trust",
+              "High: real behaviour in your product",
+              "Low: needs verification"
+            ],
+            [
+              "Lecturer's view",
+              "More powerful and fairly easy to set up (S1 12:53)",
+              "The focus of this lecture"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Step",
+            "What it means",
+            "Lecture tips"
+          ],
+          "widths": [
+            0.8,
+            2,
+            2.4
+          ],
+          "rows": [
+            [
+              "1 Watch",
+              "Check the public places your buyers talk and act",
+              "New leaders and hires, funding and expansion, complaints in reviews. New leaders often have a mandate to change software (S1 14:12)."
+            ],
+            [
+              "2 Rank",
+              "Pick the few signals that show a company must act now",
+              "Pain beats profile. Newest first. Keep a top 5. Someone buying in six months gets a light touch every few months (S1 15:52)."
+            ],
+            [
+              "3 Verify",
+              "Prove the signal is real, recent and fits your ICP",
+              "Matches best customers; dated and linked; contact still there. Over time you learn which signals tell the truth (S1 16:17)."
+            ],
+            [
+              "4 Reach",
+              "A short note that names the signal and asks",
+              "Name the signal, share one insight, ask for a meeting. Mentors can help with this step (S1 17:03)."
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "body": "His examples of external triggers: a regulation or compliance change, a major data breach for security products, or end-of-quarter pressure for sales software (S1 11:43-12:01)."
+        }
+      ]
+    },
+    {
+      "title": "Before and after a clear ICP",
+      "subtitle": "Lecture evidence | S1 approximately 17:53-21:20 | D1 slide 8",
+      "blocks": [
+        {
+          "type": "card",
+          "title": "The key idea",
+          "body": "Outbound works best on top of a strong offer and a good fit. Early on, the list is a <b>research hypothesis</b> to test in real conversations, not a sales pipeline (slide 8)."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Step",
+            "Before ICP or PMF (Prompt #1)",
+            "After ICP or PMF (Prompt #2)"
+          ],
+          "widths": [
+            1,
+            2.2,
+            2.2
+          ],
+          "rows": [
+            [
+              "Watch",
+              "Public complaints, posts asking for help, app store reviews",
+              "Hiring, funding, leadership changes, public announcements"
+            ],
+            [
+              "Rank",
+              "Clearest single pain point first",
+              "Pain and fit"
+            ],
+            [
+              "Verify",
+              "Pain is real, current, and they know it",
+              "ICP fit, sourced lead, warm or known contacts"
+            ],
+            [
+              "Reach",
+              "Ask, don't pitch",
+              "Name the signal and pitch"
+            ],
+            [
+              "Success",
+              "Repeating ICP patterns",
+              "Paying ICP customers"
+            ],
+            [
+              "What to change",
+              "ICP, positioning, offer",
+              "Targeting, messaging, channels"
+            ]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "What he said about each side",
+          "body": "<b>Early:</b> look across many complaints and conversations for something that repeats; over weeks and thousands of signals, a few hundred companies may surface. Use outreach to learn your positioning and offer, e.g. ten companies with ten different messages (S1 19:39-20:37).<br/><b>Later:</b> you already know the pain. Avoid tyre-kickers, decide which accounts the CEO calls personally, tailor messages and find the channels where buyers spend time (S1 20:37-20:51)."
+        },
+        {
+          "type": "section",
+          "title": "Why ICP clarity matters to the AI",
+          "body": "Without an ICP the tool can only ask 'is this a pain I might solve?'. With a clear ICP it can check 'is this a good customer?'. The better your ICP and customer data, the more accurate the ranking and verification (S1 25:16-25:46)."
+        }
+      ]
+    },
+    {
+      "title": "The Taskroom example",
+      "subtitle": "Lecture evidence | S1 approximately 21:30-34:10 | D1 slides 9-13",
+      "blocks": [
+        {
+          "type": "section",
+          "title": "What he did",
+          "body": "He ran the post-ICP prompt for a batch company, Taskroom, using only public information and its 500 Global materials. Claude chose its own signals (for example franchise HQs already paying for an answering service), found about 115 companies, then narrowed them: 13 to watch, 10 ranked, 5 verified as worth contacting (S1 21:57-31:55; slide 11). The run took about 15 minutes."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Trick",
+            "What happened",
+            "Why it matters"
+          ],
+          "widths": [
+            1.1,
+            2.4,
+            2
+          ],
+          "rows": [
+            [
+              "Unblock instruction",
+              "The CARDS franchise database blocked web search. His prompt said: if blocked, use any other tool. Claude used the Firecrawl MCP to fill the search form and add about 75 more names with contact details (S1 31:57-33:13; slide 12).",
+              "Many useful sources are forms or databases, not search results."
+            ],
+            [
+              "Dossiers",
+              "For the 5 good-fit companies only, it researched websites, news and posts and built a profile of each (S1 33:21-34:06; slide 13).",
+              "Outreach starts from knowing them, not 'tell me what your company does'."
+            ],
+            [
+              "Report card",
+              "A spreadsheet with tabs Summary, Watch, CARDS results, Rank, Verify, Reach, Success, What to change.",
+              "The same structure the prompts ask for."
+            ]
+          ]
+        },
+        {
+          "type": "card",
+          "title": "The outreach question (Dimitri, S1 27:00)",
+          "body": "Participants receive many messages built on the same pattern ('your job post from this week...'). His answer: do not copy his draft. Build a <b>voice document</b> in your context folder (he trained his on a few hundred Gmail conversations, LinkedIn posts and presentations). Read every word of the first 500-1,000 AI drafts and correct it. Do not blast 50 people with a first AI message. A simple 'we are working on the same problem, can we connect?' may go further than a pitch. Best of all: warm intros."
+        },
+        {
+          "type": "text",
+          "body": "For the many names that do not fit well, he suggests automated monitoring or lighter outreach, so you notice if they become a fit later (S1 30:53-31:21)."
+        }
+      ]
+    },
+    {
+      "title": "Building the system",
+      "subtitle": "Lecture evidence | S1 approximately 40:37-58:10 | D1 slides 18-29",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "AI can",
+            "You stay in the loop to"
+          ],
+          "widths": [
+            1,
+            1
+          ],
+          "rows": [
+            [
+              "Search public signals at speed",
+              "Choose sources and good signals"
+            ],
+            [
+              "Score and rank against ICP",
+              "Verify every lead; AI invents"
+            ],
+            [
+              "Draft messages in your voice",
+              "Read every draft (first 250-500 on the slide; he says up to about 1,000)"
+            ],
+            [
+              "Schedule, remind, update the CRM",
+              "Send all outreach yourself"
+            ],
+            [
+              "Summarize replies, spot patterns",
+              "Review the system weekly"
+            ]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Four layers (slide 19, a graphic he credits to someone else)",
+          "body": "<b>Context:</b> files about your company, ICP, voice, competitors, so AI stops guessing. <b>Skills:</b> repeatable instructions, e.g. how to verify a lead. <b>Orchestration:</b> the AI decides which skills and agents to run for an outcome. <b>Integrations:</b> CRM, product analytics, email and especially customer interviews (S1 48:12-50:14)."
+        },
+        {
+          "type": "section",
+          "title": "How he runs it",
+          "body": "One prompt becomes 10-15 skills and often 18-20 sub-agents, so he runs it overnight (S1 44:33-45:27). Most of his skills come from others or from AI, e.g. gtmskills.com; read them before use (S1 50:18). 'Build a system that prompts itself' (slide 22). His first setup needed 12-13 nights of runs and morning corrections before it was good (S1 51:53-52:20). His example company 'Tally' is invented; its folder layout is on slide 24. He now runs about a 20-agent marketing team (slide 27)."
+        },
+        {
+          "type": "card",
+          "title": "A free option: Google Workspace Studio (slide 29, S1 54:20-56:14)",
+          "body": "On paid Workspace accounts. A point-and-click flow that runs on a schedule: extract context, filter signals, research, add leads to a sheet, summarize fit, draft emails, notify in Chat. He wakes up to 10-15 prospects, some good, some bad, and sometimes passes them to Claude to check."
+        },
+        {
+          "type": "text",
+          "body": "A participant (Mark, S1 41:30) reported that Claude's signals matched what his team already tracks with Apollo and Clay, and that it found two existing paying customers, which suggests the targeting works. He found ranking and verification good and outreach weak. Chat answer on build vs buy: tools like Attio, Clay and Lemlist can be worth it; he buys most things but builds acquisition because it matters most."
+        }
+      ]
+    },
+    {
+      "title": "Activity 1: our company brief",
+      "subtitle": "MediMind working draft | Adaptation of Prompt #2 'About my company' (P1) | D1 slides 3, 31",
+      "blocks": [
+        {
+          "type": "card",
+          "title": "Why start here",
+          "body": "Both prompts begin with a company brief, and the lecturer's first homework is 'set up your GTM context' (slide 31). The same brief becomes the first context file. Sources: product explainer of 8 October (X1), buyer-pain research of 22 September (R1), your class run of 12 October (W1)."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Prompt #2 field",
+            "MediMind answer",
+            "Status"
+          ],
+          "widths": [
+            1.3,
+            3,
+            1.1
+          ],
+          "rows": [
+            [
+              "Company and website",
+              "MediMind, medimind.md. One tailored hospital operating system replacing disconnected hospital software, built on FHIR R4 (X1).",
+              "Established"
+            ],
+            [
+              "Best customers",
+              "Private multi-specialty hospitals and hospital groups in Georgia. Owners and CEOs lead the purchase; clinical, operations, finance and IT evaluate (X1).",
+              "Target market, not yet a repeating customer pattern"
+            ],
+            [
+              "Why they bought",
+              "Not documented in the notes reviewed. Write down why the anchor partner chose MediMind, in its own words, before running Prompt #2.",
+              "<b>Missing</b>: fill first"
+            ],
+            [
+              "Proof we can mention",
+              "Anchor agreement with GeoHospitals, a 25-hospital network, implementation proceeding in stages (X1). Not 25 independent wins; no measured outcome numbers yet.",
+              "Established, with limits"
+            ],
+            [
+              "Offer",
+              "Next 10 hospitals: Phase 1 parallel evaluation included before any commitment, current software stays, price match for the agreed base scope, ongoing base-product development. First parallel version targeted about two weeks after scope, permitted data and readiness are agreed (X1).",
+              "Verify still current"
+            ],
+            [
+              "Competitors",
+              "The hospital's existing software and vendors, plus manual workarounds (R1, W1). Do not claim competitor installs without a source.",
+              "Hypothesis"
+            ],
+            [
+              "Warm network",
+              "500 Global B11 and its mentors; the anchor partner's relationships; the physician-led team's clinical network. A public project list is a map, not a connection (W1).",
+              "To list by name"
+            ],
+            [
+              "Outreach channel",
+              "Introductions and direct meetings first. LinkedIn is the lecturer's default for Western B2B (S1 10:42); hospital owners in Georgia may not be reached that way.",
+              "ASSUMPTION"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "body": "Keep the phases separate in every field: Phase 1 is the connected base system; workflow AI and the proactive AI brain are later, separately agreed phases (X1)."
+        }
+      ]
+    },
+    {
+      "title": "Activity 2: reviewing our 12 October run",
+      "subtitle": "MediMind review | Adaptation of 'Review your results' and 'Share your results' | D1 slides 15-16",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Step",
+            "What W1 did",
+            "Lesson from the lecture"
+          ],
+          "widths": [
+            0.8,
+            2.4,
+            2.4
+          ],
+          "rows": [
+            [
+              "Watch",
+              "Seven opened records, not 20 posts: four related C/Can project pages, two older executive interviews, one audit news report. Padding was refused.",
+              "Correct for Prompt #1. Hospital leaders rarely complain in public, so public complaints alone will stay thin. Add the 'after ICP' trigger signals on page 9."
+            ],
+            [
+              "Rank",
+              "Ranked by clarity and freshness; coordination and registry data quality came first.",
+              "Pain beats profile, but here most sources are old or undated. Freshness is the main weakness."
+            ],
+            [
+              "Verify",
+              "No prospect passed all three tests (real match, current, aware). One interview failed because it was a tariff problem, not a software problem.",
+              "Good discipline. The lecturer's warning 'verify every lead; AI invents' (slide 18) was followed."
+            ],
+            [
+              "Reach",
+              "Five conditional 'ask, don't pitch' questions, nothing sent, only after a genuine introduction.",
+              "Matches the early-stage column of slide 8 and the human-in-the-loop rule."
+            ]
+          ]
+        },
+        {
+          "type": "card",
+          "title": "What the result tells us",
+          "body": "Not 'the tool failed'. It suggests that for a small hospital market, <b>public pain signals are scarce</b> and the useful output is a short map of people and organizations to learn from. Mark's run worked because his buyers leave public traces (hiring, analytics) and he had a paying-customer list to calibrate against (S1 41:30-44:04). We have one anchor partner, so calibration data is limited."
+        },
+        {
+          "type": "section",
+          "title": "Three changes before the next run",
+          "body": "<b>1.</b> Fill the missing 'why they bought' field from the anchor partner experience.<br/><b>2.</b> Run Prompt #2 with the trigger signals on page 9, and the 'if blocked, use another tool' instruction the lecturer added (S1 32:17-32:27).<br/><b>3.</b> Add a Georgian-language source list (news, job boards, official pages) so the search is not English-first."
+        }
+      ]
+    },
+    {
+      "title": "Activity 3: our signal library",
+      "subtitle": "MediMind working draft | Adaptation of Watch and Rank | D1 slides 6-8 | built on R1 buyer pains",
+      "blocks": [
+        {
+          "type": "card",
+          "title": "How this table was built",
+          "body": "Each row is one of the six provisional buyer pains in R1, with the trigger R1 says to test. The new column asks the lecturer's question: can we <b>see</b> this trigger from outside? All rows are hypotheses until hospitals confirm them."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "R1 buyer pain",
+            "Trigger to test (R1)",
+            "Visible from outside?"
+          ],
+          "widths": [
+            1.6,
+            1.9,
+            2.1
+          ],
+          "rows": [
+            [
+              "1. Losing money between care and paperwork",
+              "Rejected claims, a weak financial month, unexpected cost differences",
+              "Rarely. Mostly internal; reimbursement news shows policy pain, which software may not fix"
+            ],
+            [
+              "2. Staff time lost to repeated work",
+              "Overtime growth, clinician complaints, vacancies",
+              "Partly: repeated job posts for nurses, coordinators, registry or billing staff"
+            ],
+            [
+              "3. No timely, trusted picture for leadership",
+              "Disputed board numbers, a new hospital joining the group",
+              "Partly: acquisitions, new branches and group expansion in the news"
+            ],
+            [
+              "4. Staff manually connecting the patient story",
+              "Near misses, delayed decisions, handoff complaints",
+              "Rarely. Sometimes in quality projects or conference talks (W1 found C/Can)"
+            ],
+            [
+              "5. Cannot change at the speed needs change",
+              "Costly change request, failed integration, contract renewal",
+              "Partly: tenders, IT job posts, a vendor change announced"
+            ],
+            [
+              "6. Reporting and audit readiness",
+              "Audit, new reporting rule, security incident",
+              "Yes for rules: Ministry and State Audit Office publications"
+            ]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Ranking rule for MediMind",
+          "body": "Score each signal on pain (is one of the six pains clearly present?), fit (private, multi-specialty, independent buying organization) and freshness (last 90 days). <b>Pain beats profile</b>; keep a top 5 only (slide 7). A new owner, CEO or medical director is a strong trigger because new leaders often have a mandate to change systems (S1 14:12)."
+        },
+        {
+          "type": "text",
+          "body": "Internal signal to add: what the anchor partner's staff actually adopted and asked for in Phase 1. It is the highest-trust signal we have. Use only aggregate, permitted facts; no patient data or hospital-confidential information goes into external AI tools."
+        }
+      ]
+    },
+    {
+      "title": "Activity 4: verify, then reach",
+      "subtitle": "MediMind working draft | Adaptation of Verify and Reach | D1 slides 7-8, 18 | nothing here is to be sent automatically",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Verify test",
+            "Pass when",
+            "Why for MediMind"
+          ],
+          "widths": [
+            1.3,
+            2.2,
+            2.1
+          ],
+          "rows": [
+            [
+              "Real match",
+              "One of the six pains, said by the hospital's own staff in a work context",
+              "Lecture: pain is real (slide 8)"
+            ],
+            [
+              "Current",
+              "Dated within 90 days, link opened",
+              "Lecture: dated and linked (slide 7)"
+            ],
+            [
+              "Software can help",
+              "Not only a tariff, payer or staffing-supply problem",
+              "R1 boundary; W1 dropped one lead for this"
+            ],
+            [
+              "Independent buyer",
+              "A separate buying organization, not another branch of a group already counted",
+              "Our bottleneck is evaluations beyond the anchor"
+            ],
+            [
+              "Genuine route in",
+              "A real introduction or professional invitation exists",
+              "Lecture: warm intros beat cold messages (S1 29:23)"
+            ]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Reach: ask, don't pitch (early-stage column, slide 8)",
+          "body": "<b>To a CEO or owner, after an introduction:</b> 'When you prepare for a management meeting, how long does it take to get numbers everyone trusts, and where do they come from today?'<br/><b>To a medical director:</b> 'When a patient moves between departments, what does your team still have to chase by phone or paper?'<br/><b>To a finance lead:</b> 'Which corrections between care records and billing take your team the most time each month?'<br/>Each opener names one pain from R1 and asks for a real example. None mentions AI or promises a result."
+        },
+        {
+          "type": "card",
+          "title": "Our human-in-the-loop rules (from slide 18 and S1 45:38-48:10)",
+          "body": "AI may search, rank, research and draft. A person checks every lead, reads every word, and sends every message personally. Start a <b>voice file</b> from your own past messages to hospital leaders, as the lecturer did with his email and posts. Introduce the parallel evaluation only after the hospital has confirmed a pain."
+        }
+      ]
+    },
+    {
+      "title": "Activity 5: our GTM context and weekly system",
+      "subtitle": "MediMind proposal | Adaptation of slides 19, 24 and 29 | a starting folder, not a finished system",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Context file",
+            "What goes in it",
+            "Start from"
+          ],
+          "widths": [
+            1.4,
+            2.4,
+            1.8
+          ],
+          "rows": [
+            [
+              "company-brief.md",
+              "Activity 1, with the 'why they bought' gap filled",
+              "X1, page 7"
+            ],
+            [
+              "icp-definition.md",
+              "Good and bad fit; buyer, champion and evaluators; disqualifiers",
+              "X1, R1 problem layers"
+            ],
+            [
+              "buyer-pains.md",
+              "The six pains and two objections, kept as hypotheses",
+              "R1"
+            ],
+            [
+              "signal-library.md",
+              "Page 9 plus which signals proved true",
+              "This guide; update weekly"
+            ],
+            [
+              "offer.md",
+              "The current next-10 offer and its exact scope",
+              "X1; verify it is still current"
+            ],
+            [
+              "voice.md",
+              "How you write to hospital leaders",
+              "Your own sent messages"
+            ],
+            [
+              "outcomes.md",
+              "Each conversation: signal, route, result, change",
+              "Start empty"
+            ]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Where it lives",
+          "body": "Keep it next to the existing marketing workspace (MediMind Landing Page/marketing), which already holds R1, the evidence register and the interview guide. Link to the canonical positioning files instead of copying them."
+        },
+        {
+          "type": "section",
+          "title": "A small weekly loop",
+          "body": "<b>Monday:</b> run a signal scan (Prompt #2 or a Claude Code skill) over the Georgian source list. <b>Tuesday:</b> verify the top 5 by hand with the five tests. <b>Then:</b> ask the network for introductions to those that pass. <b>Friday:</b> update outcomes.md and tell the system what it got wrong, as the lecturer did for 12-13 nights (S1 51:53). Workspace Studio (slide 29) is a free way to schedule the scan."
+        },
+        {
+          "type": "text",
+          "body": "Guardrails in every file: Phase 1 only in the offer; no clinical, revenue or cost promises without hospital evidence; no patient or confidential hospital data in external tools; branches under one buying decision count once."
+        }
+      ]
+    },
+    {
+      "title": "The next working session",
+      "subtitle": "Lecture asks (slide 31) and a MediMind action draft",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Lecturer's ask",
+            "Status",
+            "MediMind version"
+          ],
+          "widths": [
+            1.5,
+            1.3,
+            2.4
+          ],
+          "rows": [
+            [
+              "Book office hours",
+              "He said 'tomorrow and the next night' (13-14 October); link on Slack and in chat (S1 57:38, 58:46)",
+              "Check Slack today; 14 October may be the last slot"
+            ],
+            [
+              "Be specific about what you want to talk about",
+              "Asked",
+              "Bring the three questions below"
+            ],
+            [
+              "Set up your GTM context",
+              "Asked",
+              "Activity 1 and Activity 5"
+            ],
+            [
+              "Try variations of the prompts",
+              "Asked",
+              "Prompt #2 with the page 8 changes; compare with W1"
+            ],
+            [
+              "Try new GTM AI tools",
+              "Asked",
+              "Optional: Workspace Studio or Firecrawl for blocked sources"
+            ],
+            [
+              "Identify at least three new good-fit customers",
+              "Goal before the next meeting",
+              "Three hospitals that pass the five tests on page 10"
+            ],
+            [
+              "Fill out the update form",
+              "Mentioned at the close; 'flight book' is probably Flight Path",
+              "Check Slack for the exact form"
+            ]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Questions to bring to office hours",
+          "body": "<b>1.</b> In a market with few hospital buyers, how would you weight signals against warm intros?<br/><b>2.</b> Our run found no fully verified prospect. Is that a source problem or an ICP problem?<br/><b>3.</b> With one anchor partner, how do we calibrate ranking without a list of look-alike paying customers?"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "To rewatch",
+            "Recording time"
+          ],
+          "widths": [
+            3,
+            1
+          ],
+          "rows": [
+            [
+              "Four steps explained",
+              "12:53-17:35"
+            ],
+            [
+              "Before vs after ICP",
+              "17:53-21:20"
+            ],
+            [
+              "Taskroom walkthrough and Firecrawl",
+              "21:30-34:10"
+            ],
+            [
+              "Outreach voice answer",
+              "27:00-29:30"
+            ],
+            [
+              "Four layers and the self-prompting system",
+              "48:12-54:15"
+            ],
+            [
+              "Workspace Studio",
+              "54:20-56:14"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

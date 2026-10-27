@@ -1,0 +1,98 @@
+[
+  {
+    "width": 1280,
+    "height": 720,
+    "lang": "ka",
+    "horizontal": false,
+    "scroll": 720,
+    "title": "rgb(156, 228, 238)"
+  },
+  {
+    "width": 1280,
+    "height": 720,
+    "lang": "en",
+    "horizontal": false,
+    "scroll": 720,
+    "title": "rgb(156, 228, 238)"
+  },
+  {
+    "width": 1280,
+    "keyboard": "passed",
+    "fallback": "passed",
+    "calendarHook": "passed",
+    "reducedMotion": "passed",
+    "errors": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "lang": "ka",
+    "horizontal": false,
+    "scroll": 973,
+    "title": "rgb(156, 228, 238)"
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "lang": "en",
+    "horizontal": false,
+    "scroll": 910,
+    "title": "rgb(156, 228, 238)"
+  },
+  {
+    "width": 390,
+    "keyboard": "passed",
+    "fallback": "passed",
+    "calendarHook": "passed",
+    "reducedMotion": "passed",
+    "errors": []
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "lang": "ka",
+    "horizontal": false,
+    "scroll": 1002,
+    "title": "rgb(156, 228, 238)"
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "lang": "en",
+    "horizontal": false,
+    "scroll": 977,
+    "title": "rgb(156, 228, 238)"
+  },
+  {
+    "width": 320,
+    "keyboard": "passed",
+    "fallback": "passed",
+    "calendarHook": "passed",
+    "reducedMotion": "passed",
+    "errors": []
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "lang": "ka",
+    "horizontal": false,
+    "scroll": 1024,
+    "title": "rgb(156, 228, 238)"
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "lang": "en",
+    "horizontal": false,
+    "scroll": 1024,
+    "title": "rgb(156, 228, 238)"
+  },
+  {
+    "width": 768,
+    "keyboard": "passed",
+    "fallback": "passed",
+    "calendarHook": "passed",
+    "reducedMotion": "passed",
+    "errors": []
+  }
+]

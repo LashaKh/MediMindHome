@@ -1,0 +1,2122 @@
+[
+  {
+    "id": 0,
+    "html": "Hospital Partnership",
+    "reason": "Lead with the hospital relationship, not technical integration."
+  },
+  {
+    "id": 1,
+    "html": "პარტნიორობა კლინიკებისთვის",
+    "reason": "Lead with the hospital relationship, not technical integration."
+  },
+  {
+    "id": 3,
+    "html": "ერთიანი <em>ოპერაციული სისტემა</em>",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 6,
+    "html": "AI · Clinical care · Laboratory · PACS · Patient Portal.",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 7,
+    "html": "AI · მკურნალობა · ლაბორატორია · PACS · პაციენტის პორტალი.",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 8,
+    "html": "Thank you for your time. In fifteen minutes I will show you one operating system for clinical care and hospital management. It is live at the GeoHospitals central hospital, with the network rollout proceeding in stages under one agreement covering 25 hospitals. Our offer matches your current software spend for the agreed base system, with free implementation, tailored development and parallel evaluation.",
+    "reason": "Correct the 25-live claim and align the opening notes with the agreed offer."
+  },
+  {
+    "id": 9,
+    "html": "გმადლობთ დათმობილი დროისთვის. თხუთმეტ წუთში გაჩვენებთ ერთიან ოპერაციულ სისტემას მკურნალობისა და კლინიკის მართვისთვის. ის GeoHospitals-ის ცენტრალურ საავადმყოფოში უკვე მუშაობს. ერთი ხელშეკრულება 25 კლინიკას მოიცავს და ქსელში დანერგვა ეტაპობრივად გრძელდება. შეთანხმებულ საბაზისო სისტემას გთავაზობთ თქვენი მიმდინარე პროგრამის ბიუჯეტით, უფასო დანერგვით, განვითარებითა და პარალელური შეფასებით.",
+    "reason": "Correct the 25-live claim and align the opening notes with the agreed offer."
+  },
+  {
+    "id": 13,
+    "html": "მომდევნო <em>5 პარტნიორი კლინიკისთვის.</em>",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 14,
+    "html": "Everything your hospital needs.",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 15,
+    "html": "ყველაფერი, რაც თქვენს კლინიკას სჭირდება.",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 16,
+    "html": "One hospital operating system — at your current software spend.",
+    "reason": "Use the operating-system category and precise price-matching scope."
+  },
+  {
+    "id": 17,
+    "html": "კლინიკის ერთიანი ოპერაციული სისტემა თქვენი მიმდინარე პროგრამის ბიუჯეტით.",
+    "reason": "Use the operating-system category and precise price-matching scope."
+  },
+  {
+    "id": 21,
+    "html": "სისტემას ვაყენებთ, ვაწყობთ და ადგილზე ვამზადებთ ძირითად მომხმარებლებს. დანერგვა უფასოა.",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 22,
+    "html": "<em>Free</em>, tailored development",
+    "reason": "Replace unlimited development with included development in the agreed base scope."
+  },
+  {
+    "id": 23,
+    "html": "<em>უფასო</em> განვითარება",
+    "reason": "Replace unlimited development with included development in the agreed base scope."
+  },
+  {
+    "id": 24,
+    "html": "We adapt the base system to your workflows and keep developing it — at no extra charge.",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 25,
+    "html": "საბაზისო სისტემას თქვენს პროცესებს ვარგებთ და დამატებითი საფასურის გარეშე ვავითარებთ.",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 26,
+    "html": "Source-code <em>ownership</em>",
+    "reason": "State ownership directly instead of describing it as insurance."
+  },
+  {
+    "id": 27,
+    "html": "საწყისი კოდის <em>საკუთრება</em>",
+    "reason": "State ownership directly instead of describing it as insurance."
+  },
+  {
+    "id": 28,
+    "html": "You own the first delivered base-system source code, under your contract.",
+    "reason": "Specify ownership of the first delivered agreed base-system version."
+  },
+  {
+    "id": 29,
+    "html": "პირველი ჩაბარებული საბაზისო ვერსიის საწყისი კოდი ხელშეკრულებით თქვენ გეკუთვნით.",
+    "reason": "Specify ownership of the first delivered agreed base-system version."
+  },
+  {
+    "id": 30,
+    "html": "<em>Free parallel evaluation.</em> Switch when ready.",
+    "reason": "Replace guaranteed 14-day/one-day timing with a free readiness-led evaluation."
+  },
+  {
+    "id": 31,
+    "html": "<em>უფასო პარალელური გამოცდა.</em> თქვენ წყვეტთ.",
+    "reason": "Replace guaranteed 14-day/one-day timing with a free readiness-led evaluation."
+  },
+  {
+    "id": 32,
+    "html": "Compare both systems while your current one stays in use. Switch when your team accepts the result.",
+    "reason": "Remove a guaranteed one-day cutover."
+  },
+  {
+    "id": 33,
+    "html": "ორივე სისტემა პარალელურად შეადარეთ. ახალზე მაშინ გადავიდეთ, როცა შედეგს თქვენი გუნდი მიიღებს.",
+    "reason": "Remove a guaranteed one-day cutover."
+  },
+  {
+    "id": 35,
+    "html": "მზადაა <em>შემდეგი ნაბიჯისთვის</em>",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 36,
+    "html": "One shared system today. A foundation for the AI capabilities you choose tomorrow.",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 37,
+    "html": "დღეს — ერთიანი სისტემა. მომავალში — თქვენთვის საჭირო AI შესაძლებლობები.",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 38,
+    "html": "Capacity is allocated. <em>Evaluate first. Decide after.</em>",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 39,
+    "html": "დანერგვის რესურსი გამოყოფილია. <em>ჯერ გამოცადეთ, შემდეგ გადაწყვიტეთ.</em>",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 40,
+    "html": "We are allocating implementation and development capacity to our next five hospital partners. Implementation is free: setup, data migration and practical training for the key users each department nominates. Ongoing tailored development within the agreed base scope is included. We match the hospital’s current software spend for that scope. The hospital owns the first delivered base-system source code under the contract; third-party licences remain in place, and rights to later versions and optional AI services are defined separately. The parallel evaluation is free and does not require a purchase. Before starting, agree the current baseline and success criteria: repeated entry, administrative time, reimbursement-document readiness and unbilled services. The team compares real work in both systems and decides whether the improvement is enough. Agree the transition schedule around readiness. Phases 2 and 3 are optional and priced separately.",
+    "reason": "Align the full offer notes with scope, ownership, free evaluation and readiness-controlled timing."
+  },
+  {
+    "id": 41,
+    "html": "დანერგვისა და განვითარების რესურსს ჩვენი მომდევნო ხუთი პარტნიორი კლინიკისთვის გამოვყოფთ. დანერგვა უფასოა: სისტემის გამართვა, მონაცემთა გადატანა და განყოფილებების მიერ შერჩეული ძირითადი მომხმარებლების პრაქტიკული სწავლება. შეთანხმებული საბაზისო სისტემის შემდგომი მორგება და განვითარება ფასში შედის. ამ მოცულობისთვის ფასი თქვენს მიმდინარე პროგრამულ ხარჯს გაუტოლდება. პირველი ჩაბარებული საბაზისო ვერსიის საწყისი კოდი ხელშეკრულებით კლინიკას ეკუთვნის. მესამე მხარის ლიცენზიები ძალაში რჩება; მომდევნო ვერსიებსა და არჩევით AI სერვისებზე უფლებები ცალკე განისაზღვრება. პარალელური გამოცდა უფასოა და შეძენას არ გავალდებულებთ. დაწყებამდე შევათანხმებთ მიმდინარე მაჩვენებლებსა და წარმატების კრიტერიუმებს: მონაცემების განმეორებით შეყვანას, ადმინისტრაციულ დროს, სადაზღვევო მოთხოვნის მომზადებასა და აღურიცხავ მომსახურებას. გუნდი ორივე სისტემას რეალურ საქმეში შეადარებს და თავად გადაწყვეტს, საკმარისია თუ არა გაუმჯობესება. გადასვლის გრაფიკს მზადყოფნის მიხედვით შევათანხმებთ. ეტაპები 2 და 3 არჩევითია და ცალკე ფასდება.",
+    "reason": "Align the full offer notes with scope, ownership, free evaluation and readiness-controlled timing."
+  },
+  {
+    "id": 42,
+    "html": "THE LONG VIEW",
+    "reason": "Replace the adversarial liability framing with an evidence-led comparison."
+  },
+  {
+    "id": 43,
+    "html": "გრძელვადიანი არჩევანი",
+    "reason": "Replace the adversarial liability framing with an evidence-led comparison."
+  },
+  {
+    "id": 44,
+    "html": "Your hospital evolves. <em>Your software should too.</em>",
+    "reason": "Retain a strong comparison without speculative competitor doom."
+  },
+  {
+    "id": 45,
+    "html": "კლინიკა ვითარდება. <em>სისტემაც უნდა ვითარდებოდეს.</em>",
+    "reason": "Retain a strong comparison without speculative competitor doom."
+  },
+  {
+    "id": 46,
+    "html": "Compare development, data access and exit terms before committing.",
+    "reason": "Remove the unsupported one-or-two-year dead-end prediction and fill missing Georgian."
+  },
+  {
+    "id": 47,
+    "html": "გადაწყვეტილებამდე შეადარეთ განვითარების, მონაცემებზე წვდომისა და ხელშეკრულების შეწყვეტის პირობები.",
+    "reason": "Remove the unsupported one-or-two-year dead-end prediction and fill missing Georgian."
+  },
+  {
+    "id": 48,
+    "html": "Your current system",
+    "reason": "Use the buyer’s own system, not a blanket claim about all vendors."
+  },
+  {
+    "id": 49,
+    "html": "თქვენი მოქმედი სისტემა",
+    "reason": "Use the buyer’s own system, not a blanket claim about all vendors."
+  },
+  {
+    "id": 50,
+    "html": "What does a change cost, and how long does it take?",
+    "reason": "Turn an unsupported universal competitor claim into a concrete comparison question."
+  },
+  {
+    "id": 51,
+    "html": "რა ღირს ცვლილება და რა დრო სჭირდება მას?",
+    "reason": "Turn an unsupported universal competitor claim into a concrete comparison question."
+  },
+  {
+    "id": 52,
+    "html": "Tailored development",
+    "reason": "Match the comparison row to the agreed development offer."
+  },
+  {
+    "id": 53,
+    "html": "საჭიროებებზე მორგება",
+    "reason": "Match the comparison row to the agreed development offer."
+  },
+  {
+    "id": 54,
+    "html": "Agreed base scope — <strong>built for your hospital, included</strong>.",
+    "reason": "Keep included development within the agreed base scope."
+  },
+  {
+    "id": 55,
+    "html": "შეთანხმებულ ფარგლებში <strong>თქვენს კლინიკაზე მორგება ფასში შედის</strong>.",
+    "reason": "Keep included development within the agreed base scope."
+  },
+  {
+    "id": 56,
+    "html": "Is the data model open? How are access and changes controlled?",
+    "reason": "Remove unsupported claims about competitor licensing, nationality and technology."
+  },
+  {
+    "id": 57,
+    "html": "ღიაა მონაცემთა მოდელი? როგორ კონტროლდება წვდომა და ცვლილებები?",
+    "reason": "Remove unsupported claims about competitor licensing, nationality and technology."
+  },
+  {
+    "id": 58,
+    "html": "Security &amp; data model",
+    "reason": "Use a concrete comparison label."
+  },
+  {
+    "id": 59,
+    "html": "უსაფრთხოება და მონაცემები",
+    "reason": "Use a concrete comparison label."
+  },
+  {
+    "id": 60,
+    "html": "<strong>FHIR R4 at the core</strong>, with roles, permissions and audit trails.",
+    "reason": "Explain the real foundation and controls without implying FHIR alone guarantees security."
+  },
+  {
+    "id": 61,
+    "html": "<strong>FHIR R4-ზე აგებული</strong>. როლები, წვდომის უფლებები და ცვლილებების აღრიცხვა.",
+    "reason": "Explain the real foundation and controls without implying FHIR alone guarantees security."
+  },
+  {
+    "id": 62,
+    "html": "Who owns the code, and what are your exit rights?",
+    "reason": "Remove a blanket assertion about competitors withholding code."
+  },
+  {
+    "id": 63,
+    "html": "ვის ეკუთვნის კოდი და რა უფლებები გაქვთ სისტემის შეცვლისას?",
+    "reason": "Remove a blanket assertion about competitors withholding code."
+  },
+  {
+    "id": 66,
+    "html": "First delivered base source code: <strong>yours, under contract</strong>.",
+    "reason": "Make first-version source-code ownership precise."
+  },
+  {
+    "id": 67,
+    "html": "პირველი ჩაბარებული საბაზისო კოდი <strong>ხელშეკრულებით თქვენია</strong>.",
+    "reason": "Make first-version source-code ownership precise."
+  },
+  {
+    "id": 68,
+    "html": "Which AI services are available, and what would they cost?",
+    "reason": "Remove the claim that competitors cannot offer future AI."
+  },
+  {
+    "id": 69,
+    "html": "რა AI სერვისებია ხელმისაწვდომი და რა ღირს მათი დამატება?",
+    "reason": "Remove the claim that competitors cannot offer future AI."
+  },
+  {
+    "id": 72,
+    "html": "<strong>Built for AI</strong>, with optional services agreed separately.",
+    "reason": "Use natural wording and make future AI commercially separate."
+  },
+  {
+    "id": 73,
+    "html": "<strong>AI-სთვის შექმნილი</strong>. არჩევითი სერვისები ცალკე თანხმდება.",
+    "reason": "Use natural wording and make future AI commercially separate."
+  },
+  {
+    "id": 74,
+    "html": "Which updates and support services are included?",
+    "reason": "Replace an unsupported allegation with a useful buyer question."
+  },
+  {
+    "id": 75,
+    "html": "რა განახლებები და მხარდაჭერა შედის ფასში?",
+    "reason": "Replace an unsupported allegation with a useful buyer question."
+  },
+  {
+    "id": 78,
+    "html": "<strong>Ongoing base-system development</strong>, within the agreed scope.",
+    "reason": "Remove automatic universal monthly-update promises; retain ongoing included development."
+  },
+  {
+    "id": 79,
+    "html": "<strong>საბაზისო სისტემის განვითარება</strong> შეთანხმებულ ფარგლებში გრძელდება.",
+    "reason": "Remove automatic universal monthly-update promises; retain ongoing included development."
+  },
+  {
+    "id": 80,
+    "html": "Who will implement it, and what is the development plan?",
+    "reason": "Remove unsupported assertions about other teams’ ambition and investment."
+  },
+  {
+    "id": 81,
+    "html": "ვინ დანერგავს სისტემას და როგორია განვითარების გეგმა?",
+    "reason": "Remove unsupported assertions about other teams’ ambition and investment."
+  },
+  {
+    "id": 82,
+    "html": "Delivery team",
+    "reason": "Match the comparison row to concrete delivery capability."
+  },
+  {
+    "id": 83,
+    "html": "გუნდი და გეგმა",
+    "reason": "Match the comparison row to concrete delivery capability."
+  },
+  {
+    "id": 84,
+    "html": "<strong>Clinical and technology experience</strong>, with capacity allocated for our next five partners.",
+    "reason": "Replace sweeping funding claims with the team and allocated-partner-capacity offer."
+  },
+  {
+    "id": 85,
+    "html": "<strong>კლინიკური და ტექნოლოგიური გამოცდილება</strong>. რესურსი მომდევნო ხუთი პარტნიორისთვის.",
+    "reason": "Replace sweeping funding claims with the team and allocated-partner-capacity offer."
+  },
+  {
+    "id": 86,
+    "html": "Compare the foundation and the commitments. <strong>Then choose on the evidence from your own hospital.</strong>",
+    "reason": "Retain a confident close without predicting competitors’ failure."
+  },
+  {
+    "id": 87,
+    "html": "შეადარეთ სისტემა და პირობები. <strong>გადაწყვეტილება თქვენი კლინიკის შედეგებით მიიღეთ.</strong>",
+    "reason": "Retain a confident close without predicting competitors’ failure."
+  },
+  {
+    "id": 88,
+    "html": "A hospital software decision lasts for years, so compare what is written in the agreement. What changes are included? Who owns the source code? Can you export the data in an open format? What support and transition terms apply? For MediMind, ongoing development within the agreed base scope is included, the hospital owns the first delivered base-system source code, and clinical data is built ground-up on FHIR R4. We define the scope, rights and support before you commit. Then we evaluate the actual improvement with your team. There is no need to speculate about another vendor’s future; compare the terms and the work your hospital can see.",
+    "reason": "Remove competitor accusations from speaker notes and use concrete buyer evaluation questions."
+  },
+  {
+    "id": 89,
+    "html": "კლინიკის პროგრამას წლებისთვის ირჩევთ, ამიტომ შეადარეთ ხელშეკრულებაში ჩაწერილი პირობები. რა ცვლილებები შედის ფასში? ვის ეკუთვნის საწყისი კოდი? შეიძლება თუ არა მონაცემების ღია ფორმატით გადატანა? როგორია მხარდაჭერისა და გადასვლის პირობები? MediMind-ში შეთანხმებული საბაზისო სისტემის განვითარება ფასში შედის. პირველი ჩაბარებული ვერსიის საწყისი კოდი კლინიკას ეკუთვნის. მონაცემები საფუძვლიდანვე FHIR R4-ზეა აგებული. მოცულობას, უფლებებსა და მხარდაჭერას გადაწყვეტილებამდე განვსაზღვრავთ. შემდეგ თქვენს გუნდთან ერთად შევაფასებთ რეალურ გაუმჯობესებას. სხვა მომწოდებლის მომავალზე ვარაუდი საჭირო არ არის. შეადარეთ პირობები და ის შედეგი, რომელსაც თქვენი კლინიკა თავად ხედავს.",
+    "reason": "Remove competitor accusations from speaker notes and use concrete buyer evaluation questions."
+  },
+  {
+    "id": 91,
+    "html": "განვითარების გზა · 3 ეტაპი",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 92,
+    "html": "A strong foundation. <em>A path to the future.</em>",
+    "reason": "Keep the roadmap ambition without unsupported world-leadership claims."
+  },
+  {
+    "id": 93,
+    "html": "მყარი საფუძველი. <em>გზა მომავლისკენ.</em>",
+    "reason": "Keep the roadmap ambition without unsupported world-leadership claims."
+  },
+  {
+    "id": 94,
+    "html": "Phase 1 is today’s offer. Phases 2 and 3 are optional and priced separately.",
+    "reason": "One clear roadmap label separates future AI scope and pricing."
+  },
+  {
+    "id": 95,
+    "html": "ეტაპი 1 დღევანდელი შეთავაზებაა. ეტაპები 2 და 3 არჩევითია და ცალკე ფასდება.",
+    "reason": "One clear roadmap label separates future AI scope and pricing."
+  },
+  {
+    "id": 97,
+    "html": "დღევანდელი შეთავაზება",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 98,
+    "html": "matched to your current software spend.",
+    "reason": "Make the price comparison specifically about software spend."
+  },
+  {
+    "id": 99,
+    "html": "თქვენი მიმდინარე პროგრამის ბიუჯეტით.",
+    "reason": "Make the price comparison specifically about software spend."
+  },
+  {
+    "id": 104,
+    "html": "Available today",
+    "reason": "Avoid implying hospital-wide go-live on day one."
+  },
+  {
+    "id": 105,
+    "html": "დღეს ხელმისაწვდომია",
+    "reason": "Avoid implying hospital-wide go-live on day one."
+  },
+  {
+    "id": 107,
+    "html": "საფუძველი",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 112,
+    "html": "One system for clinical and administrative work.",
+    "reason": "Replace unsupported Western-quality positioning with buyer-relevant scope."
+  },
+  {
+    "id": 113,
+    "html": "კლინიკური და ადმინისტრაციული საქმე ერთ სისტემაში.",
+    "reason": "Replace unsupported Western-quality positioning with buyer-relevant scope."
+  },
+  {
+    "id": 114,
+    "html": "Built ground-up on FHIR R4, with access controls and audit trails.",
+    "reason": "Replace an undefined highest-security guarantee with specific controls."
+  },
+  {
+    "id": 115,
+    "html": "საფუძვლიდანვე FHIR R4-ზე აგებული, წვდომის კონტროლითა და ცვლილებების აღრიცხვით.",
+    "reason": "Replace an undefined highest-security guarantee with specific controls."
+  },
+  {
+    "id": 116,
+    "html": "hospitals covered by one signed network agreement",
+    "reason": "Distinguish contracted network coverage from live deployments."
+  },
+  {
+    "id": 117,
+    "html": "კლინიკა ერთი ხელმოწერილი ქსელური ხელშეკრულებით",
+    "reason": "Distinguish contracted network coverage from live deployments."
+  },
+  {
+    "id": 122,
+    "html": "your choice, with scope and pricing agreed separately.",
+    "reason": "Clarify optional future scope without sales jargon."
+  },
+  {
+    "id": 123,
+    "html": "თქვენი არჩევანია. მოცულობასა და ფასს ცალკე შევათანხმებთ.",
+    "reason": "Clarify optional future scope without sales jargon."
+  },
+  {
+    "id": 131,
+    "html": "AI ეტაპობრივად, თითოეულ პროცესში",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 132,
+    "html": "AI-assisted notes for clinician review.",
+    "reason": "Make documentation assistance concrete and preserve clinical review."
+  },
+  {
+    "id": 133,
+    "html": "AI ამზადებს ჩანაწერს, ექიმი ამოწმებს.",
+    "reason": "Make documentation assistance concrete and preserve clinical review."
+  },
+  {
+    "id": 135,
+    "html": "პაციენტის ისტორიის ერთიანი AI ანალიზი.",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 139,
+    "html": "ხელმძღვანელობა კლინიკის სრულ სურათს ხედავს.",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 143,
+    "html": "წყვეტთ, რომელი განყოფილებით და როდის დავიწყოთ",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 148,
+    "html": "Optional · long-term vision",
+    "reason": "Remove an unverified world-first claim while preserving phase-three ambition."
+  },
+  {
+    "id": 149,
+    "html": "არჩევითი · მომავლის ხედვა",
+    "reason": "Remove an unverified world-first claim while preserving phase-three ambition."
+  },
+  {
+    "id": 151,
+    "html": "კლინიკის AI ტვინი",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 154,
+    "html": "Connects the available patient context.",
+    "reason": "Replace the unnatural and absolute claim of reading every patient in real time."
+  },
+  {
+    "id": 155,
+    "html": "პაციენტის მონაცემებს ერთიანად აანალიზებს.",
+    "reason": "Replace the unnatural and absolute claim of reading every patient in real time."
+  },
+  {
+    "id": 157,
+    "html": "ეხმარება ექიმებსა და ხელმძღვანელობას.",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 158,
+    "html": "Flags emerging problems for the team.",
+    "reason": "Present assistance rather than guaranteed prevention."
+  },
+  {
+    "id": 159,
+    "html": "გუნდს საყურადღებო საკითხებზე მიანიშნებს.",
+    "reason": "Present assistance rather than guaranteed prevention."
+  },
+  {
+    "id": 160,
+    "html": "a long-term vision, developed and validated step by step",
+    "reason": "Avoid an unsupported global deployment ranking."
+  },
+  {
+    "id": 161,
+    "html": "გრძელვადიანი ხედვა, რომელიც ეტაპობრივად ვითარდება და მოწმდება",
+    "reason": "Avoid an unsupported global deployment ranking."
+  },
+  {
+    "id": 162,
+    "html": "Phase 1 provides one FHIR R4 foundation. <strong>Future AI services build on it, with scope and pricing agreed separately.</strong>",
+    "reason": "Replace a guaranteed effortless integration with a shared foundation and clear future terms."
+  },
+  {
+    "id": 163,
+    "html": "ეტაპი 1 ერთიან FHIR R4 საფუძველს ქმნის. <strong>მომავალი AI სერვისები მას დაეყრდნობა, ცალკე შეთანხმებული მოცულობითა და ფასით.</strong>",
+    "reason": "Replace a guaranteed effortless integration with a shared foundation and clear future terms."
+  },
+  {
+    "id": 164,
+    "html": "Today’s offer is Phase 1: the agreed base hospital operating system, including clinical records, laboratory, PACS and portal, matched to the hospital’s current software spend. The central GeoHospitals hospital is live, and the network rollout is staged under one agreement covering 25 hospitals. The free parallel evaluation comes before the decision to proceed. Phases 2 and 3 are optional, separately scoped and separately priced. Phase 2 introduces AI assistance workflow by workflow, with clinicians reviewing clinical output. Phase 3 is the longer-term vision of a proactive hospital Brain that connects context, flags risks and prepares coordinated next steps. The shared FHIR R4 foundation supports that direction; it does not make all future services included or automatically ready for use.",
+    "reason": "Align roadmap notes with real deployment, free evaluation and optional separately priced AI."
+  },
+  {
+    "id": 165,
+    "html": "დღევანდელი შეთავაზება ეტაპი 1-ია: შეთანხმებული საბაზისო ოპერაციული სისტემა კლინიკისთვის, სამედიცინო ჩანაწერებით, ლაბორატორიით, PACS-ითა და პორტალით, თქვენი მიმდინარე პროგრამის ბიუჯეტში. GeoHospitals-ის ცენტრალური საავადმყოფო უკვე მუშაობს. ქსელში დანერგვა ეტაპობრივია და ერთი ხელშეკრულება 25 კლინიკას მოიცავს. გაგრძელების გადაწყვეტილებამდე პარალელური შეფასება უფასოა. ეტაპები 2 და 3 არჩევითია. მათი მოცულობა და ფასი ცალკე განისაზღვრება. ეტაპი 2 AI დახმარებას თითოეულ პროცესში ეტაპობრივად ამატებს; კლინიკურ შედეგებს ექიმები ამოწმებენ. ეტაპი 3 გრძელვადიანი ხედვაა: კლინიკის წინმსწრები AI ტვინი, რომელიც აერთიანებს ინფორმაციას, ავლენს რისკებს და შემდგომ ნაბიჯებს ამზადებს. ერთიანი FHIR R4 საფუძველი ამ განვითარების საშუალებას გვაძლევს. მომავალი სერვისების მზადყოფნასა და პირობებს ცალკე ვაფასებთ.",
+    "reason": "Align roadmap notes with real deployment, free evaluation and optional separately priced AI."
+  },
+  {
+    "id": 168,
+    "html": "One signed network agreement. <em>25 hospitals.</em>",
+    "reason": "Correct the headline claiming all 25 hospitals are live."
+  },
+  {
+    "id": 169,
+    "html": "ერთი ქსელური ხელშეკრულება. <em>25 კლინიკა.</em>",
+    "reason": "Correct the headline claiming all 25 hospitals are live."
+  },
+  {
+    "id": 170,
+    "html": "Central hospital live. Network rollout in stages.",
+    "reason": "State the verified deployment stage without an unsupported chain ranking."
+  },
+  {
+    "id": 171,
+    "html": "ცენტრალური საავადმყოფო უკვე მუშაობს. ქსელი ეტაპობრივად ერთვება.",
+    "reason": "State the verified deployment stage without an unsupported chain ranking."
+  },
+  {
+    "id": 174,
+    "html": "network",
+    "reason": "Label the mapped hospitals as a contracted network, not all live sites."
+  },
+  {
+    "id": 175,
+    "html": "ქსელი",
+    "reason": "Label the mapped hospitals as a contracted network, not all live sites."
+  },
+  {
+    "id": 181,
+    "html": "კლინიკა ერთი ხელმოწერილი ხელშეკრულებით",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 182,
+    "html": "One agreement covers 25 hospitals. Central hospital live; rollout continues in stages.",
+    "reason": "Make contract coverage and live status distinct."
+  },
+  {
+    "id": 183,
+    "html": "ერთი ხელშეკრულება 25 კლინიკას მოიცავს. ცენტრალური საავადმყოფო უკვე მუშაობს, ქსელი ეტაპობრივად ერთვება.",
+    "reason": "Make contract coverage and live status distinct."
+  },
+  {
+    "id": 184,
+    "html": "July 2026",
+    "reason": "Repurpose the unsupported daily-clinician stat as verified migration proof; parent must set its bare number to 1.15M."
+  },
+  {
+    "id": 185,
+    "html": "2026 წლის ივლისი",
+    "reason": "Repurpose the unsupported daily-clinician stat as verified migration proof; parent must set its bare number to 1.15M."
+  },
+  {
+    "id": 186,
+    "html": "Patient records migrated",
+    "reason": "Use the verified migrated-record metric; parent must set its bare number to 1.15M."
+  },
+  {
+    "id": 187,
+    "html": "პაციენტის გადმოტანილი ჩანაწერი",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 188,
+    "html": "1,147,535 records migrated in July 2026",
+    "reason": "Use the exact verified migration count and completion date."
+  },
+  {
+    "id": 189,
+    "html": "2026 წლის ივლისში გადატანილია 1,147,535 ჩანაწერი",
+    "reason": "Use the exact verified migration count and completion date."
+  },
+  {
+    "id": 190,
+    "html": "Hear from the team using it. <em>We can arrange the conversation.</em>",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 191,
+    "html": "გაესაუბრეთ გუნდს, რომელიც უკვე იყენებს MediMind-ს. <em>შეხვედრას ჩვენ დავგეგმავთ.</em>",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 194,
+    "html": "GITA ₾150K grant received",
+    "reason": "State received grant funding rather than a funding target."
+  },
+  {
+    "id": 195,
+    "html": "GITA-სგან მიღებული ₾150K გრანტი",
+    "reason": "State received grant funding rather than a funding target."
+  },
+  {
+    "id": 198,
+    "html": "This is one signed network agreement covering 25 GeoHospitals hospitals. It is not 25 live deployments. The central hospital is live, including laboratory and imaging, and the wider rollout is proceeding in stages. Migration of 1,147,535 patient records was completed in July 2026. GITA grant funding of GEL 150,000 has been received. We can arrange a conversation with the hospital team so you can hear directly about the implementation and daily work.",
+    "reason": "Remove old August completion, daily-clinician and 25-live claims from proof notes."
+  },
+  {
+    "id": 199,
+    "html": "ეს არის GeoHospitals-თან ხელმოწერილი ერთი ქსელური ხელშეკრულება, რომელიც 25 კლინიკას მოიცავს. საუბარი არ არის 25 უკვე დანერგილ სისტემაზე. ცენტრალური საავადმყოფო მუშაობს MediMind-ით, მათ შორის ლაბორატორია და რადიოლოგია. ქსელში დანერგვა ეტაპობრივად მიმდინარეობს. 2026 წლის ივლისში დასრულდა პაციენტების 1,147,535 ჩანაწერის გადატანა. GITA-ს 150,000 ლარის გრანტი მიღებულია. შეგვიძლია საავადმყოფოს გუნდთან საუბარი დაგიგეგმოთ, რათა დანერგვისა და ყოველდღიური მუშაობის გამოცდილება უშუალოდ მათგან გაიგოთ.",
+    "reason": "Remove old August completion, daily-clinician and 25-live claims from proof notes."
+  },
+  {
+    "id": 203,
+    "html": "ექიმები ქმნიან <em>ექიმებისთვის</em>.",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 204,
+    "html": "A team for implementation, training and development around your hospital.",
+    "reason": "Lead the team slide with buyer delivery value instead of expansion hype."
+  },
+  {
+    "id": 205,
+    "html": "გუნდი თქვენი კლინიკისთვის: დანერგვა, სწავლება და განვითარება.",
+    "reason": "Lead the team slide with buyer delivery value instead of expansion hype."
+  },
+  {
+    "id": 211,
+    "html": "ექიმის მიერ დაფუძნებული",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 213,
+    "html": "კლინიკურ პრაქტიკაში შექმნილი სისტემა, რომელიც ექიმს <strong>ღამის ცვლაშიც</strong> ეხმარება.",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 215,
+    "html": "თანადამფუძნებელი · პროდუქტის განვითარება",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 216,
+    "html": "Irakli Pkhovelishvili — <strong>nine years at Riot Games</strong>. Duke MBA.",
+    "reason": "Use confirmed experience instead of an unverified personal 10M-user attribution."
+  },
+  {
+    "id": 217,
+    "html": "ირაკლი ფხოველიშვილი. <strong>ცხრა წელი Riot Games-ში</strong>. დიუკის უნივერსიტეტის MBA.",
+    "reason": "Use confirmed experience instead of an unverified personal 10M-user attribution."
+  },
+  {
+    "id": 219,
+    "html": "ერთი გუნდი, ერთიანი კოდი",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 221,
+    "html": "კლინიკური და საინჟინრო გამოცდილება. <strong>ერთი გუნდი დანერგვისა და მხარდაჭერისთვის.</strong>",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 222,
+    "html": "Backing &amp; experience",
+    "reason": "Match grant receipt and accelerator participation without implying unverified investment."
+  },
+  {
+    "id": 223,
+    "html": "მხარდაჭერა და გამოცდილება",
+    "reason": "Match grant receipt and accelerator participation without implying unverified investment."
+  },
+  {
+    "id": 224,
+    "html": "<strong>500 Global Eurasia accelerator.</strong> <strong>GITA ₾150K grant received.</strong>",
+    "reason": "Replace unverified $100K investment with accelerator participation and the received grant."
+  },
+  {
+    "id": 225,
+    "html": "<strong>500 Global Eurasia-ს აქსელერატორი.</strong> <strong>GITA-სგან მიღებული ₾150K გრანტი.</strong>",
+    "reason": "Replace unverified $100K investment with accelerator participation and the received grant."
+  },
+  {
+    "id": 227,
+    "html": "შექმნილია საქართველოში, თქვენს ენაზე და თქვენი განყოფილებებისთვის, <strong>ექიმებთან ერთად</strong>.",
+    "reason": "Fill missing Georgian and retain the local clinical origin."
+  },
+  {
+    "id": 228,
+    "html": "I am a physician. I built MediMind around work I know from clinical practice: missing results at night, paper forms and repeated data entry. My co-founder Irakli brings nine years at Riot Games and a Duke MBA. We have received a GEL 150,000 GITA grant and participate in the 500 Global Eurasia accelerator. For your hospital, the point is the team behind the product: people to implement it, train your key users and develop the agreed base system around real clinical and administrative work.",
+    "reason": "Keep clinical origin and team credibility; remove unsupported investment and personal scale claims."
+  },
+  {
+    "id": 229,
+    "html": "მე ექიმი ვარ. MediMind იმ საქმიანობისთვის შევქმენი, რომელსაც კლინიკური პრაქტიკიდან ვიცნობ: ღამით გამორჩენილი პასუხები, ქაღალდის ფორმები და მონაცემების განმეორებითი შეყვანა. ჩემს თანადამფუძნებელს ირაკლის Riot Games-ში მუშაობის ცხრაწლიანი გამოცდილება და დიუკის უნივერსიტეტის MBA აქვს. მიღებული გვაქვს GITA-ს 150,000 ლარის გრანტი და ვმონაწილეობთ 500 Global Eurasia-ს აქსელერატორში. თქვენი კლინიკისთვის მთავარი ის გუნდია, რომელიც სისტემას დანერგავს, ძირითად მომხმარებლებს მოამზადებს და შეთანხმებულ საბაზისო სისტემას რეალური კლინიკური და ადმინისტრაციული საჭიროებების მიხედვით განავითარებს.",
+    "reason": "Keep clinical origin and team credibility; remove unsupported investment and personal scale claims."
+  },
+  {
+    "id": 230,
+    "html": "THE COST OF SEPARATION",
+    "reason": "Keep the original fragmentation diagram without targeting unnamed competitors."
+  },
+  {
+    "id": 231,
+    "html": "დაუკავშირებელი სისტემების ხარჯი",
+    "reason": "Keep the original fragmentation diagram without targeting unnamed competitors."
+  },
+  {
+    "id": 232,
+    "html": "Separate systems. <em>Your team connects them.</em>",
+    "reason": "Keep the strong human-work cost of fragmentation without claiming competitors cannot support AI."
+  },
+  {
+    "id": 233,
+    "html": "ცალკე სისტემებს <em>თქვენი გუნდი აკავშირებს.</em>",
+    "reason": "Keep the strong human-work cost of fragmentation without claiming competitors cannot support AI."
+  },
+  {
+    "id": 234,
+    "html": "Repeated entry. Separate bills. Time spent reconciling information.",
+    "reason": "Replace universal allegations with concrete operational pain."
+  },
+  {
+    "id": 235,
+    "html": "მონაცემების ხელახლა შეყვანა. ცალკეული ანგარიშები. ინფორმაციის შეჯერებაზე დახარჯული დრო.",
+    "reason": "Replace universal allegations with concrete operational pain."
+  },
+  {
+    "id": 236,
+    "html": "An illustrative fragmented setup",
+    "reason": "Do not assume every buyer has this exact vendor configuration."
+  },
+  {
+    "id": 237,
+    "html": "დაუკავშირებელი სისტემების მაგალითი",
+    "reason": "Do not assume every buyer has this exact vendor configuration."
+  },
+  {
+    "id": 240,
+    "html": "separate system",
+    "reason": "Remove an unverified claim that the buyer’s software is 15 years old."
+  },
+  {
+    "id": 241,
+    "html": "ცალკე სისტემა",
+    "reason": "Remove an unverified claim that the buyer’s software is 15 years old."
+  },
+  {
+    "id": 243,
+    "html": "ლაბორატორია",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 245,
+    "html": "სხვა მომწოდებელი",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 247,
+    "html": "რადიოლოგია",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 249,
+    "html": "სხვა მომწოდებელი",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 251,
+    "html": "ანგარიშები და ფორმები",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 253,
+    "html": "ცვლილება ცალკე ფასად",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 255,
+    "html": "დაკავშირება გუნდს უწევს",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 259,
+    "html": "ერთიან სისტემაში",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 268,
+    "html": "One clinical core · ready for future AI",
+    "reason": "Distinguish today’s shared core from the separately priced future AI Brain."
+  },
+  {
+    "id": 269,
+    "html": "ერთიანი კლინიკური საფუძველი · მზად AI-სთვის",
+    "reason": "Distinguish today’s shared core from the separately priced future AI Brain."
+  },
+  {
+    "id": 270,
+    "html": "One shared foundation. <em>Less work between systems.</em>",
+    "reason": "Replace the unsupported assertion that competitors cannot rebuild."
+  },
+  {
+    "id": 271,
+    "html": "ერთიანი საფუძველი. <em>ნაკლები შრომა სისტემებს შორის.</em>",
+    "reason": "Replace the unsupported assertion that competitors cannot rebuild."
+  },
+  {
+    "id": 272,
+    "html": "The diagram shows a common operational problem: separate systems make people re-enter data, find results and reconcile bills. The exact mix differs by hospital, so we map your actual process first. MediMind brings the clinical and administrative work onto one FHIR R4 foundation. The evaluation should show whether that reduces repeated work, missing information and billing omissions in your hospital. The shared clinical model is also the basis for future AI services; those remain optional and are agreed separately.",
+    "reason": "Remove competitor names and speculative architectural impossibility from speaker notes."
+  },
+  {
+    "id": 273,
+    "html": "სქემა გავრცელებულ პრობლემას გვიჩვენებს: ცალკეული სისტემების გამო გუნდს მონაცემების ხელახლა შეყვანა, შედეგების მოძიება და ანგარიშების შეჯერება უწევს. კლინიკებში მდგომარეობა განსხვავებულია, ამიტომ ჯერ თქვენს რეალურ პროცესს შევისწავლით. MediMind კლინიკურ და ადმინისტრაციულ საქმიანობას ერთიან FHIR R4 საფუძველზე აერთიანებს. შეფასებისას უნდა გამოჩნდეს, მცირდება თუ არა განმეორებითი სამუშაო, დაკარგული ინფორმაცია და ანგარიშში გამორჩენილი მომსახურება. ერთიანი მონაცემები მომავალ AI სერვისებსაც დაედება საფუძვლად. ეს სერვისები არჩევითია და ცალკე თანხმდება.",
+    "reason": "Remove competitor names and speculative architectural impossibility from speaker notes."
+  },
+  {
+    "id": 274,
+    "html": "THE OPERATING SYSTEM",
+    "reason": "Use the locked operating-system category."
+  },
+  {
+    "id": 275,
+    "html": "ოპერაციული სისტემა",
+    "reason": "Use the locked operating-system category."
+  },
+  {
+    "id": 278,
+    "html": "One clinical core. <em>Many connected products.</em>",
+    "reason": "Preserve the original product-map story with positive, concrete language."
+  },
+  {
+    "id": 279,
+    "html": "ერთი კლინიკური საფუძველი. <em>დაკავშირებული პროდუქტები.</em>",
+    "reason": "Preserve the original product-map story with positive, concrete language."
+  },
+  {
+    "id": 280,
+    "html": "Phase 1 in depth: connected products on one FHIR R4 core. <strong>Tap any product to see it in action.</strong>",
+    "reason": "Remove unsupported Western-golden-standard wording and simplify the demo invitation."
+  },
+  {
+    "id": 281,
+    "html": "ეტაპი 1 დეტალურად: დაკავშირებული პროდუქტები ერთ FHIR R4 საფუძველზე. <strong>აირჩიეთ პროდუქტი და ნახეთ მოქმედებაში.</strong>",
+    "reason": "Remove unsupported Western-golden-standard wording and simplify the demo invitation."
+  },
+  {
+    "id": 291,
+    "html": "DICOM გამოსახულებები",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 299,
+    "html": "AI ღვიძლის ქირურგიაში",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 301,
+    "html": "გულის სტრუქტურული ჩარევები",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 311,
+    "html": "სისხლძარღვთა კვლევის ანგარიშები",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 312,
+    "html": "This is the breadth behind the hospital operating system. One FHIR R4 core connects clinical work, Connect for telemedicine, PACS, the laboratory and the patient portal. Specialist tools include LiverRa for liver surgery, Angio for vascular reporting and Structural for TAVI and structural-heart planning. The labels distinguish available products from those still being built. The agreed base scope defines what your hospital receives; specialist or future AI services are not automatically bundled. Tap any product for its demonstration.",
+    "reason": "Preserve all original products/demos, clarify maturity and remove the claim that a hospital could never staff an alternative."
+  },
+  {
+    "id": 313,
+    "html": "ეს სქემა კლინიკის ოპერაციული სისტემის მასშტაბს გვიჩვენებს. ერთიანი FHIR R4 საფუძველი აერთიანებს კლინიკურ საქმიანობას, Connect-ს ტელემედიცინისთვის, PACS-ს, ლაბორატორიასა და პაციენტის პორტალს. სპეციალიზებული ინსტრუმენტებია LiverRa ღვიძლის ქირურგიისთვის, Angio სისხლძარღვთა კვლევის ანგარიშებისთვის და Structural TAVI-ისა და გულის სტრუქტურული ჩარევების დაგეგმვისთვის. ნიშნულები გვიჩვენებს, რა არის ხელმისაწვდომი და რა მუშავდება. თქვენი კლინიკა იღებს შეთანხმებულ საბაზისო მოცულობას. სპეციალიზებული და სამომავლო AI სერვისები ავტომატურად არ შედის ამ შეთავაზებაში. დემონსტრაციის სანახავად აირჩიეთ პროდუქტი.",
+    "reason": "Preserve all original products/demos, clarify maturity and remove the claim that a hospital could never staff an alternative."
+  },
+  {
+    "id": 318,
+    "html": "AI for every department. <em>One view for management.</em>",
+    "reason": "Keep the broad AI vision while replacing the absolute management-gets-everything claim."
+  },
+  {
+    "id": 319,
+    "html": "AI ყველა განყოფილებაში. <em>ხელმძღვანელობას — სრული სურათი.</em>",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 320,
+    "html": "Phase 2 brings AI assistants into department workflows and a shared management view for the director.",
+    "reason": "Replace specialist-grade and live-command-center hype with the same concrete vision."
+  },
+  {
+    "id": 321,
+    "html": "ეტაპი 2 განყოფილებებს AI თანაშემწეებს სთავაზობს, დირექტორს კი კლინიკის ერთიან სურათს აჩვენებს.",
+    "reason": "Replace specialist-grade and live-command-center hype with the same concrete vision."
+  },
+  {
+    "id": 322,
+    "html": "★ BUILDS ON THE PHASE 1 CORE · OPTIONAL, PRICED SEPARATELY ★",
+    "reason": "Mark the future vision clearly without implying every AI service is already deployed."
+  },
+  {
+    "id": 323,
+    "html": "★ ეტაპი 1-ის საფუძველზე · არჩევითი, ცალკე ფასდება ★",
+    "reason": "Mark the future vision clearly without implying every AI service is already deployed."
+  },
+  {
+    "id": 327,
+    "html": "AI ტრიაჟი · სეფსისის სკრინინგი",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 331,
+    "html": "ადრეული გაფრთხილება",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 334,
+    "html": "AI-drafted operation notes",
+    "reason": "Describe a draft for review, not autonomous final clinical documentation."
+  },
+  {
+    "id": 335,
+    "html": "AI ამზადებს ოპერაციის ოქმს",
+    "reason": "Describe a draft for review, not autonomous final clinical documentation."
+  },
+  {
+    "id": 339,
+    "html": "AI გადაბარება · საწოლების მართვა",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 343,
+    "html": "გადაუდებელი კვლევების პრიორიტეტი",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 347,
+    "html": "კრიტიკული შედეგის შეტყობინება",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 349,
+    "html": "ნიმუშის გზის აღრიცხვა",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 351,
+    "html": "ხელმძღვანელობისთვის · მიმდინარე მონაცემები",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 355,
+    "html": "ერთ ეკრანზე: მართვა · საწოლები · შემოსავალი · სამინისტროს ანგარიშგება",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 367,
+    "html": "ანგარიშსწორება",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 369,
+    "html": "სადაზღვევო უარი · AI პასუხი",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 373,
+    "html": "შეკვეთა მოთხოვნის პროგნოზით",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 377,
+    "html": "ცვლები · გადაღლის ნიშნები",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 381,
+    "html": "პაციენტის წერილის შეფასება",
+    "reason": "Correct the mistranslation of incoming patient messages as outgoing messages to the patient."
+  },
+  {
+    "id": 383,
+    "html": "ხელმძღვანელობისთვის · მიმდინარე სურათი",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 387,
+    "html": "მართვა · საწოლები · შემოსავალი · სამინისტროს ანგარიშგება",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 391,
+    "html": "AI ტრიაჟი · სეფსისის სკრინინგი",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 395,
+    "html": "ადრეული გაფრთხილება",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 398,
+    "html": "AI-drafted operation notes",
+    "reason": "Match the duplicate department diagram to clinician-reviewed documentation assistance."
+  },
+  {
+    "id": 399,
+    "html": "AI ამზადებს ოპერაციის ოქმს",
+    "reason": "Match the duplicate department diagram to clinician-reviewed documentation assistance."
+  },
+  {
+    "id": 403,
+    "html": "AI გადაბარება · საწოლების მართვა",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 407,
+    "html": "გადაუდებელი კვლევების პრიორიტეტი",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 411,
+    "html": "კრიტიკული შედეგის შეტყობინება",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 421,
+    "html": "ანგარიშსწორება",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 423,
+    "html": "სადაზღვევო უარი · AI პასუხი",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 427,
+    "html": "შეკვეთა მოთხოვნის პროგნოზით",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 431,
+    "html": "ცვლები · გადაღლის ნიშნები",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 435,
+    "html": "პაციენტის წერილის შეფასება",
+    "reason": "Match the duplicate diagram and correct the direction of patient messages."
+  },
+  {
+    "id": 436,
+    "html": "★ BUILDS ON THE PHASE 1 CORE · OPTIONAL, PRICED SEPARATELY ★",
+    "reason": "Match the duplicate optional-future roadmap label."
+  },
+  {
+    "id": 437,
+    "html": "★ ეტაპი 1-ის საფუძველზე · არჩევითი, ცალკე ფასდება ★",
+    "reason": "Match the duplicate optional-future roadmap label."
+  },
+  {
+    "id": 440,
+    "html": "The shared Phase 1 core provides the foundation. <strong>Choose the department, then agree scope, validation and pricing.</strong>",
+    "reason": "Remove the unproven no-integrators/instant-switch claim while preserving a clear next stage."
+  },
+  {
+    "id": 441,
+    "html": "საერთო საფუძველს ეტაპი 1 ქმნის. <strong>აირჩიეთ განყოფილება, შემდეგ შევათანხმოთ მოცულობა, შემოწმება და ფასი.</strong>",
+    "reason": "Remove the unproven no-integrators/instant-switch claim while preserving a clear next stage."
+  },
+  {
+    "id": 442,
+    "html": "Phase 2 is the optional AI direction, shown in one picture. Around the edge are department-specific assistants: triage support in the ER, early-warning support in ICU, draft operation notes, billing support and demand-based stock planning. The center is the director’s view of activity, beds, revenue and ministry reporting. All build on the shared Phase 1 data foundation. We choose the first department with your team and agree the service scope, validation and separate price. Clinical output remains subject to clinician review and decisions.",
+    "reason": "Keep the full departmental vision but align speaker notes with optional scope, separate pricing and clinician decisions."
+  },
+  {
+    "id": 443,
+    "html": "სქემა ეტაპი 2-ის არჩევით AI მიმართულებას გვიჩვენებს. კიდეებზე განყოფილებების თანაშემწეებია: ტრიაჟის დახმარება მიმღებში, ადრეული გაფრთხილება რეანიმაციაში, ოპერაციის ოქმის მონახაზი, ანგარიშსწორების დახმარება და მოთხოვნაზე დაფუძნებული მარაგის დაგეგმვა. ცენტრში დირექტორისთვის განკუთვნილი სურათია: საქმიანობა, საწოლები, შემოსავალი და სამინისტროს ანგარიშგება. ყველაფერს ეტაპი 1-ის საერთო მონაცემები უდევს საფუძვლად. თქვენს გუნდთან ერთად ავირჩევთ პირველ განყოფილებას და შევათანხმებთ სერვისის მოცულობას, შემოწმებასა და ცალკე ფასს. კლინიკურ შედეგს ექიმი ამოწმებს და გადაწყვეტილებასაც ის იღებს.",
+    "reason": "Keep the full departmental vision but align speaker notes with optional scope, separate pricing and clinician decisions."
+  },
+  {
+    "id": 446,
+    "html": "Phase 3 · future vision",
+    "reason": "Remove the unverified world-first claim."
+  },
+  {
+    "id": 447,
+    "html": "ეტაპი 3 · მომავლის ხედვა",
+    "reason": "Remove the unverified world-first claim."
+  },
+  {
+    "id": 448,
+    "html": "At 02:00, <em>every clue matters.</em>",
+    "reason": "Keep the night-shift hook without claiming AI never misses."
+  },
+  {
+    "id": 449,
+    "html": "ღამის 02:00 საათზე <em>ყოველი დეტალი მნიშვნელოვანია.</em>",
+    "reason": "Keep the night-shift hook without claiming AI never misses."
+  },
+  {
+    "id": 450,
+    "html": "Future vision: AI connects patient context and flags concerns. Your doctors decide.",
+    "reason": "Separate future assistance from measured clinical outcomes and remove the global ranking."
+  },
+  {
+    "id": 451,
+    "html": "სამომავლო ხედვა: AI პაციენტის მონაცემებს აერთიანებს და საყურადღებო საკითხებზე მიანიშნებს. გადაწყვეტილებებს ექიმები იღებენ.",
+    "reason": "Separate future assistance from measured clinical outcomes and remove the global ranking."
+  },
+  {
+    "id": 453,
+    "html": "მუცლის ტკივილი · მიმღები",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 454,
+    "html": "Actual case",
+    "reason": "Make the actual clinical pathway distinct from the illustrative intervention."
+  },
+  {
+    "id": 455,
+    "html": "რეალური შემთხვევა",
+    "reason": "Make the actual clinical pathway distinct from the illustrative intervention."
+  },
+  {
+    "id": 457,
+    "html": "ყურადღება გულზე",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 459,
+    "html": "არასწორი ვარაუდი",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 463,
+    "html": "გამოვლინდა რეალური მიზეზი",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 465,
+    "html": "20 დღე რეანიმაციაში",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 466,
+    "html": "Illustrative MediMind scenario",
+    "reason": "Clearly mark the MediMind intervention as simulated."
+  },
+  {
+    "id": 467,
+    "html": "MediMind-ის შესაძლო სცენარი",
+    "reason": "Clearly mark the MediMind intervention as simulated."
+  },
+  {
+    "id": 470,
+    "html": "Earlier review",
+    "reason": "Remove a measured earlier-diagnosis claim from a simulated intervention."
+  },
+  {
+    "id": 471,
+    "html": "ადრეული შეფასება",
+    "reason": "Remove a measured earlier-diagnosis claim from a simulated intervention."
+  },
+  {
+    "id": 473,
+    "html": "14-საათიანი დაყოვნება",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 474,
+    "html": "Real case. The AI response is illustrative, not a measured outcome.",
+    "reason": "Preserve the original story and visual but distinguish real event from simulated AI response."
+  },
+  {
+    "id": 475,
+    "html": "რეალური შემთხვევა. AI-ის მოქმედება საილუსტრაციოა და რეალურ შედეგს არ ასახავს.",
+    "reason": "Preserve the original story and visual but distinguish real event from simulated AI response."
+  },
+  {
+    "id": 477,
+    "html": "რა ზრდის მომგებიანობას",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 478,
+    "html": "Practical ways to protect revenue and free team capacity",
+    "reason": "Make the management card concrete without asserting proven margin improvements."
+  },
+  {
+    "id": 479,
+    "html": "შემოსავლის დაცვისა და გუნდის დროის დაზოგვის გზები",
+    "reason": "Make the management card concrete without asserting proven margin improvements."
+  },
+  {
+    "id": 480,
+    "html": "This is a real, de-identified clinical case. A high-risk 65-year-old patient on dialysis, with diabetes and a recent cardiac procedure, arrived at night with abdominal pain. The team focused on the heart; the eventual diagnosis was acute pancreatitis, followed by septic shock and a prolonged ICU stay. The 14-hour delay belongs to the actual case. The MediMind response beside it is a simulation of our Phase 3 vision, not an intervention that happened. It illustrates how a shared patient context might flag additional possibilities and bring the appropriate teams together. It does not demonstrate a prevented death, an avoided ICU admission or a measured number of hours saved. The AI supports the team; the doctors decide. The second card opens concrete areas where the hospital can measure operational and financial change using its own baseline.",
+    "reason": "Make the clinical anecdote honest in speaker notes without removing its illustrative future story."
+  },
+  {
+    "id": 481,
+    "html": "ეს არის რეალური კლინიკური შემთხვევა, საიდენტიფიკაციო მონაცემების გარეშე. მაღალი რისკის 65 წლის პაციენტი, დიალიზზე, დიაბეტითა და ახლახან ჩატარებული გულის პროცედურით, ღამით მუცლის ტკივილით შემოვიდა. ყურადღება გულზე გამახვილდა. მოგვიანებით გამოვლინდა მწვავე პანკრეატიტი, რასაც სეპტიკური შოკი და რეანიმაციაში ხანგრძლივი ყოფნა მოჰყვა. 14-საათიანი დაყოვნება რეალური შემთხვევის ნაწილია. გვერდით ნაჩვენები MediMind-ის მოქმედება კი ეტაპი 3-ის ხედვის სიმულაციაა და ამ პაციენტთან რეალურად არ მომხდარა. ის გვიჩვენებს, როგორ შეიძლება პაციენტის ერთიანმა მონაცემებმა დამატებით შესაძლო მიზეზებზე მიგვანიშნოს და შესაბამისი გუნდები დააკავშიროს. ეს არ არის გადარჩენილი სიცოცხლის, თავიდან აცილებული რეანიმაციის ან დაზოგილი საათების მტკიცებულება. AI გუნდს ეხმარება; გადაწყვეტილებას ექიმები იღებენ. მეორე ბარათი გვიჩვენებს მიმართულებებს, სადაც კლინიკამ სამუშაო და ფინანსური ცვლილება საკუთარ საწყის მაჩვენებლებს უნდა შეადაროს.",
+    "reason": "Make the clinical anecdote honest in speaker notes without removing its illustrative future story."
+  },
+  {
+    "id": 484,
+    "html": "More for your hospital. <em>The same software budget.</em>",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 485,
+    "html": "მეტი შესაძლებლობა. <em>იგივე პროგრამული ბიუჯეტი.</em>",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 486,
+    "html": "Clinical care, laboratory, imaging and administration — connected in one operating system.",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 487,
+    "html": "მკურნალობა, ლაბორატორია, გამოსახულებები და მართვა ერთ ოპერაციულ სისტემაში.",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 489,
+    "html": "რაში იხდით დღეს",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 490,
+    "html": "Your current clinical system",
+    "reason": "Remove an unsupported characterization of the buyer’s system as aging."
+  },
+  {
+    "id": 491,
+    "html": "თქვენი მოქმედი სამედიცინო სისტემა",
+    "reason": "Remove an unsupported characterization of the buyer’s system as aging."
+  },
+  {
+    "id": 493,
+    "html": "ლაბორატორიის სხვა მომწოდებელი",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 495,
+    "html": "ცალკე ფასი რადიოლოგიის სისტემაზე",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 497,
+    "html": "ცვლილება დამატებით ფასად",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 498,
+    "html": "Separate systems and contracts",
+    "reason": "Do not assert that the current buyer has no AI anywhere."
+  },
+  {
+    "id": 499,
+    "html": "ცალკეული სისტემები და ხელშეკრულებები",
+    "reason": "Do not assert that the current buyer has no AI anywhere."
+  },
+  {
+    "id": 503,
+    "html": "რას მიიღებთ იმავე ბიუჯეტით",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 507,
+    "html": "ერთი სისტემა · ერთიანი კოდი",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 508,
+    "html": "The agreed Phase 1 scope, on one hospital operating system",
+    "reason": "Remove guaranteed hospital-wide day-one deployment."
+  },
+  {
+    "id": 509,
+    "html": "შეთანხმებული ეტაპი 1 კლინიკის ერთიან ოპერაციულ სისტემაში",
+    "reason": "Remove guaranteed hospital-wide day-one deployment."
+  },
+  {
+    "id": 510,
+    "html": "Ongoing tailored development within the agreed base scope",
+    "reason": "Replace unlimited feature requests with included ongoing scoped development."
+  },
+  {
+    "id": 511,
+    "html": "განვითარება და მორგება შეთანხმებულ საბაზისო ფარგლებში",
+    "reason": "Replace unlimited feature requests with included ongoing scoped development."
+  },
+  {
+    "id": 512,
+    "html": "Base-system updates and team support",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 513,
+    "html": "საბაზისო სისტემის განახლებები და გუნდის მხარდაჭერა",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 515,
+    "html": "ერთი ხელშეკრულება, ერთი საკონტაქტო ნომერი",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 519,
+    "html": "ჩვენ ვქმნით",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 520,
+    "html": "Bring us a process you want to improve",
+    "reason": "Turn an unlimited-any-idea promise into a concrete development conversation."
+  },
+  {
+    "id": 521,
+    "html": "გვითხარით, რომელი პროცესის გაუმჯობესება გსურთ",
+    "reason": "Turn an unlimited-any-idea promise into a concrete development conversation."
+  },
+  {
+    "id": 522,
+    "html": "Real hospital needs guide development. We agree the base scope together and build within it at no extra charge. Our TAVI planner began with a hospital request.",
+    "reason": "Preserve the hospital-led TAVI story without promising every future request is free."
+  },
+  {
+    "id": 523,
+    "html": "განვითარებას კლინიკის რეალური საჭიროებები განსაზღვრავს. საბაზისო მოცულობას ერთად შევათანხმებთ და მის ფარგლებში დამატებითი საფასურის გარეშე ვმუშაობთ. TAVI-ის დამგეგმავი კლინიკის მოთხოვნიდან შეიქმნა.",
+    "reason": "Preserve the hospital-led TAVI story without promising every future request is free."
+  },
+  {
+    "id": 526,
+    "html": "The offer covers the agreed base system at the hospital’s current software spend. A shared codebase connects clinical work, laboratory, imaging, portal and administration under one agreement. Implementation is free, and ongoing tailored development within the agreed base scope is included. The parallel evaluation is also free. Future AI services are optional and priced separately. Bring us one real process that needs improvement; we agree the scope and measure the result with your team. Our TAVI planning tool began with a hospital request, which is the kind of practical collaboration we want. It is not a promise to build every future idea at no cost.",
+    "reason": "Remove 25-plus-live and unlimited-free-development assertions from commercial notes."
+  },
+  {
+    "id": 527,
+    "html": "შეთავაზება შეთანხმებულ საბაზისო სისტემას მოიცავს თქვენი მიმდინარე პროგრამის ბიუჯეტით. ერთიანი კოდი კლინიკურ საქმიანობას, ლაბორატორიას, რადიოლოგიას, პორტალსა და ადმინისტრირებას ერთი ხელშეკრულების ფარგლებში აერთიანებს. დანერგვა უფასოა. შეთანხმებული საბაზისო სისტემის შემდგომი მორგება და განვითარება ფასში შედის. პარალელური შეფასებაც უფასოა. მომავალი AI სერვისები არჩევითია და ცალკე ფასდება. მოგვიტანეთ ერთი რეალური პროცესი, რომლის გაუმჯობესებაც გსურთ. მოცულობას შევათანხმებთ და შედეგს თქვენს გუნდთან ერთად გავზომავთ. ჩვენი TAVI-ის დაგეგმვის ინსტრუმენტი კლინიკის მოთხოვნიდან შეიქმნა. სწორედ ასეთ პრაქტიკულ თანამშრომლობას ვთავაზობთ პარტნიორებს. ეს არ ნიშნავს, რომ ნებისმიერი მომავალი იდეის განხორციელება უფასოდ არის დაპირებული.",
+    "reason": "Remove 25-plus-live and unlimited-free-development assertions from commercial notes."
+  },
+  {
+    "id": 528,
+    "html": "FREE PARALLEL EVALUATION",
+    "reason": "Replace a fixed 14-day promise with the free evaluation offer."
+  },
+  {
+    "id": 529,
+    "html": "უფასო პარალელური შეფასება",
+    "reason": "Replace a fixed 14-day promise with the free evaluation offer."
+  },
+  {
+    "id": 530,
+    "html": "Start with <em>one hospital process</em>. Compare before deciding.",
+    "reason": "Give a concrete, readiness-based starting point rather than a guaranteed two-week migration."
+  },
+  {
+    "id": 531,
+    "html": "დავიწყოთ <em>ერთი პროცესით</em>. გადაწყვეტილებამდე შეადარეთ.",
+    "reason": "Give a concrete, readiness-based starting point rather than a guaranteed two-week migration."
+  },
+  {
+    "id": 532,
+    "html": "Your current system stays in use while your team evaluates the agreed MediMind scope for free.",
+    "reason": "Make evaluation scope and price explicit."
+  },
+  {
+    "id": 533,
+    "html": "თქვენი გუნდი MediMind-ის შეთანხმებულ ფუნქციებს უფასოდ აფასებს. მოქმედი სისტემა მუშაობას აგრძელებს.",
+    "reason": "Make evaluation scope and price explicit."
+  },
+  {
+    "id": 534,
+    "html": "Agreed data access",
+    "reason": "Do not imply unrestricted database-backup access is required before an initial process discussion."
+  },
+  {
+    "id": 535,
+    "html": "შეთანხმებული წვდომა",
+    "reason": "Do not imply unrestricted database-backup access is required before an initial process discussion."
+  },
+  {
+    "id": 536,
+    "html": "Systems run in parallel",
+    "reason": "Remove the fixed 14-day evaluation timeline."
+  },
+  {
+    "id": 537,
+    "html": "სისტემები პარალელურად მუშაობს",
+    "reason": "Remove the fixed 14-day evaluation timeline."
+  },
+  {
+    "id": 547,
+    "html": "ვიზიტის დრო, განმეორებითი შეყვანა, ანგარიშში გამორჩენილი მომსახურება — წინასწარ შეთანხმებული საზომებით.",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 550,
+    "html": "Agree the baseline first. Decide after your team verifies the result.",
+    "reason": "Add concrete evaluation discipline without adding a new step-up or approval ceremony."
+  },
+  {
+    "id": 551,
+    "html": "ჯერ საწყის მაჩვენებლებს შევათანხმებთ. გადაწყვეტილებას შედეგის შემოწმების შემდეგ მიიღებთ.",
+    "reason": "Add concrete evaluation discipline without adding a new step-up or approval ceremony."
+  },
+  {
+    "id": 552,
+    "html": "Begin with one process and the people who run it. Agree the evaluation scope, secure data access, key users and the schedule around hospital readiness. Run the agreed MediMind environment alongside the current system at no evaluation charge. Before starting, record the baseline and choose success criteria: repeated entries per patient, administrative time, time to complete reimbursement documents, or unbilled services and returned claims. Your team tests the same workflow in both systems. Compare the results and decide whether to proceed. Agree the cutover only when the hospital is ready. For a hospital without a legacy system, use the same process to configure and evaluate the first workflow.",
+    "reason": "Add hospital-owned success criteria and remove fixed migration/evaluation/cutover guarantees."
+  },
+  {
+    "id": 553,
+    "html": "დავიწყოთ ერთი პროცესით და იმ ადამიანებით, ვინც მას მართავს. კლინიკის მზადყოფნის მიხედვით შევათანხმებთ შეფასების მოცულობას, მონაცემებზე უსაფრთხო წვდომას, ძირითად მომხმარებლებსა და გრაფიკს. MediMind-ის შეთანხმებული გარემო მოქმედ სისტემასთან პარალელურად უფასოდ გამოიცდება. დაწყებამდე დავაფიქსირებთ საწყის მაჩვენებლებსა და წარმატების კრიტერიუმებს: მონაცემების ხელახალ შეყვანას ერთ პაციენტზე, ადმინისტრაციულ დროს, სადაზღვევო მოთხოვნის მომზადების ვადას ან აღურიცხავ მომსახურებასა და დაბრუნებულ მოთხოვნებს. თქვენი გუნდი ორივე სისტემაში ერთსა და იმავე პროცესს გაივლის. შედეგებს შეადარებთ და გაგრძელებას თავად გადაწყვეტთ. გადასვლა მხოლოდ კლინიკის მზადყოფნისას დაიგეგმება. თუ ძველი სისტემა არ გაქვთ, ამავე გზით გავმართავთ და გამოვცდით პირველ პროცესს.",
+    "reason": "Add hospital-owned success criteria and remove fixed migration/evaluation/cutover guarantees."
+  },
+  {
+    "id": 556,
+    "html": "Your data. <em>Your first version.</em>",
+    "reason": "State the ownership value without an unsupported first-vendor claim."
+  },
+  {
+    "id": 557,
+    "html": "თქვენი მონაცემები. <em>თქვენი პირველი ვერსია.</em>",
+    "reason": "State the ownership value without an unsupported first-vendor claim."
+  },
+  {
+    "id": 558,
+    "html": "Data, source-code rights and service terms, agreed in writing.",
+    "reason": "Fill missing Georgian and remove blanket claims about what other vendors never document."
+  },
+  {
+    "id": 559,
+    "html": "მონაცემები, საწყისი კოდის უფლებები და მომსახურების პირობები წერილობით თანხმდება.",
+    "reason": "Fill missing Georgian and remove blanket claims about what other vendors never document."
+  },
+  {
+    "id": 562,
+    "html": "Your hospital owns its data. FHIR R4 keeps it portable, with export arrangements agreed before rollout.",
+    "reason": "Avoid an unconditional same-day full-export service promise."
+  },
+  {
+    "id": 563,
+    "html": "მონაცემები თქვენს კლინიკას ეკუთვნის. FHIR R4 მათი გადატანის საშუალებას იძლევა. ექსპორტის წესს დანერგვამდე შევათანხმებთ.",
+    "reason": "Avoid an unconditional same-day full-export service promise."
+  },
+  {
+    "id": 564,
+    "html": "First-version source-code ownership",
+    "reason": "Replace escrow with founder-authorized first-delivered-base-version ownership."
+  },
+  {
+    "id": 565,
+    "html": "პირველი ვერსიის საწყისი კოდი",
+    "reason": "Replace escrow with founder-authorized first-delivered-base-version ownership."
+  },
+  {
+    "id": 566,
+    "html": "The first delivered agreed base-system source code belongs to your hospital under the contract.",
+    "reason": "Replace a conditional escrow arrangement with actual ownership."
+  },
+  {
+    "id": 567,
+    "html": "პირველი ჩაბარებული საბაზისო სისტემის საწყისი კოდი ხელშეკრულებით თქვენს კლინიკას ეკუთვნის.",
+    "reason": "Replace a conditional escrow arrangement with actual ownership."
+  },
+  {
+    "id": 568,
+    "html": "Support + price terms",
+    "reason": "Do not promise a specific multi-year lock before terms are agreed."
+  },
+  {
+    "id": 569,
+    "html": "მხარდაჭერა და ფასი",
+    "reason": "Do not promise a specific multi-year lock before terms are agreed."
+  },
+  {
+    "id": 570,
+    "html": "Support, service levels, form updates and any price-lock term are defined in your agreement.",
+    "reason": "Replace unagreed uptime, form-update and multi-year-price guarantees with explicit commercial terms."
+  },
+  {
+    "id": 571,
+    "html": "მხარდაჭერას, მომსახურების დონეს, ფორმების განახლებებსა და ფიქსირებული ფასის ვადას ხელშეკრულებაში განვსაზღვრავთ.",
+    "reason": "Replace unagreed uptime, form-update and multi-year-price guarantees with explicit commercial terms."
+  },
+  {
+    "id": 572,
+    "html": "Your data and your first source-code version. <em>Under your control.</em>",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 573,
+    "html": "თქვენი მონაცემები და კოდის პირველი ვერსია. <em>თქვენი კონტროლის ქვეშ.</em>",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 574,
+    "html": "The hospital owns its data and the first delivered agreed base-system source code under the contract. This is ownership, not a promise to release escrow only if the company stops. Third-party components keep their own licences. Rights to later versions and optional AI services are defined separately; that does not change the ongoing development included within the agreed base scope. Before a decision to proceed, document the scope, price, export arrangements, support, service levels and any price-lock term together.",
+    "reason": "Remove escrow and unsupported guarantees from ownership notes; preserve included ongoing base development."
+  },
+  {
+    "id": 575,
+    "html": "მონაცემები და პირველი ჩაბარებული საბაზისო სისტემის საწყისი კოდი ხელშეკრულებით კლინიკას ეკუთვნის. ეს საკუთრებაა და არა მხოლოდ კომპანიის შეჩერების შემთხვევაში კოდის გადაცემის დაპირება. მესამე მხარის კომპონენტებს საკუთარი ლიცენზიები უნარჩუნდება. მომდევნო ვერსიებსა და არჩევით AI სერვისებზე უფლებები ცალკე განისაზღვრება. ეს შეთანხმებული საბაზისო სისტემის ფასში შემავალ შემდგომ განვითარებას არ ცვლის. გაგრძელების გადაწყვეტილებამდე ერთად წერილობით განვსაზღვრავთ მოცულობას, ფასს, ექსპორტის წესს, მხარდაჭერას, მომსახურების დონესა და ფიქსირებული ფასის შესაძლო ვადას.",
+    "reason": "Remove escrow and unsupported guarantees from ownership notes; preserve included ongoing base development."
+  },
+  {
+    "id": 579,
+    "html": "იგივე ბიუჯეტი. <em>ახალი შესაძლებლობები.</em>",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 580,
+    "html": "We are allocating implementation and development capacity to our next five hospital partners.",
+    "reason": "Place the next-five partner invitation in the original closing slide without scarcity inventions."
+  },
+  {
+    "id": 581,
+    "html": "დანერგვისა და განვითარების რესურსს მომდევნო ხუთი პარტნიორი კლინიკისთვის გამოვყოფთ.",
+    "reason": "Place the next-five partner invitation in the original closing slide without scarcity inventions."
+  },
+  {
+    "id": 582,
+    "html": "Let’s see what changes for your hospital.",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 583,
+    "html": "ვნახოთ, რას შეცვლის MediMind თქვენს კლინიკაში.",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 586,
+    "html": "Agreed base included",
+    "reason": "Avoid implying every future product and AI service is included."
+  },
+  {
+    "id": 587,
+    "html": "შეთანხმებული საბაზისო სისტემა",
+    "reason": "Avoid implying every future product and AI service is included."
+  },
+  {
+    "id": 588,
+    "html": "Switch when ready",
+    "reason": "Replace a guaranteed one-day cutover."
+  },
+  {
+    "id": 589,
+    "html": "გადასვლა მზადყოფნისას",
+    "reason": "Replace a guaranteed one-day cutover."
+  },
+  {
+    "id": 590,
+    "html": "Free parallel evaluation",
+    "reason": "Make the free evaluation explicit."
+  },
+  {
+    "id": 591,
+    "html": "უფასო პარალელური შეფასება",
+    "reason": "Make the free evaluation explicit."
+  },
+  {
+    "id": 592,
+    "html": "30 minutes: director + process lead",
+    "reason": "Give one specific next-step meeting without promising a pilot this month."
+  },
+  {
+    "id": 593,
+    "html": "30 წუთი: დირექტორი და პროცესის ხელმძღვანელი",
+    "reason": "Give one specific next-step meeting without promising a pilot this month."
+  },
+  {
+    "id": 594,
+    "html": "Map the process &amp; agree measures",
+    "reason": "Start with the buyer’s process and agreed evidence, not automatic migration."
+  },
+  {
+    "id": 595,
+    "html": "პროცესი და შეფასების საზომები",
+    "reason": "Start with the buyer’s process and agreed evidence, not automatic migration."
+  },
+  {
+    "id": 596,
+    "html": "Send two times that work for you",
+    "reason": "Replace an automatic go-live CTA with a clear scheduling action."
+  },
+  {
+    "id": 597,
+    "html": "მოგვწერეთ შეხვედრისთვის ორი დრო",
+    "reason": "Replace an automatic go-live CTA with a clear scheduling action."
+  },
+  {
+    "id": 598,
+    "html": "Our next step is a 30-minute conversation with your director and the person who runs the first process. We map the current work, show the relevant part of MediMind and agree what a useful free parallel evaluation would measure. Send us two times that suit you, and we can meet at the hospital or online. We are allocating implementation and development capacity to our next five hospital partners. The agreed base matches your current software spend, with free implementation and ongoing tailored development. The team evaluates before deciding whether to proceed; the rollout schedule follows hospital readiness.",
+    "reason": "Align the closing notes with one specific meeting, five partner capacity, free evaluation and readiness-led rollout."
+  },
+  {
+    "id": 599,
+    "html": "შემდეგი ნაბიჯია 30-წუთიანი საუბარი თქვენს დირექტორთან და იმ ადამიანთან, ვინც პირველ პროცესს მართავს. შევისწავლით დღევანდელ მუშაობას, გაჩვენებთ MediMind-ის შესაბამის ნაწილს და შევათანხმებთ, რას გავზომავთ უფასო პარალელური შეფასებისას. მოგვწერეთ თქვენთვის მოსახერხებელი ორი დრო. შეგვიძლია კლინიკაში ან ონლაინ შევხვდეთ. დანერგვისა და განვითარების რესურსს მომდევნო ხუთი პარტნიორი კლინიკისთვის გამოვყოფთ. შეთანხმებული საბაზისო სისტემა თქვენს მიმდინარე პროგრამულ ხარჯს შეესაბამება. დანერგვა უფასოა და შემდგომი მორგება და განვითარება ფასში შედის. გუნდი ჯერ გამოცდის, შემდეგ კი გაგრძელებას გადაწყვეტს. დანერგვის გრაფიკს კლინიკის მზადყოფნით განვსაზღვრავთ.",
+    "reason": "Align the closing notes with one specific meeting, five partner capacity, free evaluation and readiness-led rollout."
+  },
+  {
+    "id": 607,
+    "html": "სისტემის დემონსტრაცია",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 611,
+    "html": "მთავარი პრეზენტაცია დასრულდა. გმადლობთ. შემდეგ სისტემის მუშაობასა და არქიტექტურას გაჩვენებთ. შეგვიძლია უფრო დეტალურად განვიხილოთ ის ნაწილი, რომელიც გაინტერესებთ.",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 615,
+    "html": "დემონსტრაციის დასაწყებად ჩართეთ ვიდეო. გასაგრძელებლად დააჭირეთ დემონსტრაციის ფანჯრის გარეთ და გამოიყენეთ მარჯვენა ისარი, კლავიატურაზე ან ეკრანზე. შემდეგ სისტემის არქიტექტურას ნახავთ.",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 619,
+    "html": "კლინიკა, რომლის სხეულიც <em>პროგრამაა.</em>",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 621,
+    "html": "ყველა განყოფილება. ყველა პროცესი. ერთიანი კოდი, საფუძვლიდანვე FHIR R4-ზე აგებული.",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 623,
+    "html": "სამედიცინო გუნდი",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 629,
+    "html": "მართვა და საქმიანობა",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 635,
+    "html": "კანი — კლინიკის სამუშაო ეკრანები",
+    "reason": "Keep the Skin taxonomy; explain surfaces as screens rather than literal hospital surfaces."
+  },
+  {
+    "id": 647,
+    "html": "ანაზღაურება",
+    "reason": "Short SVG label for the insurance-reimbursement Claim resource, not a medical history."
+  },
+  {
+    "id": 655,
+    "html": "გული — კლინიკის ცოცხალი მოდელი",
+    "reason": "Preserve the Heart taxonomy."
+  },
+  {
+    "id": 657,
+    "html": "80-ზე მეტი FHIR R4 რესურსი · ერთიანი მოდელი · საფუძვლიდანვე, არა მხოლოდ API",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 661,
+    "html": "AI ტვინი",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 663,
+    "html": "გულის მონაცემთა ანალიზი",
+    "reason": "Short natural SVG description; preserve the Brain/Heart relationship."
+  },
+  {
+    "id": 667,
+    "html": "ასრულებს მოქმედებებს",
+    "reason": "Short natural SVG description of Muscle."
+  },
+  {
+    "id": 671,
+    "html": "აფიქსირებს ცვლილებებს",
+    "reason": "Short natural SVG description of Nerve."
+  },
+  {
+    "id": 675,
+    "html": "აქტიური",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 679,
+    "html": "გუნდი ნახულობს და წერს",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 681,
+    "html": "AI ტვინი",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 683,
+    "html": "AI აანალიზებს და წერს",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 686,
+    "html": "executes commands",
+    "reason": "Use a concrete short description of Muscle while preserving the taxonomy."
+  },
+  {
+    "id": 687,
+    "html": "ასრულებს ბრძანებებს",
+    "reason": "Use a concrete short description of Muscle while preserving the taxonomy."
+  },
+  {
+    "id": 693,
+    "html": "<strong>გული</strong> სისტემის ცენტრია.<br/>ყველა კომპონენტი მას უკავშირდება.",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 694,
+    "html": "One hospital operating system. <em>One FHIR R4 foundation.</em>",
+    "reason": "Keep the operating-system category and original architectural conclusion in positive language."
+  },
+  {
+    "id": 695,
+    "html": "კლინიკის ერთიანი ოპერაციული სისტემა. <em>ერთი FHIR R4 საფუძველი.</em>",
+    "reason": "Keep the operating-system category and original architectural conclusion in positive language."
+  },
+  {
+    "id": 696,
+    "html": "The appendix shows the five architectural layers. Heart is the shared FHIR R4 model: the storage foundation for clinical and administrative resources. Brain reasons across that context; the advanced proactive AI Brain is the optional Phase 3 vision. Muscle carries governed commands to services such as ministry, insurance, pharmacy, imaging and notifications. Skin is the set of screens used by staff and patients. Nerve carries events and audit evidence. The point is one hospital operating system with a shared clinical foundation.",
+    "reason": "Preserve Heart, Brain, Muscle, Skin and Nerve; align architectural notes with optional advanced AI scope."
+  },
+  {
+    "id": 697,
+    "html": "დანართში არქიტექტურის ხუთი შრეა. გული ერთიანი FHIR R4 მოდელია, სადაც კლინიკური და ადმინისტრაციული მონაცემები ინახება. ტვინი ამ მონაცემებს აანალიზებს. წინმსწრები AI ტვინი არჩევითი ეტაპი 3-ის ხედვაა. კუნთი მართავს ბრძანებების შესრულებას სამინისტროში, დაზღვევაში, აფთიაქში, რადიოლოგიასა და შეტყობინებებში. კანი თანამშრომლებისა და პაციენტების სამუშაო ეკრანებია. ნერვი მოვლენებსა და ცვლილებების აღრიცხვას აკავშირებს. მთავარი სათქმელია კლინიკის ერთიანი ოპერაციული სისტემა საერთო კლინიკური საფუძვლით.",
+    "reason": "Preserve Heart, Brain, Muscle, Skin and Nerve; align architectural notes with optional advanced AI scope."
+  },
+  {
+    "id": 698,
+    "html": "Real case · illustrative AI scenario",
+    "reason": "Distinguish actual clinical history from a simulated MediMind intervention inside the modal."
+  },
+  {
+    "id": 699,
+    "html": "რეალური შემთხვევა · AI-ის შესაძლო სცენარი",
+    "reason": "Distinguish actual clinical history from a simulated MediMind intervention inside the modal."
+  },
+  {
+    "id": 701,
+    "html": "14-საათიანი დაყოვნება",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 704,
+    "html": "Two weeks after a stent procedure, a high-risk patient returned with abdominal pain. The team focused on the heart. Acute pancreatitis was identified after a <strong>14-hour</strong> delay, followed by septic shock and ICU care. A <strong>~$20 lipase test</strong> was one of the diagnostic clues in the case.",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 705,
+    "html": "სტენტირებიდან ორი კვირის შემდეგ მაღალი რისკის პაციენტი მუცლის ტკივილით დაბრუნდა. ყურადღება გულზე იყო გამახვილებული. მწვავე პანკრეატიტი <strong>14 საათის</strong> დაგვიანებით გამოვლინდა. პაციენტს სეპტიკური შოკი განუვითარდა და რეანიმაცია დასჭირდა. დიაგნოსტიკის ერთ-ერთი მნიშვნელოვანი მინიშნება <strong>დაახლოებით $20-იანი ლიპაზის ანალიზი</strong> იყო.",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 706,
+    "html": "The case shows how fragmented information can delay recognition.",
+    "reason": "Use the operational lesson rather than attributing the hospital’s operation to memory alone."
+  },
+  {
+    "id": 707,
+    "html": "შემთხვევა გვიჩვენებს, როგორ ართულებს გაფანტული ინფორმაცია პრობლემის დროულად დანახვას.",
+    "reason": "Use the operational lesson rather than attributing the hospital’s operation to memory alone."
+  },
+  {
+    "id": 708,
+    "html": "Illustrative AI scenario",
+    "reason": "Mark the simulated intervention clearly."
+  },
+  {
+    "id": 709,
+    "html": "AI-ის შესაძლო სცენარი",
+    "reason": "Mark the simulated intervention clearly."
+  },
+  {
+    "id": 710,
+    "html": "<strong>Parallel</strong> consideration of cardiac and abdominal causes, including possible lipase testing.",
+    "reason": "Describe the simulated support without promising autonomous test ordering."
+  },
+  {
+    "id": 711,
+    "html": "გულისა და მუცლის მიზეზების <strong>პარალელური</strong> შეფასება, ლიპაზის ანალიზის შესაძლო შეთავაზებით.",
+    "reason": "Describe the simulated support without promising autonomous test ordering."
+  },
+  {
+    "id": 712,
+    "html": "Cardiology + surgery notified <strong>together</strong>, when appropriate.",
+    "reason": "Keep cross-department coordination in the illustrative scenario."
+  },
+  {
+    "id": 713,
+    "html": "საჭიროებისას კარდიოლოგისა და ქირურგის <strong>ერთად</strong> ინფორმირება.",
+    "reason": "Keep cross-department coordination in the illustrative scenario."
+  },
+  {
+    "id": 714,
+    "html": "Potentially <strong>earlier review</strong>, with the clinical team deciding.",
+    "reason": "Remove the unmeasured 19-hours-earlier and prevented-sepsis claims."
+  },
+  {
+    "id": 715,
+    "html": "შესაძლოა, პრობლემა <strong>უფრო ადრე შეფასდეს</strong>. გადაწყვეტილებას კლინიკური გუნდი იღებს.",
+    "reason": "Remove the unmeasured 19-hours-earlier and prevented-sepsis claims."
+  },
+  {
+    "id": 719,
+    "html": "და",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 721,
+    "html": "სტაციონარში ყოფნა",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 722,
+    "html": "An illustrative future scenario, not a measured MediMind outcome.",
+    "reason": "Remove the every-time/never-tired infallibility claim."
+  },
+  {
+    "id": 723,
+    "html": "სამომავლო შესაძლებლობის ილუსტრაცია. MediMind-ის რეალურ შედეგს არ ასახავს.",
+    "reason": "Remove the every-time/never-tired infallibility claim."
+  },
+  {
+    "id": 724,
+    "html": "Operating impact · what to measure",
+    "reason": "Make the financial modal a hospital-owned measurement example."
+  },
+  {
+    "id": 725,
+    "html": "სამუშაო შედეგები · რას გავზომავთ",
+    "reason": "Make the financial modal a hospital-owned measurement example."
+  },
+  {
+    "id": 726,
+    "html": "What can strengthen your margin",
+    "reason": "Keep the business value while avoiding an asserted measured result."
+  },
+  {
+    "id": 727,
+    "html": "რა შეიძლება ზრდიდეს მომგებიანობას",
+    "reason": "Keep the business value while avoiding an asserted measured result."
+  },
+  {
+    "id": 728,
+    "html": "Use your current process as the baseline. Agree targets in these areas, then measure the change:",
+    "reason": "Replace automatic ROI with a concrete local measurement approach."
+  },
+  {
+    "id": 729,
+    "html": "შედარების საფუძველი თქვენი მიმდინარე პროცესია. ამ მიმართულებებით მიზნებს შევათანხმებთ და ცვლილებას გავზომავთ:",
+    "reason": "Replace automatic ROI with a concrete local measurement approach."
+  },
+  {
+    "id": 730,
+    "html": "Revenue opportunities to measure",
+    "reason": "Remove the guarantee that every revenue loss stops."
+  },
+  {
+    "id": 731,
+    "html": "შემოსავლის გაუმჯობესების შესაძლებლობები",
+    "reason": "Remove the guarantee that every revenue loss stops."
+  },
+  {
+    "id": 732,
+    "html": "Fewer returned claims",
+    "reason": "Translate claims as insurance reimbursement documents, not patient histories; remove zero-error wording."
+  },
+  {
+    "id": 733,
+    "html": "ნაკლები დაბრუნებული სადაზღვევო მოთხოვნა",
+    "reason": "Translate claims as insurance reimbursement documents, not patient histories; remove zero-error wording."
+  },
+  {
+    "id": 734,
+    "html": "Measure how often insurance reimbursement documents need correction.",
+    "reason": "Replace nothing-bounces-back certainty with a useful measure."
+  },
+  {
+    "id": 735,
+    "html": "გაზომეთ, რამდენ სადაზღვევო მოთხოვნას სჭირდება შესწორება.",
+    "reason": "Replace nothing-bounces-back certainty with a useful measure."
+  },
+  {
+    "id": 736,
+    "html": "Fewer unbilled services",
+    "reason": "Remove capture-everything and error-free-billing claims."
+  },
+  {
+    "id": 737,
+    "html": "ნაკლები აღურიცხავი მომსახურება",
+    "reason": "Remove capture-everything and error-free-billing claims."
+  },
+  {
+    "id": 738,
+    "html": "Compare recorded services and supplies with billed items.",
+    "reason": "Use a reconciliation measure instead of nothing-slips certainty."
+  },
+  {
+    "id": 739,
+    "html": "შეადარეთ გაწეული მომსახურება და მასალები ანგარიშში ასახულ პოზიციებს.",
+    "reason": "Use a reconciliation measure instead of nothing-slips certainty."
+  },
+  {
+    "id": 740,
+    "html": "Time to reimbursement",
+    "reason": "Use a professional financial label instead of faster money."
+  },
+  {
+    "id": 741,
+    "html": "დრო ანაზღაურებამდე",
+    "reason": "Use a professional financial label instead of faster money."
+  },
+  {
+    "id": 742,
+    "html": "Measure discharge-to-claim time and actual payment timing.",
+    "reason": "Replace promised faster payment with measurable local timing."
+  },
+  {
+    "id": 743,
+    "html": "გაზომეთ მოთხოვნის მომზადებისა და ანაზღაურების ვადები.",
+    "reason": "Replace promised faster payment with measurable local timing."
+  },
+  {
+    "id": 744,
+    "html": "Team capacity and costs to measure",
+    "reason": "Replace guaranteed cost removal with measurable operating outcomes."
+  },
+  {
+    "id": 745,
+    "html": "გუნდის დრო და ხარჯები",
+    "reason": "Replace guaranteed cost removal with measurable operating outcomes."
+  },
+  {
+    "id": 746,
+    "html": "More time for patient care",
+    "reason": "Prioritize care capacity over an unverified increase in patient throughput."
+  },
+  {
+    "id": 747,
+    "html": "მეტი დრო პაციენტისთვის",
+    "reason": "Prioritize care capacity over an unverified increase in patient throughput."
+  },
+  {
+    "id": 748,
+    "html": "Measure documentation time and the time available for care.",
+    "reason": "Measure staff capacity without promising a specific patient-volume increase."
+  },
+  {
+    "id": 749,
+    "html": "გაზომეთ ჩანაწერებზე დახარჯული და პაციენტისთვის დარჩენილი დრო.",
+    "reason": "Measure staff capacity without promising a specific patient-volume increase."
+  },
+  {
+    "id": 750,
+    "html": "Administrative workload",
+    "reason": "Remove an unverified 50% staffing reduction."
+  },
+  {
+    "id": 751,
+    "html": "ადმინისტრაციული დატვირთვა",
+    "reason": "Remove an unverified 50% staffing reduction."
+  },
+  {
+    "id": 752,
+    "html": "Compare hours spent on quality checks, stock and laboratory administration.",
+    "reason": "Measure work instead of promising half the headcount."
+  },
+  {
+    "id": 753,
+    "html": "შეადარეთ ხარისხის კონტროლზე, მარაგებსა და ლაბორატორიის მართვაზე დახარჯული დრო.",
+    "reason": "Measure work instead of promising half the headcount."
+  },
+  {
+    "id": 754,
+    "html": "Stock and waste",
+    "reason": "Use an understandable stock-management measure."
+  },
+  {
+    "id": 755,
+    "html": "მარაგი და დანაკარგი",
+    "reason": "Use an understandable stock-management measure."
+  },
+  {
+    "id": 756,
+    "html": "Track expiry losses, urgent purchases and unused stock.",
+    "reason": "Make the stock benefit measurable in the hospital."
+  },
+  {
+    "id": 757,
+    "html": "აღრიცხეთ ვადაგასული მარაგი, სასწრაფო შესყიდვები და გამოუყენებელი მასალები.",
+    "reason": "Make the stock benefit measurable in the hospital."
+  },
+  {
+    "id": 758,
+    "html": "<strong>Claims, billing, staff time and stock</strong> — agree targets, then measure the change in your own hospital.",
+    "reason": "Remove clean-every-claim, half-back-office and compounding-monthly-margin guarantees."
+  },
+  {
+    "id": 759,
+    "html": "<strong>სადაზღვევო მოთხოვნები, ანგარიშები, გუნდის დრო და მარაგი</strong>. მიზნებს ერთად შევათანხმებთ და ცვლილებას თქვენს კლინიკაში გავზომავთ.",
+    "reason": "Remove clean-every-claim, half-back-office and compounding-monthly-margin guarantees."
+  },
+  {
+    "id": 763,
+    "html": "დემონსტრაციის ჩანაწერი მალე დაემატება",
+    "reason": "Natural, compact Georgian."
+  },
+  {
+    "id": 766,
+    "html": "Our TAVI planning tool began with a hospital request. It brings <strong>imaging and measurements</strong> into one workflow for <strong>clinician review</strong>. Development within the agreed base scope is <em>included</em>; validation and clinical-use scope are agreed before use.",
+    "reason": "Preserve the specialist-tool demo and included agreed-scope development; remove unverified competitor pricing and medical-grade equivalence."
+  },
+  {
+    "id": 767,
+    "html": "TAVI-ის დაგეგმვის ინსტრუმენტი კლინიკის მოთხოვნიდან შეიქმნა. ის <strong>გამოსახულებებსა და გაზომვებს</strong> ერთ სივრცეში აერთიანებს. შედეგს <strong>ექიმი აფასებს</strong>. შეთანხმებულ საბაზისო ფარგლებში განვითარება <em>ფასში შედის</em>. კლინიკური გამოყენების ფარგლებსა და შემოწმებას წინასწარ შევათანხმებთ.",
+    "reason": "Preserve the specialist-tool demo and included agreed-scope development; remove unverified competitor pricing and medical-grade equivalence."
+  },
+  {
+    "id": 5,
+    "html": "<em>თქვენი მთელი კლინიკისთვის.</em>",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 12,
+    "html": "For our next <em>5 hospital partners.</em>",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 34,
+    "html": "Ready for <em>what comes next</em>",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 220,
+    "html": "Clinical and engineering experience. <strong>One team for implementation and support.</strong>",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 544,
+    "html": "Measure your results",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 545,
+    "html": "შედეგს თქვენი მონაცემებით ვზომავთ",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  },
+  {
+    "id": 546,
+    "html": "Visit time, repeated entry and unbilled services — compared against an agreed baseline.",
+    "reason": "Final editorial pass: direct hospital value, founder feedback and concise Georgian."
+  }
+]

@@ -78,6 +78,37 @@
     Cache-Control = "no-store, must-revalidate"
     X-Robots-Tag  = "noindex, nofollow"
 
+# ─── Hospital proposal deck (partner.html + its strings + the three PDFs) — never cache, never index ───
+[[headers]]
+  for = "/partner.html"
+  [headers.values]
+    Cache-Control = "no-store, must-revalidate"
+    X-Robots-Tag  = "noindex, nofollow"
+
+[[headers]]
+  for = "/partner-i18n.js"
+  [headers.values]
+    Cache-Control = "no-store, must-revalidate"
+    X-Robots-Tag  = "noindex, nofollow"
+
+[[headers]]
+  for = "/partner.css"
+  [headers.values]
+    Cache-Control = "no-store, must-revalidate"
+    X-Robots-Tag  = "noindex, nofollow"
+
+[[headers]]
+  for = "/partner.js"
+  [headers.values]
+    Cache-Control = "no-store, must-revalidate"
+    X-Robots-Tag  = "noindex, nofollow"
+
+[[headers]]
+  for = "/share/medimind-partner-*"
+  [headers.values]
+    Cache-Control = "no-store, must-revalidate"
+    X-Robots-Tag  = "noindex, nofollow"
+
 # ─── Long-version deck (long.html) — open link, never cache, never index ───
 [[headers]]
   for = "/long.html"

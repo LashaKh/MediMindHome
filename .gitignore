@@ -66,3 +66,4 @@ MediMind-Project.zip
 scripts/recordings/
 playwright-report/
 test-results/
+.tmp/

@@ -1,0 +1,228 @@
+{
+  "pages": [
+    {
+      "title": "The whole day, in three minutes",
+      "subtitle": "WEEK 2 / DAY 1 | Sales, fundraising and customer value | About 20 minutes to read the complete guide",
+      "blocks": [
+        {"type":"card","title":"The one idea connecting all three sessions","body":"Do not start with everything your product can do. Start with a specific person, an important problem and the evidence that will make that person act. This applies to hospital buyers, hospital staff and investors."},
+        {"type":"table","headers":["Remember","What it changes"],"widths":[34,66],"rows":[
+          ["1. Choose a narrow first customer.","An ideal customer profile must be specific enough for someone else to find matching companies and people."],
+          ["2. Map how they actually buy.","A helpful contact is not necessarily the buyer. Identify approval, technical review, user adoption and the route to a decision."],
+          ["3. Sell the change, not the feature.","Explain what becomes easier, cheaper, faster or more effective for this buyer - and how you will demonstrate it."],
+          ["4. The buyer and user need different messages.","The CEO may care about economics and risk; staff need a concrete reason to change how they work."],
+          ["5. An evaluation needs a decision path.","Define scope, participation, success criteria and a review date. A free evaluation is not the same thing as an indefinitely free deployment."],
+          ["6. Fund a milestone, not a round label.","Decide what evidence the money must create, then calculate the time, team and cash required."],
+          ["7. Build relationships around real progress.","Use a focused investor list, relevant introductions and honest updates. Record objections and next steps."]
+        ]},
+        {"type":"section","title":"What matters most for MediMind now","body":"Your stated bottleneck is winning hospital evaluations beyond the anchor partner. My recommendation: prove that a new hospital will enter a well-scoped evaluation, use the alternative, review the results and make a decision. A launched system alone does not establish demand or a repeatable sales process."},
+        {"type":"text","body":"<b>Read first:</b> pages 3-6 for hospital sales and copy; pages 7-10 for fundraising; pages 11-13 for deliverables and execution. Page 2 has replay times. Page 14 explains sources and limitations."}
+      ]
+    },
+    {
+      "title": "Your source and replay map",
+      "subtitle": "Three recordings, two unique decks, one consolidated day. Timestamps restart in each recording.",
+      "blocks": [
+        {"type":"table","headers":["Recording","Best sections to replay"],"widths":[34,66],"rows":[
+          ["<b>Session 01</b><br/>Sales process and prospecting<br/>2h 10m 50s<br/>Brianna Salinas + cohort discussion","00:18-00:24: pilot discipline and founder involvement.<br/>00:24-00:36: business problems and early sales mistakes.<br/>00:36-01:11: buying process, discovery and evaluation.<br/>01:14-01:40: early adopters, beachhead and ICPs.<br/>01:49-02:10: qualification and stakeholder roles."],
+          ["<b>Session 02</b><br/>Fundraising planning<br/>1h 09m 17s<br/>Pedro Santos Vieira","00:03-00:10: milestones, capital and metrics.<br/>00:10-00:29: decks, market, need, team and differentiation.<br/>00:29-00:38: investor list, objections and introductions.<br/>00:38-00:51: relationships, timing and fund economics.<br/>00:51-01:09: rejection, fit, diligence and geography."],
+          ["<b>Session 03</b><br/>Customer value propositions<br/>25m 06s<br/>Brianna Salinas","00:01:20-00:07:20: business value, not feature lists.<br/>00:07:20-00:11:00: value for the actual user.<br/>00:11:00-00:17:05: examples and why messages must differ.<br/>00:17:05-00:19:35: buyer versus user propositions.<br/>00:19:35-00:23:20: exact homework clarification."]
+        ]},
+        {"type":"section","title":"What the decks contribute","body":"<b>Sales deck:</b> 75 slides, including the buying journey, ICP templates, stakeholder roles, business/user value frameworks and workshop instructions.<br/><b>Fundraising deck:</b> 66 slides, including speaker notes and appendix material. Extra material on diligence, closing, investor fit and readiness is labelled as slide material where it goes beyond the recording."},
+        {"type":"card","title":"Fastest route through the recordings","body":"If you only replay three extracts: Session 01 at 00:57-00:59 (discovery before demo), Session 02 at 00:03:49-00:06:18 (milestone-first fundraising), and Session 03 at 00:13:15-00:17:05 (why one message cannot address every customer problem). About nine minutes total."},
+        {"type":"text","body":"<b>Time format:</b> short times are hours:minutes; three-part times are hours:minutes:seconds.<br/><b>Total source time:</b> 3h 45m 15s. Breaks, setup and room discussion remain in the transcripts but are compressed here. MP4/M4A counterparts are counted once per session; your repeated sales-deck URL is also counted once."}
+      ]
+    },
+    {
+      "title": "Choose who to win first",
+      "subtitle": "TAUGHT | Session 01, approximately 01:14-01:40; sales deck, beachhead and ICP sections; Session 03 homework",
+      "blocks": [
+        {"type":"section","title":"An ICP is a findable customer, not a broad market","body":"ICP means <b>ideal customer profile</b>: the type of organization most likely to have the problem, value your solution and be reachable now. 'Hospitals' is a market. A specific hospital type, with a specific trigger, buying situation and reachable decision-maker, is a useful starting profile."},
+        {"type":"table","headers":["Put in each profile","Why it matters"],"widths":[37,63],"rows":[
+          ["Industry, size and location","Defines which organizations belong on the list. Use meaningful operating characteristics, not invented size thresholds."],
+          ["Buyer titles and custom signals","Identifies people and evidence beyond a generic job title: current software, ownership, operating model, relevant projects."],
+          ["Pain and trigger event","Explains why this customer might act now: renewal, leadership change, expansion, repeated operational failure."],
+          ["Where to find and reach them","Names a real source and access route: existing relationships, sector networks, company information or direct outreach."],
+          ["Customer value proposition","States the valuable change for this profile, rather than listing all your capabilities."],
+          ["Pain level and ease of reach","Makes the first priority explicit. High need without access and easy access without need are different problems."]
+        ]},
+        {"type":"section","title":"Prepare seven hypotheses; focus on three","body":"The slide asks for 5-7 ICPs. In the final recording, Brianna clarifies that she wants at least seven, with three immediate priorities. Create seven to explore, not seven campaigns to run at once. Select the first three by pain and reach, then validate the assumptions in conversations."},
+        {"type":"card","title":"MediMind application - a hypothesis, not validated segmentation","body":"Start by comparing reachable private hospitals with an upcoming software decision, hospital groups struggling with inconsistent processes, and operators with a recurring cross-department bottleneck. These are starting hypotheses; an introduction alone does not prove the hospital has a problem or a budget."},
+        {"type":"text","body":"<b>Do not copy examples as facts:</b> the deck's US healthcare size bands and the lecture's short sales-cycle heuristic are teaching examples, not established thresholds or sales-cycle benchmarks for Georgian hospitals."}
+      ]
+    },
+    {
+      "title": "Map the hospital's decision",
+      "subtitle": "TAUGHT | Session 01, 00:36-01:11 and 01:49-02:10. Hospital-specific flow below is our application.",
+      "blocks": [
+        {"type":"card","title":"A sale is not a straight line from demo to contract","body":"The customer must understand the problem, compare options, build internal support, evaluate risk and obtain approval. Steps can repeat. Your sales process should help them complete those jobs, not merely record your own activities."},
+        {"type":"table","headers":["Role","Find out"],"widths":[28,72],"rows":[
+          ["Economic buyer","Who owns the budget and can approve the change? What result makes the investment worthwhile?"],
+          ["Champion / coach","Who will explain the internal process, introduce others and help progress the evaluation? A friendly contact is not automatically a champion."],
+          ["Technical / risk reviewer","Who assesses data access, security, integration, continuity and feasibility? What evidence must they see?"],
+          ["Users / clinical leaders","Who will change daily work? What makes adoption worthwhile, and who can block it by not using the system?"],
+          ["Other approvers","Who controls purchasing, legal review, clinical governance and the final signature? Confirm the actual process for each hospital."]
+        ]},
+        {"type":"section","title":"MediMind's proposed journey","body":"Find a matching hospital → identify a warm route or direct contact → confirm the problem and buying team → agree evaluation scope and success criteria → obtain required approvals and authorized data access → launch the parallel environment → staff test agreed workflows → review evidence together → decide whether to proceed → contract, rollout and adoption.<br/><br/>A warm introduction helps open the door; it does not replace qualification."},
+        {"type":"section","title":"Five questions before a tailored demonstration","body":"1. What happens today, and where does work break down?<br/>2. Who feels the problem, and how often?<br/>3. What would count as a meaningful improvement?<br/>4. Who must be involved before a decision can be made?<br/>5. If the evaluation succeeds, what is the next approval and purchasing step?"},
+        {"type":"text","body":"<b>Lesson:</b> learn before demonstrating; tailor the demo to what you heard. End a useful call with an agreed next action, owner and date. A free evaluation can require participation and a scheduled review without requiring a commitment to buy."}
+      ]
+    },
+    {
+      "title": "Turn features into value",
+      "subtitle": "TAUGHT | Session 03, 00:01:20-00:19:35; sales deck, slides 54-65",
+      "blocks": [
+        {"type":"card","title":"The biggest correction to our copy-writing approach","body":"Do not squeeze every benefit into one heroic promise. Build a bank of value propositions, then lead with the one or two that match this customer's actual problem. Different audiences or campaigns may need different pages or sections."},
+        {"type":"section","title":"The two people you must persuade","body":"<b>The business buyer:</b> needs economic, operational or strategic improvement - revenue, cost, quality, scale, reduced risk or simpler coordination.<br/><b>The user:</b> needs daily work to get better - less repetition, fewer hassles, clearer information, less effort or more confidence. Approval from the CEO does not automatically create staff adoption."},
+        {"type":"table","headers":["Value layer","Question to answer"],"widths":[33,67],"rows":[
+          ["Basic requirements","Does it meet specifications, price, compliance and ethical expectations? These are entry conditions, not sufficient differentiation."],
+          ["Functional / economic","What can the customer accomplish that matters: better performance, lower cost, more capacity or revenue?"],
+          ["Ease of doing business","What becomes simpler or more dependable: workflow, integration, information, support or flexibility?"],
+          ["Personal / emotional","Does this person gain confidence, reduce anxiety, protect their reputation or achieve a visible win?"],
+          ["Vision / purpose","What larger ambition does the change support? Connect it to practical value; do not substitute a distant vision for today's evidence."]
+        ]},
+        {"type":"section","title":"A useful writing test","body":"<b>Capability → how work changes → customer benefit → evidence.</b><br/>'One connected system' describes a capability. 'Staff no longer re-enter the same information between these two steps' explains a change. 'Less administrative work per case' is the benefit. A timed side-by-side test supplies evidence. This four-part test is our practical adaptation of the lecture."},
+        {"type":"text","body":"The Artisan example illustrates how to translate product functions into business and user value. Its performance statements are examples in the lecture, not independently verified claims. The value frameworks are credited on the slides to Bain / Harvard Business Review."}
+      ]
+    },
+    {
+      "title": "What this means for MediMind",
+      "subtitle": "OUR APPLICATION | Working hypotheses to validate with hospitals, not measured product outcomes",
+      "blocks": [
+        {"type":"table","headers":["Who / possible pain","Value to test","Evidence to collect"],"widths":[32,34,34],"rows":[
+          ["CEO / owner: disconnected systems make costs and performance hard to control.","A clearer operating picture and fewer costly handoffs.","Baseline and evaluation results for one agreed bottleneck; costs with implementation effort included."],
+          ["Operations / finance: repeated entry and follow-up consume capacity.","Fewer manual steps; faster completion of agreed administrative work.","Time per task, re-entry steps, exceptions and completion rate before versus during the test."],
+          ["Clinical leader / staff: information is scattered and work gets interrupted.","Relevant information easier to find; less repeated documentation.","Observed workflow tests, staff feedback, missing-information checks and safety review."],
+          ["IT / risk: changing core software may disrupt the hospital.","A bounded parallel evaluation with a clear implementation and support plan.","Approved access scope, security review, data mapping, acceptance tests and rollout dependencies."]
+        ]},
+        {"type":"section","title":"Make the offer concrete","body":"<b>Illustrative message:</b> 'See what your hospital could do without the repeated work. We build a tailored parallel system for you to test, free, before you decide whether to switch.'<br/><br/>Then explain the actual scope, what staff will test and how the hospital can judge improvement. Your next-ten-client price-match offer belongs in clear commercial terms: what spending is matched, what is included and when the offer applies."},
+        {"type":"section","title":"Give AI a job, not just a headline","body":"For each AI workflow offered, name the specific task, the person's review responsibility and how quality will be tested. Describe proactive, hospital-wide AI as a future direction unless it is already demonstrated and appropriately governed. A connected data foundation is an enabler, not proof of improved clinical outcomes."},
+        {"type":"card","title":"What we should not claim from these lectures","body":"They do not establish that MediMind guarantees revenue, immediate savings, better patient outcomes, autonomous medical decisions or a competitor's disappearance. Use verified results for outcome claims. Define what 'unlimited development' includes and how requests are prioritized before presenting it as a deliverable."}
+      ]
+    },
+    {
+      "title": "Raise for a milestone",
+      "subtitle": "TAUGHT | Session 02, 00:03:49-00:10:00; fundraising deck, slides 3-6. Arithmetic correction below.",
+      "blocks": [
+        {"type":"card","title":"Start with the evidence you need to create","body":"Next meaningful milestone → work and people required → time and monthly cash needs → cash already available → funding gap. 'We are raising a seed round' is a label, not the explanation of why this amount is necessary."},
+        {"type":"section","title":"The lecture's planning example","body":"The example moves from $5,000 to about $83,000 monthly recurring revenue, assuming 15% compounded monthly growth. That takes about 20 months. At a constant $15,000 monthly net cash burn, the simplified requirement is about $300,000 before existing cash, buffers and other costs. These are classroom assumptions, not MediMind forecasts. The lecturer explicitly calls the 15x revenue multiple aggressive."},
+        {"type":"table","headers":["Important correction","Correct interpretation"],"widths":[43,57],"rows":[
+          ["$3m investment for 20% ownership","$3m ÷ 20% = $15m <b>post-money</b> valuation. Pre-money is $15m minus $3m = <b>$12m</b>."],
+          ["If pre-money really is $15m","Adding $3m gives $18m post-money; the new investor owns $3m ÷ $18m = <b>16.7%</b>."],
+          ["What is wrong in the deck?","Slides 4-5 label investment divided by dilution as pre-money. That calculation gives post-money in this simple example."]
+        ]},
+        {"type":"text","body":"<b>Scope:</b> simple priced equity round, excluding option-pool changes, convertibles, SAFEs and other adjustments. Arithmetic check: post-money = pre-money + new cash; ownership = new cash / post-money. Supporting explanation: <link href='https://www.ycombinator.com/blog/dilution' color='#24718a'>Y Combinator, Dilution</link>. This is a correction of the example, not valuation advice."},
+        {"type":"section","title":"MediMind application","body":"A plausible near-term milestone is evidence of repeatable demand beyond the anchor partner: qualified hospitals complete evaluations, outcomes are reviewed, some convert and users adopt. Specify how many, by when and with what success criteria from your real capacity and budget. Do not invent a target or fundraising amount to make a slide look complete."}
+      ]
+    },
+    {
+      "title": "Build an evidence-led story",
+      "subtitle": "TAUGHT | Session 02, 00:10-00:29; fundraising deck, market / team / product / traction sections",
+      "blocks": [
+        {"type":"table","headers":["Investor question","What the lecture recommends"],"widths":[34,66],"rows":[
+          ["Is the market worth pursuing?","Build a bottom-up estimate: realistic customer count multiplied by annual revenue per customer. Explain whom you can actually reach first, not just a tiny percentage of an enormous market."],
+          ["Does the customer really need it?","Use non-leading conversations and behavior. A payment proves one customer's willingness to pay; it does not automatically prove product-market fit."],
+          ["Can this team execute?","Show complementary skills, relevant experience and awareness of missing expertise. Explain how gaps will be covered."],
+          ["Why this product?","Compare a few customer-important dimensions with evidence. 'Better UI' or winning every row of a giant comparison table is weak without support."],
+          ["Will growth repeat?","Show what experiments taught you, which channel or process works and whether progress persists. Metrics must fit the business model and stage."]
+        ]},
+        {"type":"section","title":"Do not confuse early evidence with product-market fit","body":"Product-market fit means sustained evidence that the product is wanted and used in a viable market. There is no universal magic count of customers. Repeated sales, retention, use and willingness to pay strengthen the case. Fit can also weaken as customers or competition change."},
+        {"type":"card","title":"MediMind's proof ladder - our recommendation","body":"Hospital expresses a specific need → agrees a scoped evaluation → users actually test it → buyer reviews measured results → paid commitment → sustained adoption / retention. Show where each hospital really stands. Do not present evaluations, sites, contracts, active users and revenue as interchangeable measures of traction."},
+        {"type":"section","title":"Keep claims, examples and plans separate","body":"Use three labels in the investor materials: <b>observed</b> (verified facts), <b>in progress</b> (work with a clear status) and <b>planned</b> (future assumptions). The deck's example revenue, investor interest and growth metrics are fictional teaching material, not evidence about MediMind."}
+      ]
+    },
+    {
+      "title": "Find investors who can say yes",
+      "subtitle": "TAUGHT | Session 02, 00:29-00:41 and 00:47-01:09. Additional fit criteria from the deck appendix.",
+      "blocks": [
+        {"type":"section","title":"Build a working list, not a pile of fund names","body":"Track the firm <b>and the person</b>: sector, stage, geography, investment size, relevant portfolio, possible conflicts, introduction route, priority, last contact, objections and next action. Appendix additions include lead/follow role, follow-on capacity, available capital and who makes the decision. Validate AI-generated research before relying on it."},
+        {"type":"card","title":"A useful introduction request","body":"'Could you introduce us to [named person] at [firm]? They are relevant because [specific fit]. Our current verified progress is [two or three facts]. We are seeking [specific meeting or feedback]. Here is a short note you can forward.' Make the request easy to understand and easy to pass on."},
+        {"type":"section","title":"Let progress build the relationship","body":"The lecture's 'lines, not dots' idea means investors learn more from a sequence of honest updates than a single polished meeting. Explain what improved, what did not, what you learned and what help you need. An analyst or associate can be an internal advocate; do not assume only partners matter."},
+        {"type":"section","title":"Understand the investor's economics","body":"The fund-return example asks whether one outcome could be meaningful for that fund. A $100m fund owning 10% at exit would need a $1bn exit to receive $100m before other considerations. It is a rough fit heuristic, not a requirement that every investor or regional fund demands a billion-dollar exit. Ask about their actual expectations."},
+        {"type":"table","headers":["When you hear no","Useful response"],"widths":[34,66],"rows":[
+          ["Too early / insufficient evidence","Ask what specific evidence would change the assessment and when it would make sense to reconnect."],
+          ["Wrong sector, region or ticket","If they otherwise like the company, ask whether a more suitable investor comes to mind."],
+          ["Concerns about team or economics","Treat the concern as information to investigate. Do not expect a warm referral to erase the underlying issue."],
+          ["Endless review without progress","Ask what remains, who decides and by when. If there is no credible path, agree to pause rather than endlessly supply work."]
+        ]}
+      ]
+    },
+    {
+      "title": "Run a focused fundraise",
+      "subtitle": "TAUGHT + DECK ADDITIONS | Session 02, 00:10-00:13, 00:41-00:47 and later Q&A; deck slides 9, 29-34, 60-64",
+      "blocks": [
+        {"type":"table","headers":["Material","Its job"],"widths":[31,69],"rows":[
+          ["Teaser deck","Short, understandable without narration; earn a meeting. The deck suggests roughly 4-5 pages."],
+          ["Demo-day deck","Support a short spoken pitch; earn follow-up interest. Suggested 10-15 slides for a 2-5 minute delivery."],
+          ["Investor meeting deck","Support deeper discussion of evidence, risks and the plan. Suggested 15-20 slides plus appendix."],
+          ["Follow-up material","Answer this investor's actual unresolved questions. Do not send every document to everyone by default."]
+        ]},
+        {"type":"section","title":"Meeting discipline","body":"Practice and improve before your highest-priority meetings. When ready, group serious fundraising conversations into a defined period so comparisons and follow-ups remain manageable. Be clear whether you are raising now or building a relationship. Preserve time for customers and execution."},
+        {"type":"section","title":"Urgency without invented pressure","body":"The lecture discusses momentum and fear of missing out. Our recommendation is narrower: use real progress, a genuine process timeline and truthful capacity constraints. Do not fabricate competing offers, deadlines or investor interest. Scarcity does not repair weak evidence."},
+        {"type":"section","title":"Diligence, terms and closing - extra slide material","body":"The deck extends the process through terms, diligence and closing. Prepare a permission-controlled data room with current, consistent company information; track requests and unresolved questions. Share sensitive documents selectively. Have qualified counsel review financing terms and document obligations. The lecture's broad comments about NDAs or changing terms are not universal legal rules."},
+        {"type":"card","title":"Do not adopt generic timelines as MediMind's plan","body":"The appendix's runway and budgeting ranges, deck lengths and sample investor-list sizes are planning heuristics. Your actual timing depends on cash, delivery capacity, evidence and investor fit. Neither the recordings nor these notes establish a current fundraising market benchmark."}
+      ]
+    },
+    {
+      "title": "The actual workshop assignments",
+      "subtitle": "SOURCE-BASED CHECKLIST | Keep this separate from our additional MediMind recommendations on pages 12-13.",
+      "blocks": [
+        {"type":"section","title":"Sales: what Brianna explicitly wants","body":"<b>1. Prepare seven detailed ICPs.</b> The slide says 5-7; her closing instruction says at least seven, with three immediate targets. Include industry, size, location, buyer titles, custom data, triggers, lead sources and a value proposition. Someone else should be able to find matching prospects from the description.<br/><br/><b>2. Rank the profiles by pain and ease of reach.</b> Put the priorities on a map rather than keeping them only in your head.<br/><br/><b>3. Prepare customer value propositions.</b> For the three priority ICPs, identify relevant value elements (she suggests at least four) and write the business-buyer and, where relevant, end-user versions. Develop the full bank; do not put every element in each message."},
+        {"type":"card","title":"Deadline and deliverable clarification","body":"Session 03 at approximately 00:19:35-00:22:47 says the tangible outputs needed for the next day's outreach and discovery sessions are <b>ICPs and value propositions</b>. Buying-process and stakeholder maps should be prepared internally, with unknowns and interview questions. 'Tomorrow' refers to the lecture's next day, not a new deadline set today."},
+        {"type":"section","title":"Sales: supporting internal work","body":"Map the buying and selling process: what is known, what is unknown and which questions will close the gaps. Map stakeholder roles and relationships for example accounts. Bring actual titles rather than assuming that one person is the entire customer. Source: sales slides 68-73 and Session 03 closing clarification."},
+        {"type":"section","title":"Fundraising: workshop list in the deck","body":"1. Define a fundraising timeline, amount and milestone metrics.<br/>2. Prepare your metrics and investor-update template.<br/>3. Prepare the pitch deck.<br/>4. Build the investor tracking list.<br/>5. Identify warm introduction routes.<br/>6. Write a forwardable introduction email.<br/>7. Plan investor calls.<br/>8. Prepare the data room.<br/><br/>Source: fundraising slide 34. This is the slide's exercise list; the recording does not establish that MediMind must finish every item before the next day."}
+      ]
+    },
+    {
+      "title": "Make the evaluation measurable",
+      "subtitle": "OUR APPLICATION | Builds on your stated goal: win new hospital evaluations beyond the anchor partner.",
+      "blocks": [
+        {"type":"card","title":"Suggested primary metric","body":"<b>Number of new, non-anchor hospitals that complete a qualified parallel-system evaluation in a rolling 30-day window.</b><br/>Count a hospital once only after agreed workflows are tested, results are reviewed with the buyer and a proceed / stop / revise decision is recorded. This is a proposed definition, not a claim about current performance."},
+        {"type":"table","headers":["Stage / milestone","Evidence needed to move forward"],"widths":[39,61],"rows":[
+          ["Qualified hospital and access route","Relevant problem, matching profile and a named contact; warm introduction where available."],
+          ["Evaluation agreed","Buyer, champion, participating staff, scope, success criteria and review date identified."],
+          ["Hospital enables the work","Required approvals completed and agreed data access safely available. This is the customer's operational commitment, not a purchase commitment."],
+          ["MediMind delivers the environment","Agreed parallel setup works and is ready for the hospital to test. This is our delivery milestone, not yet customer validation."],
+          ["Hospital completes the evaluation","Staff perform agreed tests; results and limitations are documented; the buyer attends the outcome review."],
+          ["Commercial and adoption outcome","Proceed, stop or revise is explicit. For proceed: commercial approval, rollout and active use are tracked separately."]
+        ]},
+        {"type":"section","title":"Track the leaks, not just the total","body":"Alongside the primary count, track qualified conversations → agreed evaluations → access-ready → launched → completed → paid → adopted. Record time in each stage and why an account stops. Access-to-launch speed measures delivery; launch-to-completed-evaluation measures engagement; completed-to-paid measures conversion."},
+        {"type":"text","body":"<b>Timeframe:</b> the rolling 30 days is the reporting window, not a promise that the whole sale takes 30 days. Your proposed two-week build should have an explicit readiness start point and bounded scope. Agree the hospital's testing period and decision-review date separately. Set numerical targets after checking team capacity and real customer timelines."}
+      ]
+    },
+    {
+      "title": "Your next working week",
+      "subtitle": "OUR RECOMMENDATION | A suggested execution sequence, not a new course deadline or a promise of sales results.",
+      "blocks": [
+        {"type":"table","headers":["Work block","Concrete output"],"widths":[31,69],"rows":[
+          ["1. Focus","Seven ICP hypotheses; three priorities; pain and reach scores with assumptions marked. Choose one first evaluation problem to investigate."],
+          ["2. Buying reality","For priority accounts, identify the buyer, champion, users and reviewers. Record introduction routes, unknowns and the questions needed to qualify them."],
+          ["3. Value and proof","Write buyer and user propositions for the three priorities. For every claim, specify the workflow change and evidence required."],
+          ["4. Evaluation offer","One reusable brief covering scope, responsibilities, approvals, test criteria, timeline, review meeting and the fact that there is no obligation to buy."],
+          ["5. Customer learning","Use conversations to test pain, urgency and decision process. Record what was actually said; change the profiles and messages when evidence disagrees."],
+          ["6. Fundraising readiness","Draft the next milestone, cash plan, strongest verified metrics and current evidence gaps. Build a small, validated investor shortlist before scaling research."],
+          ["7. Weekly review","Count stage movements, completed evaluations and reasons for stalls. Decide the single most useful next experiment."]
+        ]},
+        {"type":"section","title":"Two simple templates to reuse","body":"<b>Customer record:</b> hospital | profile | problem | trigger | buyer | champion | users / reviewers | introduction source | stage | evidence | next action | owner | date.<br/><br/><b>Investor update:</b> period | milestone | verified progress | metric definition | challenge / lesson | next step | specific ask. If you are not actively raising, say so."},
+        {"type":"card","title":"The copy-writing rule to keep","body":"Lead with a pain the reader recognizes, explain the concrete change, show how they can evaluate it and make the next step easy. Let AI and the long-term vision strengthen that story after the immediate value is understandable."}
+      ]
+    },
+    {
+      "title": "Reference and confidence notes",
+      "subtitle": "A study guide, not a claim that every spoken word or every business assumption has been independently verified.",
+      "blocks": [
+        {"type":"table","headers":["Term","Plain meaning"],"widths":[27,73],"rows":[
+          ["ICP / CVP","Ideal customer profile: who is a good fit. Customer value proposition: the valuable change you offer that customer."],
+          ["Beachhead","A narrow first market where you can learn and win before expanding."],
+          ["Champion","An internal supporter who helps the evaluation progress; not necessarily the budget holder."],
+          ["MRR / ARR","Monthly / annual recurring revenue. Revenue, invoices, bookings and cash collected are different measures."],
+          ["Burn / runway","Net cash used per period / how long available cash lasts under the assumptions."],
+          ["PMF / diligence","Product-market fit: sustained evidence of demand and use. Diligence: an investor's examination of the company and risks."]
+        ]},
+        {"type":"section","title":"Source coverage","body":"All three recordings were processed to their ends. Session 03's formal teaching closes around 00:23:20, followed by room discussion. Full automatic transcripts are included, with session-local timestamps and no invented speaker identities. The combined study guide covers substantive teaching, relevant Q&A, homework and additional deck material."},
+        {"type":"text","body":"<b>Recordings:</b> GMT20260928-054719 (Session 01), GMT20260928-081257 (Session 02), GMT20260928-093125 (Session 03), in your Recordings/week2Day1 folder.<br/><b>Decks:</b> <link href='https://docs.google.com/presentation/d/1IJiKxxOvYaKDIbXom2HTja3RzstzQ6-BLzzNlZa8efw/edit' color='#24718a'>Sales / Prospecting - Brianna Salinas</link> (75 slides); <link href='https://docs.google.com/presentation/d/1gstEn7TGr6MK4CbXN9DWSZQKMW9sJLP9X2BgorP63Ds/edit' color='#24718a'>Fundraising - Pedro Santos Vieira</link> (66 slides). Slide numbers here use their displayed 1-based order."},
+        {"type":"section","title":"What to trust, and what to check","body":"These are locally generated speech-recognition drafts, not fully human-verified verbatim transcripts. Names, jargon, accents, overlapping voices and quiet room comments may be misheard. Check the source recording before using an exact quotation. Slides and notes were read through the accessible HTML view; key visuals were inspected. Text captures do not preserve every image, animation or layout."},
+        {"type":"text","body":"MediMind recommendations come from your stated offering and bottleneck, not a fresh audit of product readiness or hospital results. The valuation example is explicitly corrected on page 7. Instructor examples and opinions are not current market, legal, investment or clinical advice. No source recording was uploaded for transcription, no outreach was sent and no live website was changed."}
+      ]
+    }
+  ]
+}

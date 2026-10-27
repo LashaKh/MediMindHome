@@ -1,0 +1,85 @@
+{
+  "title": "MediMind hospital proposal — editorial and evidence record",
+  "date": "2026-10-19",
+  "scope": "Local revision only. No publishing, deployment or messages sent. Brain sources read without modification.",
+  "source_session": "/Users/toko/.claude/projects/-Users-toko-Desktop-Brain/641ad8df-d593-45e7-b510-9fb8b9136363.jsonl",
+  "brain_root": "/Users/toko/Desktop/Brain/01 - Projects/MediMind",
+  "500_global": {
+    "coverage": "All 11 available Deep Digests, the Decision Playbook, relevant workshop and marketing context",
+    "lecture_dates": [
+      "2026-09-21",
+      "2026-09-23",
+      "2026-09-24",
+      "2026-09-25",
+      "2026-09-28",
+      "2026-09-29",
+      "2026-09-30",
+      "2026-10-01",
+      "2026-10-02",
+      "2026-10-06",
+      "2026-10-12"
+    ],
+    "applied_lessons": [
+      "Lead with the hospital outcome and the buyer’s work",
+      "Give clinical, operations, finance and IT stakeholders a reason to care",
+      "Agree evaluation measures before implementation",
+      "Begin with one concrete process and include training",
+      "Use the buyer’s own numbers instead of invented ROI",
+      "Keep development scope and future AI services clear",
+      "Use specific, verified proof and offer a reference conversation"
+    ]
+  },
+  "founder_feedback_incorporated": [
+    "Remove the generic clinic placeholder",
+    "Next five hospital partners, with allocated implementation capacity",
+    "Free implementation and tailored base-system development",
+    "Free parallel evaluation while the existing system continues",
+    "Match current software budget for the agreed base scope",
+    "Hospital ownership of the first delivered base-system source code, defined in the agreement",
+    "Natural Georgian instead of literal translated slogans",
+    "Larger text, fewer words, stronger visual hierarchy and brand consistency"
+  ],
+  "evidence_decisions": [
+    {
+      "claim": "25 hospitals",
+      "use": "One signed network agreement; central hospital live and further rollout staged. Do not describe all 25 as live."
+    },
+    {
+      "claim": "1.15 million patient records migrated",
+      "use": "Rounded from 1,147,535; migration completed July 2026."
+    },
+    {
+      "claim": "Funding",
+      "use": "GITA GEL 150,000 received and 500 Global accelerator participation. Removed the unverified aggregate of approximately GEL 400,000."
+    },
+    {
+      "claim": "Clinical anecdote",
+      "use": "Omitted the 02:00 story because the MediMind intervention in the original narrative was simulated."
+    },
+    {
+      "claim": "AI Brain",
+      "use": "Long-term vision, optional and separately scoped/priced; clinical decisions remain with clinicians."
+    },
+    {
+      "claim": "Savings and rollout timing",
+      "use": "Evaluation measures and a readiness-based schedule, without invented savings percentages or guaranteed timelines."
+    }
+  ],
+  "supporting_notes": [
+    "Marketing Archive/Hospital Proposal Deck/Hospital Proposal Deck — Current State.md",
+    "Marketing Archive/Product Explainer/2026-10-08 - Product Explainer for Justyna.md",
+    "Marketing Archive/MediMind Marketing — Current State.md",
+    "2026-07-27 - LinkedIn Post Drafts — Lab Cutover.md",
+    "2026-08-03 - Medplum Case Study — Draft Answers.md",
+    "500 Global Due Diligence/00 - Master Diligence Status and Decision Log.md",
+    "Investor Conversations/2026-08-18 - 500 Global Eurasia B11 — Call 2 Partner (Pedro + Oksana).md"
+  ],
+  "format": "16 slides: 14 main story slides and 2 optional detail slides; editable HTML/CSS/JS with separate English, Georgian and Russian dictionaries.",
+  "assets": {
+    "cover": "AI-generated hospital illustration, decorative and not presented as a customer facility",
+    "product": "Existing empty clinical-form interface, without patient identifiers",
+    "founders": "Existing project portraits",
+    "mark": "Unmodified current MediMind mark master"
+  },
+  "validation": "See adjacent layout.json files and interaction-check.json; exported PDFs checked separately."
+}

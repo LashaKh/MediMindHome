@@ -1,0 +1,393 @@
+{
+  "ready": true,
+  "meta": {
+    "day": "Week 1 Day 4",
+    "date": "25 September 2026",
+    "prepared_date": "19 October 2026",
+    "destination": "/Users/toko/Desktop/500 Lectures/Week 1 Day 4 - 2026-09-25",
+    "sessions": [
+      "Building a Marketing and Sales Funnel - Justyna Jastrzebska (with the morning stand-up)"
+    ],
+    "source_links": {
+      "deck_supplied": "https://docs.google.com/presentation/d/10gVTbfGZhaKtANEojAN9-juS2h01dD2acez40Qjcvio/edit"
+    },
+    "review_notes": "Reviewed all 1,172 recognized segments (00:00-1:41:31), the text of all 76 slides of the supplied deck (parsed from the browser view; PDF export needs sign-in), 102 recording frames sampled every minute plus targeted frames for the image-only slides (user flow, S5 subscription table, campaign funnel, Old Spice vs Lynx table), and the meeting chat. Five passages were re-transcribed in isolation to check them. For the MediMind pages, the 8 October product explainer (X1), the Week 2 Day 4 and Day 5 funnel and metric pages (W4, W5), the marketing README and positioning/04-language.md were read. This is a source-informed guide, not a human-verified verbatim transcript.",
+    "transcript_caution": "Automatic speech recognition can mishear names and numbers. Likely corrections: 'Linux' is Lynx (the deodorant brand), 'Love' is Dove, 'Dollar J class' is Dollar Shave Club, 'hello Golda' is HelloGold, 'buck box' is VoxPox (vox pop), 'Justina/Justin' is Justyna. The grocery app on the retention slide is HappyFresh. Room questions are often faint or partial; speakers are not identified. Business results told in class (45%, 600%, 700%, 11x, 22x, Uber nine months) are the lecturer's anecdotes, and campaign results on slides 57-73 are deck claims; none are verified here or MediMind results."
+  },
+  "pages": [
+    {
+      "title": "Week 1 Day 4: the marketing and sales funnel",
+      "subtitle": "Justyna Jastrzebska | One recording, 25 September 2026 | 1h 41m (stand-up, lecture, videos, questions)",
+      "blocks": [
+        {
+          "type": "card",
+          "title": "The lecture in one sentence",
+          "body": "Map your whole funnel step by step, decide what each step must say and what happens when someone acts or does not act, test one marketing angle at a time at each step, and judge the funnel as a whole, not one ad or one email."
+        },
+        {
+          "type": "section",
+          "title": "Five points to remember",
+          "body": "<b>1.</b> Every business has five jobs: acquisition, activation, conversion, retention and monetization. Find the one that is broken this month (slide 5; S1 11:22-13:15).<br/><b>2.</b> People need many touches before they buy: 8.3 in B2C, and a B2B decision can involve 17 people. Her minimum is seven touches. Short funnels often fail because buyers never get enough information (slide 6; S1 13:15-14:15, 29:49-31:19).<br/><b>3.</b> Draw the funnel as 'action taken / not taken'. If someone does not act, show them something else; if they still do not act, put them on a 'not now' list, not in the bin (slides 26-29; S1 45:23-48:00).<br/><b>4.</b> A marketing angle is the one idea a message leads with. The same angle can lose at one step and win at the next, so test angles per step and use numbers, not taste (slides 37-50; S1 52:10-1:05:52).<br/><b>5.</b> The strongest campaigns join a conversation already in the buyer's head: pattern break, paradigm shift, or us vs them (slides 52-74; S1 1:14:12-1:37:40)."
+        },
+        {
+          "type": "section",
+          "title": "Where MediMind stands",
+          "body": "MediMind sells through a sales-led funnel: introduction, discovery, demo, evaluation, decision. Her advice for that model is to <b>add content between the steps</b> so trust builds while the hospital decides (S1 29:11-29:49). One answer was aimed at us: companies can let <b>hospital directors, staff and doctors</b> speak for the product, so it is not tied to one founder (S1 26:28). Pages 10-13 turn this into a hospital funnel map, a 'taken / not taken' plan, angles to test and next actions."
+        },
+        {
+          "type": "text",
+          "body": "Fast route: this page, page 3 (the funnel), page 6 (taken / not taken), page 7 (angles), page 10 (our funnel) and page 13 (actions)."
+        },
+        {
+          "type": "card",
+          "title": "Scope of this pack",
+          "body": "One recording from Recordings/week1/Day4: a short morning stand-up, then the lecture. The afternoon session (after lunch, 'back at 12:45') is not in the recording. Most examples are B2C; she says B2B is harder but works the same way because 'you sell to people'. Lecture content and MediMind applications are labelled separately."
+        }
+      ]
+    },
+    {
+      "title": "Sources and review notes",
+      "subtitle": "S1 is the recording. D1 is the 76-slide deck. X1, W4 and W5 are MediMind working documents.",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": ["Source", "What it is", "Access and review"],
+          "widths": [0.9, 2.4, 2.4],
+          "rows": [
+            ["S1", "Zoom recording, 25 September 2026, 1h 41m 31s. Audio and video have the same soundtrack and were processed once.", "Transcribed locally on this Mac. All 11 chunks complete, 1,172 segments, every segment read."],
+            ["D1", "Deck: <i>500 Eurasia B11 - Justyna Jastrzebska - Building Marketing &amp; Sales Funnel</i> (the link supplied).", "PDF export needs sign-in. Text of all 76 slides read from the browser view. Image-only slides checked in recording frames."],
+            ["Chat", "Meeting chat.", "Stand-up comments from a remote team (clarity 6/10 to 8.5/10), a read.ai bot notice, 'Hubspot is the best'."],
+            ["X1", "Product explainer prepared for Justyna, 8 October 2026.", "Read for the offer, phases and buyer."],
+            ["W4, W5", "Week 2 Day 4 and Day 5 packs: hospital journey, funnel stages and metric definitions.", "Relevant pages read. Used as our current funnel."]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "What the recording contains",
+          "body": "01:25-08:01 stand-up: one metric, clarity scores, feedback. 08:01-14:20 intro, five business jobs, touch points. 14:20-33:35 funnel stages and models; content and 'people buy from people'. 33:35-44:44 what to say at each stage; lead magnets; interview series and podcasts. 45:23-52:08 taken / not taken flow, retention, tracking. 52:10-1:09:37 marketing angles and the HelloGold numbers; budget and payback. 1:09:38-1:13:44 questions on testing and price. 1:13:48-1:37:40 campaign types with videos (Dove, Lynx, Always, Slack, Snowflake, Dollar Shave Club). 1:37:42-1:41:31 AI ads, takeaways, lunch."
+        },
+        {
+          "type": "card",
+          "title": "Limitations",
+          "body": "About 13 minutes are played videos (1:17:50-1:29:47), kept in the transcript as heard. A church advert played by mistake at 1:20:44. Some slides are pictures; their numbers were read from frames. Slides 23-25 (AI-agent content ideas) and the B2B case studies on slides 57-73 were left for self-study and only partly discussed. The campaign results on those slides are deck claims, not checked."
+        }
+      ]
+    },
+    {
+      "title": "The funnel: five jobs and five stages",
+      "subtitle": "Lecture content | Slides 5-9 | S1 11:22-15:20",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": ["Job", "The questions she asks"],
+          "widths": [1.2, 4.5],
+          "rows": [
+            ["Acquisition", "Where is the traffic coming from? What is the lead magnet and the entry offer? What problem do we solve?"],
+            ["Activation", "How do they consume the free trial or lead magnet? Can they experience the product? What value did they get?"],
+            ["Conversion", "Are they buying? Do they need more education before they understand the product?"],
+            ["Retention", "Do they see enough results to stay or buy again? Have they actually used what they bought?"],
+            ["Monetization", "What else do they need? Are you using your existing lists (email, SMS, WhatsApp, social)? She calls this '30% of your business left on the table every month'."]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Five stages, from awareness to loyal",
+          "body": "S1 awareness, S2 consideration, S3 purchase, S4 re-purchase, S5 loyal. One change to the classic version: she says <b>awareness of the problem</b>, not of the brand (S1 14:44-15:08). A <b>macro conversion</b> is the main goal, usually the sale. <b>Micro conversions</b> are the small steps before it: a download, a sign-up, a call booked (slide 8)."
+        },
+        {
+          "type": "section",
+          "title": "Touch points: why short funnels fail",
+          "body": "Slide 6: B2B buying groups average 17 people; B2C needs about 8.3 touches before a sale. Most startups run three to five. 'I always say seven as minimum, but... it's not enough.' Her example: a $2,000 product where 'nobody buys after day 7'. The funnel was seven days long. Making it 30 days raised revenue 45%, because buyers finally had time to clear their objections (S1 29:49-30:52). Long sales cycles often mean the buyer lacks information, does not see you often enough, or does not feel the pain enough (S1 30:52-31:19)."
+        },
+        {
+          "type": "card",
+          "title": "Do not judge one piece alone",
+          "body": "'We cannot look at certain funnel elements on their own but we have to look at the whole funnel.' A lead magnet with no direct sales may still be what produces sales later in the conversation (S1 13:50-14:13)."
+        }
+      ]
+    },
+    {
+      "title": "Pick a funnel model",
+      "subtitle": "Lecture content | Slides 10-16 | S1 15:20-33:35",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": ["Model", "How it converts", "Deck examples"],
+          "widths": [1.3, 2.9, 1.6],
+          "rows": [
+            ["Product-led", "Users try it free. Activation replaces the sales call. Upgrade happens at a 'value moment'.", "Monday.com, Slack"],
+            ["Sales-led", "Traffic, qualify, demo call, proposal, close. People are involved at every middle step; remarketing supports the slow trust-building.", "Salesforce"],
+            ["Content-led", "Articles, videos and newsletters educate, capture leads and nurture them by email until they buy.", "HubSpot"],
+            ["Community-led", "A free community is the channel; members convert and bring others.", "Notion"],
+            ["Hybrid", "Content warms, product converts. Best when the product needs explaining before people try it.", "-"]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Her advice for sales-led companies",
+          "body": "'I'm not saying there's something wrong about it... see if you can add the content funnel in between.' Use it to raise the felt pain, add credibility and social proof, explain the offer and remind them you exist (S1 29:11-29:49). Content-led is slower, 'but the conversions are quite high' (S1 31:19-31:52)."
+        },
+        {
+          "type": "section",
+          "title": "Stories from the room",
+          "body": "<b>The pool blog.</b> A pool maker wrote one neutral comparison of five pool types by safety, looks, materials, use and durability, with a call to action at the end. She recalls it bringing in millions a year (her memory of a talk 20 years ago) (S1 18:27-20:13).<br/><b>People buy from people.</b> A founder's face usually beats a logo. But if you want the company to be sold one day, do not tie it to one name: use several voices. 'You can also use the hospital directors and the hospital staff and doctors to talk about your product' (S1 25:17-27:47).<br/><b>Community is hard.</b> 'Show me your community' - 10,000 followers with no replies is a channel, not a community (S1 31:52-32:48)."
+        }
+      ]
+    },
+    {
+      "title": "What to say at each stage",
+      "subtitle": "Lecture content | Slides 17-25 | S1 33:35-45:23",
+      "blocks": [
+        {
+          "type": "section",
+          "title": "Top, middle and bottom",
+          "body": "Start from where the funnel is stuck: find the bottleneck, then ask users why (S1 33:42-34:18). At the <b>top</b>, talk about the pain and their situation, not your offer. It can be 'completely not related to your product'. The goal is to <b>engage and capture</b> them so you can keep talking: calculators, audits, videos. If they engage early, 'commitment and consistency' keeps them engaged; if they only scroll past, you lose them (S1 34:30-36:16). The <b>middle</b> is where demos, trials and sales happen."
+        },
+        {
+          "type": "table",
+          "headers": ["Lead magnet ideas (slide 21)", "Examples"],
+          "widths": [1.5, 4.2],
+          "rows": [
+            ["Offers", "Voucher, free sample, free trial, demo, webinar, interview series, competitions, referrals"],
+            ["Content", "Quiz, calculator, e-book, guide, report, white paper, how-to video, case study"],
+            ["Deck AI-agent examples (23-25)", "A free audit ('paste your lead flow and we show where you lose leads'), a revenue-loss calculator, retargeting by stage: visited but did not sign up, signed up but did not activate, activated but did not upgrade"]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Interview series and podcasts",
+          "body": "She urged everyone to test an <b>interview series</b>: interview users, potential users, industry leaders, even competitors. Being interviewed is valuable to them, and it lends you their credibility (S1 36:46-38:29). Use it at the top of the funnel, or in the middle 'if I need an extra push' (S1 39:26). The 500 team does the same with its masterclasses: interviews with VCs and mentors that end with 'we have this program' (S1 39:35-40:35). Going on other people's podcasts gives you their audience and positions you as the expert (S1 41:24-41:59)."
+        },
+        {
+          "type": "card",
+          "title": "Have the funnel before the traffic",
+          "body": "'If you... capture thousand email addresses and you don't have the funnel... that's a waste.' Do not chase a channel until you are ready to talk to the people it sends you (S1 42:20-42:59)."
+        }
+      ]
+    },
+    {
+      "title": "Action taken or not taken",
+      "subtitle": "Lecture content | Slides 26-35 | S1 45:23-52:08",
+      "blocks": [
+        {
+          "type": "section",
+          "title": "The HelloGold user flow",
+          "body": "A Malaysian app for saving in gold, which she says grew about 600%. Every step has two exits (slide 27). <b>Yes:</b> move to the next step (watch the video, download, install, sign up, buy gold, join Smart Saver, a monthly auto-purchase). <b>No:</b> show a different ad or video for that step. <b>Still no:</b> 'not interested' goes to a <b>remarketing list</b>, which 'doesn't mean they're not interested... they might not be interested now, or they don't have enough information' (S1 45:39-47:12). If the first step fails, she also asks whether the targeting is wrong."
+        },
+        {
+          "type": "section",
+          "title": "Old leads are an asset",
+          "body": "She asked who runs <b>reactivation campaigns</b> for past leads; one team did. Example: when you get a strong new case study, send it to everyone who stalled before (S1 47:13-47:53). Do not decide that a lead 'is not our customer' too early."
+        },
+        {
+          "type": "section",
+          "title": "Retention: find the number that makes a habit",
+          "body": "Customer flow (slide 29): after the first purchase, a fresh message for each next purchase. In her data, anyone who bought gold seven times kept using it. HappyFresh, a grocery-delivery app: most people stopped after three orders, while power users made seven. Seven small offers (free delivery, free items) moved people to seven orders; she reports revenue up 700% (S1 48:17-50:33). <b>Lesson:</b> look at what your power users do, then build the messages that get everyone else there."
+        },
+        {
+          "type": "card",
+          "title": "Tracking makes the flow possible",
+          "body": "Slides 34-35 tag each person by stage and source (Download, User, User_FB, Customer, Repeat_Customer, viewed an offer, added to cart). Tags decide who gets which message. Q: how many times do you follow up? 'I only send them two videos' and stop when a third gets 'literally zero reactions'. 'It's always based on the numbers I see, not what I think' (S1 51:12-52:08)."
+        }
+      ]
+    },
+    {
+      "title": "Marketing angles: test one idea per step",
+      "subtitle": "Lecture content | Slides 36-50 | S1 52:10-1:05:52",
+      "blocks": [
+        {
+          "type": "section",
+          "title": "What an angle is",
+          "body": "The approach, or hook, a message leads with: a testimonial (social proof), the main solution, a respected third party, a special feature, an offer. You cannot say everything at once, so each message picks one angle, and each test compares angles at <b>one step</b> (S1 52:10-53:30). Slide 38 lists B2B angles: demo, low-risk CTA, pricing peek, dashboard look, use case, testimonials, case studies, research, webinars, events."
+        },
+        {
+          "type": "table",
+          "headers": ["Step (what it optimizes)", "Winner vs loser (slides 41-50)", "Lesson"],
+          "widths": [1.5, 2.4, 2.0],
+          "rows": [
+            ["S1 engagement", "'Why gold' 553.6K engagements vs her own street-interview idea 216.7K", "Her favourite lost. Judge S1 on engagement, not sales."],
+            ["S2 installs", "'Spend to save' (education) 8,238 installs vs testimonial video 1,329", "People did not know how to save; they needed teaching."],
+            ["S3 sign-ups", "Credibility ('your savings partner') 521 vs 78", "The credibility angle that failed earlier won here."],
+            ["S4 buy", "'No minimum purchase' (buy from $1) 395 vs 48", "An angle that failed at S2 won at the buying step."],
+            ["S5 subscribe", "Four ads: $1,104 spent, $22,305 value, 111 enrolled", "Add up all steps to judge the funnel."]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Why it matters",
+          "body": "She found the 'only for the rich' fear in a taxi conversation, then in user interviews (S1 56:15-56:52). Interviews also showed people did not know how to save: 'That's the same situation with AI right now. You think people understand AI. You need to educate them' (S1 59:42-1:00:21). Her mentor runs about 100 angle tests a week (S1 1:03:31-1:04:41). On B2B: 'it's the same, because you sell to people' (S1 1:04:53-1:05:09)."
+        }
+      ]
+    },
+    {
+      "title": "Money, channels and testing rules",
+      "subtitle": "Lecture content | S1 57:37-1:13:44",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": ["Rule", "What she said"],
+          "widths": [1.7, 4.0],
+          "rows": [
+            ["Do not spread thin", "When one channel works, put about 70% of spend there and automate it. People find a gold mine, then get distracted by the next shiny tool (S1 57:46-58:29)."],
+            ["Keep channels separate", "Paid, unpaid and direct outreach convert differently. Mix them in one box and the totals mislead you (S1 58:29-59:05)."],
+            ["Count the whole return", "Saudi luxury bags: 11x return on the first purchase, about 22x once repeat buyers (35% retention) are counted (S1 1:05:53-1:07:27)."],
+            ["Mind the cash", "That same company cut all spend when cash ran short, because repeat revenue takes months. Uber reportedly waits about nine months to earn back a dollar. Do not copy that unless you have the money (S1 1:07:28-1:08:53)."],
+            ["Refresh on a rhythm", "They changed ads every 45 days: review at 30, two weeks to prepare new ones (S1 1:09:41-1:09:51)."],
+            ["Test on a slice", "Do not experiment on the traffic that already works; 'you can kill it'. Test with a piece of it (S1 1:10:00-1:11:02)."],
+            ["Test your price", "Most prices copy a competitor with a small cut. If you explain value better, 'ask for three times more'. Customers rarely compare; if they do, give a reason (S1 1:11:18-1:13:44)."]
+          ]
+        },
+        {
+          "type": "card",
+          "title": "Her starting template (slide 52)",
+          "body": "Name the problem, show possible solutions and give something useful, then build trust and show results early, present the offer, overcome objections, increase lifetime value. Test different content at each step (S1 1:13:48-1:14:11)."
+        }
+      ]
+    },
+    {
+      "title": "Campaigns that change the conversation",
+      "subtitle": "Lecture content | Slides 53-74 | S1 1:14:12-1:39:22",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": ["Type", "Idea", "Her example and deck B2B examples"],
+          "widths": [1.2, 2.3, 2.3],
+          "rows": [
+            ["Pattern break", "Name the norm everyone accepts, then make it feel wrong.", "Dove: '7 in 10 women' get more praise for looks than achievements. Deck: Salesforce 'No Software', Slack, HubSpot 'inbound'."],
+            ["Paradigm shift", "Give buyers permission to want what they already quietly want.", "Lynx 'Is it ok for guys...', taken from real Google searches; Always 'Like a Girl'. Deck: Basecamp, Drift, Mailchimp."],
+            ["Us vs them", "Pick an enemy: a concept, the old way, or a named rival.", "Dollar Shave Club vs costly razors. Deck: Salesforce vs installed software, Freshworks, Volvo, HP 'The Wolf'."]
+          ]
+        },
+        {
+          "type": "table",
+          "headers": ["", "Old Spice model", "Lynx and these campaigns"],
+          "widths": [1.5, 2.1, 2.1],
+          "rows": [
+            ["What they sell", "Aspiration to a norm", "Permission to reject a norm"],
+            ["Emotional trigger", "Desire", "Relief"],
+            ["Audience feeling", "'I want to be that'", "'Finally, someone gets it'"],
+            ["Brand position", "Champion of the status quo", "Ally against it"]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Points from the discussion",
+          "body": "The brands won by entering 'the conversation that's happening in their head', which is often about family or worries, not the product (S1 1:16:51-1:17:12). Q: Nike's change hurt it. A: ask where the message came from; Lynx used search data, not a trend (S1 1:32:05-1:33:03). Slack's feature video was fine 'but not as emotional' (S1 1:26:53-1:27:09). Toothpaste ads use actors dressed as dentists because experts bring credibility (S1 1:33:49-1:35:04). Her closing points: enough touch points, a message for each step, test angles, but first understand what is really happening (S1 1:39:31-1:39:57). Note: the deck's video list (slide 74) labels some brands differently; this table follows the section order of slides 54-73."
+        }
+      ]
+    },
+    {
+      "title": "MediMind: our funnel, step by step",
+      "subtitle": "Working hypothesis, not lecture content | Uses W4/W5 stages and X1 | Unit = one buying organization",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": ["Her stage", "Our step (W4)", "What the hospital needs to hear", "Content to test"],
+          "widths": [1.0, 1.5, 1.9, 1.9],
+          "rows": [
+            ["S1 problem awareness", "1-2. Fit and route in", "The cost of repeated entry, missing context and hard handoffs in hospitals like theirs.", "A short 'hidden cost' piece or self-check. No product pitch."],
+            ["S2 consideration", "3. Discovery", "Others have this problem; there is a way to test a fix safely.", "An interview-series episode with a hospital leader or doctor (with permission)."],
+            ["S2-S3", "4. Relevant demo", "Their own pathway, shown working.", "Demo of the agreed task; one-page explainer (X1)."],
+            ["S3 purchase", "5-7. Evaluation", "The parallel evaluation is included, no obligation, current software stays (X1 offer).", "Readiness checklist; answers to IT, finance and clinical objections."],
+            ["S3-S4", "8. Paid adoption", "Price match for agreed Phase 1 scope; staged rollout.", "Rollout plan; what staff said in the evaluation."],
+            ["S5 loyal", "9. Retain, expand", "Value they can see and share.", "Value review; permission-based reference or case study."]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Why this matters for us",
+          "body": "Her numbers suggest a hospital decision involves many people and many touches. If our only touches are an introduction, one call and one demo, the buyer may be deciding with too little information. The guess to test: <b>add two or three useful pieces between each step</b>, aimed at different people in the buying group (owner/CEO, clinical lead, finance, IT; X1). Count GeoHospitals, our anchor partner, as one buying organization, kept separate from new hospitals (W5)."
+        }
+      ]
+    },
+    {
+      "title": "MediMind: taken or not taken",
+      "subtitle": "Working hypothesis | Her slide 27 flow, drawn for hospitals | No patient data in any tracker",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": ["Step", "If taken", "If not taken (first)", "If still not taken"],
+          "widths": [1.3, 1.4, 1.8, 1.8],
+          "rows": [
+            ["Intro or first message", "Book discovery", "Send a second, different piece aimed at the same pain", "'Not now' list with reason; re-contact with the next useful piece"],
+            ["Discovery call", "Agree a relevant demo", "Send the exact problem they named, with a peer's view", "Ask what would have to be true; 'not now' list"],
+            ["Demo", "Agree evaluation scope", "Answer the objection they raised (IT, cost, staff time)", "Ask who else must see it; offer a second demo for them"],
+            ["Evaluation ready", "Deliver parallel system", "Short readiness checklist and named owner", "Record the blocker; review date"],
+            ["Evaluation done", "Paid agreement", "Share results with the wider buying group", "Record decline reason; return when a new proof arrives"]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Tags for each hospital account",
+          "body": "Copy her tagging idea at account level: source (introduction, direct, event, content), stage reached, last piece sent, objection named, roles reached (owner, clinical, finance, IT), and 'not now' with reason and date. This fits the one-row-per-buying-organization tracker in W5. Keep it to business contacts and decisions. <b>No patient information</b> belongs in it."
+        },
+        {
+          "type": "card",
+          "title": "Reactivation is cheap to try",
+          "body": "Her advice: send new proof to old leads. The first test: list every hospital that talked to us but did not move forward, with the reason. When a new, permitted proof point exists, send it to that list. The list itself still needs founder input; none was found in the notes reviewed."
+        }
+      ]
+    },
+    {
+      "title": "MediMind: angles and campaigns to test",
+      "subtitle": "Working hypotheses and draft lines | Not approved copy | Check positioning/04-language.md before any use",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": ["Step", "Angle to test", "Against"],
+          "widths": [1.2, 2.4, 2.2],
+          "rows": [
+            ["S1", "Problem / education: what the forty-system hospital costs staff each day", "Credibility: physician-led team"],
+            ["S2", "Peer voice: a hospital director or doctor describes the problem", "Feature tour"],
+            ["S3", "Low-risk offer: parallel evaluation included, current software stays", "Price match"],
+            ["S4", "Their own evaluation results", "General case study"]
+          ]
+        },
+        {
+          "type": "table",
+          "headers": ["Campaign type", "Draft idea for MediMind"],
+          "widths": [1.3, 4.5],
+          "rows": [
+            ["Pattern break", "Name the accepted norm: 'Every hospital types the same patient into several systems. We call it normal.' Then show what it costs."],
+            ["Paradigm shift", "Give leaders permission: 'Is it ok to expect one system for the whole hospital?' Use questions found in real interviews, not invented ones."],
+            ["Us vs them", "Make the enemy a concept, like Salesforce did with installed software: 'the forty-system hospital', never a named vendor."]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Guardrails",
+          "body": "Her 'hospital directors, staff and doctors' answer only works with <b>real people and written permission</b>. Never use actors in white coats or AI-made doctors to stand in for clinicians. Promise only Phase 1, the base operating system; the AI phases are later, separate decisions (X1). Say 'one of the first', never 'the first'. Use 'operating system', not EMR or platform. No patient data, screenshots with patient details, or hospital-confidential numbers. Her results are B2C anecdotes, not benchmarks for hospitals."
+        }
+      ]
+    },
+    {
+      "title": "What to do next",
+      "subtitle": "Suggested actions | None of this has been sent or published",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": ["#", "Action", "Why (source)"],
+          "widths": [0.4, 3.4, 2.0],
+          "rows": [
+            ["1", "Draw our hospital funnel as 'taken / not taken' on one page, using page 11. Mark where hospitals stall today.", "Her main exercise (slides 26-27)"],
+            ["2", "Count our touches per hospital from first contact to evaluation. If fewer than seven, plan the missing ones.", "Touch points (S1 29:49)"],
+            ["3", "Make one top-of-funnel piece about the problem, not the product. A short 'hidden cost' self-check is a good first try.", "Capture early (S1 34:30-36:16)"],
+            ["4", "Ask one hospital director or doctor we already work with for a recorded interview, with written permission.", "Interview series; S1 26:28"],
+            ["5", "Build the 'not now' list of hospitals that stalled, with reasons, and plan one reactivation message.", "Reactivation (S1 47:13)"],
+            ["6", "Pick one step and test two angles there. Write down which wins and why.", "Angles per step (S1 52:10)"]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Three questions for a mentor",
+          "body": "<b>1.</b> In a sales-led hospital funnel with few buyers, how do we test angles when we cannot reach statistically meaningful numbers?<br/><b>2.</b> Which content reaches a hospital owner versus the clinical, finance and IT people who also decide?<br/><b>3.</b> How do we run an interview series with hospital leaders without it feeling like a sales pitch?"
+        },
+        {
+          "type": "section",
+          "title": "Rewatch these parts",
+          "body": "13:15 touch points. 25:17-27:47 people buy from people (the hospital-directors answer). 29:11-31:19 add content to a sales-led funnel; 7 to 30 days. 33:35-36:16 what to say at the top. 45:23-50:33 taken / not taken and retention. 52:10-1:05:52 angles and the HelloGold numbers. 1:09:38-1:13:44 testing and price. 1:30:13-1:33:03 the Old Spice vs Lynx table."
+        }
+      ]
+    }
+  ]
+}

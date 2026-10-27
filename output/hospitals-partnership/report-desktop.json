@@ -1,0 +1,72 @@
+[
+  {
+    "lang": "ka",
+    "width": 1280,
+    "height": 720,
+    "errors": [],
+    "clipped": [],
+    "overflow": [],
+    "overlaps": [],
+    "assurances": [
+      {
+        "bottom": 615.90625,
+        "textBottom": 596.90625
+      },
+      {
+        "bottom": 615.90625,
+        "textBottom": 596.90625
+      },
+      {
+        "bottom": 615.90625,
+        "textBottom": 596.90625
+      }
+    ],
+    "scrollHeight": 720,
+    "clientHeight": 720,
+    "text": "მომდევნო 5 პარტნიორი კლინიკისთვის\nმთელი კლინიკა. ერთი სისტემა.\n\nერთიანი ოპერაციული სისტემა. ერთიანი პროგრამული კოდი.\n\nკლინიკური საქმიანობა EMR\nლაბორატორია LIS\nრადიოლოგია PACS\nბილინგი\nპერსონალის მართვა HR\nაფთიაქი\nსაწყობი და მარაგები\nანალიტიკა\nშეუზღუდავი მოთხოვნები\nთქვენ ითხოვთ.\nჩვენ ვქმნით.\n\nმოითხოვეთ იმდენი ახალი ფუნქცია და ცვლილება, რამდენიც თქვენს კლინიკას სჭირდება. სისტემას თქვენზე ვარგებთ.\n\nმოთხოვნილ ფუნქციებს დამატებითი საფასურის გარეშე ვქმნით — მთელი თანამშრომლობის განმავლობაში.\n\nუფასო დანერგვა\nდა სწავლება\n\nსისტემას ვაყენებთ, ვაწყობთ და თქვენს გუნდს მუშაობას ვასწავლით.\n\nჯერ გამოცადეთ.\nშემდეგ გადაწყვიტეთ.\n\nგამოცდა უფასოა. მოქმედი სისტემა რჩება. გადასვლას თქვენ წყვეტთ.\n\nპირველი ვერსიის\nკოდი თქვენია.\n\nჩაბარებული საბაზისო ვერსიის საწყისი კოდი ხელშეკრულებით თქვენ გეკუთვნით.\n\nყველაფერი — თქვენი მიმდინარე პროგრამის ბიუჯეტით.\n\nmedimind.md",
+    "total": 18,
+    "language": "ka",
+    "sequence": [
+      "cover past has-dark-background",
+      "hospital-reality",
+      "gw-slide hxr-slide hxr3-slide past",
+      "hospital-partnership",
+      "gw-slide hxs-slide future"
+    ]
+  },
+  {
+    "lang": "en",
+    "width": 1280,
+    "height": 720,
+    "errors": [],
+    "clipped": [],
+    "overflow": [],
+    "overlaps": [],
+    "assurances": [
+      {
+        "bottom": 632.453125,
+        "textBottom": 613.453125
+      },
+      {
+        "bottom": 632.453125,
+        "textBottom": 613.453125
+      },
+      {
+        "bottom": 632.453125,
+        "textBottom": 613.453125
+      }
+    ],
+    "scrollHeight": 720,
+    "clientHeight": 720,
+    "text": "FOR OUR NEXT 5 HOSPITAL PARTNERS\nThe whole hospital. One system.\n\nOne hospital operating system. One codebase.\n\nClinical care EMR\nLaboratory LIS\nImaging PACS\nBilling\nStaff management HR\nPharmacy\nInventory & warehouse\nAnalytics\nUNLIMITED FEATURE REQUESTS\nYou ask.\nWe build.\n\nRequest as many features and changes as your hospital needs. We tailor the system to the way you work.\n\nWe build them at no additional charge,\nfor as long as you remain our client.\n\nFree implementation\nand training\n\nWe install and configure the system, and train your team.\n\nEvaluate first.\nThen decide.\n\nEvaluate free alongside your current system. You decide when to switch.\n\nThe first version’s\nsource code is yours.\n\nYou own the first delivered base-system source code, under your contract.\n\nAll at your current software budget.\n\nmedimind.md",
+    "total": 18,
+    "language": "en",
+    "sequence": [
+      "cover past has-dark-background",
+      "hospital-reality",
+      "gw-slide hxr-slide hxr3-slide past",
+      "hospital-partnership",
+      "gw-slide hxs-slide future"
+    ]
+  }
+]

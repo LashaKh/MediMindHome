@@ -1,0 +1,59 @@
+[
+  {
+    "width": 1280,
+    "height": 720,
+    "languages": [
+      "ka",
+      "en"
+    ],
+    "formats": [
+      "online",
+      "hospital"
+    ],
+    "modal": "passed",
+    "focusRestore": "passed",
+    "exactKeyboardRestore": "passed",
+    "escape": "passed",
+    "fallback": "passed",
+    "sharedConfig": "passed",
+    "pageErrors": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "languages": [
+      "ka",
+      "en"
+    ],
+    "formats": [
+      "online",
+      "hospital"
+    ],
+    "modal": "passed",
+    "focusRestore": "passed",
+    "exactKeyboardRestore": "passed",
+    "escape": "passed",
+    "fallback": "passed",
+    "sharedConfig": "passed",
+    "pageErrors": []
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "languages": [
+      "ka",
+      "en"
+    ],
+    "formats": [
+      "online",
+      "hospital"
+    ],
+    "modal": "passed",
+    "focusRestore": "passed",
+    "exactKeyboardRestore": "passed",
+    "escape": "passed",
+    "fallback": "passed",
+    "sharedConfig": "passed",
+    "pageErrors": []
+  }
+]

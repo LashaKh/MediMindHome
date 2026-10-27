@@ -1,0 +1,140 @@
+      <section class="gw-slide hxm-slide hmv-slide">
+        <style>
+          .hmv-slide .slide-inner { padding: 32px 84px 26px; gap: 0; }
+          .hmv-slide .slide-label { position: static; flex: none; margin-bottom: 14px; }
+          .reveal .hmv-slide .headline-big,
+          body.lang-active-ka .reveal .hmv-slide .headline-big { font-size: 39px !important; line-height: 1.12 !important; letter-spacing: -.035em; margin: 0 0 13px; }
+          .hmv-slide .headline-big em { display: block; }
+          .reveal .hmv-slide .headline-sub,
+          body.lang-active-ka .reveal .hmv-slide .headline-sub { font-size: 17px !important; line-height: 1.45 !important; margin: 0 0 16px !important; max-width: 1030px; }
+          .hmv-slide .hxm-grid { flex: 1; min-height: 0; margin: 0; grid-template-columns: 1fr 68px 1fr; }
+          .hmv-slide .hxm-panel { padding: 14px 16px; }
+          .hmv-slide .hxm-panel-tag { font-size: 12px; line-height: 1.35; letter-spacing: .045em; margin-bottom: 12px; }
+          .hmv-slide .hxm-boxes { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 1fr); gap: 9px; }
+          .hmv-slide .hxm-boxes::before,
+          .hmv-slide .hxm-boxes::after { display: none; }
+          .hmv-slide .hmv-vendor { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 7px; min-width: 0; padding: 11px 13px; border: 1px dashed #cbd5e1; border-radius: 10px; background: #fff; }
+          .hmv-slide .hmv-vendor b { color: #334155; font-size: 16px; font-weight: 750; line-height: 1.25; }
+          .hmv-slide .hmv-vendor-id { color: #9b651c; background: #fff4db; border: 1px solid #f5dfb4; border-radius: 5px; padding: 3px 6px; font-size: 10px; line-height: 1.2; font-weight: 700; letter-spacing: .04em; }
+          .hmv-slide .hmv-mix-note { margin: 9px 0 0; font-size: 11px; line-height: 1.35; color: #64748b; }
+          .hmv-slide .hxm2-stage { min-height: 260px; }
+          .hmv-slide .hxb-brain { width: 145px; }
+          .hmv-slide .hmv-module { position: absolute; left: var(--x); top: var(--y); z-index: 2; transform: translate(-50%, -50%); }
+          .hmv-slide .hmv-module-name { display: block; white-space: nowrap; padding: 6px 12px; border-radius: 999px; border: 1px solid rgba(190,227,248,.5); background: rgba(13,34,63,.72); color: #eaf4ff; font-size: 13px; line-height: 1.2; font-weight: 750; box-shadow: 0 5px 16px rgba(9,26,49,.3); }
+          body.lang-active-ka .hmv-slide .hmv-module-name { font-size: 12px; }
+          @keyframes hmvFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+          @media (prefers-reduced-motion: no-preference) {
+            .hmv-slide.present .hmv-module-name { animation: hmvFloat 6s cubic-bezier(.77,0,.175,1) infinite; animation-delay: var(--delay); }
+          }
+          .hmv-slide .hxm2-core { gap: 4px; padding: 0 12px 4px; }
+          .hmv-slide .hxm2-core b { font-size: 32px; line-height: 1.1; }
+          .hmv-slide .hxm2-core > span,
+          body.lang-active-ka .hmv-slide .hxm2-core > span { font-size: 12px; line-height: 1.4; letter-spacing: 0; }
+          .hmv-slide .hxm2-core .hmv-brand { font-size: 17px; color: #fff; font-weight: 750; }
+          body.lang-active-ka .hmv-slide { word-break: normal; hyphens: none; }
+          body.lang-active-ka .hmv-slide .hmv-vendor b { font-size: 15px; }
+          @media (max-width: 768px) {
+            .hmv-slide .slide-inner { padding: 28px 24px 76px !important; }
+            .reveal .hmv-slide .headline-big,
+            body.lang-active-ka .reveal .hmv-slide .headline-big { font-size: 32px !important; line-height: 1.18 !important; }
+            .reveal .hmv-slide .headline-sub,
+            body.lang-active-ka .reveal .hmv-slide .headline-sub { font-size: 16px !important; }
+            .hmv-slide .hxm-grid { display: flex; flex-direction: column; gap: 15px; }
+            .hmv-slide .hxm-boxes { grid-template-rows: repeat(3, minmax(78px, auto)); }
+            .hmv-slide .hxm2-stage { height: 260px; flex: none; }
+            .hmv-slide .hxb-brain { width: 112px; }
+            .hmv-slide .hmv-module-name { padding: 5px 9px; font-size: 12px; }
+            body.lang-active-ka .hmv-slide .hmv-module-name { font-size: 10px; }
+            .hmv-slide .hxm2-reactor { flex: none; padding-bottom: 20px; }
+          }
+          @media (max-width: 400px) {
+            .hmv-slide .slide-inner { padding-left: 18px !important; padding-right: 18px !important; }
+            .reveal .hmv-slide .headline-big,
+            body.lang-active-ka .reveal .hmv-slide .headline-big { font-size: 27px !important; }
+            .hmv-slide .hxm-panel { padding: 12px; }
+            .hmv-slide .hmv-vendor { padding: 10px; }
+            .hmv-slide .hmv-vendor b,
+            body.lang-active-ka .hmv-slide .hmv-vendor b { font-size: 14px; }
+          }
+          @media (max-width: 360px) {
+            .hmv-slide .hmv-vendor-id { font-size: 9px; letter-spacing: 0; white-space: nowrap; padding: 3px 4px; }
+          }
+        </style>
+        <div class="slide-inner">
+          <div class="slide-label"><span class="label-num">06</span><span class="lang-en">HOSPITAL SOFTWARE · US + GEORGIA</span><span class="lang-ka" style="display:none;">კლინიკის პროგრამები · აშშ + საქართველო</span></div>
+          <h2 class="headline-big"><span class="lang-en">All your hospital software.<br><em>One MediMind operating system.</em></span><span class="lang-ka" style="display:none;">კლინიკის ყველა პროგრამა —<br><em>MediMind-ის ერთიან სისტემაში.</em></span></h2>
+          <p class="headline-sub"><span class="lang-en">Our offer: all the software your hospital needs, built and tailored within one system.</span><span class="lang-ka" style="display:none;">ჩვენი შეთავაზება: კლინიკისთვის საჭირო ყველა პროგრამა — ერთ სისტემაში, თქვენზე მორგებული.</span></p>
+          <div class="hxm-grid">
+            <div class="hxm-panel">
+              <div class="hxm-panel-tag"><span class="lang-en">Multiple suppliers · separate software</span><span class="lang-ka" style="display:none;">ბევრი მომწოდებელი · ცალკე პროგრამები</span></div>
+              <div class="hxm-boxes">
+                <div class="hmv-vendor"><span class="hmv-vendor-id"><span class="lang-en">Supplier A</span><span class="lang-ka" style="display:none;">მომწოდებელი A</span></span><b><span class="lang-en">Medical records</span><span class="lang-ka" style="display:none;">სამედიცინო ჩანაწერები</span></b></div>
+                <div class="hmv-vendor"><span class="hmv-vendor-id"><span class="lang-en">Supplier B</span><span class="lang-ka" style="display:none;">მომწოდებელი B</span></span><b><span class="lang-en">Laboratory</span><span class="lang-ka" style="display:none;">ლაბორატორია</span></b></div>
+                <div class="hmv-vendor"><span class="hmv-vendor-id"><span class="lang-en">Supplier C</span><span class="lang-ka" style="display:none;">მომწოდებელი C</span></span><b><span class="lang-en">Imaging / PACS</span><span class="lang-ka" style="display:none;">რადიოლოგია</span></b></div>
+                <div class="hmv-vendor"><span class="hmv-vendor-id"><span class="lang-en">Supplier D</span><span class="lang-ka" style="display:none;">მომწოდებელი D</span></span><b><span class="lang-en">Billing & finance</span><span class="lang-ka" style="display:none;">ფინანსები</span></b></div>
+                <div class="hmv-vendor"><span class="hmv-vendor-id"><span class="lang-en">Supplier E</span><span class="lang-ka" style="display:none;">მომწოდებელი E</span></span><b><span class="lang-en">HR & payroll</span><span class="lang-ka" style="display:none;">პერსონალი</span></b></div>
+                <div class="hmv-vendor"><span class="hmv-vendor-id"><span class="lang-en">Supplier F</span><span class="lang-ka" style="display:none;">მომწოდებელი F</span></span><b><span class="lang-en">Pharmacy & stock</span><span class="lang-ka" style="display:none;">აფთიაქი და მარაგები</span></b></div>
+              </div>
+              <p class="hmv-mix-note"><span class="lang-en">Illustrative mix. Suppliers and system counts vary by hospital.</span><span class="lang-ka" style="display:none;">საილუსტრაციო მაგალითი. მომწოდებლები და რაოდენობა კლინიკის მიხედვით იცვლება.</span></p>
+            </div>
+            <div class="hxm2-arrow" aria-hidden="true"><span class="hxm2-arrow-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+            <div class="hxm-panel hxm-panel--us">
+              <div class="hxm-panel-tag"><span class="lang-en">Our offer · one software partner</span><span class="lang-ka" style="display:none;">ჩვენი შეთავაზება · ერთი პარტნიორი</span></div>
+              <div class="hxm2-reactor">
+                <div class="hxm2-stage">
+                <span class="hxm2-glow" aria-hidden="true"></span>
+                <span class="hxm2-ring hxm2-ring--2" aria-hidden="true"></span>
+                <span class="hxm2-ring hxm2-ring--3" aria-hidden="true"></span>
+                <svg class="hxm2-arcsvg" viewBox="0 0 136 136" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="hxbArcG" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0" stop-color="#7dd3fc"/>
+                      <stop offset="0.6" stop-color="#3182ce"/>
+                      <stop offset="1" stop-color="#3182ce" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                  <circle class="hxb-arc2" cx="68" cy="68" r="64" pathLength="100" stroke-dasharray="12 88"/>
+                  <circle class="hxb-arc1" cx="68" cy="68" r="64" pathLength="100" stroke-dasharray="30 70"/>
+                </svg>
+                <span class="hmv-module" style="--x: 24%; --y: 17%; --delay: 0s;"><span class="hmv-module-name"><span class="lang-en">EMR</span><span class="lang-ka" style="display:none;">EMR</span></span></span>
+                <span class="hmv-module" style="--x: 76%; --y: 17%; --delay: -1s;"><span class="hmv-module-name"><span class="lang-en">PACS</span><span class="lang-ka" style="display:none;">PACS</span></span></span>
+                <span class="hmv-module" style="--x: 24%; --y: 50%; --delay: -2s;"><span class="hmv-module-name"><span class="lang-en">Laboratory</span><span class="lang-ka" style="display:none;">ლაბორატორია</span></span></span>
+                <span class="hmv-module" style="--x: 76%; --y: 50%; --delay: -3s;"><span class="hmv-module-name"><span class="lang-en">Pharmacy</span><span class="lang-ka" style="display:none;">აფთიაქი</span></span></span>
+                <span class="hmv-module" style="--x: 24%; --y: 83%; --delay: -4s;"><span class="hmv-module-name"><span class="lang-en">Finance</span><span class="lang-ka" style="display:none;">ფინანსები</span></span></span>
+                <span class="hmv-module" style="--x: 76%; --y: 83%; --delay: -5s;"><span class="hmv-module-name"><span class="lang-en">HR</span><span class="lang-ka" style="display:none;">პერსონალი</span></span></span>
+                  <svg class="hxb-brain" viewBox="34 26 140 126" fill="none" aria-hidden="true">
+                    <g class="hxb-links" stroke="#9ecbf2" stroke-width="1" stroke-linecap="round" opacity="0.5">
+                      <path d="M160 112 166 92 164 70 152 52 132 40 108 33 84 35 62 44 47 60 40 80 42 100 50 116 64 128 80 134 96 130 112 124 130 120 146 117 160 112" stroke="#bee3f8" stroke-width="1.3" opacity="0.75" fill="none"/>
+                      <path d="M64 128 98 146 96 130" fill="none"/>
+                      <line x1="164" y1="70" x2="150" y2="80"/><line x1="166" y1="92" x2="150" y2="80"/><line x1="160" y1="112" x2="148" y2="100"/><line x1="150" y1="80" x2="140" y2="70"/><line x1="140" y1="70" x2="152" y2="52"/><line x1="140" y1="70" x2="120" y2="55"/><line x1="120" y1="55" x2="132" y2="40"/><line x1="120" y1="55" x2="96" y2="50"/><line x1="96" y1="50" x2="108" y2="33"/><line x1="96" y1="50" x2="84" y2="35"/><line x1="72" y1="62" x2="84" y2="35"/><line x1="72" y1="62" x2="62" y2="44"/><line x1="72" y1="62" x2="58" y2="84"/><line x1="58" y1="84" x2="47" y2="60"/><line x1="58" y1="84" x2="40" y2="80"/><line x1="76" y1="92" x2="72" y2="62"/><line x1="64" y1="106" x2="42" y2="100"/><line x1="64" y1="106" x2="50" y2="116"/><line x1="64" y1="106" x2="76" y2="92"/><line x1="64" y1="106" x2="86" y2="112"/><line x1="86" y1="112" x2="80" y2="134"/><line x1="86" y1="112" x2="110" y2="102"/><line x1="110" y1="102" x2="112" y2="124"/><line x1="110" y1="102" x2="98" y2="80"/><line x1="110" y1="102" x2="130" y2="105"/><line x1="130" y1="105" x2="130" y2="120"/><line x1="130" y1="105" x2="140" y2="92"/><line x1="140" y1="92" x2="148" y2="100"/><line x1="148" y1="100" x2="146" y2="117"/><line x1="140" y1="92" x2="150" y2="80"/><line x1="98" y1="80" x2="120" y2="78"/><line x1="120" y1="78" x2="140" y2="70"/><line x1="120" y1="78" x2="120" y2="55"/><line x1="120" y1="78" x2="140" y2="92"/><line x1="120" y1="78" x2="110" y2="102"/><line x1="58" y1="84" x2="76" y2="92"/>
+                    </g>
+                    <g class="hxb-hot" stroke="#e3f3ff" stroke-width="1.5" stroke-linecap="round">
+                      <line x1="98" y1="80" x2="76" y2="92" style="--d: 0s;"/>
+                      <line x1="120" y1="78" x2="140" y2="92" style="--d: 1.2s;"/>
+                      <line x1="96" y1="50" x2="98" y2="80" style="--d: 2.3s;"/>
+                    </g>
+                    <g fill="#dbeafe" opacity="0.95">
+                      <circle cx="160" cy="112" r="1.7"/><circle cx="166" cy="92" r="1.7"/><circle cx="164" cy="70" r="1.7"/><circle cx="152" cy="52" r="1.7"/><circle cx="132" cy="40" r="1.7"/><circle cx="108" cy="33" r="1.7"/><circle cx="84" cy="35" r="1.7"/><circle cx="62" cy="44" r="1.7"/><circle cx="47" cy="60" r="1.7"/><circle cx="40" cy="80" r="1.7"/><circle cx="42" cy="100" r="1.7"/><circle cx="50" cy="116" r="1.7"/><circle cx="64" cy="128" r="1.7"/><circle cx="80" cy="134" r="1.7"/><circle cx="96" cy="130" r="1.7"/><circle cx="112" cy="124" r="1.7"/><circle cx="130" cy="120" r="1.7"/><circle cx="146" cy="117" r="1.7"/><circle cx="98" cy="146" r="1.5"/>
+                      <circle cx="140" cy="70" r="2"/><circle cx="96" cy="50" r="2"/><circle cx="72" cy="62" r="2"/><circle cx="58" cy="84" r="2"/><circle cx="64" cy="106" r="2"/><circle cx="86" cy="112" r="2"/><circle cx="110" cy="102" r="2"/><circle cx="140" cy="92" r="2"/><circle cx="148" cy="100" r="2"/>
+                      <circle cx="98" cy="80" r="2.7" fill="#ffffff"/><circle cx="120" cy="78" r="2.7" fill="#ffffff"/>
+                    </g>
+                    <g fill="#ffffff">
+                      <circle class="hxb-pulse" cx="120" cy="55" r="2.4" style="--d: 0s;"/>
+                      <circle class="hxb-pulse" cx="76" cy="92" r="2.4" style="--d: 0.9s;"/>
+                      <circle class="hxb-pulse" cx="130" cy="105" r="2.4" style="--d: 1.8s;"/>
+                      <circle class="hxb-pulse" cx="150" cy="80" r="2.4" style="--d: 2.7s;"/>
+                    </g>
+                  </svg>
+                </div>
+                <div class="hxm2-core">
+                  <span class="hmv-brand">MediMind OS</span>
+                  <b><span class="lang-en">1 codebase</span><span class="lang-ka" style="display:none;">1 ერთიანი კოდი</span></b>
+                  <span><span class="lang-en">Clinical + administrative software · tailored to you</span><span class="lang-ka" style="display:none;">მკურნალობა + მართვა · თქვენზე მორგებული</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
+        <aside class="notes"><span class="lang-en">Suppliers A–F illustrate six software functions; one supplier may cover several. The floating module names show the scope of MediMind’s single-codebase offer, including development tailored to the hospital. The next slide shows product availability.</span><span class="lang-ka" style="display:none;">A–F მომწოდებლები ექვს პროგრამულ მიმართულებას ასახავს; ერთ მომწოდებელს რამდენიმე მიმართულების დაფარვა შეუძლია. ტვინის გარშემო მოდულები აჩვენებს MediMind-ის ერთიანი კოდის შეთავაზებას, კლინიკაზე მორგებული განვითარებით. პროდუქტების მზადყოფნა შემდეგ სლაიდზეა ნაჩვენები.</span></aside>
+      </section>

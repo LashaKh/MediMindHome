@@ -42,6 +42,13 @@ export const DECKS: Deck[] = [
     gate: null,
   },
   {
+    id: "r3",
+    label: "R3 briefing",
+    blurb: "Investor briefing, shared with investors",
+    path: "/r3.html",
+    gate: null,
+  },
+  {
     id: "landing",
     label: "Landing page",
     blurb: "The public marketing site",
@@ -55,6 +62,13 @@ export const DECKS: Deck[] = [
     path: "/deck.html",
     gate: "per-invite — see the table below",
     gatePerInvite: true,
+  },
+  {
+    id: "partner",
+    label: "Hospital proposal",
+    blurb: "Send-ahead proposal for new hospitals, KA / EN / RU — add ?name=Hospital&lang=ka to personalise",
+    path: "/partner.html",
+    gate: "medimind",
   },
   {
     id: "hospitals",

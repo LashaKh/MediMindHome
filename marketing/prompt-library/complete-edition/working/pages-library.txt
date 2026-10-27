@@ -1,0 +1,732 @@
+500 EURASIA
+
+
+AI Marketing Prompt Library
+3 Prompts for Conversion Pages
+By Justyna Jastrzebska
+
+
+
+
+HOW TO USE THIS DOCUMENT
+
+This document contains 3 action-based prompts to help you build publish-ready conversion
+pages from scratch. Each prompt is self-contained — use them independently in any order
+depending on which page you are building first.
+
+
+IMPORTANT: Each prompt is designed to be copy-pasted directly into Claude, ChatGPT, or
+any AI. Fill in every field marked in brackets before running the prompt. The AI will write
+every section of your page — do not run the prompt with empty fields. The more specific
+your inputs, the stronger the output.
+
+
+
+WHAT'S INSIDE
+
+
+Prompt 1 — Book a Demo Page
+Write every section of a B2B demo request page — headline, pain section, what happens on
+the call, objection FAQ, and CTA copy. Built around the 20 conversion assets found across
+Nextiva, Deel, HubSpot, Salesforce, OptinMonster, and 5 other top-performing demo pages.
+Prompt 2 — Webinar Registration Page
+Write every section of a B2B webinar landing page — speaker block, agenda, takeaway
+bullets, urgency copy, and the secondary 'can't make it?' CTA. Built around the 20
+conversion assets found across Gartner, Forrester, Salesforce, HubSpot, Tailwind, and 5
+other top-performing webinar pages.
+
+
+
+Prompt 3 — Free Trial Page
+Write every section of a B2B SaaS free trial page — trust strip, risk reduction copy,
+feature-to-benefit translation, 3-step activation flow, and the security block for IT approvers.
+Built around the 20 conversion assets found across Shopify, Slack, Notion, Calendly, Wrike,
+and 5 other top-performing free trial pages.
+PROMPT 1
+Book a Demo Page
+
+THE GOAL OF THIS PROMPT: By the end of this prompt you will have a complete,
+publish-ready Book a Demo page — including the outcome-led headline, subheadline,
+above-the-fold trust line, CTA button copy, pain section, how it works, differentiation block,
+testimonials, logo bar caption, objection FAQ, privacy line, and closing CTA. Built on the 20
+conversion assets shared by Nextiva, Deel, HubSpot, Salesforce, OptinMonster, Pecan AI,
+Heap, Testimonial.to, Qonto, and Podia.
+
+
+You are a conversion-focused landing page copywriter and strategist. Your job is to write
+every word and structure every section of a "Book a Demo" page that is ready to publish
+today.
+
+I am going to give you everything you need. Your output must be a complete, publish-ready
+page — not suggestions, not a brief, not a framework. Write the actual copy for every section.
+
+Do not use filler phrases like "we help teams," "cutting-edge," or "seamless." Write like a
+founder who deeply understands the customer's pain.
+
+
+
+[YOUR PRODUCT]
+
+Product name:
+[YOUR PRODUCT NAME]
+
+
+One-line description of what it does:
+[WHAT IT DOES IN PLAIN ENGLISH — no jargon]
+
+
+How it works (core mechanic):
+[STEP 1 → STEP 2 → STEP 3 — what actually happens when someone uses it]
+
+
+The single biggest differentiator:
+[YOUR #1 DIFFERENTIATOR]
+
+
+[YOUR CUSTOMER AVATAR]
+Job title / role:
+[WHO IS BOOKING THIS DEMO]
+
+
+Company size / type:
+[e.g. "50–200 person B2B SaaS companies"]
+
+
+The #1 pain they have RIGHT NOW (in their own words):
+[PASTE A REAL QUOTE OR DESCRIBE IN THEIR LANGUAGE]
+
+
+The #2 pain:
+[SECOND BIGGEST FRUSTRATION]
+
+
+The #3 pain:
+[THIRD BIGGEST FRUSTRATION]
+
+
+What they've already tried that didn't work:
+[TOOLS OR APPROACHES THEY'VE USED AND ABANDONED]
+
+
+What they're afraid of when booking a demo:
+[e.g. "I'll get a pushy sales call," "It won't work for my use case"]
+
+
+What success looks like for them in 90 days:
+[SPECIFIC, MEASURABLE OUTCOME]
+
+
+[YOUR COMPETITION]
+
+Main competitors they're currently using or evaluating:
+[COMPETITOR 1, COMPETITOR 2, COMPETITOR 3]
+
+
+Why those competitors fail them:
+[THE SPECIFIC GAP YOUR PRODUCT FILLS]
+
+
+How you are different in one sentence:
+[YOUR HONEST POSITIONING AGAINST THEM]
+[SOCIAL PROOF]
+
+Number of customers / users:
+[e.g. "400+ companies"]
+
+
+Best customer result / stat:
+[e.g. "cut onboarding from 3 weeks to 4 days"]
+
+
+Customer name + quote + role + company:
+[REAL TESTIMONIAL — name, title, company, exact words]
+
+
+Second testimonial (optional):
+[SECOND REAL TESTIMONIAL]
+
+
+Third-party review score:
+[e.g. "4.8/5 on G2 — 120 reviews"]
+
+
+Notable logos you can display:
+[CUSTOMER COMPANY NAMES]
+
+
+[THE DEMO ITSELF]
+
+Demo duration:
+[e.g. "25 minutes"]
+
+
+Who runs it (name + title):
+[e.g. "Sarah, co-founder"]
+
+
+3 specific things the prospect will SEE on the call:
+[THING 1] / [THING 2] / [THING 3]
+
+
+What the prospect will LEAVE WITH:
+[e.g. "a custom implementation plan"]
+Is it recorded?:
+[YES / NO]
+
+
+How quickly do you respond to a booking?:
+[e.g. "within 2 hours on weekdays"]
+
+
+[FORM FIELDS]
+
+Required fields:
+[e.g. "first name, work email, company name"]
+
+
+One optional qualifying question (1 only):
+[e.g. "How many people are on your team?"]
+
+
+
+
+NOW BUILD THE PAGE. Output every section in order with the exact copy written.
+Follow this structure precisely:
+
+
+SECTION 1 — HEADLINE
+Write 3 options. Each must lead with the customer's outcome, be under 10 words, and name
+the pain or gain explicitly. Mark your recommended option with [RECOMMENDED].
+
+
+SECTION 2 — SUBHEADLINE
+1 sentence. Name who this is for, what changes, and how fast.
+
+
+SECTION 3 — ABOVE-THE-FOLD TRUST LINE
+Format: "[number] [customer type] already [outcome]." If no customers yet, write a credibility
+line about the founding team.
+
+
+SECTION 4 — CTA BUTTON TEXT
+3 options. Each must include the time commitment. No generic "Book a demo." Mark
+recommended.
+SECTION 5 — WHAT HAPPENS ON THE DEMO (3 bullets)
+3 bullets. Each describes a specific concrete thing the prospect will experience on the call.
+Start each with an action verb.
+
+
+SECTION 6 — PAIN SECTION
+3 pain statements in the customer's exact language. Short, punchy, line breaks only. No
+bullet points.
+
+
+SECTION 7 — HOW IT WORKS (3 steps)
+Step number + 4-word-max label + 1-sentence explanation. Scannable in under 10 seconds.
+
+
+SECTION 8 — DIFFERENTIATION SECTION
+Max 4 sentences. Acknowledges the competitor, explains precisely why this product is
+different. Honest and specific.
+
+
+SECTION 9 — TESTIMONIAL BLOCK
+Intro line + testimonials. Lead with stat callout if one exists. Format: quote → name, title,
+company.
+
+
+SECTION 10 — LOGO BAR CAPTION
+1 line above the logo bar. Specific to an outcome — not 'trusted by.'
+
+
+SECTION 11 — OBJECTION FAQ (4 questions)
+Address: (1) sales pressure fear, (2) fit/use case doubt, (3) timeline/effort concern, (4)
+pricing curiosity. 2–3 sentences per answer max.
+
+
+SECTION 12 — PRIVACY LINE
+1 sentence under the form. State what you will NOT do with their email.
+
+
+SECTION 13 — BOTTOM REPEAT CTA
+1-sentence restatement of core outcome + CTA button text (same as Section 4
+recommended).
+PROMPT 2
+Webinar Registration Page
+
+THE GOAL OF THIS PROMPT: By the end of this prompt you will have a complete,
+publish-ready webinar registration page — including the outcome-led headline, date/time
+bar, speaker block with borrowed authority, what-you'll-learn bullets, timestamped agenda,
+pain section, social proof block, objection FAQ, recording opt-in CTA, and privacy line. Built
+on the 20 conversion assets shared by Gartner, Forrester, Salesforce, HubSpot, Slack,
+WordStream, Tailwind, Hootsuite, Dock, and SEMrush.
+
+
+You are a conversion-focused landing page copywriter specialising in B2B webinars. Your job
+is to write every word and structure every section of a webinar registration page that is ready
+to publish today.
+
+Your output must be complete, publish-ready page copy — not suggestions, not a brief, not a
+framework. Write the actual copy for every section listed below.
+
+Do not use filler phrases like "join industry experts," "actionable insights," or "don't miss out."
+Write like someone who understands why this specific audience would block out 45 minutes
+of their calendar for this.
+
+
+
+[THE WEBINAR ITSELF]
+
+Webinar title (working title is fine):
+[YOUR WORKING TITLE]
+
+
+What the attendee will know or be able to DO after attending:
+[THE SPECIFIC TRANSFORMATION — concrete, not vague]
+
+
+The single most surprising thing that will be revealed:
+[THE HOOK — what will make them say "I didn't know that"]
+
+
+Live date and time:
+[DAY, DATE, TIME + TIMEZONE — e.g. Tuesday 15 April, 11am GMT]
+Duration:
+[e.g. "45 minutes + 15 min live Q&A;"]
+
+
+Format:
+[e.g. "live panel," "solo presentation," "founder interview," "workshop"]
+
+
+Will a recording be available to registrants?:
+[YES / NO / YES — registrants only, not public]
+
+
+Is attendance capped / limited seats?:
+[YES with number / NO]
+
+
+[THE SPEAKER(S)]
+
+Speaker 1 — full name:
+[NAME]
+
+
+Speaker 1 — title and company:
+[TITLE, COMPANY]
+
+
+Speaker 1 — why they are the right person to teach this:
+[SPECIFIC RELEVANT EXPERIENCE — not just their job title]
+
+
+Speaker 1 — recognisable brand affiliations:
+[e.g. "formerly at Google, Stripe, Y Combinator"]
+
+
+Speaker 2 (if applicable):
+[SAME FIELDS AS ABOVE — or leave blank]
+
+
+[THE AUDIENCE]
+
+Who this webinar is for:
+[e.g. "B2B SaaS founders pre-Series A"]
+The exact problem they have RIGHT NOW (in their own words):
+[PASTE A REAL QUOTE OR DESCRIBE IN THEIR LANGUAGE]
+
+
+What they have already tried that has not worked:
+[TOOLS, APPROACHES, OR TACTICS THEY'VE TESTED AND ABANDONED]
+
+
+Their biggest fear about spending time on a webinar:
+[e.g. "it will be too basic," "it's just a sales pitch"]
+
+
+What success looks like 30 days after attending:
+[SPECIFIC, MEASURABLE OUTCOME]
+
+
+[SOCIAL PROOF]
+
+Number of people already registered:
+[e.g. "312 registered so far"]
+
+
+Past webinar attendance or satisfaction stat:
+[e.g. "4.8/5 from 600 past attendees"]
+
+
+One testimonial from a past attendee:
+[REAL QUOTE — name, title, company, exact words]
+
+
+Notable company logos you can show:
+[COMPANY NAMES]
+
+
+[WHAT THEY WILL WALK AWAY WITH]
+
+Specific takeaway 1:
+[CONCRETE TAKEAWAY — not "understand the landscape"]
+
+
+Specific takeaway 2:
+[CONCRETE TAKEAWAY]
+Specific takeaway 3:
+[CONCRETE TAKEAWAY]
+
+
+Downloadable resource or template:
+[e.g. "the exact Notion template we use" — or leave blank]
+
+
+[AGENDA]
+
+Segment 1:
+[TIMESTAMP — TOPIC, e.g. '0:00 — Why the standard approach fails']
+
+
+Segment 2:
+[TIMESTAMP — TOPIC]
+
+
+Segment 3:
+[TIMESTAMP — TOPIC]
+
+
+Segment 4 (Q&A;):
+[TIMESTAMP — Live Q&A;]
+
+
+[FORM FIELDS]
+
+Required fields:
+[e.g. "work email only"]
+
+
+One optional qualifying question (if any):
+[or leave blank]
+
+
+
+
+NOW BUILD THE PAGE. Output every section in order with the exact copy written.
+Follow this structure precisely:
+SECTION 1 — PAGE HEADLINE
+3 options. Each must lead with specific outcome, be under 12 words, contain the hook or
+counterintuitive angle. Mark recommended.
+
+
+SECTION 2 — SUBHEADLINE
+1–2 sentences. Name who this is for, what changes, by when. Must mention the date and
+duration.
+
+
+SECTION 3 — DATE / TIME / FORMAT BAR
+Format: [Day, Date] · [Time + Timezone] · [Duration] · [Format] · [Free]
+
+
+SECTION 4 — CTA BUTTON TEXT
+Must not say "Register Now" or "Sign Up." 3 options. Must communicate what the registrant
+is getting. Mark recommended.
+
+
+SECTION 5 — ABOVE-THE-FOLD TRUST LINE
+The social proof micro-line beside the CTA. Format: "[X] people already registered" or "4.8/5
+from [X] past attendees." If no social proof, write a speaker credibility line.
+
+
+SECTION 6 — SPEAKER BLOCK
+For each speaker: 2-sentence bio leading with most relevant credential for THIS topic.
+Borrowed authority line. 1 sentence on why they're the right person — track record, not title.
+
+
+SECTION 7 — WHAT YOU WILL LEARN (3–5 bullets)
+Each bullet: action verb + concrete thing the attendee walks away able to do. Specific
+enough that a stranger can evaluate if it's worth their time.
+
+
+SECTION 8 — PAIN SECTION
+3 pain statements in the audience's exact language. Short punchy lines. No bullets. Line
+breaks only.
+SECTION 9 — AGENDA BLOCK
+Format: [Timestamp] — [Topic name] — [1-sentence description]. If agenda left blank,
+create a logical 45-minute structure and flag: SUGGESTED AGENDA — confirm before
+publishing.
+
+
+SECTION 10 — SOCIAL PROOF BLOCK
+Intro line + testimonials. Lead with stat callout if one exists. If no testimonial: write
+[PLACEHOLDER] — do not fabricate.
+
+
+SECTION 11 — OBJECTION FAQ (4 questions)
+Address: (1) "Is this just a sales pitch?", (2) "I can't make the live time", (3) "Is this too
+basic/advanced for me?", (4) "How long is it really?" 2 sentences per answer max.
+
+
+SECTION 12 — 'CAN'T MAKE IT?' SECONDARY CTA
+Short paragraph + button text for the recording opt-in. Button text must differ from main
+CTA.
+
+
+SECTION 13 — PRIVACY LINE
+1 sentence under the form. State what you will NOT do with their email.
+
+
+SECTION 14 — BOTTOM REPEAT CTA
+1-sentence restatement of core transformation + date/time + main CTA button text repeated.
+PROMPT 3
+Free Trial Page
+
+THE GOAL OF THIS PROMPT: By the end of this prompt you will have a complete,
+publish-ready free trial landing page — including the outcome-led headline, trust strip, social
+proof bar, problem section, feature-to-benefit blocks, 3-step activation flow, testimonials,
+product visual caption, security block written for IT approvers, objection FAQ, pricing
+context, and the closing CTA. Built on the 20 conversion assets shared by Shopify, Slack,
+Notion, Calendly, Dropbox, Airtable, Salesforce, Wrike, Hootsuite, and Contentful.
+
+
+You are a conversion-focused landing page copywriter specialising in B2B SaaS free trials.
+Your job is to write every word and structure every section of a free trial landing page that is
+ready to publish today.
+
+Your output must be complete, publish-ready page copy — not suggestions, not a brief, not a
+framework. Write the actual copy for every section listed below.
+
+Do not use filler phrases like "powerful," "robust," "seamless," "all-in-one," or
+"game-changing." Write like someone who understands exactly what the visitor is afraid of
+and exactly what they want to be able to do tomorrow that they cannot do today.
+
+The single job of this page is to get a qualified visitor to start a free trial. Every section exists
+to remove a reason not to start — not to impress, not to educate, not to tell the brand story.
+
+
+
+[THE PRODUCT]
+
+Product name:
+[YOUR PRODUCT NAME]
+
+
+One sentence — what it does and for whom:
+[WHAT IT DOES IN PLAIN ENGLISH — no jargon]
+
+
+The single outcome a user gets in their first session (their 'aha moment'):
+[FIRST THING THAT MAKES THEM THINK "OK THIS IS WORTH PAYING FOR"]
+How long it takes to get that first result:
+[e.g. "under 10 minutes," "within the first session," "same day"]
+
+
+The 3 core things users do with the product:
+[THING 1] / [THING 2] / [THING 3]
+
+
+[THE TRIAL STRUCTURE]
+
+Trial type:
+[OPT-IN (no credit card) / OPT-OUT (credit card required)]
+
+
+Trial length:
+[e.g. "14 days" / "30 days"]
+
+
+What is included in the trial:
+[FULL ACCESS / or list what is and isn't included]
+
+
+What happens at the end of the trial:
+[e.g. "automatically converts to paid" / "account pauses — data kept for 30 days"]
+
+
+Credit card required to start?:
+[YES / NO]
+
+
+Can they cancel at any time?:
+[YES / NO]
+
+
+Free plan after the trial ends?:
+[YES with limits / NO]
+
+
+[THE CUSTOMER]
+
+Job title / role of ideal trial user:
+[WHO THIS IS FOR — be specific]
+Company size / type:
+[e.g. "B2B SaaS companies 10–200 people"]
+
+
+The problem they have right now (in their own words):
+[THEIR PAIN — use their language, not yours]
+
+
+What they are currently doing instead (their workaround):
+[THE TOOL OR PROCESS THEY USE TODAY THAT ISN'T WORKING]
+
+
+Their biggest fear about starting a free trial:
+[e.g. "I'll get charged without realising" / "it'll take too long to set up"]
+
+
+Their second biggest fear:
+[SECOND OBJECTION]
+
+
+What success looks like after 7 days of using the product:
+[SPECIFIC, MEASURABLE OUTCOME]
+
+
+[SOCIAL PROOF]
+
+Number of users or companies currently using the product:
+[e.g. "12,000 teams" or "used by 400+ companies"]
+
+
+Best result a customer has achieved (stat + context):
+[e.g. "reduced reporting time from 4 hours to 20 minutes"]
+
+
+Customer testimonial 1 (name + role + company + exact quote):
+[REAL QUOTE — must include the person's specific result, not generic praise]
+
+
+Customer testimonial 2 (optional):
+[SECOND REAL QUOTE]
+
+
+G2 / Capterra / TrustPilot score + number of reviews:
+[e.g. "4.7/5 from 380 reviews on G2"]
+Notable company logos you can display:
+[COMPANY NAMES]
+
+
+[TRUST AND COMPLIANCE]
+
+Security certifications held:
+[e.g. "SOC 2 Type II," "GDPR compliant," "ISO 27001" — or leave blank]
+
+
+Data handling reassurance:
+[e.g. "data deleted within 30 days of account closure" / "never sold to third parties"]
+
+
+Uptime or reliability stat (if any):
+[e.g. "99.9% uptime SLA"]
+
+
+[SIGN-UP FORM]
+
+Fields required to start the trial:
+[e.g. "work email only" / "name + work email"]
+
+
+SSO / social login options available:
+[e.g. "Sign up with Google" / "Sign up with Microsoft" / none]
+
+
+One optional qualifying question after email (if any):
+[e.g. "What tool are you replacing?" — or leave blank]
+
+
+[PRICING CONTEXT (optional but recommended)]
+
+Starting price after trial ends:
+[e.g. "from $49/month"]
+
+
+Is there a free plan after the trial?:
+[YES — describe limits / NO]
+NOW BUILD THE PAGE. Output every section in order with the exact copy written.
+Follow this structure precisely:
+
+
+SECTION 1 — HEADLINE
+3 options. Each must name the specific outcome, be under 10 words, speak to pain or
+transformation. Make the trial feel like the obvious next step. Mark recommended.
+
+
+SECTION 2 — SUBHEADLINE
+1 sentence. Name who this is for, what they'll be able to do, how fast. Reference trial length
+and 'no credit card required' if applicable. Max 20 words.
+
+
+SECTION 3 — PRIMARY CTA BUTTON TEXT
+Must not say "Sign Up," "Get Started," or "Try for Free." 3 options. Must communicate what
+they are getting. Mark recommended.
+
+
+SECTION 4 — TRUST STRIP
+Format: "[No credit card required] · [Cancel anytime] · [Trial length]". If card IS required,
+replace first element with a different reassurance.
+
+
+SECTION 5 — SOCIAL PROOF BAR
+Intro line above logo bar + stat line below it. If no logos: write credibility line and flag
+[PLACEHOLDER — add logos when available].
+
+
+SECTION 6 — THE PROBLEM SECTION
+3 pain statements in the customer's exact language. Short punchy lines. Line breaks only.
+End with 1 line that signals the trial is the answer — without making it a pitch.
+
+
+SECTION 7 — WHAT YOU GET IN THE TRIAL (3 feature-to-benefit blocks)
+Format: [Short label — 3 words max] / [1-sentence benefit in user's language]. Not what the
+feature does — what the user stops doing or is now able to do.
+SECTION 8 — 'UP AND RUNNING IN 3 STEPS'
+Numbered flow. Each step: 3-word label + 1-sentence description. Step 1 = sign-up. Step 3
+= aha moment. Each step must feel achievable in minutes.
+
+
+SECTION 9 — SOCIAL PROOF BLOCK
+Stat callout if exists + testimonials. Format: quote → [name, title, company]. Each quote
+must mention a specific result. Intro line: 'Here's what [role] say after their first week.' If
+none: [PLACEHOLDER] — do not fabricate.
+
+
+SECTION 10 — PRODUCT VISUAL CAPTION
+1 line below the product screenshot or GIF. Describe what the user is seeing and why it
+matters to them. Not 'the dashboard' — what it means for their day.
+
+
+SECTION 11 — TRUST AND SECURITY BLOCK
+3–4 trust signals as short label + 1-sentence explanation. Cover: data security, uptime, what
+happens to data at trial end, and one human support signal. Write for the person who has to
+approve the tool — not the person who wants to use it.
+
+
+SECTION 12 — OBJECTION FAQ (4 questions)
+Address: (1) billing/credit card fear, (2) setup effort fear, (3) data safety if they don't upgrade,
+(4) fit — is this right for my role/company? 2 sentences max per answer.
+
+
+SECTION 13 — PRICING CONTEXT LINE
+Format: "After your trial, plans start from [price]. No surprise fees, no annual lock-in
+required." If pricing not public, write the alternative version.
+
+
+SECTION 14 — BOTTOM REPEAT CTA
+1-sentence core outcome restatement + CTA button text (same as Section 3 recommended)
++ trust strip (same as Section 4).
+SECTION 15 — PRIVACY LINE
+1 sentence under form. State what you will NOT do with their email. No legal language. No
+links.
+
+
+
+
+FORMATTING RULES FOR ALL PROMPTS
+
+Label each section clearly. Write actual copy — no placeholders except where you explicitly
+left a field blank. If you left a field blank, write [PLACEHOLDER: what goes here] — do not
+skip the section. Flag any assumption with: ASSUMPTION: [what you assumed]. Do not
+explain your choices. Just write the page. Do not add sections not listed above.
+

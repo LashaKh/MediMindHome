@@ -70,7 +70,7 @@
     if (!dialog.open) return;
     status.hidden = false;
     status.textContent = document.documentElement.lang === 'ka'
-      ? 'თუ კალენდარი არ ჩანს, შეხვედრა ქვემოთ მითითებული ელფოსტით მოითხოვეთ.'
+      ? 'თუ კალენდარი არ გამოჩნდა, შეხვედრა ელფოსტით მოითხოვეთ. ბმული ქვემოთაა.'
       : 'If the calendar stays blank, request a meeting by email below.';
   }
 
@@ -86,7 +86,7 @@
     const player = document.createElement('iframe');
     const embedUrl = new URL(calendarUrl);
     embedUrl.searchParams.set('gv', 'true');
-    player.title = document.documentElement.lang === 'ka' ? 'MediMind-ის შეხვედრის დაჯავშნის კალენდარი' : 'MediMind meeting booking calendar';
+    player.title = document.documentElement.lang === 'ka' ? 'MediMind-თან შეხვედრის კალენდარი' : 'MediMind meeting booking calendar';
     player.referrerPolicy = 'strict-origin-when-cross-origin';
     player.addEventListener('load', () => { if (frame.firstElementChild !== player) return; clearTimeout(loadTimer); status.hidden = true; }, { once: true });
     player.addEventListener('error', () => { if (frame.firstElementChild !== player) return; clearTimeout(loadTimer); showLoadFallback(); }, { once: true });

@@ -1,0 +1,1730 @@
+[
+  {
+    "id": "js-000",
+    "file": "public/deck-assets/hospitals-meeting.js",
+    "start": 3307,
+    "end": 3324,
+    "raw": "'ჩვენს კლინიკაში'",
+    "text": "ჩვენს კლინიკაში"
+  },
+  {
+    "id": "js-001",
+    "file": "public/deck-assets/hospitals-meeting.js",
+    "start": 3327,
+    "end": 3338,
+    "raw": "'ვიდეოზარი'",
+    "text": "ვიდეოზარი"
+  },
+  {
+    "id": "js-002",
+    "file": "public/deck-assets/hospitals-meeting.js",
+    "start": 3420,
+    "end": 3461,
+    "raw": "'30-წუთიანი შეხვედრა MediMind-ის გუნდთან'",
+    "text": "30-წუთიანი შეხვედრა MediMind-ის გუნდთან"
+  },
+  {
+    "id": "js-003",
+    "file": "public/deck-assets/hospitals-meeting.js",
+    "start": 4621,
+    "end": 4639,
+    "raw": "'თქვენს კლინიკაში'",
+    "text": "თქვენს კლინიკაში"
+  },
+  {
+    "id": "js-004",
+    "file": "public/deck-assets/hospitals-meeting.js",
+    "start": 4642,
+    "end": 4653,
+    "raw": "'ვიდეოზარი'",
+    "text": "ვიდეოზარი"
+  },
+  {
+    "id": "js-005",
+    "file": "public/deck-assets/hospitals-meeting.js",
+    "start": 4871,
+    "end": 4941,
+    "raw": "'თუ კალენდარი არ ჩანს, შეხვედრა ქვემოთ მითითებული ელფოსტით მოითხოვეთ.'",
+    "text": "თუ კალენდარი არ ჩანს, შეხვედრა ქვემოთ მითითებული ელფოსტით მოითხოვეთ."
+  },
+  {
+    "id": "js-006",
+    "file": "public/deck-assets/hospitals-meeting.js",
+    "start": 5404,
+    "end": 5426,
+    "raw": "'კალენდარი იტვირთება…'",
+    "text": "კალენდარი იტვირთება…"
+  },
+  {
+    "id": "js-007",
+    "file": "public/deck-assets/hospitals-meeting.js",
+    "start": 5651,
+    "end": 5694,
+    "raw": "'MediMind-ის შეხვედრის დაჯავშნის კალენდარი'",
+    "text": "MediMind-ის შეხვედრის დაჯავშნის კალენდარი"
+  },
+  {
+    "id": "js-008",
+    "file": "public/deck-assets/hospitals-partnership.js",
+    "start": 453,
+    "end": 482,
+    "raw": "'კლინიკის ოპერაციული სისტემა'",
+    "text": "კლინიკის ოპერაციული სისტემა"
+  },
+  {
+    "id": "js-009",
+    "file": "public/deck-assets/hospitals-partnership.js",
+    "start": 524,
+    "end": 544,
+    "raw": "'მიმდინარე ბიუჯეტით'",
+    "text": "მიმდინარე ბიუჯეტით"
+  },
+  {
+    "id": "js-010",
+    "file": "public/deck-assets/hospitals-partnership.js",
+    "start": 715,
+    "end": 868,
+    "raw": "'მკურნალობისა და კლინიკის მართვის ერთიანი ოპერაციული სისტემა, თქვენს სამუშაო პროცესებზე მორგებული. მოდულების მიმოხილვა თითოეულ შესაძლებლობას განმარტავს.'",
+    "text": "მკურნალობისა და კლინიკის მართვის ერთიანი ოპერაციული სისტემა, თქვენს სამუშაო პროცესებზე მორგებული. მოდულების მიმოხილვა თითოეულ შესაძლებლობას განმარტავს."
+  },
+  {
+    "id": "js-011",
+    "file": "public/deck-assets/hospitals-partnership.js",
+    "start": 934,
+    "end": 960,
+    "raw": "'თქვენს კლინიკაზე მორგება'",
+    "text": "თქვენს კლინიკაზე მორგება"
+  },
+  {
+    "id": "js-012",
+    "file": "public/deck-assets/hospitals-partnership.js",
+    "start": 984,
+    "end": 991,
+    "raw": "'შედის'",
+    "text": "შედის"
+  },
+  {
+    "id": "js-013",
+    "file": "public/deck-assets/hospitals-partnership.js",
+    "start": 1101,
+    "end": 1196,
+    "raw": "'თქვენი გუნდის საჭიროებებზე მორგებული ფუნქციები, ფორმები და ანგარიშები — თქვენს გუნდთან ერთად.'",
+    "text": "თქვენი გუნდის საჭიროებებზე მორგებული ფუნქციები, ფორმები და ანგარიშები — თქვენს გუნდთან ერთად."
+  },
+  {
+    "id": "js-014",
+    "file": "public/deck-assets/hospitals-partnership.js",
+    "start": 1269,
+    "end": 1291,
+    "raw": "'დანერგვა და სწავლება'",
+    "text": "დანერგვა და სწავლება"
+  },
+  {
+    "id": "js-015",
+    "file": "public/deck-assets/hospitals-partnership.js",
+    "start": 1311,
+    "end": 1318,
+    "raw": "'უფასო'",
+    "text": "უფასო"
+  },
+  {
+    "id": "js-016",
+    "file": "public/deck-assets/hospitals-partnership.js",
+    "start": 1480,
+    "end": 1617,
+    "raw": "'სისტემას ვმართავთ, თქვენი კლინიკისთვის ვამზადებთ და გუნდს მუშაობას ვასწავლით. პარალელური გამოცდისას მოქმედ სისტემას ჩვეულებრივ იყენებთ.'",
+    "text": "სისტემას ვმართავთ, თქვენი კლინიკისთვის ვამზადებთ და გუნდს მუშაობას ვასწავლით. პარალელური გამოცდისას მოქმედ სისტემას ჩვეულებრივ იყენებთ."
+  },
+  {
+    "id": "js-017",
+    "file": "public/deck-assets/hospitals-partnership.js",
+    "start": 1679,
+    "end": 1700,
+    "raw": "'უწყვეტი განვითარება'",
+    "text": "უწყვეტი განვითარება"
+  },
+  {
+    "id": "js-018",
+    "file": "public/deck-assets/hospitals-partnership.js",
+    "start": 1741,
+    "end": 1783,
+    "raw": "'დამატებითი განვითარების საფასურის გარეშე'",
+    "text": "დამატებითი განვითარების საფასურის გარეშე"
+  },
+  {
+    "id": "js-019",
+    "file": "public/deck-assets/hospitals-partnership.js",
+    "start": 1946,
+    "end": 2093,
+    "raw": "'ყველა მოთხოვნილ პროგრამულ ფუნქციასა და ცვლილებას ვქმნით და ვნერგავთ დამატებითი განვითარების საფასურის გარეშე — მთელი თანამშრომლობის განმავლობაში.'",
+    "text": "ყველა მოთხოვნილ პროგრამულ ფუნქციასა და ცვლილებას ვქმნით და ვნერგავთ დამატებითი განვითარების საფასურის გარეშე — მთელი თანამშრომლობის განმავლობაში."
+  },
+  {
+    "id": "js-020",
+    "file": "public/deck-assets/hospitals-partnership.js",
+    "start": 2154,
+    "end": 2174,
+    "raw": "'პარალელური გამოცდა'",
+    "text": "პარალელური გამოცდა"
+  },
+  {
+    "id": "js-021",
+    "file": "public/deck-assets/hospitals-partnership.js",
+    "start": 2194,
+    "end": 2201,
+    "raw": "'უფასო'",
+    "text": "უფასო"
+  },
+  {
+    "id": "js-022",
+    "file": "public/deck-assets/hospitals-partnership.js",
+    "start": 2406,
+    "end": 2610,
+    "raw": "'მოქმედი სისტემა და პროცესები უცვლელია. თქვენი გუნდი კლინიკაში თავად ცდის და ადარებს MediMind-ს. პარტნიორობაზე მხოლოდ მას შემდეგ თანხმდებით, რაც დარწმუნდებით, რომ ის თქვენი კლინიკისთვის აშკარად უკეთესია.'",
+    "text": "მოქმედი სისტემა და პროცესები უცვლელია. თქვენი გუნდი კლინიკაში თავად ცდის და ადარებს MediMind-ს. პარტნიორობაზე მხოლოდ მას შემდეგ თანხმდებით, რაც დარწმუნდებით, რომ ის თქვენი კლინიკისთვის აშკარად უკეთესია."
+  },
+  {
+    "id": "js-023",
+    "file": "public/deck-assets/hospitals-partnership.js",
+    "start": 2671,
+    "end": 2701,
+    "raw": "'პირველი ვერსიის საწყისი კოდი'",
+    "text": "პირველი ვერსიის საწყისი კოდი"
+  },
+  {
+    "id": "js-024",
+    "file": "public/deck-assets/hospitals-partnership.js",
+    "start": 2738,
+    "end": 2762,
+    "raw": "'თქვენია, ხელშეკრულებით'",
+    "text": "თქვენია, ხელშეკრულებით"
+  },
+  {
+    "id": "js-025",
+    "file": "public/deck-assets/hospitals-partnership.js",
+    "start": 2929,
+    "end": 3100,
+    "raw": "'პირველი ჩაბარებული საბაზისო ვერსიის საწყისი კოდი ხელშეკრულებით თქვენს კლინიკას ეკუთვნის. მესამე მხარის ლიცენზიებსა და მომდევნო ვერსიებზე უფლებებს საკუთარი პირობები აქვს.'",
+    "text": "პირველი ჩაბარებული საბაზისო ვერსიის საწყისი კოდი ხელშეკრულებით თქვენს კლინიკას ეკუთვნის. მესამე მხარის ლიცენზიებსა და მომდევნო ვერსიებზე უფლებებს საკუთარი პირობები აქვს."
+  },
+  {
+    "id": "js-026",
+    "file": "public/deck-assets/hospitals-partnership.js",
+    "start": 3488,
+    "end": 3527,
+    "raw": "'რა შედის თქვენს საპარტნიორო პირობებში'",
+    "text": "რა შედის თქვენს საპარტნიორო პირობებში"
+  },
+  {
+    "id": "js-027",
+    "file": "public/deck-assets/hospitals-partnership.js",
+    "start": 3640,
+    "end": 3705,
+    "raw": "'პრემიუმ სისტემა, თქვენი მიმდინარე პროგრამის ბიუჯეტის ფარგლებში.'",
+    "text": "პრემიუმ სისტემა, თქვენი მიმდინარე პროგრამის ბიუჯეტის ფარგლებში."
+  },
+  {
+    "id": "js-028",
+    "file": "public/deck-assets/hospitals-partnership.js",
+    "start": 4361,
+    "end": 4473,
+    "raw": "'პარტნიორობის 3 ადგილი · 1 დაკავებულია · 2 თავისუფალია. განსაკუთრებული პირობები ამ სამ პარტნიორობაზე ვრცელდება.'",
+    "text": "პარტნიორობის 3 ადგილი · 1 დაკავებულია · 2 თავისუფალია. განსაკუთრებული პირობები ამ სამ პარტნიორობაზე ვრცელდება."
+  },
+  {
+    "id": "js-029",
+    "file": "public/deck-assets/hospitals-partnership.js",
+    "start": 4586,
+    "end": 4607,
+    "raw": "'ნახეთ დანერგვის გზა'",
+    "text": "ნახეთ დანერგვის გზა"
+  },
+  {
+    "id": "js-030",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 501,
+    "end": 518,
+    "raw": "'კოდის საკუთრება'",
+    "text": "კოდის საკუთრება"
+  },
+  {
+    "id": "js-031",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 572,
+    "end": 605,
+    "raw": "'პირველი ვერსია თქვენ გეკუთვნით.'",
+    "text": "პირველი ვერსია თქვენ გეკუთვნით."
+  },
+  {
+    "id": "js-032",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 772,
+    "end": 905,
+    "raw": "'პირველი ჩაბარებული საბაზისო ვერსიის საწყისი კოდი ხელშეკრულებით თქვენია. კლინიკას ერთ მომწოდებელზე დამოკიდებულების ალტერნატივა აქვს.'",
+    "text": "პირველი ჩაბარებული საბაზისო ვერსიის საწყისი კოდი ხელშეკრულებით თქვენია. კლინიკას ერთ მომწოდებელზე დამოკიდებულების ალტერნატივა აქვს."
+  },
+  {
+    "id": "js-033",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 973,
+    "end": 994,
+    "raw": "'უწყვეტი განვითარება'",
+    "text": "უწყვეტი განვითარება"
+  },
+  {
+    "id": "js-034",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 1057,
+    "end": 1101,
+    "raw": "'თქვენი შემდეგი იდეა სისტემის ნაწილი ხდება.'",
+    "text": "თქვენი შემდეგი იდეა სისტემის ნაწილი ხდება."
+  },
+  {
+    "id": "js-035",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 1250,
+    "end": 1387,
+    "raw": "'ყველა მოთხოვნილ ფუნქციასა და ცვლილებას ვქმნით და ვნერგავთ დამატებითი განვითარების საფასურის გარეშე — მთელი თანამშრომლობის განმავლობაში.'",
+    "text": "ყველა მოთხოვნილ ფუნქციასა და ცვლილებას ვქმნით და ვნერგავთ დამატებითი განვითარების საფასურის გარეშე — მთელი თანამშრომლობის განმავლობაში."
+  },
+  {
+    "id": "js-036",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 1455,
+    "end": 1475,
+    "raw": "'ფინანსური კონტროლი'",
+    "text": "ფინანსური კონტროლი"
+  },
+  {
+    "id": "js-037",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 1527,
+    "end": 1563,
+    "raw": "'შემოსავალი და ხარჯი — ერთ სურათში.'",
+    "text": "შემოსავალი და ხარჯი — ერთ სურათში."
+  },
+  {
+    "id": "js-038",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 1718,
+    "end": 1835,
+    "raw": "'განყოფილებების მიხედვით ანგარიშგება შემოსავალსა და ხარჯს ერთ ხედში აერთიანებს — კლინიკის მართვისა და დაგეგმვისთვის.'",
+    "text": "განყოფილებების მიხედვით ანგარიშგება შემოსავალსა და ხარჯს ერთ ხედში აერთიანებს — კლინიკის მართვისა და დაგეგმვისთვის."
+  },
+  {
+    "id": "js-039",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 1897,
+    "end": 1914,
+    "raw": "'თქვენზე მორგება'",
+    "text": "თქვენზე მორგება"
+  },
+  {
+    "id": "js-040",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 1970,
+    "end": 2003,
+    "raw": "'სისტემა თქვენს კლინიკას ერგება.'",
+    "text": "სისტემა თქვენს კლინიკას ერგება."
+  },
+  {
+    "id": "js-041",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 2135,
+    "end": 2223,
+    "raw": "'თქვენს გუნდთან ერთად ვარგებთ ფუნქციებს, ფორმებსა და ანგარიშებს კლინიკის მუშაობის წესს.'",
+    "text": "თქვენს გუნდთან ერთად ვარგებთ ფუნქციებს, ფორმებსა და ანგარიშებს კლინიკის მუშაობის წესს."
+  },
+  {
+    "id": "js-042",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 2281,
+    "end": 2298,
+    "raw": "'ერთიანი სისტემა'",
+    "text": "ერთიანი სისტემა"
+  },
+  {
+    "id": "js-043",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 2355,
+    "end": 2394,
+    "raw": "'დაკავშირებული მუშაობა მთელ კლინიკაში.'",
+    "text": "დაკავშირებული მუშაობა მთელ კლინიკაში."
+  },
+  {
+    "id": "js-044",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 2534,
+    "end": 2652,
+    "raw": "'საერთო მონაცემები რეგისტრაციას, მკურნალობას, ლაბორატორიას, რადიოლოგიასა და ანგარიშსწორებას ერთ სისტემაში აკავშირებს.'",
+    "text": "საერთო მონაცემები რეგისტრაციას, მკურნალობას, ლაბორატორიას, რადიოლოგიასა და ანგარიშსწორებას ერთ სისტემაში აკავშირებს."
+  },
+  {
+    "id": "js-045",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 2713,
+    "end": 2734,
+    "raw": "'მონაცემთა სტანდარტი'",
+    "text": "მონაცემთა სტანდარტი"
+  },
+  {
+    "id": "js-046",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 2791,
+    "end": 2830,
+    "raw": "'საერთო ენა კლინიკური მონაცემებისთვის.'",
+    "text": "საერთო ენა კლინიკური მონაცემებისთვის."
+  },
+  {
+    "id": "js-047",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 2961,
+    "end": 3090,
+    "raw": "'სისტემის საფუძველი თავიდანვე FHIR R4-ზეა აგებული — ჯანმრთელობის მონაცემების სტრუქტურირებისა და გაცვლის საერთაშორისო სტანდარტზე.'",
+    "text": "სისტემის საფუძველი თავიდანვე FHIR R4-ზეა აგებული — ჯანმრთელობის მონაცემების სტრუქტურირებისა და გაცვლის საერთაშორისო სტანდარტზე."
+  },
+  {
+    "id": "js-048",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 3151,
+    "end": 3171,
+    "raw": "'AI-ისთვის შექმნილი'",
+    "text": "AI-ისთვის შექმნილი"
+  },
+  {
+    "id": "js-049",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 3228,
+    "end": 3256,
+    "raw": "'AI სწორ საფუძველზე იწყება.'",
+    "text": "AI სწორ საფუძველზე იწყება."
+  },
+  {
+    "id": "js-050",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 3439,
+    "end": 3622,
+    "raw": "'ერთიანი, სტრუქტურირებული მონაცემები დოკუმენტაციას, ანალიზსა და მომავალ AI სერვისებს ემსახურება. ხელმისაწვდომობა ფუნქციების მიხედვით თანხმდება; კლინიკურ გადაწყვეტილებებს ექიმი იღებს.'",
+    "text": "ერთიანი, სტრუქტურირებული მონაცემები დოკუმენტაციას, ანალიზსა და მომავალ AI სერვისებს ემსახურება. ხელმისაწვდომობა ფუნქციების მიხედვით თანხმდება; კლინიკურ გადაწყვეტილებებს ექიმი იღებს."
+  },
+  {
+    "id": "js-051",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 4128,
+    "end": 4151,
+    "raw": "'განსხვავება დეტალურად'",
+    "text": "განსხვავება დეტალურად"
+  },
+  {
+    "id": "js-052",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 4822,
+    "end": 4858,
+    "raw": "'თქვენი კლინიკა, MediMind-თან ერთად'",
+    "text": "თქვენი კლინიკა, MediMind-თან ერთად"
+  },
+  {
+    "id": "js-053",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 5277,
+    "end": 5298,
+    "raw": "'შემდეგი განსხვავება'",
+    "text": "შემდეგი განსხვავება"
+  },
+  {
+    "id": "js-054",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 6085,
+    "end": 6108,
+    "raw": "'ინტერაქტიული მაგალითი'",
+    "text": "ინტერაქტიული მაგალითი"
+  },
+  {
+    "id": "js-055",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 6404,
+    "end": 6414,
+    "raw": "'დაზღვევა'",
+    "text": "დაზღვევა"
+  },
+  {
+    "id": "js-056",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 6450,
+    "end": 6469,
+    "raw": "'სასწრაფო კონტაქტი'",
+    "text": "სასწრაფო კონტაქტი"
+  },
+  {
+    "id": "js-057",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 6504,
+    "end": 6521,
+    "raw": "'მიმართვის წყარო'",
+    "text": "მიმართვის წყარო"
+  },
+  {
+    "id": "js-058",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 6572,
+    "end": 6590,
+    "raw": "'ვიზიტის ჩანაწერი'",
+    "text": "ვიზიტის ჩანაწერი"
+  },
+  {
+    "id": "js-059",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 6634,
+    "end": 6673,
+    "raw": "'ვიზიტის მიზანი: შემდგომი კონსულტაცია.'",
+    "text": "ვიზიტის მიზანი: შემდგომი კონსულტაცია."
+  },
+  {
+    "id": "js-060",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 6695,
+    "end": 6711,
+    "raw": "'კვლევის შედეგი'",
+    "text": "კვლევის შედეგი"
+  },
+  {
+    "id": "js-061",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 6764,
+    "end": 6809,
+    "raw": "'სადემონსტრაციო შედეგი ჩანაწერს უკავშირდება.'",
+    "text": "სადემონსტრაციო შედეგი ჩანაწერს უკავშირდება."
+  },
+  {
+    "id": "js-062",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 6836,
+    "end": 6856,
+    "raw": "'მედიკამენტების სია'",
+    "text": "მედიკამენტების სია"
+  },
+  {
+    "id": "js-063",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 6915,
+    "end": 6968,
+    "raw": "'მედიკამენტების სია იმავე კონტექსტშია ხელმისაწვდომი.'",
+    "text": "მედიკამენტების სია იმავე კონტექსტშია ხელმისაწვდომი."
+  },
+  {
+    "id": "js-064",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 7166,
+    "end": 7202,
+    "raw": "'პირველი ჩაბარებული საბაზისო ვერსია'",
+    "text": "პირველი ჩაბარებული საბაზისო ვერსია"
+  },
+  {
+    "id": "js-065",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 7259,
+    "end": 7316,
+    "raw": "'ეს საწყისი კოდი ხელშეკრულებით თქვენს კლინიკას ეკუთვნის.'",
+    "text": "ეს საწყისი კოდი ხელშეკრულებით თქვენს კლინიკას ეკუთვნის."
+  },
+  {
+    "id": "js-066",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 7340,
+    "end": 7360,
+    "raw": "'კლინიკის საკუთრება'",
+    "text": "კლინიკის საკუთრება"
+  },
+  {
+    "id": "js-067",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 7399,
+    "end": 7418,
+    "raw": "'მომდევნო ვერსიები'",
+    "text": "მომდევნო ვერსიები"
+  },
+  {
+    "id": "js-068",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 7535,
+    "end": 7630,
+    "raw": "'მომდევნო ვერსიებზე უფლებებს საკუთარი სახელშეკრულებო პირობები აქვს — პირველი ვერსიისგან ცალკე.'",
+    "text": "მომდევნო ვერსიებზე უფლებებს საკუთარი სახელშეკრულებო პირობები აქვს — პირველი ვერსიისგან ცალკე."
+  },
+  {
+    "id": "js-069",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 7650,
+    "end": 7666,
+    "raw": "'ცალკე პირობები'",
+    "text": "ცალკე პირობები"
+  },
+  {
+    "id": "js-070",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 7713,
+    "end": 7741,
+    "raw": "'მესამე მხარის კომპონენტები'",
+    "text": "მესამე მხარის კომპონენტები"
+  },
+  {
+    "id": "js-071",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 7794,
+    "end": 7856,
+    "raw": "'მესამე მხარის კოდზე მოქმედებს შესაბამისი ლიცენზიის პირობები.'",
+    "text": "მესამე მხარის კოდზე მოქმედებს შესაბამისი ლიცენზიის პირობები."
+  },
+  {
+    "id": "js-072",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 7881,
+    "end": 7904,
+    "raw": "'შესაბამისი ლიცენზიები'",
+    "text": "შესაბამისი ლიცენზიები"
+  },
+  {
+    "id": "js-073",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 8056,
+    "end": 8083,
+    "raw": "'ნახეთ საკუთრების ფარგლები'",
+    "text": "ნახეთ საკუთრების ფარგლები"
+  },
+  {
+    "id": "js-074",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 8161,
+    "end": 8177,
+    "raw": "'პირველი ვერსია'",
+    "text": "პირველი ვერსია"
+  },
+  {
+    "id": "js-075",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 8243,
+    "end": 8261,
+    "raw": "'შემდეგი ვერსიები'",
+    "text": "შემდეგი ვერსიები"
+  },
+  {
+    "id": "js-076",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 8330,
+    "end": 8350,
+    "raw": "'მესამე მხარის კოდი'",
+    "text": "მესამე მხარის კოდი"
+  },
+  {
+    "id": "js-077",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 8558,
+    "end": 8594,
+    "raw": "'საწყისი კოდი · საკუთრების ფარგლები'",
+    "text": "საწყისი კოდი · საკუთრების ფარგლები"
+  },
+  {
+    "id": "js-078",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 8867,
+    "end": 8939,
+    "raw": "'შეთავაზების განმარტება; კონკრეტული უფლებები ხელშეკრულებაში ფიქსირდება.'",
+    "text": "შეთავაზების განმარტება; კონკრეტული უფლებები ხელშეკრულებაში ფიქსირდება."
+  },
+  {
+    "id": "js-079",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 9163,
+    "end": 9176,
+    "raw": "'განყოფილება'",
+    "text": "განყოფილება"
+  },
+  {
+    "id": "js-080",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 9204,
+    "end": 9216,
+    "raw": "'შემოსავალი'",
+    "text": "შემოსავალი"
+  },
+  {
+    "id": "js-081",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 9242,
+    "end": 9249,
+    "raw": "'ხარჯი'",
+    "text": "ხარჯი"
+  },
+  {
+    "id": "js-082",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 9304,
+    "end": 9317,
+    "raw": "'ამბულატორია'",
+    "text": "ამბულატორია"
+  },
+  {
+    "id": "js-083",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 9448,
+    "end": 9477,
+    "raw": "'განყოფილების ფილტრი დაემატა'",
+    "text": "განყოფილების ფილტრი დაემატა"
+  },
+  {
+    "id": "js-084",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 9582,
+    "end": 9600,
+    "raw": "'პაციენტის სახელი'",
+    "text": "პაციენტის სახელი"
+  },
+  {
+    "id": "js-085",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 9639,
+    "end": 9664,
+    "raw": "'სადემონსტრაციო პაციენტი'",
+    "text": "სადემონსტრაციო პაციენტი"
+  },
+  {
+    "id": "js-086",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 9746,
+    "end": 9765,
+    "raw": "'სასწრაფო კონტაქტი'",
+    "text": "სასწრაფო კონტაქტი"
+  },
+  {
+    "id": "js-087",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 9805,
+    "end": 9832,
+    "raw": "'ახალი ველი თქვენს ფორმაში'",
+    "text": "ახალი ველი თქვენს ფორმაში"
+  },
+  {
+    "id": "js-088",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 9927,
+    "end": 9941,
+    "raw": "'მომზადებულია'",
+    "text": "მომზადებულია"
+  },
+  {
+    "id": "js-089",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 10015,
+    "end": 10053,
+    "raw": "'განყოფილების ხელმძღვანელის შემოწმება'",
+    "text": "განყოფილების ხელმძღვანელის შემოწმება"
+  },
+  {
+    "id": "js-090",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 10085,
+    "end": 10101,
+    "raw": "'დადასტურებულია'",
+    "text": "დადასტურებულია"
+  },
+  {
+    "id": "js-091",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 10246,
+    "end": 10291,
+    "raw": "'აირჩიეთ მოთხოვნის მაგალითი — ნახეთ ცვლილება'",
+    "text": "აირჩიეთ მოთხოვნის მაგალითი — ნახეთ ცვლილება"
+  },
+  {
+    "id": "js-092",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 10373,
+    "end": 10396,
+    "raw": "'განყოფილების ანგარიში'",
+    "text": "განყოფილების ანგარიში"
+  },
+  {
+    "id": "js-093",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 10461,
+    "end": 10473,
+    "raw": "'ახალი ველი'",
+    "text": "ახალი ველი"
+  },
+  {
+    "id": "js-094",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 10539,
+    "end": 10558,
+    "raw": "'შეთანხმების ეტაპი'",
+    "text": "შეთანხმების ეტაპი"
+  },
+  {
+    "id": "js-095",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 10709,
+    "end": 10741,
+    "raw": "'მოთხოვნილი ცვლილება · მაგალითი'",
+    "text": "მოთხოვნილი ცვლილება · მაგალითი"
+  },
+  {
+    "id": "js-096",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 10785,
+    "end": 10819,
+    "raw": "'დამატებითი განვითარების საფასური'",
+    "text": "დამატებითი განვითარების საფასური"
+  },
+  {
+    "id": "js-097",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 11038,
+    "end": 11149,
+    "raw": "'ეკრანები და თანხები საილუსტრაციოა. მოთხოვნილ ცვლილებებს ვქმნით და ვნერგავთ მთელი თანამშრომლობის განმავლობაში.'",
+    "text": "ეკრანები და თანხები საილუსტრაციოა. მოთხოვნილ ცვლილებებს ვქმნით და ვნერგავთ მთელი თანამშრომლობის განმავლობაში."
+  },
+  {
+    "id": "js-098",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 11323,
+    "end": 11357,
+    "raw": "'შეცვალეთ თანხები — ნახეთ სხვაობა'",
+    "text": "შეცვალეთ თანხები — ნახეთ სხვაობა"
+  },
+  {
+    "id": "js-099",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 11455,
+    "end": 11468,
+    "raw": "'განყოფილება'",
+    "text": "განყოფილება"
+  },
+  {
+    "id": "js-100",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 11532,
+    "end": 11545,
+    "raw": "'ამბულატორია'",
+    "text": "ამბულატორია"
+  },
+  {
+    "id": "js-101",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 11588,
+    "end": 11601,
+    "raw": "'ლაბორატორია'",
+    "text": "ლაბორატორია"
+  },
+  {
+    "id": "js-102",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 11641,
+    "end": 11653,
+    "raw": "'რადიოლოგია'",
+    "text": "რადიოლოგია"
+  },
+  {
+    "id": "js-103",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 11711,
+    "end": 11727,
+    "raw": "'შემოსავალი · ₾'",
+    "text": "შემოსავალი · ₾"
+  },
+  {
+    "id": "js-104",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 11882,
+    "end": 11893,
+    "raw": "'ხარჯი · ₾'",
+    "text": "ხარჯი · ₾"
+  },
+  {
+    "id": "js-105",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 12140,
+    "end": 12153,
+    "raw": "\"ამბულატორია\"",
+    "text": "ამბულატორია"
+  },
+  {
+    "id": "js-106",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 12218,
+    "end": 12242,
+    "raw": "'შემოსავალი მინუს ხარჯი'",
+    "text": "შემოსავალი მინუს ხარჯი"
+  },
+  {
+    "id": "js-107",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 12346,
+    "end": 12358,
+    "raw": "'შემოსავალი'",
+    "text": "შემოსავალი"
+  },
+  {
+    "id": "js-108",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 12525,
+    "end": 12532,
+    "raw": "'ხარჯი'",
+    "text": "ხარჯი"
+  },
+  {
+    "id": "js-109",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 12802,
+    "end": 12919,
+    "raw": "'თანხები საილუსტრაციოა და იცვლება. ეს არის გამოთვლის მაგალითი და არა კლინიკის გაზომილი შედეგი ან სარგებლის პროგნოზი.'",
+    "text": "თანხები საილუსტრაციოა და იცვლება. ეს არის გამოთვლის მაგალითი და არა კლინიკის გაზომილი შედეგი ან სარგებლის პროგნოზი."
+  },
+  {
+    "id": "js-110",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 13183,
+    "end": 13227,
+    "raw": "'აირჩიეთ, რა სჭირდება თქვენს მიღების ფორმას'",
+    "text": "აირჩიეთ, რა სჭირდება თქვენს მიღების ფორმას"
+  },
+  {
+    "id": "js-111",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 13305,
+    "end": 13324,
+    "raw": "'თქვენი მოთხოვნები'",
+    "text": "თქვენი მოთხოვნები"
+  },
+  {
+    "id": "js-112",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 13531,
+    "end": 13564,
+    "raw": "'ფორმა თქვენს არჩევანს მიჰყვება.'",
+    "text": "ფორმა თქვენს არჩევანს მიჰყვება."
+  },
+  {
+    "id": "js-113",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 13676,
+    "end": 13694,
+    "raw": "'პაციენტის მიღება'",
+    "text": "პაციენტის მიღება"
+  },
+  {
+    "id": "js-114",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 13769,
+    "end": 13775,
+    "raw": "'ველი'",
+    "text": "ველი"
+  },
+  {
+    "id": "js-115",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 13853,
+    "end": 13868,
+    "raw": "'სახელი, გვარი'",
+    "text": "სახელი, გვარი"
+  },
+  {
+    "id": "js-116",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 13907,
+    "end": 13932,
+    "raw": "'სადემონსტრაციო პაციენტი'",
+    "text": "სადემონსტრაციო პაციენტი"
+  },
+  {
+    "id": "js-117",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 14089,
+    "end": 14112,
+    "raw": "'თქვენს ფორმას დაემატა'",
+    "text": "თქვენს ფორმას დაემატა"
+  },
+  {
+    "id": "js-118",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 14277,
+    "end": 14357,
+    "raw": "'მორგების ილუსტრაცია. რეალურ ფორმებსა და პროცესებს თქვენს გუნდთან ერთად ვქმნით.'",
+    "text": "მორგების ილუსტრაცია. რეალურ ფორმებსა და პროცესებს თქვენს გუნდთან ერთად ვქმნით."
+  },
+  {
+    "id": "js-119",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 14742,
+    "end": 14774,
+    "raw": "'მოითხოვეთ ლაბორატორიული კვლევა'",
+    "text": "მოითხოვეთ ლაბორატორიული კვლევა"
+  },
+  {
+    "id": "js-120",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 14840,
+    "end": 14901,
+    "raw": "'შემდეგ გახსენით ლაბორატორია — იგივე მოთხოვნა იქ დაგხვდებათ.'",
+    "text": "შემდეგ გახსენით ლაბორატორია — იგივე მოთხოვნა იქ დაგხვდებათ."
+  },
+  {
+    "id": "js-121",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 15052,
+    "end": 15072,
+    "raw": "'მოთხოვნა დაემატა ✓'",
+    "text": "მოთხოვნა დაემატა ✓"
+  },
+  {
+    "id": "js-122",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 15100,
+    "end": 15127,
+    "raw": "'დაამატეთ კვლევის მოთხოვნა'",
+    "text": "დაამატეთ კვლევის მოთხოვნა"
+  },
+  {
+    "id": "js-123",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 15327,
+    "end": 15355,
+    "raw": "'მოთხოვნა მიღებულია EMR-დან'",
+    "text": "მოთხოვნა მიღებულია EMR-დან"
+  },
+  {
+    "id": "js-124",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 15379,
+    "end": 15401,
+    "raw": "'მოთხოვნა ჯერ არ არის'",
+    "text": "მოთხოვნა ჯერ არ არის"
+  },
+  {
+    "id": "js-125",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 15470,
+    "end": 15524,
+    "raw": "'იგივე პაციენტი — მოთხოვნის ხელახალი შეყვანის გარეშე.'",
+    "text": "იგივე პაციენტი — მოთხოვნის ხელახალი შეყვანის გარეშე."
+  },
+  {
+    "id": "js-126",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 15570,
+    "end": 15608,
+    "raw": "'მოთხოვნა EMR-ის ჩანართიდან დაამატეთ.'",
+    "text": "მოთხოვნა EMR-ის ჩანართიდან დაამატეთ."
+  },
+  {
+    "id": "js-127",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 15778,
+    "end": 15811,
+    "raw": "'სადემონსტრაციო შედეგი დაემატა ✓'",
+    "text": "სადემონსტრაციო შედეგი დაემატა ✓"
+  },
+  {
+    "id": "js-128",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 15838,
+    "end": 15870,
+    "raw": "'დაამატეთ სადემონსტრაციო შედეგი'",
+    "text": "დაამატეთ სადემონსტრაციო შედეგი"
+  },
+  {
+    "id": "js-129",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 16027,
+    "end": 16056,
+    "raw": "'მოთხოვნილი მომსახურება ჩანს'",
+    "text": "მოთხოვნილი მომსახურება ჩანს"
+  },
+  {
+    "id": "js-130",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 16090,
+    "end": 16126,
+    "raw": "'მოთხოვნილი მომსახურება ჯერ არ არის'",
+    "text": "მოთხოვნილი მომსახურება ჯერ არ არის"
+  },
+  {
+    "id": "js-131",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 16196,
+    "end": 16251,
+    "raw": "'ლაბორატორიული კვლევა · ანგარიშსწორება შესამოწმებელია.'",
+    "text": "ლაბორატორიული კვლევა · ანგარიშსწორება შესამოწმებელია."
+  },
+  {
+    "id": "js-132",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 16314,
+    "end": 16376,
+    "raw": "'იგივე ჩანაწერი მკურნალობასა და ფინანსურ სამუშაოს აკავშირებს.'",
+    "text": "იგივე ჩანაწერი მკურნალობასა და ფინანსურ სამუშაოს აკავშირებს."
+  },
+  {
+    "id": "js-133",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 16515,
+    "end": 16567,
+    "raw": "'გაიარეთ ერთი პაციენტის პროცესი განყოფილებებს შორის'",
+    "text": "გაიარეთ ერთი პაციენტის პროცესი განყოფილებებს შორის"
+  },
+  {
+    "id": "js-134",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 16707,
+    "end": 16732,
+    "raw": "'სადემონსტრაციო პაციენტი'",
+    "text": "სადემონსტრაციო პაციენტი"
+  },
+  {
+    "id": "js-135",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 16787,
+    "end": 16809,
+    "raw": "'ერთი საერთო ჩანაწერი'",
+    "text": "ერთი საერთო ჩანაწერი"
+  },
+  {
+    "id": "js-136",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 16893,
+    "end": 16916,
+    "raw": "'შედეგი ხელმისაწვდომია'",
+    "text": "შედეგი ხელმისაწვდომია"
+  },
+  {
+    "id": "js-137",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 16948,
+    "end": 16968,
+    "raw": "'კვლევა მოთხოვნილია'",
+    "text": "კვლევა მოთხოვნილია"
+  },
+  {
+    "id": "js-138",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 16990,
+    "end": 17008,
+    "raw": "'ვიზიტი გახსნილია'",
+    "text": "ვიზიტი გახსნილია"
+  },
+  {
+    "id": "js-139",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 17187,
+    "end": 17200,
+    "raw": "'ლაბორატორია'",
+    "text": "ლაბორატორია"
+  },
+  {
+    "id": "js-140",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 17263,
+    "end": 17274,
+    "raw": "'ფინანსები'",
+    "text": "ფინანსები"
+  },
+  {
+    "id": "js-141",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 17453,
+    "end": 17509,
+    "raw": "'სადემონსტრაციო შედეგი საერთო ჩანაწერშია ხელმისაწვდომი.'",
+    "text": "სადემონსტრაციო შედეგი საერთო ჩანაწერშია ხელმისაწვდომი."
+  },
+  {
+    "id": "js-142",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 17637,
+    "end": 17711,
+    "raw": "'პროცესის ილუსტრაცია სინთეტიკური ჩანაწერით — არა პროდუქტის ცოცხალი სესია.'",
+    "text": "პროცესის ილუსტრაცია სინთეტიკური ჩანაწერით — არა პროდუქტის ცოცხალი სესია."
+  },
+  {
+    "id": "js-143",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 17908,
+    "end": 17926,
+    "raw": "'პაციენტის სახელი'",
+    "text": "პაციენტის სახელი"
+  },
+  {
+    "id": "js-144",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 17953,
+    "end": 17968,
+    "raw": "'სახელი, გვარი'",
+    "text": "სახელი, გვარი"
+  },
+  {
+    "id": "js-145",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 18036,
+    "end": 18061,
+    "raw": "'სადემონსტრაციო პაციენტი'",
+    "text": "სადემონსტრაციო პაციენტი"
+  },
+  {
+    "id": "js-146",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 18217,
+    "end": 18239,
+    "raw": "'ლაბორატორიული შედეგი'",
+    "text": "ლაბორატორიული შედეგი"
+  },
+  {
+    "id": "js-147",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 18263,
+    "end": 18279,
+    "raw": "'კვლევის შედეგი'",
+    "text": "კვლევის შედეგი"
+  },
+  {
+    "id": "js-148",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 18353,
+    "end": 18376,
+    "raw": "'სადემონსტრაციო შედეგი'",
+    "text": "სადემონსტრაციო შედეგი"
+  },
+  {
+    "id": "js-149",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 18609,
+    "end": 18633,
+    "raw": "'მოთხოვნილი მომსახურება'",
+    "text": "მოთხოვნილი მომსახურება"
+  },
+  {
+    "id": "js-150",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 18652,
+    "end": 18662,
+    "raw": "'მოთხოვნა'",
+    "text": "მოთხოვნა"
+  },
+  {
+    "id": "js-151",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 18739,
+    "end": 18762,
+    "raw": "'სადემონსტრაციო კვლევა'",
+    "text": "სადემონსტრაციო კვლევა"
+  },
+  {
+    "id": "js-152",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 19068,
+    "end": 19115,
+    "raw": "'ნახეთ, რას ნიშნავს მონაცემთა საერთო სტანდარტი'",
+    "text": "ნახეთ, რას ნიშნავს მონაცემთა საერთო სტანდარტი"
+  },
+  {
+    "id": "js-153",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 19189,
+    "end": 19199,
+    "raw": "'პაციენტი'",
+    "text": "პაციენტი"
+  },
+  {
+    "id": "js-154",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 19260,
+    "end": 19268,
+    "raw": "'შედეგი'",
+    "text": "შედეგი"
+  },
+  {
+    "id": "js-155",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 19330,
+    "end": 19343,
+    "raw": "'მომსახურება'",
+    "text": "მომსახურება"
+  },
+  {
+    "id": "js-156",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 19473,
+    "end": 19496,
+    "raw": "'სხვადასხვა დასახელება'",
+    "text": "სხვადასხვა დასახელება"
+  },
+  {
+    "id": "js-157",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 19832,
+    "end": 19884,
+    "raw": "'ერთი შეთანხმებული სტრუქტურა იმავე ინფორმაციისთვის.'",
+    "text": "ერთი შეთანხმებული სტრუქტურა იმავე ინფორმაციისთვის."
+  },
+  {
+    "id": "js-158",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 19986,
+    "end": 20014,
+    "raw": "'იხილეთ მაგალითის სტრუქტურა'",
+    "text": "იხილეთ მაგალითის სტრუქტურა"
+  },
+  {
+    "id": "js-159",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 20204,
+    "end": 20292,
+    "raw": "'მონაცემთა სტრუქტურის მაგალითი. რეალურ გაცვლას შესაბამისი მიბმა და კავშირებიც სჭირდება.'",
+    "text": "მონაცემთა სტრუქტურის მაგალითი. რეალურ გაცვლას შესაბამისი მიბმა და კავშირებიც სჭირდება."
+  },
+  {
+    "id": "js-160",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 20486,
+    "end": 20536,
+    "raw": "'აირჩიეთ, რა ინფორმაცია ექნება ხელმისაწვდომი AI-ს'",
+    "text": "აირჩიეთ, რა ინფორმაცია ექნება ხელმისაწვდომი AI-ს"
+  },
+  {
+    "id": "js-161",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 20619,
+    "end": 20643,
+    "raw": "'დაკავშირებული წყაროები'",
+    "text": "დაკავშირებული წყაროები"
+  },
+  {
+    "id": "js-162",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 20917,
+    "end": 20939,
+    "raw": "'წყარო დაკავშირებულია'",
+    "text": "წყარო დაკავშირებულია"
+  },
+  {
+    "id": "js-163",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 21058,
+    "end": 21086,
+    "raw": "'AI-სთვის შეკრული კონტექსტი'",
+    "text": "AI-სთვის შეკრული კონტექსტი"
+  },
+  {
+    "id": "js-164",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 21315,
+    "end": 21344,
+    "raw": "'წყარო არ არის დაკავშირებული'",
+    "text": "წყარო არ არის დაკავშირებული"
+  },
+  {
+    "id": "js-165",
+    "file": "public/deck-assets/hospitals-comparison.js",
+    "start": 21580,
+    "end": 21705,
+    "raw": "'კონტექსტის ილუსტრაცია — არა AI-ის ცოცხალი პასუხი. ფუნქციების ხელმისაწვდომობა ცალკე თანხმდება; გადაწყვეტილებებს ექიმი იღებს.'",
+    "text": "კონტექსტის ილუსტრაცია — არა AI-ის ცოცხალი პასუხი. ფუნქციების ხელმისაწვდომობა ცალკე თანხმდება; გადაწყვეტილებებს ექიმი იღებს."
+  },
+  {
+    "id": "js-166",
+    "file": "public/deck-assets/hospitals-evaluation.js",
+    "start": 830,
+    "end": 867,
+    "raw": "'მონაცემები თქვენს კლინიკას ეკუთვნის'",
+    "text": "მონაცემები თქვენს კლინიკას ეკუთვნის"
+  },
+  {
+    "id": "js-167",
+    "file": "public/deck-assets/hospitals-evaluation.js",
+    "start": 977,
+    "end": 1062,
+    "raw": "'მონაცემები თქვენს კლინიკას ეკუთვნის. ექსპორტის წესს წინასწარ, წერილობით ვათანხმებთ.'",
+    "text": "მონაცემები თქვენს კლინიკას ეკუთვნის. ექსპორტის წესს წინასწარ, წერილობით ვათანხმებთ."
+  },
+  {
+    "id": "js-168",
+    "file": "public/deck-assets/hospitals-evaluation.js",
+    "start": 1135,
+    "end": 1173,
+    "raw": "'პირველი ვერსიის საწყისი კოდი თქვენია'",
+    "text": "პირველი ვერსიის საწყისი კოდი თქვენია"
+  },
+  {
+    "id": "js-169",
+    "file": "public/deck-assets/hospitals-evaluation.js",
+    "start": 1413,
+    "end": 1638,
+    "raw": "'პირველი ჩაბარებული საბაზისო სისტემის საწყისი კოდი ხელშეკრულებით თქვენს კლინიკას ეკუთვნის. მესამე მხარის კომპონენტებს საკუთარი ლიცენზიები უნარჩუნდება. მომდევნო ვერსიებსა და არჩევით AI სერვისებზე უფლებები ცალკე განისაზღვრება.'",
+    "text": "პირველი ჩაბარებული საბაზისო სისტემის საწყისი კოდი ხელშეკრულებით თქვენს კლინიკას ეკუთვნის. მესამე მხარის კომპონენტებს საკუთარი ლიცენზიები უნარჩუნდება. მომდევნო ვერსიებსა და არჩევით AI სერვისებზე უფლებები ცალკე განისაზღვრება."
+  },
+  {
+    "id": "js-170",
+    "file": "public/deck-assets/hospitals-evaluation.js",
+    "start": 1701,
+    "end": 1731,
+    "raw": "'პირობები წინასწარ, წერილობით'",
+    "text": "პირობები წინასწარ, წერილობით"
+  },
+  {
+    "id": "js-171",
+    "file": "public/deck-assets/hospitals-evaluation.js",
+    "start": 1967,
+    "end": 2210,
+    "raw": "'გაგრძელებამდე ერთად წერილობით ვადგენთ ფასს, მხარდაჭერას, მომსახურების მოცულობასა და შეთანხმებულ მომსახურების დონეს თუ ფასის ფიქსირების პირობებს. პარტნიორობის შეთავაზებით გათვალისწინებული შეუზღუდავი შემდგომი განვითარების ვალდებულება უცვლელია.'",
+    "text": "გაგრძელებამდე ერთად წერილობით ვადგენთ ფასს, მხარდაჭერას, მომსახურების მოცულობასა და შეთანხმებულ მომსახურების დონეს თუ ფასის ფიქსირების პირობებს. პარტნიორობის შეთავაზებით გათვალისწინებული შეუზღუდავი შემდგომი განვითარების ვალდებულება უცვლელია."
+  },
+  {
+    "id": "js-172",
+    "file": "public/deck-assets/hospitals-evaluation.js",
+    "start": 2657,
+    "end": 2686,
+    "raw": "'თქვენი უფლებები და პირობები'",
+    "text": "თქვენი უფლებები და პირობები"
+  },
+  {
+    "id": "js-173",
+    "file": "public/deck-assets/hospitals-evaluation.js",
+    "start": 2775,
+    "end": 2815,
+    "raw": "'გაგრძელებამდე შეთანხმებული, წერილობით.'",
+    "text": "გაგრძელებამდე შეთანხმებული, წერილობით."
+  },
+  {
+    "id": "js-174",
+    "file": "public/deck-assets/hospitals-evaluation.js",
+    "start": 3519,
+    "end": 3765,
+    "raw": "'გამართვა, მორგება, სწავლება და პარალელური შეფასება უფასოა, შეძენის ვალდებულების გარეშე. პარტნიორობაზე კლინიკა მხოლოდ მაშინ თანხმდება, როცა საკუთარი გუნდი დარწმუნდება, რომ MediMind მისთვის აშკარად უკეთესია. გადასვლასა და მის დროს კლინიკა წყვეტს.'",
+    "text": "გამართვა, მორგება, სწავლება და პარალელური შეფასება უფასოა, შეძენის ვალდებულების გარეშე. პარტნიორობაზე კლინიკა მხოლოდ მაშინ თანხმდება, როცა საკუთარი გუნდი დარწმუნდება, რომ MediMind მისთვის აშკარად უკეთესია. გადასვლასა და მის დროს კლინიკა წყვეტს."
+  },
+  {
+    "id": "js-175",
+    "file": "public/deck-assets/hospitals-one-team.js",
+    "start": 651,
+    "end": 661,
+    "raw": "'მიმართვა'",
+    "text": "მიმართვა"
+  },
+  {
+    "id": "js-176",
+    "file": "public/deck-assets/hospitals-one-team.js",
+    "start": 764,
+    "end": 854,
+    "raw": "'ერთი მიმართვა MediMind-ს. სისტემის ფარგლებში საკითხის ბოლომდე მიყოლა ერთ გუნდს ეკისრება.'",
+    "text": "ერთი მიმართვა MediMind-ს. სისტემის ფარგლებში საკითხის ბოლომდე მიყოლა ერთ გუნდს ეკისრება."
+  },
+  {
+    "id": "js-177",
+    "file": "public/deck-assets/hospitals-one-team.js",
+    "start": 947,
+    "end": 1022,
+    "raw": "'თქვენი გუნდი უკავშირდება მომწოდებლებს. MediMind-ში — ერთ გუნდს მიმართავთ.'",
+    "text": "თქვენი გუნდი უკავშირდება მომწოდებლებს. MediMind-ში — ერთ გუნდს მიმართავთ."
+  },
+  {
+    "id": "js-178",
+    "file": "public/deck-assets/hospitals-one-team.js",
+    "start": 1083,
+    "end": 1094,
+    "raw": "'შემოწმება'",
+    "text": "შემოწმება"
+  },
+  {
+    "id": "js-179",
+    "file": "public/deck-assets/hospitals-one-team.js",
+    "start": 1198,
+    "end": 1284,
+    "raw": "'ჩვენი გუნდი ერთად ამოწმებს ლაბორატორიას, მონაცემის გადაცემასა და პაციენტის ჩანაწერს.'",
+    "text": "ჩვენი გუნდი ერთად ამოწმებს ლაბორატორიას, მონაცემის გადაცემასა და პაციენტის ჩანაწერს."
+  },
+  {
+    "id": "js-180",
+    "file": "public/deck-assets/hospitals-one-team.js",
+    "start": 1380,
+    "end": 1456,
+    "raw": "'ცალკეულ შემოწმებებს თქვენ ათანხმებთ. MediMind-ში — ჩვენი გუნდი აერთიანებს.'",
+    "text": "ცალკეულ შემოწმებებს თქვენ ათანხმებთ. MediMind-ში — ჩვენი გუნდი აერთიანებს."
+  },
+  {
+    "id": "js-181",
+    "file": "public/deck-assets/hospitals-one-team.js",
+    "start": 1515,
+    "end": 1527,
+    "raw": "'უკუკავშირი'",
+    "text": "უკუკავშირი"
+  },
+  {
+    "id": "js-182",
+    "file": "public/deck-assets/hospitals-one-team.js",
+    "start": 1633,
+    "end": 1730,
+    "raw": "'ერთი გუნდი გაწვდით შემოწმების შედეგსა და შემდეგ ნაბიჯს. საბოლოო შედეგს თქვენი კლინიკა ამოწმებს.'",
+    "text": "ერთი გუნდი გაწვდით შემოწმების შედეგსა და შემდეგ ნაბიჯს. საბოლოო შედეგს თქვენი კლინიკა ამოწმებს."
+  },
+  {
+    "id": "js-183",
+    "file": "public/deck-assets/hospitals-one-team.js",
+    "start": 1823,
+    "end": 1898,
+    "raw": "'ერთი მიმართვა. ერთი პასუხისმგებელი გუნდი. შედეგს თქვენი კლინიკა ამოწმებს.'",
+    "text": "ერთი მიმართვა. ერთი პასუხისმგებელი გუნდი. შედეგს თქვენი კლინიკა ამოწმებს."
+  },
+  {
+    "id": "js-184",
+    "file": "public/deck-assets/hospitals-one-team.js",
+    "start": 1995,
+    "end": 2030,
+    "raw": "'მიმართეთ ლაბორატორიის მომწოდებელს'",
+    "text": "მიმართეთ ლაბორატორიის მომწოდებელს"
+  },
+  {
+    "id": "js-185",
+    "file": "public/deck-assets/hospitals-one-team.js",
+    "start": 2083,
+    "end": 2122,
+    "raw": "'გადაამოწმეთ, გაიგზავნა თუ არა შედეგი.'",
+    "text": "გადაამოწმეთ, გაიგზავნა თუ არა შედეგი."
+  },
+  {
+    "id": "js-186",
+    "file": "public/deck-assets/hospitals-one-team.js",
+    "start": 2169,
+    "end": 2203,
+    "raw": "'მიმართეთ ჩანაწერების მომწოდებელს'",
+    "text": "მიმართეთ ჩანაწერების მომწოდებელს"
+  },
+  {
+    "id": "js-187",
+    "file": "public/deck-assets/hospitals-one-team.js",
+    "start": 2256,
+    "end": 2295,
+    "raw": "'შეათანხმეთ შედეგის მიღების შემოწმება.'",
+    "text": "შეათანხმეთ შედეგის მიღების შემოწმება."
+  },
+  {
+    "id": "js-188",
+    "file": "public/deck-assets/hospitals-one-team.js",
+    "start": 2340,
+    "end": 2359,
+    "raw": "'შეაჯერეთ პასუხები'",
+    "text": "შეაჯერეთ პასუხები"
+  },
+  {
+    "id": "js-189",
+    "file": "public/deck-assets/hospitals-one-team.js",
+    "start": 2413,
+    "end": 2464,
+    "raw": "'თქვენი გუნდი მიჰყვება საკითხს და ამოწმებს შედეგს.'",
+    "text": "თქვენი გუნდი მიჰყვება საკითხს და ამოწმებს შედეგს."
+  },
+  {
+    "id": "js-190",
+    "file": "public/deck-assets/hospitals-one-team.js",
+    "start": 2920,
+    "end": 2969,
+    "raw": "'საილუსტრაციო მაგალითი · ვინ ათანხმებს სამუშაოს?'",
+    "text": "საილუსტრაციო მაგალითი · ვინ ათანხმებს სამუშაოს?"
+  },
+  {
+    "id": "js-191",
+    "file": "public/deck-assets/hospitals-one-team.js",
+    "start": 3063,
+    "end": 3108,
+    "raw": "'კვლევის შედეგი პაციენტის ჩანაწერში არ ჩანს.'",
+    "text": "კვლევის შედეგი პაციენტის ჩანაწერში არ ჩანს."
+  },
+  {
+    "id": "js-192",
+    "file": "public/deck-assets/hospitals-one-team.js",
+    "start": 3801,
+    "end": 3849,
+    "raw": "'სხვადასხვა მომწოდებელი · საილუსტრაციო მაგალითი'",
+    "text": "სხვადასხვა მომწოდებელი · საილუსტრაციო მაგალითი"
+  },
+  {
+    "id": "js-193",
+    "file": "public/deck-assets/hospitals-one-team.js",
+    "start": 3898,
+    "end": 3921,
+    "raw": "'კოორდინაცია თქვენზეა.'",
+    "text": "კოორდინაცია თქვენზეა."
+  },
+  {
+    "id": "js-194",
+    "file": "public/deck-assets/hospitals-one-team.js",
+    "start": 4306,
+    "end": 4362,
+    "raw": "'ცალკეული მიმართვები. პასუხებს თქვენი გუნდი აერთიანებს.'",
+    "text": "ცალკეული მიმართვები. პასუხებს თქვენი გუნდი აერთიანებს."
+  },
+  {
+    "id": "js-195",
+    "file": "public/deck-assets/hospitals-one-team.js",
+    "start": 4593,
+    "end": 4615,
+    "raw": "'კოორდინაცია ჩვენზეა.'",
+    "text": "კოორდინაცია ჩვენზეა."
+  },
+  {
+    "id": "js-196",
+    "file": "public/deck-assets/hospitals-one-team.js",
+    "start": 4725,
+    "end": 4747,
+    "raw": "'ერთი საერთო მიმართვა'",
+    "text": "ერთი საერთო მიმართვა"
+  },
+  {
+    "id": "js-197",
+    "file": "public/deck-assets/hospitals-one-team.js",
+    "start": 4846,
+    "end": 4878,
+    "raw": "'პასუხისმგებელი გუნდი: MediMind'",
+    "text": "პასუხისმგებელი გუნდი: MediMind"
+  },
+  {
+    "id": "js-198",
+    "file": "public/deck-assets/hospitals-one-team.js",
+    "start": 4921,
+    "end": 4934,
+    "raw": "'ლაბორატორია'",
+    "text": "ლაბორატორია"
+  },
+  {
+    "id": "js-199",
+    "file": "public/deck-assets/hospitals-one-team.js",
+    "start": 4955,
+    "end": 4965,
+    "raw": "'გადაცემა'",
+    "text": "გადაცემა"
+  },
+  {
+    "id": "js-200",
+    "file": "public/deck-assets/hospitals-one-team.js",
+    "start": 4987,
+    "end": 4997,
+    "raw": "'ჩანაწერი'",
+    "text": "ჩანაწერი"
+  },
+  {
+    "id": "js-201",
+    "file": "public/deck-assets/hospitals-one-team.js",
+    "start": 5274,
+    "end": 5339,
+    "raw": "'ერთი მიმართვა მთელი სისტემისთვის. საკითხს ჩვენი გუნდი მიჰყვება.'",
+    "text": "ერთი მიმართვა მთელი სისტემისთვის. საკითხს ჩვენი გუნდი მიჰყვება."
+  },
+  {
+    "id": "js-202",
+    "file": "public/deck-assets/hospitals-one-team.js",
+    "start": 5596,
+    "end": 5733,
+    "raw": "'კოორდინაციის საილუსტრაციო გზა — არა რეალური ინციდენტი ან შესრულების ვადის დაპირება. მომწოდებლების განაწილება კლინიკის მიხედვით იცვლება.'",
+    "text": "კოორდინაციის საილუსტრაციო გზა — არა რეალური ინციდენტი ან შესრულების ვადის დაპირება. მომწოდებლების განაწილება კლინიკის მიხედვით იცვლება."
+  },
+  {
+    "id": "js-203",
+    "file": "public/deck-assets/hospitals-one-team.js",
+    "start": 8557,
+    "end": 8564,
+    "raw": "'პაუზა'",
+    "text": "პაუზა"
+  },
+  {
+    "id": "js-204",
+    "file": "public/deck-assets/hospitals-one-team.js",
+    "start": 8593,
+    "end": 8612,
+    "raw": "'მაგალითის გაშვება'",
+    "text": "მაგალითის გაშვება"
+  },
+  {
+    "id": "js-205",
+    "file": "public/deck-assets/hospitals-reality.js",
+    "start": 523,
+    "end": 536,
+    "raw": "'ანაზღაურება'",
+    "text": "ანაზღაურება"
+  },
+  {
+    "id": "js-206",
+    "file": "public/deck-assets/hospitals-reality.js",
+    "start": 548,
+    "end": 555,
+    "raw": "'გუნდი'",
+    "text": "გუნდი"
+  },
+  {
+    "id": "js-207",
+    "file": "public/deck-assets/hospitals-reality.js",
+    "start": 568,
+    "end": 578,
+    "raw": "'კონტროლი'",
+    "text": "კონტროლი"
+  },
+  {
+    "id": "js-208",
+    "file": "public/deck-assets/hospitals-reality.js",
+    "start": 590,
+    "end": 603,
+    "raw": "'მომწოდებელი'",
+    "text": "მომწოდებელი"
+  },
+  {
+    "id": "js-209",
+    "file": "public/deck-assets/hospitals-roadmap.js",
+    "start": 537,
+    "end": 554,
+    "raw": "'ერთიანი სისტემა'",
+    "text": "ერთიანი სისტემა"
+  },
+  {
+    "id": "js-210",
+    "file": "public/deck-assets/hospitals-roadmap.js",
+    "start": 583,
+    "end": 604,
+    "raw": "'AI ყველა გუნდისთვის'",
+    "text": "AI ყველა გუნდისთვის"
+  },
+  {
+    "id": "js-211",
+    "file": "public/deck-assets/hospitals-roadmap.js",
+    "start": 633,
+    "end": 652,
+    "raw": "'კლინიკის AI ტვინი'",
+    "text": "კლინიკის AI ტვინი"
+  },
+  {
+    "id": "js-212",
+    "file": "public/deck-assets/hospitals-roadmap.js",
+    "start": 688,
+    "end": 697,
+    "raw": "'სისტემა'",
+    "text": "სისტემა"
+  },
+  {
+    "id": "js-213",
+    "file": "public/deck-assets/hospitals-roadmap.js",
+    "start": 715,
+    "end": 728,
+    "raw": "'ასისტენტები'",
+    "text": "ასისტენტები"
+  },
+  {
+    "id": "js-214",
+    "file": "public/deck-assets/hospitals-roadmap.js",
+    "start": 744,
+    "end": 754,
+    "raw": "'AI ტვინი'",
+    "text": "AI ტვინი"
+  },
+  {
+    "id": "js-215",
+    "file": "public/deck-assets/hospitals-brain-demo.js",
+    "start": 729,
+    "end": 754,
+    "raw": "'MediMind AI ტვინის დემო'",
+    "text": "MediMind AI ტვინის დემო"
+  }
+]

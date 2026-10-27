@@ -1,0 +1,172 @@
+[
+  {
+    "viewport": [
+      1600,
+      850
+    ],
+    "id": "hospital-reality",
+    "sectionBackground": "rgb(244, 246, 249) none repeat scroll 0% 0% / auto padding-box border-box",
+    "bg": "rgb(244, 246, 249) none repeat scroll 0% 0% / auto padding-box border-box",
+    "width": 1600,
+    "height": 850,
+    "horizontal": false
+  },
+  {
+    "viewport": [
+      1600,
+      850
+    ],
+    "id": "hospital-meeting",
+    "sectionBackground": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+    "bg": "radial-gradient(at 92% 14%, rgba(35, 83, 125, 0.4), rgba(0, 0, 0, 0) 52%) repeat scroll 0% 0% / auto padding-box border-box, rgba(0, 0, 0, 0) linear-gradient(125deg, rgb(7, 21, 38), rgb(16, 46, 75)) repeat scroll 0% 0% / auto padding-box border-box",
+    "width": 1600,
+    "height": 850,
+    "horizontal": false
+  },
+  {
+    "viewport": [
+      1600,
+      850
+    ],
+    "formatRouting": "passed",
+    "independentFallback": "passed",
+    "keyboard": "passed",
+    "reducedMotion": "passed"
+  },
+  {
+    "viewport": [
+      1280,
+      900
+    ],
+    "id": "hospital-reality",
+    "sectionBackground": "rgb(244, 246, 249) none repeat scroll 0% 0% / auto padding-box border-box",
+    "bg": "rgb(244, 246, 249) none repeat scroll 0% 0% / auto padding-box border-box",
+    "width": 1280,
+    "height": 900,
+    "horizontal": false
+  },
+  {
+    "viewport": [
+      1280,
+      900
+    ],
+    "id": "hospital-meeting",
+    "sectionBackground": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+    "bg": "radial-gradient(at 92% 14%, rgba(35, 83, 125, 0.4), rgba(0, 0, 0, 0) 52%) repeat scroll 0% 0% / auto padding-box border-box, rgba(0, 0, 0, 0) linear-gradient(125deg, rgb(7, 21, 38), rgb(16, 46, 75)) repeat scroll 0% 0% / auto padding-box border-box",
+    "width": 1280,
+    "height": 900,
+    "horizontal": false
+  },
+  {
+    "viewport": [
+      1280,
+      900
+    ],
+    "formatRouting": "passed",
+    "independentFallback": "passed",
+    "keyboard": "passed",
+    "reducedMotion": "passed"
+  },
+  {
+    "viewport": [
+      1280,
+      720
+    ],
+    "id": "hospital-reality",
+    "sectionBackground": "rgb(244, 246, 249) none repeat scroll 0% 0% / auto padding-box border-box",
+    "bg": "rgb(244, 246, 249) none repeat scroll 0% 0% / auto padding-box border-box",
+    "width": 1280,
+    "height": 720,
+    "horizontal": false
+  },
+  {
+    "viewport": [
+      1280,
+      720
+    ],
+    "id": "hospital-meeting",
+    "sectionBackground": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+    "bg": "radial-gradient(at 92% 14%, rgba(35, 83, 125, 0.4), rgba(0, 0, 0, 0) 52%) repeat scroll 0% 0% / auto padding-box border-box, rgba(0, 0, 0, 0) linear-gradient(125deg, rgb(7, 21, 38), rgb(16, 46, 75)) repeat scroll 0% 0% / auto padding-box border-box",
+    "width": 1280,
+    "height": 720,
+    "horizontal": false
+  },
+  {
+    "viewport": [
+      1280,
+      720
+    ],
+    "formatRouting": "passed",
+    "independentFallback": "passed",
+    "keyboard": "passed",
+    "reducedMotion": "passed"
+  },
+  {
+    "viewport": [
+      390,
+      844
+    ],
+    "id": "hospital-reality",
+    "sectionBackground": "rgb(244, 246, 249) none repeat scroll 0% 0% / auto padding-box border-box",
+    "bg": "rgb(244, 246, 249) none repeat scroll 0% 0% / auto padding-box border-box",
+    "width": 390,
+    "height": 844,
+    "horizontal": false
+  },
+  {
+    "viewport": [
+      390,
+      844
+    ],
+    "id": "hospital-meeting",
+    "sectionBackground": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+    "bg": "radial-gradient(at 92% 14%, rgba(35, 83, 125, 0.4), rgba(0, 0, 0, 0) 52%) repeat scroll 0% 0% / auto padding-box border-box, rgba(0, 0, 0, 0) linear-gradient(125deg, rgb(7, 21, 38), rgb(16, 46, 75)) repeat scroll 0% 0% / auto padding-box border-box",
+    "width": 390,
+    "height": 844,
+    "horizontal": false
+  },
+  {
+    "viewport": [
+      390,
+      844
+    ],
+    "formatRouting": "passed",
+    "independentFallback": "passed",
+    "keyboard": "passed",
+    "reducedMotion": "passed"
+  },
+  {
+    "viewport": [
+      320,
+      568
+    ],
+    "id": "hospital-reality",
+    "sectionBackground": "rgb(244, 246, 249) none repeat scroll 0% 0% / auto padding-box border-box",
+    "bg": "rgb(244, 246, 249) none repeat scroll 0% 0% / auto padding-box border-box",
+    "width": 320,
+    "height": 568,
+    "horizontal": false
+  },
+  {
+    "viewport": [
+      320,
+      568
+    ],
+    "id": "hospital-meeting",
+    "sectionBackground": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+    "bg": "radial-gradient(at 92% 14%, rgba(35, 83, 125, 0.4), rgba(0, 0, 0, 0) 52%) repeat scroll 0% 0% / auto padding-box border-box, rgba(0, 0, 0, 0) linear-gradient(125deg, rgb(7, 21, 38), rgb(16, 46, 75)) repeat scroll 0% 0% / auto padding-box border-box",
+    "width": 320,
+    "height": 568,
+    "horizontal": false
+  },
+  {
+    "viewport": [
+      320,
+      568
+    ],
+    "formatRouting": "passed",
+    "independentFallback": "passed",
+    "keyboard": "passed",
+    "reducedMotion": "passed"
+  }
+]

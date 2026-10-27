@@ -1,0 +1,66 @@
+MediMind Hospitals deck — Justina feedback applied
+20 October 2026
+
+Purpose
+This is the warm-introduction deck for hospital owners and directors. Its next step is a useful 30-minute conversation. The original hospitals.html visual identity, cover illustration, proof map, product demos and architecture remain the basis of the deck.
+
+What Justina identified, and what changed
+
+1. Missing context before the offer (02:40–06:07)
+A new opening problem slide names three recognizable situations in clinical, laboratory and administrative work. The five-partner offer comes after the buyer understands the work, the proposed change and the evidence.
+
+2. Too many technical categories to remember (07:12–09:55)
+The comparison now has three matched themes: information, staff time and control. Each current-state statement has a corresponding MediMind benefit. The left column remains declarative, as the founder requested. It is framed around working across separate programs, without claims that every hospital has the same deficiencies.
+
+3. Benefits need to precede mechanisms (12:37–18:21)
+The main story explains finding patient information, avoiding repeated entry and having one responsible team. Source-code ownership is introduced as retaining control; international health-data standards and export arrangements are explained in the protection appendix. Staff requests are described as shaping the agreed system, not as a vague self-improving AI loop.
+
+4. “Phases” made today's product sound incomplete (19:04–25:01)
+The former three-stage roadmap is now a concrete view of the work included today: clinical teams, diagnostics and administration. It explicitly stands on its own. AI services have a separate scope and price. Future AI material remains in the appendix with availability and validation qualifications. We did not adopt wording that would disguise an unfinished capability as available on demand.
+
+5. Repetition and disconnected pricing (26:27–29:10)
+The main story is eight slides including the cover. The offer keeps price and inclusions together. Its left panel explains the price match instead of repeating the fragmented-vendor problem. The original system diagram, team, detailed terms and demos remain after the meeting invitation.
+
+6. “Compare” needed a defined test (29:14–29:54)
+The evaluation now specifies staff minutes per agreed task, repeated patient fields per case, and delivered services omitted from billing. Cases, targets and review date are agreed before starting. A simple hours-saved equation uses the hospital's measured results and monthly volume. No savings percentage or ROI is invented.
+
+7. The final headline needed to request the meeting (29:58–30:38)
+The close now asks for 30 minutes with the director, process lead and MediMind founders. It states the three takeaways: map where time is lost, see the relevant capability, define a meaningful comparison. The action is to reply to the sender with two suitable times. No unsupported scheduling link or untested lead form was introduced.
+
+500 Global lessons applied
+- Decision Playbook sections 3–6 and 14: problem first; three memorable pains; one next step; show only the relevant demo; set success criteria before an evaluation.
+- Week 1 Day 1, 21 September: Justina's original MediMind review and the five-second clarity test. The hospital's outcome comes before the product category.
+- Week 5 Day 1, 19 October: value before price; quantify using the buyer's numbers; distinguish measured capacity gains from cash savings.
+- The current marketing note: hospital owners/directors with clinical and operational participants; current five-partner offer; precise proof and availability boundaries.
+
+Commercial commitments preserved
+Free implementation and key-user training; ongoing adaptation within the agreed base scope; free parallel evaluation with no purchase obligation; a price matched to current software spend for agreed services; ownership of the first delivered base-system source code under contract. The lecture advice to charge for pilots or reprice from value was not treated as permission to change the founder's offer.
+
+Evidence boundaries
+The hypothetical “75% of hospitals” mentioned during the call was not used. No promised twofold speed gain, fixed delivery cadence, automatic optimization or clinical outcome was added. Twenty-five hospitals remains the scope of one signed network agreement, not twenty-five live deployments. The 1.15 million figure remains patient records migrated in July 2026. Product-level availability labels are retained. The AI Brain remains a future vision; its clinical example is explicitly illustrative.
+
+Reading order
+1. Less retyping / more time for patients
+2. Information, staff time and control: today's pain
+3. Three paired changes with MediMind
+4. Tools the teams can use today
+5. Existing deployment and reference conversation
+6. Price and inclusions for the next five partners
+7. Free evaluation with agreed measurements
+8. A useful 30-minute meeting
+Then: optional terms, protection, team, system diagram, product demos, AI possibilities, illustrative case, walkthrough and architecture.
+
+Sources inspected (Brain remained read-only)
+- /Users/toko/Desktop/20261020_medimind_justina_jastrzebska_transcript[processed_20261020].txt
+- Brain/01 - Projects/MediMind/500 Global Lectures/500 Global Lectures — Decision Playbook.md
+- Brain/01 - Projects/MediMind/500 Global Lectures/2026-09-21 - Week 1 Day 1 - Value Proposition and Jobs to Be Done/2026-09-21 — Week 1 Day 1 — Deep Digest.md
+- Brain/01 - Projects/MediMind/500 Global Lectures/2026-10-19 - Week 5 Day 1 - Pricing Strategies and Capturing the Value You Create/2026-10-19 — Week 5 Day 1 — Deep Digest.md
+- Brain/01 - Projects/MediMind/Marketing Archive/MediMind Marketing — Current State.md
+- medplum_medimind/positioning/04-language.md and 06-buyers.md
+- Previously gathered hospital-deck evidence manifest in output/partner-v3/source-manifest.json
+
+Implementation
+Original public/hospitals.html and its scoped public/deck-assets/hospitals-polish.css. English and Georgian are edited together. Descriptive slide IDs support direct links and appendix navigation. All changes remain local; no publishing or outreach performed.
+
+Validation
+All 18 slides were checked in the development browser in English and Georgian at 1280×720, and in Georgian at 390×844 and 320×568. The final small-screen evaluation layout was inspected separately in both languages. Final desktop checks found no content outside the slide or overlapping comparison/offer panels. Password entry, language switching, keyboard navigation, all seven appendix links and two video demos passed without browser script errors. No production build or deployment was run.

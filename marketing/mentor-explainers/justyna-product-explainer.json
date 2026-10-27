@@ -1,0 +1,55 @@
+{
+  "title": "MediMind | Product Explainer",
+  "prepared_for": "Justyna Jastrzebska | 500 Global",
+  "date": "8 October 2026",
+  "headline": "One hospital.\nIts own AI brain.",
+  "promise": "MediMind replaces disconnected hospital software with one tailored operating system - the foundation on which workflow AI and a hospital-specific proactive AI brain can be introduced in later phases.",
+  "initial_scope": "Our initial offer is Phase 1: the connected base hospital system. Phase 2 AI features and the Phase 3 proactive AI brain are not included in this offer or its parallel evaluation.",
+  "introduction": [
+    "Imagine a hospital where its own AI brain coordinates care and administration from admission to discharge, bringing together patient context and operating data around that hospital's protocols and business needs.",
+    "That is the future we are building: not a chatbot waiting for questions, but a proactive system that notices what needs attention, makes decisions and carries out approved actions. The connected base system comes first.",
+    "Our long-term goal includes autonomous medical decisions and actions within clinically validated and authorized limits, with doctor approval where needed and critical decisions remaining with doctors."
+  ],
+  "customer": "Our initial market is private hospitals offering multiple specialties and hospital groups in Georgia. Owners and CEOs lead purchasing decisions, with clinical, operations, finance and IT teams involved in evaluation.",
+  "value": [
+    "The base product targets today's repeated entry, missing patient context and difficult handoffs. Connecting care with documentation, billing and resource use helps teams identify gaps and avoidable waste. These are the improvements hospitals can evaluate first.",
+    "The later AI phases build toward fewer preventable errors, less routine administration, stronger hospital performance and more time for direct patient care. We measure benefits as each agreed phase is introduced."
+  ],
+  "ai": [
+    {"title": "Phase 1 - Connect the hospital", "body": "Our initial offer. Replace the old software stack with a tailored base system for clinical and business work, built on FHIR R4, an open healthcare data standard. Create the shared foundation for later AI integration."},
+    {"title": "Phase 2 - Add AI to workflows", "body": "Introduce tools such as voice-to-documentation and clinical assistance into daily work. Individual AI capabilities already exist; their later activation, scope and pricing are agreed separately."},
+    {"title": "Phase 3 - Activate the proactive brain", "body": "The future hospital-wide AI brain: connect signals, identify risks and coordinate decisions and actions across departments. This remains a development and validation goal, with future deployment and commercial terms agreed separately."}
+  ],
+  "page_two_title": "Evaluate the replacement.\nThen decide.",
+  "evaluation_promise": "A tailored parallel evaluation, included before you commit.",
+  "offer_title": "Reserved for our next 10 hospital clients",
+  "evaluation": [
+    {"title": "Agree the Phase 1 comparison", "body": "Choose the base-system workflows, hospital reviewers and criteria for improvement."},
+    {"title": "We launch your parallel base system", "body": "Your separate evaluation environment is included in the next-10-hospital offer, with no evaluation fee. The current software stays in place."},
+    {"title": "The hospital tests the difference", "body": "Staff compare usability, information quality and measurable operational or financial improvements against their current work."},
+    {"title": "Decide after seeing it work", "body": "The hospital sees the quality and degree of improvement for itself before any purchase commitment. There is no obligation to buy."}
+  ],
+  "timing": "We target a first parallel base-system version in about two weeks after scope, permitted data and technical readiness are agreed. The hospital evaluates it before deciding on a wider rollout.",
+  "delivery_model": "If the hospital proceeds, we agree the Phase 1 subscription, support, training and staged rollout. Cloud, hospital-hosted or hybrid deployment is planned around its needs. Later AI phases are separate decisions, not part of the initial purchase.",
+  "offer": "Your tailored Phase 1 parallel evaluation is included before any purchase commitment. If you switch, we match your current software price for the agreed base-system scope, with ongoing hospital-specific development of that base product included. Phase 2 AI features and the Phase 3 AI brain are excluded; later scope and pricing are agreed separately.",
+  "stage": "Our anchor agreement is with GeoHospitals, a 25-hospital network in Georgia, with implementation proceeding in stages. Our immediate focus is making implementation repeatable and bringing additional hospitals into evaluation.",
+  "difference": "Our physician-led team combines clinical insight with hospital-specific development. We build around the hospital's own workflows and let its staff assess the product before a purchasing decision.",
+  "closing": "We solve today's disconnected work to build tomorrow's AI-run hospital: a system that thinks ahead and acts within validated limits.",
+  "contact": "team@medimind.md",
+  "internal_source_basis": [
+    "/Users/toko/Desktop/medplum_medimind/positioning/00-what-we-are.md",
+    "/Users/toko/Desktop/medplum_medimind/positioning/03-scope.md",
+    "/Users/toko/Desktop/Brain/01 - Projects/MediMind/2026-08-16 - Investor Pitch Q&A.md",
+    "/Users/toko/Desktop/Brain/01 - Projects/MediMind/Investor Conversations/2026-08-19 - 500 Global B11 — Document Pack Drafts.md (Item 8: Phase 2 and Phase 3 outside the reference agreement)",
+    "/Users/toko/Desktop/Brain/01 - Projects/MediMind/Modules/MediMind Product Packaging.md (older broader packaging; superseded for this initial offer by founder clarification below)",
+    "/Users/toko/Desktop/Brain/01 - Projects/MediMind/Modules/AI Assistant.md",
+    "/Users/toko/Desktop/Brain/01 - Projects/MediMind/Modules/MediScribe.md",
+    "marketing/research/2026-09-22-evidence-register.md",
+    "marketing/prompt-library/complete-edition/outputs/p1-01-business-market.md",
+    "Founder instructions and offers in this conversation",
+    "Coworker explainer draft supplied by the founder on 8 October 2026",
+    "Founder vision and risk-based clinical decision framework supplied in Georgian on 8 October 2026; treated as future intent, not proof of deployed autonomy",
+    "Founder clarification on 8 October 2026: initial offer and parallel evaluation cover Phase 1 only; Phase 2 AI features and Phase 3 brain are not included. Parallel evaluation included at no charge for the next 10 hospital clients; base-product price match and continuing base development remain in that offer.",
+    "https://www.fda.gov/medical-devices/digital-health-center-excellence/artificial-intelligence-enabled-medical-devices (context for intended-use-specific risk and validation; not evidence of MediMind authorization)"
+  ]
+}

@@ -1,0 +1,87 @@
+[
+  {
+    "i": 0,
+    "classes": "cover has-dark-background present",
+    "text": "ENG ქარ Hospital Partnership The AI-native operating system for your hospital. AI · Clinical care · Laboratory · PACS · Patient Portal. medimind.md"
+  },
+  {
+    "i": 1,
+    "classes": "gw-slide hxd-slide future",
+    "text": "01THE PROMISE For our next 5 hospital partners. Everything your hospital needs. One hospital operating system — at your current software spend. EMRLABPACS 01 Free deployment We install, configure and train your key users on-site — the rollout costs you nothing. 02 Free, tailored development We adapt the base system to your workflows and keep developing it — at no extra charge. 03 Source-code ownership You own the first delivered base-system source code, under your contract. 04 Free parallel evaluation. Switch when ready. Compare both systems while your current one stays in use. Switch when your team accepts the result. 05 Ready for what comes next One shared system today. A foundation for the AI capabilities you choose tomorrow. Capacity is allocated. Evaluate first. Decide after. medimind.md"
+  },
+  {
+    "i": 2,
+    "classes": "gw-slide hxr-slide hxr3-slide future",
+    "text": "02WHAT CHANGES Your system today. More with MediMind. Six practical differences in daily work, cost and control. Typical legacy setup VS MediMind Changes are quoted separately and need extra budget. Tailored development Tailored to your hospital, included within the agreed base scope. Separate systems. Repeated entry and manual reconciliation. Connected data One shared clinical record, built ground-up on FHIR R4. You use the software; the vendor owns the source code. Source code First delivered base-version source code: yours, under contract. AI needs separate tools and additional integrations. AI & the future Built for AI, with optional services priced separately. Each product has its own updates and support. Updates One base system that keeps improving, within the agreed scope. Your team coordinates several software suppliers. Implementation One implementation team. Free setup, migration and key-user training. Less coordination. More control. One system built around your hospital. medimind.md"
+  },
+  {
+    "i": 3,
+    "classes": "gw-slide hxs-slide future",
+    "text": "03THE PATH · 3 PHASES A strong foundation. A path to the future. Phase 1 is today’s offer. Phases 2 and 3 are optional and priced separately. On the table today — matched to your current software spend. 1 This is what we're offering today Phase 1 Available today The foundation EMR · LAB · PACS · Portal The legacy stack goes. One system for clinical and administrative work. Built ground-up on FHIR R4, with access controls and audit trails. 25hospitals covered by one signed network agreement integrate Optional, later — your choice, with scope and pricing agreed separately. 2 Phase 2 Optional · when ready Efficiency gains AI introduced workflow by workflow AI-assisted notes for clinician review. AI analysis of the patient's full history. AI early-warning systems. Management sees the whole hospital. YOUdecide which department starts — and when integrate 3 Phase 3 Optional · long-term vision The proactive brain The hospital that thinks ahead Connects the available patient context. Supports clinical and operational decisions. Flags emerging problems for the team. AIa long-term vision, developed and validated step by step Phase 1 provides one FHIR R4 foundation. Future AI services build on it, with scope and pricing agreed separately. medimind.md"
+  },
+  {
+    "i": 4,
+    "classes": "gw-slide hxp-slide future",
+    "text": "04PROOF · ALREADY LIVE One signed network agreement. 25 hospitals. Central hospital live. Network rollout in stages. GEORGIA 25 networkhospitals Signed & verifiable 25 Hospitals — one signed contract One agreement covers 25 hospitals. Central hospital live; rollout continues in stages. 1.15M July 2026 Patient records migrated 1,147,535 records migrated in July 2026 Hear from the team using it. We can arrange the conversation. Innovative Startup GITA ₾150K grant received FHIR R4 standard medimind.md"
+  },
+  {
+    "i": 5,
+    "classes": "gw-slide hxw-slide future",
+    "text": "05WHO WE ARE Doctors, building for doctors. A team for implementation, training and development around your hospital. Dr. Lasha Khoshtaria Founder · Physician 01 Physician-founded Built at the bedside — the system a doctor wished he had on the night shift. 02 Co-founder · Product Irakli Pkhovelishvili — nine years at Riot Games. Duke MBA. 03 One team, one codebase Clinical and engineering experience. One team for implementation and support. 04 Backing & experience 500 Global Eurasia accelerator. GITA ₾150K grant received. “ Not foreign software parachuted into Georgia — built here, in your language, for your wards, by your colleagues. medimind.md"
+  },
+  {
+    "i": 6,
+    "classes": "gw-slide hxm-slide future",
+    "text": "06THE COST OF SEPARATION Separate systems. Your team connects them. Repeated entry. Separate bills. Time spent reconciling information. An illustrative fragmented setup EMRseparate system Lab systemseparate vendor Imagingseparate vendor Billing & formspaid change requests nothing talks to anything becomes What we hand you instead EMR PACS Lab Portal MediMind OS One clinical core · ready for future AI One shared foundation. Less work between systems. medimind.md"
+  },
+  {
+    "i": 7,
+    "classes": "eco-slide future",
+    "text": "07THE OPERATING SYSTEM Phase 1 · live One clinical core. Many connected products. Phase 1 in depth: connected products on one FHIR R4 core. Tap any product to see it in action. MediMind OS The hospital operating system Live MediMindConnectTelemedicineLive MediMindPACSDICOM imagingLive MediMindLabLaboratoryLive LiverRaLiver surgical AIMVP MediMindStructuralStructural heartBuilding MediMindPatient PortalPatient appBuilding MediMindAngioVascular reportingMVP medimind.md"
+  },
+  {
+    "i": 8,
+    "classes": "gw-slide hxa-slide scope-slide future",
+    "text": "08AI EVERYWHERE Phase 2 · optional AI for every department. One view for management. Phase 2 brings AI assistants into department workflows and a shared management view for the director. FOR MANAGEMENT · LIVE THE WHOLE HOSPITAL command center · beds · revenue · MOH — at a glance ERAI triage + sepsis screening ICUEarly warning, hours ahead ORAI-drafted operation notes WARDSAI handoffs + bed flow RADIOLOGYUrgent studies flagged first LAB · LISCritical values, auto-routed PHARMACYInteraction + dose checks COORDINATORCapacity foresight + slots BILLINGDenial patterns + AI appeals WAREHOUSEPredictive ordering HR · STAFFFair shifts, burnout signals PORTALPatient messages, AI-graded ★ BUILDS ON THE PHASE 1 CORE · OPTIONAL, PRICED SEPARATELY ★ Optional · when ready The shared Phase 1 core provides the foundation. Choose the department, then agree scope, validation and pricing. medimind.md"
+  },
+  {
+    "i": 9,
+    "classes": "csx-slide hx-brain future",
+    "text": "09THE AI BRAIN Phase 3 · future vision At 02:00, every clue matters. Future vision: AI connects patient context and flags concerns. Your doctors decide. 02:00am Stomach pain · ER Actual case Eyes on the heart The misdirection Hours lost The real cause found 20 days in ICU Illustrative MediMind scenario Flagged at 02:00 → Earlier review The 14-hour silence Real case. The AI response is illustrative, not a measured outcome. Where the margin comes from Practical ways to protect revenue and free team capacity medimind.md"
+  },
+  {
+    "i": 10,
+    "classes": "bm-slide hx-offer future",
+    "text": "10THE OFFER More for your hospital. The same software budget. Clinical care, laboratory, imaging and administration — connected in one operating system. What your money buys today Your current clinical system A separate lab vendor Separate imaging fees Paid change requests Separate systems and contracts = the same monthly spend What the same money buys with us EMR + Lab (LIS) + PACS + Patient Portal One system · one codebase The agreed Phase 1 scope, on one hospital operating system Ongoing tailored development within the agreed base scope Base-system updates and team support One contract, one phone number You ask We build Bring us a process you want to improve Real hospital needs guide development. We agree the base scope together and build within it at no extra charge. Our TAVI planner began with a hospital request. Watch it run medimind.md"
+  },
+  {
+    "i": 11,
+    "classes": "gw-slide gw-switch future",
+    "text": "11FREE PARALLEL EVALUATION Start with one hospital process. Compare before deciding. Your current system stays in use while your team evaluates the agreed MediMind scope for free. Agreed data access Systems run in parallel Your team verifies it Operations continue Your current system stays live while the full MediMind system runs beside it. Measure your results Visit time, repeated entry and unbilled services — compared against an agreed baseline. You decide after the proof Agree the baseline first. Decide after your team verifies the result. medimind.md"
+  },
+  {
+    "i": 12,
+    "classes": "gw-slide hxg-slide future",
+    "text": "12IN WRITING Your data. Your first version. Data, source-code rights and service terms, agreed in writing. Your data is yours Your hospital owns its data. FHIR R4 keeps it portable, with export arrangements agreed before rollout. First-version source-code ownership The first delivered agreed base-system source code belongs to your hospital under the contract. Support + price terms Support, service levels, form updates and any price-lock term are defined in your agreement. Your data and your first source-code version. Under your control. medimind.md"
+  },
+  {
+    "i": 13,
+    "classes": "hc-dark hc-close future",
+    "text": "13THE INVITATION Same spend. A generation ahead. We are allocating implementation and development capacity to our next five hospital partners. Let’s see what changes for your hospital. Same spend Agreed base included Switch when ready Free parallel evaluation 130 minutes: director + process lead → 2Map the process & agree measures → 3Send two times that work for you medimind.md"
+  },
+  {
+    "i": 14,
+    "classes": "divider-slide divider-thanks future",
+    "text": "End of the proposal Thank you. Up next Live walkthrough Architecture → medimind.md"
+  },
+  {
+    "i": 15,
+    "classes": "tour-slide future",
+    "text": "Continue→"
+  },
+  {
+    "i": 16,
+    "classes": "future",
+    "text": "AAPPENDIX · ARCHITECTURE A hospital with a body made of software. Every department. Every workflow. One AI-native codebase, built ground-up on FHIR R4. Data Flow Live ↕Skinpeople read & write ↕AI-BrainAI reasons & writes →Muscleexecutes commands ←Nerverecords every change Heart is the center.Everything else flows through it. One hospital operating system. One FHIR R4 foundation. medimind.md"
+  }
+]

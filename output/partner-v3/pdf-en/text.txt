@@ -1,0 +1,231 @@
+MediMind
+Hospital partnerships / October 2026
+A PARTNERSHIP FOR YOUR HOSPITAL
+Moretimeforcare.
+Morecontrol
+ofyourhospital.
+MediMind brings clinical care and hospital
+operations into one operating system, tailored to
+your team.
+Free to evaluate. Built around your hospital.
+THE PARTNER OFFER
+Ournext5hospitalpartners
+Your current software budget.
+A whole hospital operating system.
+01 Freeimplementation
+Migration, setup and staff training.
+02 Freetailoreddevelopment
+Ongoing development of the agreed base
+system, tailored to your hospital.
+03 Freeparallelevaluation
+Keep your current system. Compare before
+deciding.
+04 Youownthefirstversion
+Ownership of the delivered base code, set
+out in your contract.
+Price matching covers the agreed base system. Future AI services are optional and priced separately.
+5
+We are allocating our
+implementation and
+development capacity to
+five hospitals.
+THE COST OF DISCONNECTED SOFTWARE
+Whensystemsareseparate,
+yourteamdoestheconnecting.
+The same patient. Repeated typing. Missing information. Time spent chasing an answer.
+Today, between systems With one shared system
+Patient details entered again One record, available to every authorised role
+Results chased by phone Results available in the patient's chart
+Services checked against the bill by hand Clinical work connected to billing
+Management waits for separate reports One view of activity, workload and revenue
+WHAT CHANGES FOR YOUR HOSPITAL
+Acleareroperation.
+Astrongerbusiness.
+01 Protectrevenue
+Capture services and supplies. Reduce
+omissions and claims rework.
+02 Reduceadministrativework
+Less retyping and chasing. More capacity in
+the team you already have.
+03 Seethewholepicture
+Admissions, beds, workload and revenue in
+one place.
+04 Catchpreventableerrors
+Shared information and built-in checks help
+staff spot issues sooner.
+We agree the targets together, then measure the change in your hospital.
+ONE PATIENT JOURNEY
+Fromregistrationtobilling.
+Inonesystem.
+01 Register once
+02 Document care and place
+orders
+03 Read results in the same
+chart
+04 Carry the work through to
+billing MediMind / configurable clinical forms
+Laboratory, imaging, pharmacy, nursing, stock and finance share the same foundation.
+A CLOSER LOOK AT THE LABORATORY
+Theorder,thesample,theresult.
+Onecontinuousprocess.
+01
+Theorderreachesthe
+laboratory
+02
+Theteamfollowsits
+progress
+03
+Theverifiedresult
+returnstothechart
+A shared process for the doctor, the laboratory and the patient chart
+Laboratory and imaging are already operating at the GeoHospitals central hospital.
+EXPERIENCE IN GEORGIA
+Alreadyworking
+insidearealhospital.
+GeoHospitals
+The central hospital is live. The network
+rollout is proceeding in stages.
+We can arrange a reference conversation with the
+hospital team.
+25
+hospitals covered by one signed
+agreement
+1.15M
+patient records migrated
+Migration completed in July 2026: 1,147,535 records.
+THE PEOPLE BEHIND MEDIMIND
+Clinicalexperience.
+Ateamthatcandeliver.
+Dr.LashaKhoshtaria
+Co-founder / Interventional cardiologist
+Building around the work he knows from clinical
+practice.
+IrakliPkhovelishvili
+Co-founder / CEO
+Duke MBA. Nine years at Riot Games, bringing
+experience in scaling technology.
+₾150,000
+GITA grant funding received
+500
+G L O B A L
+500 Global Eurasia accelerator
+For you: a team for implementation, training and development around your needs.
+THE DIRECTION WE ARE BUILDING TOWARDS
+Onefoundation.
+Threestagesofprogress.
+01
+The offer today
+Onehospitaloperating
+system
+Clinical and administrative work on one
+foundation, adapted to your hospital.
+02
+Optional next stage
+AIforeachdepartment
+Assistants for documentation, clinical
+checks and administrative tasks. Each
+service agreed separately.
+03
+Our long-term vision
+Thehospital'sAIBrain
+A shared understanding of the hospital
+that identifies risks and prepares
+coordinated next steps.
+The base system is the starting point. AI services have separate scope, validation and pricing.
+AI
+AI BRAIN / OUR LONG-TERM VISION
+Ahospitalthatsees
+whatneedsattention.
+A critical result. A delayed task. A missing document. The
+ambition is to connect the signal with the right person and the
+next action.
+01 See the whole context
+02 Flag what needs attention
+03 Prepare the next step
+AI flags and assists. Your clinicians decide.
+Future capability. Not included in the base offer.
+YOUR EVALUATION
+Theevidencecomes
+fromyourownnumbers.
+We agree a baseline and success criteria before the evaluation starts.
+What we measure What it tells you
+Repeated entries per patient How much duplicate work disappears
+Administrative hours per 100 admissions How much capacity the team gains
+Time from discharge to a complete claim How quickly work is ready for reimbursement
+Unbilled services and returned claims Where revenue is lost or delayed
+Your current process is the baseline. Your team tests the new one. You decide whether the improvement is enough.
+A CONTROLLED TRANSITION
+Yourhospitalkeepsworking.
+Youdecidewhentoswitch.
+01 Agreethescope
+Choose the first process, the team and the success
+criteria.
+02 Preparetogether
+Map data, configure the system and train the team.
+03 Runinparallel
+Compare real work while your current system stays
+in use.
+04 Makethedecision
+Move forward only when your team accepts the
+result.
+The evaluation is free, with no obligation to buy. The rollout schedule is agreed around your hospital's readiness.
+OWNERSHIP AND CONTINUITY
+Yourdata.
+Yourfirstversion.
+01 Yourhospitalownsitsdata
+An open FHIR R4 format keeps it portable.
+02 Thefirstdeliveredversionbelongstoyou
+We transfer ownership of the agreed base-system source code under your contract.
+03 Cleartermsbeforeyoucommit
+We document the scope, price, support and ownership rights together.
+Third-party components retain their licences. Rights to later versions and optional AI services are defined separately.
+THE NEXT STEP
+Let'sstartwith
+oneprocessinyourhospital.
+25minutes
+We map the process, show the relevant system
+and agree what a useful evaluation would
+measure.
+With your director and the person who runs that process. At
+your hospital or online.
+Sendustwotimesthatworkfor
+you
+Dr. Lasha Khoshtaria
+Co-founder / Interventional cardiologist
+Call or WhatsApp
++995 598 692 484 ↗
+Email
+team@medimind.md ↗
+MediMind / Tbilisi / 2026
+DETAILS / COMMERCIAL SCOPE
+Whatyour
+partnershipincludes.
+Thebaseoffer
+Setup, data migration and team training
+Development for the agreed base scope
+Free parallel evaluation
+Ownership of the first delivered base version
+Agreedseparately
+Optional AI services and the future AI Brain
+Hardware and third-party service costs
+Support levels, price-lock term and rollout schedule
+Price matched to your current software spend for the agreed base scope. Paid service starts after acceptance and your
+decision to proceed.
+DETAILS / FOR YOUR IT TEAM
+Builtground-up
+onFHIRR4.
+Clinical data uses an open healthcare standard at its core. Departments work on the same
+model.
+Onecodebase
+A shared foundation for the hospital's clinical and
+administrative work.
+Portabledata
+FHIR R4 export, with migration and reconciliation agreed
+before rollout.
+Traceableaccess
+Roles, permissions and an audit trail of changes.
+Anagreeddeploymentmodel
+Hospital hosting, cloud or hybrid, with continuity and
+recovery planned together.
+Your IT team joins the technical review before any transition.
+

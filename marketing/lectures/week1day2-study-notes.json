@@ -1,0 +1,807 @@
+{
+  "ready": true,
+  "meta": {
+    "day": "Week 1 Day 2",
+    "date": "23 September 2026",
+    "prepared_date": "19 October 2026",
+    "destination": "/Users/toko/Desktop/500 Lectures/Week 1 Day 2 - 2026-09-23",
+    "sessions": [
+      "User Research and Interviews - Justyna Jastrzebska"
+    ],
+    "source_links": {
+      "deck_supplied": "https://docs.google.com/presentation/d/1cN1Ctl8wylEb0-6qR7id466uxaW__ocWVd3bvG6Es6U/edit"
+    },
+    "review_notes": "Reviewed all 814 recognized segments (00:00-1:07:40), all 36 slides of the supplied deck (text parsed from the browser view; PDF export needs sign-in), 68 recording frames sampled every minute plus targeted frames around the template and B2B slides, and the meeting chat (bot notices only). Three short passages were re-transcribed in isolation to check them. For the MediMind pages, the 22 September buyer-pain research (R1), the 22 September customer-interview guide (G1), the Week 2 Day 2 discovery script (W2) and the 8 October product explainer (X1) were read. No records of completed hospital interviews were found in those notes. This is a source-informed guide, not a human-verified verbatim transcript.",
+    "transcript_caution": "Automatic speech recognition can mishear names and numbers. Likely corrections: 'Chatholins' is Chet Holmes (The Ultimate Sales Machine), 'Sam Godin' is Seth Godin, 'hot jars' is Hotjar, 'Kelly Wester' is probably Kelly Wearstler. The city for the challenge dinner (about 1:01:40) is unclear in the audio. Room questions are often faint or partial. Speaker identities are not assigned. Percentages and business results told in class are the lecturer's anecdotes, not verified facts or MediMind results."
+  },
+  "pages": [
+    {
+      "title": "Week 1 Day 2: user interviews",
+      "subtitle": "Justyna Jastrzebska | One lecture recorded on 23 September 2026 | 1h 07m 40s",
+      "blocks": [
+        {
+          "type": "card",
+          "title": "The lecture in one sentence",
+          "body": "Talk to real people from the part of your funnel that is breaking, ask for stories and 'why', never sell during the interview, and turn their exact words and stories into patterns, personas and messages."
+        },
+        {
+          "type": "section",
+          "title": "Five points to remember",
+          "body": "<b>1.</b> Pick who to interview from your numbers: where do people stop moving forward? Start with the group that has the biggest problem right now (S1 47:55-55:03).<br/><b>2.</b> Three groups: never bought, bought once or tried and stopped, bought again. Each has a different thing to learn: barriers, reasons for stopping, real use (slides 6-7; S1 05:05-14:02).<br/><b>3.</b> It is a conversation, not a sales call and not a qualification call. Ask 'tell me about a time', 'why', 'show me'. Do not finish their sentences or pitch (slides 9-16; S1 14:05-23:53, 57:38-58:36).<br/><b>4.</b> Write down direct quotes and supporting stories, then group them into themes and a persona. Look for patterns, not one opinion. Her target: at least 30 interviews per segment (slides 29-35; S1 30:03-31:05, 53:00).<br/><b>5.</b> Use the stories in your messages. 'It is not about you': lead with the customer's situation, not your features (S1 31:05-47:05)."
+        },
+        {
+          "type": "section",
+          "title": "Where MediMind stands",
+          "body": "MediMind asked the hardest question in the room: <i>how do we get 30 interviews when Georgia has only so many hospital CEOs?</i> (S1 1:02:40). Her answer and what it means for us are on page 10. MediMind already has an interview guide (G1, 22 September) and a discovery-call script (W2), but the notes reviewed contain <b>no record of completed hospital interviews</b>. Pages 10-13 turn this lecture into a plan."
+        },
+        {
+          "type": "text",
+          "body": "Fast route: this page, page 4 (who to interview), page 5 (how to ask), page 10 (the Georgia question), page 13 (actions)."
+        },
+        {
+          "type": "card",
+          "title": "Scope of this pack",
+          "body": "One lecture from Recordings/week1/Day2. It does not summarize the whole week. The afternoon question-design workshop she mentions (S1 53:40) is not in the supplied recording. Lecture content and MediMind applications are labelled separately."
+        }
+      ]
+    },
+    {
+      "title": "Sources and review notes",
+      "subtitle": "S1 is the recording. D1 is the 36-slide deck. R1, G1, W2 and X1 are MediMind working documents.",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Source",
+            "What it is",
+            "Access and review"
+          ],
+          "widths": [
+            0.9,
+            2.4,
+            2.4
+          ],
+          "rows": [
+            [
+              "S1",
+              "Zoom recording, 23 September 2026, 1h 07m 40s. Audio and video have the same soundtrack and were processed once.",
+              "Transcribed locally on this Mac. All 7 chunks complete, 814 segments, every segment read."
+            ],
+            [
+              "D1",
+              "Deck: <i>500 Eurasia B11 - Justyna Jastrzebska - User Research &amp; Interviews</i> (the link supplied).",
+              "PDF export needs sign-in. Text of all 36 slides read from the browser view. Image slides checked in recording frames."
+            ],
+            [
+              "Chat",
+              "Meeting chat.",
+              "Only read.ai bot notices. No lecture content."
+            ],
+            [
+              "R1",
+              "Hospital buyer-pain research, 22 September 2026.",
+              "Read in full. Its pains are hypotheses, not interview results."
+            ],
+            [
+              "G1",
+              "MediMind customer-interview guide, 22 September 2026.",
+              "Read in full. Marked 'no interviews executed'."
+            ],
+            [
+              "W2",
+              "Week 2 Day 2 pack: discovery-call script and scorecard (29 September).",
+              "Relevant pages read."
+            ],
+            [
+              "X1",
+              "Product explainer prepared for Justyna, 8 October 2026.",
+              "Read for the offer and phases."
+            ]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "What the recording contains",
+          "body": "00:00-04:17 why and when to interview; the light-switch story. 04:17-14:02 who to talk to: three groups. 14:05-23:53 how to run the conversation. 24:00-30:12 user vs usability testing and the question bank. 30:03-31:05 documenting and downloading. 31:05-47:05 using stories in emails (long discussion with the room). 47:05-1:07:40 questions: choosing a segment from funnel numbers, 30 interviews, the interview challenge, the Georgia hospital-CEO question, competitors."
+        },
+        {
+          "type": "card",
+          "title": "Limitations",
+          "body": "The three 'Template' slides (25-27) are pictures of a table shown for about 15 seconds; only its first two questions are readable. Room voices are often faint, so some questions are partial. 'Pedro' (S1 03:17) refers to an earlier speaker not covered here. The Week 1 Day 1 pack, prepared separately, contains Justyna's live review of the MediMind homepage."
+        }
+      ]
+    },
+    {
+      "title": "Why interview, and when",
+      "subtitle": "Lecture evidence | S1 00:41-05:05 | D1 slides 3-5",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Type",
+            "Purpose",
+            "In this lecture"
+          ],
+          "widths": [
+            1,
+            2.4,
+            2
+          ],
+          "rows": [
+            [
+              "Generative",
+              "Come up with new ideas: what feature to build next, which market to enter.",
+              "Mentioned, not covered."
+            ],
+            [
+              "Evaluative",
+              "See whether what you built is wanted and valuable. Learn who they are and, above all, why they act or do not act.",
+              "The focus of the lecture (S1 01:44)."
+            ]
+          ]
+        },
+        {
+          "type": "card",
+          "title": "The light-switch story (S1 02:15-03:40)",
+          "body": "In many houses she visits, the light switch is on the far wall and the bathroom light switch is behind the door. Websites and products are the same: we decide where everything is. If people cannot find their way, 'if there is someone to blame, it's us'. Watch real people use what you built, for example with screen-recording tools such as Hotjar."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Step (slide 4)",
+            "What it means"
+          ],
+          "widths": [
+            1.5,
+            3.5
+          ],
+          "rows": [
+            [
+              "Who do you want to talk to?",
+              "Screening criteria and recruiting."
+            ],
+            [
+              "What do you want to learn?",
+              "Method and guide. Have a goal: no questions for the sake of asking."
+            ],
+            [
+              "Fieldwork",
+              "The interviews, self-reporting, debriefing."
+            ],
+            [
+              "Do something with the data",
+              "Download and analyse. She often finds companies sitting on research nobody uses (S1 01:07)."
+            ]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Talk, don't survey",
+          "body": "Surveys and forms tell you what happens, not why. 'The best way is to literally talk to people' (S1 04:17). AI can also search the places customers talk online for problems, solutions tried and why they failed (S1 04:47); use that as a starting map, not a replacement for conversations."
+        }
+      ]
+    },
+    {
+      "title": "Who to talk to",
+      "subtitle": "Lecture evidence | S1 05:05-14:02 and 47:55-55:03 | D1 slides 6-7",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Group (slide 6)",
+            "Who she includes",
+            "What to learn (slide 7)"
+          ],
+          "widths": [
+            1.4,
+            2.2,
+            2.2
+          ],
+          "rows": [
+            [
+              "1 · Never bought",
+              "Website visitors and leads who left an email or joined a webinar but took no next step.",
+              "Barriers to buying: 'I like it, but...' no money, no time, no skills. Check wrong targeting first, then whether they understand the value and feel the pain (S1 05:19-07:08)."
+            ],
+            [
+              "2 · Bought once, never came back",
+              "Also people who booked a demo or started a trial and stopped, and customers who churned.",
+              "Why they stopped. Often they never really used it: trial too short, setup too long (S1 07:19-09:08, 26:15)."
+            ],
+            [
+              "3 · Bought again",
+              "Active, repeat customers.",
+              "How they really use it. They may use it for a different job than you think; repeat that journey for others (S1 11:17-13:10)."
+            ]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Choose from your numbers, not your gut",
+          "body": "Draw your funnel and the percentage moving between steps. Her example: 7% from visit to sign-up is low, 25% from sign-up to sale is fine, so the likely problem is the wrong people at the top; interview them to check (S1 48:28-50:30). If churn is your biggest problem, start there instead: 'don't listen to what I am saying, look at your numbers' (S1 54:53). Separate funnels need separate analysis, for example developers and companies (S1 51:11). Fix one problem at a time; founders often 'fix the landing page' when the landing page is not the problem (S1 51:45-52:13)."
+        },
+        {
+          "type": "card",
+          "title": "How many?",
+          "body": "At least <b>30 interviews per segment</b> ('I would say 100'), so a pattern is not built on six people. Not 30 for every group at once: start with the group that has the biggest problem now (S1 53:00-55:03)."
+        },
+        {
+          "type": "text",
+          "body": "She also asks you to track consumption after purchase: log-ins, features used. Her Mindvalley example: about 20% of buyers consumed the digital products they bought (S1 09:30-10:05; her figure, unverified)."
+        }
+      ]
+    },
+    {
+      "title": "How to run the conversation",
+      "subtitle": "Lecture evidence | S1 14:05-23:53 | D1 slides 8-17",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Do",
+            "Don't"
+          ],
+          "widths": [
+            2.5,
+            2.5
+          ],
+          "rows": [
+            [
+              "Thank them at the start and end; make them feel seen.",
+              "Finish their sentences or correct them."
+            ],
+            [
+              "Introduce yourself, the project and the purpose.",
+              "Pitch, sell or try to convince."
+            ],
+            [
+              "Ask permission to record or take notes; say how it will be used.",
+              "Share your own opinions or knowledge of the topic."
+            ],
+            [
+              "Let them feel safe and in control of what they share; protect identities.",
+              "Look at your phone or computer."
+            ],
+            [
+              "Listen. Allow silence and pauses. She admits this is hard for problem-solvers (S1 18:29).",
+              "Suggest feelings: not 'how angry were you?' but 'what were you feeling?' (slide 14)."
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Technique",
+            "Example"
+          ],
+          "widths": [
+            1.5,
+            3.5
+          ],
+          "rows": [
+            [
+              "Tell me about a time when...",
+              "A real, recent event, not an opinion about the future."
+            ],
+            [
+              "Ask 'why', again",
+              "'Why haven't you found a solution yet?' She calls 'why' the most important question, and the reason to call rather than send a survey (S1 20:42-21:02)."
+            ],
+            [
+              "Show me / walk me through it",
+              "'Show me how you set this up.' 'Walk me through how you did the reporting.'"
+            ],
+            [
+              "Open questions",
+              "Not 'Nike or Adidas?' but 'What are your favourite sportswear brands?' A choice teaches you nothing about why."
+            ],
+            [
+              "Ask about feelings",
+              "'What were you feeling when you decided to switch to us?' People decide on emotion and justify with logic (S1 23:10)."
+            ],
+            [
+              "Get psyched for bad news",
+              "A 'no, it did not give me value' is the best outcome: you are closer to fixing it (slide 16; S1 23:22)."
+            ]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Make it feel like a conversation",
+          "body": "Adapt to culture (US, Eastern Europe, Asia differ). Frame it as helping them: 'You signed up for the demo but did not attend. What did we do wrong? What can we do better for you?' (S1 14:35-14:57). Her two Chet Holmes stories: a carpet-cleaning seller who linked clean carpets to sick days and money per employee, and a cookbook seller who called at 5 pm, when the husband would answer while dinner was being cooked (S1 15:33-17:51). The point: learn what matters to them first."
+        },
+        {
+          "type": "card",
+          "title": "Interviewing is not qualifying",
+          "body": "When a participant said they mix qualification and interviews, she said: separate them. In these calls 'we are not selling, we are not qualifying'; you learn so you can design the funnel and qualify everyone else later (S1 57:38-58:36)."
+        }
+      ]
+    },
+    {
+      "title": "The question bank",
+      "subtitle": "Lecture evidence | S1 24:00-30:12 | D1 slides 18-27",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Group",
+            "Questions from the slides",
+            "Her spoken notes"
+          ],
+          "widths": [
+            1.1,
+            2.9,
+            2.2
+          ],
+          "rows": [
+            [
+              "1 · Never bought (slide 22)",
+              "How did you find out about us? What problem are you trying to solve? What is preventing you from solving it? What other solutions are you looking at? What stopped you from buying? What matters to you when looking for a solution? What do you think about this product?",
+              "Skip questions your tracking already answers. Expect almost all to be looking at alternatives. She dislikes 'What do you think about this product?': too vague, you get 'it's interesting' (S1 25:56)."
+            ],
+            [
+              "2 · Stopped (slide 23)",
+              "What problem are you solving? Why did you stop? What made you start? Tell me 3 things you like. What should be improved? How does it make you feel? Have you bought an alternative? Which and why?",
+              "'Three things', not one. Often they never used it: test a longer trial or faster setup (S1 26:15-27:43)."
+            ],
+            [
+              "3 · Repeat (slide 24)",
+              "What do you use it for? What do you like? Anything to improve? How does it make you feel? Any alternatives? What is the #1 thing you can do now that you could not before? How would you feel if you could no longer use it?",
+              "Questions overlap on purpose; adapt them to your goal (S1 28:10)."
+            ]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "First, check where they are",
+          "body": "Do not assume they understand the product. Start with 'How familiar are you with our product?' or 'How often do you log in? Is it clear how to use it?' If a perfect-fit person did not move forward and cannot explain the product, the problem is the value message (S1 28:46-30:00)."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "User testing",
+            "Usability testing"
+          ],
+          "widths": [
+            2.5,
+            2.5
+          ],
+          "rows": [
+            [
+              "Does the user need my product? B2B: do the <b>buyer and the end user</b> need it? (slides 18-19)",
+              "Can the end user use my product?"
+            ],
+            [
+              "What this lecture covers (S1 24:09).",
+              "Not covered here."
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "body": "Template (slides 25-27, partly readable): one row per question, columns <b>Name | Question | Customer answer | Comment</b> (S1 30:07). Visible questions: '1. What's the biggest challenge you're facing as a [target demographic]? Listen for the words they use. If they deflect, keep exploring, rephrasing if necessary.' '2. When was the last time you tried to solve that problem? Listen for whether they tried in the last 6 months...'"
+        }
+      ]
+    },
+    {
+      "title": "From notes to patterns",
+      "subtitle": "Lecture evidence | S1 30:03-31:05, 39:15-39:40, ~47:00 | D1 slides 28-35",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Step",
+            "What to do"
+          ],
+          "widths": [
+            1.4,
+            3.6
+          ],
+          "rows": [
+            [
+              "Record",
+              "Record the whole interview if permitted. She suggests feeding recordings to AI to find patterns (S1 30:27). Ask for 10 minutes, but leave time for a longer talk."
+            ],
+            [
+              "Capture quotes",
+              "Note direct quotes: 'we really want to use their lingo' (S1 30:48)."
+            ],
+            [
+              "Debrief soon",
+              "Right after the interview, discuss as a team. Block 1-2 hours to download all interviews; first spend 15-20 minutes highlighting your own notes (slides 29-30)."
+            ],
+            [
+              "Play back on post-its",
+              "Be descriptive (stories, not facts), capture their words, be specific about what happened and how they felt, share visuals (slide 31)."
+            ],
+            [
+              "Build a board per person",
+              "Picture, name, then direct quotes, supporting stories, supporting learnings (slide 32)."
+            ],
+            [
+              "Group into themes",
+              "Cluster across interviews by underlying need, behaviour or desire; name each theme, e.g. Routine &amp; Lifestyle, Family, Cost of Living, Health (slide 33)."
+            ],
+            [
+              "Write the persona",
+              "Description, segment, demographics, buying behaviour, feelings, social belief, needs (slides 34-35)."
+            ]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "The two persona examples",
+          "body": "<b>Karen</b> (slide 34; S1 40:00-46:59): Asian parents in Singapore; buys on social proof, wants to try before committing, wants learning to be fun without screen-time guilt; feels accomplished when the child does well. <b>B2B Mark</b> (slide 35; ~47:00): marketing VP, pilots many products but buys few, attends a demo only when his team recommends it, wants lower CAC and to look like a thought leader. Note the B2B shape: the person who feels the pain is often not the person who signs."
+        },
+        {
+          "type": "card",
+          "title": "Why patterns",
+          "body": "'We are not going to change our website, funnel or email based on one person's opinion' (S1 19:46-19:56). The persona and the website copy should come from what repeats across interviews."
+        }
+      ]
+    },
+    {
+      "title": "Stories sell better than features",
+      "subtitle": "Lecture evidence and discussion | S1 31:05-47:05 | lecturer's opinions and anecdotes",
+      "blocks": [
+        {
+          "type": "card",
+          "title": "Her main point",
+          "body": "Use the interview material in your messages. 'People buy stories over everything' (S1 32:59). Compare 'Hi, I'm George, we work with these companies' with 'Yesterday I had a call with one of our longest customers. I asked him this and he told me this.' A participant described an AI 'brain' fed with transcripts that drafts emails; she pushed back: where does the content come from, and does it contain customer stories? (S1 31:15-32:30)."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Her idea",
+            "Example given"
+          ],
+          "widths": [
+            1.7,
+            3.3
+          ],
+          "rows": [
+            [
+              "Borrow credibility from the audience",
+              "A neuroscientist unsure what to say about himself: screenshot the YouTube comments on his talk instead (S1 33:44-34:54)."
+            ],
+            [
+              "Report what you heard",
+              "'I talked to 25 owners; most had this problem; they tried X and Y and it did not work; I built this because I had the pain myself' (S1 37:51-38:29)."
+            ],
+            [
+              "Ride a known event or name",
+              "'Five AI tools we learned about at Web Summit'; an industry leader everyone follows; a time-based campaign such as Black Friday (S1 37:00-45:11)."
+            ],
+            [
+              "It is not about you",
+              "A participant: founders' ego is the hardest thing; write the first sentences not about you (S1 42:40-43:13)."
+            ],
+            [
+              "A conversation over time",
+              "Mix story and logic across a sequence. She says it takes 25-30 touch points before a yes, and that Q&amp;A emails answering objections earn the most once trust exists (S1 46:12-47:00)."
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "body": "Treat her numbers as classroom claims, not benchmarks: 25-30 touch points, a batch company that 'doubled overnight' after adding a buy-more-credits prompt (S1 10:09-10:46), and her statement that 75% of e-commerce money is made in Black Friday week (S1 44:07), which is not supported by public retail data. The lesson is the method, not the figures."
+        }
+      ]
+    },
+    {
+      "title": "The challenge and the questions",
+      "subtitle": "Lecture evidence | S1 53:00-1:07:40",
+      "blocks": [
+        {
+          "type": "card",
+          "title": "Her challenge (S1 1:01:18-1:02:35)",
+          "body": "By the end of her two weeks with the batch: do <b>30 interviews</b>, learn about the customers, and have a <b>new funnel up and running</b> (email sequences and more, explained in the Friday 25 September funnel session). The interviews exist to feed that funnel. Prize: she takes the team to dinner in December (city unclear in the audio). Deadline as spoken: 'this Friday... or I would extend to Sunday'; the two weeks ended in early October. <b>This window has passed</b>; the method still applies."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Question from the room",
+            "Her answer"
+          ],
+          "widths": [
+            2,
+            3
+          ],
+          "rows": [
+            [
+              "Call, email or schedule? (S1 55:08)",
+              "If you have the phone number, call right away. Offer something extra (time, a discount). If you know where they work, invite them for coffee next door. A participant added: the best answers came when they got personal and friendly; trust opens people up (S1 55:17-56:45)."
+            ],
+            [
+              "10 in person or 1,000 online? (S1 56:56)",
+              "The room split; no single answer. Both have uses."
+            ],
+            [
+              "Paid interviews? (S1 58:44)",
+              "A participant said some US founders pay decision-makers for interview time and some later buy. Her answer: 'try'. The underlying message: you do not know the customer problem yet, only assumptions (S1 59:58-1:00:11)."
+            ],
+            [
+              "Is this continuous? (S1 1:00:14)",
+              "Yes. The market, competition and value change, so keep talking to customers."
+            ],
+            [
+              "Other ways to learn (S1 1:05:39)",
+              "Talk to companies, talk to your competition, book a competitor's demo call, ask what clients they serve and why clients choose them."
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "body": "Her closing: marketing and sales are psychology; human behaviour and objections do not change much (S1 1:06:31-1:06:57)."
+        }
+      ]
+    },
+    {
+      "title": "MediMind: the Georgia question",
+      "subtitle": "Lecture evidence (S1 1:02:40-1:05:30) and a MediMind working proposal",
+      "blocks": [
+        {
+          "type": "section",
+          "title": "What was asked and answered",
+          "body": "The MediMind question: how can we get 30 interviews when there are only a limited number of hospital CEOs in Georgia? Her first answer: <i>there are other people involved in the process, not just the CEO</i>. A participant added that in their experience the person who feels the pain finds the tool and takes it to the CEO. The MediMind participant replied: 'I'm not selling to the doctor or a registration clerk; I'm selling to the CEO.' Her second answer: in a program in Moscow they hosted a conference for CEOs, gave them value, and had 30 CEOs in one room. 'Everything is possible' (S1 1:02:58-1:05:30)."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Route to 30 conversations",
+            "How it fits MediMind",
+            "Counts toward"
+          ],
+          "widths": [
+            1.6,
+            3,
+            1.3
+          ],
+          "rows": [
+            [
+              "Buying committee, not only CEOs",
+              "Owners, CEOs, finance, medical directors, operations and IT leaders all shape a hospital decision (G1, R1). Interview them as separate roles.",
+              "Buyer insight"
+            ],
+            [
+              "A CEO roundtable that gives value",
+              "Host a small session on a topic hospital leaders care about (for example payment losses or reporting), with discussion, not a pitch. Each attendee is a possible follow-up interview.",
+              "Buyer insight"
+            ],
+            [
+              "End users at the anchor partner",
+              "Doctors, nurses, registration and lab staff already use MediMind. Ask how they really use it (Group 3). Their stories feed CEO messaging.",
+              "User insight"
+            ],
+            [
+              "Competitors' customers and demos",
+              "Book demos of current hospital software; ask staff at other hospitals what they use and why (S1 1:05:43).",
+              "Market insight"
+            ]
+          ]
+        },
+        {
+          "type": "card",
+          "title": "Keep the counts honest",
+          "body": "Report three numbers separately: <b>conversations</b>, <b>independent hospital organizations</b> (several branches under one buying decision count as one), and <b>buyer-role vs end-user</b> interviews. Thirty staff at one hospital is valuable user research but one buyer data point. This is a working proposal, not the lecturer's framework."
+        }
+      ]
+    },
+    {
+      "title": "MediMind: our three groups",
+      "subtitle": "MediMind working draft | Adaptation of D1 slides 6-7 and 22-24 | hypotheses to test",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Lecture group",
+            "MediMind equivalent",
+            "What to learn"
+          ],
+          "widths": [
+            1.3,
+            2.3,
+            2.4
+          ],
+          "rows": [
+            [
+              "1 · Never bought",
+              "Hospitals we met, presented to or sent the explainer to, that took no next step.",
+              "Their real top problem in their words; what blocks a parallel evaluation; what else they are looking at; whether they understood the offer."
+            ],
+            [
+              "2 · Tried and stopped",
+              "Hospitals that once started evaluating or replacing software and stalled, with us or any vendor; staff who stopped using a MediMind feature.",
+              "Why it stalled: who vetoed, what risk they feared, what proof was missing (R1 objection A)."
+            ],
+            [
+              "3 · Use it again and again",
+              "Leaders and staff at the anchor partner who use MediMind daily.",
+              "How they really use it; the #1 thing they can now do that they could not before; how they would feel if it went away."
+            ]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Which group first?",
+          "body": "Her rule: start where the funnel breaks. The last documented MediMind bottleneck is <b>winning evaluations beyond the anchor partner</b> (W2 metric; verify it is still true). That points to Groups 1 and 2 as buyer interviews. Group 3 runs in parallel because access is easy and its stories make the buyer conversations and website stronger."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Her two tests (slides 18-19)",
+            "MediMind today",
+            "Gap"
+          ],
+          "widths": [
+            1.5,
+            2.6,
+            1.9
+          ],
+          "rows": [
+            [
+              "Usability: can the end user use it?",
+              "Hospital testers already report problems through the hospital task tracker; fixes are made from those reports.",
+              "Strong channel; it measures usability, not need."
+            ],
+            [
+              "User testing: do the buyer and end user need it?",
+              "Buyer needs are hypotheses in R1. No completed buyer interviews found.",
+              "This lecture's main gap for us."
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "body": "Every MediMind interview: ask consent to record, never collect identifiable patient information, and only put recordings into AI tools the hospital and MediMind have approved."
+        }
+      ]
+    },
+    {
+      "title": "MediMind: the interview kit",
+      "subtitle": "MediMind working draft | Builds on G1 and W2; adds the lecture's techniques | not to be sent automatically",
+      "blocks": [
+        {
+          "type": "section",
+          "title": "Buyer interview (hospital leader, about 20 minutes)",
+          "body": "<b>Open:</b> 'We are learning where hospital work and software create unnecessary effort and cost. No right answers, and this is not a sales call. May I take notes?'<br/><b>1.</b> What's the biggest challenge you are responsible for this year? <i>(listen for their words)</i><br/><b>2.</b> Tell me about the last time your systems made that harder. What happened?<br/><b>3.</b> Why hasn't it been solved yet? What did you try? <i>(ask 'why' again)</i><br/><b>4.</b> When did you last try to change software? Who decided, and why did it go ahead or stop?<br/><b>5.</b> What are you looking at right now as alternatives?<br/><b>6.</b> What would you have to see before testing a new system alongside the old one?<br/><b>Close:</b> 'Who else sees this differently that I should talk to?'"
+        },
+        {
+          "type": "section",
+          "title": "End-user interview (anchor partner staff, 10-15 minutes)",
+          "body": "<b>1.</b> Show me how you did [registration / an order / a lab result] this morning. <i>(watch, do not help)</i><br/><b>2.</b> Tell me about a time it slowed you down. What were you feeling?<br/><b>3.</b> Tell me 3 things you like and 1 you would change.<br/><b>4.</b> What can you do now that you could not do before?<br/><b>5.</b> How would you feel if you went back to the old system?"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Note sheet column",
+            "What goes in it"
+          ],
+          "widths": [
+            1.5,
+            3.5
+          ],
+          "rows": [
+            [
+              "Name / code",
+              "Anonymised organization code, role, buyer or end user, independent or branch."
+            ],
+            [
+              "Question / customer answer",
+              "Her template (S1 30:07): one row per question."
+            ],
+            [
+              "Direct quote",
+              "Exact words, with time or note location. Never rewrite."
+            ],
+            [
+              "Supporting story",
+              "The incident they told, step by step."
+            ],
+            [
+              "Comment / learning",
+              "Your interpretation, kept apart from what they said."
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "body": "Do not mention MediMind's features until the end, and only if they ask. A compliment is not evidence of need (G1). Use the full question set in G1 for deeper calls and the W2 scorecard only for later sales calls, never in these interviews."
+        }
+      ]
+    },
+    {
+      "title": "What to do next",
+      "subtitle": "Lecture asks and a MediMind action draft | prepared 19 October 2026",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Action",
+            "Why",
+            "Done when"
+          ],
+          "widths": [
+            2.2,
+            1.8,
+            1.8
+          ],
+          "rows": [
+            [
+              "Write down what the anchor partner's leaders said when they chose MediMind, in their words.",
+              "Group 3 story; also missing in the Week 4 company brief.",
+              "Three direct quotes saved, with permission noted."
+            ],
+            [
+              "Do 5 end-user 'show me' interviews at the anchor partner.",
+              "Easy access; real stories; tests the kit.",
+              "5 note sheets plus one download board."
+            ],
+            [
+              "List every hospital leader we have met who did not move forward (Group 1 and 2).",
+              "Her rule: start where the funnel breaks.",
+              "A list with role, organization and last contact."
+            ],
+            [
+              "Book the first 5 buyer interviews from that list.",
+              "First step toward 30; count independent hospitals.",
+              "5 calendar entries."
+            ],
+            [
+              "Draft one value-first roundtable invitation for hospital leaders.",
+              "Her route to many CEOs at once.",
+              "A draft reviewed by the team; not sent automatically."
+            ],
+            [
+              "After 10 interviews, group quotes into themes and update R1.",
+              "Patterns, not opinions.",
+              "R1 pains marked confirmed, changed or dropped."
+            ]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Questions for Justyna or a mentor",
+          "body": "<b>1.</b> In a market with few hospitals, what counts as enough interviews per segment: people or organizations?<br/><b>2.</b> How would you run a CEO roundtable in Georgia so it gives value without becoming a pitch?<br/><b>3.</b> How should end-user stories from one anchor hospital be used in messages to CEOs elsewhere?"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "To rewatch",
+            "Recording time"
+          ],
+          "widths": [
+            3.5,
+            1.2
+          ],
+          "rows": [
+            [
+              "Three groups and what to learn",
+              "05:05-14:02"
+            ],
+            [
+              "Do's, don'ts and techniques",
+              "18:03-23:53"
+            ],
+            [
+              "Question bank and 'check where they are'",
+              "24:15-30:12"
+            ],
+            [
+              "Choose the segment from funnel numbers",
+              "47:55-55:03"
+            ],
+            [
+              "The challenge",
+              "1:01:18-1:02:35"
+            ],
+            [
+              "The Georgia hospital-CEO question",
+              "1:02:40-1:05:30"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

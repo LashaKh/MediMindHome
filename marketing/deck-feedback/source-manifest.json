@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "capturedLocal": "2026-10-23T00:33:16.540429+04:00",
+  "sources": [
+    {
+      "person": "Justina Jastrzebska",
+      "sourceDate": "2026-10-20",
+      "sourceType": "supplied transcript",
+      "originalPath": "/Users/toko/Desktop/20261020_medimind_justina_jastrzebska_transcript[processed_20261020].txt",
+      "repositoryPath": "marketing/deck-feedback/sources/2026-10-20-justina-jastrzebska-transcript.txt",
+      "brainPath": "/Users/toko/Desktop/Brain/01 - Projects/MediMind/Marketing Archive/Deck Feedback/Sources/2026-10-20 Justina Jastrzebska Transcript.txt",
+      "sha256": "f374a67ad3096f3ea6c843ecd95d90970555bfe91bcbd051bbd283ed16951967",
+      "mirrorsMatch": true,
+      "independentlyVerifiedCommercialOrExternalClaims": false
+    },
+    {
+      "person": "Nicholas Ho",
+      "sourceDate": "2026-10-21",
+      "sourceType": "supplied meeting-note export, underlying transcript not supplied",
+      "originalPath": "/Users/toko/Desktop/feedbakc /2026-10-21 Nicholas Ho MediMind Mentor - notes.md",
+      "repositoryPath": "marketing/deck-feedback/sources/2026-10-21-nicholas-ho-notes.md",
+      "brainPath": "/Users/toko/Desktop/Brain/01 - Projects/MediMind/Marketing Archive/Deck Feedback/Sources/2026-10-21 Nicholas Ho MediMind Mentor - Notes.md",
+      "sha256": "0fe0cbe8a27f39ade9a78552a907c921eb53c1d54e9bff49270cb1e427ca2074",
+      "mirrorsMatch": true,
+      "independentlyVerifiedCommercialOrExternalClaims": false
+    },
+    {
+      "person": "Brianna Salinas",
+      "sourceDate": "2026-10-22",
+      "sourceType": "supplied meeting-note export, underlying transcript not supplied",
+      "originalPath": "/Users/toko/Desktop/feedbakc /2026-10-22 Brianna Salinas MediMind Office Hours - notes.md",
+      "repositoryPath": "marketing/deck-feedback/sources/2026-10-22-brianna-salinas-notes.md",
+      "brainPath": "/Users/toko/Desktop/Brain/01 - Projects/MediMind/Marketing Archive/Deck Feedback/Sources/2026-10-22 Brianna Salinas MediMind Office Hours - Notes.md",
+      "sha256": "24dfe3fdc264eda63bf81e9549054d0bb6f93a6d87370c13d3038bb57e56d600",
+      "mirrorsMatch": true,
+      "independentlyVerifiedCommercialOrExternalClaims": false
+    },
+    {
+      "person": "Irakli",
+      "sourceDate": "2026-10-23",
+      "sourceType": "founder-pasted proposed outline",
+      "originalPath": null,
+      "repositoryPath": "marketing/deck-feedback/sources/2026-10-23-irakli-deck-outline.md",
+      "brainPath": "/Users/toko/Desktop/Brain/01 - Projects/MediMind/Marketing Archive/Deck Feedback/Sources/2026-10-23 Irakli Deck Outline.md",
+      "sha256": "ff353b26b384346bdf7fbb0d8417884da3bbc19c7d7c9f7febaa13d4c3280af6",
+      "mirrorsMatch": true,
+      "independentlyVerifiedCommercialOrExternalClaims": false
+    }
+  ],
+  "workingDeck": {
+    "path": "public/hospitals.html",
+    "sha256AtReferenceCapture": "a42fb2067f3b1fff2b844917e409877e0a6349eb6114fe49161f58b0d80628c4",
+    "notEquivalentTo": [
+      "public/deck.html",
+      "public/partner.html"
+    ]
+  },
+  "priorApplicationAnalysis": "output/hospitals-justina/feedback-analysis.txt",
+  "brainIndex": "/Users/toko/Desktop/Brain/01 - Projects/MediMind/Marketing Archive/Deck Feedback/Deck Feedback - Start Here.md",
+  "newDeckThreadId": "01a16554-705c-7ba1-baa6-4895abfe2de3",
+  "scope": "Reference archive and analysis only; public deck and commercial terms unchanged by this task; local preview server relaunched",
+  "externalClaimsStatus": "User-supplied KLAS, Marburger Bund, PLOS and court statements retained as source leads, not certified facts; bounded initial searches did not constitute full primary-source verification.",
+  "deckChatProject": "medplum_medimind",
+  "archivedMisplacedThreadId": "01a1654a-7b25-7361-a079-c6b25d724d01",
+  "chatLocationCorrection": "2026-10-23: founder requested the deck-work chat in medplum_medimind; context supplied to a replacement there, original landing-page chat archived."
+}

@@ -1,0 +1,84 @@
+{
+  "statements": [
+    [
+      "After studying your workflows, we launch MediMind tailored to your hospital within two weeks.",
+      "თქვენი სამუშაო პროცესების შესწავლის შემდეგ, 2 კვირაში მორგებულ MediMind-ს ვუშვებთ."
+    ],
+    [
+      "Your team spends a few hours in MediMind, trying workflows with real patient cases to see what is possible.",
+      "თქვენი გუნდი რამდენიმე საათი მუშაობს MediMind-ში და რეალური პაციენტების მაგალითებზე სამუშაო პროცესებს ამოწმებს."
+    ],
+    [
+      "Only after you agree that MediMind is clearly better than your current system do we discuss partnership terms and commitments.",
+      "პარტნიორობის პირობებსა და ვალდებულებებზე მხოლოდ მაშინ ვსაუბრობთ, როცა დარწმუნდებით, რომ MediMind თქვენს არსებულ სისტემას აშკარად სჯობს."
+    ]
+  ],
+  "html_replacements": [
+    [
+      "Launched in 15 days.",
+      "Launched in two weeks."
+    ],
+    [
+      "15 დღეში.",
+      "2 კვირაში."
+    ],
+    [
+      ">We launch</span>",
+      ">We launch in two weeks</span>"
+    ],
+    [
+      ">ჩვენ ვუშვებთ</span>",
+      ">2 კვირაში ვუშვებთ</span>"
+    ],
+    [
+      ">You try it</span>",
+      ">You try it yourself</span>"
+    ],
+    [
+      ">თქვენ გამოსცდით</span>",
+      ">თქვენ თავად ცდით</span>"
+    ],
+    [
+      ">You decide</span>",
+      ">Then we discuss partnership</span>"
+    ],
+    [
+      ">თქვენ წყვეტთ</span>",
+      ">პარტნიორობაზე ვსაუბრობთ</span>"
+    ],
+    [
+      "Tailored and launched alongside your system in 15 days",
+      "Tailored and launched alongside your system in two weeks"
+    ],
+    [
+      "თქვენზე მორგებული სისტემა 15 დღეში",
+      "თქვენზე მორგებული სისტემა 2 კვირაში"
+    ],
+    [
+      "The hospital tests every workflow it needs and compares the systems itself.",
+      "Its team spends a few hours walking through real patient cases and workflows in MediMind to see what is possible."
+    ],
+    [
+      "კლინიკა თავად ამოწმებს ყველა საჭირო სამუშაო პროცესს და სისტემებს ერთმანეთს ადარებს.",
+      "კლინიკის გუნდი რამდენიმე საათს უთმობს MediMind-ში რეალური პაციენტების შემთხვევებისა და სამუშაო პროცესების გავლას, რათა თავად ნახოს სისტემის შესაძლებლობები."
+    ],
+    [
+      "The tailored system launches in parallel in 15 days.",
+      "After we study the hospital’s current workflows, we launch its tailored system in parallel within two weeks."
+    ],
+    [
+      "კლინიკაზე მორგებულ MediMind-ს 15 დღეში პარალელურად ვუშვებთ.",
+      "კლინიკის სამუშაო პროცესების შესწავლის შემდეგ, 2 კვირაში მორგებულ MediMind-ს პარალელურად ვუშვებთ."
+    ]
+  ],
+  "js_replacements": [
+    [
+      "We launch MediMind tailored to your hospital in parallel within 15 days. Tailoring, launch, training and evaluation are free, with no obligation to buy. You keep using your current software. We discuss the partnership after your team has seen for itself that MediMind is clearly better for your hospital. You decide whether and when to transition.",
+      "After studying your current workflows, we launch a tailored system in parallel within two weeks. Your team spends a few hours trying real patient cases and workflows in MediMind. We discuss partnership terms and commitments only after you agree that our system is clearly better for your hospital. Tailoring, launch, training and evaluation are free, with no obligation to buy. You keep using your current software and decide whether and when to transition."
+    ],
+    [
+      "თქვენს კლინიკაზე მორგებულ MediMind-ს 15 დღეში პარალელურად ვუშვებთ. მორგება, გაშვება, გუნდის სწავლება და გამოცდა უფასოა. ამ დროს არსებული პროგრამით მუშაობას აგრძელებთ. შეძენა არ გევალებათ. პარტნიორობაზე მას შემდეგ ვსაუბრობთ, რაც თქვენი გუნდი თავად ნახავს, რომ MediMind თქვენი კლინიკისთვის აშკარად უკეთესია. გადახვალთ თუ არა MediMind-ზე და როდის, თავად წყვეტთ.",
+      "თქვენი სამუშაო პროცესების შესწავლის შემდეგ, 2 კვირაში მორგებულ სისტემას ვუშვებთ. თქვენი გუნდი რამდენიმე საათს უთმობს რეალური პაციენტების მაგალითებზე სამუშაო პროცესების გამოცდას. პარტნიორობის პირობებსა და ვალდებულებებზე მხოლოდ მაშინ ვსაუბრობთ, როცა დარწმუნდებით, რომ MediMind თქვენს არსებულ სისტემას აშკარად სჯობს. მორგება, გაშვება, გუნდის სწავლება და გამოცდა უფასოა. შეძენა არ გევალებათ. არსებული პროგრამით მუშაობას აგრძელებთ და MediMind-ზე გადასვლას თავად წყვეტთ."
+    ]
+  ]
+}

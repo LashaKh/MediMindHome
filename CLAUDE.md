@@ -82,6 +82,17 @@ netlify.toml                            Cache headers; deck.html is no-store
 
 ## Pitch deck rules (READ BEFORE EDITING `deck.html`)
 
+### Hospital deck feedback references (2026-10-23)
+
+Before improving `public/hospitals.html` or a specific hospital-sales slide, read
+`marketing/deck-feedback/README.md`, the combined revision brief and the relevant
+row in `marketing/deck-feedback/slide-reference-map.md`. They preserve Justina,
+Nicholas Ho, Brianna Salinas and Irakli's feedback, source timestamps and unresolved
+offer choices. Brain entry: `Marketing Archive/Deck Feedback/Deck Feedback - Start Here.md`.
+Do not confuse `hospitals.html` with the investor `deck.html` or `partner.html`.
+For simultaneous chats, claim separate slide sections before editing the shared
+HTML; preserve existing changes and avoid concurrent whole-deck rewrites.
+
 The deck has been through 8 mobile-native passes. Future agents must preserve them.
 
 ### 1. Asset paths

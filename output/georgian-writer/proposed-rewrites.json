@@ -1,0 +1,488 @@
+[
+  {
+    "id": "ka-011",
+    "old_html": "განმეორებითი სამუშაო ყველა განყოფილებას ტვირთავს — რეგისტრატურიდან ფინანსებამდე.",
+    "new_html": "ერთი და იმავე საქმის გამეორება ყველა განყოფილებას ტვირთავს — რეგისტრატურიდან ფინანსებამდე.",
+    "reason": "Replaces an abstract noun with a familiar description of repeated work."
+  },
+  {
+    "id": "ka-015",
+    "old_html": "სისტემა შემოსავალს, ხარჯსა და დანაკარგს ერთიანად ვერ აანალიზებს.",
+    "new_html": "სისტემა შემოსავალს, ხარჯებსა და დანაკარგებს ერთად ვერ აანალიზებს.",
+    "reason": "Uses a more natural Georgian sentence without changing the analytical limitation."
+  },
+  {
+    "id": "ka-021",
+    "old_html": "საილუსტრაციო სიტუაცია",
+    "new_html": "მაგალითად",
+    "reason": "Introduces an illustrative scenario in ordinary language."
+  },
+  {
+    "id": "ka-023",
+    "old_html": "ჩანაწერი გადამოწმებას საჭიროებს",
+    "new_html": "ჩანაწერი გადასამოწმებელია",
+    "reason": "Uses a shorter, familiar way to say that the record needs review."
+  },
+  {
+    "id": "ka-026",
+    "old_html": "გუნდს ჩანაწერების გადამოწმება და ახსნა უწევს; კლინიკა თანხის მიღებას ელოდება.",
+    "new_html": "გუნდს ჩანაწერების გადამოწმება და განმარტება უწევს, კლინიკა კი თანხას ელოდება.",
+    "reason": "Clarifies the two actors and keeps the payment delay explicit."
+  },
+  {
+    "id": "ka-027",
+    "old_html": "საილუსტრაციო სიტუაცია",
+    "new_html": "მაგალითად",
+    "reason": "Introduces an illustrative scenario in ordinary language."
+  },
+  {
+    "id": "ka-029",
+    "old_html": "იგივე სამუშაო მეორდება",
+    "new_html": "იგივე საქმე თავიდან კეთდება",
+    "reason": "Makes repeated work immediately understandable."
+  },
+  {
+    "id": "ka-032",
+    "old_html": "დამატებითი სამუშაო რეგისტრატურას, ექიმებს, ექთნებსა და ფინანსებს ტვირთავს და ისედაც დატვირთულ დღეს ამძიმებს.",
+    "new_html": "რეგისტრატურას, ექიმებს, ექთნებსა და ფინანსურ გუნდს დამატებითი სამუშაო ემატება — მათი დღე ისედაც დატვირთულია.",
+    "reason": "Names the people affected and removes repetitive wording about workload."
+  },
+  {
+    "id": "ka-033",
+    "old_html": "საილუსტრაციო სიტუაცია",
+    "new_html": "მაგალითად",
+    "reason": "Introduces an illustrative scenario in ordinary language."
+  },
+  {
+    "id": "ka-038",
+    "old_html": "ხელმძღვანელს უჭირს, დაინახოს სად იზრდება ხარჯი ან იკარგება შემოსავალი; გადაწყვეტილებისთვის დამატებითი მოკვლევა ხდება საჭირო.",
+    "new_html": "ხელმძღვანელს უჭირს იმის დანახვა, სად იზრდება ხარჯი ან იკარგება შემოსავალი. გადაწყვეტილების მისაღებად დამატებითი მოკვლევა სჭირდება.",
+    "reason": "Splits an abstract sentence into the visibility problem and its consequence."
+  },
+  {
+    "id": "ka-039",
+    "old_html": "საილუსტრაციო სიტუაცია",
+    "new_html": "მაგალითად",
+    "reason": "Introduces an illustrative scenario in ordinary language."
+  },
+  {
+    "id": "ka-041",
+    "old_html": "პრიორიტეტებს მომწოდებელი წყვეტს",
+    "new_html": "პრიორიტეტებს მომწოდებელი ადგენს",
+    "reason": "Uses the natural Georgian verb for setting priorities."
+  },
+  {
+    "id": "ka-044",
+    "old_html": "სამუშაო პროცესის გაუმჯობესება სხვის პრიორიტეტებსა და დამატებით ბიუჯეტზე ხდება დამოკიდებული.",
+    "new_html": "სამუშაო პროცესის გასაუმჯობესებლად სხვის პრიორიტეტებსა და დამატებით ბიუჯეტზე ხართ დამოკიდებული.",
+    "reason": "Makes the dependence concrete without adding a new restriction."
+  },
+  {
+    "id": "ka-055",
+    "old_html": "ყველა მოთხოვნილ ფუნქციასა და ცვლილებას — <strong>დამატებითი განვითარების საფასურის გარეშე</strong>, მთელი თანამშრომლობის განმავლობაში.",
+    "new_html": "ყველა მოთხოვნილი ფუნქცია და ცვლილება — <strong>განვითარების დამატებითი საფასურის გარეშე</strong>, მთელი თანამშრომლობის განმავლობაში.",
+    "reason": "Fixes the dangling case while keeping every request, development fees and the full partnership period."
+  },
+  {
+    "id": "ka-057",
+    "old_html": "ჯერ გამოცდით.<br>შემდეგ გადაწყვიტეთ.",
+    "new_html": "ჯერ გამოცადეთ.<br>შემდეგ გადაწყვიტეთ.",
+    "reason": "Keeps both instructions in the same natural imperative form."
+  },
+  {
+    "id": "ka-060",
+    "old_html": "ცალკეული სისტემებით<small>ფრაგმენტირებული მიდგომის მაგალითი</small>",
+    "new_html": "ცალკეული სისტემები<small>ერთმანეთისგან განცალკევებული პროგრამების მაგალითი</small>",
+    "reason": "Uses a direct comparison label and explains fragmented in familiar language."
+  },
+  {
+    "id": "ka-063",
+    "old_html": "ცალკეული სისტემებით",
+    "new_html": "ცალკეული სისტემები",
+    "reason": "Uses a direct label consistently across the comparison."
+  },
+  {
+    "id": "ka-066",
+    "old_html": "ცალკეული სისტემებით",
+    "new_html": "ცალკეული სისტემები",
+    "reason": "Uses a direct label consistently across the comparison."
+  },
+  {
+    "id": "ka-068",
+    "old_html": "შეუზღუდავი განვითარება.<br>დამატებითი საფასურის გარეშე.",
+    "new_html": "პროგრამის შეუზღუდავი განვითარება.<br>დამატებითი საფასურის გარეშე.",
+    "reason": "Clarifies what is developed while preserving the existing unlimited-development claim."
+  },
+  {
+    "id": "ka-069",
+    "old_html": "ცალკეული სისტემებით",
+    "new_html": "ცალკეული სისტემები",
+    "reason": "Uses a direct label consistently across the comparison."
+  },
+  {
+    "id": "ka-071",
+    "old_html": "შემოსავალი და ხარჯი განყოფილებების მიხედვით.",
+    "new_html": "შემოსავალი და ხარჯები — ერთად, განყოფილებების მიხედვით.",
+    "reason": "Makes the shared financial view explicit, as in the English source."
+  },
+  {
+    "id": "ka-072",
+    "old_html": "ცალკეული სისტემებით",
+    "new_html": "ცალკეული სისტემები",
+    "reason": "Uses a direct label consistently across the comparison."
+  },
+  {
+    "id": "ka-073",
+    "old_html": "გუნდი პროგრამის შეზღუდვებს ერგება.",
+    "new_html": "თანამშრომლები მუშაობას პროგრამის შეზღუდვებს არგებენ.",
+    "reason": "Explains what adapting to software limits means for staff."
+  },
+  {
+    "id": "ka-075",
+    "old_html": "ცალკეული სისტემებით",
+    "new_html": "ცალკეული სისტემები",
+    "reason": "Uses a direct label consistently across the comparison."
+  },
+  {
+    "id": "ka-076",
+    "old_html": "პროგრამებს შორის განმეორებითი შეყვანა.",
+    "new_html": "სხვადასხვა პროგრამაში მონაცემებს თავიდან შეჰყავთ.",
+    "reason": "Replaces a translated noun phrase with a clear action."
+  },
+  {
+    "id": "ka-078",
+    "old_html": "ცალკეული სისტემებით",
+    "new_html": "ცალკეული სისტემები",
+    "reason": "Uses a direct label consistently across the comparison."
+  },
+  {
+    "id": "ka-080",
+    "old_html": "მონაცემები საერთაშორისო სტანდარტით: FHIR R4.",
+    "new_html": "კლინიკური მონაცემები საერთაშორისო FHIR R4 სტანდარტით.",
+    "reason": "States the subject and standard clearly, preserving the English clinical-data scope."
+  },
+  {
+    "id": "ka-081",
+    "old_html": "ცალკეული სისტემებით",
+    "new_html": "ცალკეული სისტემები",
+    "reason": "Uses a direct label consistently across the comparison."
+  },
+  {
+    "id": "ka-082",
+    "old_html": "ძველი, დაყოფილი სისტემები AI-ისთვის მზად არ არის.",
+    "new_html": "ძველი, ერთმანეთისგან განცალკევებული სისტემები AI-ისთვის მზად არ არის.",
+    "reason": "Explains fragmented systems without the awkward literal adjective."
+  },
+  {
+    "id": "ka-094",
+    "old_html": "გაესაუბრეთ GeoHospitals-ის გუნდს მათი გამოცდილების შესახებ.",
+    "new_html": "ჰკითხეთ GeoHospitals-ის გუნდს, როგორია ჩვენთან მუშაობა.",
+    "reason": "Turns a formal invitation into a direct question about the same partner experience."
+  },
+  {
+    "id": "ka-098",
+    "old_html": "MediMind-ის შექმნის საფუძველი",
+    "new_html": "MediMind-ის საფუძველი",
+    "reason": "Removes an unnecessary abstract noun while keeping the foundation meaning."
+  },
+  {
+    "id": "ka-104",
+    "old_html": "MediMind-ს საავადმყოფოს შიგნიდან ქმნის.",
+    "new_html": "MediMind-ს მოქმედი ექიმის გამოცდილებით ქმნის.",
+    "reason": "Explains the inside-the-hospital idea through the existing practising-physician role."
+  },
+  {
+    "id": "ka-113",
+    "old_html": "საილუსტრაციო მაგალითი · ერთმა მომწოდებელმა შეიძლება რამდენიმე სფერო დაფაროს.",
+    "new_html": "მაგალითი · ერთი მომწოდებელი შეიძლება რამდენიმე მიმართულებას ემსახურებოდეს.",
+    "reason": "Keeps the example and may-cover-several-areas qualification in natural language."
+  },
+  {
+    "id": "ka-129",
+    "old_html": "საერთო მონაცემები · ერთიანი კოდი",
+    "new_html": "საერთო მონაცემები · პროგრამის ერთიანი კოდი",
+    "reason": "Clarifies codebase without changing code ownership or architecture."
+  },
+  {
+    "id": "ka-132",
+    "old_html": "ვინ მიჰყვება საკითხს?",
+    "new_html": "ვინ მიხედავს საკითხს ბოლომდე?",
+    "reason": "Uses a natural question for following an issue through."
+  },
+  {
+    "id": "ka-137",
+    "old_html": "ნაკლები დაკარგული<br>შემოსავალი.",
+    "new_html": "ნაკლები შემოსავალი<br>იკარგება.",
+    "reason": "Uses a natural verb instead of an awkward adjective stack."
+  },
+  {
+    "id": "ka-138",
+    "old_html": "ხედავთ აღურიცხავ მომსახურებას და ანაზღაურების შეფერხების მიზეზებს.",
+    "new_html": "ხედავთ, რომელი მომსახურება არ აღირიცხა და რატომ ფერხდება ანაზღაურება.",
+    "reason": "Explains the visible information through two concrete questions."
+  },
+  {
+    "id": "ka-144",
+    "old_html": "ექიმები, ექთნები და ადმინისტრაცია ნაკლებ დროს ხარჯავენ განმეორებით სამუშაოზე.",
+    "new_html": "ექიმები, ექთნები და ადმინისტრაცია ნაკლებ დროს ხარჯავენ ერთი და იმავე საქმის გამეორებაზე.",
+    "reason": "Explains repeated work in familiar words without changing the benefit."
+  },
+  {
+    "id": "ka-152",
+    "old_html": "აირჩიეთ შედეგი და ნახეთ პროცესი.",
+    "new_html": "აირჩიეთ სარგებელი და ნახეთ, როგორ მუშაობს პროცესი.",
+    "reason": "Clarifies the interaction and uses benefit rather than implying a measured outcome."
+  },
+  {
+    "id": "ka-162",
+    "old_html": "გუნდისთვის გაზიარება",
+    "new_html": "გუნდთან გაზიარება",
+    "reason": "Uses the natural Georgian construction for sharing information with the team."
+  },
+  {
+    "id": "ka-164",
+    "old_html": "პაციენტის მონაცემები ერთად",
+    "new_html": "პაციენტის მონაცემები ერთ სივრცეში",
+    "reason": "Makes information together concrete without adding a new capability."
+  },
+  {
+    "id": "ka-167",
+    "old_html": "AI თანაშემწეები არჩევითია. ხელმისაწვდომობა, მოცულობა და ფასი ცალკე თანხმდება.",
+    "new_html": "AI თანაშემწეების დამატება არჩევითია. ხელმისაწვდომობას, გამოყენების ფარგლებსა და ფასს ცალკე ვათანხმებთ.",
+    "reason": "Explains optional AI and scope more plainly while retaining every separate-agreement condition."
+  },
+  {
+    "id": "ka-172",
+    "old_html": "მოქმედი სისტემა უცვლელია. MediMind-ს პარალელურად ვამზადებთ.",
+    "new_html": "თქვენ ისევ არსებული პროგრამით მუშაობთ. ჩვენ ამ დროს MediMind-ს ვამზადებთ.",
+    "reason": "Names what the hospital and MediMind each do during parallel preparation."
+  },
+  {
+    "id": "ka-182",
+    "old_html": "სისტემას ვაწყობთ, თქვენს პროცესებზე ვარგებთ და გუნდს ვასწავლით.",
+    "new_html": "სისტემას ვამართავთ, თქვენს სამუშაო პროცესებს ვარგებთ და გუნდს მის გამოყენებას ვასწავლით.",
+    "reason": "Specifies configuration and training in ordinary language."
+  },
+  {
+    "id": "ka-184",
+    "old_html": "მოქმედი პროგრამითა და პროცესებით ჩვეულებრივ მუშაობთ.",
+    "new_html": "არსებული პროგრამით მუშაობას ჩვეული წესით აგრძელებთ.",
+    "reason": "Expresses continued software and workflow use as working in the usual way."
+  },
+  {
+    "id": "ka-188",
+    "old_html": "თავად ცდით ყველა საჭირო სამუშაო პროცესს და ადარებთ მოქმედ სისტემას.",
+    "new_html": "თქვენთვის საჭირო ყველა სამუშაო პროცესს თავად ამოწმებთ და არსებულ სისტემას ადარებთ.",
+    "reason": "Uses natural word order and preserves every required workflow and the comparison."
+  },
+  {
+    "id": "ka-190",
+    "old_html": "გადასვლის მოცულობასა და გეგმას თქვენთან ერთად ვათანხმებთ.",
+    "new_html": "ერთად ვათანხმებთ, რას მოიცავს ახალ სისტემაზე გადასვლა და როგორ წარიმართება ის.",
+    "reason": "Explains transition scope and plan without bureaucratic noun stacking."
+  },
+  {
+    "id": "ka-193",
+    "old_html": "გამართვა, მორგება, სწავლება და შეფასება — უფასოდ.",
+    "new_html": "გამართვა, თქვენს საჭიროებებზე მორგება, სწავლება და შეფასება — უფასოა.",
+    "reason": "Clarifies tailoring and completes the sentence while retaining all free activities."
+  },
+  {
+    "id": "ka-194",
+    "old_html": "შეძენის ვალდებულების გარეშე.",
+    "new_html": "შეძენა არ გევალებათ.",
+    "reason": "States the absence of a purchase obligation directly."
+  },
+  {
+    "id": "ka-200",
+    "old_html": "მკურნალობა და მართვა, თქვენს პროცესებზე მორგებული.",
+    "new_html": "მკურნალობა და კლინიკის მართვა — თქვენს სამუშაო პროცესებზე მორგებული.",
+    "reason": "Names hospital operations and workflows more clearly."
+  },
+  {
+    "id": "ka-216",
+    "old_html": "კლინიკური და ადმინისტრაციული საქმეების გამარტივება.",
+    "new_html": "კლინიკური და ადმინისტრაციული სამუშაოს გამარტივება.",
+    "reason": "Replaces the vague word for affairs with work."
+  },
+  {
+    "id": "ka-220",
+    "old_html": "მთელი კლინიკის კოორდინაცია ერთიან კონტექსტში.",
+    "new_html": "მთელი კლინიკის კოორდინაცია ერთ საერთო სურათზე დაყრდნობით.",
+    "reason": "Explains shared context through an ordinary-language shared-picture metaphor."
+  },
+  {
+    "id": "ka-223",
+    "old_html": "სრული სისტემა დამოუკიდებლად მუშაობს. AI-ს დამატებას თქვენთან ერთად ვგეგმავთ.",
+    "new_html": "სისტემა დამოუკიდებლად და სრულფასოვნად მუშაობს. AI-ის დამატებას თქვენთან ერთად ვგეგმავთ.",
+    "reason": "Explains independent operation while keeping AI additions separately planned with the hospital."
+  },
+  {
+    "id": "ka-226",
+    "old_html": "პაციენტის მიღებიდან ანგარიშსწორებამდე. ყველა საჭირო მოდული.",
+    "new_html": "პაციენტის მიღებიდან ანგარიშსწორებამდე — კლინიკისთვის საჭირო ყველა მოდული.",
+    "reason": "Connects the two fragments into a clear scope statement."
+  },
+  {
+    "id": "ka-230",
+    "old_html": "თქვენი პროცესები. უწყვეტი განვითარება. ერთიანი კოდი.",
+    "new_html": "თქვენი სამუშაო პროცესები. უწყვეტი განვითარება. პროგრამის ერთიანი კოდი.",
+    "reason": "Clarifies workflows and codebase without changing the development claim."
+  },
+  {
+    "id": "ka-231",
+    "old_html": "პირველი ეტაპი დამოუკიდებლად სრულფასოვანია. კლინიკური და ადმინისტრაციული სამუშაო ერთიან FHIR R4 მონაცემებსა და კოდს ეყრდნობა. AI-ის დამატებას კლინიკასთან ერთად, ცალკე ვგეგმავთ.",
+    "new_html": "პირველი ეტაპი თავისთავად სრულფასოვანი სისტემაა. კლინიკური და ადმინისტრაციული ნაწილი ერთმანეთთან საერთო მონაცემებითა და პროგრამის ერთიანი კოდითაა დაკავშირებული. მონაცემები FHIR R4 სტანდარტს შეესაბამება. AI-ის დამატებას თქვენს კლინიკასთან ცალკე ვგეგმავთ.",
+    "reason": "Unpacks the technical sentence into shared information, one codebase and the data standard; preserves separate AI planning."
+  },
+  {
+    "id": "ka-234",
+    "old_html": "კლინიკური ასისტენტი პაციენტის კონტექსტით",
+    "new_html": "კლინიკური ასისტენტი პაციენტის მონაცემებს ითვალისწინებს",
+    "reason": "Explains patient context as information the assistant takes into account."
+  },
+  {
+    "id": "ka-236",
+    "old_html": "პაციენტის მონაცემებზე დაფუძნებული მოქმედების მონახაზი",
+    "new_html": "პაციენტის მონაცემებზე დაფუძნებული სამოქმედო გეგმის მონახაზი",
+    "reason": "Uses the natural clinical phrase for draft actions while preserving the draft status."
+  },
+  {
+    "id": "ka-244",
+    "old_html": "კოდირება · ანაზღაურება<br>საბუთების შემოწმება",
+    "new_html": "კოდირება · ანაზღაურების მოთხოვნები<br>საბუთების შემოწმება",
+    "reason": "Uses the specific reimbursement-request meaning of claims from the English source."
+  },
+  {
+    "id": "ka-251",
+    "old_html": "უფრო ფართო შესაძლებლობებს ცალ-ცალკე ვნერგავთ და ვაფასებთ. ჩამონათვალი არ ნიშნავს, რომ ყველა შესაძლებლობა უკვე დანერგილი ან კლინიკურად ვალიდირებულია. მეორე ეტაპი არჩევითია; მოცულობა, შემოწმება, ხელმისაწვდომობა და ფასი ცალკე თანხმდება.",
+    "new_html": "უფრო ფართო შესაძლებლობებს ცალ-ცალკე ვნერგავთ და ვაფასებთ. ჩამონათვალი არ ნიშნავს, რომ ყველა მათგანი უკვე დანერგილია ან კლინიკურად ვალიდირებულია. მეორე ეტაპი არჩევითია; გამოყენების ფარგლებს, შემოწმებას, ხელმისაწვდომობასა და ფასს ცალკე ვათანხმებთ.",
+    "reason": "Makes the sentences flow naturally while retaining the exact clinical-validation status and every optionality and separate-agreement limit."
+  },
+  {
+    "id": "ka-254",
+    "old_html": "პაციენტები, მონაცემები, პროტოკოლები, პროცესები და რესურსები — ერთიან კონტექსტში.",
+    "new_html": "პაციენტები, მონაცემები, პროტოკოლები, სამუშაო პროცესები და რესურსები — ერთ საერთო სურათში.",
+    "reason": "Explains one shared context through a familiar shared-picture metaphor without implying that every supplied item is automatically used."
+  },
+  {
+    "id": "ka-260",
+    "old_html": "ეს სამომავლო მიმართულებაა. კლინიკაში გამოყენებას წინ უძღვის შესაძლებლობების შექმნა, კლინიკური შემოწმება და ნებადართული ფარგლების შეთანხმება. ამ ფარგლებს მიღმა გადაწყვეტილება უფლებამოსილ გუნდს გადაეცემა.",
+    "new_html": "ეს სამომავლო მიმართულებაა. კლინიკაში გამოყენებამდე საჭიროა შესაბამისი შესაძლებლობების შექმნა და კლინიკური შემოწმება. წინასწარ უნდა შეთანხმდეს ისიც, რის გაკეთების უფლება ექნება სისტემას. ამ ფარგლებს მიღმა გადაწყვეტილება უფლებამოსილ გუნდს გადაეცემა.",
+    "reason": "Explains the pre-authorised scope plainly while retaining development, clinical checks and the future-only status."
+  },
+  {
+    "id": "ka-266",
+    "old_html": "<p>კლინიკური და ადმინისტრაციული გუნდების ერთიანი სამუშაო სივრცე. პაციენტის ჩანაწერებსა და მკურნალობის პროცესს კლინიკის ყოველდღიურ მართვასთან აკავშირებს.</p><ul><li>პაციენტის ჩანაწერები, დანიშნულებები, კლინიკური დოკუმენტები და გაწერა.</li><li>საწოლების, პერსონალის, ფინანსებისა და მარაგების მართვა.</li><li>ერთმანეთთან დაკავშირებული პროცესები, კლინიკის საჭიროებებზე მორგებით.</li></ul>",
+    "new_html": "<p>კლინიკური და ადმინისტრაციული გუნდების ერთიანი სამუშაო სივრცე. პაციენტის ჩანაწერებსა და მკურნალობის პროცესს კლინიკის ყოველდღიურ მართვასთან აკავშირებს.</p><ul><li>პაციენტის ჩანაწერები, დანიშნულებები, კლინიკური დოკუმენტები და გაწერა.</li><li>საწოლების, პერსონალის, ფინანსებისა და მარაგების მართვა.</li><li>ერთმანეთთან დაკავშირებული პროცესები, რომელთა მორგებაც კლინიკის საჭიროებებზე შეიძლება.</li></ul>",
+    "reason": "Makes tailoring a readable capability rather than an awkward trailing noun phrase."
+  },
+  {
+    "id": "ka-268",
+    "old_html": "<p>ტელემედიცინის მოდული პაციენტსა და ექიმს დისტანციური კონსულტაციისთვის აკავშირებს. ჯავშანს, ვიდეოვიზიტსა და შემდგომ ინფორმაციას ერთ პროცესში აერთიანებს.</p><ul><li>დისტანციური კონსულტაციის დაჯავშნა და მართვა.</li><li>პაციენტისა და ექიმის ვიდეოკონსულტაცია.</li><li>კონსულტაციის ჩანაწერები, რეცეპტები და შემდგომი ინფორმაცია ერთ სივრცეში.</li></ul>",
+    "new_html": "<p>ტელემედიცინის მოდული პაციენტსა და ექიმს დისტანციური კონსულტაციისთვის აკავშირებს. კონსულტაციაზე ჩაწერას, ვიდეოვიზიტსა და შემდგომ ინფორმაციას ერთ პროცესში აერთიანებს.</p><ul><li>დისტანციური კონსულტაციის დაჯავშნა და მართვა.</li><li>პაციენტისა და ექიმის ვიდეოკონსულტაცია.</li><li>კონსულტაციის ჩანაწერები, რეცეპტები და შემდგომი ინფორმაცია ერთ სივრცეში.</li></ul>",
+    "reason": "Explains booking in familiar Georgian while keeping the complete consultation pathway."
+  },
+  {
+    "id": "ka-270",
+    "old_html": "<p>კლინიკის სამედიცინო გამოსახულებების სამუშაო სივრცე. ექიმს შეუძლია პაციენტის კვლევების მოძებნა, გამოსახულებების გახსნა და შეფასება იმავე კლინიკურ სისტემაში.</p><ul><li>სამედიცინო გამოსახულებებისა და კვლევების პაციენტთან დაკავშირება.</li><li>DICOM გამოსახულებების ნახვა — ეს აპარატურის სტანდარტული ფორმატია.</li><li>კვლევების შეფასება გამოსახულების ინსტრუმენტებით, პაციენტის ჩანაწერებთან ერთად.</li></ul>",
+    "new_html": "<p>კლინიკის სამედიცინო გამოსახულებების სამუშაო სივრცე. ექიმს შეუძლია პაციენტის კვლევების მოძებნა, გამოსახულებების გახსნა და შეფასება იმავე კლინიკურ სისტემაში.</p><ul><li>სამედიცინო გამოსახულებებისა და კვლევების პაციენტთან დაკავშირება.</li><li>DICOM გამოსახულებების ნახვა — ამ სტანდარტულ ფორმატს კვლევის აპარატურა იყენებს.</li><li>კვლევების შეფასება გამოსახულების ინსტრუმენტებით, პაციენტის ჩანაწერებთან ერთად.</li></ul>",
+    "reason": "Makes the existing DICOM definition grammatically clear without changing the technical claim."
+  },
+  {
+    "id": "ka-272",
+    "old_html": "<p>ლაბორატორიული პროცესი ექიმის შეკვეთიდან დადასტურებულ შედეგამდე. კლინიკური და ლაბორატორიული გუნდები მთელი პროცესის განმავლობაში პაციენტის ერთსა და იმავე ინფორმაციაზე მუშაობენ.</p><ul><li>კვლევის შეკვეთის, ნიმუშის მიღებისა და დამუშავების ეტაპების აღრიცხვა.</li><li>შედეგების, სარეფერენსო დიაპაზონებისა და გადახრების ნახვა.</li><li>შედეგის დადასტურება და პაციენტის კლინიკურ ჩანაწერში ასახვა.</li></ul>",
+    "new_html": "<p>ლაბორატორიული კვლევა — ექიმის შეკვეთიდან დადასტურებულ შედეგამდე. კლინიკური და ლაბორატორიული გუნდები მთელი პროცესის განმავლობაში პაციენტის ერთსა და იმავე ინფორმაციაზე მუშაობენ.</p><ul><li>კვლევის შეკვეთის, ნიმუშის მიღებისა და დამუშავების ეტაპების აღრიცხვა.</li><li>შედეგების, სარეფერენსო დიაპაზონებისა და გადახრების ნახვა.</li><li>შედეგის დადასტურება და პაციენტის კლინიკურ ჩანაწერში ასახვა.</li></ul>",
+    "reason": "Names the test that moves through the laboratory workflow."
+  },
+  {
+    "id": "ka-274",
+    "old_html": "<p>სპეციალიზებული AI ინსტრუმენტი ღვიძლის ქირურგიისთვის. საწყისი ვერსია აჩვენებს ქირურგისთვის შექმნილ სამუშაო სივრცეს, კლინიკის ზოგადი ჩანაწერებისა და ადმინისტრირებისგან განსხვავებული ამოცანებით.</p><ul><li>მორგებულია ღვიძლის ქირურგიის შემთხვევებსა და სპეციალისტის სამუშაოზე.</li><li>AI დახმარება ქირურგის შეფასების პროცესში.</li><li>დემო აჩვენებს საწყის ვერსიას და მის მიმდინარე სამუშაო პროცესს.</li></ul>",
+    "new_html": "<p>სპეციალიზებული AI ინსტრუმენტი ღვიძლის ქირურგიისთვის. საწყისი ვერსია ქირურგისთვის შექმნილ სამუშაო სივრცეს აჩვენებს. ის კლინიკის ზოგადი ჩანაწერებისა და ადმინისტრირებისგან ცალკე, სპეციალიზებულ ამოცანებს ემსახურება.</p><ul><li>მორგებულია ღვიძლის ქირურგიის შემთხვევებსა და სპეციალისტის სამუშაოზე.</li><li>AI დახმარება ქირურგის შეფასების პროცესში.</li><li>დემო აჩვენებს საწყის ვერსიას და მის მიმდინარე სამუშაო პროცესს.</li></ul>",
+    "reason": "Separates the early-version description from its specialist scope without changing availability."
+  },
+  {
+    "id": "ka-276",
+    "old_html": "<p>გულის სტრუქტურული ჩარევების დაგეგმვის სივრცე, ამ ეტაპზე TAVI-ისთვის — აორტის სარქვლის კათეტერით ჩანაცვლებისთვის. აერთიანებს გამოსახულებებს, გაზომვებსა და ჩარევის გეგმას.</p><ul><li>გულის კომპიუტერული ტომოგრაფიისა და შესაბამისი ანატომიის შეფასება.</li><li>სარქვლის გაზომვებისა და სისხლძარღვოვანი მიდგომის დაგეგმვა.</li><li>სტრუქტურირებული გეგმისა და ანგარიშის მომზადება ექიმის შესაფასებლად.</li></ul>",
+    "new_html": "<p>გულის სტრუქტურული ჩარევების დაგეგმვის სივრცე, ამ ეტაპზე TAVI-ისთვის — აორტის სარქვლის კათეტერით ჩანაცვლებისთვის. აერთიანებს გამოსახულებებს, გაზომვებსა და ჩარევის გეგმას.</p><ul><li>გულის კომპიუტერული ტომოგრაფიისა და შესაბამისი ანატომიის შეფასება.</li><li>სარქვლის ზომების შეფასება და სისხლძარღვოვანი მიდგომის დაგეგმვა.</li><li>სტრუქტურირებული გეგმისა და ანგარიშის მომზადება ექიმის შესაფასებლად.</li></ul>",
+    "reason": "Separates assessment of valve measurements from planning vascular access, as in the English description."
+  },
+  {
+    "id": "ka-279",
+    "old_html": "<p>კლინიკის სისტემის პაციენტისთვის განკუთვნილი სივრცე. პაციენტს შეუძლია ერთ ადგილას ადევნოს თვალი მკურნალობას და ნახოს კლინიკის მიერ გაზიარებული ინფორმაცია.</p><ul><li>სამედიცინო ჩანაწერების, ლაბორატორიული შედეგებისა და მედიკამენტების ნახვა.</li><li>ვიზიტების მართვა და კლინიკურ გუნდთან კომუნიკაცია.</li><li>ტელემედიცინასა და ანგარიშების ინფორმაციაზე წვდომა პირადი ანგარიშიდან.</li></ul>",
+    "new_html": "<p>პაციენტის პირადი სივრცე კლინიკის სისტემაში. პაციენტს შეუძლია ერთ ადგილას ადევნოს თვალი მკურნალობას და ნახოს კლინიკის მიერ გაზიარებული ინფორმაცია.</p><ul><li>სამედიცინო ჩანაწერების, ლაბორატორიული შედეგებისა და მედიკამენტების ნახვა.</li><li>ვიზიტების მართვა და კლინიკურ გუნდთან კომუნიკაცია.</li><li>ტელემედიცინასა და ანგარიშსწორების ინფორმაციაზე წვდომა პირადი ანგარიშიდან.</li></ul>",
+    "reason": "Explains the patient space and uses the clear billing meaning instead of ambiguous account information."
+  },
+  {
+    "id": "ka-281",
+    "old_html": "<p>სისხლძარღვთა კვლევების ანგარიშების მოსამზადებელი ინსტრუმენტი. ექიმს ეხმარება კვლევის მიგნებების მკაფიო, სტრუქტურირებულ ანგარიშად ჩამოყალიბებაში.</p><ul><li>სისხლძარღვთა კვლევის მიგნებების აღწერა.</li><li>კვლევის ინფორმაციის ერთიანი ფორმატის ანგარიშში თავმოყრა.</li><li>ანგარიშის შეფასება და მომზადება სპეციალისტის სამუშაო პროცესში.</li></ul>",
+    "new_html": "<p>ინსტრუმენტი სისხლძარღვთა კვლევების ანგარიშების მოსამზადებლად. ექიმს კვლევის მიგნებების მკაფიო, სტრუქტურირებული ანგარიშის მომზადებაში ეხმარება.</p><ul><li>სისხლძარღვთა კვლევის მიგნებების აღწერა.</li><li>კვლევის მონაცემების ერთიანი ფორმატით წარმოდგენა.</li><li>ანგარიშის შეფასება და მომზადება სპეციალისტის სამუშაო პროცესში.</li></ul>",
+    "reason": "Reduces nested nouns while preserving report preparation, findings and consistent formatting."
+  },
+  {
+    "id": "ka-283",
+    "old_html": "შევხვდეთ<em>30 წუთით.</em>",
+    "new_html": "შევხვდეთ <em>30 წუთით.</em>",
+    "reason": "Adds the missing word space while preserving emphasis and duration."
+  },
+  {
+    "id": "ka-284",
+    "old_html": "MediMind-ის გუნდთან — თქვენი კლინიკის საჭიროებებზე.",
+    "new_html": "MediMind-ის გუნდთან ერთად განვიხილოთ თქვენი კლინიკის საჭიროებები.",
+    "reason": "Makes the meeting topic a complete, direct invitation."
+  },
+  {
+    "id": "ka-290",
+    "old_html": "გაიხსნება წერილი team@medimind.md-ზე.<br>დროს თქვენთან ერთად შევათანხმებთ.",
+    "new_html": "გაიხსნება წერილი team@medimind.md-ზე გასაგზავნად.<br>შეხვედრის დროს თქვენთან ერთად შევათანხმებთ.",
+    "reason": "Explains the email action and makes clear that the meeting time is still to be agreed."
+  },
+  {
+    "id": "ka-291",
+    "old_html": "აირჩიეთ დრო აქვე, გუნდის კალენდარში.",
+    "new_html": "შეხვედრის დრო აქვე, გუნდის კალენდარში აირჩიეთ.",
+    "reason": "Uses natural word order and specifies which time is selected."
+  },
+  {
+    "id": "ka-296",
+    "old_html": "შესაბამისი შესაძლებლობები",
+    "new_html": "რა გამოადგება თქვენს გუნდს",
+    "reason": "Replaces an abstract capabilities heading with the reader’s practical question."
+  },
+  {
+    "id": "ka-299",
+    "old_html": "შევათანხმებთ პარალელური შეფასების ნაბიჯებს.",
+    "new_html": "შევათანხმებთ, რა ნაბიჯებით გამოცდით სისტემას არსებული პროგრამის პარალელურად.",
+    "reason": "Explains parallel evaluation while the neighbouring heading retains the free condition."
+  },
+  {
+    "id": "ka-308",
+    "old_html": "პაციენტის მონაცემები, კლინიკური გადაწყვეტილებები და გუნდის მოქმედება — ერთიან პროცესში.",
+    "new_html": "პაციენტის მონაცემები, კლინიკური გადაწყვეტილებები და გუნდის მოქმედებები ერთ პროცესშია დაკავშირებული.",
+    "reason": "Turns the translated fragment into a complete explanation."
+  },
+  {
+    "id": "ka-312",
+    "old_html": "მუცლის ტკივილით შემოსული პაციენტი. ყურადღება — გულზე. ქირურგის შეფასებამდე 14 საათი გავიდა.",
+    "new_html": "პაციენტი მუცლის ტკივილით შემოვიდა. გუნდის ყურადღება გულზე იყო მიმართული. ქირურგის შეფასებამდე 14 საათი გავიდა.",
+    "reason": "Makes the clinical sequence readable without changing the case or timing."
+  },
+  {
+    "id": "ka-329",
+    "old_html": "ახალ სერვისს მისთვის საჭირო პროგრამას ვუქმნით.",
+    "new_html": "ახალი სერვისისთვის საჭირო პროგრამას ვქმნით.",
+    "reason": "Removes the awkward doubled object while retaining development for the new service."
+  },
+  {
+    "id": "ka-331",
+    "old_html": "სპეციალიზებულ ინსტრუმენტებს თქვენი ექიმების მონაწილეობით ვქმნით.",
+    "new_html": "სპეციალიზებულ ინსტრუმენტებს თქვენს ექიმებთან ერთად ვქმნით.",
+    "reason": "Uses the natural expression for creating a tool with clinicians’ participation."
+  },
+  {
+    "id": "ka-337",
+    "old_html": "<p>გულის სტრუქტურული ჩარევების დაგეგმვის სივრცე, ამ ეტაპზე TAVI-ისთვის — აორტის სარქვლის კათეტერით ჩანაცვლებისთვის. აერთიანებს გამოსახულებებს, გაზომვებსა და ჩარევის გეგმას.</p><ul><li>გულის კომპიუტერული ტომოგრაფიისა და შესაბამისი ანატომიის შეფასება.</li><li>სარქვლის გაზომვებისა და სისხლძარღვოვანი მიდგომის დაგეგმვა.</li><li>სტრუქტურირებული გეგმისა და ანგარიშის მომზადება ექიმის შესაფასებლად.</li></ul>",
+    "new_html": "<p>გულის სტრუქტურული ჩარევების დაგეგმვის სივრცე, ამ ეტაპზე TAVI-ისთვის — აორტის სარქვლის კათეტერით ჩანაცვლებისთვის. აერთიანებს გამოსახულებებს, გაზომვებსა და ჩარევის გეგმას.</p><ul><li>გულის კომპიუტერული ტომოგრაფიისა და შესაბამისი ანატომიის შეფასება.</li><li>სარქვლის ზომების შეფასება და სისხლძარღვოვანი მიდგომის დაგეგმვა.</li><li>სტრუქტურირებული გეგმისა და ანგარიშის მომზადება ექიმის შესაფასებლად.</li></ul>",
+    "reason": "Separates assessment of valve measurements from planning vascular access, as in the English description."
+  }
+]

@@ -1,0 +1,192 @@
+[
+  {
+    "width": 1440,
+    "height": 900,
+    "lang": "ka",
+    "geometry": {
+      "bottom": 828,
+      "slideBottom": 855,
+      "overflow": false,
+      "posterLoaded": true,
+      "inlineFrames": 0
+    },
+    "offer": {
+      "bottom": 806.625,
+      "slideBottom": 855,
+      "overflow": false
+    },
+    "errors": [],
+    "interaction": "Clinical details, video lifecycle where tested, article destination, financial details, keyboard isolation and focus return passed"
+  },
+  {
+    "width": 1440,
+    "height": 900,
+    "lang": "en",
+    "geometry": {
+      "bottom": 828,
+      "slideBottom": 855,
+      "overflow": false,
+      "posterLoaded": true,
+      "inlineFrames": 0
+    },
+    "offer": {
+      "bottom": 817.59375,
+      "slideBottom": 855,
+      "overflow": false
+    },
+    "errors": [],
+    "interaction": "Clinical details, video lifecycle where tested, article destination, financial details, keyboard isolation and focus return passed"
+  },
+  {
+    "width": 1280,
+    "height": 720,
+    "lang": "ka",
+    "geometry": {
+      "bottom": 696,
+      "slideBottom": 720,
+      "overflow": false,
+      "posterLoaded": true,
+      "inlineFrames": 0
+    },
+    "offer": {
+      "bottom": 680,
+      "slideBottom": 720,
+      "overflow": false
+    },
+    "errors": [],
+    "interaction": "Clinical details, video lifecycle where tested, article destination, financial details, keyboard isolation and focus return passed"
+  },
+  {
+    "width": 1280,
+    "height": 720,
+    "lang": "en",
+    "geometry": {
+      "bottom": 696,
+      "slideBottom": 720,
+      "overflow": false,
+      "posterLoaded": true,
+      "inlineFrames": 0
+    },
+    "offer": {
+      "bottom": 686.75,
+      "slideBottom": 720,
+      "overflow": false
+    },
+    "errors": [],
+    "interaction": "Clinical details, video lifecycle where tested, article destination, financial details, keyboard isolation and focus return passed"
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "lang": "ka",
+    "geometry": {
+      "bottom": 1181.40625,
+      "slideBottom": 1024,
+      "overflow": false,
+      "posterLoaded": true,
+      "inlineFrames": 0
+    },
+    "offer": {
+      "bottom": 1067.28125,
+      "slideBottom": 1024,
+      "overflow": false
+    },
+    "errors": [],
+    "interaction": "Clinical details, video lifecycle where tested, article destination, financial details, keyboard isolation and focus return passed"
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "lang": "en",
+    "geometry": {
+      "bottom": 1109.859375,
+      "slideBottom": 1024,
+      "overflow": false,
+      "posterLoaded": true,
+      "inlineFrames": 0
+    },
+    "offer": {
+      "bottom": 1204.609375,
+      "slideBottom": 1024,
+      "overflow": false
+    },
+    "errors": [],
+    "interaction": "Clinical details, video lifecycle where tested, article destination, financial details, keyboard isolation and focus return passed"
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "lang": "ka",
+    "geometry": {
+      "bottom": 1051.5,
+      "slideBottom": 844,
+      "overflow": false,
+      "posterLoaded": true,
+      "inlineFrames": 0
+    },
+    "offer": {
+      "bottom": 819.328125,
+      "slideBottom": 844,
+      "overflow": false
+    },
+    "errors": [],
+    "interaction": "Clinical details, video lifecycle where tested, article destination, financial details, keyboard isolation and focus return passed"
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "lang": "en",
+    "geometry": {
+      "bottom": 1025.265625,
+      "slideBottom": 844,
+      "overflow": false,
+      "posterLoaded": true,
+      "inlineFrames": 0
+    },
+    "offer": {
+      "bottom": 818.703125,
+      "slideBottom": 844,
+      "overflow": false
+    },
+    "errors": [],
+    "interaction": "Clinical details, video lifecycle where tested, article destination, financial details, keyboard isolation and focus return passed"
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "lang": "ka",
+    "geometry": {
+      "bottom": 1184.859375,
+      "slideBottom": 568,
+      "overflow": false,
+      "posterLoaded": true,
+      "inlineFrames": 0
+    },
+    "offer": {
+      "bottom": 710.65625,
+      "slideBottom": 568,
+      "overflow": false
+    },
+    "errors": [],
+    "interaction": "Clinical details, video lifecycle where tested, article destination, financial details, keyboard isolation and focus return passed"
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "lang": "en",
+    "geometry": {
+      "bottom": 1064.625,
+      "slideBottom": 568,
+      "overflow": false,
+      "posterLoaded": true,
+      "inlineFrames": 0
+    },
+    "offer": {
+      "bottom": 652.75,
+      "slideBottom": 568,
+      "overflow": false
+    },
+    "errors": [],
+    "interaction": "Clinical details, video lifecycle where tested, article destination, financial details, keyboard isolation and focus return passed"
+  }
+]

@@ -1,0 +1,90 @@
+{
+  "lang": "ka",
+  "width": 1280,
+  "height": 720,
+  "slides": 16,
+  "errors": [],
+  "horizontalOverflow": false,
+  "findings": [
+    {
+      "slide": 1,
+      "outside": [],
+      "overlaps": []
+    },
+    {
+      "slide": 2,
+      "outside": [],
+      "overlaps": []
+    },
+    {
+      "slide": 3,
+      "outside": [],
+      "overlaps": []
+    },
+    {
+      "slide": 4,
+      "outside": [],
+      "overlaps": []
+    },
+    {
+      "slide": 5,
+      "outside": [],
+      "overlaps": []
+    },
+    {
+      "slide": 6,
+      "outside": [],
+      "overlaps": []
+    },
+    {
+      "slide": 7,
+      "outside": [],
+      "overlaps": []
+    },
+    {
+      "slide": 8,
+      "outside": [],
+      "overlaps": []
+    },
+    {
+      "slide": 9,
+      "outside": [],
+      "overlaps": []
+    },
+    {
+      "slide": 10,
+      "outside": [],
+      "overlaps": []
+    },
+    {
+      "slide": 11,
+      "outside": [],
+      "overlaps": []
+    },
+    {
+      "slide": 12,
+      "outside": [],
+      "overlaps": []
+    },
+    {
+      "slide": 13,
+      "outside": [],
+      "overlaps": []
+    },
+    {
+      "slide": 14,
+      "outside": [],
+      "overlaps": []
+    },
+    {
+      "slide": 15,
+      "outside": [],
+      "overlaps": []
+    },
+    {
+      "slide": 16,
+      "outside": [],
+      "overlaps": []
+    }
+  ]
+}

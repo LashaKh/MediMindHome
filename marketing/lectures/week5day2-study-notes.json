@@ -1,0 +1,541 @@
+{
+  "ready": true,
+  "meta": {
+    "day": "Week 5 Day 2",
+    "date": "20 October 2026",
+    "prepared_date": "21 October 2026",
+    "destination": "/Users/toko/Desktop/500 Lectures/Week 5 Day 2 - 2026-10-20",
+    "sessions": [
+      "Building a Funnel in a CRM with Sales Stages - Brianna Salinas"
+    ],
+    "source_links": {
+      "deck_supplied": "https://docs.google.com/presentation/d/1RaDX5TfQulXuYzXl9sA2iEzsl5RzIRpIvGa23faSwgg/edit"
+    },
+    "review_notes": "Reviewed all 867 recognized segments (00:00-1:00:51) end to end, every slide shown on screen (61 frames sampled every 60 seconds plus a frame at each of 51 detected slide changes; footers 1-43 seen), and the Zoom chat. The deck link needs a Google sign-in and was not opened; nothing was bypassed and no copy was made. One passage (Irakli's question, 57:13-58:02) was re-transcribed in isolation, and the speaker tiles at three question moments were checked in the video. For the MediMind pages, the 2 October Block 2 and Block 3 working briefs (sales foundation; funnel, metrics and tracking) and yesterday's Week 5 Day 1 pack (offer and contract caveats) were read. This is a source-informed guide, not a human-verified verbatim transcript.",
+    "transcript_caution": "Automatic speech recognition can mishear names and terms. Likely corrections: 'serum' is CRM; 'Atio' is Attio; 'close one' is closed won; 'Bant' is BANT (budget, authority, need, timing); 'gain site' is Gainsight; 'round robited' is round-robined; 'Joperos' is Joberos; 'Deamer Dimitri' is Dima or Dmitry; 'Texas' in 'B2B Texas' is likely tech. Speakers are named only where the video shows the speaker tile or the name is said aloud. The chat clock runs about 9 minutes ahead of the recording. Benchmark percentages are the lecturer's figures, not verified here and not MediMind results."
+  },
+  "pages": [
+    {
+      "title": "Week 5 Day 2: build your funnel in a CRM",
+      "subtitle": "Brianna Salinas, 500 Global | One recording, 20 October 2026 | 1h 01m (55 min lecture, 6 min questions)",
+      "blocks": [
+        {
+          "type": "card",
+          "title": "The lecture in one sentence",
+          "body": "Treat your CRM as the single source of truth: pick a few goals, define 4-7 stages named after what the buyer did, give each stage written exit criteria, keep health in a separate status field, record the few fields your reports need, and review the numbers on a fixed rhythm, so you can answer any investor question from data instead of from memory."
+        },
+        {
+          "type": "section",
+          "title": "Six points to remember",
+          "body": "<b>1.</b> Use the same words for everyone: contact, lead, prospect (SQL), opportunity, customer. A customer is someone who has signed and is paying (S1 03:07-04:44; slide 5).<br/><b>2.</b> Goals decide your stages, required fields and reports. Require only what you need, or nobody fills it in, and data is very hard to add later (S1 10:12-14:47; slide 9).<br/><b>3.</b> Good stages are simple, distinct, easy to log and consistent. Test: would two reps put the same deal in the same stage without asking? (S1 20:24-21:31; slide 10)<br/><b>4.</b> Every stage exits on something the <b>buyer</b> did. 'Closed won' means a signed contract, nothing less (S1 27:28-29:07; slide 14).<br/><b>5.</b> Stage is where the deal is; status is how healthy it is. Never make a 'stalled' stage (S1 30:19-31:44; slide 16).<br/><b>6.</b> Investors trust real numbers: qualified opportunities, conversion from your own history, and honest closed-lost reasons. Free pilots and LOIs are not ARR (S1 50:41-55:03; slides 38-41)."
+        },
+        {
+          "type": "section",
+          "title": "Where MediMind stands",
+          "body": "Irakli asked what to do when the CRM 'exists in my head'. Brianna's answer: put everything in a spreadsheet first, then design the stages, and she offered to map our situation in office hours, mentioning '24 hospitals' and 'one customer' (S1 57:13-58:02). We already drafted a 9-step hospital funnel on 2 October. The lecture says 4-7 stages. Pages 12-15 turn it into a 6-stage pipeline with buyer exit criteria, a status field, and investor-safe numbers."
+        },
+        {
+          "type": "text",
+          "body": "Fast route: this page, page 6 (exit criteria and stage vs status), page 8 (weighted pipeline), page 11 (homework and questions), page 12 (our stages) and page 15 (actions)."
+        },
+        {
+          "type": "card",
+          "title": "Scope of this pack",
+          "body": "One recording from Recordings/week5/day2. The audio and the video have the same soundtrack and were processed as one session. This is one lecture, not the whole week. Brianna said onboarding comes 'next week' (S1 19:23); it is not in these files."
+        }
+      ]
+    },
+    {
+      "title": "Sources and review notes",
+      "subtitle": "What was read, what could not be opened, and how to use the times",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": ["Code", "Source", "How it was used"],
+          "widths": [0.6, 2.2, 2.6],
+          "rows": [
+            ["S1", "Lecture recording, 1:00:53 (audio and video, same soundtrack)", "Transcribed locally: 7 parts, 867 segments. Times are recording times."],
+            ["D1", "Deck: Building a Funnel in a CRM with Sales Stages (Google Slides, 43 numbered slides)", "Needs a Google sign-in; not opened. Read from the screen share: 61 sampled frames plus 51 slide-change frames. See Source decks/Recorded slide map.txt."],
+            ["Chat", "Zoom chat, 10 lines", "Poll answers and Irakli's question. Its clock runs about 9 minutes ahead of the recording."],
+            ["B2, B3", "MediMind Block 2 and Block 3 working briefs (2 October 2026)", "Our proposed funnel, tracker fields, counting rules and first-month targets. Proposed structure, not reported results."],
+            ["W5D1", "Week 5 Day 1 pack (prepared 20 October)", "Offer summary and the unresolved first-contract figures"]
+          ]
+        },
+        {
+          "type": "table",
+          "headers": ["Time (S1)", "What happens"],
+          "widths": [1.1, 4.3],
+          "rows": [
+            ["00:00-03:07", "Why the CRM is your source of truth; agenda; the 30-second questions"],
+            ["03:07-10:09", "Section 1: shared language, pipeline vs funnel, eight pipeline metrics"],
+            ["10:09-32:07", "Section 2: goals, building your own CRM, one CRM for sales and success, stage rules, naming, exit criteria, stage vs status"],
+            ["32:07-43:36", "Sections 3-4: benchmarks, backing into your numbers, weighted pipeline and forecasting"],
+            ["43:36-50:41", "Section 5: workflows, reports, review rhythm, CRM habits, CRM options"],
+            ["50:41-55:24", "Section 6: what investors look for, red flags; homework"],
+            ["55:24-1:00:51", "Questions: CAC in B2B, a CRM in your head, inbound vs outbound"]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Limits",
+          "body": "The transcript is automatic and not human-checked. Slide text was read from video frames; small screenshots (HubSpot workflow and report examples, slides 28-30 and 33) are not legible in full. Speaker notes were not available. The CRM price slide (36) was shown but not discussed. The MediMind pages are working hypotheses, not decisions."
+        }
+      ]
+    },
+    {
+      "title": "Shared language, and eight pipeline metrics",
+      "subtitle": "Section 1 | slides 5-7 | S1 03:07-10:09",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": ["Word", "Means", "Brianna's point"],
+          "widths": [1.1, 2.0, 2.3],
+          "rows": [
+            ["Contact", "Anyone in your CRM", "Not a lead and not a prospect. A list from a conference is contacts."],
+            ["Lead", "Showed interest or fits your ICP", "ICP = ideal customer profile"],
+            ["Prospect (SQL)", "Qualified: has the problem, budget and a buyer", "SQL = sales-qualified lead"],
+            ["Opportunity", "An active deal with an amount and a close date", "'I think you will buy this, for this amount, by this date'"],
+            ["Customer", "Signed and paying", "Never call a lead a customer"]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Pipeline vs funnel",
+          "body": "The <b>pipeline</b> is you moving a deal through your sales stages; it lives in the CRM and is what this lecture is about. The <b>funnel</b> is the wider customer journey (awareness, discovery, evaluation, intent, purchase, loyalty), used more by marketing. Both show where people drop off (S1 04:44-06:09; slide 6)."
+        },
+        {
+          "type": "table",
+          "headers": ["#", "Metric", "How to calculate", "When"],
+          "widths": [0.3, 1.4, 2.6, 1.1],
+          "rows": [
+            ["1", "Pipeline value", "Total $ of open opportunities", "Now"],
+            ["2", "New pipeline", "$ of opportunities added this month", "Now"],
+            ["3", "Win rate", "Won / (won + lost)", "Now"],
+            ["4", "Average deal size", "Average value of won deals", "Now"],
+            ["5", "Sales cycle", "Days from opportunity to close", "Now"],
+            ["6", "Stage conversion", "% moving to the next stage", "Now"],
+            ["7", "Weighted pipeline", "Sum of each deal x its stage probability (page 8)", "Know it; use later"],
+            ["8", "Pipeline velocity", "# opportunities x win rate x average value / cycle days", "Know it; use later"]
+          ]
+        },
+        {
+          "type": "card",
+          "title": "Why velocity matters",
+          "body": "Velocity is the revenue your pipeline produces per day. 'You can double your pipeline, but if the deals take twice as long to close, you are not getting revenue any faster' (S1 09:14-09:27). Investors ask about metrics 7 and 8 before most founders track them, so learn the formulas now (S1 08:24-08:42)."
+        }
+      ]
+    },
+    {
+      "title": "Start with your goals",
+      "subtitle": "Slide 9 | S1 10:12-20:24 | two class questions",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": ["Goal (pick three)", "What it lets you answer"],
+          "widths": [1.5, 3.9],
+          "rows": [
+            ["Forecast revenue", "What will close this quarter"],
+            ["Spot stuck deals", "Which deals stopped moving, and where people drop off"],
+            ["Best channel", "Where your winning deals come from"],
+            ["Shorter cycle", "Which stage slows deals down: a technical step, finding the decision maker?"],
+            ["Clean handoff", "Customer success gets the full deal history, so the customer never repeats themselves"],
+            ["Show traction", "Investor questions answered with a few months of data"]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Goals decide the stages, required fields and reports",
+          "body": "'If you require all of the fields, you will probably stop filling them out yourselves as founders, and your sales team will too.' Require only what your goals need. Plan it now, because 'it's very, very hard to go back and add data'. Example: if you never recorded lead source, you cannot say later which July contacts became your best customers (S1 13:23-14:47). In the chat, Irakli's goal was 'increase sales?'; others wanted to keep track of deals and push them forward on time."
+        },
+        {
+          "type": "section",
+          "title": "Question 1: can we build our own CRM? (a Joberos founder, S1 14:54-17:49)",
+          "body": "Yes. HubSpot and Salesforce became overwhelming because they do everything and almost need a consultant. At an early stage, keep it simple, track what your goals need and keep the data clean, so you can move it to a bigger CRM later. Moving between CRMs is common. What matters most is <b>one source of truth</b>, so you never email someone already in a deal or send them irrelevant marketing. Julia built hers in Claude."
+        },
+        {
+          "type": "section",
+          "title": "Question 2: one CRM for sales and customer success? (Julia, S1 17:52-20:12)",
+          "body": "Yes, keep all customer data in one place. People can work in different tools or views as long as everything flows into the one record. The salesperson learns a lot; capture it so the account team can succeed even if that salesperson leaves. Onboarding is next week's topic."
+        }
+      ]
+    },
+    {
+      "title": "Designing your sales stages",
+      "subtitle": "Slides 10-13 | S1 20:24-27:28",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": ["Rule", "Meaning"],
+          "widths": [1.2, 4.2],
+          "rows": [
+            ["Simple", "Anyone understands it on day one"],
+            ["Distinct", "No overlap: a deal fits one stage only, never 'maybe demo, maybe proposal'"],
+            ["Easy to log", "Moving a deal takes one click; harder logging means messier data and no reports"],
+            ["Consistent", "Everyone, including every new hire, uses it the same way"]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Three ways to name stages (slide 11)",
+          "body": "<b>Seller activity</b> (call booked, demo given, proposal sent): easy, but 'it measures what you did, not where the buyer is'. <b>Buyer commitment</b> (problem confirmed, champion agreed to evaluate, budget and signer confirmed). <b>Best practice:</b> buyer-based names plus written <b>exit criteria</b>, the things that must be true before the deal moves on (S1 21:31-22:50). Avoid the founder habit of making a new stage for every action, '20 sales stages' (S1 23:16)."
+        },
+        {
+          "type": "table",
+          "headers": ["HubSpot defaults", "Salesforce example", "Early-stage startup", "GitLab commercial"],
+          "widths": [1.35, 1.35, 1.35, 1.35],
+          "rows": [
+            ["Appointment scheduled; Qualified to buy; Presentation scheduled; Decision maker bought-in; Contract sent; Closed won; Closed lost", "Prospecting; Qualification; Needs analysis; Value proposition; Identify decision makers; Perception analysis; Proposal/price quote; Negotiation/review; Closed won; Closed lost", "Lead; Discovery; Demo/pilot; Proposal; Contract sent", "0 Pending acceptance; Discovery; Scoping; Technical evaluation; Proposal; Negotiating; Awaiting signature; Closing"]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Stages change as you grow",
+          "body": "GitLab added stage 0, 'pending acceptance', because leads sat unanswered until a rep accepted them. Your stages are for today; six months from now you may add a step, for example for a new market. Start with the minimum you need to see where deals get stuck (S1 24:25-26:15)."
+        },
+        {
+          "type": "card",
+          "title": "Irakli's chat question: are contacts in the CRM before I contact them?",
+          "body": "Yes, they can be. Contacts can sit in the CRM without being in the pipeline. A conference list of 50 people is contacts. Move someone into the pipeline only when they show engagement. 'I want your pipeline to be very much people that you are actively engaging with' (S1 26:17-27:25)."
+        }
+      ]
+    },
+    {
+      "title": "Exit criteria, what to record, and stage vs status",
+      "subtitle": "Slides 14-17 | S1 27:28-32:07",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": ["Stage", "Exit: what the buyer did", "Record in the CRM"],
+          "widths": [1.1, 2.2, 2.1],
+          "rows": [
+            ["Prospecting", "Replies and agrees to a discovery call", "ICP fit (title, industry, company size), lead status"],
+            ["Qualification", "Confirms budget, authority, need and timing", "BANT; who you spoke to and their role"],
+            ["Demo", "Agrees on a use case and names who else must see it", "Value the buyer sees, who attended, objections"],
+            ["Proposal", "Confirms the proposal fits and names who signs and when", "Concessions requested, who attended, next steps"],
+            ["Negotiation", "Terms agreed; contract is with legal or procurement", "Pricing, terms, decision date, legal or procurement contact"],
+            ["Closed won / lost", "Contract signed and handed to onboarding", "Signed contract and non-standard terms, or the loss reason"]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Two warnings",
+          "body": "<b>Closed won means signed.</b> 'You will get salespeople that will mark things as closed won without a contract signed. It does not count.' Decide what closed won means for you: money received, contract signed, or signed plus an onboarding call booked (S1 28:15-28:44).<br/><b>Write down every concession.</b> A rep promises '10% off if you pay six months up front', writes it nowhere, and at renewal nobody in finance or success knows (S1 29:42-30:00)."
+        },
+        {
+          "type": "table",
+          "headers": ["Stage: where the deal is", "Status: how healthy it is"],
+          "widths": [2.7, 2.7],
+          "rows": [
+            ["Discovery; Demo; Proposal; Negotiation; Closed won / Closed lost", "Active; Stalled (no activity in 14+ days); On hold (buyer asked to pause); At risk; or your own, such as 'waiting for the signer'"]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Why a 'stalled' stage breaks your data",
+          "body": "If 'stalled' is a stage, you lose where the deal stopped: was it in demo, proposal or discovery? Keep the stage and set a status, then run a report on all stalled deals by stage (S1 30:25-31:41)."
+        },
+        {
+          "type": "card",
+          "title": "Keep it to 4 to 7 stages",
+          "body": "'If you can't read your stage names on the pipeline board, you have too many stages.' At this stage you do not need more than four to seven (S1 31:45-32:06; slide 17)."
+        }
+      ]
+    },
+    {
+      "title": "Know your numbers",
+      "subtitle": "Section 3 | slides 19-21 | S1 32:07-38:00",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": ["Step", "Benchmark shown", "Note"],
+          "widths": [1.6, 1.1, 2.7],
+          "rows": [
+            ["Lead to MQL", "39%", "MQL = marketing-qualified lead: did something that shows interest (webinar, contact form)"],
+            ["MQL to SQL", "38%", "SQL: you decided they fit, e.g. BANT"],
+            ["SQL to opportunity", "42%", "They want to move forward: a pilot, a contract"],
+            ["Opportunity to closed", "37% average, 21% median", "Across B2B tech and many markets. Companies define 'opportunity' differently, so compare with care."]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Back into your numbers (slides 20-21)",
+          "body": "Work backwards from the revenue you want. At $10K a year, $1M of revenue needs 100 deals. With 10 leads to 5 demos to 3 deals, that is about 333 leads and 167 demos. With the benchmarks above, 2 closed deals need about 87 leads, 34 MQLs, 13 SQLs and 5 opportunities. 'Usually people end up being surprised how many leads they actually need' (S1 36:06-37:10). Then find your weakest conversion: wrong traffic at the top, stuck at demo, or too many unqualified people? Those answers become your top-of-funnel goals (S1 37:10-37:46)."
+        },
+        {
+          "type": "card",
+          "title": "Use your own rates",
+          "body": "The benchmarks are a starting point. 'Your numbers are definitely going to be different, especially this early. Put your numbers in' (S1 36:51-36:59). The figures are the lecturer's; their source was not given."
+        },
+        {
+          "type": "section",
+          "title": "Nikos's question: how do MQL and SQL fit our stages? (S1 33:38-36:03)",
+          "body": "MQL and SQL mark points inside your stages. Decide where each falls for you: MQL when someone shows interest, SQL when they fit, opportunity when they want to move forward, then closed. Align these with stages named after buyer actions. Too many stages make the tracking meaningless. Brianna offered office hours to map it for each company."
+        }
+      ]
+    },
+    {
+      "title": "Weighted pipeline and forecasting",
+      "subtitle": "Section 4 | slides 23-25 | S1 38:00-43:35",
+      "blocks": [
+        {
+          "type": "card",
+          "title": "The idea",
+          "body": "Weighted value = deal value x stage probability. A $40K deal in Proposal at 50% is worth $20K. 'I have two million dollars in my pipeline' tells an investor nothing; the weighted figure shows how far deals have really moved (S1 39:40-40:44). Márk Máté gave the definition in class: a big amount in prospecting counts for little because only about 5% closes from there (S1 39:12)."
+        },
+        {
+          "type": "table",
+          "headers": ["Deal", "Stage", "Value", "Probability", "Weighted"],
+          "widths": [0.7, 1.4, 1.1, 1.1, 1.1],
+          "rows": [
+            ["A", "Prospecting", "$20K", "5%", "$1K"],
+            ["B", "Qualified", "$30K", "10%", "$3K"],
+            ["C", "Demo", "$40K", "25%", "$10K"],
+            ["D", "Proposal", "$40K", "50%", "$20K"],
+            ["E", "Negotiation", "$60K", "75%", "$45K"],
+            ["Total", "", "$190K", "", "$79K"]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Probabilities must come from your own closed deals",
+          "body": "Slide 25: 54 closed-won out of 200 that reached Qualification = 27%. Set a probability on each stage in the CRM and recalibrate every quarter against what actually closed. 'If you say we think about 50% close from demo and you don't have any data to show it, then it doesn't matter what you think' (S1 41:45-42:10)."
+        },
+        {
+          "type": "section",
+          "title": "If you are too early",
+          "body": "Say so: 'We don't have enough conversion data to assign probabilities yet, but here is what we track instead': how many deals are in proposal, the value of the qualified pipeline, deal sizes and stages. That sounds informed, not like 'throwing numbers out there to look good', which makes investors dig in and stop trusting you (S1 38:16-38:42, 42:13-42:55). A weighted pipeline also tests a goal: can you reach $2M ARR by year end from what is in it? (S1 43:16-43:33)"
+        }
+      ]
+    },
+    {
+      "title": "Workflows, reports and the review rhythm",
+      "subtitle": "Section 5 | slides 27-34 | S1 43:36-49:43",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": ["Workflow", "When", "Then"],
+          "widths": [1.3, 1.6, 2.5],
+          "rows": [
+            ["1. New lead (start here)", "A new lead comes in", "Assign an owner; follow-up task due in 24 hours; intro email. Respond within an hour, five minutes if you can."],
+            ["2. Proposal (start here)", "A deal reaches Proposal", "Follow-up task in 3 days; notify the sales leader; require amount and close date before the move"],
+            ["3. Stalled-deal alert", "No activity for 14 days (or fewer)", "Notify the owner; set status to Stalled"],
+            ["4. Next-step tasks", "A deal changes stage", "Create the standard tasks for that stage, so nobody wonders what to do next"],
+            ["5. Data hygiene", "Amount or close date is missing", "Block the stage change"]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Why the Proposal rule matters",
+          "body": "'Founders will just send out proposals and then everyone's in proposal stage forever, and like 10 of them close.' Requiring amount and close date shows what is stuck so you can fix it (S1 44:59-45:18)."
+        },
+        {
+          "type": "table",
+          "headers": ["Eight reports to build", "Review rhythm"],
+          "widths": [2.7, 2.7],
+          "rows": [
+            ["1 Pipeline by stage<br/>2 New pipeline by source<br/>3 Stage-to-stage conversion<br/>4 Time in stage<br/>5 Closed-lost reasons<br/>6 Activity: calls, demos, proposals<br/>7 Win rate, cycle length, ACV, CAC<br/>8 Weighted forecast (later)", "<b>Weekly pipeline review:</b> new deals added, deals with no next step, stalled deals, this month's commit<br/><b>Monthly team metrics:</b> new pipeline by source (feedback to marketing), win rate, average deal size, cycle length<br/><b>Quarterly board view:</b> pipeline added vs closed won, forecast vs actual, stage probabilities, top loss reasons"]
+          ]
+        },
+        {
+          "type": "card",
+          "title": "Expect an ugly first report",
+          "body": "Her time-in-stage example showed a contact sitting as a subscriber for 816 days. That is what a first report looks like before cleanup; it tells you where deals sit too long (S1 48:13-48:42; slide 33). ACV = annual contract value; CAC = customer acquisition cost."
+        }
+      ]
+    },
+    {
+      "title": "Habits, and what investors look for",
+      "subtitle": "Slides 35-41 | S1 49:53-55:03",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": ["CRM habit", "Rule"],
+          "widths": [1.3, 4.1],
+          "rows": [
+            ["One owner", "Every deal has one accountable person"],
+            ["Next step", "Every open deal has a next step and a date"],
+            ["Required fields", "Amount and close date before Proposal"],
+            ["Log same day", "Calls, emails and meetings logged that day"],
+            ["Close it out", "Dead deals go to Closed lost with a reason"],
+            ["Weekly review", "30 minutes on every open deal"]
+          ]
+        },
+        {
+          "type": "card",
+          "title": "If it's not in the CRM, it didn't happen",
+          "body": "A great demo that moved to proposal does not exist for your weekly or monthly review unless it was logged (S1 50:06-50:29). Slide 36 listed HubSpot, Zoho, Notion, Airtable and Attio with prices from about $14 to $44 per user a month; Brianna skipped it, so check current prices on vendor sites."
+        },
+        {
+          "type": "table",
+          "headers": ["Investors want to see", "Questions they may ask", "Red flags"],
+          "widths": [1.8, 1.8, 1.8],
+          "rows": [
+            ["<b>Qualified opportunities:</b> real interest, clear next steps, evidence of intent to buy<br/><b>Pipeline growth:</b> more qualified opportunities, not just more leads<br/><b>Conversion:</b> deals advancing, and why others stall<br/><b>Visibility:</b> deals by stage, expected value, next steps, realistic close dates", "1 Total pipeline, and weighted?<br/>2 Does one customer make up a big share?<br/>3 Walk me through your top 3 deals: who signs, what happens next?<br/>4 How long is your cycle, and how many deals slipped?<br/>5 Where do your best deals come from?<br/>6 How much is founder-sourced vs repeatable?", "<b>No closed-lost deals:</b> everyone loses some; none recorded means dead deals inflate the pipeline<br/><b>Stale deals:</b> no activity for weeks, still counted open<br/><b>Guessed probabilities:</b> set by feel, not your own win rates<br/><b>Pilot tracking:</b> LOIs and free pilots reported as ARR"]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Show real buyer progress (slide 41)",
+          "body": "A table of your top deals with stage, estimated ACV, buyer signal, next step and timing (for example 'paid pilot, review results, 2 weeks') makes you 'a much more trustworthy founder than someone who is chaotic and doesn't have data to back it' (S1 54:14-55:03). Some investors ask for a CRM export or reports (S1 52:06)."
+        }
+      ]
+    },
+    {
+      "title": "Homework, and the closing questions",
+      "subtitle": "Slide 43 | S1 55:03-1:00:51",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": ["#", "Homework 'this week' (slide 43)", "Note"],
+          "widths": [0.3, 2.6, 2.5],
+          "rows": [
+            ["1", "Write 5-7 stages, each with exit criteria", "Slide says 5-7; slide 17 says 4-7"],
+            ["2", "Set a probability for each stage", "From your own data; if too early, say so (page 8)"],
+            ["3", "Close out dead deals as lost, with a reason", "'Get rid of old things in your CRM'"],
+            ["4", "Build 3 reports", "Choose from the eight on page 9"],
+            ["5", "Create your first 2 workflows", "New lead, and deal reaches Proposal"]
+          ]
+        },
+        {
+          "type": "text",
+          "body": "No due date or submission was named; Brianna called it 'pretty easy' and offered office hours to review CRMs, conversion rates and metrics (S1 55:04-55:20, 1:00:33)."
+        },
+        {
+          "type": "section",
+          "title": "CAC in B2B (Márk Máté, S1 55:33-57:04)",
+          "body": "People calculate CAC 'based on what makes them look the best'. A true CAC includes sales activity: the sales team's salaries and their tools, not just ad spend moved into overhead. Always say what your CAC includes."
+        },
+        {
+          "type": "section",
+          "title": "My CRM is in my head: tool first or design first? (Irakli, S1 57:13-58:02)",
+          "body": "'I would put them all in a spreadsheet first, then think about where they're at, and then start designing it.' She offered office hours: 'I know you have 24 hospitals and you have people kind of in different stages with those, with one customer. I'm happy to map out what that looks like.' 'Getting out of your head as soon as possible is probably the most important thing.'"
+        },
+        {
+          "type": "section",
+          "title": "Inbound and outbound acquisition cost (Nikos, S1 58:10-1:00:24)",
+          "body": "Tag every deal inbound or outbound. Inbound carries marketing costs; outbound only sales costs. Attribution is fuzzy. Keep one pipeline with the same stages, but report the two separately, because rates differ. Outbound often brings fewer, bigger deals, for example $2,000 a month inbound vs $5,000 a month outbound in her illustration."
+        }
+      ]
+    },
+    {
+      "title": "MediMind: from our 9-step funnel to 6 stages",
+      "subtitle": "Working hypothesis, not a decision | Based on B3 (2 October) and slides 10, 14, 17",
+      "blocks": [
+        {
+          "type": "section",
+          "title": "What we have, and the gap",
+          "body": "B3 proposed nine steps: target and route in, MQL, SQL, evaluation-ready, parallel delivered, first hands-on test, results reviewed, purchase agreed, approved rollout. Its 'what must be true' rules are already exit criteria, which the lecture wants. Three things do not fit the lecture: nine is above 4-7; 'target' is a contact list, not pipeline (S1 26:17); and 'parallel delivered' is our action, not the buyer's (S1 21:41). Rollout belongs to onboarding, after closed won."
+        },
+        {
+          "type": "table",
+          "headers": ["Stage", "Exit: what the hospital did", "Required to move on", "B3 step"],
+          "widths": [1.15, 2.05, 1.5, 0.7],
+          "rows": [
+            ["1 Discovery", "A named leader replied and held a discovery call", "Buying organization, connector, buyer, source", "2 (MQL)"],
+            ["2 Qualified", "Confirmed pain, reason to act, sponsor, approval and budget path, internal owner; scoping session dated", "Pain in their words, approval path, next date", "3 (SQL)"],
+            ["3 Evaluation agreed", "Signed off scope, testers, baseline, success criteria, dates and data approvals", "Baseline, criteria, approval reference (never credentials)", "4"],
+            ["4 Evaluating", "Hospital staff completed the agreed workflow hands-on; feedback recorded", "First-test date, evaluators, feedback link", "5-6"],
+            ["5 Proposal", "Reviewed results against baseline and named who signs, when", "Amount, close date, signer", "7"],
+            ["6 Negotiation", "Agreed terms; contract with legal or procurement", "Terms, decision date, any concession", "-"],
+            ["Closed won / lost", "Signed purchase agreement / loss reason recorded", "Signed contract or reason", "8"]
+          ]
+        },
+        {
+          "type": "card",
+          "title": "Where our own work goes",
+          "body": "Our build is a status inside stage 4, not a stage: 'Waiting on us: building', 'Waiting on hospital IT: data access', 'Stalled', 'On hold'. B3's timing targets (14 days from readiness to delivery, 7 days to the first hospital test) then become a time-in-stage report, not extra stages."
+        }
+      ]
+    },
+    {
+      "title": "MediMind: status, numbers and honest investor answers",
+      "subtitle": "Working hypotheses | slides 16, 25, 38-40 | Nothing has been changed, sent or published",
+      "blocks": [
+        {
+          "type": "section",
+          "title": "Brianna's '24 hospitals, one customer'",
+          "body": "Our notes count GeoHospitals as one buying organization with many sites, not 25 customers (W5D1). So keep two views. The <b>pipeline</b> is one row per new buying organization outside the anchor partner. A separate <b>rollout tracker</b> covers the anchor network's sites: onboarding, not new deals. Mixing them would inflate the pipeline, the first thing investors check: 'Does one customer make up a big share?' (S1 52:31). Check the site count with the founder; she may have meant something else."
+        },
+        {
+          "type": "table",
+          "headers": ["Lecture rule", "What it means for us"],
+          "widths": [1.9, 3.5],
+          "rows": [
+            ["Free pilots are not ARR (slide 40)", "Our parallel evaluation is free. Count it as stage 4, never as revenue. Only a signed purchase agreement is closed won."],
+            ["Probabilities from your own data (slide 25)", "We have one closed customer. Do not set percentages yet. Say: 'too early to weight; here is the count and value by stage.'"],
+            ["Amount and close date before Proposal (slide 27)", "Our price is matched to the hospital's current software spend, so the amount is unknown until we learn it. Make that spend a field captured at Qualified."],
+            ["Closed-lost reasons (slide 40)", "Hospitals that said no or went quiet get closed lost with a reason, not left open."],
+            ["Founder-sourced vs repeatable (slide 39)", "Tag the source: warm introduction, direct outreach or inbound (B2's channels)."]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Draft answers for an investor today",
+          "body": "<b>Total and weighted pipeline?</b> 'We are too early to weight. We have [n] hospital groups past discovery, [n] qualified and [n] in evaluation.' Fill in from the tracker, never from memory.<br/><b>Concentration?</b> 'One signed customer, a network of many sites. Our main metric is new hospital groups completing a first hands-on evaluation in the last 30 days' (B3).<br/><b>Founder-sourced?</b> 'Today mostly founder and warm introductions. We track source so we can show when it becomes repeatable.'"
+        },
+        {
+          "type": "card",
+          "title": "Keep the tracker clean",
+          "body": "No patient data, credentials or hospital-confidential documents in the sheet; store approval references and links only (B3). The first-contract value is still unconfirmed (W5D1); check the signed contract before entering any amount."
+        }
+      ]
+    },
+    {
+      "title": "MediMind: the homework, done our way",
+      "subtitle": "Suggested, small and in a spreadsheet first (S1 57:27) | No tool has been bought",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": ["Homework item", "Our version", "Done when"],
+          "widths": [1.4, 2.6, 1.4],
+          "rows": [
+            ["1 Stages with exit criteria", "Agree the 6 stages on page 12, or change them; write each exit rule into the sheet's header note", "Founder signs off one version"],
+            ["2 Probability per stage", "Not yet. Record stage-entry dates now, so probabilities can be calculated later", "Every row has dates"],
+            ["3 Close out dead deals", "Move every hospital conversation with no reply for 30+ days to closed lost or 'nurture' with a reason", "No open row without a next date"],
+            ["4 Three reports", "(a) count by stage; (b) time in stage, including readiness to first test; (c) lost and stall reasons", "One weekly view"],
+            ["5 Two workflows", "Calendar or sheet reminders: new lead gets an owner and a follow-up in 24 hours; a deal reaching Evaluation agreed gets the first-test session booked before delivery (B3's 7-day target)", "Reminders fire for a real row"]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "The sheet (from B3, trimmed)",
+          "body": "One row per buying organization: ID; hospital or group; source (warm introduction, direct outreach, inbound) and date; connector, champion, buyer; stage; status; pain (hypothesis or confirmed); current software spend; next step and date; owner; stage-entry dates; lost or stall reason; evidence link. B3's counting rules still apply: distinct buying organizations, first milestones counted once, unknown is not zero."
+        },
+        {
+          "type": "card",
+          "title": "Why not a CRM tool yet",
+          "body": "Brianna's answer to Irakli was a spreadsheet first, and B3 already said one shared tracker is enough to start. With about 15 target accounts (B2), a tool can wait until the stages have survived a month of real use; then the clean data moves over (S1 16:13-16:57)."
+        }
+      ]
+    },
+    {
+      "title": "What to do next",
+      "subtitle": "Suggested actions | None of this has been sent, booked or published",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": ["#", "Action", "Source"],
+          "widths": [0.3, 3.6, 1.5],
+          "rows": [
+            ["1", "Put every hospital conversation into one sheet today, one row per buying organization, with the source tagged.", "S1 57:27; B3"],
+            ["2", "Decide the stages: the 6 on page 12 or a variant. Exit criteria are buyer actions.", "Slides 14, 17, 43"],
+            ["3", "Add a status column; move stalled and quiet deals there, and close dead ones with a reason.", "Slides 16, 40"],
+            ["4", "Keep the anchor network's sites in a separate rollout tracker.", "S1 52:31, 57:47"],
+            ["5", "Build the three weekly views and hold a 15-30 minute Monday review.", "Slides 34-35; B3"],
+            ["6", "Book office hours with Brianna; she offered to map our 24-hospital situation.", "S1 57:43-57:55"]
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Questions to take to office hours",
+          "body": "<b>1.</b> Our sale includes a free parallel evaluation of several weeks. Is that one stage (Evaluating) or two, and where does the 'opportunity' start?<br/><b>2.</b> Our price matches the hospital's current software spend, so the deal amount is unknown early. What should we enter before Proposal?<br/><b>3.</b> One signed customer with many sites: how should we show expansion at the anchor next to new hospital groups without inflating the pipeline?<br/><b>4.</b> With only a handful of hospital deals a year, when do stage probabilities become meaningful?"
+        },
+        {
+          "type": "section",
+          "title": "Rewatch route",
+          "body": "03:07 shared language. 06:09 the eight metrics. 13:23-14:47 why goals decide fields. 20:24-21:31 four rules for stages. 26:17 Irakli's contacts question. 27:28-29:07 exit criteria and 'closed won means signed'. 30:19-31:44 stage vs status. 36:06-37:46 backing into your numbers. 38:00-43:33 weighted pipeline. 50:41-55:03 what investors look for. 57:13-58:02 Irakli's question and the office-hours offer."
+        }
+      ]
+    }
+  ]
+}

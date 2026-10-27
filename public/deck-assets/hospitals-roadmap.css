@@ -12,7 +12,7 @@
 .reveal .hroad-slide .hroad-open { display: flex; flex-direction: column; align-items: stretch; position: relative; width: 100%; height: 420px; margin: 0; padding: 24px 22px 19px; overflow: hidden; border: 1px solid #cbdfea; border-radius: 21px; color: #1e486c; background: linear-gradient(145deg,#fff,#f1f7fc); box-shadow: 0 20px 32px -27px #255d8a59,inset 0 1px #fff; font: inherit; text-align: left; cursor: pointer; transition: transform 200ms var(--ease-out),border-color 160ms ease; }
 .reveal .hroad-slide .hroad-card--system .hroad-open { color: #fff; border-color: #2d6187; background: radial-gradient(ellipse at 100% 0,#3c8cc180,transparent 72%),linear-gradient(145deg,#163b5b,#225b86); box-shadow: 0 23px 35px -27px #12466cbb,inset 0 1px #b2dffc40; }
 .hroad-card-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 30px; }
-.hroad-number { color: #5487ac; font-size: 26px; font-weight: 550; line-height: 1; letter-spacing: -.06em; }
+.hroad-number { flex: 0 0 auto; color: #5487ac; font-size: 18px; font-weight: 650; line-height: 1; letter-spacing: -.02em; white-space: nowrap; }
 .hroad-status { max-width: 83%; padding: 5px 8px; border: 1px solid #cbdfed; border-radius: 7px; color: #6390af; background: #ffffff80; font-size: 9px; font-weight: 650; line-height: 1.4; text-align: right; }
 .hroad-card--system .hroad-number { color: #b0d7ef; }
 .hroad-card--system .hroad-status { color: #d2e8f6; border-color: #9ecdea38; background: #95c6e715; }
@@ -93,16 +93,11 @@ body.lang-active-en :is(.hroad-slide,.hroad-dialog) .lang-en, body.lang-active-k
 .hroad-panel dt { margin-bottom: 8px; color: #376e96; font-size: 15px; font-weight: 700; line-height: 1.5; }
 .hroad-panel dd { margin: 0; font-size: 14px; line-height: 1.7; }
 .hroad-detail-note { margin: 22px 0 0; padding-top: 18px; border-top: 1px solid #dce8f0; color: #7b94a7; font-size: 12px; line-height: 1.8; }
-.hroad-existing { margin-bottom: 26px; padding: 20px 22px; border: 1px solid #cee2ed; border-radius: 13px; background: #edf6fc; }
-.hroad-existing h3 { margin-bottom: 13px; font-size: 18px; }
-.hroad-existing ul { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px 24px; margin: 0; padding: 0; list-style: none; }
-.hroad-existing li { position: relative; padding-left: 18px; color: #3e7497; font-size: 13px; line-height: 1.6; }
-.hroad-existing li::before { content: ''; position: absolute; left: 0; top: 8px; width: 6px; height: 6px; border-radius: 50%; background: #72a5c6; }
-.hroad-existing p { margin: 16px 0 0; color: #809db2; font-size: 11px; line-height: 1.7; }
 .hroad-directions { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 14px 24px; margin: 0; }
 .hroad-direction { padding: 15px 0; border-top: 1px solid #dce8f0; }
 .hroad-direction dd { font-size: 13px; }
 .hroad-purpose { margin: 0 0 22px; font-size: 15px; line-height: 1.6; }
+.hroad-vision { margin-top: 28px; }
 .hroad-loop { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 19px; margin: 0; padding: 0; list-style: none; counter-reset: hroad-loop; }
 .hroad-loop > li { padding: 18px 0 0; border-top: 2px solid #c2dbeb; counter-increment: hroad-loop; }
 .hroad-loop > li::before { content: '0' counter(hroad-loop); display: block; margin-bottom: 18px; color: #94b6cd; font-size: 13px; }
@@ -160,8 +155,6 @@ body.lang-active-en :is(.hroad-slide,.hroad-dialog) .lang-en, body.lang-active-k
   .hroad-panel h3 { font-size: 19px; }
   .hroad-scope, .hroad-loop { grid-template-columns: 1fr; gap: 22px; }
   .hroad-scope > div { padding-top: 15px; }
-  .hroad-existing { padding: 18px; }
-  .hroad-existing ul { grid-template-columns: 1fr; }
   .hroad-directions { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 5px 19px; }
   .hroad-loop > li::before { margin-bottom: 12px; }
 }

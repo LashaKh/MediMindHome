@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "checks": [
+    "Incorrect password keeps the existing gate closed",
+    "Correct password opens the proposal",
+    "Generic clinic placeholder is omitted",
+    "All language buttons update copy and PDF links without advancing slides",
+    "Arrow, Home and End navigation and boundary buttons work",
+    "Direct slide links and contact destinations are correct",
+    "Named hospital personalization works",
+    "Phone layout exposes all slides and translated comparison labels"
+  ],
+  "pageErrors": []
+}

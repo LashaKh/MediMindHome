@@ -1,0 +1,11 @@
+[
+  "Password gate, shared Georgian link, both language buttons and keyboard navigation passed.",
+  "All seven original video demos opened and loaded without advancing the slide.",
+  "Embedded operating-system walkthrough loaded.",
+  "Clinical and business case pop-ups opened and closed on the correct slide.",
+  "Phone next/back controls and long-slide scrolling passed.",
+  {
+    "narrowOrbitOverflow": []
+  },
+  "No browser JavaScript errors."
+]

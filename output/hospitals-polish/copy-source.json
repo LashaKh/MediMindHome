@@ -1,0 +1,6917 @@
+{
+  "sha256": "60774922a80e8f709ab01b67840ff8a0211f2ad43bbb3d7aa2a995d74b9f4e59",
+  "units": [
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 0,
+      "start": 381163,
+      "end": 381186,
+      "html": "Integration Partnership",
+      "id": 0
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 0,
+      "start": 381237,
+      "end": 381261,
+      "html": "ინტეგრაციული პარტნიორობა",
+      "id": 1
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 0,
+      "start": 381539,
+      "end": 381578,
+      "html": "The AI-native <em>operating system</em>",
+      "id": 2
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 0,
+      "start": 381629,
+      "end": 381667,
+      "html": "AI-ნატიური <em>ოპერაციული სისტემა</em>",
+      "id": 3
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 0,
+      "start": 381758,
+      "end": 381785,
+      "html": "for <em>your hospital</em>.",
+      "id": 4
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 0,
+      "start": 381836,
+      "end": 381865,
+      "html": "<em>თქვენი კლინიკისთვის</em>.",
+      "id": 5
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 0,
+      "start": 381954,
+      "end": 382008,
+      "html": "EMR · Laboratory · PACS · Patient Portal — one system.",
+      "id": 6
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 0,
+      "start": 382059,
+      "end": 382119,
+      "html": "EMR · ლაბორატორია · PACS · პაციენტის პორტალი — ერთი სისტემა.",
+      "id": 7
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 0,
+      "start": 382390,
+      "end": 382617,
+      "html": "Thank you for the time. In the next fifteen minutes I'll show you something already running in 25 Georgian hospitals — and make you one offer: everything your hospital's software should have been, at what you already pay today.",
+      "id": 8
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 0,
+      "start": 382668,
+      "end": 382899,
+      "html": "გმადლობთ დათმობილი დროისთვის. მომდევნო თხუთმეტ წუთში გაჩვენებთ იმას, რაც უკვე წარმატებით მუშაობს საქართველოს 25 კლინიკაში — და შემოგთავაზებთ იმას, რაც თქვენი კლინიკის პროგრამა თავიდანვე უნდა ყოფილიყო, იმავე ფასად, რასაც დღეს იხდით.",
+      "id": 9
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 1,
+      "start": 383378,
+      "end": 383389,
+      "html": "THE PROMISE",
+      "id": 10
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 1,
+      "start": 383440,
+      "end": 383448,
+      "html": "დაპირება",
+      "id": 11
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 1,
+      "start": 383519,
+      "end": 383553,
+      "html": "The whole deal, <em>up front</em>.",
+      "id": 12
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 1,
+      "start": 383604,
+      "end": 383642,
+      "html": "მთელი შეთავაზება — <em>თავიდანვე</em>.",
+      "id": 13
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 1,
+      "start": 384080,
+      "end": 384122,
+      "html": "Everything your hospital needs — included.",
+      "id": 14
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 1,
+      "start": 384173,
+      "end": 384227,
+      "html": "ყველაფერი, რაც თქვენს კლინიკას სჭირდება — ერთ პაკეტში.",
+      "id": 15
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 1,
+      "start": 384281,
+      "end": 384349,
+      "html": "One platform for the whole hospital — at what you already pay today.",
+      "id": 16
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 1,
+      "start": 384400,
+      "end": 384466,
+      "html": "ერთი პლატფორმა მთელი კლინიკისთვის — იმავე ფასად, რასაც დღეს იხდით.",
+      "id": 17
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 1,
+      "start": 385133,
+      "end": 385157,
+      "html": "<em>Free</em> deployment",
+      "id": 18
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 1,
+      "start": 385208,
+      "end": 385231,
+      "html": "<em>უფასო</em> დანერგვა",
+      "id": 19
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 1,
+      "start": 385303,
+      "end": 385390,
+      "html": "We install, configure and train your key users on-site — the rollout costs you nothing.",
+      "id": 20
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 1,
+      "start": 385441,
+      "end": 385542,
+      "html": "ვაინსტალირებთ, ვაწყობთ და ადგილზე ვამზადებთ თქვენს ძირითად მომხმარებლებს — დანერგვა არაფერი გიჯდებათ.",
+      "id": 21
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 1,
+      "start": 385986,
+      "end": 386022,
+      "html": "<em>Free</em>, limitless development",
+      "id": 22
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 1,
+      "start": 386073,
+      "end": 386112,
+      "html": "<em>უფასო</em>, შეუზღუდავი დეველოპმენტი",
+      "id": 23
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 1,
+      "start": 386184,
+      "end": 386253,
+      "html": "You ask, we build. Custom features for your wards — never an invoice.",
+      "id": 24
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 1,
+      "start": 386304,
+      "end": 386387,
+      "html": "თქვენ ითხოვთ — ჩვენ ვაშენებთ. ფუნქციები თქვენი განყოფილებებისთვის, ინვოისის გარეშე.",
+      "id": 25
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 1,
+      "start": 386831,
+      "end": 386867,
+      "html": "Code ownership as <em>insurance</em>",
+      "id": 26
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 1,
+      "start": 386918,
+      "end": 386949,
+      "html": "კოდის ფლობა — <em>დაზღვევა</em>",
+      "id": 27
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 1,
+      "start": 387021,
+      "end": 387094,
+      "html": "The first version of the source code is yours — in writing, from day one.",
+      "id": 28
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 1,
+      "start": 387145,
+      "end": 387212,
+      "html": "პირველი ვერსიის საწყისი კოდი თქვენია — წერილობით, პირველივე დღიდან.",
+      "id": 29
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 1,
+      "start": 387656,
+      "end": 387694,
+      "html": "<em>14-day proof.</em> One-day switch.",
+      "id": 30
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 1,
+      "start": 387745,
+      "end": 387794,
+      "html": "<em>14-დღიანი შემოწმება.</em> ერთდღიანი გადასვლა.",
+      "id": 31
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 1,
+      "start": 387866,
+      "end": 387950,
+      "html": "Test both systems in parallel, then decide. The final switch takes one prepared day.",
+      "id": 32
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 1,
+      "start": 388001,
+      "end": 388108,
+      "html": "ორივე სისტემა პარალელურად გამოცადეთ და შემდეგ გადაწყვიტეთ. საბოლოო გადასვლას ერთი მომზადებული დღე სჭირდება.",
+      "id": 33
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 1,
+      "start": 388569,
+      "end": 388604,
+      "html": "Tomorrow's standard, <em>today</em>",
+      "id": 34
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 1,
+      "start": 388655,
+      "end": 388696,
+      "html": "ხვალინდელი სტანდარტი — <em>უკვე დღეს</em>",
+      "id": 35
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 1,
+      "start": 388768,
+      "end": 388885,
+      "html": "The latest Western-grade platform, improving every month — after MediMind, you'll never need another software vendor.",
+      "id": 36
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 1,
+      "start": 388936,
+      "end": 389059,
+      "html": "უახლესი დასავლური დონის პლატფორმა, რომელიც ყოველთვიურად ვითარდება — MediMind-ის შემდეგ სხვა ვენდორი აღარასდროს დაგჭირდებათ.",
+      "id": 37
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 1,
+      "start": 389164,
+      "end": 389246,
+      "html": "No small print. This is the deal — <em>and the rest of the deck is the proof.</em>",
+      "id": 38
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 1,
+      "start": 389297,
+      "end": 389391,
+      "html": "დამალული პირობების გარეშე. ეს არის შეთავაზება — <em>დანარჩენი დეკი კი ამის მტკიცებულებაა.</em>",
+      "id": 39
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 1,
+      "start": 389662,
+      "end": 390532,
+      "html": "Before anything else, here is the whole deal, so no question hangs in the air. Deployment is free: we install, configure, migrate and train your key users on-site. [If asked about training: it is real and hands-on, but it works because each department names someone who owns the system and learns it properly with us. We support that person indefinitely; we do not run endless open training.] Development is free and limitless: you ask, we build, no invoices. The platform covers everything the hospital runs, including EMR, lab, PACS, pharmacy and billing, at what you already pay today. You hold the first version of the source code in writing, as insurance. We run a 14-day parallel proof before asking you to commit. Once your team verifies it, the final switch takes one prepared day with no downtime. Everything after this slide is proof of these five commitments.",
+      "id": 40
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 1,
+      "start": 390583,
+      "end": 391541,
+      "html": "სანამ რამეს გაჩვენებთ, აი მთელი შეთავაზება, რომ არცერთი კითხვა ჰაერში არ დარჩეს. დანერგვა უფასოა: ვაინსტალირებთ, ვაწყობთ, გადმოგვაქვს მონაცემები და ადგილზე ვამზადებთ თქვენს ძირითად მომხმარებლებს. [თუ ტრენინგზე იკითხავენ: ტრენინგი რეალური და პრაქტიკულია, მაგრამ მუშაობს იმიტომ, რომ თითოეული განყოფილება ასახელებს ადამიანს, რომელიც სისტემას ჩაიბარებს და კარგად გაერკვევა. ამ ადამიანს მუდმივად ვუწევთ მხარდაჭერას; დაუსრულებელ ღია ტრენინგებს არ ვატარებთ.] დეველოპმენტი უფასო და შეუზღუდავია: თქვენ ითხოვთ, ჩვენ ვაშენებთ, ინვოისების გარეშე. პლატფორმა ფარავს ყველაფერს, მათ შორის EMR-ს, ლაბორატორიას, PACS-ს, აფთიაქსა და ბილინგს, იმავე ფასად, რასაც დღეს იხდით. პირველი ვერსიის საწყის კოდს წერილობით ფლობთ, როგორც დაზღვევას. გადაწყვეტილებამდე 14-დღიან პარალელურ შემოწმებას ვატარებთ. მას შემდეგ, რაც თქვენი გუნდი სისტემას დაადასტურებს, საბოლოო გადასვლას ერთი მომზადებული დღე სჭირდება, შეფერხების გარეშე. ყველაფერი ამ სლაიდის შემდეგ ამ ხუთი ვალდებულების მტკიცებულებაა.",
+      "id": 41
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 2,
+      "start": 391959,
+      "end": 391972,
+      "html": "THE LIABILITY",
+      "id": 42
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 2,
+      "start": 392023,
+      "end": 392030,
+      "html": "რისკები",
+      "id": 43
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 2,
+      "start": 392189,
+      "end": 392239,
+      "html": "The riskiest option is <em>choosing the past</em>.",
+      "id": 44
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 2,
+      "start": 392290,
+      "end": 392335,
+      "html": "ყველაზე დიდი რისკი <em>წარსულის არჩევაა</em>.",
+      "id": 45
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 2,
+      "start": 392404,
+      "end": 392493,
+      "html": "It may still run today. Give it a year or two — it's a dead end, and you're welded to it.",
+      "id": 46
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 2,
+      "start": 392544,
+      "end": 392544,
+      "html": "",
+      "id": 47
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 2,
+      "start": 392992,
+      "end": 393009,
+      "html": "Any legacy vendor",
+      "id": 48
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 2,
+      "start": 393060,
+      "end": 393084,
+      "html": "ნებისმიერი ძველი ვენდორი",
+      "id": 49
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 2,
+      "start": 393614,
+      "end": 393671,
+      "html": "Every change is an invoice — billed, delayed, or refused.",
+      "id": 50
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 2,
+      "start": 393722,
+      "end": 393783,
+      "html": "ყოველი ცვლილება ინვოისია — ფასიანი, ჭიანურდება ან უარყოფილია.",
+      "id": 51
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 2,
+      "start": 393892,
+      "end": 393909,
+      "html": "Standard features",
+      "id": 52
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 2,
+      "start": 393960,
+      "end": 393981,
+      "html": "სტანდარტული ფუნქციები",
+      "id": 53
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 2,
+      "start": 394317,
+      "end": 394367,
+      "html": "On request — <strong>built for you, free</strong>.",
+      "id": 54
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 2,
+      "start": 394418,
+      "end": 394479,
+      "html": "მოთხოვნისთანავე — <strong>თქვენთვის შენდება, უფასოდ</strong>.",
+      "id": 55
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 2,
+      "start": 394887,
+      "end": 394955,
+      "html": "Aging, often unlicensed tech — the same Russian 1C backend, no FHIR.",
+      "id": 56
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 2,
+      "start": 395006,
+      "end": 395089,
+      "html": "მოძველებული, ხშირად ულიცენზიო ტექნოლოგია — იგივე რუსული 1C ბექენდი, FHIR-ის გარეშე.",
+      "id": 57
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 2,
+      "start": 395198,
+      "end": 395223,
+      "html": "Security &amp; foundation",
+      "id": 58
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 2,
+      "start": 395274,
+      "end": 395299,
+      "html": "უსაფრთხოება და საძირკველი",
+      "id": 59
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 2,
+      "start": 395635,
+      "end": 395715,
+      "html": "Modern and secure — <strong>FHIR-native</strong>, the standard the West runs on.",
+      "id": 60
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 2,
+      "start": 395766,
+      "end": 395863,
+      "html": "თანამედროვე და უსაფრთხო — <strong>FHIR-ნატიური</strong>, სტანდარტი, რომლითაც დასავლეთი ოპერირებს.",
+      "id": 61
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 2,
+      "start": 396271,
+      "end": 396329,
+      "html": "The code? Never handed over — you're welded to the vendor.",
+      "id": 62
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 2,
+      "start": 396380,
+      "end": 396434,
+      "html": "კოდი? არასდროს გადმოგეცემათ — ვენდორზე ხართ მიჯაჭვული.",
+      "id": 63
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 2,
+      "start": 396543,
+      "end": 396554,
+      "html": "Source code",
+      "id": 64
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 2,
+      "start": 396605,
+      "end": 396617,
+      "html": "საწყისი კოდი",
+      "id": 65
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 2,
+      "start": 396953,
+      "end": 397026,
+      "html": "The first version is <strong>yours — in writing</strong>. Your insurance.",
+      "id": 66
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 2,
+      "start": 397077,
+      "end": 397146,
+      "html": "პირველი ვერსია <strong>თქვენია — წერილობით</strong>. თქვენი დაზღვევა.",
+      "id": 67
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 2,
+      "start": 397554,
+      "end": 397602,
+      "html": "Tomorrow's features aren't even an option there.",
+      "id": 68
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 2,
+      "start": 397653,
+      "end": 397698,
+      "html": "ხვალინდელი ფუნქციები იქ ოფციადაც არ არსებობს.",
+      "id": 69
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 2,
+      "start": 397807,
+      "end": 397826,
+      "html": "AI &amp; the future",
+      "id": 70
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 2,
+      "start": 397877,
+      "end": 397891,
+      "html": "AI და მომავალი",
+      "id": 71
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 2,
+      "start": 398227,
+      "end": 398282,
+      "html": "<strong>AI-native today</strong> — always a step ahead.",
+      "id": 72
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 2,
+      "start": 398333,
+      "end": 398396,
+      "html": "<strong>AI-ნატიური უკვე დღეს</strong> — მუდამ ერთი ნაბიჯით წინ.",
+      "id": 73
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 2,
+      "start": 398804,
+      "end": 398859,
+      "html": "Frozen in time — updates cost extra, if they ever come.",
+      "id": 74
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 2,
+      "start": 398910,
+      "end": 398971,
+      "html": "დროში გაყინული — განახლებები ცალკე ფასია, თუ საერთოდ მიიღებთ.",
+      "id": 75
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 2,
+      "start": 399080,
+      "end": 399087,
+      "html": "Updates",
+      "id": 76
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 2,
+      "start": 399138,
+      "end": 399149,
+      "html": "განახლებები",
+      "id": 77
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 2,
+      "start": 399485,
+      "end": 399566,
+      "html": "<strong>Evolves every month</strong> — new features land automatically, included.",
+      "id": 78
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 2,
+      "start": 399617,
+      "end": 399704,
+      "html": "<strong>ყოველთვიურად ვითარდება</strong> — ახალი ფუნქციები ავტომატურად ემატება, ფასშივე.",
+      "id": 79
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 2,
+      "start": 400112,
+      "end": 400170,
+      "html": "Stagnant companies — minimal ambition, minimal investment.",
+      "id": 80
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 2,
+      "start": 400221,
+      "end": 400280,
+      "html": "სტაგნირებული კომპანიები — მინიმალური ამბიცია და ინვესტიცია.",
+      "id": 81
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 2,
+      "start": 400389,
+      "end": 400397,
+      "html": "Ambition",
+      "id": 82
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 2,
+      "start": 400448,
+      "end": 400455,
+      "html": "ამბიცია",
+      "id": 83
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 2,
+      "start": 400791,
+      "end": 400878,
+      "html": "<strong>Funded for international scale</strong> — the resources to deliver all of this.",
+      "id": 84
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 2,
+      "start": 400929,
+      "end": 401028,
+      "html": "<strong>დაფინანსებული საერთაშორისო მასშტაბისთვის</strong> — რესურსები, რომ ეს ყველაფერი შევასრულოთ.",
+      "id": 85
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 2,
+      "start": 401143,
+      "end": 401279,
+      "html": "Medicine will change, and legacy simply can't follow. <strong>We are the future of this software — staying put is the dead end.</strong>",
+      "id": 86
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 2,
+      "start": 401330,
+      "end": 401443,
+      "html": "მედიცინა შეიცვლება და ძველი სისტემები ვერ აჰყვებიან. <strong>მომავალი ჩვენ ვართ — ადგილზე დარჩენა ჩიხია.</strong>",
+      "id": 87
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 2,
+      "start": 401714,
+      "end": 402800,
+      "html": "Let's be honest about the thing nobody puts on a balance sheet. Whether you keep your current system or sign with another local vendor, you land on the same foundation: an aging Russian 1C backend. It works at a functional level — but it cannot speak FHIR, the standard the Western world runs on, and it will not carry this hospital into the next decade. So ask any vendor at your table three questions: How many development hours are included — or is every change an invoice? Who holds a backup copy of the code if you disappear? And can the data structure talk to the outside world? We answer all three in writing: development happens with you, you get the source code from version one, and the foundation is FHIR-native from day one. This gets solved now, on your terms — or later, on someone else's. Spoken only, never printed: the local vendors — Vabako, Radium, Doctra — are small, stagnant teams: minimal investment, minimal ambition, no roadmap. We are funded, resourced and building for international scale — that is exactly why we can afford commitments they can't even offer.",
+      "id": 88
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 2,
+      "start": 402851,
+      "end": 404113,
+      "html": "მოდით გულწრფელად ვისაუბროთ იმაზე, რასაც ბალანსში არავინ წერს. შეინარჩუნებთ ახლანდელ სისტემას თუ სხვა ადგილობრივ ვენდორთან გააფორმებთ ხელშეკრულებას — მაინც იმავე საძირკველზე აღმოჩნდებით: მოძველებულ რუსულ 1C ბექენდზე. ფუნქციურ დონეზე ის მუშაობს, მაგრამ მას არ შეუძლია იმუშაოს FHIR-ზე — სტანდარტზე, რომლითაც დასავლური სამყარო ოპერირებს — და ის ამ კლინიკას მომდევნო ათწლეულში ვერ გაუძღვება. ამიტომ ნებისმიერ ვენდორს დაუსვით სამი კითხვა: რამდენი დეველოპმენტის საათი შედის შეთანხმებაში — თუ ყოველი ცვლილება ცალკე ინვოისია? ვის ექნება კოდის სარეზერვო ასლი, თუ ისინი გაქრებიან ბაზრიდან? და შეუძლია თუ არა მონაცემთა სტრუქტურას გარე სამყაროსთან ინტეგრაცია? ჩვენ სამივე კითხვას წერილობით ვპასუხობთ: დეველოპმენტი ხდება თქვენთან ერთად, პირველივე ვერსიის საწყისი კოდი გადმოგეცემათ თქვენ და საძირკველი პირველივე დღიდან FHIR-ნატიურია. ეს უნდა მოგვარდეს ახლა, თქვენი პირობებით — წინააღმდეგ შემთხვევაში მოგვიანებით სხვისი პირობებით მოგიწევთ ამის გაკეთება. მხოლოდ სიტყვიერად, არასდროს დაბეჭდილი: ადგილობრივი ვენდორები — ვაბაკო, რადიუმი, დოქტრა — პატარა, სტაგნირებული გუნდებია: მინიმალური ინვესტიცია, მინიმალური ამბიცია, გეგმის გარეშე. ჩვენ დაფინანსებული ვართ და საერთაშორისო მასშტაბისთვის ვშენდებით — სწორედ ამიტომ შეგვიძლია ისეთი ვალდებულებები, რასაც ისინი ვერც კი შემოგთავაზებენ.",
+      "id": 89
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 404667,
+      "end": 404686,
+      "html": "THE PATH · 3 PHASES",
+      "id": 90
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 404737,
+      "end": 404750,
+      "html": "გზა · 3 ეტაპი",
+      "id": 91
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 404821,
+      "end": 404866,
+      "html": "Start solid. <em>End ahead of the world.</em>",
+      "id": 92
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 404917,
+      "end": 404966,
+      "html": "დაიწყეთ სწორად. <em>დაასრულეთ მსოფლიოზე წინ.</em>",
+      "id": 93
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 405035,
+      "end": 405090,
+      "html": "Phase 1 is today's offer. Phases 2 and 3 stay optional.",
+      "id": 94
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 405141,
+      "end": 405199,
+      "html": "ეტაპი 1 — დღევანდელი შეთავაზება. ეტაპები 2 და 3 არჩევითია.",
+      "id": 95
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 405320,
+      "end": 405338,
+      "html": "On the table today",
+      "id": 96
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 405389,
+      "end": 405402,
+      "html": "დღეს მაგიდაზე",
+      "id": 97
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 405438,
+      "end": 405462,
+      "html": "at what you already pay.",
+      "id": 98
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 405513,
+      "end": 405543,
+      "html": "იმავე ფასად, რასაც დღეს იხდით.",
+      "id": 99
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 405734,
+      "end": 405767,
+      "html": "This is what we're offering today",
+      "id": 100
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 405818,
+      "end": 405844,
+      "html": "სწორედ ამას გთავაზობთ დღეს",
+      "id": 101
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 405956,
+      "end": 405963,
+      "html": "Phase 1",
+      "id": 102
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 406014,
+      "end": 406021,
+      "html": "ეტაპი 1",
+      "id": 103
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 406164,
+      "end": 406178,
+      "html": "Live · day one",
+      "id": 104
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 406229,
+      "end": 406255,
+      "html": "აქტიური · პირველივე დღიდან",
+      "id": 105
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 406349,
+      "end": 406363,
+      "html": "The foundation",
+      "id": 106
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 406414,
+      "end": 406424,
+      "html": "საძირკველი",
+      "id": 107
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 406494,
+      "end": 406519,
+      "html": "EMR · LAB · PACS · Portal",
+      "id": 108
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 406570,
+      "end": 406596,
+      "html": "EMR · LAB · PACS · პორტალი",
+      "id": 109
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 406762,
+      "end": 406784,
+      "html": "The legacy stack goes.",
+      "id": 110
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 406835,
+      "end": 406859,
+      "html": "ძველი სისტემები იცვლება.",
+      "id": 111
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 406995,
+      "end": 407040,
+      "html": "A world-class Western system takes its place.",
+      "id": 112
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 407091,
+      "end": 407142,
+      "html": "მის ადგილს იკავებს მსოფლიო დონის დასავლური სისტემა.",
+      "id": 113
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 407278,
+      "end": 407324,
+      "html": "Built on FHIR R4 — secured to the highest bar.",
+      "id": 114
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 407375,
+      "end": 407423,
+      "html": "აგებული FHIR R4-ზე — დაცული უმაღლესი სტანდარტით.",
+      "id": 115
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 407576,
+      "end": 407640,
+      "html": "hospitals under one signed chain contract — modules already live",
+      "id": 116
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 407691,
+      "end": 407758,
+      "html": "კლინიკა ერთი ხელმოწერილი ქსელური კონტრაქტით — მოდულები უკვე მუშაობს",
+      "id": 117
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 408196,
+      "end": 408205,
+      "html": "integrate",
+      "id": 118
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 408256,
+      "end": 408266,
+      "html": "ინტეგრაცია",
+      "id": 119
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 408377,
+      "end": 408392,
+      "html": "Optional, later",
+      "id": 120
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 408443,
+      "end": 408464,
+      "html": "არჩევითი, მოგვიანებით",
+      "id": 121
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 408500,
+      "end": 408553,
+      "html": "your call, agreed separately if and when you want it.",
+      "id": 122
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 408604,
+      "end": 408675,
+      "html": "თქვენი გადაწყვეტილებაა და ცალკე შესათანხმებელი — თუ და როცა მოისურვებთ.",
+      "id": 123
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 408904,
+      "end": 408911,
+      "html": "Phase 2",
+      "id": 124
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 408962,
+      "end": 408969,
+      "html": "ეტაპი 2",
+      "id": 125
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 409063,
+      "end": 409084,
+      "html": "Optional · when ready",
+      "id": 126
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 409135,
+      "end": 409160,
+      "html": "არჩევითი · როცა მზად ხართ",
+      "id": 127
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 409254,
+      "end": 409270,
+      "html": "Efficiency gains",
+      "id": 128
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 409321,
+      "end": 409332,
+      "html": "ეფექტიანობა",
+      "id": 129
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 409402,
+      "end": 409436,
+      "html": "AI introduced workflow by workflow",
+      "id": 130
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 409487,
+      "end": 409510,
+      "html": "AI ინერგება ეტაპობრივად",
+      "id": 131
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 409676,
+      "end": 409718,
+      "html": "AI scribe — minimal paperwork for doctors.",
+      "id": 132
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 409769,
+      "end": 409823,
+      "html": "AI სქრაიბი — მინიმალური ქაღალდის სამუშაო ექიმებისთვის.",
+      "id": 133
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 409959,
+      "end": 410001,
+      "html": "AI analysis of the patient's full history.",
+      "id": 134
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 410052,
+      "end": 410088,
+      "html": "პაციენტის სრული ისტორიის AI ანალიზი.",
+      "id": 135
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 410224,
+      "end": 410249,
+      "html": "AI early-warning systems.",
+      "id": 136
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 410300,
+      "end": 410334,
+      "html": "ადრეული გაფრთხილების AI სისტემები.",
+      "id": 137
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 410470,
+      "end": 410505,
+      "html": "Management sees the whole hospital.",
+      "id": 138
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 410556,
+      "end": 410588,
+      "html": "მენეჯმენტი მთელ კლინიკას ხედავს.",
+      "id": 139
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 410710,
+      "end": 410713,
+      "html": "YOU",
+      "id": 140
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 410764,
+      "end": 410769,
+      "html": "თქვენ",
+      "id": 141
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 410827,
+      "end": 410868,
+      "html": "decide which department starts — and when",
+      "id": 142
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 410919,
+      "end": 410951,
+      "html": "წყვეტთ, საიდან და როდის დაიწყება",
+      "id": 143
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 411389,
+      "end": 411398,
+      "html": "integrate",
+      "id": 144
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 411449,
+      "end": 411459,
+      "html": "ინტეგრაცია",
+      "id": 145
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 411772,
+      "end": 411779,
+      "html": "Phase 3",
+      "id": 146
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 411830,
+      "end": 411837,
+      "html": "ეტაპი 3",
+      "id": 147
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 412094,
+      "end": 412116,
+      "html": "Optional · world-first",
+      "id": 148
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 412167,
+      "end": 412195,
+      "html": "არჩევითი · პირველი მსოფლიოში",
+      "id": 149
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 412289,
+      "end": 412308,
+      "html": "The proactive brain",
+      "id": 150
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 412359,
+      "end": 412375,
+      "html": "პროაქტიული ტვინი",
+      "id": 151
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 412445,
+      "end": 412475,
+      "html": "The hospital that thinks ahead",
+      "id": 152
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 412526,
+      "end": 412559,
+      "html": "კლინიკა, რომელიც წინასწარ ფიქრობს",
+      "id": 153
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 412725,
+      "end": 412758,
+      "html": "Reads every patient in real time.",
+      "id": 154
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 412809,
+      "end": 412847,
+      "html": "ყველა პაციენტს რეალურ დროში კითხულობს.",
+      "id": 155
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 412983,
+      "end": 413027,
+      "html": "Supports clinical and operational decisions.",
+      "id": 156
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 413078,
+      "end": 413127,
+      "html": "ეხმარება კლინიკურ და ოპერაციულ გადაწყვეტილებებში.",
+      "id": 157
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 413263,
+      "end": 413301,
+      "html": "Catches problems before they escalate.",
+      "id": 158
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 413352,
+      "end": 413383,
+      "html": "იჭერს პრობლემებს გამწვავებამდე.",
+      "id": 159
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 413537,
+      "end": 413601,
+      "html": "the hospitals that switch it on run among the first in the world",
+      "id": 160
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 413652,
+      "end": 413720,
+      "html": "კლინიკები, რომლებიც ამას ჩართავენ, მსოფლიოში პირველთა შორის იქნებიან",
+      "id": 161
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 414103,
+      "end": 414232,
+      "html": "Phase 1 lays the rails — FHIR R4 under everything. <strong>So if you ever want more, it's an integration, not a rebuild.</strong>",
+      "id": 162
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 414283,
+      "end": 414425,
+      "html": "ეტაპი 1 აგებს რელსებს — FHIR R4 ყველაფრის ქვეშ. <strong>ამიტომ თუ ოდესმე მეტს მოისურვებთ, ეს იქნება ინტეგრაცია და არა თავიდან შენება.</strong>",
+      "id": 163
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 3,
+      "start": 414773,
+      "end": 415695,
+      "html": "Be very clear about what is actually on the table today: Phase 1. It is not a pilot — it is the full replacement: EMR, lab, PACS, portal, Western standards, FHIR R4, already running across a 25-hospital chain, at the money you already spend. That alone is the offer, and it is a strong one — sell it, and stop there. Phases 2 and 3 are optional and deliberately NOT priced today. Phase 2 brings AI into the workflows where it actually saves time — introduced step by step, department by department, with the doctor always reviewing and signing. Phase 3 is the proactive brain — the hospitals that turn it on will be among the first in the world. Neither one is promised inside today's spend: we agree them separately, later, once the value is obvious and you ask for them. The key sentence: because Phase 1 rebuilds the foundation on FHIR, more is a switch, not a rebuild. [Never bundle phases 2-3 into the Phase 1 price.]",
+      "id": 164
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 3,
+      "start": 415746,
+      "end": 416662,
+      "html": "ძალიან ნათლად თქვით, რა დევს დღეს მაგიდაზე: ეტაპი 1. ეს პილოტი არ არის — ეს სრული ჩანაცვლებაა: EMR, ლაბორატორია, PACS, პორტალი, დასავლური სტანდარტები, FHIR R4, უკვე მუშაობს 25-კლინიკიან ქსელში, იმ თანხად, რასაც ისედაც ხარჯავთ. მარტო ეს არის შეთავაზება და ის ძლიერია — სწორედ ეს გაყიდეთ და აქ გაჩერდით. ეტაპები 2 და 3 არჩევითია და შეგნებულად არ არის დღეს ფასში ჩადებული. ეტაპი 2 AI-ს იმ პროცესებში შემოიტანს, სადაც ის რეალურად დროს ზოგავს — ეტაპობრივად, განყოფილება განყოფილებაზე, სადაც ექიმი ყოველთვის ამოწმებს და ხელს აწერს. ეტაპი 3 პროაქტიული ტვინია — კლინიკები, რომლებიც მას ჩართავენ, მსოფლიოში პირველთა შორის იქნებიან. არცერთი მათგანი არ არის დღევანდელ ხარჯში დაპირებული: მათ ცალკე შევათანხმებთ მოგვიანებით, როცა სარგებელი აშკარა გახდება და თავად მოგვთხოვთ. მთავარი წინადადება: რადგან ეტაპი 1 საძირკველს FHIR-ზე აშენებს, მეტის დამატება ჩართვაა და არა თავიდან შენება. [ეტაპები 2-3 არასდროს ჩადოთ ეტაპ 1-ის ფასში.]",
+      "id": 165
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 4,
+      "start": 417077,
+      "end": 417097,
+      "html": "PROOF · ALREADY LIVE",
+      "id": 166
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 4,
+      "start": 417148,
+      "end": 417178,
+      "html": "მტკიცებულება · უკვე დანერგილია",
+      "id": 167
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 4,
+      "start": 417249,
+      "end": 417298,
+      "html": "Not a promise. <em>Live across 25 hospitals.</em>",
+      "id": 168
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 4,
+      "start": 417349,
+      "end": 417405,
+      "html": "ეს არ არის დაპირება. <em>უკვე მუშაობს 25 კლინიკაში.</em>",
+      "id": 169
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 4,
+      "start": 417474,
+      "end": 417536,
+      "html": "Georgia's 2nd-largest hospital chain already runs on MediMind.",
+      "id": 170
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 4,
+      "start": 417587,
+      "end": 417656,
+      "html": "საქართველოს სიდიდით მე-2 საავადმყოფოთა ქსელი უკვე იყენებს MediMind-ს.",
+      "id": 171
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 4,
+      "start": 417840,
+      "end": 417847,
+      "html": "GEORGIA",
+      "id": 172
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 4,
+      "start": 417898,
+      "end": 417908,
+      "html": "საქართველო",
+      "id": 173
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 4,
+      "start": 427587,
+      "end": 427591,
+      "html": "live",
+      "id": 174
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 4,
+      "start": 427642,
+      "end": 427649,
+      "html": "აქტიური",
+      "id": 175
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 4,
+      "start": 427685,
+      "end": 427694,
+      "html": "hospitals",
+      "id": 176
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 4,
+      "start": 427745,
+      "end": 427752,
+      "html": "კლინიკა",
+      "id": 177
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 4,
+      "start": 428245,
+      "end": 428268,
+      "html": "Signed &amp; verifiable",
+      "id": 178
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 4,
+      "start": 428319,
+      "end": 428347,
+      "html": "ხელმოწერილი და გადამოწმებადი",
+      "id": 179
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 4,
+      "start": 428609,
+      "end": 428640,
+      "html": "Hospitals — one signed contract",
+      "id": 180
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 4,
+      "start": 428691,
+      "end": 428727,
+      "html": "კლინიკა — ერთი ხელმოწერილი კონტრაქტი",
+      "id": 181
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 4,
+      "start": 428805,
+      "end": 428901,
+      "html": "GeoHospitals, Georgia's 2nd-largest chain, is moving all 25 onto MediMind — modules already live",
+      "id": 182
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 4,
+      "start": 428952,
+      "end": 429064,
+      "html": "GeoHospitals, საქართველოს სიდიდით მე-2 ქსელი, ოცდახუთივე კლინიკას MediMind-ზე გადმოჰყავს — მოდულები უკვე მუშაობს",
+      "id": 183
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 4,
+      "start": 429445,
+      "end": 429453,
+      "html": "Live now",
+      "id": 184
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 4,
+      "start": 429504,
+      "end": 429517,
+      "html": "უკვე მოქმედია",
+      "id": 185
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 4,
+      "start": 429579,
+      "end": 429601,
+      "html": "Doctors using it daily",
+      "id": 186
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 4,
+      "start": 429652,
+      "end": 429681,
+      "html": "ექიმები იყენებენ ყოველდღიურად",
+      "id": 187
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 4,
+      "start": 429759,
+      "end": 429802,
+      "html": "Labs &amp; Imaging live in production today",
+      "id": 188
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 4,
+      "start": 429853,
+      "end": 429901,
+      "html": "ლაბორატორია და რადიოლოგია უკვე სრულად დანერგილია",
+      "id": 189
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 4,
+      "start": 430054,
+      "end": 430138,
+      "html": "You're not being asked to go first — <em>25 hospitals are already ahead of you.</em>",
+      "id": 190
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 4,
+      "start": 430189,
+      "end": 430189,
+      "html": "",
+      "id": 191
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 4,
+      "start": 430318,
+      "end": 430336,
+      "html": "Innovative Startup",
+      "id": 192
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 4,
+      "start": 430387,
+      "end": 430406,
+      "html": "ინოვაციური სტარტაპი",
+      "id": 193
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 4,
+      "start": 430478,
+      "end": 430494,
+      "html": "GITA ₾150K grant",
+      "id": 194
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 4,
+      "start": 430545,
+      "end": 430564,
+      "html": "GITA-ს ₾150K გრანტი",
+      "id": 195
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 4,
+      "start": 430636,
+      "end": 430652,
+      "html": "FHIR R4 standard",
+      "id": 196
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 4,
+      "start": 430703,
+      "end": 430720,
+      "html": "FHIR R4 სტანდარტი",
+      "id": 197
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 4,
+      "start": 431049,
+      "end": 431708,
+      "html": "Start with what's real — and please, check it. Be precise about the shape of it: this is ONE binding contract, signed with GeoHospitals, Georgia's second-largest chain — not twenty-five separate deals. Under that contract the group is migrating its twenty-five hospitals onto us. Labs and imaging are running in production today; more than a thousand clinician accounts are active; full go-live across all sites lands in August. We're a government-recognized Innovative Startup backed by a GITA grant. I want you to call them tonight — because the point of this slide is that you're not being asked to go first. Twenty-five hospitals are already ahead of you.",
+      "id": 198
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 4,
+      "start": 431759,
+      "end": 432436,
+      "html": "დავიწყოთ რეალური ფაქტებით — და გთხოვთ, თავად გადაამოწმოთ. ზუსტად თქვით, რა ფორმისაა: ეს არის ერთი სავალდებულო კონტრაქტი, გაფორმებული GeoHospitals-თან, საქართველოს სიდიდით მე-2 ქსელთან — და არა ოცდახუთი ცალკეული გარიგება. ამ კონტრაქტით ჯგუფს თავისი ოცდახუთი კლინიკა ჩვენზე გადმოჰყავს. ლაბორატორია და რადიოლოგია დღეს უკვე რეალურ რეჟიმში მუშაობს; ათასზე მეტი ექიმის ანგარიში აქტიურია; ყველა ფილიალში სრული დანერგვა აგვისტოში დასრულდება. ჩვენ ვართ სახელმწიფოს მიერ აღიარებული ინოვაციური სტარტაპი, GITA-ს გრანტის მხარდაჭერით. მინდა, რომ დღესვე დაუკავშირდეთ მათ — რადგან ამ სლაიდის მთავარი სათქმელი ისაა, რომ თქვენგან პირველობას არავინ ითხოვს. ოცდახუთი კლინიკა უკვე თქვენზე წინ არის.",
+      "id": 199
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 5,
+      "start": 432832,
+      "end": 432842,
+      "html": "WHO WE ARE",
+      "id": 200
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 5,
+      "start": 432893,
+      "end": 432906,
+      "html": "ვინ ვართ ჩვენ",
+      "id": 201
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 5,
+      "start": 432977,
+      "end": 433016,
+      "html": "Doctors, building <em>for doctors</em>.",
+      "id": 202
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 5,
+      "start": 433067,
+      "end": 433112,
+      "html": "ექიმების მიერ შექმნილი <em>ექიმებისთვის</em>.",
+      "id": 203
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 5,
+      "start": 433181,
+      "end": 433248,
+      "html": "Aggressive expansion across the region and Central Asia comes next.",
+      "id": 204
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 5,
+      "start": 433299,
+      "end": 433363,
+      "html": "შემდეგი ნაბიჯია აქტიური გაფართოება რეგიონსა და ცენტრალურ აზიაში.",
+      "id": 205
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 5,
+      "start": 433837,
+      "end": 433857,
+      "html": "Dr. Lasha Khoshtaria",
+      "id": 206
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 5,
+      "start": 433908,
+      "end": 433927,
+      "html": "ექიმი ლაშა ხოშტარია",
+      "id": 207
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 5,
+      "start": 434001,
+      "end": 434020,
+      "html": "Founder · Physician",
+      "id": 208
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 5,
+      "start": 434071,
+      "end": 434091,
+      "html": "დამფუძნებელი · ექიმი",
+      "id": 209
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 5,
+      "start": 434561,
+      "end": 434578,
+      "html": "Physician-founded",
+      "id": 210
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 5,
+      "start": 434629,
+      "end": 434652,
+      "html": "დაფუძნებული ექიმის მიერ",
+      "id": 211
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 5,
+      "start": 434705,
+      "end": 434798,
+      "html": "Built at the bedside — the system a doctor wished he had on the <strong>night shift</strong>.",
+      "id": 212
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 5,
+      "start": 434849,
+      "end": 434949,
+      "html": "შექმნილია უშუალოდ სამუშაო პროცესში — სისტემა, რომელსაც ექიმი <strong>ღამის ცვლაში</strong> ნატრობდა.",
+      "id": 213
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 5,
+      "start": 435482,
+      "end": 435502,
+      "html": "Co-founder · Product",
+      "id": 214
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 5,
+      "start": 435553,
+      "end": 435580,
+      "html": "თანადამფუძნებელი · პროდუქტი",
+      "id": 215
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 5,
+      "start": 435633,
+      "end": 435727,
+      "html": "Irakli Pkhovelishvili — scaled product to <strong>10M+ users</strong> at Riot Games. Duke MBA.",
+      "id": 216
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 5,
+      "start": 435778,
+      "end": 435906,
+      "html": "ირაკლი ფხოველიშვილი — გაზარდა პროდუქტი <strong>10 მილიონზე მეტ მომხმარებლამდე</strong> Riot Games-ში. Duke-ის უნივერსიტეტის MBA.",
+      "id": 217
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 5,
+      "start": 436353,
+      "end": 436375,
+      "html": "One team, one codebase",
+      "id": 218
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 5,
+      "start": 436426,
+      "end": 436450,
+      "html": "ერთი გუნდი, ერთი კოდბაზა",
+      "id": 219
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 5,
+      "start": 436503,
+      "end": 436617,
+      "html": "<strong>3.6M+ lines</strong> across <strong>60+ clinical areas</strong> — medicine and engineering under one roof.",
+      "id": 220
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 5,
+      "start": 436668,
+      "end": 436797,
+      "html": "<strong>3.6 მილიონზე მეტი კოდის ხაზი</strong> და <strong>60+ კლინიკური მიმართულება</strong> — მედიცინა და ინჟინერია ერთ სივრცეში.",
+      "id": 221
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 5,
+      "start": 437265,
+      "end": 437282,
+      "html": "Expansion capital",
+      "id": 222
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 5,
+      "start": 437333,
+      "end": 437353,
+      "html": "გაფართოების კაპიტალი",
+      "id": 223
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 5,
+      "start": 437406,
+      "end": 437486,
+      "html": "<strong>$100K Eurasia500 investment.</strong> <strong>₾150K GITA grant.</strong>",
+      "id": 224
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 5,
+      "start": 437537,
+      "end": 437623,
+      "html": "<strong>Eurasia500-ის $100K ინვესტიცია.</strong> <strong>GITA-ს ₾150K გრანტი.</strong>",
+      "id": 225
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 5,
+      "start": 437840,
+      "end": 437969,
+      "html": "Not foreign software parachuted into Georgia — built here, in your language, for your wards, <strong>by your colleagues</strong>.",
+      "id": 226
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 5,
+      "start": 438020,
+      "end": 438020,
+      "html": "",
+      "id": 227
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 5,
+      "start": 438306,
+      "end": 438830,
+      "html": "I'm a physician. I built this because I lived it: the missing lab at 2 a.m., the paper forms, the system that fights you instead of helping. My co-founder Irakli scaled product at Riot Games to more than ten million players. Now he scales care with me. Eurasia500 has invested $100,000, on top of our GITA backing. That capital is preparing us for aggressive expansion across the region and Central Asia. The product remains grounded here, in your language, in real wards and in the hands of clinicians who use it every day.",
+      "id": 228
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 5,
+      "start": 438881,
+      "end": 439444,
+      "html": "მე ექიმი ვარ. ეს იმიტომ შევქმენი, რომ თავად განვიცადე: გამორჩენილი ანალიზი ღამის 2 საათზე, ქაღალდის ფორმები და სისტემა, რომელიც გეხმარება კი არა, ხელს გიშლის. ჩემმა თანადამფუძნებელმა ირაკლიმ Riot Games-ში პროდუქტი ათ მილიონზე მეტ მომხმარებლამდე გაზარდა. ახლა ის ჩემთან ერთად ზრდის ჯანდაცვის ხარისხს. GITA-ს მხარდაჭერის შემდეგ Eurasia500-მა ჩვენში $100,000 დააბანდა. ამ კაპიტალით რეგიონსა და ცენტრალურ აზიაში აქტიური გაფართოებისთვის ვემზადებით. პროდუქტი კვლავ აქ, თქვენს ენაზე, რეალურ განყოფილებებსა და იმ ექიმებთან ერთად ვითარდება, რომლებიც მას ყოველდღე იყენებენ.",
+      "id": 229
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 6,
+      "start": 439982,
+      "end": 439998,
+      "html": "THE LOCAL MARKET",
+      "id": 230
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 6,
+      "start": 440049,
+      "end": 440067,
+      "html": "ადგილობრივი ბაზარი",
+      "id": 231
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 6,
+      "start": 440138,
+      "end": 440193,
+      "html": "A patchwork of vendors <em>can't become AI-native</em>.",
+      "id": 232
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 6,
+      "start": 440244,
+      "end": 440310,
+      "html": "სხვადასხვა ვენდორის ჭრელი ნაკრები <em>AI-ნატიური ვერ გახდება</em>.",
+      "id": 233
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 6,
+      "start": 440379,
+      "end": 440464,
+      "html": "Every module a separate bill. Every integration your problem. Nothing new ever ships.",
+      "id": 234
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 6,
+      "start": 440515,
+      "end": 440612,
+      "html": "ყოველი მოდული ცალკე ხარჯია. ყოველი ინტეგრაცია — თქვენი პრობლემაა. სიახლეები კი არასდროს ინერგება.",
+      "id": 235
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 6,
+      "start": 440757,
+      "end": 440786,
+      "html": "What your hospital runs today",
+      "id": 236
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 6,
+      "start": 440837,
+      "end": 440869,
+      "html": "რაზე მუშაობს თქვენი კლინიკა დღეს",
+      "id": 237
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 6,
+      "start": 441343,
+      "end": 441346,
+      "html": "EMR",
+      "id": 238
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 6,
+      "start": 441397,
+      "end": 441400,
+      "html": "EMR",
+      "id": 239
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 6,
+      "start": 441439,
+      "end": 441452,
+      "html": "~15 years old",
+      "id": 240
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 6,
+      "start": 441503,
+      "end": 441511,
+      "html": "~15 წლის",
+      "id": 241
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 6,
+      "start": 441879,
+      "end": 441889,
+      "html": "Lab system",
+      "id": 242
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 6,
+      "start": 441940,
+      "end": 441961,
+      "html": "ლაბორატორიული სისტემა",
+      "id": 243
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 6,
+      "start": 442000,
+      "end": 442015,
+      "html": "separate vendor",
+      "id": 244
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 6,
+      "start": 442066,
+      "end": 442079,
+      "html": "ცალკე ვენდორი",
+      "id": 245
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 6,
+      "start": 442446,
+      "end": 442453,
+      "html": "Imaging",
+      "id": 246
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 6,
+      "start": 442504,
+      "end": 442525,
+      "html": "გამოსახულებები (PACS)",
+      "id": 247
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 6,
+      "start": 442564,
+      "end": 442579,
+      "html": "separate vendor",
+      "id": 248
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 6,
+      "start": 442630,
+      "end": 442643,
+      "html": "ცალკე ვენდორი",
+      "id": 249
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 6,
+      "start": 443100,
+      "end": 443119,
+      "html": "Billing &amp; forms",
+      "id": 250
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 6,
+      "start": 443170,
+      "end": 443188,
+      "html": "ბილინგი და ფორმები",
+      "id": 251
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 6,
+      "start": 443227,
+      "end": 443247,
+      "html": "paid change requests",
+      "id": 252
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 6,
+      "start": 443298,
+      "end": 443328,
+      "html": "ფასიანი ცვლილებების მოთხოვნები",
+      "id": 253
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 6,
+      "start": 443611,
+      "end": 443636,
+      "html": "nothing talks to anything",
+      "id": 254
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 6,
+      "start": 443687,
+      "end": 443730,
+      "html": "სისტემები ერთმანეთთან არ არის დაკავშირებული",
+      "id": 255
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 6,
+      "start": 444168,
+      "end": 444175,
+      "html": "becomes",
+      "id": 256
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 6,
+      "start": 444226,
+      "end": 444231,
+      "html": "ხდება",
+      "id": 257
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 6,
+      "start": 444378,
+      "end": 444402,
+      "html": "What we hand you instead",
+      "id": 258
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 6,
+      "start": 444453,
+      "end": 444481,
+      "html": "რას გთავაზობთ ჩვენ სანაცვლოდ",
+      "id": 259
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 6,
+      "start": 445655,
+      "end": 445658,
+      "html": "EMR",
+      "id": 260
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 6,
+      "start": 445709,
+      "end": 445712,
+      "html": "EMR",
+      "id": 261
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 6,
+      "start": 445888,
+      "end": 445892,
+      "html": "PACS",
+      "id": 262
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 6,
+      "start": 445943,
+      "end": 445947,
+      "html": "PACS",
+      "id": 263
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 6,
+      "start": 446139,
+      "end": 446142,
+      "html": "Lab",
+      "id": 264
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 6,
+      "start": 446193,
+      "end": 446204,
+      "html": "ლაბორატორია",
+      "id": 265
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 6,
+      "start": 446396,
+      "end": 446402,
+      "html": "Portal",
+      "id": 266
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 6,
+      "start": 446453,
+      "end": 446460,
+      "html": "პორტალი",
+      "id": 267
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 6,
+      "start": 450664,
+      "end": 450702,
+      "html": "The hospital's AI brain · one codebase",
+      "id": 268
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 6,
+      "start": 450753,
+      "end": 450785,
+      "html": "კლინიკის AI ტვინი · ერთი კოდბაზა",
+      "id": 269
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 6,
+      "start": 450979,
+      "end": 451033,
+      "html": "It's not that they won't rebuild. <em>They can't.</em>",
+      "id": 270
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 6,
+      "start": 451084,
+      "end": 451175,
+      "html": "საქმე ის კი არ არის, რომ არ სურთ ძველი სისტემების განახლება. <em>უბრალოდ ვერ შეძლებენ.</em>",
+      "id": 271
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 6,
+      "start": 451463,
+      "end": 452251,
+      "html": "[Names are spoken here, never printed: Vabako, Radium, the local lab and billing vendors.] The argument is architectural, not personal. Your hospital runs on three to five vendors that don't talk to each other — every module a separate bill, every integration your problem, every change a paid change request. These systems were designed ten or fifteen years ago, and nothing fundamentally new has shipped on them in years. And here is the part that matters: AI cannot be bolted onto a fragmented stack. It needs one live data core that sees the whole patient. For any of these vendors to get there, they would have to kill their own product and start over. It's not that they won't rebuild — they can't. We are not a better version of what you have. We are the thing it can never become.",
+      "id": 272
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 6,
+      "start": 452302,
+      "end": 453163,
+      "html": "[სახელები აქ ითქმის, არასდროს იბეჭდება: ვაბაკო, რადიუმი, ადგილობრივი ლაბორატორიისა და ბილინგის ვენდორები.] არგუმენტი არქიტექტურულია და არა პერსონალური. თქვენი კლინიკა მუშაობს სამ-ხუთ ვენდორზე, რომლებიც ერთმანეთთან არ არიან დაკავშირებული — ყოველი მოდული ცალკე ხარჯია, ყოველი ინტეგრაცია თქვენი პრობლემაა, ყოველი ცვლილება კი — ფასიანი მოთხოვნა. ეს სისტემები ათი ან თხუთმეტი წლის წინ შეიქმნა და მას შემდეგ პრინციპულად ახალი არაფერი დამატებიათ. და აი, რაც მთავარია: AI-ს ვერ დააშენებ დანაწევრებულ სისტემაზე. მას სჭირდება ერთიანი, ცოცხალი მონაცემთა ბირთვი, რომელიც სრულყოფილად ხედავს პაციენტს. ნებისმიერ ამ ვენდორს რომ ეს შეეძლოს, საკუთარი პროდუქტი უნდა გააუქმოს და ყველაფერი ნულიდან დაიწყოს. საქმე ის კი არ არის, რომ არ სურთ თავიდან შექმნა — უბრალოდ ვერ შეძლებენ. ჩვენ არ ვართ იმის უკეთესი ვერსია, რაც უკვე გაქვთ. ჩვენ ვართ ის, რადაც ის სისტემები ვერასდროს იქცევიან.",
+      "id": 273
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 7,
+      "start": 469731,
+      "end": 469743,
+      "html": "THE PLATFORM",
+      "id": 274
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 7,
+      "start": 469794,
+      "end": 469803,
+      "html": "პლატფორმა",
+      "id": 275
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 7,
+      "start": 469905,
+      "end": 469919,
+      "html": "Phase 1 · live",
+      "id": 276
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 7,
+      "start": 469970,
+      "end": 469987,
+      "html": "ეტაპი 1 · აქტიური",
+      "id": 277
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 7,
+      "start": 470058,
+      "end": 470103,
+      "html": "Not an EMR. <em>One core, many products.</em>",
+      "id": 278
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 7,
+      "start": 470154,
+      "end": 470217,
+      "html": "ეს არ არის უბრალოდ EMR. <em>ერთი ბირთვი, მრავალი პროდუქტი.</em>",
+      "id": 279
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 7,
+      "start": 470286,
+      "end": 470436,
+      "html": "Phase 1, in depth: eight products on one FHIR-native core — the Western golden standard, live today. <strong>Tap any product to watch it run.</strong>",
+      "id": 280
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 7,
+      "start": 470487,
+      "end": 470661,
+      "html": "ეტაპი 1 დეტალურად: რვა პროდუქტი ერთ FHIR-ნატიურ ბირთვზე — დასავლური ოქროს სტანდარტი, უკვე მუშაობს. <strong>დააჭირეთ ნებისმიერ პროდუქტს მის სამუშაო რეჟიმში სანახავად.</strong>",
+      "id": 281
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 7,
+      "start": 472656,
+      "end": 472685,
+      "html": "The hospital operating system",
+      "id": 282
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 7,
+      "start": 472736,
+      "end": 472763,
+      "html": "კლინიკის ოპერაციული სისტემა",
+      "id": 283
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 7,
+      "start": 472875,
+      "end": 472879,
+      "html": "Live",
+      "id": 284
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 7,
+      "start": 472930,
+      "end": 472937,
+      "html": "აქტიური",
+      "id": 285
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 7,
+      "start": 473747,
+      "end": 473759,
+      "html": "Telemedicine",
+      "id": 286
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 7,
+      "start": 473810,
+      "end": 473822,
+      "html": "ტელემედიცინა",
+      "id": 287
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 7,
+      "start": 473929,
+      "end": 473933,
+      "html": "Live",
+      "id": 288
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 7,
+      "start": 473984,
+      "end": 473991,
+      "html": "აქტიური",
+      "id": 289
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 7,
+      "start": 474867,
+      "end": 474880,
+      "html": "DICOM imaging",
+      "id": 290
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 7,
+      "start": 474931,
+      "end": 474947,
+      "html": "DICOM რადიოლოგია",
+      "id": 291
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 7,
+      "start": 475054,
+      "end": 475058,
+      "html": "Live",
+      "id": 292
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 7,
+      "start": 475109,
+      "end": 475116,
+      "html": "აქტიური",
+      "id": 293
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 7,
+      "start": 475962,
+      "end": 475972,
+      "html": "Laboratory",
+      "id": 294
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 7,
+      "start": 476023,
+      "end": 476034,
+      "html": "ლაბორატორია",
+      "id": 295
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 7,
+      "start": 476141,
+      "end": 476145,
+      "html": "Live",
+      "id": 296
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 7,
+      "start": 476196,
+      "end": 476203,
+      "html": "აქტიური",
+      "id": 297
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 7,
+      "start": 476942,
+      "end": 476959,
+      "html": "Liver surgical AI",
+      "id": 298
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 7,
+      "start": 477010,
+      "end": 477031,
+      "html": "ღვიძლის ქირურგიული AI",
+      "id": 299
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 7,
+      "start": 477986,
+      "end": 478002,
+      "html": "Structural heart",
+      "id": 300
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 7,
+      "start": 478053,
+      "end": 478069,
+      "html": "სტრუქტურული გული",
+      "id": 301
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 7,
+      "start": 478177,
+      "end": 478185,
+      "html": "Building",
+      "id": 302
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 7,
+      "start": 478236,
+      "end": 478245,
+      "html": "მუშავდება",
+      "id": 303
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 7,
+      "start": 479055,
+      "end": 479069,
+      "html": "Patient Portal",
+      "id": 304
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 7,
+      "start": 479120,
+      "end": 479137,
+      "html": "პაციენტის პორტალი",
+      "id": 305
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 7,
+      "start": 479195,
+      "end": 479206,
+      "html": "Patient app",
+      "id": 306
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 7,
+      "start": 479257,
+      "end": 479276,
+      "html": "პაციენტის აპლიკაცია",
+      "id": 307
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 7,
+      "start": 479384,
+      "end": 479392,
+      "html": "Building",
+      "id": 308
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 7,
+      "start": 479443,
+      "end": 479452,
+      "html": "მუშავდება",
+      "id": 309
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 7,
+      "start": 480362,
+      "end": 480380,
+      "html": "Vascular reporting",
+      "id": 310
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 7,
+      "start": 480431,
+      "end": 480453,
+      "html": "ვასკულარული რეპორტინგი",
+      "id": 311
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 7,
+      "start": 480852,
+      "end": 481502,
+      "html": "This is the answer to \"should we just build the EMR ourselves.\" What looks like one product is really eight, all on a single FHIR-native core: the OS that runs the hospital, plus Connect for telemedicine, PACS for imaging, the lab, and the patient portal — and three specialist tools: LiverRa for liver surgery, Angio for vascular, and Structural for TAVI and structural-heart planning. Some are live in daily use, some are MVPs, some are in active build — but all of it already exists, on one core, millions of lines deep. You are not buying an EMR. You are partnering with a platform you could never staff to rebuild. Tap any product to see it run.",
+      "id": 312
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 7,
+      "start": 481553,
+      "end": 482401,
+      "html": "ეს არის პასუხი კითხვაზე — „იქნებ უბრალოდ ჩვენით ავაშენოთ EMR.\" ის, რაც ერთი შეხედვით ერთი პროდუქტია, სინამდვილეში რვა პროდუქტს აერთიანებს ერთ FHIR-ნატიურ ბირთვზე: ოპერაციული სისტემა (OS), რომელიც კლინიკას მართავს, პლუს Connect ტელემედიცინისთვის, PACS რადიოლოგიისთვის, ლაბორატორია და პაციენტის პორტალი — ამას ემატება სამი სპეციალიზებული ინსტრუმენტი: LiverRa ღვიძლის ქირურგიისთვის, Angio ვასკულარული მიმართულებისთვის და Structural TAVI-სა და სტრუქტურული გულის დაგეგმვისთვის. ზოგიერთი მათგანი უკვე ყოველდღიურ მოხმარებაშია, ნაწილი MVP ეტაპზეა, ნაწილი კი აქტიურად მუშავდება — მაგრამ ეს ყველაფერი უკვე არსებობს ერთ ბირთვზე, მილიონობით კოდის ხაზის სიღრმით. თქვენ არ ყიდულობთ EMR-ს. თქვენ პარტნიორობას იწყებთ პლატფორმასთან, რომლის ანალოგის შესაქმნელადაც შესაბამის გუნდს ვერასოდეს დააკომპლექტებდით. დააჭირეთ ნებისმიერ პროდუქტს მის სამუშაო რეჟიმში სანახავად.",
+      "id": 313
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 8,
+      "start": 483123,
+      "end": 483136,
+      "html": "AI EVERYWHERE",
+      "id": 314
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 8,
+      "start": 483187,
+      "end": 483197,
+      "html": "AI ყველგან",
+      "id": 315
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 8,
+      "start": 483299,
+      "end": 483317,
+      "html": "Phase 2 · optional",
+      "id": 316
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 8,
+      "start": 483368,
+      "end": 483386,
+      "html": "ეტაპი 2 · არჩევითი",
+      "id": 317
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 8,
+      "start": 483457,
+      "end": 483513,
+      "html": "Every room gets AI. <em>Management gets everything.</em>",
+      "id": 318
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 8,
+      "start": 483564,
+      "end": 483618,
+      "html": "AI ყველა ოთახში. <em>მენეჯმენტს — სრული კონტროლი.</em>",
+      "id": 319
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 8,
+      "start": 483687,
+      "end": 483794,
+      "html": "Phase 2 puts a specialist-grade copilot in every department — and hands the director a live command center.",
+      "id": 320
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 8,
+      "start": 483845,
+      "end": 483943,
+      "html": "ეტაპი 2 ყველა განყოფილებას აძლევს AI თანაშემწეს — დირექტორს კი მთელი კლინიკის ლაივ მართვის ეკრანს.",
+      "id": 321
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 8,
+      "start": 486819,
+      "end": 486881,
+      "html": "★  RUNS ON THE PHASE 1 CORE — ALREADY WIRED INTO EVERY ROOM  ★",
+      "id": 322
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 8,
+      "start": 487005,
+      "end": 487063,
+      "html": "★ მუშაობს ეტაპ 1-ის ბირთვზე — უკვე ჩართულია ყველა ოთახში ★",
+      "id": 323
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 8,
+      "start": 487828,
+      "end": 487830,
+      "html": "ER",
+      "id": 324
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 8,
+      "start": 487927,
+      "end": 487934,
+      "html": "მიმღები",
+      "id": 325
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 8,
+      "start": 488112,
+      "end": 488140,
+      "html": "AI triage + sepsis screening",
+      "id": 326
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 8,
+      "start": 488236,
+      "end": 488263,
+      "html": "AI ტრიაჟი + სეფსისის ალერტი",
+      "id": 327
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 8,
+      "start": 488937,
+      "end": 488940,
+      "html": "ICU",
+      "id": 328
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 8,
+      "start": 489037,
+      "end": 489047,
+      "html": "რეანიმაცია",
+      "id": 329
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 8,
+      "start": 489225,
+      "end": 489251,
+      "html": "Early warning, hours ahead",
+      "id": 330
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 8,
+      "start": 489347,
+      "end": 489372,
+      "html": "გაფრთხილება საათებით ადრე",
+      "id": 331
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 8,
+      "start": 490087,
+      "end": 490089,
+      "html": "OR",
+      "id": 332
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 8,
+      "start": 490186,
+      "end": 490196,
+      "html": "საოპერაციო",
+      "id": 333
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 8,
+      "start": 490374,
+      "end": 490404,
+      "html": "Op notes that write themselves",
+      "id": 334
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 8,
+      "start": 490500,
+      "end": 490520,
+      "html": "ოქმები თავად იწერება",
+      "id": 335
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 8,
+      "start": 491242,
+      "end": 491247,
+      "html": "WARDS",
+      "id": 336
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 8,
+      "start": 491344,
+      "end": 491352,
+      "html": "პალატები",
+      "id": 337
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 8,
+      "start": 491530,
+      "end": 491552,
+      "html": "AI handoffs + bed flow",
+      "id": 338
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 8,
+      "start": 491648,
+      "end": 491672,
+      "html": "AI გადაბარება + საწოლები",
+      "id": 339
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 8,
+      "start": 492373,
+      "end": 492382,
+      "html": "RADIOLOGY",
+      "id": 340
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 8,
+      "start": 492479,
+      "end": 492489,
+      "html": "რადიოლოგია",
+      "id": 341
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 8,
+      "start": 492667,
+      "end": 492695,
+      "html": "Urgent studies flagged first",
+      "id": 342
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 8,
+      "start": 492791,
+      "end": 492819,
+      "html": "სასწრაფო კვლევა პირველ რიგში",
+      "id": 343
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 8,
+      "start": 493768,
+      "end": 493777,
+      "html": "LAB · LIS",
+      "id": 344
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 8,
+      "start": 493874,
+      "end": 493885,
+      "html": "ლაბორატორია",
+      "id": 345
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 8,
+      "start": 494063,
+      "end": 494091,
+      "html": "Critical values, auto-routed",
+      "id": 346
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 8,
+      "start": 494187,
+      "end": 494212,
+      "html": "კრიტიკული შედეგი — მყისვე",
+      "id": 347
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 8,
+      "start": 494390,
+      "end": 494418,
+      "html": "Specimen tracking end-to-end",
+      "id": 348
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 8,
+      "start": 494514,
+      "end": 494535,
+      "html": "სინჯის სრული ტრეკინგი",
+      "id": 349
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 8,
+      "start": 497150,
+      "end": 497193,
+      "html": "FOR MANAGEMENT — THE DIRECTOR'S LIVE SCREEN",
+      "id": 350
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 8,
+      "start": 497295,
+      "end": 497335,
+      "html": "მენეჯმენტისთვის — დირექტორის ლაივ ეკრანი",
+      "id": 351
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 8,
+      "start": 497413,
+      "end": 497431,
+      "html": "THE WHOLE HOSPITAL",
+      "id": 352
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 8,
+      "start": 497531,
+      "end": 497544,
+      "html": "მთელი კლინიკა",
+      "id": 353
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 8,
+      "start": 497621,
+      "end": 497697,
+      "html": "at a glance: command center · live bed board · revenue cycle · one-click MOH",
+      "id": 354
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 8,
+      "start": 497796,
+      "end": 497872,
+      "html": "ერთ ეკრანზე: მართვის ცენტრი · საწოლების რუკა · შემოსავლები · MOH ერთი კლიკით",
+      "id": 355
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 8,
+      "start": 498577,
+      "end": 498585,
+      "html": "PHARMACY",
+      "id": 356
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 8,
+      "start": 498682,
+      "end": 498689,
+      "html": "აფთიაქი",
+      "id": 357
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 8,
+      "start": 498867,
+      "end": 498892,
+      "html": "Interaction + dose checks",
+      "id": 358
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 8,
+      "start": 498988,
+      "end": 499009,
+      "html": "დოზა + ურთიერთქმედება",
+      "id": 359
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 8,
+      "start": 499187,
+      "end": 499213,
+      "html": "Every dose barcode-checked",
+      "id": 360
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 8,
+      "start": 499309,
+      "end": 499331,
+      "html": "შტრიხკოდით გადამოწმება",
+      "id": 361
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 8,
+      "start": 500193,
+      "end": 500204,
+      "html": "COORDINATOR",
+      "id": 362
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 8,
+      "start": 500301,
+      "end": 500313,
+      "html": "კოორდინატორი",
+      "id": 363
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 8,
+      "start": 500491,
+      "end": 500517,
+      "html": "Capacity foresight + slots",
+      "id": 364
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 8,
+      "start": 500613,
+      "end": 500632,
+      "html": "დატვირთვის პროგნოზი",
+      "id": 365
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 8,
+      "start": 501309,
+      "end": 501316,
+      "html": "BILLING",
+      "id": 366
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 8,
+      "start": 501413,
+      "end": 501420,
+      "html": "ბილინგი",
+      "id": 367
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 8,
+      "start": 501598,
+      "end": 501626,
+      "html": "Denial patterns + AI appeals",
+      "id": 368
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 8,
+      "start": 501722,
+      "end": 501745,
+      "html": "უარყოფები + AI აპელაცია",
+      "id": 369
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 8,
+      "start": 502490,
+      "end": 502499,
+      "html": "WAREHOUSE",
+      "id": 370
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 8,
+      "start": 502596,
+      "end": 502603,
+      "html": "საწყობი",
+      "id": 371
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 8,
+      "start": 502781,
+      "end": 502800,
+      "html": "Predictive ordering",
+      "id": 372
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 8,
+      "start": 502896,
+      "end": 502916,
+      "html": "პროგნოზული შეკვეთები",
+      "id": 373
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 8,
+      "start": 503679,
+      "end": 503689,
+      "html": "HR · STAFF",
+      "id": 374
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 8,
+      "start": 503786,
+      "end": 503795,
+      "html": "პერსონალი",
+      "id": 375
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 8,
+      "start": 503973,
+      "end": 504001,
+      "html": "Fair shifts, burnout signals",
+      "id": 376
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 8,
+      "start": 504097,
+      "end": 504122,
+      "html": "ცვლები + გადაღლის სიგნალი",
+      "id": 377
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 8,
+      "start": 504816,
+      "end": 504822,
+      "html": "PORTAL",
+      "id": 378
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 8,
+      "start": 504919,
+      "end": 504926,
+      "html": "პორტალი",
+      "id": 379
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 8,
+      "start": 505104,
+      "end": 505131,
+      "html": "Patient messages, AI-graded",
+      "id": 380
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 8,
+      "start": 505227,
+      "end": 505252,
+      "html": "AI-შეტყობინებები პაციენტს",
+      "id": 381
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 8,
+      "start": 505577,
+      "end": 505598,
+      "html": "FOR MANAGEMENT · LIVE",
+      "id": 382
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 8,
+      "start": 505649,
+      "end": 505671,
+      "html": "მენეჯმენტისთვის · ლაივ",
+      "id": 383
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 8,
+      "start": 505757,
+      "end": 505775,
+      "html": "THE WHOLE HOSPITAL",
+      "id": 384
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 8,
+      "start": 505826,
+      "end": 505839,
+      "html": "მთელი კლინიკა",
+      "id": 385
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 8,
+      "start": 505921,
+      "end": 505972,
+      "html": "command center · beds · revenue · MOH — at a glance",
+      "id": 386
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 8,
+      "start": 506023,
+      "end": 506082,
+      "html": "მართვის ცენტრი · საწოლები · შემოსავლები · MOH — ერთ ეკრანზე",
+      "id": 387
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 8,
+      "start": 506232,
+      "end": 506234,
+      "html": "ER",
+      "id": 388
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 8,
+      "start": 506285,
+      "end": 506292,
+      "html": "მიმღები",
+      "id": 389
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 8,
+      "start": 506329,
+      "end": 506357,
+      "html": "AI triage + sepsis screening",
+      "id": 390
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 8,
+      "start": 506408,
+      "end": 506435,
+      "html": "AI ტრიაჟი + სეფსისის ალერტი",
+      "id": 391
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 8,
+      "start": 506531,
+      "end": 506534,
+      "html": "ICU",
+      "id": 392
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 8,
+      "start": 506585,
+      "end": 506595,
+      "html": "რეანიმაცია",
+      "id": 393
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 8,
+      "start": 506632,
+      "end": 506658,
+      "html": "Early warning, hours ahead",
+      "id": 394
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 8,
+      "start": 506709,
+      "end": 506734,
+      "html": "გაფრთხილება საათებით ადრე",
+      "id": 395
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 8,
+      "start": 506830,
+      "end": 506832,
+      "html": "OR",
+      "id": 396
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 8,
+      "start": 506883,
+      "end": 506893,
+      "html": "საოპერაციო",
+      "id": 397
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 8,
+      "start": 506930,
+      "end": 506960,
+      "html": "Op notes that write themselves",
+      "id": 398
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 8,
+      "start": 507011,
+      "end": 507031,
+      "html": "ოქმები თავად იწერება",
+      "id": 399
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 8,
+      "start": 507127,
+      "end": 507132,
+      "html": "WARDS",
+      "id": 400
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 8,
+      "start": 507183,
+      "end": 507191,
+      "html": "პალატები",
+      "id": 401
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 8,
+      "start": 507228,
+      "end": 507250,
+      "html": "AI handoffs + bed flow",
+      "id": 402
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 8,
+      "start": 507301,
+      "end": 507325,
+      "html": "AI გადაბარება + საწოლები",
+      "id": 403
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 8,
+      "start": 507421,
+      "end": 507430,
+      "html": "RADIOLOGY",
+      "id": 404
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 8,
+      "start": 507481,
+      "end": 507491,
+      "html": "რადიოლოგია",
+      "id": 405
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 8,
+      "start": 507528,
+      "end": 507556,
+      "html": "Urgent studies flagged first",
+      "id": 406
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 8,
+      "start": 507607,
+      "end": 507635,
+      "html": "სასწრაფო კვლევა პირველ რიგში",
+      "id": 407
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 8,
+      "start": 507731,
+      "end": 507740,
+      "html": "LAB · LIS",
+      "id": 408
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 8,
+      "start": 507791,
+      "end": 507802,
+      "html": "ლაბორატორია",
+      "id": 409
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 8,
+      "start": 507839,
+      "end": 507867,
+      "html": "Critical values, auto-routed",
+      "id": 410
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 8,
+      "start": 507918,
+      "end": 507943,
+      "html": "კრიტიკული შედეგი — მყისვე",
+      "id": 411
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 8,
+      "start": 508039,
+      "end": 508047,
+      "html": "PHARMACY",
+      "id": 412
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 8,
+      "start": 508098,
+      "end": 508105,
+      "html": "აფთიაქი",
+      "id": 413
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 8,
+      "start": 508142,
+      "end": 508167,
+      "html": "Interaction + dose checks",
+      "id": 414
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 8,
+      "start": 508218,
+      "end": 508239,
+      "html": "დოზა + ურთიერთქმედება",
+      "id": 415
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 8,
+      "start": 508335,
+      "end": 508346,
+      "html": "COORDINATOR",
+      "id": 416
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 8,
+      "start": 508397,
+      "end": 508409,
+      "html": "კოორდინატორი",
+      "id": 417
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 8,
+      "start": 508446,
+      "end": 508472,
+      "html": "Capacity foresight + slots",
+      "id": 418
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 8,
+      "start": 508523,
+      "end": 508542,
+      "html": "დატვირთვის პროგნოზი",
+      "id": 419
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 8,
+      "start": 508638,
+      "end": 508645,
+      "html": "BILLING",
+      "id": 420
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 8,
+      "start": 508696,
+      "end": 508703,
+      "html": "ბილინგი",
+      "id": 421
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 8,
+      "start": 508740,
+      "end": 508768,
+      "html": "Denial patterns + AI appeals",
+      "id": 422
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 8,
+      "start": 508819,
+      "end": 508842,
+      "html": "უარყოფები + AI აპელაცია",
+      "id": 423
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 8,
+      "start": 508938,
+      "end": 508947,
+      "html": "WAREHOUSE",
+      "id": 424
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 8,
+      "start": 508998,
+      "end": 509005,
+      "html": "საწყობი",
+      "id": 425
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 8,
+      "start": 509042,
+      "end": 509061,
+      "html": "Predictive ordering",
+      "id": 426
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 8,
+      "start": 509112,
+      "end": 509132,
+      "html": "პროგნოზული შეკვეთები",
+      "id": 427
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 8,
+      "start": 509228,
+      "end": 509238,
+      "html": "HR · STAFF",
+      "id": 428
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 8,
+      "start": 509289,
+      "end": 509298,
+      "html": "პერსონალი",
+      "id": 429
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 8,
+      "start": 509335,
+      "end": 509363,
+      "html": "Fair shifts, burnout signals",
+      "id": 430
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 8,
+      "start": 509414,
+      "end": 509439,
+      "html": "ცვლები + გადაღლის სიგნალი",
+      "id": 431
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 8,
+      "start": 509535,
+      "end": 509541,
+      "html": "PORTAL",
+      "id": 432
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 8,
+      "start": 509592,
+      "end": 509599,
+      "html": "პორტალი",
+      "id": 433
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 8,
+      "start": 509636,
+      "end": 509663,
+      "html": "Patient messages, AI-graded",
+      "id": 434
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 8,
+      "start": 509714,
+      "end": 509739,
+      "html": "AI-შეტყობინებები პაციენტს",
+      "id": 435
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 8,
+      "start": 509852,
+      "end": 509914,
+      "html": "★  RUNS ON THE PHASE 1 CORE — ALREADY WIRED INTO EVERY ROOM  ★",
+      "id": 436
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 8,
+      "start": 509965,
+      "end": 510023,
+      "html": "★ მუშაობს ეტაპ 1-ის ბირთვზე — უკვე ჩართულია ყველა ოთახში ★",
+      "id": 437
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 8,
+      "start": 510218,
+      "end": 510239,
+      "html": "Optional · when ready",
+      "id": 438
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 8,
+      "start": 510290,
+      "end": 510315,
+      "html": "არჩევითი · როცა მზად ხართ",
+      "id": 439
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 8,
+      "start": 510387,
+      "end": 510537,
+      "html": "No new project, no integrators — the Phase 1 core already feeds every room. <strong>Each feature switches on per department, when you say go.</strong>",
+      "id": 440
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 8,
+      "start": 510588,
+      "end": 510754,
+      "html": "არც ახალი პროექტი, არც ინტეგრატორები — ეტაპ 1-ის ბირთვი უკვე კვებავს ყველა ოთახს. <strong>თითოეული ფუნქცია ირთვება განყოფილებების მიხედვით, როგორც კი იტყვით.</strong>",
+      "id": 441
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 8,
+      "start": 511040,
+      "end": 511713,
+      "html": "Phase two, in one picture. Around the edge — every department of this hospital, and in every one of them a green star: the AI that department gets. Triage in the ER, early warning in the ICU, notes that write themselves in the OR, appeal packets in billing, predictive ordering in the warehouse. And in the middle — the part for the people in this room: the director's live screen. Command center, live bed board, the revenue view, ministry reporting in one click. Full control of the whole hospital, on one screen. None of this is an integration project. The Phase 1 core is already wired into every room — each feature is a switch we flip per department, when you say go.",
+      "id": 442
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 8,
+      "start": 511764,
+      "end": 512431,
+      "html": "ეტაპი ორი — ერთ სურათში. კიდეებზე — ამ კლინიკის ყველა განყოფილება, და თითოეულში მწვანე ვარსკვლავი: AI, რომელსაც ეს განყოფილება იღებს. ტრიაჟი მიმღებში, ადრეული გაფრთხილება რეანიმაციაში, ოქმები, რომლებიც თავად იწერება საოპერაციოში, სააპელაციო პაკეტები ბილინგში, პროგნოზული შეკვეთები საწყობში. შუაში კი — ის ნაწილი, ვინც ამ ოთახში ზის: დირექტორის ლაივ ეკრანი. მართვის ცენტრი, საწოლების რუკა, შემოსავლების ხედი, სამინისტროს ანგარიშგება ერთი კლიკით. მთელი კლინიკის სრული კონტროლი — ერთ ეკრანზე. არაფერი აქედან ინტეგრაციის პროექტი არ არის. ეტაპ 1-ის ბირთვი უკვე ჩართულია ყველა ოთახში — თითოეული ფუნქცია ჩამრთველია, რომელსაც განყოფილებების მიხედვით ვაჭერთ, როგორც კი იტყვით.",
+      "id": 443
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 9,
+      "start": 512895,
+      "end": 512907,
+      "html": "THE AI BRAIN",
+      "id": 444
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 9,
+      "start": 512958,
+      "end": 512966,
+      "html": "AI ტვინი",
+      "id": 445
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 9,
+      "start": 513068,
+      "end": 513089,
+      "html": "Phase 3 · world-first",
+      "id": 446
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 9,
+      "start": 513140,
+      "end": 513167,
+      "html": "ეტაპი 3 · პირველი მსოფლიოში",
+      "id": 447
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 9,
+      "start": 513238,
+      "end": 513294,
+      "html": "At 02:00, people miss things. <em>MediMind doesn't.</em>",
+      "id": 448
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 9,
+      "start": 513345,
+      "end": 513426,
+      "html": "ღამის 02:00 საათზე ადამიანებს შეიძლება რაღაც გამორჩეთ. <em>MediMind-ს — არა.</em>",
+      "id": 449
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 9,
+      "start": 513495,
+      "end": 513633,
+      "html": "It reads every patient in real time — the AI flags, your doctors decide. The hospitals that switch it on run among the first in the world.",
+      "id": 450
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 9,
+      "start": 513684,
+      "end": 513853,
+      "html": "ის რეალურ დროში აანალიზებს ყველა პაციენტს — AI გაძლევთ სიგნალს, გადაწყვეტილებას თქვენი ექიმი იღებს. კლინიკები, რომლებიც ამას ჩართავენ, მსოფლიოში პირველთა შორის იქნებიან.",
+      "id": 451
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 9,
+      "start": 514074,
+      "end": 514091,
+      "html": "Stomach pain · ER",
+      "id": 452
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 9,
+      "start": 514142,
+      "end": 514175,
+      "html": "მუცლის ტკივილი · გადაუდებელი (ER)",
+      "id": 453
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 9,
+      "start": 514382,
+      "end": 514389,
+      "html": "Without",
+      "id": 454
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 9,
+      "start": 514440,
+      "end": 514455,
+      "html": "სისტემის გარეშე",
+      "id": 455
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 9,
+      "start": 514892,
+      "end": 514909,
+      "html": "Eyes on the heart",
+      "id": 456
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 9,
+      "start": 514960,
+      "end": 514989,
+      "html": "ყურადღება ფოკუსირებულია გულზე",
+      "id": 457
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 9,
+      "start": 515072,
+      "end": 515088,
+      "html": "The misdirection",
+      "id": 458
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 9,
+      "start": 515139,
+      "end": 515159,
+      "html": "არასწორი მიმართულება",
+      "id": 459
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 9,
+      "start": 515326,
+      "end": 515336,
+      "html": "Hours lost",
+      "id": 460
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 9,
+      "start": 515387,
+      "end": 515404,
+      "html": "დაკარგული საათები",
+      "id": 461
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 9,
+      "start": 515548,
+      "end": 515568,
+      "html": "The real cause found",
+      "id": 462
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 9,
+      "start": 515619,
+      "end": 515645,
+      "html": "ნამდვილი მიზეზი გამოვლინდა",
+      "id": 463
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 9,
+      "start": 515803,
+      "end": 515817,
+      "html": "20 days in ICU",
+      "id": 464
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 9,
+      "start": 515868,
+      "end": 515893,
+      "html": "20 დღე რეანიმაციაში (ICU)",
+      "id": 465
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 9,
+      "start": 516096,
+      "end": 516109,
+      "html": "With MediMind",
+      "id": 466
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 9,
+      "start": 516160,
+      "end": 516171,
+      "html": "MediMind-ით",
+      "id": 467
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 9,
+      "start": 516542,
+      "end": 516558,
+      "html": "Flagged at 02:00",
+      "id": 468
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 9,
+      "start": 516609,
+      "end": 516633,
+      "html": "გაფრთხილება 02:00 საათზე",
+      "id": 469
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 9,
+      "start": 517138,
+      "end": 517158,
+      "html": "Caught hours earlier",
+      "id": 470
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 9,
+      "start": 517209,
+      "end": 517234,
+      "html": "აღმოჩენილია საათებით ადრე",
+      "id": 471
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 9,
+      "start": 518137,
+      "end": 518156,
+      "html": "The 14-hour silence",
+      "id": 472
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 9,
+      "start": 518207,
+      "end": 518226,
+      "html": "14-საათიანი ვაკუუმი",
+      "id": 473
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 9,
+      "start": 518282,
+      "end": 518339,
+      "html": "Real case, de-identified — a $20 lab vs a 20-day ICU stay",
+      "id": 474
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 9,
+      "start": 518390,
+      "end": 518485,
+      "html": "რეალური შემთხვევა, დეიდენტიფიცირებული — $20-იანი ანალიზი 20-დღიანი რეანიმაციის (ICU) წინააღმდეგ",
+      "id": 475
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 9,
+      "start": 519480,
+      "end": 519507,
+      "html": "Where the margin comes from",
+      "id": 476
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 9,
+      "start": 519558,
+      "end": 519584,
+      "html": "საიდან მოდის მოგების მარჟა",
+      "id": 477
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 9,
+      "start": 519640,
+      "end": 519690,
+      "html": "12 concrete ways the AI brain protects your margin",
+      "id": 478
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 9,
+      "start": 519741,
+      "end": 519794,
+      "html": "12 კონკრეტული გზა, რითაც AI ტვინი იცავს თქვენს მარჟას",
+      "id": 479
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 9,
+      "start": 520400,
+      "end": 521300,
+      "html": "A real, de-identified case from our pilot hospital. A fragile 65-year-old — on dialysis, diabetic, two weeks after a heart procedure — arrives at night with stomach pain that mimics the cardiac pain he was just treated for. Everyone anchors on the heart. The data sits in silos and no one owns the patient overnight. Fourteen hours of silence later, the real cause — an inflamed pancreas — tips into septic shock: twenty ICU days. Nobody was incompetent; the hospital simply ran on human memory at two in the morning. MediMind reads the whole patient at 02:32, flags heart AND gut, and routes every department at once. The honest claim is earlier diagnosis, not a guaranteed save: a twenty-dollar lab versus a twenty-day ICU stay. And to be precise — the AI flags, your doctors decide. It never acts alone. The second card is for the owner in the room: twelve concrete ways this protects your margin.",
+      "id": 480
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 9,
+      "start": 521351,
+      "end": 522516,
+      "html": "ეს არის რეალური, დეიდენტიფიცირებული შემთხვევა ჩვენი საპილოტე კლინიკიდან. მყიფე ჯანმრთელობის მქონე 65 წლის პაციენტი — დიალიზზე, დიაბეტით, გულის პროცედურიდან ორი კვირის შემდეგ — ღამით კლინიკაში შემოდის მუცლის ტკივილით, რომელიც ძალიან ჰგავს იმ კარდიოლოგიურ ტკივილს, რომელზეც მას ახლახან უმკურნალეს. ყველა გულზე ფოკუსირდება. მონაცემები სხვადასხვა სისტემაშია გაფანტული და ღამით პაციენტის სრულყოფილ სურათს ვერავინ ხედავს. თოთხმეტსაათიანი ვაკუუმის შემდეგ ნამდვილი მიზეზი — ანთებითი პანკრეასი — სეპტიკურ შოკში გადადის: ოცი დღე რეანიმაციაში (ICU). არავინ ყოფილა არაკომპეტენტური; უბრალოდ, კლინიკა ღამის ორ საათზე ადამიანურ მეხსიერებაზე მუშაობდა. MediMind სრულად აანალიზებს პაციენტს 02:32 საათზე, იძლევა სიგნალს როგორც გულზე, ასევე კუჭ-ნაწლავზე და ერთდროულად რთავს საქმეში ყველა შესაბამის დეპარტამენტს. ჩვენი პატიოსანი განაცხადი ადრეული დიაგნოსტიკაა და არა გარანტირებული გადარჩენა: ოცდოლარიანი ანალიზი ოცდღიანი რეანიმაციის წინააღმდეგ. და კიდევ ერთი დაზუსტება — AI იძლევა სიგნალს, გადაწყვეტილებას კი თქვენი ექიმი იღებს. ის არასდროს მოქმედებს დამოუკიდებლად. მეორე ბარათი დარბაზში მყოფი მფლობელებისთვისაა: თორმეტი კონკრეტული გზა, თუ როგორ იცავს ეს სისტემა თქვენს ფინანსურ მარჟას.",
+      "id": 481
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 10,
+      "start": 523007,
+      "end": 523016,
+      "html": "THE OFFER",
+      "id": 482
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 10,
+      "start": 523067,
+      "end": 523077,
+      "html": "შეთავაზება",
+      "id": 483
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 10,
+      "start": 523148,
+      "end": 523199,
+      "html": "All of it — at <em>what you already pay today</em>.",
+      "id": 484
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 10,
+      "start": 523250,
+      "end": 523309,
+      "html": "ეს ყველაფერი — <em>იმავე ფასად, რასაც დღეს უკვე იხდით</em>.",
+      "id": 485
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 10,
+      "start": 523378,
+      "end": 523479,
+      "html": "One codebase replaces four vendors. That's the whole trick — same bill, one contract, no integrators.",
+      "id": 486
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 10,
+      "start": 523530,
+      "end": 523648,
+      "html": "ერთი კოდბაზა ანაცვლებს ოთხ ვენდორს. მთელი საიდუმლოც ეს არის — იგივე გადასახადი, ერთი კონტრაქტი, ინტეგრატორების გარეშე.",
+      "id": 487
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 10,
+      "start": 523803,
+      "end": 523829,
+      "html": "What your money buys today",
+      "id": 488
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 10,
+      "start": 523880,
+      "end": 523909,
+      "html": "რას ყიდულობს თქვენი ფული დღეს",
+      "id": 489
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 10,
+      "start": 524238,
+      "end": 524250,
+      "html": "An aging EMR",
+      "id": 490
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 10,
+      "start": 524301,
+      "end": 524316,
+      "html": "მოძველებული EMR",
+      "id": 491
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 10,
+      "start": 524610,
+      "end": 524631,
+      "html": "A separate lab vendor",
+      "id": 492
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 10,
+      "start": 524682,
+      "end": 524708,
+      "html": "ცალკე ლაბორატორიის ვენდორი",
+      "id": 493
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 10,
+      "start": 525002,
+      "end": 525023,
+      "html": "Separate imaging fees",
+      "id": 494
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 10,
+      "start": 525074,
+      "end": 525119,
+      "html": "ცალკე გადასახადი რადიოლოგიურ (PACS) სისტემაზე",
+      "id": 495
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 10,
+      "start": 525413,
+      "end": 525433,
+      "html": "Paid change requests",
+      "id": 496
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 10,
+      "start": 525484,
+      "end": 525514,
+      "html": "ფასიანი ცვლილებების მოთხოვნები",
+      "id": 497
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 10,
+      "start": 525808,
+      "end": 525823,
+      "html": "No AI, anywhere",
+      "id": 498
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 10,
+      "start": 525874,
+      "end": 525892,
+      "html": "არანაირი AI, არსად",
+      "id": 499
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 10,
+      "start": 526114,
+      "end": 526136,
+      "html": "the same monthly spend",
+      "id": 500
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 10,
+      "start": 526187,
+      "end": 526210,
+      "html": "იგივე ყოველთვიური ხარჯი",
+      "id": 501
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 10,
+      "start": 526365,
+      "end": 526397,
+      "html": "What the same money buys with us",
+      "id": 502
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 10,
+      "start": 526448,
+      "end": 526479,
+      "html": "რას ყიდულობს იგივე ფული ჩვენთან",
+      "id": 503
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 10,
+      "start": 527690,
+      "end": 527729,
+      "html": "EMR + Lab (LIS) + PACS + Patient Portal",
+      "id": 504
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 10,
+      "start": 527780,
+      "end": 527830,
+      "html": "EMR + ლაბორატორია (LIS) + PACS + პაციენტის პორტალი",
+      "id": 505
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 10,
+      "start": 527888,
+      "end": 527913,
+      "html": "One system · one codebase",
+      "id": 506
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 10,
+      "start": 527964,
+      "end": 527991,
+      "html": "ერთი სისტემა · ერთი კოდბაზა",
+      "id": 507
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 10,
+      "start": 528357,
+      "end": 528418,
+      "html": "Phase 1 in full — the whole hospital on one platform, day one",
+      "id": 508
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 10,
+      "start": 528469,
+      "end": 528532,
+      "html": "სრული ეტაპი 1 — მთელი კლინიკა ერთ პლატფორმაზე, პირველივე დღიდან",
+      "id": 509
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 10,
+      "start": 528817,
+      "end": 528866,
+      "html": "Unlimited feature requests — you ask, we build it",
+      "id": 510
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 10,
+      "start": 528917,
+      "end": 528968,
+      "html": "შეუზღუდავი მოთხოვნები — თქვენ ითხოვთ, ჩვენ ვაშენებთ",
+      "id": 511
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 10,
+      "start": 529253,
+      "end": 529284,
+      "html": "Every platform update, included",
+      "id": 512
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 10,
+      "start": 529335,
+      "end": 529373,
+      "html": "პლატფორმის ყველა განახლება — პაკეტშივე",
+      "id": 513
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 10,
+      "start": 529658,
+      "end": 529688,
+      "html": "One contract, one phone number",
+      "id": 514
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 10,
+      "start": 529739,
+      "end": 529776,
+      "html": "ერთი კონტრაქტი, ერთი ტელეფონის ნომერი",
+      "id": 515
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 10,
+      "start": 530443,
+      "end": 530450,
+      "html": "You ask",
+      "id": 516
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 10,
+      "start": 530501,
+      "end": 530513,
+      "html": "თქვენ ითხოვთ",
+      "id": 517
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 10,
+      "start": 530867,
+      "end": 530875,
+      "html": "We build",
+      "id": 518
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 10,
+      "start": 530926,
+      "end": 530939,
+      "html": "ჩვენ ვაშენებთ",
+      "id": 519
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 10,
+      "start": 531075,
+      "end": 531103,
+      "html": "Any idea — even the big ones",
+      "id": 520
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 10,
+      "start": 531154,
+      "end": 531191,
+      "html": "ნებისმიერი იდეა — თუნდაც ყველაზე დიდი",
+      "id": 521
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 10,
+      "start": 531244,
+      "end": 531403,
+      "html": "Every request makes the product stronger — you get the feature at no extra cost, we learn what a real hospital truly needs. Our TAVI planner was born this way.",
+      "id": 522
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 10,
+      "start": 531454,
+      "end": 531617,
+      "html": "ყოველი მოთხოვნა პროდუქტს აძლიერებს — თქვენ ფუნქციას იღებთ დამატებითი ხარჯის გარეშე, ჩვენ კი ვიგებთ, რა სჭირდება ნამდვილ კლინიკას. ასე დაიბადა ჩვენი TAVI ხელსაწყოც.",
+      "id": 523
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 10,
+      "start": 531726,
+      "end": 531738,
+      "html": "Watch it run",
+      "id": 524
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 10,
+      "start": 531789,
+      "end": 531806,
+      "html": "ნახეთ მოქმედებაში",
+      "id": 525
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 10,
+      "start": 532233,
+      "end": 533195,
+      "html": "Here's the mechanism, because \"the same price\" sounds too good without it. One codebase replaces four vendors — that's the whole trick. Our platform runs across 25-plus hospitals, so the cost of building and running it is shared; four separate legacy stacks each carry their own overhead, integrators and change-request billing. You don't pay more for radically more software — you redirect the same bill to one partner. Notice what I'm NOT saying: I'm not saying cheap, and I'm not saying free. The same spend. And the part I mean most sincerely: bring us any idea — even something as big and complex as a TAVI planning tool. We'll be glad to build it, because every real request makes our product stronger. You get the feature at no extra cost; we get the use case nobody can invent at a desk — what a real hospital truly needs. That's how our TAVI tool was born, and that's how the next one will be born: from a request like yours. Both sides win, every time.",
+      "id": 526
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 10,
+      "start": 533246,
+      "end": 534252,
+      "html": "აი მექანიზმი, რადგან „იგივე ფასი\" ამის გარეშე ზედმეტად კარგად ჟღერს. ერთი კოდბაზა ოთხ ვენდორს ანაცვლებს — მთელი საიდუმლო ეს არის. ჩვენი პლატფორმა 25-ზე მეტ კლინიკაში მუშაობს, ამიტომ მისი შექმნისა და მუშაობის ხარჯი გადანაწილებულია; ოთხი ცალკეული ძველი სისტემა კი თითოეული საკუთარ ზედნადებს, ინტეგრატორებსა და ფასიან ცვლილებებს ატარებს. თქვენ არ იხდით მეტს რადიკალურად მეტი პროგრამისთვის — უბრალოდ იმავე გადასახადს ერთ პარტნიორზე მიმართავთ. დააკვირდით, რას არ ვამბობ: არ ვამბობ იაფს და არ ვამბობ უფასოს. იგივე ხარჯი. და რასაც ყველაზე გულწრფელად ვგულისხმობ: მოგვიტანეთ ნებისმიერი იდეა — თუნდაც ისეთი დიდი და რთული, როგორიც TAVI დაგეგმვის ხელსაწყოა. სიხარულით ავაშენებთ, რადგან ყოველი რეალური მოთხოვნა ჩვენს პროდუქტს აძლიერებს. თქვენ ფუნქციას იღებთ დამატებითი გადასახადის გარეშე; ჩვენ ვიღებთ გამოცდილებას, რომელსაც კაბინეტში ვერავინ მოიგონებს — რა სჭირდება ნამდვილ კლინიკას სინამდვილეში. ასე დაიბადა ჩვენი TAVI ხელსაწყო და ასე დაიბადება შემდეგიც — სწორედ თქვენნაირი მოთხოვნიდან. ორივე მხარე იგებს, ყოველ ჯერზე.",
+      "id": 527
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 11,
+      "start": 534628,
+      "end": 534640,
+      "html": "14-DAY PROOF",
+      "id": 528
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 11,
+      "start": 534691,
+      "end": 534710,
+      "html": "14-დღიანი შემოწმება",
+      "id": 529
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 11,
+      "start": 534781,
+      "end": 534853,
+      "html": "Give us <em>14 days</em> and access to a backup of your legacy database.",
+      "id": 530
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 11,
+      "start": 534904,
+      "end": 534986,
+      "html": "მოგვეცით <em>14 დღე</em> და წვდომა ძველი სისტემის მონაცემთა ბაზის სარეზერვო ასლზე.",
+      "id": 531
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 11,
+      "start": 535055,
+      "end": 535163,
+      "html": "The full MediMind system runs beside your current system. Your team tests both before making any commitment.",
+      "id": 532
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 11,
+      "start": 535214,
+      "end": 535316,
+      "html": "სრული MediMind მოქმედ სისტემასთან პარალელურად მუშაობს. გადაწყვეტილებამდე თქვენი გუნდი ორივეს გამოცდის.",
+      "id": 533
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 11,
+      "start": 535523,
+      "end": 535538,
+      "html": "Database backup",
+      "id": 534
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 11,
+      "start": 535589,
+      "end": 535609,
+      "html": "ბაზის სარეზერვო ასლი",
+      "id": 535
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 11,
+      "start": 535739,
+      "end": 535771,
+      "html": "14 days, systems run in parallel",
+      "id": 536
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 11,
+      "start": 535822,
+      "end": 535851,
+      "html": "14 დღე, სისტემები პარალელურად",
+      "id": 537
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 11,
+      "start": 536150,
+      "end": 536171,
+      "html": "Your team verifies it",
+      "id": 538
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 11,
+      "start": 536222,
+      "end": 536243,
+      "html": "თქვენი გუნდი ამოწმებს",
+      "id": 539
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 11,
+      "start": 536722,
+      "end": 536741,
+      "html": "Operations continue",
+      "id": 540
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 11,
+      "start": 536792,
+      "end": 536810,
+      "html": "მუშაობა არ ჩერდება",
+      "id": 541
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 11,
+      "start": 536883,
+      "end": 536960,
+      "html": "Your current system stays live while the full MediMind system runs beside it.",
+      "id": 542
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 11,
+      "start": 537011,
+      "end": 537078,
+      "html": "მოქმედი სისტემა არ ჩერდება. სრული MediMind მის პარალელურად მუშაობს.",
+      "id": 543
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 11,
+      "start": 537542,
+      "end": 537567,
+      "html": "Your team tests real work",
+      "id": 544
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 11,
+      "start": 537618,
+      "end": 537650,
+      "html": "თქვენი გუნდი რეალურ პროცესს ცდის",
+      "id": 545
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 11,
+      "start": 537723,
+      "end": 537792,
+      "html": "Register a patient in both systems. Then complete the same encounter.",
+      "id": 546
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 11,
+      "start": 537843,
+      "end": 537909,
+      "html": "დაარეგისტრირეთ პაციენტი ორივე სისტემაში და დაასრულეთ იგივე ვიზიტი.",
+      "id": 547
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 11,
+      "start": 538321,
+      "end": 538347,
+      "html": "You decide after the proof",
+      "id": 548
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 11,
+      "start": 538398,
+      "end": 538437,
+      "html": "გადაწყვეტილებას შემოწმების შემდეგ იღებთ",
+      "id": 549
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 11,
+      "start": 538510,
+      "end": 538577,
+      "html": "We ask for commitment only after your team has verified the result.",
+      "id": 550
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 11,
+      "start": 538628,
+      "end": 538707,
+      "html": "თანხმობას მხოლოდ მას შემდეგ გთხოვთ, რაც თქვენი გუნდი შედეგს თავად დაადასტურებს.",
+      "id": 551
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 11,
+      "start": 539012,
+      "end": 539652,
+      "html": "Here is the ask: give us 14 days and access to a backup of your legacy database. We build the full MediMind environment without touching the system your hospital uses every day. Both systems run in parallel, so operations continue normally. Then your team tests the same real workflow in each system. Register a patient, then complete an encounter. You do not have to take our word for it. We ask for a commitment only after your team has verified the result themselves. If the hospital has no legacy system, use the same 14-day period to configure the environment and test the workflow from first registration through encounter completion.",
+      "id": 552
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 11,
+      "start": 539703,
+      "end": 540336,
+      "html": "ჩვენი თხოვნა მარტივია: მოგვეცით 14 დღე და წვდომა ძველი სისტემის მონაცემთა ბაზის სარეზერვო ასლზე. MediMind-ის სრულ გარემოს ისე ვაწყობთ, რომ კლინიკის ყოველდღიურ სისტემას არ ვეხებით. ორივე სისტემა პარალელურად მუშაობს და ოპერაციები ჩვეულებრივ გრძელდება. შემდეგ თქვენი გუნდი ორივე სისტემაში ერთსა და იმავე რეალურ პროცესს ცდის: არეგისტრირებს პაციენტს და ასრულებს ვიზიტს. მხოლოდ ჩვენს სიტყვას არ უნდა ენდოთ. თანხმობას მხოლოდ მას შემდეგ გთხოვთ, რაც თქვენი გუნდი შედეგს თავად დაადასტურებს. თუ კლინიკას ძველი სისტემა არ აქვს, იმავე 14 დღეს გარემოს კონფიგურაციასა და სრული პროცესის გამოცდას ვუთმობთ, პირველი რეგისტრაციიდან ვიზიტის დასრულებამდე.",
+      "id": 553
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 12,
+      "start": 540789,
+      "end": 540799,
+      "html": "IN WRITING",
+      "id": 554
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 12,
+      "start": 540850,
+      "end": 540859,
+      "html": "წერილობით",
+      "id": 555
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 12,
+      "start": 540930,
+      "end": 540977,
+      "html": "The first vendor that's <em>easy to leave</em>.",
+      "id": 556
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 12,
+      "start": 541028,
+      "end": 541080,
+      "html": "პირველი ვენდორი, რომლის დატოვებაც <em>მარტივია</em>.",
+      "id": 557
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 12,
+      "start": 541149,
+      "end": 541204,
+      "html": "Everything the old vendors never put on paper — signed.",
+      "id": 558
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 12,
+      "start": 541255,
+      "end": 541255,
+      "html": "",
+      "id": 559
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 12,
+      "start": 541748,
+      "end": 541766,
+      "html": "Your data is yours",
+      "id": 560
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 12,
+      "start": 541817,
+      "end": 541842,
+      "html": "თქვენი მონაცემები თქვენია",
+      "id": 561
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 12,
+      "start": 541915,
+      "end": 541996,
+      "html": "Your database, in the world-standard FHIR R4 format. Full export any day you ask.",
+      "id": 562
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 12,
+      "start": 542047,
+      "end": 542154,
+      "html": "თქვენი მონაცემთა ბაზა, მსოფლიო სტანდარტის FHIR R4 ფორმატში. სრული ექსპორტი — ნებისმიერ დღეს, როცა მოითხოვთ.",
+      "id": 563
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 12,
+      "start": 542591,
+      "end": 542609,
+      "html": "Source-code escrow",
+      "id": 564
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 12,
+      "start": 542660,
+      "end": 542685,
+      "html": "კოდის დეპონირება (ესქროუ)",
+      "id": 565
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 12,
+      "start": 542758,
+      "end": 542822,
+      "html": "If we ever stop, the code and your running system stay with you.",
+      "id": 566
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 12,
+      "start": 542873,
+      "end": 542946,
+      "html": "თუ ჩვენ ოდესმე შევჩერდით, კოდი და თქვენი მომუშავე სისტემა თქვენთან რჩება.",
+      "id": 567
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 12,
+      "start": 543383,
+      "end": 543399,
+      "html": "SLA + price lock",
+      "id": 568
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 12,
+      "start": 543450,
+      "end": 543470,
+      "html": "SLA + ფასის ფიქსაცია",
+      "id": 569
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 12,
+      "start": 543543,
+      "end": 543639,
+      "html": "Support, uptime and MOH form updates guaranteed — with a multi-year price lock, in the contract.",
+      "id": 570
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 12,
+      "start": 543690,
+      "end": 543825,
+      "html": "მხარდაჭერა, სისტემის მუშაობა და ჯანდაცვის სამინისტროს ფორმების განახლებები გარანტირებულია — მრავალწლიანი ფასის ფიქსაციით, კონტრაქტშივე.",
+      "id": 571
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 12,
+      "start": 543930,
+      "end": 544009,
+      "html": "We make it easy to leave — because we intend to be impossible to want to leave.",
+      "id": 572
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 12,
+      "start": 544060,
+      "end": 544145,
+      "html": "ჩვენ წასვლას მარტივს ვხდით — რადგან ვაპირებთ, რომ წასვლის სურვილი არასდროს გაგიჩნდეთ.",
+      "id": 573
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 12,
+      "start": 544416,
+      "end": 545176,
+      "html": "This slide exists because every person in this room has been burned by a software vendor. Earlier in this deck I told you the old vendors hold your database hostage — so the fair question is: aren't we just the new hostage-taker? No, and here it is in writing. One: your data is yours — stored in FHIR R4, the world standard, exportable in full any day you ask. Two: source-code escrow — if we ever stop operating, the code and your running system stay with you. Three: a signed SLA — support, uptime, Ministry of Health form updates — with a multi-year price lock in the contract. We make it easy to leave, because that's the only honest way to ask you to stay. [CONFIRM before presenting: escrow mechanics, price-lock duration, and SLA numbers with counsel.]",
+      "id": 574
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 12,
+      "start": 545227,
+      "end": 546028,
+      "html": "ეს სლაიდი იმიტომ არსებობს, რომ ამ ოთახში ყველა ნამწვარია პროგრამული ვენდორისგან. ამ პრეზენტაციაში უკვე გითხარით, რომ ძველ ვენდორებს თქვენი მონაცემთა ბაზა მძევლად ჰყავთ — ამიტომ სამართლიანი კითხვაა: ჩვენ ხომ არ ვართ უბრალოდ ახალი მძევლის ამყვანი? არა — და აი, წერილობით. პირველი: თქვენი მონაცემები თქვენია — ინახება FHIR R4-ში, მსოფლიო სტანდარტში, და სრულად ექსპორტირებადია ნებისმიერ დღეს. მეორე: კოდის დეპონირება — თუ ოდესმე შევწყვიტეთ მუშაობა, კოდი და თქვენი მომუშავე სისტემა თქვენთან რჩება. მესამე: ხელმოწერილი SLA — მხარდაჭერა, სისტემის მუშაობა, სამინისტროს ფორმების განახლებები — მრავალწლიანი ფასის ფიქსაციით კონტრაქტში. ჩვენ წასვლას მარტივს ვხდით, რადგან დარჩენის თხოვნის ერთადერთი პატიოსანი გზა ეს არის. [CONFIRM: ესქროუს მექანიზმი, ფასის ფიქსაციის ვადა და SLA ციფრები იურისტთან პრეზენტაციამდე.]",
+      "id": 575
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 13,
+      "start": 546475,
+      "end": 546489,
+      "html": "THE INVITATION",
+      "id": 576
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 13,
+      "start": 546540,
+      "end": 546547,
+      "html": "მოწვევა",
+      "id": 577
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 13,
+      "start": 546724,
+      "end": 546764,
+      "html": "Same spend. <em>A generation ahead.</em>",
+      "id": 578
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 13,
+      "start": 546815,
+      "end": 546848,
+      "html": "იგივე ხარჯი. <em>თაობით წინ.</em>",
+      "id": 579
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 13,
+      "start": 546912,
+      "end": 547065,
+      "html": "The software standard for Georgian healthcare is being written now — and the hospitals that integrate the AI brain will run among the first in the world.",
+      "id": 580
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 13,
+      "start": 547116,
+      "end": 547253,
+      "html": "ქართული ჯანდაცვის პროგრამული სტანდარტი ახლა იწერება — და კლინიკები, რომლებიც AI ტვინს დააინტეგრირებენ, მსოფლიოში პირველთა შორის იქნებიან.",
+      "id": 581
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 13,
+      "start": 547354,
+      "end": 547370,
+      "html": "Partner with us.",
+      "id": 582
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 13,
+      "start": 547421,
+      "end": 547444,
+      "html": "გახდით ჩვენი პარტნიორი.",
+      "id": 583
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 13,
+      "start": 547738,
+      "end": 547748,
+      "html": "Same spend",
+      "id": 584
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 13,
+      "start": 547799,
+      "end": 547810,
+      "html": "იგივე ხარჯი",
+      "id": 585
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 13,
+      "start": 548069,
+      "end": 548088,
+      "html": "Everything included",
+      "id": 586
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 13,
+      "start": 548139,
+      "end": 548156,
+      "html": "ყველაფერი პაკეტში",
+      "id": 587
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 13,
+      "start": 548415,
+      "end": 548429,
+      "html": "One-day switch",
+      "id": 588
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 13,
+      "start": 548480,
+      "end": 548498,
+      "html": "ერთდღიანი გადასვლა",
+      "id": 589
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 13,
+      "start": 548757,
+      "end": 548775,
+      "html": "Pilot-first option",
+      "id": 590
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 13,
+      "start": 548826,
+      "end": 548841,
+      "html": "პილოტით დაწყება",
+      "id": 591
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 13,
+      "start": 549038,
+      "end": 549065,
+      "html": "This month: pilot agreement",
+      "id": 592
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 13,
+      "start": 549116,
+      "end": 549145,
+      "html": "ამ თვეში: საპილოტე შეთანხმება",
+      "id": 593
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 13,
+      "start": 549293,
+      "end": 549318,
+      "html": "We migrate &amp; validate",
+      "id": 594
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 13,
+      "start": 549369,
+      "end": 549398,
+      "html": "ჩვენ გადმოგვაქვს და ვამოწმებთ",
+      "id": 595
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 13,
+      "start": 549546,
+      "end": 549557,
+      "html": "You go live",
+      "id": 596
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 13,
+      "start": 549608,
+      "end": 549629,
+      "html": "თქვენ იწყებთ მუშაობას",
+      "id": 597
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 13,
+      "start": 550111,
+      "end": 550588,
+      "html": "You built this hospital to lead — and the software standard for Georgian healthcare is being written right now, by the hospitals that join first. The offer is simple: the same spend you carry today, everything included, a one-day switch, and if you'd rather test the water, we pilot one department this month. Twenty-five hospitals are already in. The only question is whether your hospital helps set the standard — or adopts it later, on someone else's terms. Partner with us.",
+      "id": 598
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 13,
+      "start": 550639,
+      "end": 551142,
+      "html": "თქვენ ეს კლინიკა ლიდერობისთვის ააშენეთ — და ქართული ჯანდაცვის პროგრამული სტანდარტი სწორედ ახლა იწერება, იმ კლინიკების მიერ, რომლებიც პირველები შემოდიან. შეთავაზება მარტივია: იგივე ხარჯი, რასაც დღეს ატარებთ, ყველაფერი პაკეტში, ერთდღიანი გადასვლა — და თუ ჯერ ტესტირება გირჩევნიათ, ამ თვეში ერთი დეპარტამენტის პილოტს გავუშვებთ. ოცდახუთი კლინიკა უკვე შემოვიდა. ერთადერთი კითხვაა: თქვენი კლინიკა სტანდარტის შექმნაში მიიღებს მონაწილეობას — თუ მოგვიანებით მიიღებს მას, სხვისი პირობებით. გახდით ჩვენი პარტნიორი.",
+      "id": 599
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 14,
+      "start": 551506,
+      "end": 551525,
+      "html": "End of the proposal",
+      "id": 600
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 14,
+      "start": 551576,
+      "end": 551598,
+      "html": "პრეზენტაციის დასასრული",
+      "id": 601
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 14,
+      "start": 551670,
+      "end": 551680,
+      "html": "Thank you.",
+      "id": 602
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 14,
+      "start": 551731,
+      "end": 551740,
+      "html": "გმადლობთ.",
+      "id": 603
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 14,
+      "start": 551872,
+      "end": 551879,
+      "html": "Up next",
+      "id": 604
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 14,
+      "start": 551930,
+      "end": 551936,
+      "html": "შემდეგ",
+      "id": 605
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 14,
+      "start": 552267,
+      "end": 552283,
+      "html": "Live walkthrough",
+      "id": 606
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 14,
+      "start": 552334,
+      "end": 552346,
+      "html": "ცოცხალი დემო",
+      "id": 607
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 14,
+      "start": 552690,
+      "end": 552702,
+      "html": "Architecture",
+      "id": 608
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 14,
+      "start": 552753,
+      "end": 552764,
+      "html": "არქიტექტურა",
+      "id": 609
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 14,
+      "start": 553117,
+      "end": 553278,
+      "html": "End of the main proposal. Thank you. What follows is a live product walkthrough and the system architecture. Happy to dwell on whichever you want to see more of.",
+      "id": 610
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 14,
+      "start": 553329,
+      "end": 553502,
+      "html": "მთავარი პრეზენტაციის დასასრული. გმადლობთ. შემდეგ მოდის პროდუქტის ცოცხალი დემონსტრაცია და სისტემის არქიტექტურა. სიამოვნებით უფრო დეტალურად განვიხილავთ იმას, რაც გაინტერესებთ.",
+      "id": 611
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 15,
+      "start": 554300,
+      "end": 554308,
+      "html": "Continue",
+      "id": 612
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 15,
+      "start": 554359,
+      "end": 554369,
+      "html": "გაგრძელება",
+      "id": 613
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 15,
+      "start": 554505,
+      "end": 554707,
+      "html": "Live product walkthrough embedded from /walkthrough — click play to start. To leave, click outside the iframe and press the right arrow (or the on-screen arrow) to continue to the architecture appendix.",
+      "id": 614
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 15,
+      "start": 554758,
+      "end": 554959,
+      "html": "პროდუქტის ცოცხალი დემონსტრაცია /walkthrough-დან — დასაწყებად დააჭირეთ play-ს. გასასვლელად დააჭირეთ iframe-ის გარეთ და გამოიყენეთ მარჯვენა ისარი (ან ეკრანის ისარი) რათა გადახვიდეთ არქიტექტურის დანართზე.",
+      "id": 615
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 555330,
+      "end": 555353,
+      "html": "APPENDIX · ARCHITECTURE",
+      "id": 616
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 555404,
+      "end": 555425,
+      "html": "დანართი · არქიტექტურა",
+      "id": 617
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 555542,
+      "end": 555591,
+      "html": "A hospital with a body made of <em>software.</em>",
+      "id": 618
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 555642,
+      "end": 555702,
+      "html": "ჰოსპიტალი, რომლის სხეულიც <em>პროგრამული უზრუნველყოფაა.</em>",
+      "id": 619
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 555818,
+      "end": 555903,
+      "html": "Every department. Every workflow. One AI-native codebase, built ground-up on FHIR R4.",
+      "id": 620
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 555954,
+      "end": 556041,
+      "html": "ყველა დეპარტამენტი. ყველა სამუშაო პროცესი. ერთიანი AI-ნატიური კოდი, აგებული FHIR R4-ზე.",
+      "id": 621
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 16,
+      "start": 558052,
+      "end": 558062,
+      "html": "CLINICIANS",
+      "id": 622
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 16,
+      "start": 558139,
+      "end": 558151,
+      "html": "კლინიცისტები",
+      "id": 623
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 16,
+      "start": 558235,
+      "end": 558255,
+      "html": "doctors &amp; nurses",
+      "id": 624
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 16,
+      "start": 558342,
+      "end": 558360,
+      "html": "ექიმები და ექთნები",
+      "id": 625
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 16,
+      "start": 559451,
+      "end": 559463,
+      "html": "COORDINATORS",
+      "id": 626
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 16,
+      "start": 559540,
+      "end": 559554,
+      "html": "კოორდინატორები",
+      "id": 627
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 16,
+      "start": 559638,
+      "end": 559660,
+      "html": "admin &amp; operations",
+      "id": 628
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 16,
+      "start": 559747,
+      "end": 559767,
+      "html": "მართვა და ოპერაციები",
+      "id": 629
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 16,
+      "start": 560941,
+      "end": 560949,
+      "html": "PATIENTS",
+      "id": 630
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 16,
+      "start": 561026,
+      "end": 561036,
+      "html": "პაციენტები",
+      "id": 631
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 16,
+      "start": 561120,
+      "end": 561146,
+      "html": "portal &amp; notifications",
+      "id": 632
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 16,
+      "start": 561233,
+      "end": 561257,
+      "html": "პორტალი და შეტყობინებები",
+      "id": 633
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 16,
+      "start": 561369,
+      "end": 561404,
+      "html": "SKIN — THE SURFACES OF THE HOSPITAL",
+      "id": 634
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 16,
+      "start": 561482,
+      "end": 561509,
+      "html": "კანი — ჰოსპიტლის ზედაპირები",
+      "id": 635
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 16,
+      "start": 561585,
+      "end": 561608,
+      "html": "— view · edit · write —",
+      "id": 636
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 16,
+      "start": 561691,
+      "end": 561723,
+      "html": "— ნახვა · რედაქტირება · ჩაწერა —",
+      "id": 637
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 16,
+      "start": 562387,
+      "end": 562394,
+      "html": "Patient",
+      "id": 638
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 16,
+      "start": 562474,
+      "end": 562482,
+      "html": "პაციენტი",
+      "id": 639
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 16,
+      "start": 562797,
+      "end": 562806,
+      "html": "Encounter",
+      "id": 640
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 16,
+      "start": 562886,
+      "end": 562892,
+      "html": "ვიზიტი",
+      "id": 641
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 16,
+      "start": 563189,
+      "end": 563192,
+      "html": "Bed",
+      "id": 642
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 16,
+      "start": 563272,
+      "end": 563278,
+      "html": "საწოლი",
+      "id": 643
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 16,
+      "start": 563606,
+      "end": 563616,
+      "html": "Medication",
+      "id": 644
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 16,
+      "start": 563696,
+      "end": 563707,
+      "html": "მედიკამენტი",
+      "id": 645
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 16,
+      "start": 563992,
+      "end": 563997,
+      "html": "Claim",
+      "id": 646
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 16,
+      "start": 564077,
+      "end": 564085,
+      "html": "მოთხოვნა",
+      "id": 647
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 16,
+      "start": 564380,
+      "end": 564388,
+      "html": "Coverage",
+      "id": 648
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 16,
+      "start": 564468,
+      "end": 564476,
+      "html": "დაზღვევა",
+      "id": 649
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 16,
+      "start": 564754,
+      "end": 564762,
+      "html": "Specimen",
+      "id": 650
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 16,
+      "start": 564842,
+      "end": 564848,
+      "html": "ნიმუში",
+      "id": 651
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 16,
+      "start": 565226,
+      "end": 565231,
+      "html": "Order",
+      "id": 652
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 16,
+      "start": 565311,
+      "end": 565322,
+      "html": "დანიშნულება",
+      "id": 653
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 16,
+      "start": 565435,
+      "end": 565468,
+      "html": "HEART — THE LIVING HOSPITAL MODEL",
+      "id": 654
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 16,
+      "start": 565547,
+      "end": 565578,
+      "html": "გული — ჰოსპიტლის ცოცხალი მოდელი",
+      "id": 655
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 16,
+      "start": 565653,
+      "end": 565727,
+      "html": "80+ FHIR R4 resources  ·  one living model  ·  ground-up, not an API layer",
+      "id": 656
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 16,
+      "start": 565809,
+      "end": 565884,
+      "html": "80+ FHIR R4 რესურსი · ერთი ცოცხალი მოდელი · ნულიდან აგებული, და არა API-შრე",
+      "id": 657
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 16,
+      "start": 565960,
+      "end": 565987,
+      "html": "— reason · act · remember —",
+      "id": 658
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 16,
+      "start": 566070,
+      "end": 566109,
+      "html": "— მსჯელობა · მოქმედება · დამახსოვრება —",
+      "id": 659
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 16,
+      "start": 567589,
+      "end": 567597,
+      "html": "AI-BRAIN",
+      "id": 660
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 16,
+      "start": 567674,
+      "end": 567682,
+      "html": "AI-ტვინი",
+      "id": 661
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 16,
+      "start": 567766,
+      "end": 567790,
+      "html": "reasons across the Heart",
+      "id": 662
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 16,
+      "start": 567877,
+      "end": 567896,
+      "html": "მსჯელობს მთელ გულზე",
+      "id": 663
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 16,
+      "start": 569035,
+      "end": 569041,
+      "html": "MUSCLE",
+      "id": 664
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 16,
+      "start": 569118,
+      "end": 569123,
+      "html": "კუნთი",
+      "id": 665
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 16,
+      "start": 569207,
+      "end": 569229,
+      "html": "acts on the real world",
+      "id": 666
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 16,
+      "start": 569316,
+      "end": 569342,
+      "html": "მოქმედებს რეალურ სამყაროზე",
+      "id": 667
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 16,
+      "start": 570545,
+      "end": 570550,
+      "html": "NERVE",
+      "id": 668
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 16,
+      "start": 570627,
+      "end": 570632,
+      "html": "ნერვი",
+      "id": 669
+    },
+    {
+      "tag": "text",
+      "lang": "en",
+      "section": 16,
+      "start": 570716,
+      "end": 570734,
+      "html": "feels every change",
+      "id": 670
+    },
+    {
+      "tag": "text",
+      "lang": "ka",
+      "section": 16,
+      "start": 570821,
+      "end": 570844,
+      "html": "გრძნობს ყველა ცვლილებას",
+      "id": 671
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 571059,
+      "end": 571068,
+      "html": "Data Flow",
+      "id": 672
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 571119,
+      "end": 571135,
+      "html": "მონაცემთა ნაკადი",
+      "id": 673
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 571217,
+      "end": 571221,
+      "html": "Live",
+      "id": 674
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 571272,
+      "end": 571279,
+      "html": "ცოცხალი",
+      "id": 675
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 571518,
+      "end": 571522,
+      "html": "Skin",
+      "id": 676
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 571573,
+      "end": 571577,
+      "html": "კანი",
+      "id": 677
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 571637,
+      "end": 571660,
+      "html": "people read &amp; write",
+      "id": 678
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 571711,
+      "end": 571734,
+      "html": "ხალხი კითხულობს და წერს",
+      "id": 679
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 571919,
+      "end": 571927,
+      "html": "AI-Brain",
+      "id": 680
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 571978,
+      "end": 571986,
+      "html": "AI-ტვინი",
+      "id": 681
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 572046,
+      "end": 572069,
+      "html": "AI reasons &amp; writes",
+      "id": 682
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 572120,
+      "end": 572139,
+      "html": "AI მსჯელობს და წერს",
+      "id": 683
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 572321,
+      "end": 572327,
+      "html": "Muscle",
+      "id": 684
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 572378,
+      "end": 572383,
+      "html": "კუნთი",
+      "id": 685
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 572443,
+      "end": 572460,
+      "html": "sends actions out",
+      "id": 686
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 572511,
+      "end": 572531,
+      "html": "აგზავნის მოქმედებებს",
+      "id": 687
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 572712,
+      "end": 572717,
+      "html": "Nerve",
+      "id": 688
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 572768,
+      "end": 572773,
+      "html": "ნერვი",
+      "id": 689
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 572833,
+      "end": 572853,
+      "html": "records every change",
+      "id": 690
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 572904,
+      "end": 572930,
+      "html": "აფიქსირებს ყველა ცვლილებას",
+      "id": 691
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 573062,
+      "end": 573137,
+      "html": "<strong>Heart</strong> is the center.<br/>Everything else flows through it.",
+      "id": 692
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 573188,
+      "end": 573259,
+      "html": "<strong>გული</strong> ცენტრია.<br/>დანარჩენი ყველაფერი მასში მიედინება.",
+      "id": 693
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 573383,
+      "end": 573446,
+      "html": "Not an EMR. Not an integration layer. <em>The whole thing.</em>",
+      "id": 694
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 573497,
+      "end": 573558,
+      "html": "არ არის EMR. არ არის ინტეგრაციის შრე. <em>სრული სისტემა.</em>",
+      "id": 695
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 573829,
+      "end": 574239,
+      "html": "Appendix A — the architecture, for the technical stakeholder. Five layers: Heart is the FHIR R4 model, the storage primitive — 80+ resources, one living model, ground-up. Brain is AI reasoning across the Heart. Muscle reaches into MOH, insurance, pharmacy, DICOM, SMS. Skin is every UI a hospital role touches. Nerve carries every event and audit signal. Not an EMR, not an integration layer — the whole thing.",
+      "id": 696
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 574290,
+      "end": 574665,
+      "html": "დანართი A — არქიტექტურა ტექნიკური მხარისთვის. ხუთი შრე: გული არის FHIR R4 მოდელი, შენახვის ბაზა — 80+ რესურსი, ერთიანი ცოცხალი მოდელი. ტვინი არის AI, რომელიც აანალიზებს გულს. კუნთი წვდება ჯანდაცვის სამინისტროს, დაზღვევას, აფთიაქს, DICOM-სა და SMS-ს. კანი არის ყველა ინტერფეისი. ნერვი ატარებს ყველა მოვლენასა და აუდიტის სიგნალს. არ არის EMR ან ინტეგრაციის შრე — სრული სისტემა.",
+      "id": 697
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 576916,
+      "end": 576941,
+      "html": "Real case · de-identified",
+      "id": 698
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 576992,
+      "end": 577030,
+      "html": "რეალური შემთხვევა · დეიდენტიფიცირებული",
+      "id": 699
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 577123,
+      "end": 577142,
+      "html": "The 14-hour silence",
+      "id": 700
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 577193,
+      "end": 577211,
+      "html": "14-საათიანი სიჩუმე",
+      "id": 701
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 577352,
+      "end": 577365,
+      "html": "What happened",
+      "id": 702
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 577416,
+      "end": 577424,
+      "html": "რა მოხდა",
+      "id": 703
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 577473,
+      "end": 577740,
+      "html": "Two weeks post-stent, a high-risk patient returned with stomach pain. The team anchored on his heart — and for <strong>14 hours</strong>, no one ordered the <strong>~$20 lab</strong> that would've caught the real cause: acute pancreatitis. By then: septic shock, ICU.",
+      "id": 704
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 577791,
+      "end": 578085,
+      "html": "ორი კვირა სტენტის შემდეგ, მაღალი რისკის პაციენტი დაბრუნდა მუცლის ტკივილით. გუნდმა ყურადღება გულზე გაამახვილა — და <strong>14 საათის</strong> მანძილზე არავინ დანიშნა <strong>~$20-იანი ანალიზი</strong>, რომელიც დაიჭერდა ნამდვილ მიზეზს: მწვავე პანკრეატიტს. ამ დროისთვის: სეპტიური შოკი, რეანიმაცია.",
+      "id": 705
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 578150,
+      "end": 578221,
+      "html": "No one was incompetent — the hospital just ran on memory at 2&nbsp;a.m.",
+      "id": 706
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 578272,
+      "end": 578354,
+      "html": "არავინ იყო არაკომპეტენტური — კლინიკა უბრალოდ ღამის 2 საათზე მეხსიერებაზე მუშაობდა.",
+      "id": 707
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 578473,
+      "end": 578497,
+      "html": "What the OS does instead",
+      "id": 708
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 578548,
+      "end": 578575,
+      "html": "რას აკეთებს OS ამის ნაცვლად",
+      "id": 709
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 578697,
+      "end": 578776,
+      "html": "<strong>Parallel</strong> cardiac + GI panel from minute one — lipase included.",
+      "id": 710
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 578827,
+      "end": 578910,
+      "html": "<strong>პარალელური</strong> კარდიო + GI პანელი პირველივე წუთიდან — ლიპაზას ჩათვლით.",
+      "id": 711
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 578994,
+      "end": 579047,
+      "html": "Cardiology + surgery paged <strong>together</strong>.",
+      "id": 712
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 579098,
+      "end": 579156,
+      "html": "კარდიოლოგია + ქირურგია გამოიძახება <strong>ერთად</strong>.",
+      "id": 713
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 579240,
+      "end": 579309,
+      "html": "Pancreatitis caught <strong>~19 hrs earlier</strong> — before sepsis.",
+      "id": 714
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 579360,
+      "end": 579424,
+      "html": "პანკრეატიტი დაჭერილია <strong>~19 სთ ადრე</strong> — სეფსისამდე.",
+      "id": 715
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 579613,
+      "end": 579616,
+      "html": "lab",
+      "id": 716
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 579667,
+      "end": 579674,
+      "html": "ანალიზი",
+      "id": 717
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 579758,
+      "end": 579760,
+      "html": "vs",
+      "id": 718
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 579811,
+      "end": 579813,
+      "html": "vs",
+      "id": 719
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 579903,
+      "end": 579917,
+      "html": "inpatient stay",
+      "id": 720
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 579968,
+      "end": 579979,
+      "html": "სტაციონარში",
+      "id": 721
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 580054,
+      "end": 580115,
+      "html": "Caught early, every time — by a system that never gets tired.",
+      "id": 722
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 580166,
+      "end": 580230,
+      "html": "დროულად დაჭერილი, ყოველთვის — სისტემით, რომელიც არასოდეს იღლება.",
+      "id": 723
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 581104,
+      "end": 581139,
+      "html": "Operating impact · the full picture",
+      "id": 724
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 581190,
+      "end": 581223,
+      "html": "ოპერაციული გავლენა · სრული სურათი",
+      "id": 725
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 581315,
+      "end": 581342,
+      "html": "Where the margin comes from",
+      "id": 726
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 581393,
+      "end": 581411,
+      "html": "საიდან მოდის მარჟა",
+      "id": 727
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 581473,
+      "end": 581536,
+      "html": "Everything automated and tracked — that becomes money two ways:",
+      "id": 728
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 581587,
+      "end": 581651,
+      "html": "ყველაფერი ავტომატიზებული და აღრიცხული — ეს ფულად ორ გზად იქცევა:",
+      "id": 729
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 581846,
+      "end": 581869,
+      "html": "Revenue you stop losing",
+      "id": 730
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 581920,
+      "end": 581953,
+      "html": "შემოსავალი, რომელსაც აღარ კარგავთ",
+      "id": 731
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 582403,
+      "end": 582427,
+      "html": "Clean claims, first time",
+      "id": 732
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 582478,
+      "end": 582513,
+      "html": "უშეცდომო ისტორიები, პირველივე ჯერზე",
+      "id": 733
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 582552,
+      "end": 582608,
+      "html": "Coded right at the point of care — nothing bounces back.",
+      "id": 734
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 582659,
+      "end": 582706,
+      "html": "სწორად კოდირებული მკურნალობისას — კორექტირდება.",
+      "id": 735
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 583163,
+      "end": 583185,
+      "html": "Capture every billable",
+      "id": 736
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 583236,
+      "end": 583271,
+      "html": "თანამედროვე უშეცდომო ბილინგ სისტემა",
+      "id": 737
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 583310,
+      "end": 583358,
+      "html": "Every service and supply billed — nothing slips.",
+      "id": 738
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 583409,
+      "end": 583463,
+      "html": "ყველა ხარჯი და ასანაზღაურებელი სერვისი დაფიქსირებულია.",
+      "id": 739
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 583956,
+      "end": 583967,
+      "html": "Faster cash",
+      "id": 740
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 584018,
+      "end": 584034,
+      "html": "უფრო სწრაფი ფული",
+      "id": 741
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 584073,
+      "end": 584111,
+      "html": "Clean, on-time claims get paid faster.",
+      "id": 742
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 584162,
+      "end": 584208,
+      "html": "სუფთა, დროული ანგარიშები სწრაფად ანაზღაურდება.",
+      "id": 743
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 584413,
+      "end": 584435,
+      "html": "Cost you stop carrying",
+      "id": 744
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 584486,
+      "end": 584515,
+      "html": "ხარჯი, რომელსაც აღარ ეზიდებით",
+      "id": 745
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 584980,
+      "end": 585007,
+      "html": "More patients, same doctors",
+      "id": 746
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 585058,
+      "end": 585096,
+      "html": "მეტი პაციენტი, იგივე რაოდენობის ექიმზე",
+      "id": 747
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 585135,
+      "end": 585178,
+      "html": "Less time on notes — more patients per day.",
+      "id": 748
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 585229,
+      "end": 585275,
+      "html": "ნაკლები დრო ჩანაწერებზე — მეტი პაციენტი დღეში.",
+      "id": 749
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 585794,
+      "end": 585813,
+      "html": "Back-office, halved",
+      "id": 750
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 585864,
+      "end": 585893,
+      "html": "ადმინისტრაცია — განახევრებული",
+      "id": 751
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 585932,
+      "end": 585978,
+      "html": "QA, stock and lab admin at half the headcount.",
+      "id": 752
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 586029,
+      "end": 586089,
+      "html": "ხარისხის კონტროლი, საწყობი და ლაბი — ნახევარი შემადგენლობით.",
+      "id": 753
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 586643,
+      "end": 586659,
+      "html": "Predictive stock",
+      "id": 754
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 586710,
+      "end": 586731,
+      "html": "პროგნოზირებადი მარაგი",
+      "id": 755
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 586770,
+      "end": 586823,
+      "html": "Ordered to real demand — less waste, fewer rush buys.",
+      "id": 756
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 586874,
+      "end": 586945,
+      "html": "შეკვეთა რეალურ მოთხოვნაზე — ნაკლები ნარჩენი, ნაკლები სასწრაფო შესყიდვა.",
+      "id": 757
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 587062,
+      "end": 587190,
+      "html": "<strong>Every claim clean · more patients per day · half the back office</strong> — a margin that compounds, every single month.",
+      "id": 758
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 587241,
+      "end": 587369,
+      "html": "<strong>ყველა ანგარიში სუფთა · მეტი პაციენტი დღეში · განახევრებული ადმინისტრაცია</strong> — მარჟა, რომელიც ყოველთვიურად იზრდება.",
+      "id": 759
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 587813,
+      "end": 587825,
+      "html": "Product demo",
+      "id": 760
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 587876,
+      "end": 587890,
+      "html": "პროდუქტის დემო",
+      "id": 761
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 588607,
+      "end": 588633,
+      "html": "Demo recording coming soon",
+      "id": 762
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 588684,
+      "end": 588712,
+      "html": "დემო ჩანაწერი მალე დაემატება",
+      "id": 763
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 588784,
+      "end": 588835,
+      "html": "A short walkthrough of this product will play here.",
+      "id": 764
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 588886,
+      "end": 588928,
+      "html": "აქ ჩაირთვება ამ პროდუქტის მოკლე მიმოხილვა.",
+      "id": 765
+    },
+    {
+      "tag": "span",
+      "lang": "en",
+      "section": 16,
+      "start": 589455,
+      "end": 589727,
+      "html": "Without software like this, a TAVI cannot be planned at all. The industry standard, <strong>3mensio</strong>, costs <strong>~$6,000 per seat for a 12-month licence</strong>. We built the medical-grade equivalent in-house — and for our partner hospital it is <em>free</em>.",
+      "id": 766
+    },
+    {
+      "tag": "span",
+      "lang": "ka",
+      "section": 16,
+      "start": 589789,
+      "end": 590084,
+      "html": "ამგვარი პროგრამის გარეშე TAVI-ის დაგეგმვა შეუძლებელია. ინდუსტრიის სტანდარტი <strong>3mensio</strong> ერთ სამუშაო ადგილზე <strong>~$6,000-ად ფასობს 12-თვიან ლიცენზიაზე</strong>. ჩვენ მისი სამედიცინო დონის ალტერნატივა საკუთარი ძალებით ავაშენეთ — და ჩვენი პარტნიორი კლინიკისთვის ის <em>უფასოა</em>.",
+      "id": 767
+    }
+  ]
+}

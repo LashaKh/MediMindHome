@@ -1,0 +1,152 @@
+{
+  "preserved": true,
+  "count": 17,
+  "baseline": [
+    {
+      "tag": "<section class=\"cover\">",
+      "sha256": "dde1f2f43607d0f2396301a9c15aae50a9ebe11f1581a279896ec4a5311d8fe0"
+    },
+    {
+      "tag": "<section id=\"hospital-reality\" class=\"hri-slide\">",
+      "sha256": "8d8dc037b4e65e97a04cdfe5dde5d5d8f7ec569bfb1c904b377d76c6f525edcc"
+    },
+    {
+      "tag": "<section class=\"gw-slide hxd-slide\">",
+      "sha256": "4feb3ed0f38e2e0b9709341888878b50889375e10e57548b8643d4e1b6243d1a"
+    },
+    {
+      "tag": "<section class=\"gw-slide hxr-slide hxr3-slide\">",
+      "sha256": "7417011e6e076639d689b57369f0b6545a0e82e382a972473421164737b54dcc"
+    },
+    {
+      "tag": "<section class=\"gw-slide hxs-slide\">",
+      "sha256": "d62bad1361fcb58c68e9fb27bde53e9239584424128ba931c18e9ca99cea0ae3"
+    },
+    {
+      "tag": "<section class=\"gw-slide hxp-slide\">",
+      "sha256": "5517507ded1897731a85aa6526084fa637f198bfa5866556076bf3d4520b12de"
+    },
+    {
+      "tag": "<section class=\"gw-slide hxw-slide\">",
+      "sha256": "cd5ef583fd4454fd049fce33d2539c4e4f2d614729a762060e2250569e1d5dcf"
+    },
+    {
+      "tag": "<section class=\"gw-slide hxm-slide\">",
+      "sha256": "6fa27ee4b4eee68a01ac5c40263778f37dfa61a0a0f4ac294b4a481bddb400a1"
+    },
+    {
+      "tag": "<section class=\"eco-slide\">",
+      "sha256": "6ca01527bcb26bea005e1e648def57a522e365f6645eff8ca5a99a993f11cbcb"
+    },
+    {
+      "tag": "<section class=\"gw-slide hxa-slide scope-slide\">",
+      "sha256": "7ca8b4ef131d991f741c83dcc609d41e4c4b38f9d8ef1e0b763bb70538e83c7d"
+    },
+    {
+      "tag": "<section class=\"csx-slide hx-brain\">",
+      "sha256": "147f69abf2dd99310149a996c922553630cfa01362a0cb0a42b5ed42c5d9c4ed"
+    },
+    {
+      "tag": "<section class=\"bm-slide hx-offer\">",
+      "sha256": "586b1db502b5e456d42beec1c57ba5ac92358965aa198b020b3867cba2d2dd7d"
+    },
+    {
+      "tag": "<section class=\"gw-slide gw-switch\">",
+      "sha256": "20f7b68add4dbf2c151095dcacf28bbb72322b53bd4a17002512391c0cce31da"
+    },
+    {
+      "tag": "<section class=\"gw-slide hxg-slide\">",
+      "sha256": "bf56451df1775cd9172ef7b4d6604e7cf2b14c3efab6338ecd7c29ca36247338"
+    },
+    {
+      "tag": "<section class=\"hc-dark hc-close\">",
+      "sha256": "180e64d804daff0cfa5bb8cdeeeecc935dcdefae6a6dc570fd94bca1868d13c2"
+    },
+    {
+      "tag": "<section class=\"divider-slide divider-thanks\">",
+      "sha256": "4bf16fa8916a6c5dff241f203165a316b47e1d0a9dbcbbf79b637994a0ffadae"
+    },
+    {
+      "tag": "<section class=\"tour-slide\">",
+      "sha256": "5bfbec538b0357638bc5d345bbff82080d735cdc3def6114c8c807601d8eb3f6"
+    },
+    {
+      "tag": "<section>",
+      "sha256": "cee0679ba0de0d7659a7417dcfd506654b81a7129eeb2b00e2ea4a7e2cb52fc0"
+    }
+  ],
+  "current": [
+    {
+      "tag": "<section class=\"cover\">",
+      "sha256": "dde1f2f43607d0f2396301a9c15aae50a9ebe11f1581a279896ec4a5311d8fe0"
+    },
+    {
+      "tag": "<section id=\"hospital-reality\" class=\"hri-slide\">",
+      "sha256": "8d8dc037b4e65e97a04cdfe5dde5d5d8f7ec569bfb1c904b377d76c6f525edcc"
+    },
+    {
+      "tag": "<section class=\"gw-slide hxr-slide hxr3-slide\">",
+      "sha256": "7417011e6e076639d689b57369f0b6545a0e82e382a972473421164737b54dcc"
+    },
+    {
+      "tag": "<section id=\"hospital-partnership\" class=\"hpo-slide\">",
+      "sha256": "0bf979d0a33681367ae999e0d2aac8ab12e2683540cca0e0ca0ba8c9849aa4ac"
+    },
+    {
+      "tag": "<section class=\"gw-slide hxs-slide\">",
+      "sha256": "d62bad1361fcb58c68e9fb27bde53e9239584424128ba931c18e9ca99cea0ae3"
+    },
+    {
+      "tag": "<section class=\"gw-slide hxp-slide\">",
+      "sha256": "5517507ded1897731a85aa6526084fa637f198bfa5866556076bf3d4520b12de"
+    },
+    {
+      "tag": "<section class=\"gw-slide hxw-slide\">",
+      "sha256": "cd5ef583fd4454fd049fce33d2539c4e4f2d614729a762060e2250569e1d5dcf"
+    },
+    {
+      "tag": "<section class=\"gw-slide hxm-slide\">",
+      "sha256": "6fa27ee4b4eee68a01ac5c40263778f37dfa61a0a0f4ac294b4a481bddb400a1"
+    },
+    {
+      "tag": "<section class=\"eco-slide\">",
+      "sha256": "6ca01527bcb26bea005e1e648def57a522e365f6645eff8ca5a99a993f11cbcb"
+    },
+    {
+      "tag": "<section class=\"gw-slide hxa-slide scope-slide\">",
+      "sha256": "7ca8b4ef131d991f741c83dcc609d41e4c4b38f9d8ef1e0b763bb70538e83c7d"
+    },
+    {
+      "tag": "<section class=\"csx-slide hx-brain\">",
+      "sha256": "147f69abf2dd99310149a996c922553630cfa01362a0cb0a42b5ed42c5d9c4ed"
+    },
+    {
+      "tag": "<section class=\"bm-slide hx-offer\">",
+      "sha256": "586b1db502b5e456d42beec1c57ba5ac92358965aa198b020b3867cba2d2dd7d"
+    },
+    {
+      "tag": "<section class=\"gw-slide gw-switch\">",
+      "sha256": "20f7b68add4dbf2c151095dcacf28bbb72322b53bd4a17002512391c0cce31da"
+    },
+    {
+      "tag": "<section class=\"gw-slide hxg-slide\">",
+      "sha256": "bf56451df1775cd9172ef7b4d6604e7cf2b14c3efab6338ecd7c29ca36247338"
+    },
+    {
+      "tag": "<section class=\"hc-dark hc-close\">",
+      "sha256": "180e64d804daff0cfa5bb8cdeeeecc935dcdefae6a6dc570fd94bca1868d13c2"
+    },
+    {
+      "tag": "<section class=\"divider-slide divider-thanks\">",
+      "sha256": "4bf16fa8916a6c5dff241f203165a316b47e1d0a9dbcbbf79b637994a0ffadae"
+    },
+    {
+      "tag": "<section class=\"tour-slide\">",
+      "sha256": "5bfbec538b0357638bc5d345bbff82080d735cdc3def6114c8c807601d8eb3f6"
+    },
+    {
+      "tag": "<section>",
+      "sha256": "cee0679ba0de0d7659a7417dcfd506654b81a7129eeb2b00e2ea4a7e2cb52fc0"
+    }
+  ]
+}

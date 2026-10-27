@@ -7,11 +7,11 @@
   if (openers.length !== 3 || templates.length !== 3) return;
   const copy = (en, ka) => `<span class="lang-en">${en}</span><span class="lang-ka">${ka}</span>`;
   const titles = [
-    ['Complete system', 'ერთიანი სისტემა'],
-    ['AI for every team', 'AI ყველა გუნდისთვის'],
+    ['All the software you need', 'ყველა საჭირო პროგრამა'],
+    ['AI for your team', 'AI თქვენი გუნდისთვის'],
     ['Hospital AI Brain', 'კლინიკის AI ტვინი']
   ];
-  const labels = [['System', 'სისტემა'], ['Assistants', 'ასისტენტები'], ['AI Brain', 'AI ტვინი']];
+  const labels = [['System', 'სისტემა'], ['AI tools', 'AI ინსტრუმენტები'], ['AI Brain', 'AI ტვინი']];
   const dialog = document.createElement('dialog');
   dialog.id = 'hroad-details';
   dialog.className = 'hroad-dialog';

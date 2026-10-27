@@ -1,0 +1,30 @@
+{
+  "browser": "Codex In-app Browser 3",
+  "actualCalendars": [
+    "video",
+    "in-person"
+  ],
+  "viewports": [
+    "1280x720",
+    "390x844",
+    "320x568"
+  ],
+  "slotsVisible": true,
+  "unsubmittedFormsInspected": [
+    "video: hospital name",
+    "in-person: hospital name and address"
+  ],
+  "iframeAuthBlockers": null,
+  "bookingsSubmitted": 0,
+  "invitationsSent": 0,
+  "previewUrl": "http://localhost:5173/hospitals.html?lang=ka#/hospital-meeting",
+  "screenshots": [
+    "live-video-1280x720.jpg",
+    "live-video-form-390x844.jpg",
+    "live-hospital-1280x720.jpg",
+    "live-hospital-form-1280x720.jpg",
+    "live-hospital-390x844.jpg",
+    "live-hospital-form-390x844.jpg",
+    "live-hospital-320x568.jpg"
+  ]
+}

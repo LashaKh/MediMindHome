@@ -1,0 +1,17 @@
+{
+  "htmlRewrites": 82,
+  "jsRewrites": 68,
+  "jsFiles": [
+    "public/deck-assets/hospitals-comparison.js",
+    "public/deck-assets/hospitals-evaluation.js",
+    "public/deck-assets/hospitals-meeting.js",
+    "public/deck-assets/hospitals-one-team.js",
+    "public/deck-assets/hospitals-partnership.js"
+  ],
+  "checks": {
+    "exactExpectedChangesOnly": true,
+    "allUnlistedContentPreserved": true,
+    "numericValuesPreserved": true,
+    "cacheVersionsMatchSourceHashes": true
+  }
+}

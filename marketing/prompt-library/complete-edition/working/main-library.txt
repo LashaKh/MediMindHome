@@ -1,0 +1,2112 @@
+500 EURASIA
+AI Marketing Prompt Library
+PART 1: Customer & Market Research
+9 Prompts for Pre-Seed Founders
+PART 2: Marketing Funnel & Campaign
+7 Prompts for Pre-Seed Founders
+
+By Justyna Jastrzebska
+HOW TO USE THIS DOCUMENT
+This document contains 16 sequential prompts designed to take you from a rough
+business idea to a fully built, ready-to-launch marketing funnel. Each prompt builds on
+the previous one.
+
+
+
+
+IMPORTANT: Work through the prompts in order. Do not skip ahead. Each prompt uses
+outputs from previous prompts as inputs.
+
+
+
+
+The Claude Memory Command at the start of each prompt (from Prompt 2 onwards)
+ensures Claude retains all previous answers so you do not need to copy and paste
+between sessions.
+
+
+
+
+At the start of a new Claude conversation, paste the Claude Memory Command first, then
+paste the relevant prompt. Claude will ask you to confirm your previous answers before
+proceeding.
+COMPLETE PROMPT LIST
+
+
+
+PART 1 — Customer & Market Research
+Prompt 1       Describe Your Business & Market
+Prompt 2       Map Your Product Mechanics & JTBD
+Prompt 3       Build Your BFG — Features, Benefits & Guarantees
+Prompt 4       Generate Your UVPs & Map Your JTBD
+Prompt 5       Map Your Competition & Find Your Defensible Position
+Prompt 6       Mine Competitor Reviews & Extract Customer Intelligence
+Prompt 7       Design & Execute Your User Research
+Prompt 8       Define the Real Problems You Are Solving
+Prompt 9       Build Your Customer Avatar
+PART 2 — Marketing Funnel & Campaign
+Prompt 1       Map Your Marketing Funnel Architecture
+Prompt 2       Define Your Marketing Angles
+Prompt 3A      Build Your Campaign Concept & Video Script
+Prompt 3B      Build Your Campaign Distribution
+Prompt 4       Build Your Funnel Pages
+Prompt 5       Content Distribution & Traffic Strategy
+Prompt 6       Tracking, Mapping & Implementation
+Prompt 7       Reporting
+PART 1
+
+PART 1
+Customer & Market Research
+9 Prompts for Pre-Seed Founders
+PART 1
+                   Describe Your Business & Market
+PROMPT 1
+
+
+
+
+THE GOAL OF THIS PROMPT
+
+By the end of this prompt you will have a sharp, stress-tested one-sentence description of
+your business, a clear picture of the real market you are operating in, the 3 most dangerous
+assumptions your business is built on, a market sizing you can actually use and defend, a
+map of the key players in your space, the gap your product fills, and a market positioning
+statement ready for your pitch deck or investor conversation.
+
+
+
+
+You are a startup strategist working with pre-seed founders. Your job is not to produce
+polished reports — it is to help me make better decisions.
+
+
+
+
+I am going to describe my business. Your job is to push back, sharpen, and stress-test
+what I tell you — not just validate it.
+
+
+
+
+My business in my own words:
+
+[Paste 3-10 sentences. Do not polish it. Write it like you would explain it to a friend.]
+
+
+
+
+Once I share this, do the following in order:
+
+
+
+
+Step 1 — Restate it back to me sharply
+Write one sentence that captures exactly what I do, who I do it for, and what changes for
+them because of it. If you cannot write that sentence cleanly, tell me why — that gap is
+my first problem to solve.
+
+
+
+
+Step 2 — Name the real market I am in
+
+Not the broad industry. The specific behavioral market — meaning: what are customers
+currently doing to solve this problem without me? That is my real competition and my
+real market.
+
+
+
+
+Step 3 — Surface my 3 biggest assumptions
+
+Based on what I have described, list the 3 assumptions my business is built on that, if
+wrong, would kill the idea. Be direct. Do not soften them.
+
+
+
+
+Step 4 — Market sizing I can actually use
+
+Do not give me a top-down TAM slide number. Instead, tell me: how many specific,
+findable, reachable people or businesses have this problem right now and are actively
+looking for a solution? Walk me through the logic step by step so I can verify or
+challenge it.
+
+
+
+
+Step 5 — Identify the key players
+
+List the incumbents, fast-growing startups, and adjacent players already competing for
+the same customer attention or budget. For each one, note: what they do well, what they
+do poorly, and why a customer might choose them over me today.
+
+
+
+
+Step 6 — Pinpoint the gap
+Based on everything above, where does the current market fall short? What is
+underserved, overpriced, overcomplicated, or simply ignored? Be specific — not 'the
+market lacks innovation' but exactly which customer, with exactly which unmet need.
+
+
+
+
+Step 7 — Market positioning statement
+
+Write one tight paragraph I can use in a pitch deck or investor conversation. It should
+name who I serve, what I do, why it is different, and why now. Clear, confident, and
+specific — no buzzwords.
+PART 1
+                   Map Your Product Mechanics & JTBD
+PROMPT 2
+
+
+
+
+THE GOAL OF THIS PROMPT
+
+By the end of this prompt you will have a numbered step-by-step map of exactly how your
+product works from first touch to final outcome, the single moment of value where customers
+first feel the product working, every friction point in the journey, a full JTBD analysis of what
+customers are really hiring your product to do at each step, your market sophistication level
+and what it means for your messaging, and a clean 150-word customer-facing product
+description written in the language of the job to be done.
+
+
+
+
+CLAUDE MEMORY COMMAND
+
+Before you begin this prompt, say: "I have all previous answers stored and will use them
+throughout this prompt without asking you to repeat them." Then confirm which prompt
+number we are on and what the key outputs from all previous prompts were so we are aligned
+before proceeding. If any previous prompt has not been completed, flag it and ask me to
+complete it first before continuing.
+
+
+
+
+You are a product strategist and conversion copywriter working with pre-seed founders.
+Your job is to extract the clearest possible description of how a product actually works —
+not marketing language, not vision statements, but the real mechanical flow a customer
+experiences from the moment they discover the product to the moment they get the
+result.
+
+
+
+
+My product in my own words:
+
+[Describe what your product does. Do not worry about sounding polished. Even rough
+notes work.]
+Once I share this, do the following in order:
+
+
+
+
+Step 1 — Map the customer journey in steps
+
+Write out the exact sequence of steps a customer goes through — from first touch to
+final outcome. Number each step. Be specific about what the customer does, what the
+product does, and what happens as a result. If you do not have enough detail to
+complete a step, flag it clearly — those gaps are product clarity problems I need to fix.
+
+
+
+
+Step 2 — Identify the moment of value
+
+Which single step is the moment the customer first feels the product is working for
+them? This is my aha moment. Name it, describe it, and explain why it matters for
+retention and marketing.
+
+
+
+
+Step 3 — Identify friction points
+
+Where in the journey is a customer most likely to drop off, get confused, or lose trust?
+List each friction point and what is causing it — complexity, missing information, too
+many steps, or unclear value.
+
+
+
+
+Step 4 — Apply the JTBD lens
+
+For each major step, tell me: what is the customer actually hiring this product to do at
+that moment? Separate it into the three layers:
+   •   Functional — what they want to accomplish
+   •   Social — how they want to be perceived
+   •   Emotional — how they want to feel
+Step 5 — Identify my market sophistication level
+Based on Eugene Schwartz's 5 levels — Hello Market, What Is It, How Does It Work, New
+Mechanism, Experience — which level is my market currently at? What does that mean for how
+I should be describing and marketing this product right now? Be specific about what messaging
+approach fits my stage.
+
+Step 6 — Rewrite the product description
+Using everything from steps 1 to 5, write a clean, customer-facing description of how the
+product works. It should be written in the language of the customer's job to be done — not
+feature language. Maximum 150 words.
+PART 1
+                    Build Your BFG — Features, Benefits & Guarantees
+PROMPT 3
+
+THE GOAL OF THIS PROMPT
+
+By the end of this prompt you will have an exhaustive list of every feature your product has,
+each feature translated into a real-world customer benefit, the emotional depth behind each
+benefit using the JTBD framework, the top 5 customer guarantees or trust signals that reduce
+buying risk, a complete BFG master table, and 3 versions of your strongest BFG combination
+ready to test in marketing.
+
+
+CLAUDE MEMORY COMMAND
+
+Before you begin this prompt, say: "I have all previous answers stored and will use them
+throughout this prompt without asking you to repeat them." Then confirm which prompt
+number we are on and what the key outputs from all previous prompts were so we are aligned
+before proceeding. If any previous prompt has not been completed, flag it and ask me to
+complete it first before continuing.
+
+
+You are a conversion strategist working with pre-seed founders. Your job is to build the complete
+BFG — Features, Benefits, and Guarantees — framework for my product so that every
+marketing asset we create is grounded in specific, provable value.
+
+Before proceeding, I need to answer these 7 questions:
+
+   1. What are all the features of my product? List everything — even the ones that feel
+        obvious or small.
+   2.   For each feature, what does the customer actually get? What changes for them?
+   3.   What is the single most important outcome a customer achieves by using this product?
+   4.   What are the top 3 objections a potential customer has before buying?
+   5.   What proof do I have that the product works — data, results, testimonials, case studies?
+   6.   What guarantees can I honestly offer — money back, free trial, specific result, or other?
+   7.   What do customers say when they describe why they chose this product?
+
+[Answer all 7 questions before continuing.]
+
+Once I share my answers, do the following in order:
+
+Step 1 — List every feature
+Take everything I have shared and produce a complete, organized list of every feature. Group
+them by category if needed. Flag any feature that is unclear or needs more detail.
+
+Step 2 — Convert every feature to a benefit
+For each feature, write the direct customer benefit — what the customer gets, gains, or stops
+suffering from because this feature exists. Write each benefit as a customer would say it, not as
+a product spec.
+
+Step 3 — Add the emotional benefit layer
+For each benefit, identify the underlying emotional or social job it fulfills using the JTBD
+framework. How does achieving this benefit make the customer feel? How does it change how
+they are perceived?
+
+Step 4 — Build the guarantees and trust layer
+Based on my answers about proof and guarantees, build a list of the 5 strongest trust signals
+and guarantees I can offer. For each one write: what it promises, why it reduces risk, and where
+in the customer journey it should appear.
+
+Step 5 — Build the BFG master table
+Compile everything into a complete BFG master table with four columns: Feature, Benefit,
+Emotional Job, and Guarantee or Trust Signal. This table becomes the source of truth for every
+piece of marketing copy I write.
+
+Step 6 — Identify my strongest BFG combination
+Based on the full table, identify the single most compelling combination of feature, benefit,
+emotional job, and guarantee. Write 3 versions of this combination as marketing statements —
+one rational, one emotional, one identity-based. These are the starting points for my UVPs.
+PART 1
+                   Generate Your UVPs & Map Your JTBD
+PROMPT 4
+
+THE GOAL OF THIS PROMPT
+
+By the end of this prompt you will have a complete JTBD map showing the functional, social,
+and emotional jobs your product is hired to do, a market sophistication score that determines
+your messaging strategy, 10 UVPs written as direct brand promises scored by strength and
+customer type, a hero statement that captures your single most powerful positioning in one
+sentence, and a complete match between your UVPs and your primary customer types.
+
+
+CLAUDE MEMORY COMMAND
+
+Before you begin this prompt, say: "I have all previous answers stored and will use them
+throughout this prompt without asking you to repeat them." Then confirm which prompt
+number we are on and what the key outputs from all previous prompts were so we are aligned
+before proceeding. If any previous prompt has not been completed, flag it and ask me to
+complete it first before continuing.
+
+
+You are a positioning strategist working with pre-seed founders. Your job is to generate the
+complete set of unique value propositions for my product and map them to the specific jobs my
+customers are hiring it to do.
+
+
+REQUIRED INPUTS
+    8. Your business and market description from Prompt 1
+    9. Your product mechanics from Prompt 2
+    10. Your BFG master table from Prompt 3
+    11. Answer: Who are the 2-3 distinct customer types who might buy this product? Describe
+        each in 2-3 sentences.
+    12. Answer: What is the single most important outcome each customer type is trying to
+        achieve?
+[Paste all inputs before continuing.]
+
+
+Once I share my inputs, do the following in order:
+
+Step 1 — Map the full JTBD for each customer type
+For each customer type, map their complete JTBD profile across three layers:
+   • Functional job — the specific task or outcome they need to accomplish
+   • Social job — how they want to be perceived by others as a result of solving this problem
+   • Emotional job — how they want to feel after the problem is solved
+For each JTBD also identify: the trigger moment — the specific event that makes the job
+suddenly urgent, and what they were doing before — the previous solution or workaround they
+were using.
+
+Step 2 — Confirm market sophistication level
+Based on everything we know about this market from Prompts 1 and 2, confirm or update the
+market sophistication level. State clearly what level we are at and what this means for the
+language, claims, and approach of our UVPs.
+
+Step 3 — Generate 10 UVPs as brand promises
+Write 10 UVPs for this product. Each UVP must be written as a direct promise to the customer
+— not a feature description, not a mission statement, but the specific valuable change the
+customer experiences. Calibrate every UVP to the market sophistication level confirmed in Step
+2.
+
+Step 4 — Score every UVP
+Score each of the 10 UVPs across three criteria on a scale of 1 to 5: Clarity — how immediately
+understandable is this promise, Credibility — how believable is this claim given what we can
+prove, Desire — how strongly does this promise connect to the customer's emotional job.
+Identify the top 3 UVPs by total score.
+
+Step 5 — Match UVPs to customer types
+For each of the top 3 UVPs identify which customer type it resonates with most strongly and
+why. Note any UVP that works across multiple customer types.
+
+Step 6 — Write the hero statement
+Using the highest-scoring UVP and the strongest JTBD insight, write one hero statement — a
+single sentence that captures the most powerful version of what this product does and why it
+matters. This becomes the default headline for the homepage, the pitch deck opening, and the
+first line of every ad.
+PART 1             Map Your Competition & Find Your Defensible
+PROMPT 5           Position
+
+THE GOAL OF THIS PROMPT
+
+By the end of this prompt you will have a complete competitive landscape across 4 categories,
+a competitive comparison table showing exactly where you win and lose, the specific white
+space your product can own, a defensible positioning statement stress-tested against your top
+3 competitors, your single biggest competitive threat and 3 actions to counter it, and 5
+competitive talking points ready for sales calls and marketing.
+
+
+CLAUDE MEMORY COMMAND
+
+Before you begin this prompt, say: "I have all previous answers stored and will use them
+throughout this prompt without asking you to repeat them." Then confirm which prompt
+number we are on and what the key outputs from all previous prompts were so we are aligned
+before proceeding. If any previous prompt has not been completed, flag it and ask me to
+complete it first before continuing.
+
+
+You are a competitive intelligence strategist working with pre-seed founders. Your job is to map
+the full competitive landscape, find the gap my product can own, and build a positioning that is
+defensible — not just differentiated.
+
+
+REQUIRED INPUTS
+    13. Your business and market description from Prompt 1
+    14. Your top 3 UVPs from Prompt 4
+    15. Your market sophistication level from Prompt 4 — Step 2
+    16. Answer: Who do your potential customers tell you they are currently using or
+        considering? List every name you have heard.
+    17. Answer: When a potential customer says 'we already have something for that' — what
+        do they usually name?
+[Paste all inputs before continuing.]
+
+
+Once I share my inputs, do the following in order:
+
+Step 1 — Full competitive landscape
+Map every relevant competitor across 4 categories:
+  • Direct competitors — products that do what mine does for the same customer
+  • Indirect competitors — different solutions to the same problem
+   •   Status quo competitors — the spreadsheet, the workaround, the manual process my
+       customer uses instead of buying anything
+   •   Future competitors — well-funded players who do not compete today but could easily
+       move into this space
+
+Step 2 — Competitive comparison table
+Build a comparison table across the 5 dimensions that matter most to my customer based on
+the JTBD map from Prompt 4. For each competitor rate them strong, neutral, or weak on each
+dimension. Rate my product honestly — do not inflate. Flag any dimension where I am currently
+weak.
+
+Step 3 — Find the white space
+Based on the comparison table, identify the specific combination of dimensions where no
+competitor is strong and my product could win. This is my white space. Describe it in one
+paragraph — be specific about which customer, which job, and which gap.
+
+Step 4 — Write the defensible positioning statement
+Using the white space identified in Step 3, write my positioning statement in this format: Unlike
+[competitors], my product is the only [category] that [specific mechanism] so that [specific
+customer outcome]. Then stress-test it — could any of my top 3 competitors claim this same
+position honestly? If yes, sharpen it until the answer is no.
+
+Step 5 — Identify my biggest competitive threat
+Which single competitor poses the greatest threat to my business in the next 12 months?
+Explain why. Then give me 3 specific actions I can take now to strengthen my position against
+them.
+
+Step 6 — Build 5 competitive talking points
+Write 5 talking points I can use when a potential customer mentions a competitor. Each talking
+point should: acknowledge what the competitor does well, then pivot to the specific thing I do
+differently that matters for their situation. These must be honest, specific, and conversational —
+not corporate.
+PART 1             Mine Competitor Reviews & Extract Customer
+PROMPT 6           Intelligence
+
+THE GOAL OF THIS PROMPT
+
+By the end of this prompt you will know exactly where competitor reviews live for your market,
+have a complete extraction of the real problems customers are complaining about across 4
+buckets, a library of exact customer language you can use directly in your marketing, a map of
+which problems your product solves versus which it does not, 3 acquisition messages built
+from real customer pain, and a one-page review intelligence summary brief.
+
+
+CLAUDE MEMORY COMMAND
+
+Before you begin this prompt, say: "I have all previous answers stored and will use them
+throughout this prompt without asking you to repeat them." Then confirm which prompt
+number we are on and what the key outputs from all previous prompts were so we are aligned
+before proceeding. If any previous prompt has not been completed, flag it and ask me to
+complete it first before continuing.
+
+
+You are a customer intelligence analyst working with pre-seed founders. Your job is to extract
+the real voice of the market from competitor reviews — the language, the pain, the unmet
+needs, and the buying triggers that customers reveal when they think they are just leaving a
+review.
+
+
+REQUIRED INPUTS
+    18. Your competitive landscape from Prompt 5 — Step 1
+    19. Your top 3 UVPs from Prompt 4
+    20. Your JTBD map from Prompt 4 — Step 1
+    21. Answer: Which of your competitors has the most reviews online — G2, Capterra,
+        Trustpilot, App Store, or other platforms? List every review source you know of.
+    22. Answer: Paste any competitor reviews you have already collected. If you have not
+        collected any, list the competitor names and platforms and I will guide you through the
+        extraction process.
+[Paste all inputs before continuing.]
+
+
+Once I share my inputs, do the following in order:
+
+Step 1 — Identify where competitor reviews live
+Based on my competitive landscape, identify the 3-5 most valuable review sources for my
+market. For each source explain: why it is valuable, what type of customer tends to leave
+reviews there, and what search terms to use to find my competitors' profiles. This tells me
+exactly where to look.
+
+Step 2 — Extract real problems across 4 buckets
+From the competitor reviews I have shared — or from your knowledge of these competitors —
+extract the real problems customers are reporting. Organize them into 4 buckets:
+    • What customers love — the outcomes and experiences they rave about
+    • What customers hate — the frustrations, failures, and disappointments
+    • What customers wish existed — the features, outcomes, or experiences they ask for but
+       do not get
+    • Why customers leave — the specific reasons given for switching or canceling
+
+
+Step 3 — Extract exact customer language
+From the reviews, pull the exact words and phrases customers use to describe their pain and
+their desires. Do not paraphrase. Do not sanitize. This is the language I use in my ads, my
+landing pages, my emails, and my sales conversations. Organize by: pain language and desire
+language.
+
+Step 4 — Map problems to my product
+For each problem identified in Step 2, assess: does my product fully solve this, partially solve
+this, or not solve this at all? Be honest. This tells me where my product is strongest and where it
+has gaps. It also tells me which problems I should lead with in my marketing.
+
+Step 5 — Build 3 acquisition messages
+Using the pain language from Step 3 and the problems my product fully solves from Step 4,
+write 3 acquisition messages I could use today in ads or outreach. Each message must open
+with the customer's exact language, name the problem specifically, and present my product as
+the solution in one sentence.
+
+Step 6 — Review intelligence summary brief
+Compile everything into a one-page review intelligence brief that includes: the top 5 unmet
+needs in this market, the exact language customers use to describe their pain, the single most
+common reason customers switch from a competitor, and the 3 emotional triggers that drive
+purchasing decisions in this market.
+PART 1
+                   Design & Execute Your User Research
+PROMPT 7
+
+THE GOAL OF THIS PROMPT
+
+By the end of this prompt you will have audited your current assumptions and identified the
+ones most urgently needing validation, a clear research goal, 3 segmented user groups to
+speak with, a complete interview guide with 4 sections, a documentation and synthesis
+system, a research action plan, specific question sets for all 3 user groups, and 9 outreach
+templates across 3 channels.
+
+
+CLAUDE MEMORY COMMAND
+
+Before you begin this prompt, say: "I have all previous answers stored and will use them
+throughout this prompt without asking you to repeat them." Then confirm which prompt
+number we are on and what the key outputs from all previous prompts were so we are aligned
+before proceeding. If any previous prompt has not been completed, flag it and ask me to
+complete it first before continuing.
+
+
+You are a user research strategist working with pre-seed founders. Your job is to design a lean,
+practical research plan that gets the founder into real conversations with real customers as fast
+as possible — and extracts the insights that change how they build and market.
+
+
+REQUIRED INPUTS
+    23. Your business and market description from Prompt 1
+    24. Your product mechanics from Prompt 2
+    25. Your 3 biggest assumptions from Prompt 1 — Step 3
+    26. Your JTBD map from Prompt 4 — Step 1
+    27. Your competitive intelligence from Prompt 5
+    28. Answer: Have you spoken to any potential customers yet? If yes, what did you learn? If
+        no, what has stopped you?
+    29. Answer: Who do you currently have access to — through your network, LinkedIn,
+        communities, or existing users — who fits your target customer profile?
+[Paste all inputs before continuing.]
+
+
+Once I share my inputs, do the following in order:
+
+Step 1 — Audit my assumptions
+Based on everything I have shared, identify the 5 most dangerous unvalidated assumptions in
+my business right now. Rank them by urgency — which ones, if wrong, would cause the biggest
+change in direction? These become the research questions I am trying to answer.
+
+Step 2 — Define my research goal
+Write a single clear research goal statement: what specific question am I trying to answer, what
+type of research fits this goal — generative to discover new insights or evaluative to test existing
+assumptions — and what I will do differently after the research is complete.
+
+Step 3 — Segment my user groups
+Based on my target customers, define 3 distinct groups to speak with. For each group describe:
+who they are, why they are valuable to research, what specific insight they can give me that the
+other groups cannot, and how many conversations I need with this group to reach saturation.
+
+Step 4 — Build the interview guide
+Write a complete interview guide with 4 sections:
+    • Opening — how to start the conversation and set the right tone
+    • Warm-up — questions that build rapport and establish context
+    • Core — the 5-7 questions that directly address my research goal
+    • Closing — how to end the conversation and what to ask for next
+
+
+Step 5 — Build a documentation system
+Design a simple system for capturing and synthesizing research findings. Include: what to
+record during interviews, how to organize notes immediately after, and how to identify patterns
+across multiple conversations.
+
+Step 6 — Research action plan
+Write a specific action plan: how many interviews to complete in the next 2 weeks, which user
+group to start with and why, who specifically to reach out to first, and what success looks like at
+the end of this research sprint.
+
+Step 7 — Question sets for all 3 groups
+Write a tailored set of 5 core questions for each of the 3 user groups identified in Step 3. Each
+question set should be adapted to what that specific group knows and can tell me — not a
+generic list of questions.
+
+Step 8 — Outreach templates
+Write 9 outreach templates — 3 for each user group — across 3 channels: LinkedIn message,
+email, and community or forum message. Each template should: be under 100 words, lead with
+value not a request, and include a clear and specific ask.
+PART 1
+                   Define the Real Problems You Are Solving
+PROMPT 8
+
+THE GOAL OF THIS PROMPT
+
+By the end of this prompt you will have separated your real problems from your assumed
+ones, a complete problem stack showing surface, underlying, hidden, and future problems for
+each customer type, the single problem worth leading with in your marketing, 3 versions of
+your problem statement written for different messaging contexts, the problems you should
+never claim to solve, and a problem-solution fit statement for each customer type.
+
+
+CLAUDE MEMORY COMMAND
+
+Before you begin this prompt, say: "I have all previous answers stored and will use them
+throughout this prompt without asking you to repeat them." Then confirm which prompt
+number we are on and what the key outputs from all previous prompts were so we are aligned
+before proceeding. If any previous prompt has not been completed, flag it and ask me to
+complete it first before continuing.
+
+
+You are a problem clarity strategist working with pre-seed founders. Your job is to dig beneath
+the surface of the problem I think I am solving and find the real, defensible problem worth
+building a business around.
+
+
+REQUIRED INPUTS
+    30. Your business and market description from Prompt 1
+    31. Your JTBD map from Prompt 4 — Step 1
+    32. Your competitive intelligence from Prompt 5
+    33. Your review intelligence from Prompt 6 — Steps 2 and 3
+    34. Your user research findings from Prompt 7 — paste any interview themes or direct
+        quotes
+    35. Answer: What problem do you currently tell people you solve? Write the exact sentence
+        you use.
+    36. Answer: What do customers say the problem is when you ask them? Write their exact
+        words if you have them.
+[Paste all inputs before continuing.]
+
+
+Once I share my inputs, do the following in order:
+
+Step 1 — Separate real from assumed problems
+Based on everything I have shared, identify which problems I am currently claiming to solve are
+validated by real customer evidence — research, reviews, direct quotes — and which are
+assumptions. Be direct. Mark each problem as validated, partially validated, or assumed.
+
+Step 2 — Build the full problem stack
+For each primary customer type, build a complete problem stack across 4 layers:
+   • Surface problem — the problem they can articulate and would write in a Google search
+   • Underlying problem — the real cause of the surface problem that they may not have
+      named
+   • Hidden problem — the deeper fear, belief, or situation driving the underlying problem
+   • Future problem — what happens if this problem is not solved in the next 6-12 months
+
+
+Step 3 — Identify the problem worth leading with
+Based on the full problem stack, identify which single problem I should lead with in my
+marketing. The ideal problem to lead with is: validated by real evidence, urgent enough that
+customers actively seek a solution, specific enough that my target customer immediately
+recognizes it as their own, and differentiated enough that it positions me against competitors.
+
+Step 4 — Write 3 problem statement versions
+Using the problem identified in Step 3, write 3 versions of the problem statement calibrated to
+different contexts:
+     • Rational version — clear, specific, data-grounded — for decision-makers and analytical
+        buyers
+     • Emotional version — captures the feeling of living with this problem — for emotionally-
+        driven buying contexts
+     • Identity version — frames the problem as a threat to who they are or want to be — for
+        high-sophistication marketing
+
+Step 5 — Problems I should not claim to solve
+Based on my product's actual capabilities and the competitive landscape, identify 3 problems I
+am tempted to claim but should not — because I cannot fully solve them, because a competitor
+does it better, or because claiming them would attract the wrong customer. Being clear about
+what I do not solve is as important as knowing what I do.
+
+Step 6 — Problem-solution fit statement
+For each primary customer type write a problem-solution fit statement in this format: [Customer
+type] struggles with [specific problem from the stack] because [root cause]. Unlike [current
+alternative], [my product] solves this by [specific mechanism] which means [specific outcome for
+this customer type].
+PART 1
+                   Build Your Customer Avatar
+PROMPT 9
+
+THE GOAL OF THIS PROMPT
+
+By the end of this prompt you will have a complete 8-dimension customer avatar built from all
+previous research, a deep emotional landscape showing your customer's dominant and
+aspiration emotions, a 150-200 word first-person monologue written in the avatar's exact
+voice, a complete map of where this customer spends time online and offline, the specific
+trigger moment that makes them actively seek a solution, and a one-page avatar reference
+card your entire team can use.
+
+
+CLAUDE MEMORY COMMAND
+
+Before you begin this prompt, say: "I have all previous answers stored and will use them
+throughout this prompt without asking you to repeat them." Then confirm which prompt
+number we are on and what the key outputs from all previous prompts were so we are aligned
+before proceeding. If any previous prompt has not been completed, flag it and ask me to
+complete it first before continuing.
+
+
+You are a customer psychology strategist and brand positioning expert working with pre-seed
+founders. Your job is to synthesize everything we know about my customers into a complete,
+vivid, and actionable customer avatar — not a demographic profile, not a made-up persona with
+a stock photo name, but a deeply human portrait of the real person I am building for.
+
+
+REQUIRED INPUTS
+    37. Your business and market description from Prompt 1
+    38. Your JTBD profiles from Prompt 4 — Step 1
+    39. Your UVPs from Prompt 4 — Step 3
+    40. Your competitive intelligence from Prompt 5
+    41. Your customer language from Prompt 6 — Step 3
+    42. Your user research findings from Prompt 7 — paste any interview themes, direct
+       quotes, or observations. If you have not yet done research, state that clearly.
+    43. Your problem stack from Prompt 8 — Step 2
+    44. Answer: Of all the customer types you have described across these prompts, which
+       one — if you could only serve one — would you build your entire business around?
+       Name them, describe them in one sentence, and tell me why you chose them.
+    45. Answer: What is the one thing this person says out loud to colleagues, friends, or their
+       team that signals they have the problem you solve? Give me the actual sentence if you
+       can.
+    46. Answer: What does this person read, watch, and listen to? Where do they spend their
+        time online and offline?
+[Paste all inputs before continuing.]
+
+
+Once I share my inputs, do the following in order:
+
+Step 1 — Build the full avatar profile
+Using everything I have shared, build a complete customer avatar for my primary customer type
+across all 8 dimensions:
+   • Who they are — job title or role, life stage, where they live and work, who they are
+       responsible for, what their day actually looks like from morning to night
+   • What they are trying to achieve — their primary professional or personal goal right now,
+       specific and time-bound, what success looks like in 6-12 months
+   • What is standing in their way — external obstacles and internal obstacles including
+       beliefs, fears, habits, and self-doubt
+   • What they have already tried — every solution, workaround, tool, or approach they have
+       used before, and why each fell short
+   • How they make decisions — analytical or intuitive, who influences them, what their
+       buying process looks like
+   • What they are afraid of — rational fears and emotional fears that cause hesitation or
+       delay
+   • What they secretly want — beyond the functional job, what would make them feel proud,
+       respected, free, or in control
+   • What a day in their life looks like — walk through a specific day including the exact
+       moment the problem shows up
+
+Step 2 — Build the avatar's emotional landscape
+Go deeper into the emotional and psychological dimensions:
+   • Their dominant emotion around this problem — frustration, anxiety, embarrassment,
+      overwhelm, or resignation
+   • Their aspiration emotion — how they want to feel after solving this problem
+   • Their social context — who is watching them struggle and how being seen to solve it
+      would change their standing
+   • Their relationship with solutions like mine — skeptical, hopeful, burned before, or
+      completely new to this category
+
+Step 3 — Write the avatar in their own voice
+Write a first-person monologue of 150 to 200 words from the avatar's perspective — as if they
+are sitting across from a trusted friend and describing their situation honestly. Use the exact
+language and phrases from real customer research in Prompt 6. This monologue becomes the
+single most useful piece of creative direction I have — every ad, every email, every landing
+page headline should sound like a response to this monologue.
+
+Step 4 — Identify the avatar's watering holes
+Map where this person spends their time — online and offline — across:
+   •   Online communities — specific subreddits, Facebook groups, Slack communities,
+       Discord servers, LinkedIn groups, forums
+   •   Content they consume — specific podcasts, newsletters, YouTube channels, blogs,
+       books, industry publications
+   •   Events they attend — conferences, meetups, webinars, trade shows, workshops
+   •   Social platforms — which platforms they use, how they use them, what content stops
+       their scroll
+
+Step 5 — Identify the avatar's buying trigger
+What is the single most common event or moment that pushes this person from passive
+awareness of the problem to actively seeking a solution? Describe the trigger moment in detail,
+explain what emotional state it puts them in, and tell me what the first thing they do is after it
+happens. That first action is where I need to be visible.
+
+Step 6 — Build the avatar reference card
+Summarize everything into a one-page avatar reference card including: avatar name and one-
+sentence description, primary goal in the next 6-12 months, biggest obstacle, dominant emotion,
+aspiration emotion, the sentence they say out loud that signals they have the problem, top 3
+watering holes, buying trigger, the one thing I must say to earn their trust, and the one thing I
+must never say.
+
+This reference card gets pinned to the wall of every team working on this business.
+Every decision — product, copy, design, pricing, channel — gets filtered through it.
+PART 2
+Marketing Funnel & Campaign
+7 Prompts for Pre-Seed Founders
+PART 2
+                    Map Your Marketing Funnel Architecture
+PROMPT 1
+
+THE GOAL OF THIS PROMPT
+
+By the end of this prompt you will have a diagnosed funnel model with a real-world benchmark
+to steal from, a complete 5-stage funnel map built around your specific customer and product,
+a prioritized asset and content map for every funnel stage, a plain-language wiring diagram
+showing how every asset connects, a phased build order across 3 phases, and a weekly
+funnel scorecard with green, amber, and red thresholds for every metric.
+
+
+CLAUDE MEMORY COMMAND
+
+Before you begin this prompt, say: "I have all previous answers stored and will use them
+throughout this prompt without asking you to repeat them." Then confirm which prompt
+number we are on and what the key outputs from all previous prompts were so we are aligned
+before proceeding. If any previous prompt has not been completed, flag it and ask me to
+complete it first before continuing.
+
+
+You are a B2B growth strategist working with pre-seed founders. Your job is to design the
+complete marketing funnel architecture for my business — a clear, stage-by-stage map that tells
+me exactly what type of funnel I need, what happens at each stage, what assets I need to build,
+and in what order to build them.
+
+The output of this prompt is a single strategic document I can use as the master blueprint for
+everything I build in the prompts that follow. It is not a generic funnel template — it is built
+entirely around my specific customer, product, market, and stage of growth.
+
+Required inputs — Part 1 outputs:
+REQUIRED INPUTS
+    47. Your business and market description from Prompt 1 of Part 1
+    48. Your product mechanics from Prompt 2 of Part 1
+    49. Your BFG master table from Prompt 3 of Part 1
+    50. Your top 3 UVPs and market sophistication level from Prompt 4 of Part 1
+    51. Your customer avatar from Prompt 9 of Part 1
+    52. Your problem-solution fit statements from Prompt 8 of Part 1
+[Paste all inputs before continuing.]
+
+
+Required inputs — current situation:
+Answer every question below honestly and specifically. This is what makes the funnel diagnosis
+accurate and specific to your business rather than generic. If you do not have a number give
+your best estimate and mark it as an estimate.
+
+   •   What is your primary conversion goal right now — free trial signups, demo requests,
+       webinar registrations, or direct sales conversations?
+   •   Do customers buy without talking to anyone or does conversion require a human
+       conversation?
+   •   What is your price point — monthly or annual?
+   •   What tools do you currently have — website builder, email platform, CRM, analytics?
+   •   Do you currently have a website? If yes: how many visitors per month and where does
+       that traffic come from?
+   •   Are you currently capturing any leads? If yes: roughly how many per month and what is
+       driving them?
+   •   Do you have any existing content or marketing activity? If yes: what has worked and
+       what has gotten zero traction?
+   •   What marketing channels have you already tried even informally? What happened?
+   •   Where do you think you are losing people right now?
+   •   What is your single biggest growth constraint right now in one sentence?
+
+[Paste all inputs before continuing.]
+
+Once I have your inputs produce the following funnel architecture document in order. Be specific
+to my business at every step — do not give me generic funnel theory.
+
+PART 1 — Funnel diagnosis
+
+1. What funnel model do I need?
+Identify which model fits my business right now and why — in no more than 5 sentences.
+Choose from: Product-led growth, Sales-led growth, Content-led growth, Community-led growth,
+or Hybrid.
+
+Then tell me which of these 5 real-world funnels is closest to what I should build and what
+specifically I should steal from them:
+   • Monday.com — PLG, free trial, template-led acquisition, viral team adoption
+   • HubSpot — content-led, education at scale, free tools as lead magnets, inbound motion
+   • Slack — bottom-up viral adoption, freemium, individual user converts then brings the
+        team
+   • Notion — community and creator-led, templates as distribution, identity-based adoption
+   • Salesforce — high-touch enterprise, thought leadership, events, ecosystem lock-in
+
+2. Where is my biggest funnel leak right now?
+Using specifically the current situation data I shared — traffic, leads, conversions, channels
+tried, and my own assessment — identify the single stage where I am losing the most potential
+customers right now. Use the actual numbers to tell me: exactly where the leak is happening,
+what is causing it, whether my own assessment matches the data, and the single most
+important thing to fix first.
+If I have no traffic, no leads, and no conversions yet — say that clearly and tell me what the real
+first priority is for a business at my exact stage.
+
+3. What does my customer's buying journey actually look like?
+Map the real journey my specific avatar takes — starting from before they are even aware they
+have a solvable problem — all the way to becoming a paying customer. Include: the specific
+moment the problem first becomes real, whether they are aware the problem is solvable, the
+sequence of searches and content they consume, the emotional state at each step, the
+objection at each step, and the single moment where I am most likely to lose them permanently.
+
+PART 2 — Full funnel stage map
+Map my complete funnel across 5 stages. For each stage produce: what is happening in the
+customer's world, the awareness level, my goal, what I must give them, the objection I must
+collapse, where I will lose them, and the conversion benchmark.
+
+The 5 stages — use these exact definitions:
+   • TOFU — Awareness of the problem: the customer is living with a pain they may not have
+       fully named yet. They have normalized it. TOFU content creates awareness of the
+       problem first, then awareness that it is solvable.
+   • MOFU — Consideration of the solution: the customer knows the problem is real and
+       urgent. They are evaluating solution categories and building trust. MOFU content names
+       their objection before they voice it and collapses it with proof.
+   • BOFU — Conversion decision: the customer is ready to choose. The job now is to give
+       them a result in advance so they experience the outcome before they pay.
+   • AFU — Retention and expansion: the customer has converted. Get them to their aha
+       moment as fast as possible then retain and expand.
+   • LOFU — Advocacy and loop: the satisfied customer becomes the most powerful TOFU
+       asset in the funnel. Their story creates awareness in the next customer.
+
+Conversion benchmarks to include for each stage:
+   • Homepage to trial or lead capture: 2-5% average, top performers above 10%
+   • Demo request page: 3.8% median, top performers above 8%
+   • Webinar registration page: 25-45% conversion
+   • Free trial to paid B2B: 15-30%, top quartile 35-45%
+   • Trial activation to aha moment: top performers 60%+
+   • Email open rates B2B: 20-30% average, 40%+ is excellent
+   • Post-purchase retention month 1: 46.9% average B2B SaaS
+
+
+PART 3 — Content and asset brainstorm
+For each funnel stage act as my creative brainstorming partner. Generate specific, executable
+content ideas and assets built entirely around my customer's language, pain, desires, and
+objections from Part 1.
+
+For each funnel stage generate content ideas across these formats — each idea must be
+specific to my business and customer:
+   • LinkedIn posts — 3 specific post ideas that would stop my avatar mid-scroll at this stage
+   •   Short video — 3 specific 60-90 second video ideas filmable on a phone
+   •   Blog or SEO content — 3 specific article ideas targeting the exact questions my
+       customer is searching
+   •   Lead magnets — 2-3 specific quizzes, assessments, templates, or tools that deliver a
+       result in advance
+   •   Case studies and testimonials — 2 specific social proof ideas for this stage
+   •   Email — 2-3 specific email ideas for leads at this stage
+   •   Community and distribution — 2-3 specific communities or partner channels where my
+       customer is at this stage
+
+After all content ideas across all 5 stages: identify the 3 highest-leverage content pieces for a
+pre-seed founder, name the single content piece to create this week, and identify the single
+most powerful result-in-advance asset — the equivalent of a 15-minute meditation audio that
+lets my customer experience the outcome before they pay.
+
+PART 4 — Funnel wiring diagram
+Show how all the assets connect into one flowing system. Write as a sentence-by-sentence
+plain language description starting with: 'A [avatar name] first encounters us when...' and ending
+with '...and they become an advocate who brings in [next customer type].'
+
+PART 5 — Build order
+
+Phase 1 — Week 1 to 2: Minimum viable funnel
+The 3 assets I must build before anything else. For each tell me: what it is, why it comes first,
+what it must achieve. Tell me the single metric that tells me the MVF is working.
+
+Phase 2 — Week 3 to 6: Conversion layer
+The next 7 assets that improve conversion at every stage. For each: what it is, which stage it
+fixes, what conversion improvement to expect. Tell me the benchmark that signals readiness for
+Phase 3.
+
+Phase 3 — Month 2 to 3: Growth layer
+The assets and systems that turn the funnel into a compounding machine. For each: what it is,
+how it compounds, what manual effort it replaces. Tell me the metric that signals the funnel is
+growing on its own.
+
+PART 6 — Weekly funnel scorecard
+Build a simple one-page scorecard I review every Monday morning.
+
+| Stage | Metric to track | How to measure it | Green — on track | Amber — needs attention |
+Red — broken, fix immediately | Most likely cause of red | First thing to fix |
+
+Use the benchmark data from Part 2 to set every threshold. Add one final row for overall funnel
+health — the single number that tells me the whole system is working or not.
+PART 2
+                    Define Your Marketing Angles
+PROMPT 2
+
+THE GOAL OF THIS PROMPT
+
+By the end of this prompt you will have one master marketing angle — your hook,
+differentiator, and primary psychological trigger — a prioritized table of which of 16 specific
+angles to deploy at which funnel stage, an angle-to-channel mapping, a 10-hook library written
+in your customer's exact language, your specific message at each funnel stage, and a 30-day
+execution plan with a 5-hours-per-week constraint.
+
+
+CLAUDE MEMORY COMMAND
+
+Before you begin this prompt, say: "I have all previous answers stored and will use them
+throughout this prompt without asking you to repeat them." Then confirm which prompt
+number we are on and what the key outputs from all previous prompts were so we are aligned
+before proceeding. If any previous prompt has not been completed, flag it and ask me to
+complete it first before continuing.
+
+
+You are a B2B marketing strategist and creative director working with pre-seed founders. Your
+job is to define the complete marketing angle strategy for my business — the specific hooks,
+messages, psychological triggers, differentiators, and approaches I will use to reach my
+customer at every stage of the funnel and turn their attention into action.
+
+A marketing angle is not a tagline and it is not a channel strategy. It is the specific lens through
+which I present my product to my customer — the emotional and rational hook that makes them
+stop, pay attention, and take the next step.
+
+
+REQUIRED INPUTS
+    53. Your funnel architecture document from Prompt 1 of Part 2 — specifically the funnel
+        stage map and the wiring diagram
+    54. Your customer avatar and monologue from Prompt 9 of Part 1
+    55. Your top 3 UVPs and market sophistication level from Prompt 4 of Part 1
+    56. Your BFG master table from Prompt 3 of Part 1
+    57. Your problem-solution fit statements from Prompt 8 of Part 1
+    58. Your competitive intelligence and customer language from Prompts 5 and 6 of Part 1
+    59. Answer: What is the one thing your best potential customer is most afraid of right now
+        — the fear that keeps them from taking action?
+    60. Answer: What is the one thing your best potential customer most wants to be able to
+        say to their boss, team, or peers after using your product?
+    61. Answer: Have you run any marketing yet? If yes, what worked and what completely
+        failed?
+    62. Answer: Who are 2-3 brands whose marketing style you admire and why?
+[Paste all inputs before continuing.]
+
+
+Once I have your inputs produce the following marketing angle strategy document in full:
+
+PART 1 — Master marketing angle
+
+1. What is my hook?
+The single most attention-grabbing truth about my product or the problem it solves. Write my
+master hook in one sentence. Specific, provocative, and grounded in the real customer
+language from my avatar. Must not sound like a feature description or a mission statement.
+
+2. What is my differentiator?
+The single most meaningful way my product changes the customer's situation that no
+competitor can honestly claim. Write it in one sentence using the format: 'Unlike [what they
+currently do or use], [my product] is the only [category] that [specific mechanism] so that
+[specific customer outcome].'
+
+3. What is my primary psychological trigger?
+Based on my customer avatar — their fears, desires, dominant emotion, and aspiration emotion
+— identify the single most powerful psychological trigger my marketing should lead with.
+Choose from: loss aversion, social proof, authority, urgency and scarcity, reciprocity,
+commitment and consistency, social identity, fear of missing out, or aspiration. Explain in 3
+sentences why this trigger fits this specific customer.
+
+PART 2 — Angle selection and prioritization
+From the list below, identify which marketing angles are right for my business. For each angle I
+should use, explain: why it fits, what specific message to lead with, and what funnel stage it
+belongs to. Then rank all selected angles in priority order.
+
+The 16 angles to evaluate:
+   • Encourage your audience to sign up for a demo
+   • Target your audience based on language and region
+   • Book sales calls
+   • Offer rewards to increase product usage
+   • Try a new low-risk CTA offer
+   • A sneak peek at pricing options
+   • Promote product launches and new features
+   • Highlight a use case offer
+   • An inside look at your product dashboard
+   • Display testimonials
+   • Use video ads to demonstrate the benefits of your product
+   •   Share case studies
+   •   Promote your blog posts
+   •   Promote exclusive research
+   •   Promote webinars
+   •   Promote online and offline events
+
+Present as a table: Angle | Use it — yes or no | Why it fits or does not fit | Funnel stage | Priority
+rank | Specific message to lead with
+
+PART 3 — Angle to channel mapping
+For each angle I should use, map it to the specific channels where I will deploy it. For each
+channel: which angle it carries, what format it takes, what the first piece of content looks like,
+what the CTA is, and what success looks like.
+
+PART 4 — Hook library
+Write 10 hooks I can use across my marketing — ads, email subject lines, LinkedIn posts,
+landing page headlines, video thumbnails. Each hook must be written in my customer's
+language from the avatar monologue and calibrated to my market sophistication level.
+
+Vary the 10 hooks across these approaches:
+   63. Lead with the pain
+   64. Lead with the future
+   65. Lead with the mechanism
+   66. Lead with a number
+   67. Lead with a question
+   68. Lead with a story
+   69. Lead with a provocation
+   70. Lead with social proof
+   71. Lead with loss
+   72. Lead with identity
+
+
+PART 5 — Message by funnel stage
+For each funnel stage produce: the core message in one sentence, the tone, what I never say at
+this stage, and 3 example messages — LinkedIn post opener, email subject line, ad headline, or
+landing page headline.
+
+PART 6 — 30-day angle execution plan
+A specific 30-day plan for deploying my top 3 angles. For each week: which angle I am focusing
+on, what I create, what I publish, what I measure, and what I do differently in week 2 if week 1
+does not hit benchmark. Maximum 5 hours per week. Every task executable without a designer,
+developer, or copywriter.
+PART 2
+
+PROMPT              Build Your Campaign Concept & Video Script
+3A
+
+THE GOAL OF THIS PROMPT
+
+By the end of this prompt you will have one complete campaign concept — a premise, a
+pattern interrupt, and a CTA — and one ready-to-film video script calibrated to your actual
+production reality, plus two shorter A/B test variations. Every asset follows the same three-act
+arc: problem, mechanism, relief.
+
+
+CLAUDE MEMORY COMMAND
+
+Before you begin this prompt, say: "I have all previous answers stored and will use them
+throughout this prompt without asking you to repeat them." Then confirm which prompt
+number we are on and what the key outputs from all previous prompts were so we are aligned
+before proceeding. If any previous prompt has not been completed, flag it and ask me to
+complete it first before continuing.
+
+
+You are a B2B creative director working with pre-seed founders. Your job is to design one
+complete campaign concept and produce one ready-to-film video script that the founder can
+take into production this week.
+
+The campaign follows the structure used by Monday.com, Slack, HubSpot, and Dollar Shave
+Club: make the customer feel seen before mentioning the product, dramatize the problem in a
+way that feels personal not corporate, and introduce the solution as relief not as a sales pitch.
+
+
+REQUIRED INPUTS
+    73. Your customer avatar and monologue from Prompt 9 of Part 1
+    74. Your problem-solution fit statements from Prompt 8 of Part 1
+    75. Your top UVP and market sophistication level from Prompt 4 of Part 1
+    76. Your top marketing angle and hook library from Prompt 2 of Part 2
+    77. Answer: What is the single action this campaign must drive — free trial, demo request,
+        or webinar registration?
+    78. Answer: What is your production reality — phone camera, screen recording like Loom,
+        or professional production budget?
+    79. Answer: In one sentence — what is the most painful moment in your customer's day
+        that your product eliminates?
+    80. Answer: What is the one thing your best customers say when they describe why they
+        chose you?
+[Paste all inputs before continuing.]
+
+
+Once I have your inputs produce the following:
+
+PART 1 — Campaign concept
+
+The campaign premise — one sentence.
+The one truth about the customer's situation that this entire campaign dramatizes. Format: 'This
+campaign is for [specific customer] who [specific painful situation] and it shows them [the
+specific shift in thinking or feeling we want to create].'
+
+The pattern interrupt — one technique, executed specifically.
+Make a decision — do not list options. Choose the single most powerful pattern interrupt for this
+customer and execute it. Write the exact opening — the first 5 seconds of every asset in this
+campaign.
+
+Pattern interrupt options to choose from:
+   • The internal monologue — open with the exact words the customer says to themselves
+       that they have never seen in an ad. Best for sophistication levels 3 and 4.
+   • The provocation — a statement that challenges a belief they currently hold. Best when
+       the market has a wrong assumption you can disprove.
+   • The unexpected statistic — a number so specific and surprising it creates cognitive
+       dissonance. Best when you have counterintuitive data.
+   • The character in pain — show someone living the exact problem before a single word
+       appears. Best for video.
+   • The question they are already asking — the exact question they typed into Google at
+       11pm. Best for content-led funnels.
+   • The humor interrupt — make them laugh at the absurdity of their current situation. Best
+       for sophistication level 5.
+   • The contrast — show two worlds side by side with no explanation. Best when before and
+       after are visually stark.
+
+The campaign CTA — one action, one sentence.
+The specific outcome-led phrase that connects to their emotional job from the JTBD profile.
+Maximum 6 words.
+
+PART 2 — Video script
+Write one complete video script calibrated to the founder's actual production reality. The script
+follows the three-act arc:
+     • Act 1 — The problem: show the customer's painful reality so accurately they feel seen.
+       Use the surface and hidden problem layers from Prompt 8 of Part 1. The pattern interrupt
+       opens this act. Do not mention the product.
+     • Act 2 — The mechanism: show what makes the solution different without selling. Do not
+       list features. Show a completely different approach to the problem.
+     • Act 3 — The relief: show the customer's life after the problem is solved. The emotional
+       destination — how they feel, what they can now do. End with the campaign CTA.
+Production Format A — Founder on camera (phone or basic setup)
+Write as a direct-to-camera monologue in the founder's voice — conversational, specific, no
+corporate language. Every sentence must earn the next one.
+Format: Opening 5 seconds [exact words + what founder shows on camera] / Scene by scene
+[what founder says + what they show + text on screen] / Closing 10 seconds [exact words +
+CTA visual] / Total length: 60-90 seconds for LinkedIn and YouTube, 15-second cut-down for
+Instagram and TikTok / Director's note: 3 specific instructions for pacing, energy, setting
+
+Production Format B — Screen recording with voiceover (Loom or similar)
+Write as a voiceover paired with specific screen actions. Every line of voiceover paired with an
+exact instruction for what is on screen.
+Format: Opening 5 seconds [exact voiceover + what is on screen] / Screen by screen [voiceover
+line + exact screen action] / Closing 10 seconds [exact words + what appears on screen] / Total
+length: 90 seconds to 2 minutes / Production note: 3 specific instructions for screen layout and
+cursor behavior
+
+Write the version that matches the production reality stated in the inputs. If not specified, write
+Format A.
+
+PART 3 — Script variations for A/B testing
+Write two shorter script variations — 15-30 seconds each — that test different pattern interrupts
+against the main script. These run as paid social ads on LinkedIn and YouTube.
+
+Variation A:
+Same campaign premise, different opening. Use a different pattern interrupt technique and write
+the full 15-30 second script.
+
+Variation B:
+Same campaign premise, lead with social proof instead of the problem. Open with a specific
+customer outcome and work backward to the problem and the CTA.
+
+For both variations produce: full script with timing notes, the psychological trigger in use and
+where it appears, which audience this variation resonates with most — cold, warm retargeting,
+or existing leads.
+PART 2
+
+PROMPT             Build Your Campaign Distribution
+3B
+
+THE GOAL OF THIS PROMPT
+
+By the end of this prompt you will have complete ad copy for 3 LinkedIn versions, 3 YouTube
+bumper ads, and 1 retargeting ad, a 4-email campaign sequence with full copy, a 2-week
+social content calendar with 10 complete posts, and either full copy for a new campaign
+landing page or specific edit instructions for an existing page — all connected to the same
+campaign concept from Prompt 3A.
+
+
+CLAUDE MEMORY COMMAND
+
+Before you begin this prompt, say: "I have all previous answers stored and will use them
+throughout this prompt without asking you to repeat them." Then confirm which prompt
+number we are on and what the key outputs from all previous prompts were so we are aligned
+before proceeding. If any previous prompt has not been completed, flag it and ask me to
+complete it first before continuing.
+
+
+You are a B2B campaign manager and conversion copywriter working with pre-seed founders.
+Your job is to take the campaign concept and video script from Prompt 3A and produce every
+distribution asset needed to get it in front of the right people and convert them into leads.
+
+Everything in this prompt is downstream of the campaign concept. Do not deviate from the
+premise, pattern interrupt, or CTA established in Prompt 3A.
+
+
+REQUIRED INPUTS
+    81. Your complete campaign concept from Prompt 3A — premise, pattern interrupt, and
+       CTA
+    82. Your video script from Prompt 3A
+    83. Your complete funnel architecture from Prompt 1 of Part 2 — specifically the funnel
+       stage this campaign targets
+    84. Your customer avatar from Prompt 9 of Part 1
+    85. Your BFG master table from Prompt 3 of Part 1
+    86. Your competitive customer language from Prompt 6 of Part 1 — Step 3
+    87. Answer: What channels do you currently have an audience on?
+    88. Answer: Do you have any real customer quotes or direct feedback? Paste them here.
+    89. Answer: What is your campaign budget — zero, under $500, under $2000, or more?
+    90. Answer: Which pages do you already have live? List every page with its URL and a
+        one-line description.
+[Paste all inputs before continuing.]
+
+
+Before producing any assets, identify the campaign destination page. Look at the CTA from
+Prompt 3A and the funnel stage this campaign targets. Check the list of existing pages. State at
+the top: 'This campaign drives traffic to: [page name]. This page [already exists / does not exist
+yet]. Here is what to do.'
+
+Once I have your inputs produce the following complete distribution package:
+
+PART 1 — Ad copy
+
+LinkedIn sponsored content — 3 versions
+One for cold audience TOFU, one for warm retargeting MOFU, one for BOFU visitors who did
+not convert. For each version: hook line (first 2 lines before 'see more'), body copy (maximum
+150 words, one idea, one emotion), CTA button text, visual description, psychological trigger in
+use.
+
+YouTube 6-second bumper ads — 3 versions for A/B testing
+Each delivers the campaign message in 6 seconds. One idea. One emotion. One CTA. Write
+the exact words spoken, what appears on screen, and what text overlay shows.
+
+Retargeting ad — 1 version
+Targeting visitors who landed but did not convert. Acknowledges the visit without being creepy.
+Addresses the most likely objection from competitor review intelligence. Offers a lower-friction
+entry point. Write full copy for LinkedIn or the most relevant channel.
+
+PART 2 — Campaign email sequence
+Write 4 complete emails. Every email in the customer's voice. Every email does one thing only.
+No email longer than 150 words.
+
+Email 1 — Campaign launch
+Sent on launch day. Subject line uses the campaign pattern interrupt. Body introduces the
+premise without selling. CTA drives to the campaign destination page.
+
+Email 2 — Value delivery
+Sent day 3 to everyone who opened but did not click. Delivers one specific piece of value
+related to the campaign theme. Does not mention the product. Ends with a soft CTA.
+
+Email 3 — Social proof
+Sent day 6 to everyone who opened but has not converted. One specific customer story using
+real language from competitor review intelligence. Structure: the problem in their words, the
+moment they found a different way, the specific outcome.
+Email 4 — Last chance
+Sent day 10. Maximum 100 words. Uses the future problem layer from Prompt 8 of Part 1. No
+fluff. One CTA. Subject line creates urgency through truth not fake scarcity.
+
+For every email: subject line (maximum 8 words in the customer's voice), preview text (40
+characters), opening line, full body copy, CTA with exact link text.
+
+PART 3 — Social content calendar
+Write 10 social posts over 2 weeks. Not promotional — they educate, provoke, and build
+authority. All posts for LinkedIn unless the avatar has a stronger presence elsewhere.
+
+The 10 posts follow this psychological sequence — do not deviate:
+   91. Day 1: The provocation. Bold counterintuitive truth. No CTA.
+   92. Day 2: The problem in detail. Avatar's exact language. No CTA.
+   93. Day 4: The data. One specific statistic. Source it. End with a question.
+   94. Day 5: The campaign video. 3-line caption using pattern interrupt opening.
+   95. Day 7: The mechanism. New approach in plain language. No product until last line.
+   96. Day 8: The customer story. Real quote or competitive review language. Before and after.
+   97. Day 9: The myth-bust. Most common wrong belief demolished with evidence.
+   98. Day 11: The use case. One specific scenario written as micro-story.
+   99. Day 12: The objection handler. Name biggest reason for inaction and address it directly.
+   100.Day 14: The social proof close. Most powerful outcome. Campaign CTA with deadline if
+       any.
+
+For each post: full post copy, format, opening hook line, CTA, best time to post. Benchmark:
+Tuesdays and Thursdays 8-10am for B2B.
+
+PART 4 — Campaign destination page
+
+If the destination page already exists:
+Produce a precise copy edit document. For each change: location on the page, current copy,
+new copy, reason for the change. Apply these benchmarks: above-the-fold clarity converts
+35-40% better, 5 or fewer fields converts 120% better, social proof near CTA increases
+conversion 84-270%, specific next-step CTAs outperform vague ones, grade 5-7 reading level
+converts 11% better.
+
+If the destination page does not exist yet:
+Write the complete page copy determined by the campaign CTA: lead magnet page, webinar
+registration page (benchmark: 25-45% conversion), demo booking page (benchmark: 3.8%
+median, embed calendar directly — only 8% of SaaS companies do this), or free trial page
+(benchmark: 2-5% average, top performers above 10%).
+
+Complete page copy includes: headline (8 words max), subheadline (25 words max), hero body
+copy, video placement note, form headline, form fields (max 5, ideally 3), CTA button text, what
+happens next, social proof block (real quotes or bracketed frameworks — no invented
+testimonials), trust signals, outcomes section ('You will finally...'), risk reversal, closing CTA with
+authentic urgency.
+
+PART 5 — 14-day launch plan
+Day-by-day execution plan for the first 14 days. Maximum 5 hours per week. Every task
+completable without a designer, developer, or copywriter.
+
+For each day: what to do, which asset it uses and how long it takes, what to publish or send,
+what to measure at the end of that day, what to do differently if below benchmark.
+
+Also produce: the 3 metrics that tell me this campaign is working by day 7, the single metric that
+tells me to increase budget by day 14, and the one signal that tells me the campaign concept is
+wrong and I need to go back to Prompt 3A.
+PART 2
+                   Build Your Funnel Pages
+PROMPT 4
+
+THE GOAL OF THIS PROMPT
+
+By the end of this prompt you will have identified every page needed in your funnel, a
+complete mapping of which content piece drives to which page, full ready-to-publish copy for
+every page that does not yet exist, precise edit instructions for every page that already exists,
+and a plain-language connection map showing how every page connects to the next step in
+the funnel.
+
+
+CLAUDE MEMORY COMMAND
+
+Before you begin this prompt, say: "I have all previous answers stored and will use them
+throughout this prompt without asking you to repeat them." Then confirm which prompt
+number we are on and what the key outputs from all previous prompts were so we are aligned
+before proceeding. If any previous prompt has not been completed, flag it and ask me to
+complete it first before continuing.
+
+
+You are a B2B conversion copywriter working with pre-seed founders. Your job is to look at
+every content piece in the funnel built in Prompt 1 of Part 2 and produce the complete, ready-to-
+publish copy for every page those content pieces drive traffic to.
+
+The page type is determined entirely by what the content piece is trying to do and where the
+customer is in their funnel journey. The content piece and the page it lands on must match
+perfectly.
+
+
+REQUIRED INPUTS
+    101.Your complete funnel architecture from Prompt 1 of Part 2 — every content piece,
+        format, channel, and CTA across all 5 funnel stages
+    102.Your customer avatar and monologue from Prompt 9 of Part 1
+    103.Your BFG master table from Prompt 3 of Part 1
+    104.Your top 3 UVPs and market sophistication level from Prompt 4 of Part 1
+    105.Your problem-solution fit statements from Prompt 8 of Part 1
+    106.Your competitive customer language from Prompt 6 of Part 1
+    107.Your master marketing angle, hook, and differentiator from Prompt 2 of Part 2
+    108.Answer: Which pages do you already have live? List every page with its URL and a
+        one-line description.
+    109.Answer: Do you have any real customer testimonials or quotes? Paste them here.
+    110.Answer: What is the single most common reason a visitor does not take action after
+        consuming one of your content pieces?
+    111.Answer: What social proof assets do you have — logos, review scores, specific results,
+        press mentions?
+[Paste all inputs before continuing.]
+
+
+Before writing any page do this first:
+
+Step 1 — Map every content piece to its destination page.
+Go through every content piece in the funnel from Prompt 1 of Part 2. For each content piece
+identify: the content piece name and funnel stage, what the CTA is driving the visitor to do next,
+what type of page that CTA needs to land on, and whether that page already exists.
+
+Page types by funnel stage:
+   • TOFU content drives to lead capture pages: quiz or assessment results page, lead
+      magnet download page, problem awareness landing page
+   • MOFU content drives to trust and consideration pages: case study page, social proof
+      page, webinar registration page, product overview page
+   • BOFU content drives to conversion pages: demo booking page, free trial signup page,
+      offer presentation page, competitor comparison page
+   • AFU content drives to activation and expansion pages: activation page, upgrade page
+   • LOFU content drives to advocacy pages: referral page, case study submission page,
+      review page
+
+Step 2 — Identify which pages need to be built.
+Produce a table: Content piece | Funnel stage | CTA destination | Page type needed | Already
+exists? Then state clearly: 'I will now build the following pages:' For pages that already exist
+produce specific copy edit instructions: location on page, current copy, new copy, reason for the
+change.
+
+Apply these conversion benchmarks to every page: above-the-fold clarity converts 35-40%
+better, 5 or fewer form fields converts 120% better, social proof near CTA increases conversion
+84-270%, specific CTAs beat vague ones, grade 5-7 reading level converts 11% better, video on
+pages increases conversion up to 80%.
+
+For every page produce the complete copy in this structure:
+PAGE NAME — [page type] for [content piece name] / Funnel stage: [TOFU/MOFU/BOFU/AFU/
+LOFU] / Visitor arrives from: [content piece and channel] / Job of this page: [one sentence] /
+Conversion benchmark: [specific rate to hit]
+
+Then write the complete page copy using the relevant structure:
+
+TOFU — Lead capture page:
+Headline (8 words, problem language not product language), subheadline (25 words), what you
+get (3 specific bullet points), form (maximum 2 fields: first name and email only), CTA button
+(specific asset name), what happens next (one sentence), privacy statement.
+MOFU — Case study page:
+Headline (10 words, specific result), subheadline (25 words), the story in 4 parts (the before, the
+problem that made them act, the solution, the after), pull quote (single most powerful sentence),
+results summary (3 specific bold numbers), social proof bar, CTA placed immediately after
+results.
+
+MOFU — Social proof page:
+Headline (8 words), subheadline (25 words), results bar (3 bold numbers above the fold),
+customer stories (minimum 3 with before/after and direct quote), video testimonial placement
+note, CTA after every 2-3 stories.
+
+MOFU — Webinar registration page:
+Eyebrow (6 words, customer type), headline (10 words, specific outcome format: 'how to
+[outcome] without [obstacle]'), subheadline, date/time/duration above fold, what you will learn
+(3-5 capabilities not topics), form (max 3 fields), CTA button, recording availability statement,
+speaker section, 2 testimonials, closing CTA.
+
+BOFU — Demo booking page:
+Headline (8 words, specific outcome of the demo), subheadline (25 words, who it is for and how
+long), what you will see (3 outcome bullet points), calendar embed directly on page (only 8% of
+SaaS companies do this — exploit this gap), what happens next (one sentence), social proof
+column alongside the calendar.
+
+BOFU — Offer presentation page:
+Headline (8 words, leading with loss aversion trigger), subheadline (25 words), the offer in plain
+language, what is included (5-7 outcomes), guarantee or risk reversal, 3 testimonials addressing
+final objections, CTA, FAQ (5 questions written as the customer asks them).
+
+BOFU — Competitor comparison page:
+Headline naming the comparison directly, subheadline, comparison table (only the dimensions
+that drive the decision, using real customer language), honest assessment (2-3 sentences
+acknowledging what competitor does well), customer migration story (before, the moment,
+after), CTA.
+
+AFU — Activation page:
+Headline (8 words, pointing to first win), first 3 actions (numbered checklist completable in under
+10 minutes each — every 10-minute delay in time-to-value costs 8% in trial-to-paid conversion),
+first result statement, help CTA.
+
+LOFU — Referral page:
+Headline (8 words, acknowledges their success), what they get, what their referral gets, how it
+works (3 simple steps), pre-written referral message in the customer's voice they can copy and
+paste without editing.
+
+PART 2 — Page connection map
+Once all pages are written produce a simple flow for every content piece: 'A visitor reads
+[content piece name] on [channel] → clicks [CTA] → lands on [page name] → takes [action] →
+moves to [next funnel stage].' This is the document the developer uses to wire every page
+correctly.
+
+PART 3 — Build priority
+List pages in priority order with one specific reason for each ranking based on the primary
+conversion goal. Flag any page where a delay is actively costing leads or conversions right now.
+PART 2
+                   Content Distribution & Traffic Strategy
+PROMPT 5
+
+THE GOAL OF THIS PROMPT
+
+By the end of this prompt you will have a complete channel assessment table telling you which
+channels to use, avoid, and prioritize, every content piece from your funnel mapped to every
+channel it should live on with specific adaptations and hooks, a 3-phase traffic building system
+from zero, a weekly distribution routine that fits in your stated time budget, and a growth
+scorecard with targets at week 4, month 3, and month 6.
+
+
+CLAUDE MEMORY COMMAND
+
+Before you begin this prompt, say: "I have all previous answers stored and will use them
+throughout this prompt without asking you to repeat them." Then confirm which prompt
+number we are on and what the key outputs from all previous prompts were so we are aligned
+before proceeding. If any previous prompt has not been completed, flag it and ask me to
+complete it first before continuing.
+
+
+You are a B2B growth strategist and distribution expert working with pre-seed founders. Your job
+is to take every content piece built in the funnel from Prompt 1 of Part 2 and produce a complete
+distribution plan — where each piece goes, how it gets adapted for each channel, which
+channels this founder should prioritize, and exactly what to do each week to build traffic
+systematically from zero.
+
+
+REQUIRED INPUTS
+    112.Your complete funnel architecture from Prompt 1 of Part 2 — every content piece,
+       format, channel, and CTA across all 5 funnel stages
+    113.Your customer avatar from Prompt 9 of Part 1 — specifically the watering holes section
+    114.Your marketing angles and hook library from Prompt 2 of Part 2
+    115.Your campaign concept and video script from Prompt 3A
+    116.Answer: What channels do you currently have any presence on — even small?
+    117.Answer: What is your current weekly time budget for marketing — be honest?
+    118.Answer: What is your current monthly budget for paid distribution?
+    119.Answer: Do you have any existing relationships that could be leveraged for
+       distribution?
+    120.Answer: What has driven any traffic or leads so far?
+[Paste all inputs before continuing.]
+Once I have your inputs produce the following complete distribution strategy document:
+
+PART 1 — Channel selection and priority
+Based on my customer avatar, funnel stage, time budget, and paid budget — identify which
+channels to use and in what priority order. Present as a table:
+
+| Channel | Fits my customer — yes or no | Best funnel stage | Time cost | Money cost | Use
+now or later | Specific reason |
+
+Assess every channel from this complete B2B channel map:
+
+ORGANIC CHANNELS
+  • SEO and blog content — compounding organic traffic from customers searching for
+    answers. 3-6 months to results but highest long-term ROI. Best for TOFU.
+  • LinkedIn organic — dominant B2B platform used by 47% of B2B companies. Free but
+    requires consistent daily output. Best for TOFU and MOFU.
+  • YouTube organic — long-form educational videos ranking on both YouTube and Google.
+    Compounds aggressively once established. Best for mechanism explanation and product
+    demos.
+  • Short-form video — 44% of B2B brands now use under 60-second video. LinkedIn video,
+    YouTube Shorts, Instagram Reels. Fast to produce, high reach. Best for TOFU pattern
+    interrupt.
+  • Podcast guest appearances — zero production cost, high trust transfer, pre-qualified
+    audiences. Most underused channel at pre-seed stage. Best for TOFU and MOFU.
+  • Community participation — Reddit, Slack communities, Discord, Facebook groups,
+    LinkedIn groups, Circle, Mighty Networks, Quora, Indie Hackers, industry forums.
+    Contributing genuine value before mentioning the product.
+  • AI search and generative engine optimization — buyers using ChatGPT, Perplexity, and
+    Claude to research before Google. Getting your content found in AI-powered search. Act
+    on this now while still early.
+
+PAID CHANNELS
+   • LinkedIn paid ads — highest B2B targeting precision by job title, company size, industry.
+      Most expensive cost per click but highest quality leads. Best for MOFU and BOFU.
+      Minimum effective budget: $50/day.
+   • Google Search and PPC — captures high-intent demand. Fast results but competitive.
+      Best for BOFU when market is solution-aware.
+   • YouTube paid ads — pre-roll before competitor content. Lower cost than LinkedIn. Best
+      for TOFU pattern interrupt campaigns.
+   • Meta ads — works better for B2B than founders expect. Lower CPM than LinkedIn. Best
+      for retargeting warm audiences.
+   • Retargeting across all channels — highest conversion rate of any paid channel. First
+      paid channel any pre-seed founder should activate.
+   • Newsletter sponsorships — featured in newsletters your customer already reads.
+      Cheaper than LinkedIn ads, highly targeted, editorial credibility. Best for TOFU and
+      MOFU.
+EMAIL CHANNELS
+  • Cold email outreach — direct to ICP using Apollo, Hunter, or Instantly. Works best hyper-
+     personalized at low volume to high-fit targets. Most pre-seed founders start here.
+  • Owned email newsletter — most valuable long-term distribution asset. Once on the list
+     you own that relationship permanently. Start building from day one.
+  • Lead magnet email sequences — automated sequences triggered by content
+     downloads, quiz completions, or webinar registrations. Nurtures leads at scale without
+     manual effort.
+
+DIRECT SALES AND OUTREACH
+   • LinkedIn direct outreach — messaging ideal customers leading with value not a sales
+     pitch. Best at pre-seed when volume is manageable manually.
+   • Sales calls and demos — highest converting channel. Fastest path to first revenue.
+     Every pre-seed founder should be doing this before automating anything.
+   • CRM pipeline nurturing — systematic follow-up with leads who showed interest. Most
+     founders lose deals not because the lead was uninterested but because nobody followed
+     up consistently.
+   • Warm introductions — every investor, advisor, former colleague, and happy customer is
+     a potential introduction. A systematic warm introduction strategy often outperforms every
+     other channel in the first 6 months.
+
+PARTNERSHIPS AND OTHER PEOPLE'S AUDIENCES
+  • Brand collaborations and co-marketing — joint content, joint webinars, joint lead magnets
+     with complementary products serving the same customer.
+  • Integration partnerships — getting listed in marketplaces of tools your customer already
+     uses.
+  • Referral programs — turning existing customers into distribution. Works best once you
+     have 10 or more happy customers.
+  • Guest posting — writing for blogs and publications your customer already reads.
+  • Influencer and analyst relations — B2B buyers actively seek validation from trusted
+     analysts and influencers.
+  • Other people's audiences (OPA) — podcast guest appearances, industry report
+     contributions, expert quotes in articles, co-hosted webinars, newsletter features.
+
+DISCOVERY AND REVIEW PLATFORMS
+   • Product Hunt — significant early traction from people actively looking for new tools. One-
+     time high-impact launch event.
+   • G2, Capterra, Trustpilot, Clutch — active traffic sources at consideration and decision
+     stage. Strong profile with genuine reviews drives consistent MOFU and BOFU traffic with
+     zero ongoing effort.
+   • AppSumo — marketplace for software deals generating large volume of early users. Best
+     for self-serve products with broad appeal.
+
+PR AND EARNED MEDIA
+   • Industry publications and trade newsletters — niche publications hungry for founder
+     stories. A single feature can outperform months of paid ads.
+   •   Press and news features — more accessible at pre-seed than founders think when
+       framed around the problem being solved not the product.
+
+EVENTS
+  • Industry conferences and trade shows — highest trust transfer of any channel. Speaking
+     slots build authority faster than any content.
+  • Webinars — 73% higher quality leads than other channels at 90% lower cost than in-
+     person events.
+  • Virtual events and online communities — hosting your own community builds long-term
+     audience ownership.
+
+WORD OF MOUTH AND DARK SOCIAL
+  • Dark social — private conversations in Slack DMs, WhatsApp groups, forwarded emails.
+    Cannot be tracked but often the biggest driver of early B2B growth. Activated by making
+    content so specific people feel compelled to share it privately.
+  • Customer referrals — highest trust, highest converting lead source. A satisfied customer
+    removes every objection a cold lead has.
+
+After the channel assessment table produce:
+    • Priority stack — top 5 channels in order with one specific reason for each based on my
+        inputs
+    • Quick wins — 3 distribution actions this week requiring zero budget and under 2 hours
+        each
+    • Channels to avoid right now — channels to explicitly not spend time on and why each is
+        a distraction
+
+PART 2 — Content piece distribution map
+Take every content piece from Prompt 1 of Part 2 and map it to every channel it should be
+distributed on. For each content piece produce a distribution card:
+
+[Content piece name] — [Funnel stage] / Original format: [what it is] / Original channel: [where it
+lives natively]
+Distribution: Channel | Format adaptation | Hook for this channel | CTA for this channel | Best
+time to distribute
+
+Format adaptation means how the original piece gets adapted — a blog post becomes a
+LinkedIn carousel, a video becomes a short clip, a case study becomes a LinkedIn post. Be
+specific about what changes, what gets cut, what gets added.
+
+Use the hook library from Prompt 2 of Part 2 as the source — pull the hook that fits this content
+piece and this channel and adapt it specifically. Benchmark: LinkedIn Tuesday and Thursday
+8-10am, email Tuesday and Wednesday morning, cold outreach Monday and Tuesday.
+
+PART 3 — Traffic building system
+
+Phase 1 — Week 1 to 2: First traffic
+Fastest path to first 100 people into the funnel. What to do, where, and how long each day.
+Assumes zero existing audience and zero paid budget. Every action executable by a solo
+founder in the stated time budget.
+
+Phase 2 — Week 3 to 8: Traffic momentum
+How to systematize once first traffic is flowing. Which channels get added, scaled, or
+automated. What the weekly distribution routine looks like. How to compound organic traffic
+while maintaining direct outreach.
+
+Phase 3 — Month 3 onwards: Traffic compounding
+When and how to introduce paid distribution. Which channels to fund first based on what is
+already working organically. How partnerships and OPA distribution get built. How the content
+engine compounds over time.
+
+For each phase: specific actions named and sequenced, time investment per week, the metric
+that signals readiness to move to next phase.
+
+PART 4 — Weekly distribution routine
+A specific, repeatable schedule the founder follows every week. Built around the stated time
+budget from the inputs.
+
+| Day | Task | Channel | Time required | Asset used | Metric to track |
+
+Include: what gets created or adapted each week, what gets published or sent each day, what
+gets measured at week end, what gets adjusted if below benchmark. Also: the single most
+important distribution action of the week — the one thing that if nothing else gets done still
+moves the funnel forward.
+
+PART 5 — Distribution benchmarks and growth scorecard
+| Stage | Metric | Week 4 target | Month 3 target | Month 6 target | How to measure |
+
+Include benchmarks for: website visitors per month, LinkedIn post reach and engagement rate,
+email list size and open rate (B2B average 20-30%, top performers 40%+), cold outreach reply
+rate (good 10-15%, excellent 20%+), inbound leads per month from organic, leads from paid
+once activated, referral and word of mouth leads, community contributions leading to
+conversations.
+
+Flag the single metric that is the leading indicator of whether the entire distribution system is
+working — the number that if growing everything else tends to follow.
+PART 2
+                   Tracking, Mapping & Implementation
+PROMPT 6
+
+THE GOAL OF THIS PROMPT
+
+By the end of this prompt you will have a complete tracking system for every funnel stage, a
+plain-language tool setup guide for every tool you need, a complete UTM tracking system with
+a ready-to-use link library, a daily, weekly, and monthly tracking routine, a week-by-week
+implementation plan taking you from zero to a live running funnel, and a 90-day success
+dashboard with one north star metric and three early warning signals.
+
+
+CLAUDE MEMORY COMMAND
+
+Before you begin this prompt, say: "I have all previous answers stored and will use them
+throughout this prompt without asking you to repeat them." Then confirm which prompt
+number we are on and what the key outputs from all previous prompts were so we are aligned
+before proceeding. If any previous prompt has not been completed, flag it and ask me to
+complete it first before continuing.
+
+
+You are a B2B growth operator and systems builder working with pre-seed founders. Your job is
+to take everything built across all previous prompts and build the complete tracking and
+implementation plan that turns all of it from a document into a live, running system.
+
+
+REQUIRED INPUTS
+    121.Your complete funnel architecture from Prompt 1 of Part 2 — every stage, every
+       content piece, every CTA
+    122.Your complete distribution plan from Prompt 5 of Part 2 — every channel, every weekly
+       routine
+    123.Your primary conversion goal from Prompt 1 of Part 2
+    124.Your tools list — website builder, email platform, CRM, analytics, and any other tools
+       currently in use
+    125.Answer: What is your current technical comfort level — can you set up Google
+       Analytics and configure a CRM workflow yourself or do you need no-code solutions?
+    126.Answer: Do you currently track anything at all? If yes what tools are you using?
+    127.Answer: What does success look like for you in 90 days — be specific with a number.
+    128.Answer: What is the single biggest implementation risk for you right now?
+[Paste all inputs before continuing.]
+
+
+Once I have your inputs produce the following complete tracking and implementation document:
+PART 1 — Funnel tracking system
+Design the complete tracking system for every stage of the funnel. For each funnel stage
+identify every metric to track, what it tells you, how to measure it, and what good looks like.
+
+Use these industry benchmarks to set every threshold:
+   • Homepage to trial or lead capture: 2-5% average, top performers above 10%
+   • Demo request page: 3.8% median, top performers above 8%
+   • Webinar registration page: 25-45% conversion
+   • Free trial to paid B2B: 15-30%, top quartile 35-45%
+   • Trial activation to aha moment: top performers 60%+
+   • Email open rates B2B: 20-30% average, 40%+ excellent
+   • Email click rates B2B: 2-5% average, above 8% excellent
+   • Cold outreach reply rate: good 10-15%, excellent 20%+
+   • LinkedIn organic post engagement rate: 1-3% average, above 5% excellent
+   • Post-purchase retention month 1: 46.9% average B2B SaaS
+   • Trial to paid conversion: 15-30% B2B average
+   • Referral rate: top performers generate 20-30% of new customers from referrals
+
+Track these metrics per stage:
+   • TOFU — content reach, engagement rate, website traffic from content, new leads
+       generated, cost per lead if paid
+   • MOFU — lead to demo or trial conversion rate, email sequence open and click rates,
+       webinar registration and attendance, case study page visits and CTA clicks, time from
+       lead capture to demo request
+   • BOFU — demo to trial conversion, trial signup to activation, time to first value, trial to
+       paid conversion, conversion page conversion rate
+   • AFU — month 1 retention, activation rate, expansion revenue, NPS or satisfaction score,
+       support ticket volume
+   • LOFU — referral rate, review submission rate, case study participation rate, word of
+       mouth leads
+
+Present all metrics in a master table: | Stage | Metric | How to measure | Green | Amber | Red |
+Fix |
+
+PART 2 — Tool setup guide
+Based on the tools the founder currently has — and the tools they need but do not have —
+produce a complete setup guide. For each tool: tool name and category, what it tracks in this
+funnel, setup instructions in plain language, free alternative, priority (must have now / should
+have in month 2 / nice to have later).
+
+Cover in order of priority:
+   • Website analytics (must have now) — Google Analytics 4. Setup: install tracking code,
+       configure conversion events for every CTA, set up funnel visualization report, configure
+       UTM parameters for every distribution channel. Specific events to configure: lead magnet
+       download, email signup, webinar registration, demo booking, trial signup, trial activation,
+       paid conversion.
+   •   CRM (must have now) — HubSpot free, Pipedrive, or equivalent. Setup: pipeline stages
+       matching funnel stages, lead source tracking tagging every lead with channel and
+       content piece, automated follow-up tasks, simple pipeline health dashboard.
+   •   Email platform (must have now) — Mailchimp, ConvertKit, ActiveCampaign, or
+       equivalent. Setup: all email sequences from Prompt 3B, trigger automations for every
+       conversion event, open and click rate tracking, list segmentation by funnel stage.
+   •   LinkedIn analytics (must have now) — native. Setup: track post reach, engagement rate,
+       follower growth weekly. UTM links on every post CTA.
+   •   Heatmap and session recording (should have in month 2) — Hotjar free tier or Microsoft
+       Clarity (both free). Setup: install on every funnel page, heatmaps for homepage and
+       primary lead capture pages, session recordings filtered to show visitors who did not
+       convert.
+   •   Paid ads tracking (when paid distribution is activated) — LinkedIn Campaign Manager,
+       Google Ads, or Meta Ads Manager. Setup: conversion pixels on every thank you page,
+       conversion events matching funnel CTAs, UTM parameters for every ad.
+   •   Review and social proof tracking (should have in month 2) — G2, Capterra, or Trustpilot.
+       Setup: claim product listing, configure automatic review request emails 30 days after
+       conversion, set up notifications for new reviews.
+
+PART 3 — UTM tracking system
+Design a complete UTM tracking system so the founder always knows which channel, content
+piece, and campaign is generating traffic and leads.
+
+Explain what UTM parameters are in plain language — one paragraph maximum. Then
+produce:
+   • UTM naming convention — the specific naming system to use. Define the exact format
+       for: utm_source (where traffic comes from), utm_medium (type of content or channel),
+       utm_campaign (which campaign or funnel stage), utm_content (which specific content
+       piece or ad variation)
+   • UTM link library — a ready-to-use UTM link for every content piece and distribution
+       channel in the funnel. Present as a table: Content piece | Channel | UTM link structure |
+       What it tracks
+   • UTM tracking rule — never share a link to any funnel page without a UTM parameter
+       attached. Untracked traffic is invisible traffic.
+
+PART 4 — Weekly tracking routine
+
+Daily check — 5 minutes
+What to look at every morning. The single number that tells the founder whether yesterday was
+a good day for the funnel. Where to find it. What to do if trending wrong.
+
+Weekly check — 30 minutes every Monday morning
+A structured review checklist:
+    • Check TOFU metrics — reach, engagement, new leads. On track with benchmarks?
+    • Check MOFU metrics — lead to demo or trial conversion. Where are leads dropping off?
+    • Check BOFU metrics — trial to paid, time to activation. Hitting 60%+ activation?
+    • Check AFU metrics — retention, expansion. Sticking past month 1?
+   •   Check LOFU metrics — referrals, reviews. Satisfied customers becoming distribution?
+   •   Review UTM data — which channels and content pieces are generating the most leads?
+   •   Review CRM pipeline — which leads are stuck and need follow-up?
+   •   Identify the single biggest leak this week
+   •   Decide the single most important thing to fix or test next week
+
+Monthly deep dive — 2 hours on the first Monday of each month
+What to look at, what questions to ask, what decisions to make based on a full month of data:
+which content pieces are generating the most leads, which channels drive highest quality leads,
+which funnel stages have biggest drop-off, month-over-month trend for every key metric, what to
+build, test, or cut next month.
+
+PART 5 — Week by week implementation plan
+
+Week 1 — Foundation
+Set up tracking tools, install Google Analytics, configure CRM pipeline stages, set up UTM
+naming convention, claim review platform listings. Nothing gets published. This week is
+infrastructure.
+
+Week 2 — Minimum viable funnel live
+The 3 most critical assets from Prompt 1 go live. Primary lead capture page from Prompt 4 goes
+live. First email sequence from Prompt 3B is configured and tested. First content piece from
+Prompt 5 is published. By end of week 2 the founder can capture their first lead.
+
+Week 3 — First campaign launched
+Campaign video from Prompt 3A is filmed and published. Campaign distribution assets from
+Prompt 3B go live. Campaign landing page is live. By end of week 3 the founder has an active
+campaign generating traffic.
+
+Week 4 — Distribution system activated
+Weekly distribution routine from Prompt 5 is running. All content pieces for the first month are
+scheduled. UTM link library is built and every link in the funnel is tracked.
+
+Week 5 and 6 — Conversion layer added
+Next 7 assets from build order in Prompt 1 are built and live. Demo booking or free trial page
+from Prompt 4 is live and optimized. MOFU content pieces are published.
+
+Week 7 and 8 — First data review and optimization
+First full month of data reviewed using monthly deep dive framework. Biggest funnel leak
+identified and fixed. Highest performing content piece doubled down on. Lowest performing
+channel cut or adjusted.
+
+Month 3 — Growth layer
+Paid distribution activated. Partnership and OPA distribution initiated. Review platform profiles
+generating consistent inbound. Referral program from Prompt 4 is live. Funnel now growing
+through multiple channels.
+PART 6 — 90-day success dashboard
+Based on the 90-day success definition stated in the inputs, work backward from the goal and
+define what needs to be true at every stage of the funnel for that outcome to be achievable.
+
+| Metric | Week 4 target | Week 8 target | Day 90 target | Current baseline | Gap to close |
+
+Then produce:
+   • The one number that matters most — the north star metric the founder checks every
+      single day
+   • The three early warning signals — the three metrics that if red in the first 30 days signal
+      something is fundamentally wrong
+   • The three growth signals — the three metrics that if green by day 90 tell the founder it is
+      time to scale
+PART 2
+                   Reporting
+PROMPT 7
+
+THE GOAL OF THIS PROMPT
+
+By the end of this prompt you will have a 15-minute weekly report template that tells you
+whether the funnel is working or broken, a 30-minute monthly review template showing
+whether you are improving month over month, a one-page investor and advisor update
+template, and a daily north star dashboard showing whether you are on track to hit your 90-
+day goal.
+
+
+CLAUDE MEMORY COMMAND
+
+Before you begin this prompt, say: "I have all previous answers stored and will use them
+throughout this prompt without asking you to repeat them." Then confirm which prompt
+number we are on and what the key outputs from all previous prompts were so we are aligned
+before proceeding. If any previous prompt has not been completed, flag it and ask me to
+complete it first before continuing.
+
+
+You are a B2B growth analyst working with pre-seed founders. Your job is to build a simple, fast
+reporting system that tells the founder every week whether their funnel is working, where it is
+breaking, and what to do about it.
+
+This reporting system has one rule: it must be completable in 30 minutes per week. No complex
+dashboards. No hours in spreadsheets. Just the numbers that matter, what they mean, and the
+next action.
+
+
+REQUIRED INPUTS
+    129.Your complete funnel architecture from Prompt 1 of Part 2
+    130.Your tracking system and benchmarks from Prompt 6 of Part 2
+    131.Your 90-day success definition from Prompt 6 of Part 2 — the specific number you are
+       working toward
+    132.Your primary conversion goal from Prompt 1 of Part 2
+[Paste all inputs before continuing.]
+
+
+Once I have your inputs produce the following reporting system:
+
+PART 1 — Weekly funnel report
+A simple one-page weekly report the founder fills in every Monday in 15 minutes. Three sections
+only:
+Section 1 — The numbers
+A simple table with one row per funnel stage. The founder fills in the actual number and the
+template shows immediately whether it is green, amber, or red.
+
+| Funnel stage | Metric | This week | Last week | Benchmark | Status |
+
+Populate the metric column with the single most important metric per stage based on the
+primary conversion goal:
+    • TOFU — new leads generated this week
+    • MOFU — leads that moved to demo or trial this week
+    • BOFU — trials or demos that converted to paid this week
+    • AFU — percentage of new customers who completed activation this week
+    • LOFU — referrals or reviews generated this week
+
+Provide the formula or conditional logic to make each cell turn green, amber, or red
+automatically in Google Sheets or Notion.
+
+Section 2 — What it means
+Three questions the founder answers in one sentence each:
+   • Where is the funnel healthy this week?
+   • Where is the funnel leaking this week?
+   • What is the single biggest thing holding back growth right now?
+
+Section 3 — The one decision
+The single most important thing to do differently next week. One sentence. One action. Nothing
+else.
+
+This decision follows a simple rule:
+   • If TOFU is red — the problem is traffic and awareness. Fix distribution first.
+   • If MOFU is red — the problem is trust and consideration. Fix content and proof.
+   • If BOFU is red — the problem is conversion. Fix the offer, the page, or the friction.
+   • If AFU is red — the problem is activation. Fix onboarding and time to value.
+   • If LOFU is red — the problem is satisfaction. Fix the product or customer experience
+       before scaling anything else.
+
+PART 2 — Monthly funnel review
+A simple monthly review completed in 30 minutes on the first Monday of each month. Four
+parts:
+
+Month in numbers
+| Metric | Last month | This month | Change | Trend |
+
+Metrics to include: total website visitors, total new leads, total demos or trials, total new
+customers, total revenue or MRR, best performing content piece, best performing channel.
+What worked
+3 bullet points — the 3 things that worked best this month. What they were, why they worked,
+and whether to do more next month.
+
+What did not work
+3 bullet points — the 3 things that did not work. What they were, why they failed, and whether to
+fix or cut.
+
+Next month priorities
+Based on the data — the 3 specific things to focus on next month ranked in order of impact on
+the primary conversion goal.
+
+PART 3 — Investor and advisor update
+A simple monthly update — maximum one page, readable in 2 minutes, written to show traction
+and momentum not vanity metrics. Five sections:
+
+   •   The headline number — the single most important metric from this month. One bold
+       number at the top. The north star metric from Prompt 6.
+   •   What happened this month — 3 bullet points. The 3 most important things — wins,
+       learnings, and one honest challenge. No fluff.
+   •   The funnel in one line — a single sentence describing the state of the funnel right now.
+       Example: 'We are generating X leads per week from LinkedIn, converting Y% to demos,
+       and closing Z% of demos to paid.'
+   •   What we learned — one paragraph maximum. The single most important insight from
+       this month's data and what we are doing differently because of it.
+   •   What we need — one bullet point. The single most valuable thing an investor or advisor
+       could help with right now. Specific and actionable — not 'introductions' but 'an
+       introduction to a VP of Sales at a company with 20-50 salespeople in the fintech space.'
+
+PART 4 — North star dashboard
+A single visual dashboard the founder looks at every day. Shows only the metrics that matter
+most for the 90-day goal.
+
+| Week | North star metric target | Actual | On track — yes or no |
+
+Populate the target column by working backward from the 90-day success definition. Show the
+calculation explicitly — if the goal is 20 paying customers in 90 days and trial to paid conversion
+is 20% then 100 trial signups are needed in 90 days which means roughly 8 new trial signups
+per week.
+
+Below the table add three lines only:
+   • On track signal — the weekly number that tells the founder to keep doing what they are
+      doing
+   • Off track signal — the weekly number that tells the founder something is wrong and to
+      review the weekly report immediately
+   • Pivot signal — the number that tells the founder the current approach is not working and
+      a fundamental change is needed before continuing to execute
+

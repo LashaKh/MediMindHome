@@ -1,0 +1,142 @@
+{
+  "ready": true,
+  "meta": {
+    "day": "Week 3",
+    "date": "6 October 2026",
+    "prepared_date": "11 October 2026",
+    "slug": "week3",
+    "destination": "/Users/toko/Desktop/500 Lectures/Week 3 - 2026-10-06",
+    "sessions": ["Building a Product that Leads Growth"],
+    "decks": [],
+    "transcript_caution": "Automatic speech recognition can mishear product names, accents, questions and numbers. Speaker identities are not assigned in the transcript. Check the original recording before quoting exact wording. Examples from the lecture are not verified MediMind results.",
+    "review_notes": "Reviewed all 1,199 recognized segments and the automatic text from 54 sampled plus 3 targeted recording frames. Visually checked key slides and the linked deck's visible cover. Downloading the original deck is restricted; the optional worksheet was not separately reviewed. This is a source-informed guide, not a fully human-verified verbatim transcript.",
+    "source_links": {
+      "deck": "https://drive.google.com/file/d/10jPwG0SVMs11JtEkrrU11w5zeRaRjpSz/view?usp=sharing",
+      "optional_worksheet": "https://bit.ly/500plg"
+    }
+  },
+  "pages": [
+    {
+      "title": "Week 3: product-led growth",
+      "subtitle": "Giacomo Poggiali | One supplied lecture recorded on 6 October 2026 | 1h 20m 37s",
+      "blocks": [
+        {"type":"card","title":"The lecture in one sentence","body":"Learn who gets the most value from the product, improve that value, and make successful use help bring in the next customer."},
+        {"type":"section","title":"Five points to remember","body":"<b>1.</b> A feature request, even with money attached, does not establish a shared customer need.<br/><b>2.</b> Identify customers who demonstrate urgency through their actions.<br/><b>3.</b> Combine usage evidence with interviews about what people actually do.<br/><b>4.</b> Build more of the main value and remove the obstacles to receiving it.<br/><b>5.</b> A growth loop needs a result that feeds the next round of customer acquisition."},
+        {"type":"section","title":"The strongest application to MediMind","body":"Let a suitable hospital experience a specific Phase 1 improvement in the parallel system. Use its feedback to strengthen the shared base product. After credible results, ask whether the hospital would introduce another suitable decision-maker. This is a loop hypothesis to test, not proven growth."},
+        {"type":"section","title":"Today's product and the future remain separate","body":"The initial offer replaces disconnected software with the tailored base hospital system. Workflow AI and the hospital's future proactive AI brain belong to later phases. The parallel evaluation should prove the base product's value without depending on future AI claims."},
+        {"type":"text","body":"Fast route: this page, page 7 for the customer exercise, page 9 for the journey and metric, and page 10 for the proposed growth loop."},
+        {"type":"card","title":"Scope of this pack","body":"This pack covers the single lecture supplied in Recordings/Week3. It does not claim to summarize the whole week's curriculum. Lecture findings and proposed MediMind applications are labelled separately."}
+      ]
+    },
+    {
+      "title": "Sources and review notes",
+      "subtitle": "S1 is the recording. V1 is the slide material visible inside that recording.",
+      "blocks": [
+        {"type":"section","title":"One recording, two media files","body":"S1 audio: GMT20261006-120340_Recording.m4a. The audio and video have identical soundtracks, verified with a digital fingerprint. We transcribe the audio once, with timestamps starting at zero. The video supplies visible slide evidence. Original recordings remain unchanged."},
+        {"type":"section","title":"The linked deck","body":"The <link href='https://drive.google.com/file/d/10jPwG0SVMs11JtEkrrU11w5zeRaRjpSz/view?usp=sharing' color='#24718a'>supplied Drive deck</link> is titled '2026 -Products that Lead Growth.pdf'. Its visible cover reads 'Building a Product that Leads Growth' and names Giacomo Poggiali. The owner disables downloads. The guide uses the recorded slide presentation rather than claiming a complete downloaded deck review."},
+        {"type":"table","headers":["Rewatch","Topic","Recorded slide reference"],"widths":[1.1,2.3,1.4],"rows":[["04:25-14:10","Custom requests and product direction","V1 slides 4-6"],["14:10-26:30","Who cares, core value and blockers","V1 slides 7-8"],["26:30-34:10","Shipping example and Activity 1","V1 slides 9-10"],["34:10-49:10","Iteration, 80/20 and Activity 2","V1 slides 11-13"],["49:10-58:30","Growth loops and viral mechanisms","V1 slides 14-16"],["58:30-73:30","Content, paid loops and Activity 3","V1 slides 17-20"],["73:30-80:37","Founder reflections and questions","V1 slide 21 and closing"]]},
+        {"type":"card","title":"Exercises are optional","body":"At S1 03:02-04:20, the lecturer describes the worksheet as guided brainstorming, explicitly says it is not required homework, and asks founders to bring their most important agenda and questions to office hours. The MediMind exercises here are our working drafts, not completed customer research or mandatory assignments."},
+        {"type":"text","body":"Navigation times are approximate. The supplied chat contains the optional worksheet link, https://bit.ly/500plg. Its Google copy page requires sign-in and has not been separately reviewed. Recorded-slide references use the visible footer numbers. Numbers in lecture examples are not hospital benchmarks."}
+      ]
+    },
+    {
+      "title": "Custom requests and product direction",
+      "subtitle": "Lecture evidence | S1 approximately 04:25-14:10 | V1 slides 4-6",
+      "blocks": [
+        {"type":"card","title":"A feature payment does not establish market fit","body":"The lecturer describes building an invoicing feature for a shipping customer who offered advance payment. It served the requester but did not bring additional customers. It also introduced complexity and confused other users. Payment covered immediate development, not the longer-term product cost."},
+        {"type":"section","title":"The warning has a nuance","body":"Custom work can be a deliberate business choice. The lecturer warns against treating substantial bespoke service work as ordinary software subscription revenue. A product also needs a clear strength that customers value over their alternatives."},
+        {"type":"section","title":"The question for a hospital request","body":"What problem is the hospital trying to solve, how does it handle that problem today, and which other hospitals in our chosen segment need the same result? A request can be sensible without becoming the next shared product priority."},
+        {"type":"section","title":"Our initial offer still has a boundary","body":"MediMind's next-10-hospital offer covers the tailored Phase 1 base system, an included parallel evaluation before purchase commitment, a price match for agreed comparable scope and ongoing development of that base product. Workflow AI and the future proactive AI brain belong to later, separately agreed phases."},
+        {"type":"card","title":"MediMind application to validate","body":"Keep a request log that separates hospital configuration, reusable base-product improvements, safety or reliability fixes, and later AI ideas. Investigate the outcome before accepting a specific implementation. These are proposed internal categories, not the lecturer's exact framework."}
+      ]
+    },
+    {
+      "title": "Who cares, and why?",
+      "subtitle": "Lecture evidence | S1 approximately 14:10-26:30 | V1 slides 7-8",
+      "blocks": [
+        {"type":"card","title":"Lighthouse users","body":"These are customers who feel the problem strongly and are already trying to solve it. Their behaviour helps you discover which people and use cases deserve attention."},
+        {"type":"section","title":"Segment by behaviour","body":"Look at a meaningful product action, rather than the average of all users. The lecturer suggests examining the top 10-20% for a relevant behaviour and learning who they are. If usage data is sparse, investigate people already seeking or assembling alternatives. The percentage is a discovery heuristic, not a hospital target or a statistically sufficient sample."},
+        {"type":"section","title":"Core value and value blockers","body":"<b>Core value:</b> the main reason this customer benefits from the product.<br/><b>Value blocker:</b> a circumstance that prevents them receiving that benefit or receiving more of it. A mobile task that cannot be completed on a phone is the lecture's simple example."},
+        {"type":"section","title":"The interview follows real behaviour","body":"Ask how they came to try the product, what they did before and what made them seek a better way. Then explore which tasks they still do elsewhere, in which situations, and why. Customers understand their problem and desired outcome. The product team proposes and tests the solution. People using alternative products can also help you learn."},
+        {"type":"section","title":"AI can assist the research","body":"The lecturer mentions Mixpanel or Amplitude for usage analysis, an AI text model for preparing a short interview script, and Granola or Fathom for transcription. Capture moments of strong emphasis because plain transcripts can lose tone. These are lecture examples, not tool installations or approval to send hospital data to them."},
+        {"type":"card","title":"MediMind interpretation","body":"An interested CEO and a staff member completing the agreed task provide different evidence. Learn from both. Frequent use can also reflect a cumbersome system or mandatory work, so check whether the hospital actually experiences value."}
+      ]
+    },
+    {
+      "title": "Iteration around the actual value",
+      "subtitle": "Lecture evidence | S1 approximately 26:30-49:10 | V1 slides 9-13",
+      "blocks": [
+        {"type":"table","headers":["Shipping example","Initial hypothesis","Finding described in the lecture"],"widths":[1.15,1.75,2.6],"rows":[["Customer","Small shops offering shipment services","Highly active users were mainly small ecommerce operators."],["Main value","Cheaper shipping","Saving time preparing shipments mattered more."],["Blocker","Invoicing and customs features","Customers still used other methods when their own courier contracts offered better rates."],["Product response","Add requested features","Connect ecommerce orders automatically and support the customer's courier rates."]]},
+        {"type":"section","title":"The lecturer's 80/20 guideline","body":"Put roughly 80% of product attention into creating more core value and roughly 20% into removing value blockers. This is a prioritization heuristic. It is not a capacity forecast, a strict engineering rule or a reason to postpone safety, security or reliability work."},
+        {"type":"section","title":"A pivot follows evidence","body":"The example changes its focus from affordable shipping for shop owners to faster shipping for ecommerce sellers. It also moves from reselling shipments to software subscriptions using customers' courier contracts. The lecturer treats a pivot as organizing around what the team learns works, rather than making random changes when frustrated."},
+        {"type":"card","title":"MediMind application","body":"The hospital OS can have broad scope and still prove a clear first improvement. Choose a recurring task that the hospital wants to change. Strengthen the connected base product around that result, then investigate what prevents other suitable hospitals from receiving it."},
+        {"type":"text","body":"The example illustrates a learning process. It does not prove which hospital segment, workflow or product changes will work for MediMind. Those remain hypotheses to test."}
+      ]
+    },
+    {
+      "title": "The three growth-loop families",
+      "subtitle": "Lecture and recorded slides | S1 approximately 49:10-73:30 | V1 slides 14-20",
+      "blocks": [
+        {"type":"card","title":"First real value, then a growth loop","body":"At S1 72:05-72:59, the lecturer says to establish a strong core product and real usage before building growth loops. Once a user receives value, their use can create something that helps bring another user. Map that returning connection. A one-way funnel alone does not show it."},
+        {"type":"table","headers":["Loop family","What carries growth","What needs to be true"],"widths":[1.1,2.2,2.1],"rows":[["<b>Viral</b>","Users invite, share or naturally show the product.","Receiving value leads to an action that brings a relevant new user."],["<b>Content</b>","Use produces content or questions that attract other users.","The content reaches the right audience and sends them back to the product."],["<b>Paid</b>","New customers generate revenue that funds more acquisition.","Actual acquisition economics and cash recovery support another round."]]},
+        {"type":"section","title":"Four viral mechanisms in the slides","body":"<b>Network value:</b> the product becomes more useful when others join.<br/><b>Sharing:</b> a useful product output reaches someone who can become a user.<br/><b>Visible use:</b> using the product exposes it to others.<br/><b>Incentives:</b> users receive a benefit for bringing someone else. The lecturer stresses product fit and incentives tied to useful value for both parties. A referral campaign is only one mechanism."},
+        {"type":"section","title":"Different routes for content","body":"The slides include user content found through search, content users share, company content based on unique information, and useful answers prompted by user questions. A content schedule becomes a loop only when the output creates the next input and continued use sustains it."},
+        {"type":"text","body":"The screening slide illustrates payback under three months for consumer businesses and under six months for businesses selling to other businesses. These are lecture heuristics, not MediMind economics. Economics can differ by customer segment. Include evaluation, implementation and support effort in our calculation. The lecturer also warns against relying on a single paid channel."}
+      ]
+    },
+    {
+      "title": "Activity 1: our customer and value",
+      "subtitle": "MediMind working draft | Adaptation of Segment & Capture | V1 slide 10",
+      "blocks": [
+        {"type":"table","headers":["Workbook field","MediMind starting hypothesis","Evidence to collect"],"widths":[1.15,2.15,2.2],"rows":[["<b>Who</b>","A private multispecialty hospital or group in Georgia with a recurring cross-department problem and a buyer able to sponsor a test.","A recent example, the existing workaround, urgency, an evaluation owner and willing staff."],["<b>Core value</b>","Clinical and business work stays connected, with fewer unnecessary repeated entries and clearer handoffs.","Staff complete an agreed task and compare the result with the current process."],["<b>Value blockers</b>","Possible obstacles: information quality, hospital readiness, unfamiliar workflows, training, trust and staff availability.","Ask where the alternative still fails or where staff return to old methods, and why."]]},
+        {"type":"section","title":"Short interview draft","body":"1. Tell me about the last time this task caused extra work.<br/>2. How did your team handle it, and who had to help?<br/>3. What made you consider changing it now?<br/>4. During the comparison, where did the alternative help?<br/>5. What did you still need to do the old way, and why?<br/>6. What would the hospital need to verify before a purchasing decision?"},
+        {"type":"card","title":"The research record","body":"Keep the hospital buying organization, participant role, actual example, observed behaviour and remaining uncertainty. Separate buyer approval, staff value and IT readiness. The anchor network supplies useful learning, but independent hospitals test whether it transfers."},
+        {"type":"text","body":"No customer interviews are implied by this draft. Product analytics should contain permitted operational events, not identifiable patient histories or clinical notes. The lecture mentions AI tools, but it does not establish permission to upload hospital data to them."}
+      ]
+    },
+    {
+      "title": "Activity 2: development priorities",
+      "subtitle": "MediMind working draft | Adaptation of Iterate | V1 slide 13",
+      "blocks": [
+        {"type":"table","headers":["Priority type","Candidate to investigate","Decision evidence"],"widths":[1.3,2.2,2.1],"rows":[["<b>More core value</b>","Make the agreed cross-department task easier to finish with shared information.","Compare task completion, unnecessary re-entry and handoff work."],["<b>Remove a blocker</b>","Resolve a verified setup, data-quality or training issue that stops the comparison.","Record the obstacle and whether resolving it enables staff to use the alternative."],["<b>Learn about direction</b>","Check whether another suitable hospital shares the same problem and desired result.","Look for independent examples and willingness to evaluate, not polite agreement."],["<b>Later phase</b>","Workflow AI or proactive AI-brain requests.","Record future demand separately. Do not imply inclusion in the Phase 1 evaluation."]]},
+        {"type":"section","title":"A usable request record","body":"For each request, write the hospital's problem, who experiences it, frequency and impact, current workaround, affected customers, proposed change, effort and dependencies. Add the test that would show improvement, the owner and a decision: investigate, configure, build, defer or decline."},
+        {"type":"section","title":"Included development still needs priorities","body":"Keep the agreed base-product development promise. Use evidence and honest delivery estimates to order the work. Do not silently add fees or change an agreed offer. Requests outside its scope require a separate discussion. This is our proposed operating discipline, not a change to commercial terms."},
+        {"type":"card","title":"The first experiment to consider","body":"Find one repeatedly reported task, agree a comparison with hospital staff, make the smallest useful base-product improvement and observe the result. Safety, access control and reliability requirements remain prerequisites regardless of the lecture's 80/20 ratio."},
+        {"type":"text","body":"At S1 48:40-49:08, the lecturer suggests using AI to rank initiatives against the core-value statement and likely impact. Give it the evidence and value definition, not just a feature list. Its ranking is assistance, not proof of customer demand."}
+      ]
+    },
+    {
+      "title": "Our evaluation journey and metric",
+      "subtitle": "MediMind proposal | Current bottleneck: evaluations beyond the anchor partner",
+      "blocks": [
+        {"type":"table","headers":["Stage","Evidence that it happened"],"widths":[1.75,3.3],"rows":[["1. Suitable hospital found","Buying organization, fit and plausible problem recorded."],["2. Connection and champion","Named contact or warm introduction reaches someone who can sponsor the discussion."],["3. Evaluation agreed","Hospital confirms the problem, task, reviewers, comparison criteria and intended review date."],["4. Readiness cleared","Scope, permitted data, access approvals and technical prerequisites are agreed."],["5. Parallel base delivered","Reviewers can access and test the agreed Phase 1 alternative. Current software stays in place."],["6. Staff compare the result","Reviewers complete the comparison and record benefits, blockers and remaining uncertainty."],["7. Evaluation review held","Hospital and MediMind discuss the evidence and record proceed, revise or stop."],["8. Adoption and referral","If agreed, stage rollout and verify continuing value. Ask separately about a relevant introduction."]]},
+        {"type":"card","title":"Suggested One Metric That Matters","body":"Number of distinct new hospital buying organizations completing a qualified parallel evaluation in the last 30 days. Count after the agreed test and decision review, including honest stop or revise decisions. Exclude the anchor partner and repeat meetings. Multiple hospitals under one purchasing decision are one buying organization."},
+        {"type":"section","title":"Leading checks and timing","body":"Track readiness-approved evaluations, versions delivered, first observed task value, completed reviews and days stalled. The first parallel version targets about two weeks after readiness is agreed. That delivery target does not promise a complete evaluation or hospital rollout in two weeks. Set the staff test period and review date together."},
+        {"type":"text","body":"A rolling 30-day count is a proposed management view, not an achieved target. Baseline and capacity are unverified. Show small-sample counts and reasons before rates. Paid adoption remains a downstream check, and continuing product value needs separate measurement."}
+      ]
+    },
+    {
+      "title": "Activity 3: a loop worth testing",
+      "subtitle": "MediMind proposal | Adaptation of Designing a Growth Loop | V1 slide 20",
+      "blocks": [
+        {"type":"card","title":"Starting hypothesis: value followed by a trusted introduction","body":"A suitable hospital evaluates the base system. Staff identify a credible improvement. We resolve blockers and the hospital continues to receive value. With its permission, a champion introduces another suitable hospital. That introduction starts the next evaluation cycle."},
+        {"type":"table","headers":["Candidate loop","Fit for our stage","What to verify"],"widths":[1.45,1.95,2.1],"rows":[["<b>Hospital reference</b>","A possible starting route for a complex hospital purchase. Founder help still matters.","Does experienced value lead to a permissioned introduction and then a qualified evaluation?"],["<b>Useful content</b>","A later or complementary route using permissioned case evidence, recurring questions and synthetic demos.","Does the material reach suitable decision-makers and produce substantive evaluation conversations?"],["<b>Paid acquisition</b>","Hold until acquisition cost, conversion, implementation effort and cash recovery are understood.","Can actual customer economics fund another cycle without straining delivery?"]]},
+        {"type":"section","title":"A small loop test","body":"After a genuinely useful evaluation or adoption review, ask whether the champion would introduce a peer with the same problem. Record eligible reference hospitals, introductions requested, permission given, introductions made and evaluations completed. Declining a referral does not change the hospital's terms or support."},
+        {"type":"section","title":"Two important boundaries","body":"Staff inviting colleagues within a hospital supports adoption, but does not by itself win another hospital buyer. A clinical report reaching another person also does not automatically form a safe acquisition channel. Keep patient data and hospital-confidential evidence out of marketing unless separately authorized."},
+        {"type":"text","body":"This is a proposed, assisted reference loop. We have not established that it repeats or grows by itself. The hospital's own results and consent determine what can be shared."}
+      ]
+    },
+    {
+      "title": "The next working session",
+      "subtitle": "MediMind action draft | Optional exercises and office-hour preparation",
+      "blocks": [
+        {"type":"section","title":"First: gather evidence","body":"Choose a few relevant staff members with direct experience of the current task and a suitable decision-maker. Ask for recent examples and observe the agreed comparison when authorized. Record what is known separately from what we still assume. Choose the first independent hospital opportunity through a real contact or champion."},
+        {"type":"section","title":"Then: decide one improvement","body":"Compare requests against the shared Phase 1 value and the evaluation blockers. Choose one change with a named owner and a measurable test. Book the review with the hospital. Readiness and staff availability determine the schedule."},
+        {"type":"section","title":"Finally: test the returning connection","body":"After evidence of value, explore an introduction to another suitable buyer or permission to use a non-confidential result. Track whether this produces the next qualified evaluation. A requested introduction, a delivered system and a completed review are different events."},
+        {"type":"card","title":"Bring these questions to Giacomo","body":"1. For an assisted hospital purchase, is this reference loop the best starting hypothesis?<br/>2. How can we distinguish mandated staff use from experienced product value?<br/>3. Which independent-customer evidence would show that our anchor's needs transfer?<br/>4. How should we prioritize included hospital-specific development without creating an unfocused product?<br/>5. What result would justify investing in content or paid acquisition next?"},
+        {"type":"section","title":"A short team recap","body":"Our initial product connects hospital work. The evaluation lets staff see the improvement before a purchase decision. This lecture gives us a way to learn from the right people, build what creates shared value, and test whether that value helps bring the next hospital."},
+        {"type":"text","body":"In the closing discussion, founders note different segments value different things and some loop ideas should wait until the product is ready. Bring a focused agenda to the 45-minute office hours, even if the urgent business question is outside this topic. These drafts are optional, not completed experiments. Use the transcript and recording to check exact wording."}
+      ]
+    }
+  ]
+}

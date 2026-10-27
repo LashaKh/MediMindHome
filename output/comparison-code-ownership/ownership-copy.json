@@ -1,0 +1,36 @@
+{
+  "name": [
+    "Code ownership",
+    "კოდის საკუთრება"
+  ],
+  "title": [
+    "You own the code of the first version.",
+    "პირველი ვერსიის კოდი თქვენ გეკუთვნით."
+  ],
+  "description": [
+    "We transfer ownership of the first delivered base version’s source code to your hospital under contract. If you are unhappy with MediMind’s work in the future, you can continue maintaining and developing that version with another team.",
+    "პირველი ჩაბარებული საბაზისო ვერსიის საწყის კოდს ხელშეკრულებით თქვენს საკუთრებაში გადავცემთ. თუ მომავალში MediMind-ის მუშაობით უკმაყოფილო იქნებით, ამ ვერსიის მოვლა და განვითარება სხვა გუნდთან შეგიძლიათ გააგრძელოთ."
+  ],
+  "sections": [
+    {
+      "title": [
+        "You choose who continues the work",
+        "თქვენ ირჩევთ, ვინ გააგრძელებს მუშაობას"
+      ],
+      "text": [
+        "Developers you choose can study the code, fix faults and develop the first version. You can therefore change development teams without being forced to depend on MediMind for that version’s continued maintenance.",
+        "თქვენ მიერ შერჩეული დეველოპერები შეძლებენ კოდის შესწავლას, შეცდომების გამოსწორებასა და პირველი ვერსიის განვითარებას. ამ ვერსიაზე მუშაობის გასაგრძელებლად MediMind-ზე დამოკიდებული აღარ იქნებით."
+      ]
+    },
+    {
+      "title": [
+        "Other authors’ code and later versions",
+        "სხვა ავტორების კოდი და მომდევნო ვერსიები"
+      ],
+      "text": [
+        "Software parts created by other authors retain those authors’ licence terms. Rights to later versions are governed by separate contractual terms.",
+        "სისტემაში გამოყენებული, სხვა ავტორების მიერ შექმნილი პროგრამული ნაწილები მათივე ლიცენზიის პირობებს ექვემდებარება. მომდევნო ვერსიებზე უფლებები ხელშეკრულებით ცალკე განისაზღვრება."
+      ]
+    }
+  ]
+}

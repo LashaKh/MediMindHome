@@ -1,0 +1,212 @@
+[
+  {
+    "width": 1440,
+    "height": 900,
+    "lang": "ka",
+    "g": {
+      "slideBottom": 855,
+      "footerTop": 763.998046875,
+      "bottom": 828,
+      "bodyBottom": 755.349609375,
+      "overflow": false,
+      "posterLoaded": true
+    },
+    "status": "მუშავდება",
+    "playing": {
+      "paused": false,
+      "time": 0.918915,
+      "duration": 70.308005,
+      "src": "/deck-assets/product-videos/structural.mp4"
+    },
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "height": 900,
+    "lang": "en",
+    "g": {
+      "slideBottom": 855,
+      "footerTop": 763.998046875,
+      "bottom": 828,
+      "bodyBottom": 755.349609375,
+      "overflow": false,
+      "posterLoaded": true
+    },
+    "status": "In development",
+    "playing": {
+      "paused": false,
+      "time": 0.514974,
+      "duration": 70.308005,
+      "src": "/deck-assets/product-videos/structural.mp4"
+    },
+    "errors": []
+  },
+  {
+    "width": 1280,
+    "height": 720,
+    "lang": "ka",
+    "g": {
+      "slideBottom": 720,
+      "footerTop": 639.109375,
+      "bottom": 696,
+      "bodyBottom": 631.421875,
+      "overflow": false,
+      "posterLoaded": true
+    },
+    "status": "მუშავდება",
+    "playing": {
+      "paused": false,
+      "time": 0.529681,
+      "duration": 70.308005,
+      "src": "/deck-assets/product-videos/structural.mp4"
+    },
+    "errors": []
+  },
+  {
+    "width": 1280,
+    "height": 720,
+    "lang": "en",
+    "g": {
+      "slideBottom": 720,
+      "footerTop": 639.109375,
+      "bottom": 696,
+      "bodyBottom": 631.421875,
+      "overflow": false,
+      "posterLoaded": true
+    },
+    "status": "In development",
+    "playing": {
+      "paused": false,
+      "time": 0.512313,
+      "duration": 70.308005,
+      "src": "/deck-assets/product-videos/structural.mp4"
+    },
+    "errors": []
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "lang": "ka",
+    "g": {
+      "slideBottom": 1024,
+      "footerTop": 1075.71875,
+      "bottom": 1210.40625,
+      "bodyBottom": 1045.71875,
+      "overflow": false,
+      "posterLoaded": true
+    },
+    "status": "მუშავდება",
+    "playing": {
+      "paused": false,
+      "time": 0.90411,
+      "duration": 70.308005,
+      "src": "/deck-assets/product-videos/structural.mp4"
+    },
+    "errors": []
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "lang": "en",
+    "g": {
+      "slideBottom": 1024,
+      "footerTop": 1003.40625,
+      "bottom": 1138.09375,
+      "bodyBottom": 973.40625,
+      "overflow": false,
+      "posterLoaded": true
+    },
+    "status": "In development",
+    "playing": {
+      "paused": false,
+      "time": 0.526325,
+      "duration": 70.308005,
+      "src": "/deck-assets/product-videos/structural.mp4"
+    },
+    "errors": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "lang": "ka",
+    "g": {
+      "slideBottom": 844,
+      "footerTop": 969.71875,
+      "bottom": 1128.40625,
+      "bodyBottom": 939.71875,
+      "overflow": false,
+      "posterLoaded": true
+    },
+    "status": "მუშავდება",
+    "playing": {
+      "paused": false,
+      "time": 0.543289,
+      "duration": 70.308005,
+      "src": "/deck-assets/product-videos/structural.mp4"
+    },
+    "errors": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "lang": "en",
+    "g": {
+      "slideBottom": 844,
+      "footerTop": 887.890625,
+      "bottom": 1046.578125,
+      "bodyBottom": 857.890625,
+      "overflow": false,
+      "posterLoaded": true
+    },
+    "status": "In development",
+    "playing": {
+      "paused": false,
+      "time": 0.528737,
+      "duration": 70.308005,
+      "src": "/deck-assets/product-videos/structural.mp4"
+    },
+    "errors": []
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "lang": "ka",
+    "g": {
+      "slideBottom": 568,
+      "footerTop": 959.09375,
+      "bottom": 1117.78125,
+      "bodyBottom": 929.09375,
+      "overflow": false,
+      "posterLoaded": true
+    },
+    "status": "მუშავდება",
+    "playing": {
+      "paused": false,
+      "time": 0.520539,
+      "duration": 70.308005,
+      "src": "/deck-assets/product-videos/structural.mp4"
+    },
+    "errors": []
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "lang": "en",
+    "g": {
+      "slideBottom": 568,
+      "footerTop": 923.65625,
+      "bottom": 1082.34375,
+      "bodyBottom": 893.65625,
+      "overflow": false,
+      "posterLoaded": true
+    },
+    "status": "In development",
+    "playing": {
+      "paused": false,
+      "time": 0.52485,
+      "duration": 70.308005,
+      "src": "/deck-assets/product-videos/structural.mp4"
+    },
+    "errors": []
+  }
+]

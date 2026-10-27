@@ -1,0 +1,352 @@
+[
+  {
+    "width": 1440,
+    "height": 900,
+    "lang": "ka",
+    "overflow": false,
+    "slideBottom": 855,
+    "headingBottom": 231.046875,
+    "mapTop": 254.671875,
+    "mapBottom": 712.125,
+    "cardsBottom": 712.125,
+    "evidenceTop": 731.25,
+    "footerBottom": 830.25,
+    "cardCount": 4,
+    "departments": 12,
+    "cardOverflow": [
+      {
+        "class": "hai-benefit hai-benefit--time",
+        "overflow": false
+      },
+      {
+        "class": "hai-benefit hai-benefit--revenue",
+        "overflow": false
+      },
+      {
+        "class": "hai-benefit hai-benefit--resources",
+        "overflow": false
+      },
+      {
+        "class": "hai-benefit hai-benefit--care",
+        "overflow": false
+      }
+    ],
+    "captionBottom": 663.380859375,
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "height": 900,
+    "lang": "en",
+    "overflow": false,
+    "slideBottom": 855,
+    "headingBottom": 231.046875,
+    "mapTop": 254.671875,
+    "mapBottom": 712.125,
+    "cardsBottom": 712.125,
+    "evidenceTop": 731.25,
+    "footerBottom": 830.25,
+    "cardCount": 4,
+    "departments": 12,
+    "cardOverflow": [
+      {
+        "class": "hai-benefit hai-benefit--time",
+        "overflow": false
+      },
+      {
+        "class": "hai-benefit hai-benefit--revenue",
+        "overflow": false
+      },
+      {
+        "class": "hai-benefit hai-benefit--resources",
+        "overflow": false
+      },
+      {
+        "class": "hai-benefit hai-benefit--care",
+        "overflow": false
+      }
+    ],
+    "captionBottom": 663.380859375,
+    "errors": []
+  },
+  {
+    "width": 1280,
+    "height": 720,
+    "lang": "ka",
+    "overflow": false,
+    "slideBottom": 720,
+    "headingBottom": 165.375,
+    "mapTop": 186.375,
+    "mapBottom": 593,
+    "cardsBottom": 593,
+    "evidenceTop": 610,
+    "footerBottom": 698,
+    "cardCount": 4,
+    "departments": 12,
+    "cardOverflow": [
+      {
+        "class": "hai-benefit hai-benefit--time",
+        "overflow": false
+      },
+      {
+        "class": "hai-benefit hai-benefit--revenue",
+        "overflow": false
+      },
+      {
+        "class": "hai-benefit hai-benefit--resources",
+        "overflow": false
+      },
+      {
+        "class": "hai-benefit hai-benefit--care",
+        "overflow": false
+      }
+    ],
+    "captionBottom": 549.671875,
+    "errors": []
+  },
+  {
+    "width": 1280,
+    "height": 720,
+    "lang": "en",
+    "overflow": false,
+    "slideBottom": 720,
+    "headingBottom": 165.375,
+    "mapTop": 186.375,
+    "mapBottom": 593,
+    "cardsBottom": 593,
+    "evidenceTop": 610,
+    "footerBottom": 698,
+    "cardCount": 4,
+    "departments": 12,
+    "cardOverflow": [
+      {
+        "class": "hai-benefit hai-benefit--time",
+        "overflow": false
+      },
+      {
+        "class": "hai-benefit hai-benefit--revenue",
+        "overflow": false
+      },
+      {
+        "class": "hai-benefit hai-benefit--resources",
+        "overflow": false
+      },
+      {
+        "class": "hai-benefit hai-benefit--care",
+        "overflow": false
+      }
+    ],
+    "captionBottom": 549.671875,
+    "errors": []
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "lang": "ka",
+    "overflow": false,
+    "slideBottom": 1024,
+    "headingBottom": 214.953125,
+    "mapTop": 239.953125,
+    "mapBottom": 1431.421875,
+    "cardsBottom": 1431.421875,
+    "evidenceTop": 1458.421875,
+    "footerBottom": 1693.3125,
+    "cardCount": 4,
+    "departments": 12,
+    "cardOverflow": [
+      {
+        "class": "hai-benefit hai-benefit--time",
+        "overflow": false
+      },
+      {
+        "class": "hai-benefit hai-benefit--revenue",
+        "overflow": false
+      },
+      {
+        "class": "hai-benefit hai-benefit--resources",
+        "overflow": false
+      },
+      {
+        "class": "hai-benefit hai-benefit--care",
+        "overflow": false
+      }
+    ],
+    "captionBottom": 560.046875,
+    "errors": []
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "lang": "en",
+    "overflow": false,
+    "slideBottom": 1024,
+    "headingBottom": 214.3125,
+    "mapTop": 239.3125,
+    "mapBottom": 1430.78125,
+    "cardsBottom": 1430.78125,
+    "evidenceTop": 1457.78125,
+    "footerBottom": 1692.671875,
+    "cardCount": 4,
+    "departments": 12,
+    "cardOverflow": [
+      {
+        "class": "hai-benefit hai-benefit--time",
+        "overflow": false
+      },
+      {
+        "class": "hai-benefit hai-benefit--revenue",
+        "overflow": false
+      },
+      {
+        "class": "hai-benefit hai-benefit--resources",
+        "overflow": false
+      },
+      {
+        "class": "hai-benefit hai-benefit--care",
+        "overflow": false
+      }
+    ],
+    "captionBottom": 559.40625,
+    "errors": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "lang": "ka",
+    "overflow": false,
+    "slideBottom": 844,
+    "headingBottom": 268.953125,
+    "mapTop": 293.953125,
+    "mapBottom": 1780.296875,
+    "cardsBottom": 1780.296875,
+    "evidenceTop": 1807.296875,
+    "footerBottom": 2082.078125,
+    "cardCount": 4,
+    "departments": 12,
+    "cardOverflow": [
+      {
+        "class": "hai-benefit hai-benefit--time",
+        "overflow": false
+      },
+      {
+        "class": "hai-benefit hai-benefit--revenue",
+        "overflow": false
+      },
+      {
+        "class": "hai-benefit hai-benefit--resources",
+        "overflow": false
+      },
+      {
+        "class": "hai-benefit hai-benefit--care",
+        "overflow": false
+      }
+    ],
+    "captionBottom": 614.046875,
+    "errors": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "lang": "en",
+    "overflow": false,
+    "slideBottom": 844,
+    "headingBottom": 268.3125,
+    "mapTop": 293.3125,
+    "mapBottom": 1656.96875,
+    "cardsBottom": 1656.96875,
+    "evidenceTop": 1683.96875,
+    "footerBottom": 1939.25,
+    "cardCount": 4,
+    "departments": 12,
+    "cardOverflow": [
+      {
+        "class": "hai-benefit hai-benefit--time",
+        "overflow": false
+      },
+      {
+        "class": "hai-benefit hai-benefit--revenue",
+        "overflow": false
+      },
+      {
+        "class": "hai-benefit hai-benefit--resources",
+        "overflow": false
+      },
+      {
+        "class": "hai-benefit hai-benefit--care",
+        "overflow": false
+      }
+    ],
+    "captionBottom": 613.40625,
+    "errors": []
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "lang": "ka",
+    "overflow": false,
+    "slideBottom": 568,
+    "headingBottom": 266.953125,
+    "mapTop": 291.953125,
+    "mapBottom": 1879.546875,
+    "cardsBottom": 1879.546875,
+    "evidenceTop": 1906.546875,
+    "footerBottom": 2197.828125,
+    "cardCount": 4,
+    "departments": 12,
+    "cardOverflow": [
+      {
+        "class": "hai-benefit hai-benefit--time",
+        "overflow": false
+      },
+      {
+        "class": "hai-benefit hai-benefit--revenue",
+        "overflow": false
+      },
+      {
+        "class": "hai-benefit hai-benefit--resources",
+        "overflow": false
+      },
+      {
+        "class": "hai-benefit hai-benefit--care",
+        "overflow": false
+      }
+    ],
+    "captionBottom": 582.046875,
+    "errors": []
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "lang": "en",
+    "overflow": false,
+    "slideBottom": 568,
+    "headingBottom": 266.3125,
+    "mapTop": 291.3125,
+    "mapBottom": 1678.3125,
+    "cardsBottom": 1678.3125,
+    "evidenceTop": 1705.3125,
+    "footerBottom": 1980.09375,
+    "cardCount": 4,
+    "departments": 12,
+    "cardOverflow": [
+      {
+        "class": "hai-benefit hai-benefit--time",
+        "overflow": false
+      },
+      {
+        "class": "hai-benefit hai-benefit--revenue",
+        "overflow": false
+      },
+      {
+        "class": "hai-benefit hai-benefit--resources",
+        "overflow": false
+      },
+      {
+        "class": "hai-benefit hai-benefit--care",
+        "overflow": false
+      }
+    ],
+    "captionBottom": 581.40625,
+    "errors": []
+  }
+]

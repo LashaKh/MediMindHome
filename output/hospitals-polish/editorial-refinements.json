@@ -1,0 +1,207 @@
+[
+  {
+    "id": 3,
+    "lang": "ka",
+    "html": "ერთიანი <em>ოპერაციული სისტემა</em>"
+  },
+  {
+    "id": 5,
+    "lang": "ka",
+    "html": "<em>თქვენი მთელი კლინიკისთვის.</em>"
+  },
+  {
+    "id": 6,
+    "lang": "en",
+    "html": "AI · Clinical care · Laboratory · PACS · Patient Portal."
+  },
+  {
+    "id": 7,
+    "lang": "ka",
+    "html": "AI · მკურნალობა · ლაბორატორია · PACS · პაციენტის პორტალი."
+  },
+  {
+    "id": 12,
+    "lang": "en",
+    "html": "For our next <em>5 hospital partners.</em>"
+  },
+  {
+    "id": 13,
+    "lang": "ka",
+    "html": "მომდევნო <em>5 პარტნიორი კლინიკისთვის.</em>"
+  },
+  {
+    "id": 14,
+    "lang": "en",
+    "html": "Everything your hospital needs."
+  },
+  {
+    "id": 15,
+    "lang": "ka",
+    "html": "ყველაფერი, რაც თქვენს კლინიკას სჭირდება."
+  },
+  {
+    "id": 24,
+    "lang": "en",
+    "html": "We adapt the base system to your workflows and keep developing it — at no extra charge."
+  },
+  {
+    "id": 25,
+    "lang": "ka",
+    "html": "საბაზისო სისტემას თქვენს პროცესებს ვარგებთ და დამატებითი საფასურის გარეშე ვავითარებთ."
+  },
+  {
+    "id": 34,
+    "lang": "en",
+    "html": "Ready for <em>what comes next</em>"
+  },
+  {
+    "id": 35,
+    "lang": "ka",
+    "html": "მზადაა <em>შემდეგი ნაბიჯისთვის</em>"
+  },
+  {
+    "id": 36,
+    "lang": "en",
+    "html": "One shared system today. A foundation for the AI capabilities you choose tomorrow."
+  },
+  {
+    "id": 37,
+    "lang": "ka",
+    "html": "დღეს — ერთიანი სისტემა. მომავალში — თქვენთვის საჭირო AI შესაძლებლობები."
+  },
+  {
+    "id": 38,
+    "lang": "en",
+    "html": "Capacity is allocated. <em>Evaluate first. Decide after.</em>"
+  },
+  {
+    "id": 39,
+    "lang": "ka",
+    "html": "დანერგვის რესურსი გამოყოფილია. <em>ჯერ გამოცადეთ, შემდეგ გადაწყვიტეთ.</em>"
+  },
+  {
+    "id": 151,
+    "lang": "ka",
+    "html": "კლინიკის AI ტვინი"
+  },
+  {
+    "id": 187,
+    "lang": "ka",
+    "html": "პაციენტის გადმოტანილი ჩანაწერი"
+  },
+  {
+    "id": 190,
+    "lang": "en",
+    "html": "Hear from the team using it. <em>We can arrange the conversation.</em>"
+  },
+  {
+    "id": 191,
+    "lang": "ka",
+    "html": "გაესაუბრეთ გუნდს, რომელიც უკვე იყენებს MediMind-ს. <em>შეხვედრას ჩვენ დავგეგმავთ.</em>"
+  },
+  {
+    "id": 220,
+    "lang": "en",
+    "html": "Clinical and engineering experience. <strong>One team for implementation and support.</strong>"
+  },
+  {
+    "id": 221,
+    "lang": "ka",
+    "html": "კლინიკური და საინჟინრო გამოცდილება. <strong>ერთი გუნდი დანერგვისა და მხარდაჭერისთვის.</strong>"
+  },
+  {
+    "id": 319,
+    "lang": "ka",
+    "html": "AI ყველა განყოფილებაში. <em>ხელმძღვანელობას — სრული სურათი.</em>"
+  },
+  {
+    "id": 343,
+    "lang": "ka",
+    "html": "გადაუდებელი კვლევების პრიორიტეტი"
+  },
+  {
+    "id": 407,
+    "lang": "ka",
+    "html": "გადაუდებელი კვლევების პრიორიტეტი"
+  },
+  {
+    "id": 484,
+    "lang": "en",
+    "html": "More for your hospital. <em>The same software budget.</em>"
+  },
+  {
+    "id": 485,
+    "lang": "ka",
+    "html": "მეტი შესაძლებლობა. <em>იგივე პროგრამული ბიუჯეტი.</em>"
+  },
+  {
+    "id": 486,
+    "lang": "en",
+    "html": "Clinical care, laboratory, imaging and administration — connected in one operating system."
+  },
+  {
+    "id": 487,
+    "lang": "ka",
+    "html": "მკურნალობა, ლაბორატორია, გამოსახულებები და მართვა ერთ ოპერაციულ სისტემაში."
+  },
+  {
+    "id": 512,
+    "lang": "en",
+    "html": "Base-system updates and team support"
+  },
+  {
+    "id": 513,
+    "lang": "ka",
+    "html": "საბაზისო სისტემის განახლებები და გუნდის მხარდაჭერა"
+  },
+  {
+    "id": 544,
+    "lang": "en",
+    "html": "Measure your results"
+  },
+  {
+    "id": 545,
+    "lang": "ka",
+    "html": "შედეგს თქვენი მონაცემებით ვზომავთ"
+  },
+  {
+    "id": 546,
+    "lang": "en",
+    "html": "Visit time, repeated entry and unbilled services — compared against an agreed baseline."
+  },
+  {
+    "id": 547,
+    "lang": "ka",
+    "html": "ვიზიტის დრო, განმეორებითი შეყვანა, ანგარიშში გამორჩენილი მომსახურება — წინასწარ შეთანხმებული საზომებით."
+  },
+  {
+    "id": 572,
+    "lang": "en",
+    "html": "Your data and your first source-code version. <em>Under your control.</em>"
+  },
+  {
+    "id": 573,
+    "lang": "ka",
+    "html": "თქვენი მონაცემები და კოდის პირველი ვერსია. <em>თქვენი კონტროლის ქვეშ.</em>"
+  },
+  {
+    "id": 582,
+    "lang": "en",
+    "html": "Let’s see what changes for your hospital."
+  },
+  {
+    "id": 583,
+    "lang": "ka",
+    "html": "ვნახოთ, რას შეცვლის MediMind თქვენს კლინიკაში."
+  },
+  {
+    "id": 704,
+    "lang": "en",
+    "html": "Two weeks after a stent procedure, a high-risk patient returned with abdominal pain. The team focused on the heart. Acute pancreatitis was identified after a <strong>14-hour</strong> delay, followed by septic shock and ICU care. A <strong>~$20 lipase test</strong> was one of the diagnostic clues in the case."
+  },
+  {
+    "id": 705,
+    "lang": "ka",
+    "html": "სტენტირებიდან ორი კვირის შემდეგ მაღალი რისკის პაციენტი მუცლის ტკივილით დაბრუნდა. ყურადღება გულზე იყო გამახვილებული. მწვავე პანკრეატიტი <strong>14 საათის</strong> დაგვიანებით გამოვლინდა. პაციენტს სეპტიკური შოკი განუვითარდა და რეანიმაცია დასჭირდა. დიაგნოსტიკის ერთ-ერთი მნიშვნელოვანი მინიშნება <strong>დაახლოებით $20-იანი ლიპაზის ანალიზი</strong> იყო."
+  }
+]

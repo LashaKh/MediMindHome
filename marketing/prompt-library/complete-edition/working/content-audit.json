@@ -1,0 +1,412 @@
+{
+  "complete": true,
+  "outputs": 20,
+  "totalWords": 67728,
+  "requiredSections": 138,
+  "errors": [],
+  "warnings": [
+    "l0-01: 2 explicitly marked evidence or launch placeholders",
+    "l0-02: 6 explicitly marked evidence or launch placeholders",
+    "l0-03: 10 explicitly marked evidence or launch placeholders"
+  ],
+  "rows": [
+    {
+      "id": "p1-01",
+      "file": "p1-01-business-market.md",
+      "title": "Describe Your Business & Market",
+      "group": "Customer & Market Research",
+      "label": "Part 1 · Prompt 1",
+      "pages": "5–7",
+      "sections": 7,
+      "words": 2416,
+      "headings": [
+        "Step 1 — Restate it back to me sharply",
+        "Step 2 — Name the real market I am in",
+        "Step 3 — Surface my 3 biggest assumptions",
+        "Step 4 — Market sizing I can actually use",
+        "Step 5 — Identify the key players",
+        "Step 6 — Pinpoint the gap",
+        "Step 7 — Market positioning statement"
+      ],
+      "placeholderCount": 0
+    },
+    {
+      "id": "p1-02",
+      "file": "p1-02-mechanics-jtbd.md",
+      "title": "Map Your Product Mechanics & JTBD",
+      "group": "Customer & Market Research",
+      "label": "Part 1 · Prompt 2",
+      "pages": "8–10",
+      "sections": 6,
+      "words": 2080,
+      "headings": [
+        "Step 1 — Map the customer journey in steps",
+        "Step 2 — Identify the moment of value",
+        "Step 3 — Identify friction points",
+        "Step 4 — Apply the JTBD lens",
+        "Step 5 — Identify my market sophistication level",
+        "Step 6 — Rewrite the product description"
+      ],
+      "placeholderCount": 0
+    },
+    {
+      "id": "p1-03",
+      "file": "p1-03-bfg.md",
+      "title": "Build Your Features, Benefits & Guarantees",
+      "group": "Customer & Market Research",
+      "label": "Part 1 · Prompt 3",
+      "pages": "11–12",
+      "sections": 6,
+      "words": 4068,
+      "headings": [
+        "Step 1 — List every feature",
+        "Step 2 — Convert every feature to a benefit",
+        "Step 3 — Add the emotional benefit layer",
+        "Step 4 — Build the guarantees and trust layer",
+        "Step 5 — Build the BFG master table",
+        "Step 6 — Identify my strongest BFG combination"
+      ],
+      "placeholderCount": 0
+    },
+    {
+      "id": "p1-04",
+      "file": "p1-04-uvps.md",
+      "title": "Generate Your UVPs & Map Your JTBD",
+      "group": "Customer & Market Research",
+      "label": "Part 1 · Prompt 4",
+      "pages": "13–14",
+      "sections": 6,
+      "words": 2576,
+      "headings": [
+        "Step 1 — Map the full JTBD for each customer type",
+        "Step 2 — Confirm market sophistication level",
+        "Step 3 — Generate 10 UVPs as brand promises",
+        "Step 4 — Score every UVP",
+        "Step 5 — Match UVPs to customer types",
+        "Step 6 — Write the hero statement"
+      ],
+      "placeholderCount": 0
+    },
+    {
+      "id": "p1-05",
+      "file": "p1-05-competition.md",
+      "title": "Map Competition & Find Your Defensible Position",
+      "group": "Customer & Market Research",
+      "label": "Part 1 · Prompt 5",
+      "pages": "15–16",
+      "sections": 6,
+      "words": 2538,
+      "headings": [
+        "Step 1 — Full competitive landscape",
+        "Step 2 — Competitive comparison table",
+        "Step 3 — Find the white space",
+        "Step 4 — Write and stress-test the defensible positioning statement",
+        "Step 5 — Identify my biggest competitive threat",
+        "Step 6 — Build five competitive talking points"
+      ],
+      "placeholderCount": 0
+    },
+    {
+      "id": "p1-06",
+      "file": "p1-06-review-intelligence.md",
+      "title": "Mine Competitor Reviews & Customer Intelligence",
+      "group": "Customer & Market Research",
+      "label": "Part 1 · Prompt 6",
+      "pages": "17–18",
+      "sections": 6,
+      "words": 2269,
+      "headings": [
+        "Step 1 — Identify where competitor reviews live",
+        "Step 2 — Extract real problems across four buckets",
+        "Step 3 — Extract exact customer language",
+        "Step 4 — Map problems to my product",
+        "Step 5 — Build three acquisition messages",
+        "Step 6 — One-page review intelligence summary brief"
+      ],
+      "placeholderCount": 0
+    },
+    {
+      "id": "p1-07",
+      "file": "p1-07-user-research.md",
+      "title": "Design & Execute Your User Research",
+      "group": "Customer & Market Research",
+      "label": "Part 1 · Prompt 7",
+      "pages": "19–20",
+      "sections": 8,
+      "words": 3032,
+      "headings": [
+        "Step 1 — Audit my assumptions",
+        "Step 2 — Define my research goal",
+        "Step 3 — Segment my user groups",
+        "Step 4 — Build the interview guide",
+        "Step 5 — Build a documentation system",
+        "Step 6 — Research action plan",
+        "Step 7 — Tailored question sets for all three groups",
+        "Step 8 — Nine outreach templates"
+      ],
+      "placeholderCount": 0
+    },
+    {
+      "id": "p1-08",
+      "file": "p1-08-problems.md",
+      "title": "Define the Real Problems You Are Solving",
+      "group": "Customer & Market Research",
+      "label": "Part 1 · Prompt 8",
+      "pages": "21–22",
+      "sections": 6,
+      "words": 1935,
+      "headings": [
+        "Step 1 — Separate real from assumed problems",
+        "Step 2 — Build the full problem stack",
+        "Step 3 — Identify the problem worth leading with",
+        "Step 4 — Write three problem statement versions",
+        "Step 5 — Problems I should not claim to solve",
+        "Step 6 — Problem-solution fit statement for each type"
+      ],
+      "placeholderCount": 0
+    },
+    {
+      "id": "p1-09",
+      "file": "p1-09-avatar.md",
+      "title": "Build Your Customer Avatar",
+      "group": "Customer & Market Research",
+      "label": "Part 1 · Prompt 9",
+      "pages": "23–25",
+      "sections": 6,
+      "words": 2287,
+      "headings": [
+        "Step 1 — Build the full eight-dimension avatar profile",
+        "Step 2 — Build the avatar's emotional landscape",
+        "Step 3 — Write the avatar in their own voice",
+        "Step 4 — Identify the avatar's watering holes",
+        "Step 5 — Identify the avatar's buying trigger",
+        "Step 6 — Build the avatar reference card"
+      ],
+      "placeholderCount": 0
+    },
+    {
+      "id": "p2-01",
+      "file": "p2-01-funnel.md",
+      "title": "Map Your Marketing Funnel Architecture",
+      "group": "Marketing Funnel & Campaign",
+      "label": "Part 2 · Prompt 1",
+      "pages": "27–31",
+      "sections": 6,
+      "words": 5754,
+      "headings": [
+        "Part 1 — Funnel diagnosis",
+        "Part 2 — Full funnel stage map",
+        "Part 3 — Content and asset brainstorm",
+        "Part 4 — Funnel wiring diagram",
+        "Part 5 — Build order",
+        "Part 6 — Weekly funnel scorecard"
+      ],
+      "placeholderCount": 0
+    },
+    {
+      "id": "p2-02",
+      "file": "p2-02-angles.md",
+      "title": "Define Your Marketing Angles",
+      "group": "Marketing Funnel & Campaign",
+      "label": "Part 2 · Prompt 2",
+      "pages": "33–35",
+      "sections": 6,
+      "words": 3031,
+      "headings": [
+        "Part 1 — Master marketing angle",
+        "Part 2 — Angle selection and prioritization",
+        "Part 3 — Angle-to-channel mapping",
+        "Part 4 — Ten-hook library",
+        "Part 5 — Message by funnel stage",
+        "Part 6 — 30-day angle execution plan"
+      ],
+      "placeholderCount": 0
+    },
+    {
+      "id": "p2-03a",
+      "file": "p2-03a-campaign-script.md",
+      "title": "Build Your Campaign Concept & Video Script",
+      "group": "Marketing Funnel & Campaign",
+      "label": "Part 2 · Prompt 3A",
+      "pages": "36–38",
+      "sections": 3,
+      "words": 1887,
+      "headings": [
+        "Part 1 — Campaign concept",
+        "Part 2 — Video script: founder on camera, phone format",
+        "Part 3 — Two shorter A/B script variations"
+      ],
+      "placeholderCount": 0
+    },
+    {
+      "id": "p2-03b",
+      "file": "p2-03b-campaign-distribution.md",
+      "title": "Build Your Campaign Distribution",
+      "group": "Marketing Funnel & Campaign",
+      "label": "Part 2 · Prompt 3B",
+      "pages": "39–41",
+      "sections": 5,
+      "words": 4520,
+      "headings": [
+        "Part 1 — Ad copy",
+        "Part 2 — Four-email campaign sequence",
+        "Part 3 — Two-week social content calendar",
+        "Part 4 — Campaign destination page: precise edits to existing `/request-demo`",
+        "Part 5 — 14-day launch plan within the shared five-hour weekly budget"
+      ],
+      "placeholderCount": 0
+    },
+    {
+      "id": "p2-04",
+      "file": "p2-04-funnel-pages.md",
+      "title": "Build Your Funnel Pages",
+      "group": "Marketing Funnel & Campaign",
+      "label": "Part 2 · Prompt 4",
+      "pages": "42–45",
+      "sections": 4,
+      "words": 7436,
+      "headings": [
+        "Step 1 — Map every content piece to its destination",
+        "Step 2 — Identify which pages need to be built and edit what exists",
+        "Part 2 — Page connection map",
+        "Part 3 — Build priority"
+      ],
+      "placeholderCount": 0
+    },
+    {
+      "id": "p2-05",
+      "file": "p2-05-traffic.md",
+      "title": "Content Distribution & Traffic Strategy",
+      "group": "Marketing Funnel & Campaign",
+      "label": "Part 2 · Prompt 5",
+      "pages": "46–50",
+      "sections": 5,
+      "words": 7647,
+      "headings": [
+        "Part 1 — Channel selection and priority",
+        "Part 2 — Content piece distribution map",
+        "Part 3 — Traffic building system",
+        "Part 4 — Weekly distribution routine",
+        "Part 5 — Distribution benchmarks and growth scorecard"
+      ],
+      "placeholderCount": 0
+    },
+    {
+      "id": "p2-06",
+      "file": "p2-06-tracking.md",
+      "title": "Tracking, Mapping & Implementation",
+      "group": "Marketing Funnel & Campaign",
+      "label": "Part 2 · Prompt 6",
+      "pages": "51–55",
+      "sections": 6,
+      "words": 7985,
+      "headings": [
+        "Part 1 — Funnel tracking system",
+        "Part 2 — Tool setup guide",
+        "Part 3 — UTM tracking system",
+        "Part 4 — Weekly tracking routine",
+        "Part 5 — Week-by-week implementation plan",
+        "Part 6 — 90-day success dashboard"
+      ],
+      "placeholderCount": 0
+    },
+    {
+      "id": "p2-07",
+      "file": "p2-07-reporting.md",
+      "title": "Reporting",
+      "group": "Marketing Funnel & Campaign",
+      "label": "Part 2 · Prompt 7",
+      "pages": "56–58",
+      "sections": 4,
+      "words": 2097,
+      "headings": [
+        "Part 1 — Weekly funnel report",
+        "Part 2 — Monthly funnel review",
+        "Part 3 — Investor and advisor update",
+        "Part 4 — North star dashboard"
+      ],
+      "placeholderCount": 0
+    },
+    {
+      "id": "l0-01",
+      "file": "l0-01-demo.md",
+      "title": "Book a Demo Page",
+      "group": "Conversion Page Library #0",
+      "label": "Library #0 · Prompt 1",
+      "pages": "3–7",
+      "sections": 13,
+      "words": 1345,
+      "headings": [
+        "Section 1 — Headline",
+        "Section 2 — Subheadline",
+        "Section 3 — Above-the-fold trust line",
+        "Section 4 — CTA button text",
+        "Section 5 — What happens on the demo",
+        "Section 6 — Pain section",
+        "Section 7 — How it works",
+        "Section 8 — Differentiation section",
+        "Section 9 — Testimonial block",
+        "Section 10 — Logo bar caption",
+        "Section 11 — Objection FAQ",
+        "Section 12 — Privacy line",
+        "Section 13 — Bottom repeat CTA"
+      ],
+      "placeholderCount": 2
+    },
+    {
+      "id": "l0-02",
+      "file": "l0-02-webinar.md",
+      "title": "Webinar Registration Page",
+      "group": "Conversion Page Library #0",
+      "label": "Library #0 · Prompt 2",
+      "pages": "8–13",
+      "sections": 14,
+      "words": 1293,
+      "headings": [
+        "Section 1 — Page headline",
+        "Section 2 — Subheadline",
+        "Section 3 — Date / time / format bar",
+        "Section 4 — CTA button text",
+        "Section 5 — Above-the-fold trust line",
+        "Section 6 — Speaker block",
+        "Section 7 — What you will learn",
+        "Section 8 — Pain section",
+        "Section 9 — Agenda block",
+        "Section 10 — Social proof block",
+        "Section 11 — Objection FAQ",
+        "Section 12 — “Can't make it?” secondary CTA",
+        "Section 13 — Privacy line",
+        "Section 14 — Bottom repeat CTA"
+      ],
+      "placeholderCount": 6
+    },
+    {
+      "id": "l0-03",
+      "file": "l0-03-trial.md",
+      "title": "Free Trial Page",
+      "group": "Conversion Page Library #0",
+      "label": "Library #0 · Prompt 3",
+      "pages": "14–20",
+      "sections": 15,
+      "words": 1532,
+      "headings": [
+        "Section 1 — Headline",
+        "Section 2 — Subheadline",
+        "Section 3 — Primary CTA button text",
+        "Section 4 — Trust strip",
+        "Section 5 — Social proof bar",
+        "Section 6 — The problem section",
+        "Section 7 — What you get in the trial",
+        "Section 8 — Up and running in 3 steps",
+        "Section 9 — Social proof block",
+        "Section 10 — Product visual caption",
+        "Section 11 — Trust and security block",
+        "Section 12 — Objection FAQ",
+        "Section 13 — Pricing context line",
+        "Section 14 — Bottom repeat CTA",
+        "Section 15 — Privacy line"
+      ],
+      "placeholderCount": 10
+    }
+  ]
+}

@@ -1,0 +1,7868 @@
+[
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "section-0",
+    "line": 9530,
+    "notes": false,
+    "parent": "div",
+    "text": "Hospital Partnership"
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "section-0",
+    "line": 9530,
+    "notes": false,
+    "parent": "div",
+    "text": "პარტნიორობა კლინიკებისთვის"
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "section-0",
+    "line": 9534,
+    "notes": false,
+    "parent": "span",
+    "text": "The AI-native operating system"
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "section-0",
+    "line": 9534,
+    "notes": false,
+    "parent": "span",
+    "text": "ერთიანი ოპერაციული სისტემა"
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "section-0",
+    "line": 9535,
+    "notes": false,
+    "parent": "span",
+    "text": "for your hospital."
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "section-0",
+    "line": 9535,
+    "notes": false,
+    "parent": "span",
+    "text": "თქვენი კლინიკისთვის."
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9548,
+    "notes": false,
+    "parent": "div",
+    "text": "THE DAILY REALITY"
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9548,
+    "notes": false,
+    "parent": "div",
+    "text": "კლინიკის ყოველდღიურობა"
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9549,
+    "notes": false,
+    "parent": "h2",
+    "text": "Your team is exhausted. / Your hospital pays the price."
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9549,
+    "notes": false,
+    "parent": "h2",
+    "text": "გუნდი იღლება. / კლინიკა ზარალდება."
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9551,
+    "notes": false,
+    "parent": "span",
+    "text": "PAYMENT"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9551,
+    "notes": false,
+    "parent": "span",
+    "text": "ანაზღაურება"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9551,
+    "notes": false,
+    "parent": "span",
+    "text": "Care delivered. / Payment disputed."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9551,
+    "notes": false,
+    "parent": "span",
+    "text": "მკურნალობა დასრულდა. / ანაზღაურება სადავოა."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9551,
+    "notes": false,
+    "parent": "span",
+    "text": "A small record mismatch can delay government or insurance payments."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9551,
+    "notes": false,
+    "parent": "span",
+    "text": "ჩანაწერში მცირე შეუსაბამობაც აჭიანურებს სახელმწიფოსგან ან სადაზღვევოსგან ანაზღაურებას."
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9551,
+    "notes": false,
+    "parent": "span",
+    "text": "See the impact"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9551,
+    "notes": false,
+    "parent": "span",
+    "text": "ნახეთ გავლენა კლინიკაზე"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9551,
+    "notes": false,
+    "parent": "span",
+    "text": "YOUR PEOPLE"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9551,
+    "notes": false,
+    "parent": "span",
+    "text": "თქვენი გუნდი"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9551,
+    "notes": false,
+    "parent": "span",
+    "text": "Exhausted doctors / and nurses."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9551,
+    "notes": false,
+    "parent": "span",
+    "text": "გადაღლილი ექიმები / და ექთნები."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9551,
+    "notes": false,
+    "parent": "span",
+    "text": "Repeated work burdens every department, from registration to finance."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9551,
+    "notes": false,
+    "parent": "span",
+    "text": "განმეორებითი სამუშაო ყველა განყოფილებას ტვირთავს — რეგისტრატურიდან ფინანსებამდე."
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9551,
+    "notes": false,
+    "parent": "span",
+    "text": "See the impact"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9551,
+    "notes": false,
+    "parent": "span",
+    "text": "ნახეთ გავლენა კლინიკაზე"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9551,
+    "notes": false,
+    "parent": "span",
+    "text": "FINANCIAL CONTROL"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9551,
+    "notes": false,
+    "parent": "span",
+    "text": "ფინანსური კონტროლი"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9551,
+    "notes": false,
+    "parent": "span",
+    "text": "Money is lost. / You can’t see why."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9551,
+    "notes": false,
+    "parent": "span",
+    "text": "ფული იკარგება. / მიზეზი არ ჩანს."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9551,
+    "notes": false,
+    "parent": "span",
+    "text": "The system can’t analyse revenue, costs and losses together."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9551,
+    "notes": false,
+    "parent": "span",
+    "text": "სისტემა შემოსავალს, ხარჯსა და დანაკარგს ერთიანად ვერ აანალიზებს."
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9551,
+    "notes": false,
+    "parent": "span",
+    "text": "See the impact"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9551,
+    "notes": false,
+    "parent": "span",
+    "text": "ნახეთ გავლენა კლინიკაზე"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9551,
+    "notes": false,
+    "parent": "span",
+    "text": "VENDOR DEPENDENCE"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9551,
+    "notes": false,
+    "parent": "span",
+    "text": "მომწოდებელზე დამოკიდებულება"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9551,
+    "notes": false,
+    "parent": "span",
+    "text": "Held hostage / by your software vendor."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9551,
+    "notes": false,
+    "parent": "span",
+    "text": "პროგრამის მომწოდებლის / მძევლად რჩებით."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9551,
+    "notes": false,
+    "parent": "span",
+    "text": "Changes take months, cost extra, and switching systems is difficult."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9551,
+    "notes": false,
+    "parent": "span",
+    "text": "ცვლილებას თვეობით ელოდებით, დამატებით იხდით და სხვა სისტემაზე გადასვლაც გიჭირთ."
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9551,
+    "notes": false,
+    "parent": "span",
+    "text": "See the impact"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9551,
+    "notes": false,
+    "parent": "span",
+    "text": "ნახეთ გავლენა კლინიკაზე"
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "p",
+    "text": "An illustrative situation"
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "p",
+    "text": "საილუსტრაციო სიტუაცია"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "span",
+    "text": "Care is delivered"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "span",
+    "text": "მკურნალობა დასრულდა"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "span",
+    "text": "A record needs review"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "span",
+    "text": "ჩანაწერი გადამოწმებას საჭიროებს"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "span",
+    "text": "Payment waits"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "span",
+    "text": "ანაზღაურება ყოვნდება"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "h3",
+    "text": "What this means for the hospital"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "h3",
+    "text": "რას ნიშნავს ეს კლინიკისთვის"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "p",
+    "text": "Staff must check and explain the records while the hospital waits for payment."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "p",
+    "text": "გუნდს ჩანაწერების გადამოწმება და ახსნა უწევს; კლინიკა თანხის მიღებას ელოდება."
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "p",
+    "text": "An illustrative situation"
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "p",
+    "text": "საილუსტრაციო სიტუაცია"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "span",
+    "text": "Information entered once"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "span",
+    "text": "მონაცემი უკვე შეყვანილია"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "span",
+    "text": "The same work is repeated"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "span",
+    "text": "იგივე სამუშაო მეორდება"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "span",
+    "text": "Less time for care"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "span",
+    "text": "პაციენტისთვის ნაკლები დრო რჩება"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "h3",
+    "text": "What this means for the hospital"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "h3",
+    "text": "რას ნიშნავს ეს კლინიკისთვის"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "p",
+    "text": "Extra work reaches registration, doctors, nurses and finance, adding to an already demanding day."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "p",
+    "text": "დამატებითი სამუშაო რეგისტრატურას, ექიმებს, ექთნებსა და ფინანსებს ტვირთავს და ისედაც დატვირთულ დღეს ამძიმებს."
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "p",
+    "text": "An illustrative situation"
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "p",
+    "text": "საილუსტრაციო სიტუაცია"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "span",
+    "text": "Revenue in one report"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "span",
+    "text": "შემოსავალი ერთ ანგარიშშია"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "span",
+    "text": "Costs somewhere else"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "span",
+    "text": "ხარჯები — სხვაგან"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "span",
+    "text": "The cause stays hidden"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "span",
+    "text": "დანაკარგის მიზეზი არ ჩანს"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "h3",
+    "text": "What this means for the hospital"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "h3",
+    "text": "რას ნიშნავს ეს კლინიკისთვის"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "p",
+    "text": "Management struggles to see where costs rise or revenue is missed, so decisions require more investigation."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "p",
+    "text": "ხელმძღვანელს უჭირს, დაინახოს სად იზრდება ხარჯი ან იკარგება შემოსავალი; გადაწყვეტილებისთვის დამატებითი მოკვლევა ხდება საჭირო."
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "p",
+    "text": "An illustrative situation"
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "p",
+    "text": "საილუსტრაციო სიტუაცია"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "span",
+    "text": "The hospital needs a change"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "span",
+    "text": "კლინიკას ცვლილება სჭირდება"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "span",
+    "text": "The vendor sets the priorities"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "span",
+    "text": "პრიორიტეტებს მომწოდებელი წყვეტს"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "span",
+    "text": "The department waits"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "span",
+    "text": "განყოფილება ელოდება"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "h3",
+    "text": "What this means for the hospital"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "h3",
+    "text": "რას ნიშნავს ეს კლინიკისთვის"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "p",
+    "text": "Improving a workflow depends on someone else’s priorities and additional budget."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-reality",
+    "line": 9552,
+    "notes": false,
+    "parent": "p",
+    "text": "სამუშაო პროცესის გაუმჯობესება სხვის პრიორიტეტებსა და დამატებით ბიუჯეტზე ხდება დამოკიდებული."
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "hospital-partnership",
+    "line": 9568,
+    "notes": false,
+    "parent": "div",
+    "text": "PARTNERSHIP OFFER"
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "hospital-partnership",
+    "line": 9568,
+    "notes": false,
+    "parent": "div",
+    "text": "პარტნიორობის შეთავაზება"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-partnership",
+    "line": 9571,
+    "notes": false,
+    "parent": "h2",
+    "text": "Premium hospital software. / Within your current budget."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-partnership",
+    "line": 9571,
+    "notes": false,
+    "parent": "h2",
+    "text": "პრემიუმ კლასის სისტემა. / თქვენი მიმდინარე ბიუჯეტით."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-partnership",
+    "line": 9572,
+    "notes": false,
+    "parent": "p",
+    "text": "Exceptional terms for the first 3 hospital partners."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-partnership",
+    "line": 9572,
+    "notes": false,
+    "parent": "p",
+    "text": "განსაკუთრებული პირობები პირველი 3 პარტნიორისთვის."
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-partnership",
+    "line": 9573,
+    "notes": false,
+    "parent": "span",
+    "text": "What does this price include?"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-partnership",
+    "line": 9573,
+    "notes": false,
+    "parent": "span",
+    "text": "რა შედის ამ ფასში?"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-partnership",
+    "line": 9576,
+    "notes": false,
+    "parent": "span",
+    "text": "FIRST 3 PARTNERS / EXCEPTIONAL TERMS"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-partnership",
+    "line": 9576,
+    "notes": false,
+    "parent": "span",
+    "text": "პირველი 3 პარტნიორი / განსაკუთრებული პირობები"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-partnership",
+    "line": 9577,
+    "notes": false,
+    "parent": "span",
+    "text": "places / available"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-partnership",
+    "line": 9577,
+    "notes": false,
+    "parent": "span",
+    "text": "ადგილი / დარჩა"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-partnership",
+    "line": 9579,
+    "notes": false,
+    "parent": "span",
+    "text": "Taken"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-partnership",
+    "line": 9579,
+    "notes": false,
+    "parent": "span",
+    "text": "დაკავებულია"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-partnership",
+    "line": 9580,
+    "notes": false,
+    "parent": "span",
+    "text": "Available"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-partnership",
+    "line": 9580,
+    "notes": false,
+    "parent": "span",
+    "text": "თავისუფალია"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-partnership",
+    "line": 9581,
+    "notes": false,
+    "parent": "span",
+    "text": "Available"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-partnership",
+    "line": 9581,
+    "notes": false,
+    "parent": "span",
+    "text": "თავისუფალია"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-partnership",
+    "line": 9587,
+    "notes": false,
+    "parent": "h3",
+    "text": "You ask. We build and implement."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-partnership",
+    "line": 9587,
+    "notes": false,
+    "parent": "h3",
+    "text": "თქვენ ითხოვთ. ჩვენ ვქმნით და ვნერგავთ."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-partnership",
+    "line": 9587,
+    "notes": false,
+    "parent": "p",
+    "text": "Every requested feature and change. No extra development fees, throughout our entire partnership."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-partnership",
+    "line": 9587,
+    "notes": false,
+    "parent": "p",
+    "text": "ყველა მოთხოვნილ ფუნქციასა და ცვლილებას — დამატებითი განვითარების საფასურის გარეშე, მთელი თანამშრომლობის განმავლობაში."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-partnership",
+    "line": 9590,
+    "notes": false,
+    "parent": "span",
+    "text": "Free implementation / and training"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-partnership",
+    "line": 9590,
+    "notes": false,
+    "parent": "span",
+    "text": "უფასო დანერგვა / და სწავლება"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-partnership",
+    "line": 9591,
+    "notes": false,
+    "parent": "span",
+    "text": "Evaluate first. / Then decide."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-partnership",
+    "line": 9591,
+    "notes": false,
+    "parent": "span",
+    "text": "ჯერ გამოცდით. / შემდეგ გადაწყვიტეთ."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-partnership",
+    "line": 9592,
+    "notes": false,
+    "parent": "span",
+    "text": "First-version code is yours, / under contract."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-partnership",
+    "line": 9592,
+    "notes": false,
+    "parent": "span",
+    "text": "პირველი ვერსიის კოდი თქვენია, / ხელშეკრულებით."
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "hospital-comparison",
+    "line": 9612,
+    "notes": false,
+    "parent": "h2",
+    "text": "A system built around your hospital."
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "hospital-comparison",
+    "line": 9612,
+    "notes": false,
+    "parent": "h2",
+    "text": "თქვენს კლინიკაზე მორგებული სისტემა."
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-comparison",
+    "line": 9618,
+    "notes": false,
+    "parent": "th",
+    "text": "Separate systemsAn example of a fragmented setup"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-comparison",
+    "line": 9618,
+    "notes": false,
+    "parent": "th",
+    "text": "ცალკეული სისტემებითფრაგმენტირებული მიდგომის მაგალითი"
+  },
+  {
+    "depth": 14,
+    "lang": "en",
+    "slide": "hospital-comparison",
+    "line": 9619,
+    "notes": false,
+    "parent": "span",
+    "text": "HOSPITAL OPERATING SYSTEM"
+  },
+  {
+    "depth": 14,
+    "lang": "ka",
+    "slide": "hospital-comparison",
+    "line": 9619,
+    "notes": false,
+    "parent": "span",
+    "text": "კლინიკის ოპერაციული სისტემა"
+  },
+  {
+    "depth": 15,
+    "lang": "en",
+    "slide": "hospital-comparison",
+    "line": 9619,
+    "notes": false,
+    "parent": "small",
+    "text": "Select a benefit to explore ↗"
+  },
+  {
+    "depth": 15,
+    "lang": "ka",
+    "slide": "hospital-comparison",
+    "line": 9619,
+    "notes": false,
+    "parent": "small",
+    "text": "აირჩიეთ სარგებელი ↗"
+  },
+  {
+    "depth": 13,
+    "lang": "en",
+    "slide": "hospital-comparison",
+    "line": 9624,
+    "notes": false,
+    "parent": "span",
+    "text": "SEPARATE SYSTEMS"
+  },
+  {
+    "depth": 13,
+    "lang": "ka",
+    "slide": "hospital-comparison",
+    "line": 9624,
+    "notes": false,
+    "parent": "span",
+    "text": "ცალკეული სისტემებით"
+  },
+  {
+    "depth": 13,
+    "lang": "en",
+    "slide": "hospital-comparison",
+    "line": 9624,
+    "notes": false,
+    "parent": "strong",
+    "text": "Dependence on one supplier."
+  },
+  {
+    "depth": 13,
+    "lang": "ka",
+    "slide": "hospital-comparison",
+    "line": 9624,
+    "notes": false,
+    "parent": "strong",
+    "text": "ერთ მომწოდებელზე ხართ დამოკიდებული."
+  },
+  {
+    "depth": 16,
+    "lang": "en",
+    "slide": "hospital-comparison",
+    "line": 9625,
+    "notes": false,
+    "parent": "strong",
+    "text": "Your first version’s code is yours, under contract."
+  },
+  {
+    "depth": 16,
+    "lang": "ka",
+    "slide": "hospital-comparison",
+    "line": 9625,
+    "notes": false,
+    "parent": "strong",
+    "text": "პირველი ვერსიის კოდი თქვენია, ხელშეკრულებით."
+  },
+  {
+    "depth": 13,
+    "lang": "en",
+    "slide": "hospital-comparison",
+    "line": 9628,
+    "notes": false,
+    "parent": "span",
+    "text": "SEPARATE SYSTEMS"
+  },
+  {
+    "depth": 13,
+    "lang": "ka",
+    "slide": "hospital-comparison",
+    "line": 9628,
+    "notes": false,
+    "parent": "span",
+    "text": "ცალკეული სისტემებით"
+  },
+  {
+    "depth": 13,
+    "lang": "en",
+    "slide": "hospital-comparison",
+    "line": 9628,
+    "notes": false,
+    "parent": "strong",
+    "text": "Every change costs extra."
+  },
+  {
+    "depth": 13,
+    "lang": "ka",
+    "slide": "hospital-comparison",
+    "line": 9628,
+    "notes": false,
+    "parent": "strong",
+    "text": "ყოველი ცვლილება დამატებითი ხარჯია."
+  },
+  {
+    "depth": 16,
+    "lang": "en",
+    "slide": "hospital-comparison",
+    "line": 9629,
+    "notes": false,
+    "parent": "strong",
+    "text": "Unlimited development. No extra development fees."
+  },
+  {
+    "depth": 16,
+    "lang": "ka",
+    "slide": "hospital-comparison",
+    "line": 9629,
+    "notes": false,
+    "parent": "strong",
+    "text": "შეუზღუდავი განვითარება. / დამატებითი საფასურის გარეშე."
+  },
+  {
+    "depth": 13,
+    "lang": "en",
+    "slide": "hospital-comparison",
+    "line": 9632,
+    "notes": false,
+    "parent": "span",
+    "text": "SEPARATE SYSTEMS"
+  },
+  {
+    "depth": 13,
+    "lang": "ka",
+    "slide": "hospital-comparison",
+    "line": 9632,
+    "notes": false,
+    "parent": "span",
+    "text": "ცალკეული სისტემებით"
+  },
+  {
+    "depth": 13,
+    "lang": "en",
+    "slide": "hospital-comparison",
+    "line": 9632,
+    "notes": false,
+    "parent": "strong",
+    "text": "No complete financial picture."
+  },
+  {
+    "depth": 13,
+    "lang": "ka",
+    "slide": "hospital-comparison",
+    "line": 9632,
+    "notes": false,
+    "parent": "strong",
+    "text": "სრული ფინანსური სურათი არ ჩანს."
+  },
+  {
+    "depth": 16,
+    "lang": "en",
+    "slide": "hospital-comparison",
+    "line": 9633,
+    "notes": false,
+    "parent": "strong",
+    "text": "Revenue and costs together, by department."
+  },
+  {
+    "depth": 16,
+    "lang": "ka",
+    "slide": "hospital-comparison",
+    "line": 9633,
+    "notes": false,
+    "parent": "strong",
+    "text": "შემოსავალი და ხარჯი განყოფილებების მიხედვით."
+  },
+  {
+    "depth": 13,
+    "lang": "en",
+    "slide": "hospital-comparison",
+    "line": 9636,
+    "notes": false,
+    "parent": "span",
+    "text": "SEPARATE SYSTEMS"
+  },
+  {
+    "depth": 13,
+    "lang": "ka",
+    "slide": "hospital-comparison",
+    "line": 9636,
+    "notes": false,
+    "parent": "span",
+    "text": "ცალკეული სისტემებით"
+  },
+  {
+    "depth": 13,
+    "lang": "en",
+    "slide": "hospital-comparison",
+    "line": 9636,
+    "notes": false,
+    "parent": "strong",
+    "text": "Staff work around software limits."
+  },
+  {
+    "depth": 13,
+    "lang": "ka",
+    "slide": "hospital-comparison",
+    "line": 9636,
+    "notes": false,
+    "parent": "strong",
+    "text": "გუნდი პროგრამის შეზღუდვებს ერგება."
+  },
+  {
+    "depth": 16,
+    "lang": "en",
+    "slide": "hospital-comparison",
+    "line": 9637,
+    "notes": false,
+    "parent": "strong",
+    "text": "Software shaped around your hospital’s needs."
+  },
+  {
+    "depth": 16,
+    "lang": "ka",
+    "slide": "hospital-comparison",
+    "line": 9637,
+    "notes": false,
+    "parent": "strong",
+    "text": "პროგრამა თქვენს საჭიროებებს ერგება."
+  },
+  {
+    "depth": 13,
+    "lang": "en",
+    "slide": "hospital-comparison",
+    "line": 9640,
+    "notes": false,
+    "parent": "span",
+    "text": "SEPARATE SYSTEMS"
+  },
+  {
+    "depth": 13,
+    "lang": "ka",
+    "slide": "hospital-comparison",
+    "line": 9640,
+    "notes": false,
+    "parent": "span",
+    "text": "ცალკეული სისტემებით"
+  },
+  {
+    "depth": 13,
+    "lang": "en",
+    "slide": "hospital-comparison",
+    "line": 9640,
+    "notes": false,
+    "parent": "strong",
+    "text": "Separate programs. Repeated data entry."
+  },
+  {
+    "depth": 13,
+    "lang": "ka",
+    "slide": "hospital-comparison",
+    "line": 9640,
+    "notes": false,
+    "parent": "strong",
+    "text": "პროგრამებს შორის განმეორებითი შეყვანა."
+  },
+  {
+    "depth": 16,
+    "lang": "en",
+    "slide": "hospital-comparison",
+    "line": 9641,
+    "notes": false,
+    "parent": "strong",
+    "text": "Your whole hospital in one operating system."
+  },
+  {
+    "depth": 16,
+    "lang": "ka",
+    "slide": "hospital-comparison",
+    "line": 9641,
+    "notes": false,
+    "parent": "strong",
+    "text": "მთელი კლინიკა ერთ სისტემაში."
+  },
+  {
+    "depth": 13,
+    "lang": "en",
+    "slide": "hospital-comparison",
+    "line": 9644,
+    "notes": false,
+    "parent": "span",
+    "text": "SEPARATE SYSTEMS"
+  },
+  {
+    "depth": 13,
+    "lang": "ka",
+    "slide": "hospital-comparison",
+    "line": 9644,
+    "notes": false,
+    "parent": "span",
+    "text": "ცალკეული სისტემებით"
+  },
+  {
+    "depth": 13,
+    "lang": "en",
+    "slide": "hospital-comparison",
+    "line": 9644,
+    "notes": false,
+    "parent": "strong",
+    "text": "Data in different formats."
+  },
+  {
+    "depth": 13,
+    "lang": "ka",
+    "slide": "hospital-comparison",
+    "line": 9644,
+    "notes": false,
+    "parent": "strong",
+    "text": "მონაცემები სხვადასხვა ფორმატშია."
+  },
+  {
+    "depth": 16,
+    "lang": "en",
+    "slide": "hospital-comparison",
+    "line": 9645,
+    "notes": false,
+    "parent": "strong",
+    "text": "Clinical data organised to FHIR R4 standards."
+  },
+  {
+    "depth": 16,
+    "lang": "ka",
+    "slide": "hospital-comparison",
+    "line": 9645,
+    "notes": false,
+    "parent": "strong",
+    "text": "მონაცემები საერთაშორისო სტანდარტით: FHIR R4."
+  },
+  {
+    "depth": 13,
+    "lang": "en",
+    "slide": "hospital-comparison",
+    "line": 9648,
+    "notes": false,
+    "parent": "span",
+    "text": "SEPARATE SYSTEMS"
+  },
+  {
+    "depth": 13,
+    "lang": "ka",
+    "slide": "hospital-comparison",
+    "line": 9648,
+    "notes": false,
+    "parent": "span",
+    "text": "ცალკეული სისტემებით"
+  },
+  {
+    "depth": 13,
+    "lang": "en",
+    "slide": "hospital-comparison",
+    "line": 9648,
+    "notes": false,
+    "parent": "strong",
+    "text": "Legacy, fragmented systems are not ready for AI."
+  },
+  {
+    "depth": 13,
+    "lang": "ka",
+    "slide": "hospital-comparison",
+    "line": 9648,
+    "notes": false,
+    "parent": "strong",
+    "text": "ძველი, დაყოფილი სისტემები AI-ისთვის მზად არ არის."
+  },
+  {
+    "depth": 16,
+    "lang": "en",
+    "slide": "hospital-comparison",
+    "line": 9649,
+    "notes": false,
+    "parent": "strong",
+    "text": "MediMind is built for AI from the ground up."
+  },
+  {
+    "depth": 16,
+    "lang": "ka",
+    "slide": "hospital-comparison",
+    "line": 9649,
+    "notes": false,
+    "parent": "strong",
+    "text": "MediMind თავიდანვე AI-ისთვისაა შექმნილი."
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "hospital-proof",
+    "line": 9722,
+    "notes": false,
+    "parent": "div",
+    "text": "PROOF · IN DAILY USE"
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "hospital-proof",
+    "line": 9722,
+    "notes": false,
+    "parent": "div",
+    "text": "მტკიცებულება · ყოველდღიურ მუშაობაში"
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "hospital-proof",
+    "line": 9723,
+    "notes": false,
+    "parent": "h2",
+    "text": "A network of 25 clinics / entrusted MediMind with building its unified system."
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "hospital-proof",
+    "line": 9723,
+    "notes": false,
+    "parent": "h2",
+    "text": "25 კლინიკის ქსელმა / ერთიანი სისტემის შექმნა MediMind-ს მიანდო."
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "hospital-proof",
+    "line": 9724,
+    "notes": false,
+    "parent": "p",
+    "text": "GeoHospitals is our anchor hospital partner."
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "hospital-proof",
+    "line": 9724,
+    "notes": false,
+    "parent": "p",
+    "text": "GeoHospitals ჩვენი მთავარი კლინიკური პარტნიორია."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-proof",
+    "line": 9728,
+    "notes": false,
+    "parent": "blockquote",
+    "text": "MediMind is doing what has never been done before. Building and deploying a system of this scale and quality this quickly was previously impossible."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-proof",
+    "line": 9728,
+    "notes": false,
+    "parent": "blockquote",
+    "text": "MediMind-ი აკეთებს იმას, რაც არასდროს გაკეთებულა. ამ მასშტაბისა და ხარისხის სისტემის ასე სწრაფად აშენება და დანერგვა აქამდე შეუძლებელი იყო."
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-proof",
+    "line": 9729,
+    "notes": false,
+    "parent": "strong",
+    "text": "Irakli Giorgadze"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-proof",
+    "line": 9729,
+    "notes": false,
+    "parent": "strong",
+    "text": "ირაკლი გიორგაძე"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-proof",
+    "line": 9732,
+    "notes": false,
+    "parent": "span",
+    "text": "GEORGIA"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-proof",
+    "line": 9732,
+    "notes": false,
+    "parent": "span",
+    "text": "საქართველო"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-proof",
+    "line": 9750,
+    "notes": false,
+    "parent": "text",
+    "text": "Tbilisi"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-proof",
+    "line": 9750,
+    "notes": false,
+    "parent": "text",
+    "text": "თბილისი"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-proof",
+    "line": 9751,
+    "notes": false,
+    "parent": "text",
+    "text": "Kutaisi"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-proof",
+    "line": 9751,
+    "notes": false,
+    "parent": "text",
+    "text": "ქუთაისი"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-proof",
+    "line": 9752,
+    "notes": false,
+    "parent": "text",
+    "text": "Batumi"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-proof",
+    "line": 9752,
+    "notes": false,
+    "parent": "text",
+    "text": "ბათუმი"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-proof",
+    "line": 9755,
+    "notes": false,
+    "parent": "span",
+    "text": "Our hospital partner."
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-proof",
+    "line": 9755,
+    "notes": false,
+    "parent": "span",
+    "text": "ჩვენი კლინიკური პარტნიორი."
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-proof",
+    "line": 9760,
+    "notes": false,
+    "parent": "p",
+    "text": "Speak with the GeoHospitals team about their experience."
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-proof",
+    "line": 9760,
+    "notes": false,
+    "parent": "p",
+    "text": "გაესაუბრეთ GeoHospitals-ის გუნდს მათი გამოცდილების შესახებ."
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "hospital-founders",
+    "line": 9838,
+    "notes": false,
+    "parent": "div",
+    "text": "THE FOUNDERS"
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "hospital-founders",
+    "line": 9838,
+    "notes": false,
+    "parent": "div",
+    "text": "დამფუძნებლები"
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "hospital-founders",
+    "line": 9839,
+    "notes": false,
+    "parent": "h2",
+    "text": "Clinical experience. International product expertise."
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "hospital-founders",
+    "line": 9839,
+    "notes": false,
+    "parent": "h2",
+    "text": "კლინიკური გამოცდილება. საერთაშორისო ტექნოლოგიური ცოდნა."
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-founders",
+    "line": 9844,
+    "notes": false,
+    "parent": "div",
+    "text": "Clinical experience"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-founders",
+    "line": 9844,
+    "notes": false,
+    "parent": "div",
+    "text": "კლინიკური გამოცდილება"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-founders",
+    "line": 9845,
+    "notes": false,
+    "parent": "div",
+    "text": "The foundation of MediMind"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-founders",
+    "line": 9845,
+    "notes": false,
+    "parent": "div",
+    "text": "MediMind-ის შექმნის საფუძველი"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-founders",
+    "line": 9854,
+    "notes": false,
+    "parent": "h3",
+    "text": "Irakli Pkhovelishvili"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-founders",
+    "line": 9854,
+    "notes": false,
+    "parent": "h3",
+    "text": "ირაკლი ფხოველიშვილი"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-founders",
+    "line": 9855,
+    "notes": false,
+    "parent": "span",
+    "text": "Co-founder · Product & strategy"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-founders",
+    "line": 9855,
+    "notes": false,
+    "parent": "span",
+    "text": "თანადამფუძნებელი · პროდუქტი და სტრატეგია"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-founders",
+    "line": 9856,
+    "notes": false,
+    "parent": "p",
+    "text": "9 years at Riot Games / Duke Fuqua MBA"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-founders",
+    "line": 9856,
+    "notes": false,
+    "parent": "p",
+    "text": "9 წელი Riot Games-ში / Duke Fuqua MBA"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-founders",
+    "line": 9859,
+    "notes": false,
+    "parent": "h3",
+    "text": "Lasha Khoshtaria (MD)"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-founders",
+    "line": 9859,
+    "notes": false,
+    "parent": "h3",
+    "text": "ლაშა ხოშტარია (MD)"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-founders",
+    "line": 9860,
+    "notes": false,
+    "parent": "span",
+    "text": "Co-founder · Practicing physician"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-founders",
+    "line": 9860,
+    "notes": false,
+    "parent": "span",
+    "text": "თანადამფუძნებელი · პრაქტიკოსი ექიმი"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-founders",
+    "line": 9861,
+    "notes": false,
+    "parent": "p",
+    "text": "Building MediMind from inside the hospital."
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-founders",
+    "line": 9861,
+    "notes": false,
+    "parent": "p",
+    "text": "MediMind-ს საავადმყოფოს შიგნიდან ქმნის."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-founders",
+    "line": 9867,
+    "notes": false,
+    "parent": "span",
+    "text": "Total funding raised"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-founders",
+    "line": 9867,
+    "notes": false,
+    "parent": "span",
+    "text": "ჯამურად მოზიდული დაფინანსება"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-founders",
+    "line": 9868,
+    "notes": false,
+    "parent": "span",
+    "text": "Support & acceleration"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-founders",
+    "line": 9868,
+    "notes": false,
+    "parent": "span",
+    "text": "მხარდაჭერა და აქსელერაცია"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-founders",
+    "line": 9869,
+    "notes": false,
+    "parent": "b",
+    "text": "Engineering team"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-founders",
+    "line": 9869,
+    "notes": false,
+    "parent": "b",
+    "text": "საინჟინრო გუნდი"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-founders",
+    "line": 9869,
+    "notes": false,
+    "parent": "span",
+    "text": "Build · implement · train · keep improving"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-founders",
+    "line": 9869,
+    "notes": false,
+    "parent": "span",
+    "text": "შექმნა · დანერგვა · სწავლება · უწყვეტი განვითარება"
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-founders",
+    "line": 9870,
+    "notes": false,
+    "parent": "p",
+    "text": "These resources support your hospital’s progress."
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-founders",
+    "line": 9870,
+    "notes": false,
+    "parent": "p",
+    "text": "ეს რესურსი თქვენი კლინიკის განვითარებას ემსახურება."
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "hospital-one-team",
+    "line": 9886,
+    "notes": false,
+    "parent": "div",
+    "text": "HOSPITAL SOFTWARE · US + GEORGIA"
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "hospital-one-team",
+    "line": 9886,
+    "notes": false,
+    "parent": "div",
+    "text": "კლინიკის პროგრამები · აშშ + საქართველო"
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "hospital-one-team",
+    "line": 9887,
+    "notes": false,
+    "parent": "h2",
+    "text": "All your hospital software. / One accountable team."
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "hospital-one-team",
+    "line": 9887,
+    "notes": false,
+    "parent": "h2",
+    "text": "კლინიკის ყველა პროგრამა. / ერთი პასუხისმგებელი გუნდი."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-one-team",
+    "line": 9890,
+    "notes": false,
+    "parent": "h3",
+    "text": "Different suppliers"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-one-team",
+    "line": 9890,
+    "notes": false,
+    "parent": "h3",
+    "text": "სხვადასხვა მომწოდებელი"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-one-team",
+    "line": 9891,
+    "notes": false,
+    "parent": "p",
+    "text": "Illustrative mix · one supplier may cover several areas."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-one-team",
+    "line": 9891,
+    "notes": false,
+    "parent": "p",
+    "text": "საილუსტრაციო მაგალითი · ერთმა მომწოდებელმა შეიძლება რამდენიმე სფერო დაფაროს."
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-one-team",
+    "line": 9892,
+    "notes": false,
+    "parent": "span",
+    "text": "Medical records"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-one-team",
+    "line": 9892,
+    "notes": false,
+    "parent": "span",
+    "text": "სამედიცინო ჩანაწერები"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-one-team",
+    "line": 9893,
+    "notes": false,
+    "parent": "span",
+    "text": "Laboratory"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-one-team",
+    "line": 9893,
+    "notes": false,
+    "parent": "span",
+    "text": "ლაბორატორია"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-one-team",
+    "line": 9894,
+    "notes": false,
+    "parent": "span",
+    "text": "Imaging"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-one-team",
+    "line": 9894,
+    "notes": false,
+    "parent": "span",
+    "text": "რადიოლოგია"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-one-team",
+    "line": 9895,
+    "notes": false,
+    "parent": "span",
+    "text": "Billing & finance"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-one-team",
+    "line": 9895,
+    "notes": false,
+    "parent": "span",
+    "text": "ფინანსები"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-one-team",
+    "line": 9896,
+    "notes": false,
+    "parent": "span",
+    "text": "HR & payroll"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-one-team",
+    "line": 9896,
+    "notes": false,
+    "parent": "span",
+    "text": "პერსონალი"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-one-team",
+    "line": 9897,
+    "notes": false,
+    "parent": "span",
+    "text": "Pharmacy & stock"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-one-team",
+    "line": 9897,
+    "notes": false,
+    "parent": "span",
+    "text": "აფთიაქი და მარაგები"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-one-team",
+    "line": 9898,
+    "notes": false,
+    "parent": "span",
+    "text": "Coordination stays with your team."
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-one-team",
+    "line": 9898,
+    "notes": false,
+    "parent": "span",
+    "text": "კოორდინაცია — თქვენს გუნდზეა."
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-one-team",
+    "line": 9901,
+    "notes": false,
+    "parent": "span",
+    "text": "One partner · whole system"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-one-team",
+    "line": 9901,
+    "notes": false,
+    "parent": "span",
+    "text": "ერთი პარტნიორი · მთელი სისტემა"
+  },
+  {
+    "depth": 13,
+    "lang": "en",
+    "slide": "hospital-one-team",
+    "line": 9918,
+    "notes": false,
+    "parent": "span",
+    "text": "Medical records"
+  },
+  {
+    "depth": 13,
+    "lang": "ka",
+    "slide": "hospital-one-team",
+    "line": 9918,
+    "notes": false,
+    "parent": "span",
+    "text": "სამედიცინო ჩანაწერები"
+  },
+  {
+    "depth": 13,
+    "lang": "en",
+    "slide": "hospital-one-team",
+    "line": 9919,
+    "notes": false,
+    "parent": "span",
+    "text": "Laboratory"
+  },
+  {
+    "depth": 13,
+    "lang": "ka",
+    "slide": "hospital-one-team",
+    "line": 9919,
+    "notes": false,
+    "parent": "span",
+    "text": "ლაბორატორია"
+  },
+  {
+    "depth": 13,
+    "lang": "en",
+    "slide": "hospital-one-team",
+    "line": 9920,
+    "notes": false,
+    "parent": "span",
+    "text": "Imaging"
+  },
+  {
+    "depth": 13,
+    "lang": "ka",
+    "slide": "hospital-one-team",
+    "line": 9920,
+    "notes": false,
+    "parent": "span",
+    "text": "რადიოლოგია"
+  },
+  {
+    "depth": 13,
+    "lang": "en",
+    "slide": "hospital-one-team",
+    "line": 9921,
+    "notes": false,
+    "parent": "span",
+    "text": "Billing & finance"
+  },
+  {
+    "depth": 13,
+    "lang": "ka",
+    "slide": "hospital-one-team",
+    "line": 9921,
+    "notes": false,
+    "parent": "span",
+    "text": "ფინანსები"
+  },
+  {
+    "depth": 13,
+    "lang": "en",
+    "slide": "hospital-one-team",
+    "line": 9922,
+    "notes": false,
+    "parent": "span",
+    "text": "HR & payroll"
+  },
+  {
+    "depth": 13,
+    "lang": "ka",
+    "slide": "hospital-one-team",
+    "line": 9922,
+    "notes": false,
+    "parent": "span",
+    "text": "პერსონალი"
+  },
+  {
+    "depth": 13,
+    "lang": "en",
+    "slide": "hospital-one-team",
+    "line": 9923,
+    "notes": false,
+    "parent": "span",
+    "text": "Pharmacy & stock"
+  },
+  {
+    "depth": 13,
+    "lang": "ka",
+    "slide": "hospital-one-team",
+    "line": 9923,
+    "notes": false,
+    "parent": "span",
+    "text": "აფთიაქი და მარაგები"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-one-team",
+    "line": 9948,
+    "notes": false,
+    "parent": "b",
+    "text": "One system. Tailored to you."
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-one-team",
+    "line": 9948,
+    "notes": false,
+    "parent": "b",
+    "text": "ერთი სისტემა. თქვენზე მორგებული."
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-one-team",
+    "line": 9948,
+    "notes": false,
+    "parent": "small",
+    "text": "Shared data · One codebase"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-one-team",
+    "line": 9948,
+    "notes": false,
+    "parent": "small",
+    "text": "საერთო მონაცემები · ერთიანი კოდი"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-one-team",
+    "line": 9953,
+    "notes": false,
+    "parent": "small",
+    "text": "TRY A REALISTIC EXAMPLE"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-one-team",
+    "line": 9953,
+    "notes": false,
+    "parent": "small",
+    "text": "ნახეთ კონკრეტულ მაგალითზე"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-one-team",
+    "line": 9953,
+    "notes": false,
+    "parent": "b",
+    "text": "The lab result is missing from the patient record."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-one-team",
+    "line": 9953,
+    "notes": false,
+    "parent": "b",
+    "text": "კვლევის შედეგი პაციენტის ჩანაწერში არ ჩანს."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-one-team",
+    "line": 9954,
+    "notes": false,
+    "parent": "span",
+    "text": "Who follows it through?"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-one-team",
+    "line": 9954,
+    "notes": false,
+    "parent": "span",
+    "text": "ვინ მიჰყვება საკითხს?"
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "hospital-one-team",
+    "line": 9956,
+    "notes": false,
+    "parent": "p",
+    "text": "One request. One accountable team."
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "hospital-one-team",
+    "line": 9956,
+    "notes": false,
+    "parent": "p",
+    "text": "ერთი მიმართვა. ერთი პასუხისმგებელი გუნდი."
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "hospital-ai-assistants",
+    "line": 9969,
+    "notes": false,
+    "parent": "div",
+    "text": "WHAT CHANGES FOR YOUR HOSPITAL"
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "hospital-ai-assistants",
+    "line": 9969,
+    "notes": false,
+    "parent": "div",
+    "text": "რა იცვლება თქვენი კლინიკისთვის"
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "hospital-ai-assistants",
+    "line": 9970,
+    "notes": false,
+    "parent": "div",
+    "text": "One system · Optional AI"
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "hospital-ai-assistants",
+    "line": 9970,
+    "notes": false,
+    "parent": "div",
+    "text": "ერთიანი სისტემა · არჩევითი AI"
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "hospital-ai-assistants",
+    "line": 9971,
+    "notes": false,
+    "parent": "h2",
+    "text": "More revenue. Costs under control. / More time for patients."
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "hospital-ai-assistants",
+    "line": 9971,
+    "notes": false,
+    "parent": "h2",
+    "text": "მეტი შემოსავალი. ხარჯების კონტროლი. / მეტი დრო პაციენტისთვის."
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-ai-assistants",
+    "line": 9980,
+    "notes": false,
+    "parent": "span",
+    "text": "Less revenue / left behind."
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-ai-assistants",
+    "line": 9980,
+    "notes": false,
+    "parent": "span",
+    "text": "ნაკლები დაკარგული / შემოსავალი."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-ai-assistants",
+    "line": 9981,
+    "notes": false,
+    "parent": "p",
+    "text": "See unrecorded services and the reasons reimbursements are held up."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-ai-assistants",
+    "line": 9981,
+    "notes": false,
+    "parent": "p",
+    "text": "ხედავთ აღურიცხავ მომსახურებას და ანაზღაურების შეფერხების მიზეზებს."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-ai-assistants",
+    "line": 9982,
+    "notes": false,
+    "parent": "div",
+    "text": "Finance · Government programmes · Insurers"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-ai-assistants",
+    "line": 9982,
+    "notes": false,
+    "parent": "div",
+    "text": "ფინანსები · სახელმწიფო პროგრამები · დაზღვევა"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-ai-assistants",
+    "line": 9985,
+    "notes": false,
+    "parent": "span",
+    "text": "Costs / under control."
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-ai-assistants",
+    "line": 9985,
+    "notes": false,
+    "parent": "span",
+    "text": "ხარჯები / კონტროლქვეშ."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-ai-assistants",
+    "line": 9986,
+    "notes": false,
+    "parent": "p",
+    "text": "See where costs rise. Plan capacity, shifts and stock more effectively."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-ai-assistants",
+    "line": 9986,
+    "notes": false,
+    "parent": "p",
+    "text": "ხედავთ, სად იზრდება ხარჯი. უკეთ გეგმავთ დატვირთვას, ცვლებსა და მარაგებს."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-ai-assistants",
+    "line": 9987,
+    "notes": false,
+    "parent": "div",
+    "text": "Management · Coordination · Purchasing"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-ai-assistants",
+    "line": 9987,
+    "notes": false,
+    "parent": "div",
+    "text": "მართვა · კოორდინაცია · შესყიდვები"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-ai-assistants",
+    "line": 9990,
+    "notes": false,
+    "parent": "span",
+    "text": "More time / for patients."
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-ai-assistants",
+    "line": 9990,
+    "notes": false,
+    "parent": "span",
+    "text": "მეტი დრო / პაციენტისთვის."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-ai-assistants",
+    "line": 9991,
+    "notes": false,
+    "parent": "p",
+    "text": "Doctors, nurses and administrative staff spend less time repeating the same work."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-ai-assistants",
+    "line": 9991,
+    "notes": false,
+    "parent": "p",
+    "text": "ექიმები, ექთნები და ადმინისტრაცია ნაკლებ დროს ხარჯავენ განმეორებით სამუშაოზე."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-ai-assistants",
+    "line": 9992,
+    "notes": false,
+    "parent": "div",
+    "text": "OR · Wards · Patient portal"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-ai-assistants",
+    "line": 9992,
+    "notes": false,
+    "parent": "div",
+    "text": "საოპერაციო · პალატები · პაციენტის პორტალი"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-ai-assistants",
+    "line": 9995,
+    "notes": false,
+    "parent": "span",
+    "text": "Respond to risks / in time."
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-ai-assistants",
+    "line": 9995,
+    "notes": false,
+    "parent": "span",
+    "text": "რისკებზე / დროული რეაგირება."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-ai-assistants",
+    "line": 9996,
+    "notes": false,
+    "parent": "p",
+    "text": "Important changes come to the team's attention. Clinical decisions stay with doctors."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-ai-assistants",
+    "line": 9996,
+    "notes": false,
+    "parent": "p",
+    "text": "საყურადღებო ცვლილებები დროულად ჩანს. გადაწყვეტილებას ექიმი იღებს."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-ai-assistants",
+    "line": 9997,
+    "notes": false,
+    "parent": "div",
+    "text": "ER · ICU · Diagnostics · Pharmacy"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-ai-assistants",
+    "line": 9997,
+    "notes": false,
+    "parent": "div",
+    "text": "მიმღები · რეანიმაცია · დიაგნოსტიკა · აფთიაქი"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-ai-assistants",
+    "line": 10000,
+    "notes": false,
+    "parent": "span",
+    "text": "Every department. One system."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-ai-assistants",
+    "line": 10000,
+    "notes": false,
+    "parent": "span",
+    "text": "ყველა განყოფილება ერთ სისტემაში."
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-ai-assistants",
+    "line": 10004,
+    "notes": false,
+    "parent": "strong",
+    "text": "Your hospital"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-ai-assistants",
+    "line": 10004,
+    "notes": false,
+    "parent": "strong",
+    "text": "თქვენი კლინიკა"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-ai-assistants",
+    "line": 10005,
+    "notes": false,
+    "parent": "span",
+    "text": "One view for management."
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-ai-assistants",
+    "line": 10005,
+    "notes": false,
+    "parent": "span",
+    "text": "ხელმძღვანელობისთვის ერთიანი სურათი."
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-ai-assistants",
+    "line": 10006,
+    "notes": false,
+    "parent": "span",
+    "text": "Select a benefit to explore the workflow."
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-ai-assistants",
+    "line": 10006,
+    "notes": false,
+    "parent": "span",
+    "text": "აირჩიეთ შედეგი და ნახეთ პროცესი."
+  },
+  {
+    "depth": 13,
+    "lang": "en",
+    "slide": "hospital-ai-assistants",
+    "line": 10009,
+    "notes": false,
+    "parent": "span",
+    "text": "Illustrative workflow"
+  },
+  {
+    "depth": 13,
+    "lang": "ka",
+    "slide": "hospital-ai-assistants",
+    "line": 10009,
+    "notes": false,
+    "parent": "span",
+    "text": "პროცესის მაგალითი"
+  },
+  {
+    "depth": 13,
+    "lang": "en",
+    "slide": "hospital-ai-assistants",
+    "line": 10009,
+    "notes": false,
+    "parent": "button",
+    "text": "Overview"
+  },
+  {
+    "depth": 13,
+    "lang": "ka",
+    "slide": "hospital-ai-assistants",
+    "line": 10009,
+    "notes": false,
+    "parent": "button",
+    "text": "სრული სურათი"
+  },
+  {
+    "depth": 16,
+    "lang": "en",
+    "slide": "hospital-ai-assistants",
+    "line": 10013,
+    "notes": false,
+    "parent": "span",
+    "text": "Service delivered"
+  },
+  {
+    "depth": 16,
+    "lang": "ka",
+    "slide": "hospital-ai-assistants",
+    "line": 10013,
+    "notes": false,
+    "parent": "span",
+    "text": "გაწეული მომსახურება"
+  },
+  {
+    "depth": 16,
+    "lang": "en",
+    "slide": "hospital-ai-assistants",
+    "line": 10014,
+    "notes": false,
+    "parent": "span",
+    "text": "Service recorded"
+  },
+  {
+    "depth": 16,
+    "lang": "ka",
+    "slide": "hospital-ai-assistants",
+    "line": 10014,
+    "notes": false,
+    "parent": "span",
+    "text": "მომსახურების აღრიცხვა"
+  },
+  {
+    "depth": 16,
+    "lang": "en",
+    "slide": "hospital-ai-assistants",
+    "line": 10015,
+    "notes": false,
+    "parent": "span",
+    "text": "Reimbursement tracked"
+  },
+  {
+    "depth": 16,
+    "lang": "ka",
+    "slide": "hospital-ai-assistants",
+    "line": 10015,
+    "notes": false,
+    "parent": "span",
+    "text": "ანაზღაურების კონტროლი"
+  },
+  {
+    "depth": 16,
+    "lang": "en",
+    "slide": "hospital-ai-assistants",
+    "line": 10020,
+    "notes": false,
+    "parent": "span",
+    "text": "See costs and workload"
+  },
+  {
+    "depth": 16,
+    "lang": "ka",
+    "slide": "hospital-ai-assistants",
+    "line": 10020,
+    "notes": false,
+    "parent": "span",
+    "text": "ხარჯები და დატვირთვა"
+  },
+  {
+    "depth": 16,
+    "lang": "en",
+    "slide": "hospital-ai-assistants",
+    "line": 10021,
+    "notes": false,
+    "parent": "span",
+    "text": "Plan shifts and stock"
+  },
+  {
+    "depth": 16,
+    "lang": "ka",
+    "slide": "hospital-ai-assistants",
+    "line": 10021,
+    "notes": false,
+    "parent": "span",
+    "text": "ცვლებისა და მარაგების დაგეგმვა"
+  },
+  {
+    "depth": 16,
+    "lang": "en",
+    "slide": "hospital-ai-assistants",
+    "line": 10022,
+    "notes": false,
+    "parent": "span",
+    "text": "Review resource use"
+  },
+  {
+    "depth": 16,
+    "lang": "ka",
+    "slide": "hospital-ai-assistants",
+    "line": 10022,
+    "notes": false,
+    "parent": "span",
+    "text": "რესურსების გამოყენების შეფასება"
+  },
+  {
+    "depth": 16,
+    "lang": "en",
+    "slide": "hospital-ai-assistants",
+    "line": 10027,
+    "notes": false,
+    "parent": "span",
+    "text": "Record information once"
+  },
+  {
+    "depth": 16,
+    "lang": "ka",
+    "slide": "hospital-ai-assistants",
+    "line": 10027,
+    "notes": false,
+    "parent": "span",
+    "text": "მონაცემების ერთხელ შეყვანა"
+  },
+  {
+    "depth": 16,
+    "lang": "en",
+    "slide": "hospital-ai-assistants",
+    "line": 10028,
+    "notes": false,
+    "parent": "span",
+    "text": "Share it with the team"
+  },
+  {
+    "depth": 16,
+    "lang": "ka",
+    "slide": "hospital-ai-assistants",
+    "line": 10028,
+    "notes": false,
+    "parent": "span",
+    "text": "გუნდისთვის გაზიარება"
+  },
+  {
+    "depth": 16,
+    "lang": "en",
+    "slide": "hospital-ai-assistants",
+    "line": 10029,
+    "notes": false,
+    "parent": "span",
+    "text": "More time for care"
+  },
+  {
+    "depth": 16,
+    "lang": "ka",
+    "slide": "hospital-ai-assistants",
+    "line": 10029,
+    "notes": false,
+    "parent": "span",
+    "text": "მეტი დრო პაციენტისთვის"
+  },
+  {
+    "depth": 16,
+    "lang": "en",
+    "slide": "hospital-ai-assistants",
+    "line": 10034,
+    "notes": false,
+    "parent": "span",
+    "text": "Patient information together"
+  },
+  {
+    "depth": 16,
+    "lang": "ka",
+    "slide": "hospital-ai-assistants",
+    "line": 10034,
+    "notes": false,
+    "parent": "span",
+    "text": "პაციენტის მონაცემები ერთად"
+  },
+  {
+    "depth": 16,
+    "lang": "en",
+    "slide": "hospital-ai-assistants",
+    "line": 10035,
+    "notes": false,
+    "parent": "span",
+    "text": "Important changes highlighted"
+  },
+  {
+    "depth": 16,
+    "lang": "ka",
+    "slide": "hospital-ai-assistants",
+    "line": 10035,
+    "notes": false,
+    "parent": "span",
+    "text": "საყურადღებო ცვლილებები"
+  },
+  {
+    "depth": 16,
+    "lang": "en",
+    "slide": "hospital-ai-assistants",
+    "line": 10036,
+    "notes": false,
+    "parent": "span",
+    "text": "Doctor reviews and decides"
+  },
+  {
+    "depth": 16,
+    "lang": "ka",
+    "slide": "hospital-ai-assistants",
+    "line": 10036,
+    "notes": false,
+    "parent": "span",
+    "text": "ექიმის შეფასება და გადაწყვეტილება"
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-ai-assistants",
+    "line": 10045,
+    "notes": false,
+    "parent": "p",
+    "text": "AI assistance is optional. Availability, scope and pricing are agreed separately."
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-ai-assistants",
+    "line": 10045,
+    "notes": false,
+    "parent": "p",
+    "text": "AI თანაშემწეები არჩევითია. ხელმისაწვდომობა, მოცულობა და ფასი ცალკე თანხმდება."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-ai-assistants",
+    "line": 10047,
+    "notes": false,
+    "parent": "button",
+    "text": "Capabilities & availability"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-ai-assistants",
+    "line": 10047,
+    "notes": false,
+    "parent": "button",
+    "text": "შესაძლებლობები და ხელმისაწვდომობა"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-ai-assistants",
+    "line": 10048,
+    "notes": false,
+    "parent": "button",
+    "text": "Research"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-ai-assistants",
+    "line": 10048,
+    "notes": false,
+    "parent": "button",
+    "text": "კვლევები"
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10063,
+    "notes": false,
+    "parent": "div",
+    "text": "PARALLEL IMPLEMENTATION"
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10063,
+    "notes": false,
+    "parent": "div",
+    "text": "პარალელური დანერგვა"
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10064,
+    "notes": false,
+    "parent": "h2",
+    "text": "Rollout without / interrupting your work."
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10064,
+    "notes": false,
+    "parent": "h2",
+    "text": "დანერგვა — / მუშაობის შეწყვეტის გარეშე."
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10065,
+    "notes": false,
+    "parent": "p",
+    "text": "Your current system stays in place. We prepare MediMind alongside it."
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10065,
+    "notes": false,
+    "parent": "p",
+    "text": "მოქმედი სისტემა უცვლელია. MediMind-ს პარალელურად ვამზადებთ."
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10067,
+    "notes": false,
+    "parent": "span",
+    "text": "We prepare"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10067,
+    "notes": false,
+    "parent": "span",
+    "text": "ჩვენ ვამზადებთ"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10068,
+    "notes": false,
+    "parent": "span",
+    "text": "You evaluate"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10068,
+    "notes": false,
+    "parent": "span",
+    "text": "თქვენ ამოწმებთ"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10069,
+    "notes": false,
+    "parent": "span",
+    "text": "You decide"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10069,
+    "notes": false,
+    "parent": "span",
+    "text": "თქვენ წყვეტთ"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10071,
+    "notes": false,
+    "parent": "span",
+    "text": "Current system"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10071,
+    "notes": false,
+    "parent": "span",
+    "text": "მოქმედი სისტემა"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10072,
+    "notes": false,
+    "parent": "span",
+    "text": "Working as usual"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10072,
+    "notes": false,
+    "parent": "span",
+    "text": "ჩვეულებრივ მუშაობს"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10074,
+    "notes": false,
+    "parent": "span",
+    "text": "Prepared and tested in parallel"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10074,
+    "notes": false,
+    "parent": "span",
+    "text": "მზადდება და მოწმდება პარალელურად"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10075,
+    "notes": false,
+    "parent": "small",
+    "text": "Transition"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10075,
+    "notes": false,
+    "parent": "small",
+    "text": "გადასვლა"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10075,
+    "notes": false,
+    "parent": "b",
+    "text": "Only with your approval"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10075,
+    "notes": false,
+    "parent": "b",
+    "text": "მხოლოდ თქვენი თანხმობით"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10077,
+    "notes": false,
+    "parent": "span",
+    "text": "Our team"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10077,
+    "notes": false,
+    "parent": "span",
+    "text": "ჩვენი გუნდი"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10077,
+    "notes": false,
+    "parent": "p",
+    "text": "We configure MediMind, tailor it to your workflows and train your team."
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10077,
+    "notes": false,
+    "parent": "p",
+    "text": "სისტემას ვაწყობთ, თქვენს პროცესებზე ვარგებთ და გუნდს ვასწავლით."
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10077,
+    "notes": false,
+    "parent": "span",
+    "text": "Your hospital"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10077,
+    "notes": false,
+    "parent": "span",
+    "text": "თქვენი კლინიკა"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10077,
+    "notes": false,
+    "parent": "p",
+    "text": "You keep using your current software and workflows as usual."
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10077,
+    "notes": false,
+    "parent": "p",
+    "text": "მოქმედი პროგრამითა და პროცესებით ჩვეულებრივ მუშაობთ."
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10078,
+    "notes": false,
+    "parent": "span",
+    "text": "Our team"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10078,
+    "notes": false,
+    "parent": "span",
+    "text": "ჩვენი გუნდი"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10078,
+    "notes": false,
+    "parent": "p",
+    "text": "We check the required workflows with your team and address the gaps you find."
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10078,
+    "notes": false,
+    "parent": "p",
+    "text": "თქვენს გუნდთან ერთად ვამოწმებთ საჭირო პროცესებს და ვასწორებთ გამოვლენილ ხარვეზებს."
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10078,
+    "notes": false,
+    "parent": "span",
+    "text": "Your hospital"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10078,
+    "notes": false,
+    "parent": "span",
+    "text": "თქვენი კლინიკა"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10078,
+    "notes": false,
+    "parent": "p",
+    "text": "You test every workflow you need and compare it with your current system."
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10078,
+    "notes": false,
+    "parent": "p",
+    "text": "თავად ცდით ყველა საჭირო სამუშაო პროცესს და ადარებთ მოქმედ სისტემას."
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10079,
+    "notes": false,
+    "parent": "span",
+    "text": "Our team"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10079,
+    "notes": false,
+    "parent": "span",
+    "text": "ჩვენი გუნდი"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10079,
+    "notes": false,
+    "parent": "p",
+    "text": "We agree the scope and transition plan with your hospital."
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10079,
+    "notes": false,
+    "parent": "p",
+    "text": "გადასვლის მოცულობასა და გეგმას თქვენთან ერთად ვათანხმებთ."
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10079,
+    "notes": false,
+    "parent": "span",
+    "text": "Your hospital"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10079,
+    "notes": false,
+    "parent": "span",
+    "text": "თქვენი კლინიკა"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10079,
+    "notes": false,
+    "parent": "p",
+    "text": "You commit only after you are convinced MediMind is clearly better for your hospital."
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10079,
+    "notes": false,
+    "parent": "p",
+    "text": "პარტნიორობაზე მხოლოდ მაშინ თანხმდებით, როცა დარწმუნდებით, რომ MediMind თქვენი კლინიკისთვის აშკარად უკეთესია."
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10082,
+    "notes": false,
+    "parent": "strong",
+    "text": "Setup, tailoring, training and evaluation — free."
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10082,
+    "notes": false,
+    "parent": "strong",
+    "text": "გამართვა, მორგება, სწავლება და შეფასება — უფასოდ."
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10082,
+    "notes": false,
+    "parent": "span",
+    "text": "No obligation to buy."
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10082,
+    "notes": false,
+    "parent": "span",
+    "text": "შეძენის ვალდებულების გარეშე."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10083,
+    "notes": false,
+    "parent": "span",
+    "text": "Your rights & terms"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-parallel-evaluation",
+    "line": 10083,
+    "notes": false,
+    "parent": "span",
+    "text": "თქვენი უფლებები და პირობები"
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10093,
+    "notes": false,
+    "parent": "div",
+    "text": "YOUR HOSPITAL · THREE STAGES"
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10093,
+    "notes": false,
+    "parent": "div",
+    "text": "თქვენი კლინიკა · განვითარების 3 ეტაპი"
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10094,
+    "notes": false,
+    "parent": "h2",
+    "text": "A complete system today. AI, step by step."
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10094,
+    "notes": false,
+    "parent": "h2",
+    "text": "სრული სისტემა დღეს. AI — ეტაპობრივად."
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "span",
+    "text": "Today’s offer"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "span",
+    "text": "დღევანდელი შეთავაზება"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "span",
+    "text": "Complete system"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "span",
+    "text": "ერთიანი სისტემა"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "span",
+    "text": "Care and operations, tailored to your workflows."
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "span",
+    "text": "მკურნალობა და მართვა, თქვენს პროცესებზე მორგებული."
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "span",
+    "text": "Explore details"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "span",
+    "text": "ნახეთ დეტალები"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "span",
+    "text": "Optional · step by step"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "span",
+    "text": "არჩევითი · ეტაპობრივი"
+  },
+  {
+    "depth": 15,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "strong",
+    "text": "Clinical"
+  },
+  {
+    "depth": 15,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "strong",
+    "text": "კლინიკა"
+  },
+  {
+    "depth": 15,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "small",
+    "text": "Assessment"
+  },
+  {
+    "depth": 15,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "small",
+    "text": "შეფასება"
+  },
+  {
+    "depth": 15,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "strong",
+    "text": "Finance"
+  },
+  {
+    "depth": 15,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "strong",
+    "text": "ფინანსები"
+  },
+  {
+    "depth": 15,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "small",
+    "text": "Coding"
+  },
+  {
+    "depth": 15,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "small",
+    "text": "კოდირება"
+  },
+  {
+    "depth": 15,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "strong",
+    "text": "Staffing"
+  },
+  {
+    "depth": 15,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "strong",
+    "text": "პერსონალი"
+  },
+  {
+    "depth": 15,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "small",
+    "text": "Schedules"
+  },
+  {
+    "depth": 15,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "small",
+    "text": "გრაფიკები"
+  },
+  {
+    "depth": 15,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "strong",
+    "text": "Stock"
+  },
+  {
+    "depth": 15,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "strong",
+    "text": "მარაგები"
+  },
+  {
+    "depth": 15,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "small",
+    "text": "Forecasts"
+  },
+  {
+    "depth": 15,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "small",
+    "text": "პროგნოზი"
+  },
+  {
+    "depth": 15,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "strong",
+    "text": "Management"
+  },
+  {
+    "depth": 15,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "strong",
+    "text": "მართვა"
+  },
+  {
+    "depth": 15,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "small",
+    "text": "Analysis"
+  },
+  {
+    "depth": 15,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "small",
+    "text": "ანალიზი"
+  },
+  {
+    "depth": 15,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "strong",
+    "text": "Patients"
+  },
+  {
+    "depth": 15,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "strong",
+    "text": "პაციენტი"
+  },
+  {
+    "depth": 15,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "small",
+    "text": "Communication"
+  },
+  {
+    "depth": 15,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "small",
+    "text": "კომუნიკაცია"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "span",
+    "text": "AI for every team"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "span",
+    "text": "AI ყველა გუნდისთვის"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "span",
+    "text": "Support across clinical and administrative work."
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "span",
+    "text": "კლინიკური და ადმინისტრაციული საქმეების გამარტივება."
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "span",
+    "text": "Explore details"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "span",
+    "text": "ნახეთ დეტალები"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "span",
+    "text": "Future vision"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10095,
+    "notes": false,
+    "parent": "span",
+    "text": "სამომავლო ხედვა"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10117,
+    "notes": false,
+    "parent": "span",
+    "text": "Hospital AI Brain"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10117,
+    "notes": false,
+    "parent": "span",
+    "text": "კლინიკის AI ტვინი"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10117,
+    "notes": false,
+    "parent": "span",
+    "text": "Hospital-wide coordination, in one shared context."
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10117,
+    "notes": false,
+    "parent": "span",
+    "text": "მთელი კლინიკის კოორდინაცია ერთიან კონტექსტში."
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10117,
+    "notes": false,
+    "parent": "span",
+    "text": "Explore details"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10117,
+    "notes": false,
+    "parent": "span",
+    "text": "ნახეთ დეტალები"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10117,
+    "notes": false,
+    "parent": "span",
+    "text": "Example"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10117,
+    "notes": false,
+    "parent": "span",
+    "text": "მაგალითი"
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10118,
+    "notes": false,
+    "parent": "p",
+    "text": "The complete system works independently. We plan AI additions with your hospital."
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10118,
+    "notes": false,
+    "parent": "p",
+    "text": "სრული სისტემა დამოუკიდებლად მუშაობს. AI-ს დამატებას თქვენთან ერთად ვგეგმავთ."
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10119,
+    "notes": false,
+    "parent": "h3",
+    "text": "A complete operating system for your hospital"
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10119,
+    "notes": false,
+    "parent": "h3",
+    "text": "კლინიკის სრული ოპერაციული სისტემა"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10119,
+    "notes": false,
+    "parent": "dt",
+    "text": "Care + operations"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10119,
+    "notes": false,
+    "parent": "dt",
+    "text": "მკურნალობა + მართვა"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10119,
+    "notes": false,
+    "parent": "dd",
+    "text": "From admission to billing. Every module your hospital needs."
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10119,
+    "notes": false,
+    "parent": "dd",
+    "text": "პაციენტის მიღებიდან ანგარიშსწორებამდე. ყველა საჭირო მოდული."
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10119,
+    "notes": false,
+    "parent": "dt",
+    "text": "Shared information"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10119,
+    "notes": false,
+    "parent": "dt",
+    "text": "საერთო მონაცემები"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10119,
+    "notes": false,
+    "parent": "dd",
+    "text": "Records, services and costs connected across departments."
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10119,
+    "notes": false,
+    "parent": "dd",
+    "text": "ჩანაწერები, მომსახურება და ხარჯები — ერთმანეთთან დაკავშირებული."
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10119,
+    "notes": false,
+    "parent": "dt",
+    "text": "Built around you"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10119,
+    "notes": false,
+    "parent": "dt",
+    "text": "თქვენზე მორგებული"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10119,
+    "notes": false,
+    "parent": "dd",
+    "text": "Your processes. Ongoing development. One codebase."
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10119,
+    "notes": false,
+    "parent": "dd",
+    "text": "თქვენი პროცესები. უწყვეტი განვითარება. ერთიანი კოდი."
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10119,
+    "notes": false,
+    "parent": "p",
+    "text": "Stage 1 is complete in its own right. It connects clinical and administrative work on shared FHIR R4 data and one codebase. AI additions are planned separately with your hospital."
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10119,
+    "notes": false,
+    "parent": "p",
+    "text": "პირველი ეტაპი დამოუკიდებლად სრულფასოვანია. კლინიკური და ადმინისტრაციული სამუშაო ერთიან FHIR R4 მონაცემებსა და კოდს ეყრდნობა. AI-ის დამატებას კლინიკასთან ერთად, ცალკე ვგეგმავთ."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "h3",
+    "text": "Existing tools"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "h3",
+    "text": "არსებული ინსტრუმენტები"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "li",
+    "text": "Voice documentation"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "li",
+    "text": "ხმოვანი დოკუმენტაცია"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "li",
+    "text": "Patient-context clinical assistant"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "li",
+    "text": "კლინიკური ასისტენტი პაციენტის კონტექსტით"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "li",
+    "text": "Blood-gas interpretation"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "li",
+    "text": "სისხლის გაზების ინტერპრეტაცია"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "li",
+    "text": "Patient-context action drafts"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "li",
+    "text": "პაციენტის მონაცემებზე დაფუძნებული მოქმედების მონახაზი"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "p",
+    "text": "These tools have been built. Availability, rollout and evaluation at your hospital are agreed individually."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "p",
+    "text": "ეს ინსტრუმენტები უკვე შექმნილია. თქვენს კლინიკაში ხელმისაწვდომობას, დანერგვასა და შემოწმებას ცალ-ცალკე ვათანხმებთ."
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "h3",
+    "text": "Broader development directions"
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "h3",
+    "text": "განვითარების მიმართულებები"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "dt",
+    "text": "Documentation"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "dt",
+    "text": "დოკუმენტაცია"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "dd",
+    "text": "Voice → notes / Discharge · handovers"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "dd",
+    "text": "ხმა → ჩანაწერი / გაწერა · გადაბარება"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "dt",
+    "text": "Clinical AI"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "dt",
+    "text": "კლინიკური AI"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "dd",
+    "text": "History · results / Medicines · guidelines"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "dd",
+    "text": "ისტორია · კვლევები / წამლები · გაიდლაინები"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "dt",
+    "text": "Finance"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "dt",
+    "text": "ფინანსები"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "dd",
+    "text": "Coding · claims / Documentation checks"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "dd",
+    "text": "კოდირება · ანაზღაურება / საბუთების შემოწმება"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "dt",
+    "text": "Resources"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "dt",
+    "text": "რესურსები"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "dd",
+    "text": "Staff · stock / Scheduling · forecasting"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "dd",
+    "text": "კადრები · მარაგები / გრაფიკები · პროგნოზი"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "dt",
+    "text": "Quality + oversight"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "dt",
+    "text": "მართვა და ხარისხი"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "dd",
+    "text": "Performance · risks / Trends to act on"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "dd",
+    "text": "მაჩვენებლები · რისკები / ტენდენციები"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "dt",
+    "text": "Research + patients"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "dt",
+    "text": "კვლევა და პაციენტი"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "dd",
+    "text": "Trial matching / Patient explanations"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "dd",
+    "text": "კვლევაში ჩართვა / გასაგები კომუნიკაცია"
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "p",
+    "text": "Broader capabilities are introduced and evaluated individually. The list does not mean every capability is deployed or clinically validated. Stage 2 is optional; scope, validation, availability and pricing are agreed separately."
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10120,
+    "notes": false,
+    "parent": "p",
+    "text": "უფრო ფართო შესაძლებლობებს ცალ-ცალკე ვნერგავთ და ვაფასებთ. ჩამონათვალი არ ნიშნავს, რომ ყველა შესაძლებლობა უკვე დანერგილი ან კლინიკურად ვალიდირებულია. მეორე ეტაპი არჩევითია; მოცულობა, შემოწმება, ხელმისაწვდომობა და ფასი ცალკე თანხმდება."
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10121,
+    "notes": false,
+    "parent": "p",
+    "text": "Built and integrated by us, around your hospital."
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10121,
+    "notes": false,
+    "parent": "p",
+    "text": "ვქმნით და ვნერგავთ თქვენი კლინიკისთვის."
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10122,
+    "notes": false,
+    "parent": "strong",
+    "text": "Understands your hospital"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10122,
+    "notes": false,
+    "parent": "strong",
+    "text": "იცნობს თქვენს კლინიკას"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10122,
+    "notes": false,
+    "parent": "small",
+    "text": "Patients, data, protocols, workflows and resources — in one context."
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10122,
+    "notes": false,
+    "parent": "small",
+    "text": "პაციენტები, მონაცემები, პროტოკოლები, პროცესები და რესურსები — ერთიან კონტექსტში."
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10123,
+    "notes": false,
+    "parent": "strong",
+    "text": "Decides. Then acts."
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10123,
+    "notes": false,
+    "parent": "strong",
+    "text": "წყვეტს და თავადვე მოქმედებს"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10123,
+    "notes": false,
+    "parent": "small",
+    "text": "Makes and carries out medical and administrative decisions."
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10123,
+    "notes": false,
+    "parent": "small",
+    "text": "იღებს სამედიცინო და ადმინისტრაციულ გადაწყვეტილებებს და ახორციელებს მათ."
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10123,
+    "notes": false,
+    "parent": "span",
+    "text": "Only within a pre-authorized scope"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10123,
+    "notes": false,
+    "parent": "span",
+    "text": "მხოლოდ წინასწარ ნებადართულ ფარგლებში"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10124,
+    "notes": false,
+    "parent": "strong",
+    "text": "Runs day-to-day operations"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10124,
+    "notes": false,
+    "parent": "strong",
+    "text": "მართავს ყოველდღიურ მუშაობას"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10124,
+    "notes": false,
+    "parent": "small",
+    "text": "Anticipates risks. Coordinates teams. Follows through on results."
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10124,
+    "notes": false,
+    "parent": "small",
+    "text": "წინასწარ ამჩნევს რისკებს, კოორდინაციას უწევს გუნდებს და ამოწმებს შედეგს."
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-ai-path",
+    "line": 10125,
+    "notes": false,
+    "parent": "p",
+    "text": "A future direction. Hospital use requires development, clinical validation and agreement on the authorised scope. Decisions beyond that scope remain with the authorised team."
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-ai-path",
+    "line": 10125,
+    "notes": false,
+    "parent": "p",
+    "text": "ეს სამომავლო მიმართულებაა. კლინიკაში გამოყენებას წინ უძღვის შესაძლებლობების შექმნა, კლინიკური შემოწმება და ნებადართული ფარგლების შეთანხმება. ამ ფარგლებს მიღმა გადაწყვეტილება უფლებამოსილ გუნდს გადაეცემა."
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "section-10",
+    "line": 10375,
+    "notes": false,
+    "parent": "div",
+    "text": "EXPLORE THE PRODUCTS"
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "section-10",
+    "line": 10375,
+    "notes": false,
+    "parent": "div",
+    "text": "გაეცანით პროდუქტებს"
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "section-10",
+    "line": 10376,
+    "notes": false,
+    "parent": "div",
+    "text": "Product map"
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "section-10",
+    "line": 10376,
+    "notes": false,
+    "parent": "div",
+    "text": "პროდუქტების რუკა"
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "section-10",
+    "line": 10377,
+    "notes": false,
+    "parent": "h2",
+    "text": "Your modules. What each one does."
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "section-10",
+    "line": 10377,
+    "notes": false,
+    "parent": "h2",
+    "text": "ჩვენი მოდულები. რას აკეთებს თითოეული."
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "section-10",
+    "line": 10378,
+    "notes": false,
+    "parent": "p",
+    "text": "Open a card for its overview and video demo."
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "section-10",
+    "line": 10378,
+    "notes": false,
+    "parent": "p",
+    "text": "გახსენით ბარათი — ნახეთ მოდულის აღწერა და ვიდეოდემო."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "section-10",
+    "line": 10406,
+    "notes": false,
+    "parent": "span",
+    "text": "Live"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "section-10",
+    "line": 10406,
+    "notes": false,
+    "parent": "span",
+    "text": "აქტიური"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "section-10",
+    "line": 10407,
+    "notes": false,
+    "parent": "template",
+    "text": "The shared workspace for the hospital’s clinical and administrative teams. It connects patient records and daily care with the work needed to run the hospital.Patient records, orders, clinical notes and discharge documentation.Bed coordination, staff, finance and stock management.Connected workflows that can be tailored to the hospital."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "section-10",
+    "line": 10407,
+    "notes": false,
+    "parent": "template",
+    "text": "კლინიკური და ადმინისტრაციული გუნდების ერთიანი სამუშაო სივრცე. პაციენტის ჩანაწერებსა და მკურნალობის პროცესს კლინიკის ყოველდღიურ მართვასთან აკავშირებს.პაციენტის ჩანაწერები, დანიშნულებები, კლინიკური დოკუმენტები და გაწერა.საწოლების, პერსონალის, ფინანსებისა და მარაგების მართვა.ერთმანეთთან დაკავშირებული პროცესები, კლინიკის საჭიროებებზე მორგებით."
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "section-10",
+    "line": 10413,
+    "notes": false,
+    "parent": "span",
+    "text": "Live"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "section-10",
+    "line": 10413,
+    "notes": false,
+    "parent": "span",
+    "text": "აქტიური"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "section-10",
+    "line": 10414,
+    "notes": false,
+    "parent": "template",
+    "text": "The telemedicine module connects patients and clinicians for remote consultations. It brings booking, the video visit and follow-up information into a coordinated patient journey.Book and manage remote consultation appointments.Join the patient–clinician video consultation.Keep consultation records, prescriptions and follow-up information together."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "section-10",
+    "line": 10414,
+    "notes": false,
+    "parent": "template",
+    "text": "ტელემედიცინის მოდული პაციენტსა და ექიმს დისტანციური კონსულტაციისთვის აკავშირებს. ჯავშანს, ვიდეოვიზიტსა და შემდგომ ინფორმაციას ერთ პროცესში აერთიანებს.დისტანციური კონსულტაციის დაჯავშნა და მართვა.პაციენტისა და ექიმის ვიდეოკონსულტაცია.კონსულტაციის ჩანაწერები, რეცეპტები და შემდგომი ინფორმაცია ერთ სივრცეში."
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "section-10",
+    "line": 10420,
+    "notes": false,
+    "parent": "span",
+    "text": "Live"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "section-10",
+    "line": 10420,
+    "notes": false,
+    "parent": "span",
+    "text": "აქტიური"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "section-10",
+    "line": 10421,
+    "notes": false,
+    "parent": "template",
+    "text": "The hospital’s medical-imaging workspace. Clinicians can find a patient’s studies, open the images and review them within the same clinical system.Organize medical images and studies by patient.View DICOM images, the standard format used by imaging equipment.Review studies with imaging tools alongside the patient’s clinical record."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "section-10",
+    "line": 10421,
+    "notes": false,
+    "parent": "template",
+    "text": "კლინიკის სამედიცინო გამოსახულებების სამუშაო სივრცე. ექიმს შეუძლია პაციენტის კვლევების მოძებნა, გამოსახულებების გახსნა და შეფასება იმავე კლინიკურ სისტემაში.სამედიცინო გამოსახულებებისა და კვლევების პაციენტთან დაკავშირება.DICOM გამოსახულებების ნახვა — ეს აპარატურის სტანდარტული ფორმატია.კვლევების შეფასება გამოსახულების ინსტრუმენტებით, პაციენტის ჩანაწერებთან ერთად."
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "section-10",
+    "line": 10427,
+    "notes": false,
+    "parent": "span",
+    "text": "Live"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "section-10",
+    "line": 10427,
+    "notes": false,
+    "parent": "span",
+    "text": "აქტიური"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "section-10",
+    "line": 10428,
+    "notes": false,
+    "parent": "template",
+    "text": "The laboratory workflow follows a test from the doctor’s order to the verified result. Clinical and laboratory teams work with the same patient information throughout the process.Track orders, sample receipt and processing status.Review results, reference ranges and flagged values.Verify results and return them to the patient’s clinical record."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "section-10",
+    "line": 10428,
+    "notes": false,
+    "parent": "template",
+    "text": "ლაბორატორიული პროცესი ექიმის შეკვეთიდან დადასტურებულ შედეგამდე. კლინიკური და ლაბორატორიული გუნდები მთელი პროცესის განმავლობაში პაციენტის ერთსა და იმავე ინფორმაციაზე მუშაობენ.კვლევის შეკვეთის, ნიმუშის მიღებისა და დამუშავების ეტაპების აღრიცხვა.შედეგების, სარეფერენსო დიაპაზონებისა და გადახრების ნახვა.შედეგის დადასტურება და პაციენტის კლინიკურ ჩანაწერში ასახვა."
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "section-10",
+    "line": 10434,
+    "notes": false,
+    "parent": "span",
+    "text": "Early version"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "section-10",
+    "line": 10434,
+    "notes": false,
+    "parent": "span",
+    "text": "საწყისი ვერსია"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "section-10",
+    "line": 10435,
+    "notes": false,
+    "parent": "template",
+    "text": "A specialist AI tool for liver-surgery workflows. This early version demonstrates a focused workspace for surgeons, separate from the hospital’s general records and administration.Designed around liver-surgery cases and specialist work.AI assistance within the surgeon’s review process.The demo shows the early version and its current workflow."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "section-10",
+    "line": 10435,
+    "notes": false,
+    "parent": "template",
+    "text": "სპეციალიზებული AI ინსტრუმენტი ღვიძლის ქირურგიისთვის. საწყისი ვერსია აჩვენებს ქირურგისთვის შექმნილ სამუშაო სივრცეს, კლინიკის ზოგადი ჩანაწერებისა და ადმინისტრირებისგან განსხვავებული ამოცანებით.მორგებულია ღვიძლის ქირურგიის შემთხვევებსა და სპეციალისტის სამუშაოზე.AI დახმარება ქირურგის შეფასების პროცესში.დემო აჩვენებს საწყის ვერსიას და მის მიმდინარე სამუშაო პროცესს."
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "section-10",
+    "line": 10441,
+    "notes": false,
+    "parent": "span",
+    "text": "In development"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "section-10",
+    "line": 10441,
+    "notes": false,
+    "parent": "span",
+    "text": "მუშავდება"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "section-10",
+    "line": 10442,
+    "notes": false,
+    "parent": "template",
+    "text": "A planning workspace for structural heart procedures, currently focused on TAVI: replacing the aortic valve through a catheter. It brings imaging, measurements and the procedure plan together for the clinical team.Review the cardiac CT and the patient’s relevant anatomy.Assess valve measurements and the planned vascular access route.Prepare a structured plan and report for clinician review."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "section-10",
+    "line": 10442,
+    "notes": false,
+    "parent": "template",
+    "text": "გულის სტრუქტურული ჩარევების დაგეგმვის სივრცე, ამ ეტაპზე TAVI-ისთვის — აორტის სარქვლის კათეტერით ჩანაცვლებისთვის. აერთიანებს გამოსახულებებს, გაზომვებსა და ჩარევის გეგმას.გულის კომპიუტერული ტომოგრაფიისა და შესაბამისი ანატომიის შეფასება.სარქვლის გაზომვებისა და სისხლძარღვოვანი მიდგომის დაგეგმვა.სტრუქტურირებული გეგმისა და ანგარიშის მომზადება ექიმის შესაფასებლად."
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "section-10",
+    "line": 10448,
+    "notes": false,
+    "parent": "span",
+    "text": "Patient Portal"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "section-10",
+    "line": 10448,
+    "notes": false,
+    "parent": "span",
+    "text": "პაციენტის პორტალი"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "section-10",
+    "line": 10448,
+    "notes": false,
+    "parent": "span",
+    "text": "In development"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "section-10",
+    "line": 10448,
+    "notes": false,
+    "parent": "span",
+    "text": "მუშავდება"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "section-10",
+    "line": 10449,
+    "notes": false,
+    "parent": "template",
+    "text": "The patient-facing companion to the hospital system. It gives patients a single place to follow their care and access information shared by their hospital.View health records, laboratory results and medications.Manage appointments and communicate with the care team.Access telemedicine and billing information from the patient’s account."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "section-10",
+    "line": 10449,
+    "notes": false,
+    "parent": "template",
+    "text": "კლინიკის სისტემის პაციენტისთვის განკუთვნილი სივრცე. პაციენტს შეუძლია ერთ ადგილას ადევნოს თვალი მკურნალობას და ნახოს კლინიკის მიერ გაზიარებული ინფორმაცია.სამედიცინო ჩანაწერების, ლაბორატორიული შედეგებისა და მედიკამენტების ნახვა.ვიზიტების მართვა და კლინიკურ გუნდთან კომუნიკაცია.ტელემედიცინასა და ანგარიშების ინფორმაციაზე წვდომა პირადი ანგარიშიდან."
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "section-10",
+    "line": 10455,
+    "notes": false,
+    "parent": "span",
+    "text": "Early version"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "section-10",
+    "line": 10455,
+    "notes": false,
+    "parent": "span",
+    "text": "საწყისი ვერსია"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "section-10",
+    "line": 10456,
+    "notes": false,
+    "parent": "template",
+    "text": "A focused reporting tool for vascular imaging studies. It helps clinicians organize the findings of a vascular examination into a clear, structured report.Capture the findings of the vascular study.Organize the examination information in a consistent report format.Review and prepare the report within the specialist workflow."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "section-10",
+    "line": 10456,
+    "notes": false,
+    "parent": "template",
+    "text": "სისხლძარღვთა კვლევების ანგარიშების მოსამზადებელი ინსტრუმენტი. ექიმს ეხმარება კვლევის მიგნებების მკაფიო, სტრუქტურირებულ ანგარიშად ჩამოყალიბებაში.სისხლძარღვთა კვლევის მიგნებების აღწერა.კვლევის ინფორმაციის ერთიანი ფორმატის ანგარიშში თავმოყრა.ანგარიშის შეფასება და მომზადება სპეციალისტის სამუშაო პროცესში."
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "hospital-meeting",
+    "line": 10473,
+    "notes": false,
+    "parent": "div",
+    "text": "შემდეგი ნაბიჯი"
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "hospital-meeting",
+    "line": 10473,
+    "notes": false,
+    "parent": "div",
+    "text": "THE NEXT STEP"
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-meeting",
+    "line": 10475,
+    "notes": false,
+    "parent": "h2",
+    "text": "შევხვდეთ30 წუთით."
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-meeting",
+    "line": 10475,
+    "notes": false,
+    "parent": "h2",
+    "text": "Let’s meet.30 minutes."
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-meeting",
+    "line": 10476,
+    "notes": false,
+    "parent": "p",
+    "text": "MediMind-ის გუნდთან — თქვენი კლინიკის საჭიროებებზე."
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-meeting",
+    "line": 10476,
+    "notes": false,
+    "parent": "p",
+    "text": "With the MediMind team. / Built around your hospital’s needs."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-meeting",
+    "line": 10478,
+    "notes": false,
+    "parent": "legend",
+    "text": "სად გირჩევნიათ შეხვედრა?"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-meeting",
+    "line": 10478,
+    "notes": false,
+    "parent": "legend",
+    "text": "Where would you like to meet?"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-meeting",
+    "line": 10480,
+    "notes": false,
+    "parent": "span",
+    "text": "ვიდეოზარი"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-meeting",
+    "line": 10480,
+    "notes": false,
+    "parent": "span",
+    "text": "Video call"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-meeting",
+    "line": 10481,
+    "notes": false,
+    "parent": "span",
+    "text": "თქვენს კლინიკაში"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-meeting",
+    "line": 10481,
+    "notes": false,
+    "parent": "span",
+    "text": "At your hospital"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-meeting",
+    "line": 10485,
+    "notes": false,
+    "parent": "span",
+    "text": "მოითხოვეთ შეხვედრა"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-meeting",
+    "line": 10485,
+    "notes": false,
+    "parent": "span",
+    "text": "Request a meeting"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-meeting",
+    "line": 10486,
+    "notes": false,
+    "parent": "span",
+    "text": "დაჯავშნეთ შეხვედრა"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-meeting",
+    "line": 10486,
+    "notes": false,
+    "parent": "span",
+    "text": "Book a meeting"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-meeting",
+    "line": 10489,
+    "notes": false,
+    "parent": "span",
+    "text": "გაიხსნება წერილი team@medimind.md-ზე. / დროს თქვენთან ერთად შევათანხმებთ."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-meeting",
+    "line": 10489,
+    "notes": false,
+    "parent": "span",
+    "text": "Opens an email to team@medimind.md. / We’ll agree a time with you."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-meeting",
+    "line": 10489,
+    "notes": false,
+    "parent": "span",
+    "text": "აირჩიეთ დრო აქვე, გუნდის კალენდარში."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-meeting",
+    "line": 10489,
+    "notes": false,
+    "parent": "span",
+    "text": "Choose a time here, in the team calendar."
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-meeting",
+    "line": 10492,
+    "notes": false,
+    "parent": "span",
+    "text": "30 წუთი · ონლაინ ან თქვენს კლინიკაში"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-meeting",
+    "line": 10492,
+    "notes": false,
+    "parent": "span",
+    "text": "30 minutes · Online or at your hospital"
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-meeting",
+    "line": 10493,
+    "notes": false,
+    "parent": "h3",
+    "text": "რას მოგცემთ შეხვედრა"
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-meeting",
+    "line": 10493,
+    "notes": false,
+    "parent": "h3",
+    "text": "What you’ll take away"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-meeting",
+    "line": 10495,
+    "notes": false,
+    "parent": "h3",
+    "text": "თქვენი პრიორიტეტები"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-meeting",
+    "line": 10495,
+    "notes": false,
+    "parent": "h3",
+    "text": "Your priorities, understood"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-meeting",
+    "line": 10495,
+    "notes": false,
+    "parent": "p",
+    "text": "განვიხილავთ კლინიკის მთავარ საჭიროებებს."
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-meeting",
+    "line": 10495,
+    "notes": false,
+    "parent": "p",
+    "text": "A review of your hospital’s main needs."
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-meeting",
+    "line": 10496,
+    "notes": false,
+    "parent": "h3",
+    "text": "შესაბამისი შესაძლებლობები"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-meeting",
+    "line": 10496,
+    "notes": false,
+    "parent": "h3",
+    "text": "The capabilities that fit"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-meeting",
+    "line": 10496,
+    "notes": false,
+    "parent": "p",
+    "text": "გაჩვენებთ, რა გამოადგება თქვენს გუნდს."
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-meeting",
+    "line": 10496,
+    "notes": false,
+    "parent": "p",
+    "text": "See what’s relevant to your team’s work."
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-meeting",
+    "line": 10497,
+    "notes": false,
+    "parent": "h3",
+    "text": "უფასო შეფასების გეგმა"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-meeting",
+    "line": 10497,
+    "notes": false,
+    "parent": "h3",
+    "text": "A free evaluation plan"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-meeting",
+    "line": 10497,
+    "notes": false,
+    "parent": "p",
+    "text": "შევათანხმებთ პარალელური შეფასების ნაბიჯებს."
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-meeting",
+    "line": 10497,
+    "notes": false,
+    "parent": "p",
+    "text": "Agree the steps for a parallel evaluation."
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "section-12",
+    "line": 10509,
+    "notes": false,
+    "parent": "div",
+    "text": "End of the proposal"
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "section-12",
+    "line": 10509,
+    "notes": false,
+    "parent": "div",
+    "text": "პრეზენტაციის დასასრული"
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "section-12",
+    "line": 10510,
+    "notes": false,
+    "parent": "h1",
+    "text": "Thank you."
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "section-12",
+    "line": 10510,
+    "notes": false,
+    "parent": "h1",
+    "text": "გმადლობთ."
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "section-12",
+    "line": 10512,
+    "notes": false,
+    "parent": "div",
+    "text": "Up next"
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "section-12",
+    "line": 10512,
+    "notes": false,
+    "parent": "div",
+    "text": "შემდეგ"
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "section-12",
+    "line": 10514,
+    "notes": false,
+    "parent": "span",
+    "text": "Live walkthrough"
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "section-12",
+    "line": 10514,
+    "notes": false,
+    "parent": "span",
+    "text": "სისტემის დემონსტრაცია"
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "section-12",
+    "line": 10515,
+    "notes": false,
+    "parent": "span",
+    "text": "Architecture"
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "section-12",
+    "line": 10515,
+    "notes": false,
+    "parent": "span",
+    "text": "არქიტექტურა"
+  },
+  {
+    "depth": 7,
+    "lang": "en",
+    "slide": "section-13",
+    "line": 10543,
+    "notes": false,
+    "parent": "button",
+    "text": "Continue"
+  },
+  {
+    "depth": 7,
+    "lang": "ka",
+    "slide": "section-13",
+    "line": 10543,
+    "notes": false,
+    "parent": "button",
+    "text": "გაგრძელება"
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-brain-demo",
+    "line": 10553,
+    "notes": false,
+    "parent": "div",
+    "text": "APPENDIX · AI BRAIN DEMO"
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-brain-demo",
+    "line": 10553,
+    "notes": false,
+    "parent": "div",
+    "text": "დანართი · AI ტვინის დემო"
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "hospital-brain-demo",
+    "line": 10556,
+    "notes": false,
+    "parent": "h2",
+    "text": "From detecting risk to taking action."
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "hospital-brain-demo",
+    "line": 10556,
+    "notes": false,
+    "parent": "h2",
+    "text": "რისკის აღმოჩენიდან — მოქმედებამდე."
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "hospital-brain-demo",
+    "line": 10557,
+    "notes": false,
+    "parent": "p",
+    "text": "Patient context, clinical decisions and the team’s actions — connected in one process."
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "hospital-brain-demo",
+    "line": 10557,
+    "notes": false,
+    "parent": "p",
+    "text": "პაციენტის მონაცემები, კლინიკური გადაწყვეტილებები და გუნდის მოქმედება — ერთიან პროცესში."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-brain-demo",
+    "line": 10560,
+    "notes": false,
+    "parent": "div",
+    "text": "A REAL CASE FROM OUR PRACTICE"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-brain-demo",
+    "line": 10560,
+    "notes": false,
+    "parent": "div",
+    "text": "რეალური შემთხვევა ჩვენი პრაქტიკიდან"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-brain-demo",
+    "line": 10561,
+    "notes": false,
+    "parent": "span",
+    "text": "hours"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-brain-demo",
+    "line": 10561,
+    "notes": false,
+    "parent": "span",
+    "text": "საათი"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-brain-demo",
+    "line": 10562,
+    "notes": false,
+    "parent": "h3",
+    "text": "The team needed / the whole picture."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-brain-demo",
+    "line": 10562,
+    "notes": false,
+    "parent": "h3",
+    "text": "გუნდს სრული / სურათი სჭირდებოდა."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-brain-demo",
+    "line": 10563,
+    "notes": false,
+    "parent": "p",
+    "text": "Abdominal pain. The team focused on the heart. Fourteen hours passed before a surgical assessment."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-brain-demo",
+    "line": 10563,
+    "notes": false,
+    "parent": "p",
+    "text": "მუცლის ტკივილით შემოსული პაციენტი. ყურადღება — გულზე. ქირურგის შეფასებამდე 14 საათი გავიდა."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-brain-demo",
+    "line": 10564,
+    "notes": false,
+    "parent": "button",
+    "text": "Read the full clinical story"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-brain-demo",
+    "line": 10564,
+    "notes": false,
+    "parent": "button",
+    "text": "შემთხვევა სრულად"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-brain-demo",
+    "line": 10565,
+    "notes": false,
+    "parent": "p",
+    "text": "Real patient story · Illustrative AI response"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-brain-demo",
+    "line": 10565,
+    "notes": false,
+    "parent": "p",
+    "text": "რეალური შემთხვევა · AI-ის საილუსტრაციო სცენარი"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-brain-demo",
+    "line": 10571,
+    "notes": false,
+    "parent": "strong",
+    "text": "STAGE 3 · AI BRAIN"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-brain-demo",
+    "line": 10571,
+    "notes": false,
+    "parent": "strong",
+    "text": "ეტაპი 3 · AI ტვინი"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-brain-demo",
+    "line": 10572,
+    "notes": false,
+    "parent": "small",
+    "text": "The future we’re building"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-brain-demo",
+    "line": 10572,
+    "notes": false,
+    "parent": "small",
+    "text": "მომავალი, რომელსაც ვაშენებთ"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-brain-demo",
+    "line": 10579,
+    "notes": false,
+    "parent": "strong",
+    "text": "See the AI Brain in action"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-brain-demo",
+    "line": 10579,
+    "notes": false,
+    "parent": "strong",
+    "text": "ნახეთ AI ტვინი მოქმედებაში"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-brain-demo",
+    "line": 10579,
+    "notes": false,
+    "parent": "span",
+    "text": "1:50 · Demo based on a real case"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-brain-demo",
+    "line": 10579,
+    "notes": false,
+    "parent": "span",
+    "text": "1:50 · დემო რეალური შემთხვევის საფუძველზე"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-brain-demo",
+    "line": 10581,
+    "notes": false,
+    "parent": "li",
+    "text": "Detects"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-brain-demo",
+    "line": 10581,
+    "notes": false,
+    "parent": "li",
+    "text": "ამჩნევს"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-brain-demo",
+    "line": 10581,
+    "notes": false,
+    "parent": "li",
+    "text": "Assesses"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-brain-demo",
+    "line": 10581,
+    "notes": false,
+    "parent": "li",
+    "text": "აფასებს"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-brain-demo",
+    "line": 10581,
+    "notes": false,
+    "parent": "li",
+    "text": "Decides"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-brain-demo",
+    "line": 10581,
+    "notes": false,
+    "parent": "li",
+    "text": "წყვეტს"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-brain-demo",
+    "line": 10581,
+    "notes": false,
+    "parent": "li",
+    "text": "Acts"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-brain-demo",
+    "line": 10581,
+    "notes": false,
+    "parent": "li",
+    "text": "მოქმედებს"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-brain-demo",
+    "line": 10582,
+    "notes": false,
+    "parent": "p",
+    "text": "Medical and administrative decisions — within a pre-authorized scope."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-brain-demo",
+    "line": 10582,
+    "notes": false,
+    "parent": "p",
+    "text": "სამედიცინო და ადმინისტრაციული გადაწყვეტილებები — წინასწარ ნებადართულ ფარგლებში."
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "hospital-development",
+    "line": 10596,
+    "notes": false,
+    "parent": "div",
+    "text": "APPENDIX · CUSTOM DEVELOPMENT"
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "hospital-development",
+    "line": 10596,
+    "notes": false,
+    "parent": "div",
+    "text": "დანართი · მორგებული პროგრამის მაგალითი"
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "hospital-development",
+    "line": 10597,
+    "notes": false,
+    "parent": "h2",
+    "text": "Your plans should shape your software."
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "hospital-development",
+    "line": 10597,
+    "notes": false,
+    "parent": "h2",
+    "text": "თქვენს გეგმებს პროგრამა არ უნდა ზღუდავდეს."
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "hospital-development",
+    "line": 10598,
+    "notes": false,
+    "parent": "p",
+    "text": "We build the software your hospital needs — including complex, specialised clinical tools."
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "hospital-development",
+    "line": 10598,
+    "notes": false,
+    "parent": "p",
+    "text": "ვქმნით თქვენი კლინიკისთვის საჭირო პროგრამებს — მათ შორის, რთულ კლინიკურ ინსტრუმენტებს."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-development",
+    "line": 10601,
+    "notes": false,
+    "parent": "h3",
+    "text": "Built with / your team."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-development",
+    "line": 10601,
+    "notes": false,
+    "parent": "h3",
+    "text": "თქვენს გუნდთან / ერთად შექმნილი."
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-development",
+    "line": 10603,
+    "notes": false,
+    "parent": "dt",
+    "text": "Support your next service"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-development",
+    "line": 10603,
+    "notes": false,
+    "parent": "dt",
+    "text": "ახალი სერვისებისთვის"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-development",
+    "line": 10603,
+    "notes": false,
+    "parent": "dd",
+    "text": "Develop a new hospital service with the software it needs."
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-development",
+    "line": 10603,
+    "notes": false,
+    "parent": "dd",
+    "text": "ახალ სერვისს მისთვის საჭირო პროგრამას ვუქმნით."
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-development",
+    "line": 10604,
+    "notes": false,
+    "parent": "dt",
+    "text": "Build for your specialists"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-development",
+    "line": 10604,
+    "notes": false,
+    "parent": "dt",
+    "text": "თქვენი სპეციალისტებისთვის"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-development",
+    "line": 10604,
+    "notes": false,
+    "parent": "dd",
+    "text": "Turn a specialised clinical requirement into a working tool, shaped with your clinicians."
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-development",
+    "line": 10604,
+    "notes": false,
+    "parent": "dd",
+    "text": "სპეციალიზებულ ინსტრუმენტებს თქვენი ექიმების მონაწილეობით ვქმნით."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-development",
+    "line": 10607,
+    "notes": false,
+    "parent": "button",
+    "text": "Where the financial value comes from"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-development",
+    "line": 10607,
+    "notes": false,
+    "parent": "button",
+    "text": "რა ქმნის ფინანსურ სარგებელს"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-development",
+    "line": 10610,
+    "notes": false,
+    "parent": "span",
+    "text": "A CONCRETE EXAMPLE"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-development",
+    "line": 10610,
+    "notes": false,
+    "parent": "span",
+    "text": "კონკრეტული მაგალითი"
+  },
+  {
+    "depth": 12,
+    "lang": "en",
+    "slide": "hospital-development",
+    "line": 10610,
+    "notes": false,
+    "parent": "h3",
+    "text": "TAVI planning"
+  },
+  {
+    "depth": 12,
+    "lang": "ka",
+    "slide": "hospital-development",
+    "line": 10610,
+    "notes": false,
+    "parent": "h3",
+    "text": "TAVI-ის დაგეგმვა"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-development",
+    "line": 10615,
+    "notes": false,
+    "parent": "span",
+    "text": "Watch it work"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-development",
+    "line": 10615,
+    "notes": false,
+    "parent": "span",
+    "text": "ნახეთ მოქმედებაში"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-development",
+    "line": 10616,
+    "notes": false,
+    "parent": "span",
+    "text": "In development"
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-development",
+    "line": 10616,
+    "notes": false,
+    "parent": "span",
+    "text": "მუშავდება"
+  },
+  {
+    "depth": 11,
+    "lang": "en",
+    "slide": "hospital-development",
+    "line": 10617,
+    "notes": false,
+    "parent": "template",
+    "text": "A planning workspace for structural heart procedures, currently focused on TAVI: replacing the aortic valve through a catheter. It brings imaging, measurements and the procedure plan together for the clinical team.Review the cardiac CT and the patient’s relevant anatomy.Assess valve measurements and the planned vascular access route.Prepare a structured plan and report for clinician review."
+  },
+  {
+    "depth": 11,
+    "lang": "ka",
+    "slide": "hospital-development",
+    "line": 10617,
+    "notes": false,
+    "parent": "template",
+    "text": "გულის სტრუქტურული ჩარევების დაგეგმვის სივრცე, ამ ეტაპზე TAVI-ისთვის — აორტის სარქვლის კათეტერით ჩანაცვლებისთვის. აერთიანებს გამოსახულებებს, გაზომვებსა და ჩარევის გეგმას.გულის კომპიუტერული ტომოგრაფიისა და შესაბამისი ანატომიის შეფასება.სარქვლის გაზომვებისა და სისხლძარღვოვანი მიდგომის დაგეგმვა.სტრუქტურირებული გეგმისა და ანგარიშის მომზადება ექიმის შესაფასებლად."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-development",
+    "line": 10619,
+    "notes": false,
+    "parent": "p",
+    "text": "CT review · anatomical measurements · procedure plan"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-development",
+    "line": 10619,
+    "notes": false,
+    "parent": "p",
+    "text": "ტომოგრაფიის შეფასება · ანატომიური გაზომვები · ჩარევის გეგმა"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-development",
+    "line": 10622,
+    "notes": false,
+    "parent": "span",
+    "text": "YOUR TEAM"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-development",
+    "line": 10622,
+    "notes": false,
+    "parent": "span",
+    "text": "თქვენგან"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-development",
+    "line": 10622,
+    "notes": false,
+    "parent": "strong",
+    "text": "Clinical expertise and feedback."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-development",
+    "line": 10622,
+    "notes": false,
+    "parent": "strong",
+    "text": "საჭიროება და უკუკავშირი."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-development",
+    "line": 10622,
+    "notes": false,
+    "parent": "span",
+    "text": "OUR TEAM"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-development",
+    "line": 10622,
+    "notes": false,
+    "parent": "span",
+    "text": "ჩვენგან"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-development",
+    "line": 10622,
+    "notes": false,
+    "parent": "strong",
+    "text": "Design, development, implementation and refinement."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-development",
+    "line": 10622,
+    "notes": false,
+    "parent": "strong",
+    "text": "დაგეგმვა, შექმნა, დანერგვა და გაუმჯობესება."
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10633,
+    "notes": false,
+    "parent": "div",
+    "text": "APPENDIX · SOURCES"
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10633,
+    "notes": false,
+    "parent": "div",
+    "text": "დანართი · წყაროები"
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10634,
+    "notes": false,
+    "parent": "h2",
+    "text": "Evidence behind the presentation"
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10634,
+    "notes": false,
+    "parent": "h2",
+    "text": "პრეზენტაციის წყაროები"
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10635,
+    "notes": false,
+    "parent": "p",
+    "text": "External research provides context. It does not measure MediMind’s results or guarantee the same benefit in your hospital."
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10635,
+    "notes": false,
+    "parent": "p",
+    "text": "სხვა სისტემების კვლევები კონტექსტს გვაძლევს. ეს არ არის MediMind-ის გაზომილი შედეგები ან თქვენი კლინიკისთვის იმავე სარგებლის გარანტია."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10636,
+    "notes": false,
+    "parent": "h3",
+    "text": "AI documentation and patient time"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10636,
+    "notes": false,
+    "parent": "h3",
+    "text": "AI დოკუმენტაცია და დრო პაციენტისთვის"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10636,
+    "notes": false,
+    "parent": "p",
+    "text": "GOSH DRIVE / NHS England, 2025–2026. Over 17,000 encounters across nine NHS sites; 23.5% more direct patient interaction time. Implementation evaluation of TORTUS, not a randomized trial or a MediMind result."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10636,
+    "notes": false,
+    "parent": "p",
+    "text": "GOSH DRIVE / NHS England, 2025–2026. 9 დაწესებულება, 17,000-ზე მეტი ვიზიტი; პაციენტთან უშუალო ურთიერთობის დრო 23.5%-ით გაიზარდა. TORTUS-ის დანერგვის შეფასება — არა რანდომიზებული კვლევა ან MediMind-ის შედეგი."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10636,
+    "notes": false,
+    "parent": "h3",
+    "text": "Hospital operations and financial value"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10636,
+    "notes": false,
+    "parent": "h3",
+    "text": "კლინიკის მართვა და ფინანსური ღირებულება"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10636,
+    "notes": false,
+    "parent": "p",
+    "text": "Na et al., INFORMS Journal on Applied Analytics, 2025/2026. US · Hartford HealthCare’s seven-hospital patient-flow and discharge-planning system: 0.63 fewer inpatient days per patient; $52–67m projected annual benefit. An operational model estimate, not audited realized savings or a MediMind forecast."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10636,
+    "notes": false,
+    "parent": "p",
+    "text": "Na და სხვ., INFORMS Journal on Applied Analytics, 2025/2026. აშშ · Hartford HealthCare-ის 7 კლინიკაში პაციენტთა ნაკადისა და გაწერის მართვა: დაყოვნება 0.63 დღით შემცირდა; წლიური ფინანსური სარგებლის შეფასება — $52–67 მლნ. ეს არ არის აუდიტით დადასტურებული დანაზოგი ან MediMind-ის პროგნოზი."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10636,
+    "notes": false,
+    "parent": "h3",
+    "text": "Documentation and direct patient care"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10636,
+    "notes": false,
+    "parent": "h3",
+    "text": "დოკუმენტაცია და პაციენტთან მუშაობა"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10636,
+    "notes": false,
+    "parent": "p",
+    "text": "Chaiyachati et al., JAMA Internal Medicine, 2019. 80 US residents in six programs: 43% records/documentation, 13% direct care. Activities can overlap; documentation is not all wasted or recoverable time."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10636,
+    "notes": false,
+    "parent": "p",
+    "text": "Chaiyachati და სხვ., JAMA Internal Medicine, 2019. აშშ-ის 6 პროგრამა, 80 რეზიდენტი: 43% — ჩანაწერები და დოკუმენტაცია; 13% — უშუალო მოვლა. საქმიანობები შეიძლება იკვეთებოდეს; მთელი ეს დრო დანაკარგი არ არის."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10636,
+    "notes": false,
+    "parent": "h3",
+    "text": "Missed billable services"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10636,
+    "notes": false,
+    "parent": "h3",
+    "text": "აღურიცხავი ანაზღაურებადი მომსახურება"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10636,
+    "notes": false,
+    "parent": "p",
+    "text": "Lim & Lim, Emergency Medicine Australasia, 2020. One Australian emergency department found 740 undocumented billing items across 2,737 billable patients. A local audit, not a Georgian prevalence or a MediMind revenue estimate."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10636,
+    "notes": false,
+    "parent": "p",
+    "text": "Lim & Lim, Emergency Medicine Australasia, 2020. ავსტრალიის ერთი გადაუდებელი დახმარების განყოფილება: 2,737 პაციენტის ანგარიშებში 740 აღურიცხავი პოზიცია. ეს არ ადგენს პრობლემის მასშტაბს საქართველოში ან MediMind-ის ფინანსურ სარგებელს."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10636,
+    "notes": false,
+    "parent": "h3",
+    "text": "Data standards and AI readiness"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10636,
+    "notes": false,
+    "parent": "h3",
+    "text": "მონაცემთა სტანდარტები და AI-სთვის მზადყოფნა"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10636,
+    "notes": false,
+    "parent": "p",
+    "text": "HL7 FHIR R4 overview; WHO Director-General report EB158/19, 7 January 2026, paragraphs 7–10. Standards and data governance support AI readiness; they do not establish clinical efficacy or endorse MediMind."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10636,
+    "notes": false,
+    "parent": "p",
+    "text": "HL7 FHIR R4-ის მიმოხილვა; WHO-ს ანგარიში EB158/19, 7 იანვარი 2026, პუნქტები 7–10. სტანდარტები და მონაცემთა მართვა AI-ს საფუძველს ქმნის; ეს არ ადასტურებს კლინიკურ ეფექტიანობას ან WHO-ს მიერ MediMind-ის მხარდაჭერას."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10636,
+    "notes": false,
+    "parent": "h3",
+    "text": "MediMind product demonstration"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10636,
+    "notes": false,
+    "parent": "h3",
+    "text": "MediMind-ის პროდუქტის დემონსტრაცია"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10636,
+    "notes": false,
+    "parent": "p",
+    "text": "MediMind case study on Medplum, 6 August 2026, and its accompanying video. Founder-authored product and implementation account. The clinical scenario illustrates a possible AI response; it is not an independently measured patient outcome."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10636,
+    "notes": false,
+    "parent": "p",
+    "text": "MediMind-ის გამოცდილება Medplum-ზე, 6 აგვისტო 2026, და თანდართული ვიდეო. დამფუძნებლის მიერ აღწერილი პროდუქტი და დანერგვა. კლინიკური სცენარი AI-ის შესაძლო მოქმედებას აჩვენებს და არა დამოუკიდებლად გაზომილ კლინიკურ შედეგს."
+  },
+  {
+    "depth": 6,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10667,
+    "notes": false,
+    "parent": "div",
+    "text": "Real case · illustrative AI scenario"
+  },
+  {
+    "depth": 6,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10667,
+    "notes": false,
+    "parent": "div",
+    "text": "რეალური შემთხვევა · AI-ის შესაძლო სცენარი"
+  },
+  {
+    "depth": 6,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10668,
+    "notes": false,
+    "parent": "h3",
+    "text": "The 14-hour silence"
+  },
+  {
+    "depth": 6,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10668,
+    "notes": false,
+    "parent": "h3",
+    "text": "14-საათიანი დაყოვნება"
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10672,
+    "notes": false,
+    "parent": "div",
+    "text": "What happened"
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10672,
+    "notes": false,
+    "parent": "div",
+    "text": "რა მოხდა"
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10673,
+    "notes": false,
+    "parent": "p",
+    "text": "Two weeks after a stent procedure, a high-risk patient returned with abdominal pain. The team focused on the heart. Acute pancreatitis was identified after a 14-hour delay, followed by septic shock and ICU care. A ~$20 lipase test was one of the diagnostic clues in the case."
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10673,
+    "notes": false,
+    "parent": "p",
+    "text": "სტენტირებიდან ორი კვირის შემდეგ მაღალი რისკის პაციენტი მუცლის ტკივილით დაბრუნდა. ყურადღება გულზე იყო გამახვილებული. მწვავე პანკრეატიტი 14 საათის დაგვიანებით გამოვლინდა. პაციენტს სეპტიკური შოკი განუვითარდა და რეანიმაცია დასჭირდა. დიაგნოზის დასმაში მნიშვნელოვანი როლი შეასრულა დაახლოებით $20-იანმა ლიპაზის ანალიზმა."
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10674,
+    "notes": false,
+    "parent": "p",
+    "text": "The case shows how fragmented information can delay recognition."
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10674,
+    "notes": false,
+    "parent": "p",
+    "text": "შემთხვევა გვიჩვენებს, როგორ ართულებს გაფანტული ინფორმაცია პრობლემის დროულად დანახვას."
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10678,
+    "notes": false,
+    "parent": "div",
+    "text": "Illustrative AI scenario"
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10678,
+    "notes": false,
+    "parent": "div",
+    "text": "AI-ის შესაძლო სცენარი"
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10680,
+    "notes": false,
+    "parent": "li",
+    "text": "Parallel consideration of cardiac and abdominal causes, including possible lipase testing."
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10680,
+    "notes": false,
+    "parent": "li",
+    "text": "გულისა და მუცლის მიზეზების პარალელური შეფასება, ლიპაზის ანალიზის შესაძლო შეთავაზებით."
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10681,
+    "notes": false,
+    "parent": "li",
+    "text": "Cardiology + surgery notified together, when appropriate."
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10681,
+    "notes": false,
+    "parent": "li",
+    "text": "საჭიროებისას კარდიოლოგისა და ქირურგის ერთად ინფორმირება."
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10682,
+    "notes": false,
+    "parent": "li",
+    "text": "Potentially earlier review, with the clinical team deciding."
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10682,
+    "notes": false,
+    "parent": "li",
+    "text": "შესაძლოა, პრობლემა უფრო ადრე შეფასდეს. გადაწყვეტილებას კლინიკური გუნდი იღებს."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10688,
+    "notes": false,
+    "parent": "small",
+    "text": "lab"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10688,
+    "notes": false,
+    "parent": "small",
+    "text": "ანალიზი"
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10689,
+    "notes": false,
+    "parent": "span",
+    "text": "vs"
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10689,
+    "notes": false,
+    "parent": "span",
+    "text": "და"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10690,
+    "notes": false,
+    "parent": "small",
+    "text": "inpatient stay"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10690,
+    "notes": false,
+    "parent": "small",
+    "text": "სტაციონარში ყოფნა"
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10692,
+    "notes": false,
+    "parent": "p",
+    "text": "An illustrative future scenario, not a measured MediMind outcome."
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10692,
+    "notes": false,
+    "parent": "p",
+    "text": "სამომავლო შესაძლებლობის ილუსტრაცია. MediMind-ის რეალურ შედეგს არ ასახავს."
+  },
+  {
+    "depth": 6,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10702,
+    "notes": false,
+    "parent": "div",
+    "text": "Operating impact · what to measure"
+  },
+  {
+    "depth": 6,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10702,
+    "notes": false,
+    "parent": "div",
+    "text": "სამუშაო შედეგები · რას გავზომავთ"
+  },
+  {
+    "depth": 6,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10703,
+    "notes": false,
+    "parent": "h3",
+    "text": "What can strengthen your margin"
+  },
+  {
+    "depth": 6,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10703,
+    "notes": false,
+    "parent": "h3",
+    "text": "რა შეიძლება ზრდიდეს მომგებიანობას"
+  },
+  {
+    "depth": 6,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10704,
+    "notes": false,
+    "parent": "p",
+    "text": "Use your current process as the baseline. Agree targets in these areas, then measure the change:"
+  },
+  {
+    "depth": 6,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10704,
+    "notes": false,
+    "parent": "p",
+    "text": "შედარების საფუძველი თქვენი მიმდინარე პროცესია. ამ მიმართულებებით მიზნებს შევათანხმებთ და ცვლილებას გავზომავთ:"
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10708,
+    "notes": false,
+    "parent": "div",
+    "text": "Revenue opportunities to measure"
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10708,
+    "notes": false,
+    "parent": "div",
+    "text": "შემოსავლის გაუმჯობესების შესაძლებლობები"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10712,
+    "notes": false,
+    "parent": "span",
+    "text": "Fewer returned claims"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10712,
+    "notes": false,
+    "parent": "span",
+    "text": "ნაკლები დაბრუნებული სადაზღვევო მოთხოვნა"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10712,
+    "notes": false,
+    "parent": "p",
+    "text": "Measure how often insurance reimbursement documents need correction."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10712,
+    "notes": false,
+    "parent": "p",
+    "text": "გაზომეთ, რამდენ სადაზღვევო მოთხოვნას სჭირდება შესწორება."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10717,
+    "notes": false,
+    "parent": "span",
+    "text": "Fewer unbilled services"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10717,
+    "notes": false,
+    "parent": "span",
+    "text": "ნაკლები აღურიცხავი მომსახურება"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10717,
+    "notes": false,
+    "parent": "p",
+    "text": "Compare recorded services and supplies with billed items."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10717,
+    "notes": false,
+    "parent": "p",
+    "text": "შეადარეთ გაწეული მომსახურება და მასალები ანგარიშში ასახულ პოზიციებს."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10722,
+    "notes": false,
+    "parent": "span",
+    "text": "Time to reimbursement"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10722,
+    "notes": false,
+    "parent": "span",
+    "text": "დრო ანაზღაურებამდე"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10722,
+    "notes": false,
+    "parent": "p",
+    "text": "Measure discharge-to-claim time and actual payment timing."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10722,
+    "notes": false,
+    "parent": "p",
+    "text": "გაზომეთ მოთხოვნის მომზადებისა და ანაზღაურების ვადები."
+  },
+  {
+    "depth": 8,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10727,
+    "notes": false,
+    "parent": "div",
+    "text": "Team capacity and costs to measure"
+  },
+  {
+    "depth": 8,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10727,
+    "notes": false,
+    "parent": "div",
+    "text": "გუნდის დრო და ხარჯები"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10731,
+    "notes": false,
+    "parent": "span",
+    "text": "More time for patient care"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10731,
+    "notes": false,
+    "parent": "span",
+    "text": "მეტი დრო პაციენტისთვის"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10731,
+    "notes": false,
+    "parent": "p",
+    "text": "Measure documentation time and the time available for care."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10731,
+    "notes": false,
+    "parent": "p",
+    "text": "გაზომეთ ჩანაწერებზე დახარჯული და პაციენტისთვის დარჩენილი დრო."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10736,
+    "notes": false,
+    "parent": "span",
+    "text": "Administrative workload"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10736,
+    "notes": false,
+    "parent": "span",
+    "text": "ადმინისტრაციული დატვირთვა"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10736,
+    "notes": false,
+    "parent": "p",
+    "text": "Compare hours spent on quality checks, stock and laboratory administration."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10736,
+    "notes": false,
+    "parent": "p",
+    "text": "შეადარეთ ხარისხის კონტროლზე, მარაგებსა და ლაბორატორიის მართვაზე დახარჯული დრო."
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10741,
+    "notes": false,
+    "parent": "span",
+    "text": "Stock and waste"
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10741,
+    "notes": false,
+    "parent": "span",
+    "text": "მარაგი და დანაკარგი"
+  },
+  {
+    "depth": 10,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10741,
+    "notes": false,
+    "parent": "p",
+    "text": "Track expiry losses, urgent purchases and unused stock."
+  },
+  {
+    "depth": 10,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10741,
+    "notes": false,
+    "parent": "p",
+    "text": "აღრიცხეთ ვადაგასული მარაგი, სასწრაფო შესყიდვები და გამოუყენებელი მასალები."
+  },
+  {
+    "depth": 6,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10746,
+    "notes": false,
+    "parent": "div",
+    "text": "Claims, billing, staff time and stock — agree targets, then measure the change in your own hospital."
+  },
+  {
+    "depth": 6,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10746,
+    "notes": false,
+    "parent": "div",
+    "text": "სადაზღვევო მოთხოვნები, ანგარიშები, გუნდის დრო და მარაგი. მიზნებს ერთად შევათანხმებთ და ცვლილებას თქვენს კლინიკაში გავზომავთ."
+  },
+  {
+    "depth": 6,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10754,
+    "notes": false,
+    "parent": "div",
+    "text": "Product demo"
+  },
+  {
+    "depth": 6,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10754,
+    "notes": false,
+    "parent": "div",
+    "text": "პროდუქტის დემო"
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10762,
+    "notes": false,
+    "parent": "div",
+    "text": "Demo recording coming soon"
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10762,
+    "notes": false,
+    "parent": "div",
+    "text": "დემონსტრაციის ჩანაწერი მალე დაემატება"
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10763,
+    "notes": false,
+    "parent": "div",
+    "text": "A short walkthrough of this product will play here."
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10763,
+    "notes": false,
+    "parent": "div",
+    "text": "აქ ჩაირთვება ამ პროდუქტის მოკლე მიმოხილვა."
+  },
+  {
+    "depth": 7,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 10776,
+    "notes": false,
+    "parent": "p",
+    "text": "A hospital request became a specialist planning workspace. This working demo brings CT review, anatomical measurements and a procedure plan together. MediMind Structural is in development."
+  },
+  {
+    "depth": 7,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 10777,
+    "notes": false,
+    "parent": "p",
+    "text": "კლინიკის მოთხოვნიდან — სპეციალიზებული დაგეგმვის ინსტრუმენტამდე. სამუშაო დემო აერთიანებს ტომოგრაფიის შეფასებას, ანატომიურ გაზომვებსა და ჩარევის გეგმას. MediMind Structural მუშავდება."
+  },
+  {
+    "depth": 7,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11196,
+    "notes": false,
+    "parent": "h2",
+    "text": "MediMind AI Brain · Demo"
+  },
+  {
+    "depth": 7,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11196,
+    "notes": false,
+    "parent": "h2",
+    "text": "MediMind AI ტვინი · დემო"
+  },
+  {
+    "depth": 7,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11196,
+    "notes": false,
+    "parent": "p",
+    "text": "1:50 · A demonstration based on a real clinical case"
+  },
+  {
+    "depth": 7,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11196,
+    "notes": false,
+    "parent": "p",
+    "text": "1:50 · დემო რეალური კლინიკური შემთხვევის საფუძველზე"
+  },
+  {
+    "depth": 6,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11198,
+    "notes": false,
+    "parent": "span",
+    "text": "Stage 3 · The future we’re building"
+  },
+  {
+    "depth": 6,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11198,
+    "notes": false,
+    "parent": "span",
+    "text": "ეტაპი 3 · მომავალი, რომელსაც ვაშენებთ"
+  },
+  {
+    "depth": 6,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11198,
+    "notes": false,
+    "parent": "a",
+    "text": "Watch on YouTube"
+  },
+  {
+    "depth": 6,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11198,
+    "notes": false,
+    "parent": "a",
+    "text": "ნახეთ YouTube-ზე"
+  },
+  {
+    "depth": 7,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11210,
+    "notes": false,
+    "parent": "h2",
+    "text": "Capabilities & availability"
+  },
+  {
+    "depth": 7,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11210,
+    "notes": false,
+    "parent": "h2",
+    "text": "შესაძლებლობები და ხელმისაწვდომობა"
+  },
+  {
+    "depth": 7,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11210,
+    "notes": false,
+    "parent": "p",
+    "text": "Existing tools and developing capabilities."
+  },
+  {
+    "depth": 7,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11210,
+    "notes": false,
+    "parent": "p",
+    "text": "არსებული ინსტრუმენტები და განვითარებადი შესაძლებლობები."
+  },
+  {
+    "depth": 7,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11212,
+    "notes": false,
+    "parent": "h3",
+    "text": "AI assistance across the hospital"
+  },
+  {
+    "depth": 7,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11212,
+    "notes": false,
+    "parent": "h3",
+    "text": "AI დახმარება მთელ კლინიკაში"
+  },
+  {
+    "depth": 7,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11212,
+    "notes": false,
+    "parent": "p",
+    "text": "Existing clinical tools include voice-to-documentation, patient-context discussion, medication review, blood-gas interpretation and draft action plans. The wider catalogue below includes development directions; it is not a claim that every capability is deployed."
+  },
+  {
+    "depth": 7,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11212,
+    "notes": false,
+    "parent": "p",
+    "text": "არსებული კლინიკური ინსტრუმენტების მაგალითებია ხმოვანი დოკუმენტაცია, პაციენტის მონაცემების განხილვა, მედიკამენტების მიმოხილვა, სისხლის გაზების ინტერპრეტაცია და სამოქმედო გეგმის მონახაზი. ქვემოთ ჩამოთვლილი უფრო ფართო შესაძლებლობები განვითარების მიმართულებებსაც მოიცავს; ყველა მათგანი ჯერ დანერგილი არ არის."
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11212,
+    "notes": false,
+    "parent": "h4",
+    "text": "ER"
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11212,
+    "notes": false,
+    "parent": "h4",
+    "text": "მიმღები"
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11212,
+    "notes": false,
+    "parent": "p",
+    "text": "Triage assistance, risk screening and patient-context summaries."
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11212,
+    "notes": false,
+    "parent": "p",
+    "text": "ტრიაჟის დახმარება, რისკების სკრინინგი და პაციენტის მდგომარეობის შეჯამება."
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11213,
+    "notes": false,
+    "parent": "h4",
+    "text": "ICU"
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11213,
+    "notes": false,
+    "parent": "h4",
+    "text": "რეანიმაცია"
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11213,
+    "notes": false,
+    "parent": "p",
+    "text": "Blood-gas interpretation, draft action plans and developing early-warning support."
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11213,
+    "notes": false,
+    "parent": "p",
+    "text": "სისხლის გაზების ინტერპრეტაცია, სამოქმედო გეგმის მონახაზი და ადრეული გაფრთხილების განვითარება."
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11214,
+    "notes": false,
+    "parent": "h4",
+    "text": "OR"
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11214,
+    "notes": false,
+    "parent": "h4",
+    "text": "საოპერაციო"
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11214,
+    "notes": false,
+    "parent": "p",
+    "text": "Draft operation notes and structured procedural documentation."
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11214,
+    "notes": false,
+    "parent": "p",
+    "text": "ოპერაციის ოქმის მონახაზი და ჩარევის სტრუქტურირებული დოკუმენტაცია."
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11215,
+    "notes": false,
+    "parent": "h4",
+    "text": "Wards"
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11215,
+    "notes": false,
+    "parent": "h4",
+    "text": "პალატები"
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11215,
+    "notes": false,
+    "parent": "p",
+    "text": "Patient-history synthesis, discharge and handover drafts, and bed-flow planning support."
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11215,
+    "notes": false,
+    "parent": "p",
+    "text": "ისტორიის შეჯამება, გაწერისა და გადაბარების დოკუმენტების მონახაზები და პაციენტთა ნაკადის დაგეგმვის დახმარება."
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11216,
+    "notes": false,
+    "parent": "h4",
+    "text": "Radiology"
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11216,
+    "notes": false,
+    "parent": "h4",
+    "text": "რადიოლოგია"
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11216,
+    "notes": false,
+    "parent": "p",
+    "text": "Selected imaging-assistance and urgent-study prioritisation directions, as each application is developed and validated."
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11216,
+    "notes": false,
+    "parent": "p",
+    "text": "გამოსახულების ანალიზის კონკრეტული ამოცანები და გადაუდებელი კვლევების პრიორიტეტის განსაზღვრა — თითოეული შესაძლებლობის შემუშავებისა და შემოწმების შემდეგ."
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11217,
+    "notes": false,
+    "parent": "h4",
+    "text": "Laboratory"
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11217,
+    "notes": false,
+    "parent": "h4",
+    "text": "ლაბორატორია"
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11217,
+    "notes": false,
+    "parent": "p",
+    "text": "Result synthesis, clinical context for critical findings and laboratory workflow assistance."
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11217,
+    "notes": false,
+    "parent": "p",
+    "text": "შედეგების შეჯამება, კრიტიკული მიგნებების კლინიკურ კონტექსტში შეფასება და ლაბორატორიული პროცესების დახმარება."
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11218,
+    "notes": false,
+    "parent": "h4",
+    "text": "Pharmacy"
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11218,
+    "notes": false,
+    "parent": "h4",
+    "text": "აფთიაქი"
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11218,
+    "notes": false,
+    "parent": "p",
+    "text": "Medication review, interaction interpretation and dose-checking assistance."
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11218,
+    "notes": false,
+    "parent": "p",
+    "text": "მედიკამენტების მიმოხილვა, ურთიერთქმედების განმარტება და დოზის გადამოწმების დახმარება."
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11219,
+    "notes": false,
+    "parent": "h4",
+    "text": "Coordination"
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11219,
+    "notes": false,
+    "parent": "h4",
+    "text": "კოორდინაცია"
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11219,
+    "notes": false,
+    "parent": "p",
+    "text": "Demand forecasting and scheduling or capacity-planning assistance."
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11219,
+    "notes": false,
+    "parent": "p",
+    "text": "მოთხოვნის პროგნოზი და ჩაწერისა თუ რესურსების დატვირთვის დაგეგმვის დახმარება."
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11220,
+    "notes": false,
+    "parent": "h4",
+    "text": "Billing"
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11220,
+    "notes": false,
+    "parent": "h4",
+    "text": "ანგარიშსწორება"
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11220,
+    "notes": false,
+    "parent": "p",
+    "text": "Missed-service and coding review, reimbursement checks, denial analysis and draft appeals."
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11220,
+    "notes": false,
+    "parent": "p",
+    "text": "გამორჩენილი მომსახურებისა და კოდირების შემოწმება, ანაზღაურების გადამოწმება, უარების ანალიზი და გასაჩივრების მომზადება."
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11221,
+    "notes": false,
+    "parent": "h4",
+    "text": "Warehouse"
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11221,
+    "notes": false,
+    "parent": "h4",
+    "text": "საწყობი"
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11221,
+    "notes": false,
+    "parent": "p",
+    "text": "Stock and demand forecasts to support purchasing and inventory decisions."
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11221,
+    "notes": false,
+    "parent": "p",
+    "text": "მარაგისა და მოთხოვნის პროგნოზი შესყიდვებისა და მარაგის მართვის დასახმარებლად."
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11222,
+    "notes": false,
+    "parent": "h4",
+    "text": "Staff"
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11222,
+    "notes": false,
+    "parent": "h4",
+    "text": "პერსონალი"
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11222,
+    "notes": false,
+    "parent": "p",
+    "text": "Staffing and shift-planning assistance, with workload analysis."
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11222,
+    "notes": false,
+    "parent": "p",
+    "text": "კადრებისა და ცვლების დაგეგმვის დახმარება და დატვირთვის ანალიზი."
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11223,
+    "notes": false,
+    "parent": "h4",
+    "text": "Patient portal"
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11223,
+    "notes": false,
+    "parent": "h4",
+    "text": "პორტალი"
+  },
+  {
+    "depth": 9,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11223,
+    "notes": false,
+    "parent": "p",
+    "text": "Message prioritisation and patient-friendly explanations of care information."
+  },
+  {
+    "depth": 9,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11223,
+    "notes": false,
+    "parent": "p",
+    "text": "შეტყობინებების პრიორიტეტის განსაზღვრა და სამედიცინო ინფორმაციის პაციენტისთვის გასაგებად ახსნა."
+  },
+  {
+    "depth": 7,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11223,
+    "notes": false,
+    "parent": "p",
+    "text": "Management: a shared view of activity, resources, finances and issues needing attention. Stage 2 supports the team’s work and clinical review. The hospital-specific proactive Brain that decides and acts within a pre-authorised scope is the separate Stage 3 vision."
+  },
+  {
+    "depth": 7,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11223,
+    "notes": false,
+    "parent": "p",
+    "text": "ხელმძღვანელობისთვის — საქმიანობის, რესურსების, ფინანსებისა და საყურადღებო საკითხების ერთიანი სურათი. ეტაპი 2 გუნდს მუშაობასა და კლინიკურ შეფასებაში ეხმარება. კლინიკის საკუთარი პროაქტიული ტვინი, რომელიც წინასწარ ნებადართულ ფარგლებში გადაწყვეტილებებს იღებს და მოქმედებს, ეტაპი 3-ის ცალკე ხედვაა."
+  },
+  {
+    "depth": 7,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11223,
+    "notes": false,
+    "parent": "p",
+    "text": "Stage 1 is a complete hospital operating system in its own right. Stage 2 is optional; scope, validation, availability and pricing are agreed separately. Intended benefits are not guaranteed financial or clinical outcomes."
+  },
+  {
+    "depth": 7,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11223,
+    "notes": false,
+    "parent": "p",
+    "text": "ეტაპი 1 თავისთავად სრულფასოვანი კლინიკის ოპერაციული სისტემაა. ეტაპი 2 არჩევითია; მოცულობა, შემოწმება, ხელმისაწვდომობა და ფასი ცალკე თანხმდება. სარგებლის მიზნები გარანტირებულ ფინანსურ ან კლინიკურ შედეგს არ ნიშნავს."
+  },
+  {
+    "depth": 7,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11228,
+    "notes": false,
+    "parent": "h3",
+    "text": "External research"
+  },
+  {
+    "depth": 7,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11228,
+    "notes": false,
+    "parent": "h3",
+    "text": "სხვა სისტემების კვლევები"
+  },
+  {
+    "depth": 7,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11229,
+    "notes": false,
+    "parent": "p",
+    "text": "These studies describe other systems. They are not measured MediMind results."
+  },
+  {
+    "depth": 7,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11229,
+    "notes": false,
+    "parent": "p",
+    "text": "ეს კვლევები სხვა სისტემებს ეხება. მონაცემები MediMind-ის შედეგებს არ ასახავს."
+  },
+  {
+    "depth": 7,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11230,
+    "notes": false,
+    "parent": "h4",
+    "text": "Time with patients"
+  },
+  {
+    "depth": 7,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11230,
+    "notes": false,
+    "parent": "h4",
+    "text": "პაციენტთან გატარებული დრო"
+  },
+  {
+    "depth": 7,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11231,
+    "notes": false,
+    "parent": "p",
+    "text": "In a UK evaluation of 17,000+ visits, AI drafted consultation notes for clinicians to review."
+  },
+  {
+    "depth": 7,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11231,
+    "notes": false,
+    "parent": "p",
+    "text": "ბრიტანეთში, 17,000-ზე მეტი ვიზიტის შეფასებისას, AI ვიზიტის ჩანაწერის მონახაზს ამზადებდა, რომელსაც ექიმი ამოწმებდა."
+  },
+  {
+    "depth": 7,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11232,
+    "notes": false,
+    "parent": "p",
+    "text": "Direct patient interaction time increased by 23.5% during appointments. This does not mean 23.5% of the entire workday was saved."
+  },
+  {
+    "depth": 7,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11232,
+    "notes": false,
+    "parent": "p",
+    "text": "ვიზიტისას პაციენტთან უშუალო ურთიერთობის დრო 23.5%-ით გაიზარდა. ეს მთელი სამუშაო დღის 23.5%-ის დაზოგვას არ ნიშნავს."
+  },
+  {
+    "depth": 7,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11233,
+    "notes": false,
+    "parent": "p",
+    "text": "UK · 9 NHS sites · External evaluation, not a MediMind result."
+  },
+  {
+    "depth": 7,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11233,
+    "notes": false,
+    "parent": "p",
+    "text": "ბრიტანეთი · 9 დაწესებულება · სხვა სისტემის შეფასება, არა MediMind-ის შედეგი."
+  },
+  {
+    "depth": 7,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11234,
+    "notes": false,
+    "parent": "h4",
+    "text": "Patient flow and discharge planning"
+  },
+  {
+    "depth": 7,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11234,
+    "notes": false,
+    "parent": "h4",
+    "text": "პაციენტთა ნაკადისა და გაწერის დაგეგმვა"
+  },
+  {
+    "depth": 7,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11235,
+    "notes": false,
+    "parent": "p",
+    "text": "At seven US hospitals, AI helped teams plan discharges earlier; average inpatient stays fell by 0.63 days."
+  },
+  {
+    "depth": 7,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11235,
+    "notes": false,
+    "parent": "p",
+    "text": "აშშ-ის 7 კლინიკაში AI გუნდებს გაწერის წინასწარ დაგეგმვაში დაეხმარა; პაციენტის დაყოვნების საშუალო ხანგრძლივობა 0.63 დღით შემცირდა."
+  },
+  {
+    "depth": 7,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11236,
+    "notes": false,
+    "parent": "div",
+    "text": "$52–67m a year ÷ 7 hospitals / ≈ $7.4–9.6m per hospital / year"
+  },
+  {
+    "depth": 7,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11236,
+    "notes": false,
+    "parent": "div",
+    "text": "$52–67 მლნ წელიწადში ÷ 7 კლინიკა / ≈ $7.4–9.6 მლნ ერთ კლინიკაზე / წელიწადში"
+  },
+  {
+    "depth": 7,
+    "lang": "en",
+    "slide": "hospital-sources",
+    "line": 11237,
+    "notes": false,
+    "parent": "p",
+    "text": "Simple average of a projected network benefit, not measured savings at each hospital. US scale and prices; not a forecast for Georgia or MediMind."
+  },
+  {
+    "depth": 7,
+    "lang": "ka",
+    "slide": "hospital-sources",
+    "line": 11237,
+    "notes": false,
+    "parent": "p",
+    "text": "ქსელის სავარაუდო სარგებლის საშუალო და არა თითოეულ კლინიკაში გაზომილი დანაზოგი. აშშ-ის მასშტაბი და ფასები; არა საქართველოს ან MediMind-ის პროგნოზი."
+  }
+]

@@ -1,0 +1,166 @@
+{
+  "lang": "en",
+  "width": 1280,
+  "height": 720,
+  "total": 17,
+  "errors": [],
+  "slides": [
+    {
+      "slide": 1,
+      "classes": "cover has-dark-background present",
+      "text": "ENG\nქარ\nHOSPITAL PARTNERSHIP\nThe AI-native operating system\nfor your hospital.\nAI · Clinical care · Laboratory · PACS · Patient Portal.",
+      "overflow": [],
+      "clipped": [],
+      "scrollHeight": 1010,
+      "clientHeight": 720
+    },
+    {
+      "slide": 2,
+      "classes": "gw-slide hxd-slide present",
+      "text": "01\nTHE PROMISE\nFor our next 5 hospital partners.\nEverything your hospital needs.\nOne hospital operating system — at your current software spend.\nEMR\nLAB\nPACS\n01\nFree deployment\n\nWe install, configure and train your key users on-site — the rollout costs you nothing.\n\n02\nFree, tailored development\n\nWe adapt the base system to your workflows and keep developing it — at no extra charge.\n\n03\nSource-code ownership\n\nYou own the first delivered base-system source code, under your contract.\n\n04\nFree parallel evaluation. Switch when ready.\n\nCompare both systems while your current one stays in use. Switch when your team accepts the result.\n\n05\nReady for what comes next\n\nOne shared system today. A foundation for the AI capabilities you choose tomorrow.\n\nCapacity is allocated. Evaluate first. Decide after.\nmedimind.md",
+      "overflow": [],
+      "clipped": [],
+      "scrollHeight": 720,
+      "clientHeight": 720
+    },
+    {
+      "slide": 3,
+      "classes": "gw-slide hxr-slide hxr3-slide present",
+      "text": "02\nTHE LONG VIEW\nYour hospital evolves. Your software should too.\n\nCompare development, data access and exit terms before committing.\n\nYOUR CURRENT SYSTEM\nVS\nMEDIMIND\nWhat does a change cost, and how long does it take?\nTAILORED DEVELOPMENT\nAgreed base scope — built for your hospital, included.\nIs the data model open? How are access and changes controlled?\nSECURITY & DATA MODEL\nFHIR R4 at the core, with roles, permissions and audit trails.\nWho owns the code, and what are your exit rights?\nSOURCE CODE\nFirst delivered base source code: yours, under contract.\nWhich AI services are available, and what would they cost?\nAI & THE FUTURE\nBuilt for AI, with optional services agreed separately.\nWhich updates and support services are included?\nUPDATES\nOngoing base-system development, within the agreed scope.\nWho will implement it, and what is the development plan?\nDELIVERY TEAM\nClinical and technology experience, with capacity allocated for our next five partners.\nCompare the foundation and the commitments. Then choose on the evidence from your own hospital.\nmedimind.md",
+      "overflow": [
+        "hxr3-board"
+      ],
+      "clipped": [],
+      "scrollHeight": 720,
+      "clientHeight": 720
+    },
+    {
+      "slide": 4,
+      "classes": "gw-slide hxs-slide present",
+      "text": "03THE PATH · 3 PHASES\nA strong foundation. A path to the future.\n\nPhase 1 is today’s offer. Phases 2 and 3 are optional and priced separately.\n\nON THE TABLE TODAY — matched to your current software spend.\n1\nTHIS IS WHAT WE'RE OFFERING TODAY\nPHASE 1\nAVAILABLE TODAY\nThe foundation\nEMR · LAB · PACS · Portal\nThe legacy stack goes.\nOne system for clinical and administrative work.\nBuilt ground-up on FHIR R4, with access controls and audit trails.\n25\nhospitals covered by one signed network agreement\nOPTIONAL, LATER — your choice, with scope and pricing agreed separately.\n2\nPHASE 2\nOPTIONAL · WHEN READY\nEfficiency gains\nAI introduced workflow by workflow\nAI-assisted notes for clinician review.\nAI analysis of the patient's full history.\nAI early-warning systems.\nManagement sees the whole hospital.\nYOU\ndecide which department starts — and when\n3\nPHASE 3\nOPTIONAL · LONG-TERM VISION\nThe proactive brain\nThe hospital that thinks ahead\nConnects the available patient context.\nSupports clinical and operational decisions.\nFlags emerging problems for the team.\nAI\na long-term vision, developed and validated step by step\n\nPhase 1 provides one FHIR R4 foundation. Future AI services build on it, with scope and pricing agreed separately.\n\nmedimind.md",
+      "overflow": [
+        "hxs-card hxs-card--p3"
+      ],
+      "clipped": [],
+      "scrollHeight": 720,
+      "clientHeight": 720
+    },
+    {
+      "slide": 5,
+      "classes": "gw-slide hxp-slide present",
+      "text": "04\nPROOF · ALREADY LIVE\nOne signed network agreement. 25 hospitals.\n\nCentral hospital live. Network rollout in stages.\n\nGEORGIA\nTbilisi\nKutaisi\nBatumi\n25\nnetwork\nhospitals\nSIGNED & VERIFIABLE\n25\nHospitals — one signed contract\nOne agreement covers 25 hospitals. Central hospital live; rollout continues in stages.\n1.15M\nJULY 2026\nPatient records migrated\n1,147,535 records migrated in July 2026\nHear from the team using it. We can arrange the conversation.\nInnovative Startup\nGITA ₾150K grant received\nFHIR R4 standard\nmedimind.md",
+      "overflow": [],
+      "clipped": [],
+      "scrollHeight": 720,
+      "clientHeight": 720
+    },
+    {
+      "slide": 6,
+      "classes": "gw-slide hxw-slide present",
+      "text": "05\nWHO WE ARE\nDoctors, building for doctors.\n\nA team for implementation, training and development around your hospital.\n\nDr. Lasha Khoshtaria\nFOUNDER · PHYSICIAN\n01\nPhysician-founded\n\nBuilt at the bedside — the system a doctor wished he had on the night shift.\n\n02\nCo-founder · Product\n\nIrakli Pkhovelishvili — nine years at Riot Games. Duke MBA.\n\n03\nOne team, one codebase\n\nClinical and engineering experience. One team for implementation and support.\n\n04\nBacking & experience\n\n500 Global Eurasia accelerator. GITA ₾150K grant received.\n\n“\n\nNot foreign software parachuted into Georgia — built here, in your language, for your wards, by your colleagues.\n\nmedimind.md",
+      "overflow": [],
+      "clipped": [],
+      "scrollHeight": 720,
+      "clientHeight": 720
+    },
+    {
+      "slide": 7,
+      "classes": "gw-slide hxm-slide present",
+      "text": "06\nTHE COST OF SEPARATION\nSeparate systems. Your team connects them.\n\nRepeated entry. Separate bills. Time spent reconciling information.\n\nAN ILLUSTRATIVE FRAGMENTED SETUP\nEMR\nseparate system\nLab system\nseparate vendor\nImaging\nseparate vendor\nBilling & forms\npaid change requests\nnothing talks to anything\nBECOMES\nWHAT WE HAND YOU INSTEAD\nEMR\nPACS\nLab\nPortal\nMediMind OS\nOne clinical core · ready for future AI\nOne shared foundation. Less work between systems.\nmedimind.md",
+      "overflow": [],
+      "clipped": [],
+      "scrollHeight": 720,
+      "clientHeight": 720
+    },
+    {
+      "slide": 8,
+      "classes": "eco-slide present",
+      "text": "07\nTHE OPERATING SYSTEM\nPHASE 1 · LIVE\nOne clinical core. Many connected products.\n\nPhase 1 in depth: connected products on one FHIR R4 core. Tap any product to see it in action.\n\nMediMind OS\nThe hospital operating system\nLIVE\nMEDIMIND\nConnect\nTelemedicine\nLIVE\nMEDIMIND\nPACS\nDICOM imaging\nLIVE\nMEDIMIND\nLab\nLaboratory\nLIVE\nLiverRa\nLiver surgical AI\nMVP\nMEDIMIND\nStructural\nStructural heart\nBUILDING\nMEDIMIND\nPatient Portal\nPatient app\nBUILDING\nMEDIMIND\nAngio\nVascular reporting\nMVP\nmedimind.md",
+      "overflow": [],
+      "clipped": [],
+      "scrollHeight": 720,
+      "clientHeight": 720
+    },
+    {
+      "slide": 9,
+      "classes": "gw-slide hxa-slide scope-slide present",
+      "text": "08AI EVERYWHERE\nPHASE 2 · OPTIONAL\nAI for every department. One view for management.\n\nPhase 2 brings AI assistants into department workflows and a shared management view for the director.\n\n★ BUILDS ON THE PHASE 1 CORE · OPTIONAL, PRICED SEPARATELY ★\nER\nAI triage + sepsis screening\nICU\nEarly warning, hours ahead\nOR\nAI-drafted operation notes\nWARDS\nAI handoffs + bed flow\nRADIOLOGY\nUrgent studies flagged first\nLAB · LIS\nCritical values, auto-routed\nSpecimen tracking end-to-end\nFOR MANAGEMENT — THE DIRECTOR'S LIVE SCREEN\nTHE WHOLE HOSPITAL\nat a glance: command center · live bed board · revenue cycle · one-click MOH\nPHARMACY\nInteraction + dose checks\nEvery dose barcode-checked\nCOORDINATOR\nCapacity foresight + slots\nBILLING\nDenial patterns + AI appeals\nWAREHOUSE\nPredictive ordering\nHR · STAFF\nFair shifts, burnout signals\nPORTAL\nPatient messages, AI-graded\nOPTIONAL · WHEN READY\n\nThe shared Phase 1 core provides the foundation. Choose the department, then agree scope, validation and pricing.\n\nmedimind.md",
+      "overflow": [],
+      "clipped": [],
+      "scrollHeight": 720,
+      "clientHeight": 720
+    },
+    {
+      "slide": 10,
+      "classes": "csx-slide hx-brain present",
+      "text": "09\nTHE AI BRAIN\nPHASE 3 · FUTURE VISION\nAt 02:00, every clue matters.\n\nFuture vision: AI connects patient context and flags concerns. Your doctors decide.\n\n02:00am\nStomach pain · ER\nACTUAL CASE\nEyes on the heart\nTHE MISDIRECTION\nHours lost\nThe real cause found\n20 days in ICU\nILLUSTRATIVE MEDIMIND SCENARIO\nFlagged at 02:00\n→\nEarlier review\nThe 14-hour silence\nReal case. The AI response is illustrative, not a measured outcome.\nWhere the margin comes from\nPractical ways to protect revenue and free team capacity\nmedimind.md",
+      "overflow": [],
+      "clipped": [],
+      "scrollHeight": 720,
+      "clientHeight": 720
+    },
+    {
+      "slide": 11,
+      "classes": "bm-slide hx-offer present",
+      "text": "10\nTHE OFFER\nMore for your hospital. The same software budget.\n\nClinical care, laboratory, imaging and administration — connected in one operating system.\n\nWHAT YOUR MONEY BUYS TODAY\nYour current clinical system\nA separate lab vendor\nSeparate imaging fees\nPaid change requests\nSeparate systems and contracts\n=\nTHE SAME MONTHLY SPEND\nWHAT THE SAME MONEY BUYS WITH US\nEMR + Lab (LIS) + PACS + Patient Portal\nONE SYSTEM · ONE CODEBASE\nThe agreed Phase 1 scope, on one hospital operating system\nOngoing tailored development within the agreed base scope\nBase-system updates and team support\nOne contract, one phone number\nYou ask\nWe build\nBRING US A PROCESS YOU WANT TO IMPROVE\n\nReal hospital needs guide development. We agree the base scope together and build within it at no extra charge. Our TAVI planner began with a hospital request.\n\nWatch it run\nmedimind.md",
+      "overflow": [],
+      "clipped": [],
+      "scrollHeight": 720,
+      "clientHeight": 720
+    },
+    {
+      "slide": 12,
+      "classes": "gw-slide gw-switch present",
+      "text": "11\nFREE PARALLEL EVALUATION\nStart with one hospital process. Compare before deciding.\n\nYour current system stays in use while your team evaluates the agreed MediMind scope for free.\n\nAgreed data access\nSYSTEMS RUN IN PARALLEL\nYour team verifies it\nOPERATIONS CONTINUE\n\nYour current system stays live while the full MediMind system runs beside it.\n\nMEASURE YOUR RESULTS\n\nVisit time, repeated entry and unbilled services — compared against an agreed baseline.\n\nYOU DECIDE AFTER THE PROOF\n\nAgree the baseline first. Decide after your team verifies the result.\n\nmedimind.md",
+      "overflow": [],
+      "clipped": [],
+      "scrollHeight": 720,
+      "clientHeight": 720
+    },
+    {
+      "slide": 13,
+      "classes": "gw-slide hxg-slide present",
+      "text": "12\nIN WRITING\nYour data. Your first version.\n\nData, source-code rights and service terms, agreed in writing.\n\nYOUR DATA IS YOURS\n\nYour hospital owns its data. FHIR R4 keeps it portable, with export arrangements agreed before rollout.\n\nFIRST-VERSION SOURCE-CODE OWNERSHIP\n\nThe first delivered agreed base-system source code belongs to your hospital under the contract.\n\nSUPPORT + PRICE TERMS\n\nSupport, service levels, form updates and any price-lock term are defined in your agreement.\n\nYour data and your first source-code version. Under your control.\nmedimind.md",
+      "overflow": [],
+      "clipped": [],
+      "scrollHeight": 720,
+      "clientHeight": 720
+    },
+    {
+      "slide": 14,
+      "classes": "hc-dark hc-close present",
+      "text": "13\nTHE INVITATION\nSame spend. A generation ahead.\n\nWe are allocating implementation and development capacity to our next five hospital partners.\n\nLet’s see what changes for your hospital.\nSame spend\nAgreed base included\nSwitch when ready\nFree parallel evaluation\n1\n30 minutes: director + process lead\n→\n2\nMap the process & agree measures\n→\n3\nSend two times that work for you",
+      "overflow": [],
+      "clipped": [],
+      "scrollHeight": 720,
+      "clientHeight": 720
+    },
+    {
+      "slide": 15,
+      "classes": "divider-slide divider-thanks present",
+      "text": "END OF THE PROPOSAL\nThank you.\nUP NEXT\nLive walkthrough\nArchitecture\n→\nmedimind.md",
+      "overflow": [],
+      "clipped": [],
+      "scrollHeight": 720,
+      "clientHeight": 720
+    },
+    {
+      "slide": 16,
+      "classes": "tour-slide present",
+      "text": "",
+      "overflow": [],
+      "clipped": [],
+      "scrollHeight": 720,
+      "clientHeight": 720
+    },
+    {
+      "slide": 17,
+      "classes": "present",
+      "text": "A\nAPPENDIX · ARCHITECTURE\nA hospital with a body made of software.\n\nEvery department. Every workflow. One AI-native codebase, built ground-up on FHIR R4.\n\nCLINICIANS\ndoctors & nurses\nCOORDINATORS\nadmin & operations\nPATIENTS\nportal & notifications\nSKIN — THE SURFACES OF THE HOSPITAL\n— VIEW · EDIT · WRITE —\nPatient\nEncounter\nBed\nMedication\nClaim\nCoverage\nSpecimen\nOrder\nHEART — THE LIVING HOSPITAL MODEL\n80+ FHIR R4 resources · one living model · ground-up, not an API layer\n— REASON · ACT · REMEMBER —\nAI-BRAIN\nreasons across the Heart\nMUSCLE\nacts on the real world\nNERVE\nfeels every change\nDATA FLOW\nLIVE\n↕\nSKIN\npeople read & write\n↕\nAI-BRAIN\nAI reasons & writes\n→\nMUSCLE\nexecutes commands\n←\nNERVE\nrecords every change\nHeart is the center.\nEverything else flows through it.\nOne hospital operating system. One FHIR R4 foundation.\nmedimind.md",
+      "overflow": [],
+      "clipped": [],
+      "scrollHeight": 720,
+      "clientHeight": 720
+    }
+  ]
+}

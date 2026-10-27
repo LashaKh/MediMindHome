@@ -1,0 +1,215 @@
+{
+  "sections": [
+    "cover",
+    "gw-slide hxd-slide",
+    "gw-slide hxr-slide hxr3-slide",
+    "gw-slide hxs-slide",
+    "gw-slide hxp-slide",
+    "gw-slide hxw-slide",
+    "gw-slide hxm-slide",
+    "eco-slide",
+    "gw-slide hxa-slide scope-slide",
+    "csx-slide hx-brain",
+    "bm-slide hx-offer",
+    "gw-slide gw-switch",
+    "gw-slide hxg-slide",
+    "hc-dark hc-close",
+    "divider-slide divider-thanks",
+    "tour-slide",
+    ""
+  ],
+  "actions": [
+    {
+      "onclick": "mmSetLang('en')"
+    },
+    {
+      "onclick": "mmSetLang('ka')"
+    },
+    {
+      "data-iframe": "/walkthrough?preview=1",
+      "onclick": "openProductDemo(this)"
+    },
+    {
+      "data-video": "/deck-assets/product-videos/connect.mp4",
+      "onclick": "openProductDemo(this)"
+    },
+    {
+      "data-video": "/deck-assets/product-videos/pacs.mp4",
+      "onclick": "openProductDemo(this)"
+    },
+    {
+      "data-video": "/deck-assets/product-videos/lab.mp4",
+      "onclick": "openProductDemo(this)"
+    },
+    {
+      "data-video": "/deck-assets/product-videos/liverra.mp4",
+      "onclick": "openProductDemo(this)"
+    },
+    {
+      "data-video": "/deck-assets/product-videos/structural.mp4",
+      "onclick": "openProductDemo(this)"
+    },
+    {
+      "data-video": "/deck-assets/product-videos/portal.mp4",
+      "onclick": "openProductDemo(this)"
+    },
+    {
+      "data-video": "/deck-assets/product-videos/angio.mp4",
+      "onclick": "openProductDemo(this)"
+    },
+    {
+      "onclick": "openCaseModal()"
+    },
+    {
+      "onclick": "openBizModal()"
+    },
+    {
+      "data-video": "/deck-assets/product-videos/structural.mp4",
+      "onclick": "openProductDemo(this)"
+    },
+    {
+      "onclick": "Reveal.next()"
+    },
+    {
+      "onclick": "Reveal.prev()"
+    },
+    {
+      "onclick": "Reveal.next()"
+    },
+    {
+      "onclick": "closeGalleryLightbox()"
+    },
+    {
+      "onclick": "closeCaseModal()"
+    },
+    {
+      "onclick": "closeBizModal()"
+    },
+    {
+      "onclick": "closeProductDemo()"
+    }
+  ],
+  "media": [
+    {
+      "tag": "img",
+      "src": "/deck-assets/logo-horizontal-dark.svg",
+      "id": null
+    },
+    {
+      "tag": "img",
+      "src": "/deck-assets/logo-icon-dark.svg",
+      "id": null
+    },
+    {
+      "tag": "img",
+      "src": "/deck-assets/logo-icon-dark.svg",
+      "id": null
+    },
+    {
+      "tag": "img",
+      "src": "/deck-assets/logo-icon-dark.svg",
+      "id": null
+    },
+    {
+      "tag": "img",
+      "src": "/deck-assets/logo-icon-dark.svg",
+      "id": null
+    },
+    {
+      "tag": "img",
+      "src": "/deck-assets/geo-hospitals-logo.png",
+      "id": null
+    },
+    {
+      "tag": "img",
+      "src": "/deck-assets/logo-icon-dark.svg",
+      "id": null
+    },
+    {
+      "tag": "img",
+      "src": "/deck-assets/team/lasha-ultrasound.png",
+      "id": null
+    },
+    {
+      "tag": "img",
+      "src": "/deck-assets/logo-icon-dark.svg",
+      "id": null
+    },
+    {
+      "tag": "img",
+      "src": "/deck-assets/logo-icon-dark.svg",
+      "id": null
+    },
+    {
+      "tag": "img",
+      "src": "/deck-assets/logo-icon-dark.svg",
+      "id": null
+    },
+    {
+      "tag": "img",
+      "src": "/deck-assets/logo-icon-dark.svg",
+      "id": null
+    },
+    {
+      "tag": "img",
+      "src": "/deck-assets/logo-icon-dark.svg",
+      "id": null
+    },
+    {
+      "tag": "img",
+      "src": "/deck-assets/logo-icon-dark.svg",
+      "id": null
+    },
+    {
+      "tag": "img",
+      "src": "/deck-assets/logo-icon-dark.svg",
+      "id": null
+    },
+    {
+      "tag": "img",
+      "src": "/deck-assets/logo-icon-dark.svg",
+      "id": null
+    },
+    {
+      "tag": "img",
+      "src": "/deck-assets/logo-horizontal-dark.svg",
+      "id": null
+    },
+    {
+      "tag": "img",
+      "src": "/deck-assets/logo-icon-dark.svg",
+      "id": null
+    },
+    {
+      "tag": "img",
+      "src": "/deck-assets/logo-icon-dark.svg",
+      "id": null
+    },
+    {
+      "tag": "iframe",
+      "src": "/walkthrough?preview=1&muted=1",
+      "id": null
+    },
+    {
+      "tag": "img",
+      "src": "/deck-assets/logo-icon-dark.svg",
+      "id": null
+    },
+    {
+      "tag": "img",
+      "src": "",
+      "id": "gallery-lightbox-img"
+    },
+    {
+      "tag": "video",
+      "src": null,
+      "id": "eco-modal-video"
+    },
+    {
+      "tag": "iframe",
+      "src": null,
+      "id": "eco-modal-frame"
+    }
+  ],
+  "svgCount": 102
+}

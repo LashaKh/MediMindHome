@@ -1,0 +1,84 @@
+[
+  {
+    "name": [
+      "Tailored to you",
+      "თქვენზე მორგება"
+    ],
+    "title": [
+      "You set the working process. We adapt the software.",
+      "თქვენ ადგენთ მუშაობის წესს. ჩვენ პროგრამას ვარგებთ."
+    ],
+    "description": [
+      "When software lacks a needed function, staff have to add extra steps or do part of the work manually. Together with your team, we define the processes you need and build them into the system.",
+      "როცა პროგრამას საჭირო ფუნქცია აკლია, თანამშრომლებს დამატებითი ნაბიჯების გავლა ან სამუშაოს ნაწილის ხელით შესრულება უწევთ. თქვენს გუნდთან ერთად ვაზუსტებთ საჭირო პროცესებს და პროგრამაში ვაწყობთ."
+    ],
+    "sections": [
+      {
+        "title": [
+          "The whole workflow",
+          "მთელი სამუშაო პროცესი"
+        ],
+        "text": [
+          "Tailoring includes the sequence of tasks, staff roles, forms, reports and the transfer of information between departments.",
+          "ვარგებთ სამუშაოს ეტაპებს, თანამშრომლების როლებს, ფორმებს, ანგარიშებსა და განყოფილებებს შორის ინფორმაციის გადაცემას."
+        ]
+      },
+      {
+        "title": [
+          "Your team helps shape the result",
+          "თქვენი გუნდის მონაწილეობით"
+        ],
+        "text": [
+          "Your staff explain their needs and check whether the agreed solution works comfortably in day-to-day practice.",
+          "თქვენი თანამშრომლები გვიხსნიან საჭიროებებს და ამოწმებენ, რამდენად მოსახერხებელია შეთანხმებული გადაწყვეტა ყოველდღიურ მუშაობაში."
+        ]
+      }
+    ]
+  },
+  {
+    "name": [
+      "AI readiness",
+      "AI-ისთვის მზადყოფნა"
+    ],
+    "title": [
+      "Ready for AI tools today and tomorrow.",
+      "AI-ისთვის მზადყოფნა დღეს და მომავალში."
+    ],
+    "description": [
+      "MediMind’s infrastructure and data structure are designed from the outset to support AI tools. This gives your hospital a foundation for both current AI services and future capabilities.",
+      "MediMind-ის ინფრასტრუქტურა და მონაცემთა სტრუქტურა თავიდანვე AI-ის ხელსაწყოების დასამატებლადაა შექმნილი. ეს კლინიკას როგორც დღევანდელი AI სერვისების, ისე მომავალი შესაძლებლობების გამოყენებისთვის ამზადებს."
+    ],
+    "sections": [
+      {
+        "title": [
+          "First address the infrastructure and data",
+          "ჯერ ინფრასტრუქტურა და მონაცემები უნდა მოწესრიგდეს"
+        ],
+        "text": [
+          "Simply adding an AI tool does not resolve the limitations of legacy infrastructure. Data scattered across databases or stored without a consistent structure needs preparation and linking. Inaccurate, duplicated or incomplete records also need checking and correction before reliable integration.",
+          "ძველ ინფრასტრუქტურაში მხოლოდ AI-ის დამატება საკმარისი არ არის. სხვადასხვა ბაზაში გაფანტულ და არასტრუქტურირებულ მონაცემებს მომზადება და ერთმანეთთან დაკავშირება სჭირდება. არაზუსტი, დუბლირებული და არასრული ჩანაწერები კი ცალკე უნდა შემოწმდეს და გასწორდეს."
+        ]
+      },
+      {
+        "title": [
+          "A foundation for today’s tools and future AI",
+          "საფუძველი დღევანდელი ხელსაწყოებისა და მომავალი AI-ისთვის"
+        ],
+        "text": [
+          "MediMind brings clinical information into one system using a shared FHIR R4 data structure. This provides a consistent foundation for connecting AI tools to the hospital’s processes and adding new capabilities over time. A common structure still requires data-quality checks.",
+          "MediMind კლინიკურ ინფორმაციას ერთ სისტემაში, საერთო FHIR R4 სტრუქტურით აერთიანებს. ეს საფუძველია AI-ის ხელსაწყოების კლინიკის პროცესებთან დასაკავშირებლად და მომავალში ახალი შესაძლებლობების დასამატებლად. მონაცემების ხარისხის შემოწმება ამ შემთხვევაშიც აუცილებელია."
+        ]
+      },
+      {
+        "title": [
+          "Your hospital chooses the next step",
+          "შემდეგ ნაბიჯს თქვენი კლინიკა ირჩევს"
+        ],
+        "text": [
+          "AI readiness does not mean every AI tool is available today. AI is optional, and we agree each capability, its availability and implementation scope separately. Clinical decisions remain with doctors.",
+          "AI-ისთვის მზადყოფნა ყველა AI ხელსაწყოს დღესვე ხელმისაწვდომობას არ ნიშნავს. AI-ის დამატება არჩევითია. კონკრეტულ ფუნქციას, მის ხელმისაწვდომობასა და დანერგვის მოცულობას ცალკე ვათანხმებთ. კლინიკურ გადაწყვეტილებებს ექიმი იღებს."
+        ]
+      }
+    ]
+  }
+]

@@ -6,7 +6,7 @@
   const requestLabel = slide.querySelector('[data-hmeeting-request-label]');
   const bookingLabel = slide.querySelector('[data-hmeeting-booking-label]');
   const requestHelp = slide.querySelector('[data-hmeeting-request-help]');
-  const bookingHelp = slide.querySelector('[data-hmeeting-booking-help]');
+  const help = slide.querySelector('#hmeeting-help');
   const formats = slide.querySelectorAll('input[name="hmeeting-format"]');
   let requestHref;
   let calendarUrl;
@@ -65,7 +65,7 @@
     requestLabel.hidden = Boolean(calendarUrl);
     bookingLabel.hidden = !calendarUrl;
     requestHelp.hidden = Boolean(calendarUrl);
-    bookingHelp.hidden = !calendarUrl;
+    help.hidden = Boolean(calendarUrl);
     email.href = requestHref;
     formatDescription.textContent = georgian ? (hospital ? 'თქვენს კლინიკაში' : 'ვიდეოზარი') : (hospital ? t('At your hospital') : t('Video call'));
   }

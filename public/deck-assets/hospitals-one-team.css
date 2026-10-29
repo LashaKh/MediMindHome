@@ -6,7 +6,7 @@
 .reveal .hot-slide .headline-big,
 body.lang-active-ka .reveal .hot-slide .headline-big { margin: 0 0 20px; font-size: 39px !important; line-height: 1.14 !important; letter-spacing: -.035em; }
 .hot-slide .headline-big em { display: block; }
-.hot-layout { display: grid; grid-template-columns: minmax(0, .83fr) minmax(0, 1.17fr); gap: 25px; min-height: 0; flex: 1; max-height: 366px; }
+.hot-layout { display: grid; grid-template-columns: minmax(0, .83fr) minmax(0, 1.17fr); gap: 25px; min-height: 0; flex: 1; max-height: 430px; }
 .hot-suppliers { display: flex; flex-direction: column; min-width: 0; padding: 18px 23px 13px; border: 1px solid #dae4ee; border-radius: 20px; background: linear-gradient(125deg, #f9fbfd, #fff); }
 .reveal .hot-slide .hot-suppliers h3 { margin: 0 0 4px; color: #63778b; font-size: 16px; line-height: 1.3; letter-spacing: -.01em; }
 .reveal .hot-slide .hot-suppliers > p { margin: 0 0 11px; color: #8093a5; font-size: 11px; line-height: 1.4; }
@@ -15,6 +15,8 @@ body.lang-active-ka .reveal .hot-slide .headline-big { margin: 0 0 20px; font-si
 .hot-supplier-list li + li { border-top: 1px solid #e9eef3; }
 .hot-supplier-letter { display: grid; place-items: center; flex: 0 0 23px; height: 23px; border: 1px solid #e5d6ba; border-radius: 7px; background: #fffbf3; color: #b28b4e; font-size: 10px; font-weight: 700; }
 .hot-supplier-name { font-weight: 650; }
+.hot-supplier-name b { display: block; font-weight: 650; }
+.hot-supplier-name small { display: block; margin-top: 6px; color: #75899b; font-size: 12px; font-weight: 400; line-height: 1.5; }
 .hot-supplier-channel { display: inline-flex; align-items: center; gap: 5px; margin-left: auto; padding-left: 8px; color: #aab9c6; }
 .hot-supplier-channel i { display: block; width: 3px; height: 3px; border-radius: 50%; background: currentColor; }
 .hot-slide .hot-supplier-list li { transition: background-color 160ms ease, color 160ms ease; }
@@ -163,3 +165,9 @@ body.lang-active-ka :is(.hot-slide, .hot-dialog) .lang-ka { display: inline !imp
   .hot-module { max-width: 40%; }
   .hot-slide .hxb-brain { width: 98px; }
 }
+
+/* Supplier work is distinct from the module diagram, so rows no longer map to modules. */
+.hot-details-open { display: inline-block; margin-top: 12px; min-height: 34px; padding: 6px 12px; border: 1px solid #b5d5e94d; border-radius: 8px; color: #d9edf9; background: #ffffff08; font: inherit; font-size: 11px; cursor: pointer; }
+.hot-details-open:focus-visible { outline: 2px solid #a5dcfa; outline-offset: 3px; }
+.hot-details-open:disabled { cursor: default; }
+@media (max-width:768px) { .hot-supplier-name small { font-size: 13px; } .hot-details-open { min-height: 44px; font-size: 12px; } }

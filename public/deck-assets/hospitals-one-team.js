@@ -33,19 +33,18 @@
   dialog.innerHTML = `<header class="hot-dialog-head"><div><span class="hot-dialog-eyebrow">${copy('One company for all your hospital software', 'ერთი კომპანია კლინიკის ყველა პროგრამისთვის')}</span><h2 id="hot-demo-title">${copy('All the software you need. One coordinated team.', 'ყველა საჭირო პროგრამა და ერთი პასუხისმგებელი გუნდი.')}</h2></div><button type="button" class="hot-close" data-hot-close aria-label="Close details / დეტალების დახურვა">×</button></header>
     <div class="hot-examples"><div class="hot-example-grid"><section class="hot-example-card"><h3>${copy('Today: several suppliers', 'დღეს: რამდენიმე მომწოდებელი')}</h3><ul class="hot-offer-points">${today.map(point => `<li>${copy(...point)}</li>`).join('')}</ul></section><section class="hot-example-card hot-example-card--us"><h3>${copy('Our offer: one partner', 'ჩვენი შეთავაზება: ერთი პარტნიორი')}</h3><ul class="hot-offer-points">${offer.map(point => `<li>${copy(...point)}</li>`).join('')}</ul></section></div>
     <section class="hot-offer-modules"><h3>${copy('Everything your hospital needs to work', 'ყველა პროგრამა, რომელიც თქვენს კლინიკას სჭირდება')}</h3><ul>${capabilities.map(item => `<li>${copy(...item)}</li>`).join('')}</ul><p>${copy('We also build additional modules for your hospital. Our team coordinates the work, so you do not have to find and manage a separate supplier for every new need.', 'თქვენი კლინიკისთვის დამატებით მოდულებსაც ვქმნით. სამუშაოს ჩვენი გუნდი ათანხმებს და ასრულებს. ყოველი ახალი საჭიროებისთვის სხვა კომპანიის მოძებნა და მასთან ცალკე მუშაობა აღარ გიწევთ.')}</p></section></div>
-    <p class="hot-demo-note" id="hot-demo-note">${copy('We agree the required modules, rollout scope and service terms with your hospital. The next slide shows product availability.', 'საჭირო მოდულებს, დანერგვის მოცულობასა და მომსახურების პირობებს თქვენთან ვათანხმებთ. პროგრამების მზადყოფნა შემდეგ სლაიდზეა ნაჩვენები.')}</p>`;
+    <p class="hot-demo-note" id="hot-demo-note">${copy('We agree the required modules, rollout scope and service terms with your hospital. Product availability is shown in the module catalogue later in the deck.', 'საჭირო მოდულებს, დანერგვის მოცულობასა და მომსახურების პირობებს თქვენთან ვათანხმებთ. პროგრამების მზადყოფნა მოგვიანებით, მოდულების კატალოგშია ნაჩვენები.')}</p>`;
   document.body.append(dialog);
   let priorKeyboard;
   const modules = Array.from(slide.querySelectorAll('[data-hot-module]'));
   const moduleLinks = Array.from(slide.querySelectorAll('[data-hot-link]'));
-  const supplierRows = Array.from(slide.querySelectorAll('.hot-supplier-list li'));
   const brainStage = slide.querySelector('.hot-brain-stage');
   const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
   let pinnedModule = null;
 
   function highlightModule(index) {
     brainStage.dataset.hotHasActive = String(index !== null);
-    [modules, moduleLinks, supplierRows].forEach(group => group.forEach((element, position) => {
+    [modules, moduleLinks].forEach(group => group.forEach((element, position) => {
       element.dataset.hotActive = String(position === index);
     }));
   }

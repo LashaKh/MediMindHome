@@ -17,7 +17,7 @@
 #hospital-meeting .hmeeting-intro { min-width: 0; }
 #hospital-meeting .hmeeting-title,
 body.lang-active-ka #hospital-meeting .hmeeting-title {
-  max-width: none; margin: 0 0 22px; color: #fff; font-size: 76px !important;
+  max-width: none; margin: 0 0 22px; color: #fff; font-size: 55px !important;
   line-height: 1.12 !important; letter-spacing: -.045em; font-weight: 750;
 }
 #hospital-meeting .hmeeting-title em {
@@ -81,7 +81,7 @@ body.lang-active-ka #hospital-meeting { word-break: normal; hyphens: none; }
   #hospital-meeting .slide-inner { display: flex; align-items: stretch; gap: 0; height: auto; min-height: 100%; padding: 29px 25px 78px !important; }
   #hospital-meeting .slide-label { align-self: flex-start; margin-bottom: 32px; }
   #hospital-meeting .hmeeting-title,
-  body.lang-active-ka #hospital-meeting .hmeeting-title { margin: 0 0 15px; font-size: clamp(43px, 9.8vw, 65px) !important; line-height: 1.15 !important; }
+  body.lang-active-ka #hospital-meeting .hmeeting-title { margin: 0 0 15px; font-size: clamp(34px, 8vw, 49px) !important; line-height: 1.15 !important; }
   #hospital-meeting .hmeeting-subtitle { max-width: 420px; font-size: 16px; line-height: 1.65; margin-bottom: 20px; }
   #hospital-meeting .hmeeting-format { margin-bottom: 17px; }
   #hospital-meeting .hmeeting-options { display: flex; }

@@ -1,12 +1,9 @@
-// Selecting a stage explains the rollout; it never approves a transition or purchase.
+// The evaluation steps are visible on the slide; this dialog explains the written terms.
 (() => {
   const slide = document.getElementById('hospital-parallel-evaluation');
   if (!slide) return;
-  const board = slide.querySelector('[data-heval2-stage]');
-  const tabs = Array.from(slide.querySelectorAll('[data-heval2-step]'));
-  const panels = Array.from(slide.querySelectorAll('.heval2-panel'));
   const opener = slide.querySelector('[data-heval2-open]');
-  if (!board || tabs.length !== 3 || panels.length !== 3 || !opener) return;
+  if (!opener) return;
   const copy = (en, ka) => `<span class="lang-en">${en}</span><span class="lang-ka">${ka}</span>`;
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   const easing = 'cubic-bezier(0.23, 1, 0.32, 1)';
@@ -32,26 +29,10 @@
   dialog.setAttribute('data-no-advance', '');
   dialog.innerHTML = `<header class="heval2-dialog-head"><div><h2 id="heval2-dialog-title">${copy('Your rights &amp; terms', 'თქვენი უფლებები და პირობები')}</h2><p id="heval2-dialog-description">${copy('Agreed in writing, before proceeding.', 'პარტნიორობის პირობებს წინასწარ, წერილობით ვათანხმებთ.')}</p></div><button type="button" class="heval2-dialog-close" data-heval2-close aria-label="Close terms / პირობების დახურვა">×</button></header><div class="heval2-dialog-body">${terms.map((term, index) => `<details class="heval2-term"${index === 0 ? ' open' : ''}><summary><span class="heval2-term-number">0${index + 1}</span><span>${copy(...term.title)}</span></summary><p>${copy(...term.description)}</p></details>`).join('')}<p class="heval2-dialog-note">${copy('After studying your current workflows, we launch a tailored system in parallel within two weeks. Your team spends a few hours trying real patient cases and workflows in MediMind. We discuss partnership terms and commitments only after you agree that our system is clearly better for your hospital. Tailoring, launch, training and evaluation are free, with no obligation to buy. You keep using your current software and decide whether and when to transition.', 'თქვენი სამუშაო პროცესების შესწავლის შემდეგ, 2 კვირაში მორგებულ სისტემას ვუშვებთ. თქვენი გუნდი რამდენიმე საათს უთმობს რეალური პაციენტების მაგალითებზე სამუშაო პროცესების გამოცდას. პარტნიორობის პირობებსა და ვალდებულებებზე მხოლოდ მაშინ ვსაუბრობთ, როცა დარწმუნდებით, რომ MediMind თქვენს არსებულ სისტემას აშკარად სჯობს. მორგება, გაშვება, გუნდის დატრენინგება და გამოცდა უფასოა. შეძენა არ გევალებათ. არსებული პროგრამით მუშაობას აგრძელებთ და MediMind-ზე გადასვლას თავად წყვეტთ.')}</p></div>`;
   document.body.append(dialog);
-  let current = 0;
-  let panelAnimation;
   let dialogAnimation;
   let closing = false;
   let priorKeyboard;
 
-  function select(index, keyboard) {
-    panelAnimation?.cancel();
-    current = index;
-    slide.dataset.heval2Input = keyboard ? 'keyboard' : 'pointer';
-    board.dataset.heval2Stage = String(index);
-    tabs.forEach((tab, position) => {
-      tab.setAttribute('aria-selected', String(position === index));
-      tab.tabIndex = position === index ? 0 : -1;
-      panels[position].hidden = position !== index;
-    });
-    if (!keyboard && panels[index].animate) {
-      panelAnimation = panels[index].animate(reduced.matches ? [{ opacity: .5 }, { opacity: 1 }] : [{ opacity: .5, transform: 'translateY(6px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 200, easing });
-    }
-  }
   function syncMotion() { slide.dataset.heval2Paused = String(document.hidden || dialog.open); }
   function close(keyboard = false) {
     if (!dialog.open) return;
@@ -64,19 +45,6 @@
     dialogAnimation = dialog.animate(reduced.matches ? [{ opacity: 1 }, { opacity: 0 }] : [{ opacity: 1, transform: 'translateY(0) scale(1)' }, { opacity: 0, transform: 'translateY(10px) scale(.97)' }], { duration: 200, easing });
     dialogAnimation.addEventListener('finish', () => { if (closing) dialog.close(); }, { once: true });
   }
-  tabs.forEach((tab, index) => {
-    tab.disabled = false;
-    tab.addEventListener('click', event => select(index, event.detail === 0));
-    tab.addEventListener('keydown', event => {
-      if (event.key === 'Enter' || event.key === ' ') { event.stopPropagation(); return; }
-      if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
-      event.preventDefault();
-      event.stopPropagation();
-      const next = event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1 : (current + (event.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
-      select(next, true);
-      tabs[next].focus({ preventScroll: true });
-    });
-  });
   opener.disabled = false;
   opener.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') event.stopPropagation(); });
   opener.addEventListener('click', event => {
@@ -110,9 +78,9 @@
     window.Reveal.configure({ keyboard: priorKeyboard });
     opener.focus({ preventScroll: true });
   });
-  document.addEventListener('visibilitychange', () => { syncMotion(); if (document.hidden) panelAnimation?.cancel(); });
+  document.addEventListener('visibilitychange', syncMotion);
   document.addEventListener('keydown', () => { slide.dataset.heval2Input = 'keyboard'; });
   document.addEventListener('pointerdown', () => { slide.dataset.heval2Input = 'pointer'; });
-  window.Reveal.on('slidechanged', () => { panelAnimation?.cancel(); close(true); });
+  window.Reveal.on('slidechanged', () => close(true));
   syncMotion();
 })();

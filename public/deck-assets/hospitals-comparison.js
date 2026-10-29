@@ -10,72 +10,36 @@
   const topics = [
   {
     "name": [
-      "Code ownership",
-      "კოდის საკუთრება"
+      "One system",
+      "ერთიანი სისტემა"
     ],
     "title": [
-      "You own the code of the first version.",
-      "პირველი ვერსიის კოდი თქვენ გეკუთვნით."
+      "All departments work in one system.",
+      "ყველა განყოფილება ერთ სისტემაში მუშაობს."
     ],
     "description": [
-      "We transfer ownership of the first delivered base version’s source code to your hospital under contract. If you are unhappy with MediMind’s work in the future, you can continue maintaining and developing that version with another team.",
-      "პირველი ჩაბარებული საბაზისო ვერსიის საწყის კოდს ხელშეკრულებით თქვენს საკუთრებაში გადავცემთ. თუ მომავალში MediMind-ის მუშაობით უკმაყოფილო იქნებით, ამ ვერსიის მოვლა და განვითარება სხვა გუნდთან შეგიძლიათ გააგრძელოთ."
+      "Registration, clinical work, laboratory, imaging and billing are connected in one operating system and use shared information.",
+      "რეგისტრაცია, მკურნალობა, ლაბორატორია, რადიოლოგია და ანგარიშსწორება ერთ ოპერაციულ სისტემაშია გაერთიანებული. ყველა მიმართულება საერთო მონაცემებს იყენებს."
     ],
     "sections": [
       {
         "title": [
-          "You choose who continues the work",
-          "თქვენ ირჩევთ, ვინ გააგრძელებს მუშაობას"
+          "One shared patient record",
+          "პაციენტის საერთო ჩანაწერი"
         ],
         "text": [
-          "Developers you choose can study the code, fix faults and develop the first version. You can therefore change development teams without being forced to depend on MediMind for that version’s continued maintenance.",
-          "თქვენ მიერ შერჩეული დეველოპერები შეძლებენ კოდის შესწავლას, შეცდომების გამოსწორებასა და პირველი ვერსიის განვითარებას. ამ ვერსიაზე მუშაობის გასაგრძელებლად MediMind-ზე დამოკიდებული აღარ იქნებით."
+          "The patient’s record, requested tests, results and delivered services remain connected across the relevant departments.",
+          "პაციენტის ჩანაწერი, დანიშნული კვლევები, შედეგები და გაწეული მომსახურება შესაბამის განყოფილებებს შორის ერთმანეთთანაა დაკავშირებული."
         ]
       },
       {
         "title": [
-          "Other authors’ code and later versions",
-          "სხვა ავტორების კოდი და მომდევნო ვერსიები"
+          "Less repeated entry and reconciliation",
+          "ნაკლები განმეორებითი შეყვანა და გადამოწმება"
         ],
         "text": [
-          "Software parts created by other authors retain those authors’ licence terms. Rights to later versions are governed by separate contractual terms.",
-          "სისტემაში გამოყენებული, სხვა ავტორების მიერ შექმნილი პროგრამული ნაწილები მათივე ლიცენზიის პირობებს ექვემდებარება. მომდევნო ვერსიებზე უფლებები ხელშეკრულებით ცალკე განისაზღვრება."
-        ]
-      }
-    ]
-  },
-  {
-    "name": [
-      "Ongoing development",
-      "უწყვეტი განვითარება"
-    ],
-    "title": [
-      "We deliver complex requests too.",
-      "რთულ მოთხოვნებსაც სრულად ვახორციელებთ."
-    ],
-    "description": [
-      "Throughout our partnership, we build and implement every requested software feature and change without additional development fees. The scope reaches beyond a new form or field to complete workflows and specialised clinical tools.",
-      "თანამშრომლობის განმავლობაში ყველა მოთხოვნილ პროგრამულ ფუნქციასა და ცვლილებას განვითარების დამატებითი საფასურის გარეშე ვქმნით და ვნერგავთ. ეს მოიცავს როგორც მცირე ცვლილებებს, ისე სრულ სამუშაო პროცესებსა და სპეციალიზებულ კლინიკურ ინსტრუმენტებს."
-    ],
-    "sections": [
-      {
-        "title": [
-          "From a small change to a complex tool",
-          "მცირე ცვლილებიდან რთულ პროგრამამდე"
-        ],
-        "text": [
-          "We can deliver software requests of any complexity, including a complete clinical tool, a new module, connections to other systems or a workflow spanning several departments.",
-          "შეგვიძლია ნებისმიერი სირთულის პროგრამული ამოცანის გადაწყვეტა. ეს შეიძლება იყოს სრული კლინიკური ინსტრუმენტი, ახალი მოდული, სხვა სისტემებთან დაკავშირება ან რამდენიმე განყოფილების საერთო სამუშაო პროცესი."
-        ]
-      },
-      {
-        "title": [
-          "Useful tools improve the system for both of us",
-          "სასარგებლო ინსტრუმენტები ჩვენს სისტემასაც აუმჯობესებს"
-        ],
-        "text": [
-          "It is in our interest to give your team more useful, productive tools. Solving real hospital needs makes your work easier and helps us improve MediMind.",
-          "ჩვენს ინტერესშიცაა, რომ თქვენმა გუნდმა მეტი სასარგებლო ინსტრუმენტი მიიღოს და უფრო პროდუქტიულად იმუშაოს. კლინიკის რეალური საჭიროებების გადაწყვეტა თქვენს მუშაობას ამარტივებს და MediMind-საც უფრო სრულყოფილს ხდის."
+          "Sharing information reduces the need to enter the same data again or reconcile separate copies as work moves between departments.",
+          "საერთო მონაცემები ამცირებს ერთი და იმავე ინფორმაციის ხელახლა შეყვანისა და სხვადასხვა პროგრამაში არსებული ჩანაწერების ერთმანეთთან გადამოწმების საჭიროებას."
         ]
       }
     ]
@@ -154,36 +118,72 @@
   },
   {
     "name": [
-      "One system",
-      "ერთიანი სისტემა"
+      "Ongoing development",
+      "უწყვეტი განვითარება"
     ],
     "title": [
-      "All departments work in one system.",
-      "ყველა განყოფილება ერთ სისტემაში მუშაობს."
+      "We deliver complex requests too.",
+      "რთულ მოთხოვნებსაც სრულად ვახორციელებთ."
     ],
     "description": [
-      "Registration, clinical work, laboratory, imaging and billing are connected in one operating system and use shared information.",
-      "რეგისტრაცია, მკურნალობა, ლაბორატორია, რადიოლოგია და ანგარიშსწორება ერთ ოპერაციულ სისტემაშია გაერთიანებული. ყველა მიმართულება საერთო მონაცემებს იყენებს."
+      "Throughout our partnership, we build and implement every requested software feature and change without additional development fees. The scope reaches beyond a new form or field to complete workflows and specialised clinical tools.",
+      "თანამშრომლობის განმავლობაში ყველა მოთხოვნილ პროგრამულ ფუნქციასა და ცვლილებას განვითარების დამატებითი საფასურის გარეშე ვქმნით და ვნერგავთ. ეს მოიცავს როგორც მცირე ცვლილებებს, ისე სრულ სამუშაო პროცესებსა და სპეციალიზებულ კლინიკურ ინსტრუმენტებს."
     ],
     "sections": [
       {
         "title": [
-          "One shared patient record",
-          "პაციენტის საერთო ჩანაწერი"
+          "From a small change to a complex tool",
+          "მცირე ცვლილებიდან რთულ პროგრამამდე"
         ],
         "text": [
-          "The patient’s record, requested tests, results and delivered services remain connected across the relevant departments.",
-          "პაციენტის ჩანაწერი, დანიშნული კვლევები, შედეგები და გაწეული მომსახურება შესაბამის განყოფილებებს შორის ერთმანეთთანაა დაკავშირებული."
+          "We can deliver software requests of any complexity, including a complete clinical tool, a new module, connections to other systems or a workflow spanning several departments.",
+          "შეგვიძლია ნებისმიერი სირთულის პროგრამული ამოცანის გადაწყვეტა. ეს შეიძლება იყოს სრული კლინიკური ინსტრუმენტი, ახალი მოდული, სხვა სისტემებთან დაკავშირება ან რამდენიმე განყოფილების საერთო სამუშაო პროცესი."
         ]
       },
       {
         "title": [
-          "Less repeated entry and reconciliation",
-          "ნაკლები განმეორებითი შეყვანა და გადამოწმება"
+          "Useful tools improve the system for both of us",
+          "სასარგებლო ინსტრუმენტები ჩვენს სისტემასაც აუმჯობესებს"
         ],
         "text": [
-          "Sharing information reduces the need to enter the same data again or reconcile separate copies as work moves between departments.",
-          "საერთო მონაცემები ამცირებს ერთი და იმავე ინფორმაციის ხელახლა შეყვანისა და სხვადასხვა პროგრამაში არსებული ჩანაწერების ერთმანეთთან გადამოწმების საჭიროებას."
+          "It is in our interest to give your team more useful, productive tools. Solving real hospital needs makes your work easier and helps us improve MediMind.",
+          "ჩვენს ინტერესშიცაა, რომ თქვენმა გუნდმა მეტი სასარგებლო ინსტრუმენტი მიიღოს და უფრო პროდუქტიულად იმუშაოს. კლინიკის რეალური საჭიროებების გადაწყვეტა თქვენს მუშაობას ამარტივებს და MediMind-საც უფრო სრულყოფილს ხდის."
+        ]
+      }
+    ]
+  },
+  {
+    "name": [
+      "Code ownership",
+      "კოდის საკუთრება"
+    ],
+    "title": [
+      "You own the code of the first version.",
+      "პირველი ვერსიის კოდი თქვენ გეკუთვნით."
+    ],
+    "description": [
+      "We transfer ownership of the first delivered base version’s source code to your hospital under contract. If you are unhappy with MediMind’s work in the future, you can continue maintaining and developing that version with another team.",
+      "პირველი ჩაბარებული საბაზისო ვერსიის საწყის კოდს ხელშეკრულებით თქვენს საკუთრებაში გადავცემთ. თუ მომავალში MediMind-ის მუშაობით უკმაყოფილო იქნებით, ამ ვერსიის მოვლა და განვითარება სხვა გუნდთან შეგიძლიათ გააგრძელოთ."
+    ],
+    "sections": [
+      {
+        "title": [
+          "You choose who continues the work",
+          "თქვენ ირჩევთ, ვინ გააგრძელებს მუშაობას"
+        ],
+        "text": [
+          "Developers you choose can study the code, fix faults and develop the first version. You can therefore change development teams without being forced to depend on MediMind for that version’s continued maintenance.",
+          "თქვენ მიერ შერჩეული დეველოპერები შეძლებენ კოდის შესწავლას, შეცდომების გამოსწორებასა და პირველი ვერსიის განვითარებას. ამ ვერსიაზე მუშაობის გასაგრძელებლად MediMind-ზე დამოკიდებული აღარ იქნებით."
+        ]
+      },
+      {
+        "title": [
+          "Other authors’ code and later versions",
+          "სხვა ავტორების კოდი და მომდევნო ვერსიები"
+        ],
+        "text": [
+          "Software parts created by other authors retain those authors’ licence terms. Rights to later versions are governed by separate contractual terms.",
+          "სისტემაში გამოყენებული, სხვა ავტორების მიერ შექმნილი პროგრამული ნაწილები მათივე ლიცენზიის პირობებს ექვემდებარება. მომდევნო ვერსიებზე უფლებები ხელშეკრულებით ცალკე განისაზღვრება."
         ]
       }
     ]

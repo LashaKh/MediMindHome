@@ -78,6 +78,13 @@
     Cache-Control = "no-store, must-revalidate"
     X-Robots-Tag  = "noindex, nofollow"
 
+# ─── Minimal hospital deck (v6) — same treatment as hospitals.html ───
+[[headers]]
+  for = "/hospitals-minimal.html"
+  [headers.values]
+    Cache-Control = "no-store, must-revalidate"
+    X-Robots-Tag  = "noindex, nofollow"
+
 # ─── Hospital proposal deck (partner.html + its strings + the three PDFs) — never cache, never index ───
 [[headers]]
   for = "/partner.html"

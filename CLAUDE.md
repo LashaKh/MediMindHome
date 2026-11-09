@@ -93,6 +93,17 @@ Do not confuse `hospitals.html` with the investor `deck.html` or `partner.html`.
 For simultaneous chats, claim separate slide sections before editing the shared
 HTML; preserve existing changes and avoid concurrent whole-deck rewrites.
 
+### Minimal hospital deck (`public/hospitals-minimal.html`, added 2026-11-09)
+
+A separate, minimal 21-slide hospital deck (v6, designed by Irakli outside this repo).
+It does NOT replace `hospitals.html`. Each slide is a fixed 1280×720 canvas
+(`<div class="v6 lang-en">`) with inline styles, ported at 2/3 scale from a
+1920×1080 export. Assets: `/deck-assets/v6/`, font: `/fonts/Inter-latin.woff2`.
+Same password gate and `mmh_access` flag as `hospitals.html`. EN only for now;
+Georgian goes in a sibling `<div class="v6 lang-ka">` per slide, then add `'ka'`
+to `mmLangs` to show the toggle. No RU version is planned. The CLAUDE.md mobile rules
+for `deck.html` don't apply here: Reveal scales the whole canvas on phones.
+
 The deck has been through 8 mobile-native passes. Future agents must preserve them.
 
 ### 1. Asset paths

@@ -99,9 +99,14 @@ A separate, minimal 21-slide hospital deck (v6, designed by Irakli outside this 
 It does NOT replace `hospitals.html`. Each slide is a fixed 1280×720 canvas
 (`<div class="v6 lang-en">`) with inline styles, ported at 2/3 scale from a
 1920×1080 export. Assets: `/deck-assets/v6/`, font: `/fonts/Inter-latin.woff2`.
-Same password gate and `mmh_access` flag as `hospitals.html`. EN only for now;
-Georgian goes in a sibling `<div class="v6 lang-ka">` per slide, then add `'ka'`
-to `mmLangs` to show the toggle. No RU version is planned. The CLAUDE.md mobile rules
+Same password gate and `mmh_access` flag as `hospitals.html`. EN + KA (no RU
+planned): each slide holds a `<div class="v6 lang-en">` and a sibling
+`<div class="v6 lang-ka">` with its own layout; edit both when changing copy.
+Georgian glyphs come from `/fonts/NotoSansGeorgian-georgian.woff2`, registered as
+a second `Inter` face with `size-adjust: 86%` (Noto runs larger than Inter). A few
+dense KA slides (7, A3, A4, A5) use slightly smaller inline sizes than EN. Use
+"ოპერაციული სისტემა" (never "საოპერაციო", which means operating theatre).
+Speaker notes are English only. The CLAUDE.md mobile rules
 for `deck.html` don't apply here: Reveal scales the whole canvas on phones.
 
 The deck has been through 8 mobile-native passes. Future agents must preserve them.

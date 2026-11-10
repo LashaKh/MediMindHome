@@ -72,6 +72,7 @@
   <link rel="apple-touch-icon" href="/deck-assets/apple-touch-icon.png">
 
   <link rel="preload" href="/fonts/Inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/NotoSansGeorgian-georgian.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.css">
 
   <style>
@@ -83,6 +84,17 @@
       src: url(/fonts/Inter-latin.woff2) format("woff2");
       font-weight: 100 900;
       font-display: block;
+    }
+    /* Georgian glyphs come from Noto Sans Georgian under the same family name,
+       so every inline "font-family: Inter" covers Georgian without edits.
+       Noto's Georgian runs larger than Inter; size-adjust brings it in line. */
+    @font-face {
+      font-family: Inter;
+      src: url(/fonts/NotoSansGeorgian-georgian.woff2) format("woff2");
+      font-weight: 100 900;
+      font-display: block;
+      size-adjust: 86%;
+      unicode-range: U+0589, U+10A0-10FF, U+1C90-1CBA, U+1CBD-1CBF, U+205A, U+2D00-2D2F, U+2E31;
     }
     html, body { margin: 0; background: #081c35; font-family: Inter, Arial, sans-serif; }
     .reveal { font-family: Inter, Arial, sans-serif; }
@@ -102,6 +114,10 @@
     .reveal .slides > section > .v6.lang-ka { display: none !important; }
     body.lang-active-ka .reveal .slides > section > .v6.lang-ka { display: flex !important; }
     body.lang-active-ka .reveal .slides > section:has(> .v6.lang-ka) > .v6.lang-en { display: none !important; }
+
+    /* Georgian has no lowercase/uppercase pair; CSS uppercase would switch
+       eyebrows to Mtavruli, so Georgian labels keep normal letters. */
+    .v6.lang-ka * { text-transform: none !important; }
 
     .lang-toggle { position: absolute; top: 18px; right: 24px; z-index: 70; display: flex; gap: 4px; padding: 3px; border-radius: 999px; background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.22); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
     .lang-toggle[hidden] { display: none; }
@@ -133,7 +149,7 @@
 <body>
   <script>
     // ?lang= wins over the session choice. Only languages with slides are offered.
-    var mmLangs = ['en'];
+    var mmLangs = ['en', 'ka'];
     (function () {
       var saved = null;
       try { saved = sessionStorage.getItem('mm_deck_lang'); } catch (_) {}
@@ -170,6 +186,17 @@
 </div>
 <p style="position:absolute;left:96px;top:386.667px;width:546.667px;font-size:40px;font-weight:400;line-height:1.2;letter-spacing:-0.01em;color:#ffffff">The AI-native <b>operating system</b> for <b>your hospital</b>.</p>
         </div>
+        <div class="v6 lang-ka" lang="ka" style="background:#081c35;color:#ffffff;font-family:'Inter', Arial, sans-serif;padding:0;display:flex;flex-direction:column">
+<img src="/deck-assets/v6/hospital-vision.png" alt="A hospital building at dusk, rendered as glass" style="position:absolute;left:0;top:0;width:1280px;height:720px;object-fit:cover">
+<div style="position:absolute;left:0;top:0;width:1280px;height:720px;background:linear-gradient(180deg, rgba(8,28,53,0.55) 0%, rgba(8,28,53,0.15) 45%, rgba(8,28,53,0.6) 100%)"></div>
+<div style="position:absolute;left:0;top:0;width:1000px;height:720px;background:linear-gradient(90deg, #081c35 0%, #081c35 22%, rgba(8,28,53,0.9) 48%, rgba(8,28,53,0.45) 75%, rgba(8,28,53,0) 100%)"></div>
+<p style="position:absolute;left:96px;top:165.333px;width:400px;font-size:18px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.7)">პარტნიორობა კლინიკებისთვის</p>
+<div style="position:absolute;left:96px;top:216px;width:600px;display:flex;flex-direction:row;align-items:center;gap:24px">
+<img src="/deck-assets/v6/logo-nine-box-white.svg" alt="" style="width:100px;height:100px;object-fit:contain">
+<h1 style="font-size:88px;font-weight:800;line-height:1;letter-spacing:-0.04em;color:#ffffff">Medi<span style="color:#8fc7f5">Mind</span></h1>
+</div>
+<p style="position:absolute;left:96px;top:386.667px;width:546.667px;font-size:40px;font-weight:400;line-height:1.2;letter-spacing:-0.01em;color:#ffffff">ხელოვნურ ინტელექტზე დაფუძნებული <b>ოპერაციული სისტემა</b> <b>თქვენი კლინიკისთვის</b>.</p>
+        </div>
         <div class="lang-toggle" role="group" aria-label="Language" hidden>
           <button type="button" class="btn-en" onclick="mmSetLang('en')">ENG</button>
           <button type="button" class="btn-ka" onclick="mmSetLang('ka')">ქარ</button>
@@ -201,6 +228,25 @@
 </div>
 <div style="position:absolute;left:96px;right:96px;bottom:42.667px;display:flex;flex-direction:row;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:row;align-items:center;gap:8px"><img src="/deck-assets/v6/logo-nine-box-accent.svg" alt="" style="width:24px;height:24px;object-fit:contain"><p style="font-size:16px;font-weight:800;letter-spacing:-0.01em;color:#1a365d">Medi<span style="color:#3182ce">Mind</span></p></div><p style="font-size:16px;color:#64748b">2</p></div>
         </div>
+        <div class="v6 lang-ka" lang="ka" style="background:#ffffff;color:#334155;font-family:'Inter', Arial, sans-serif;padding:64px 96px 106.667px;display:flex;flex-direction:column;gap:26.667px">
+<p style="font-size:18px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#64748b">ჩვენი კლიენტი</p>
+<h2 style="width:1040px;font-size:48px;font-weight:800;line-height:1.08;letter-spacing:-0.02em;color:#1a365d">GeoHospitals თავის 25 საავადმყოფოში <span style="color:#3182ce">ყველა სისტემას</span> MediMind-ით ანაცვლებს.</h2>
+<div style="display:flex;flex-direction:row;gap:42.667px;align-items:stretch">
+<div style="position:relative;width:666.667px;height:379.333px;background:#f1f5fb">
+<svg viewBox="-15 210 1054 600" aria-label="Map of Georgia" style="width:666.667px;height:379.333px"><g transform="translate(0,1024) scale(0.1,-0.1)" fill="#1a365d" stroke="#f1f5fb" stroke-width="14"><path d="M285 7743 c-11 -2 -43 -13 -71 -24 -57 -22 -79 -53 -115 -156 -10 -31 -26 -68 -35 -81 -17 -27 -66 -163 -60 -169 2 -2 28 -6 57 -10 42 -5 62 -13 91 -39 45 -40 82 -60 131 -69 29 -6 41 -16 61 -49 29 -50 55 -145 49 -179 -4 -18 2 -30 21 -45 15 -11 36 -41 47 -67 l21 -47 22 21 c31 29 61 26 106 -9 21 -16 61 -36 90 -43 37 -10 69 -28 107 -62 50 -44 57 -47 91 -40 55 11 151 6 206 -11 27 -8 63 -14 78 -14 45 0 93 -43 108 -96 7 -25 21 -51 32 -57 10 -7 18 -16 18 -21 0 -6 12 -22 26 -38 l27 -27 25 19 c33 26 74 25 99 -2 38 -41 93 -176 93 -227 0 -42 5 -53 51 -104 45 -50 53 -56 71 -46 36 20 106 5 142 -30 25 -24 41 -31 71 -31 66 -1 128 -20 159 -48 16 -15 46 -64 66 -109 45 -97 80 -287 80 -437 0 -104 21 -176 71 -251 14 -22 30 -60 34 -85 4 -25 14 -53 23 -63 10 -12 15 -32 13 -57 -1 -24 4 -49 15 -64 13 -21 16 -47 15 -129 l-2 -102 51 -80 c102 -159 111 -189 126 -437 7 -106 6 -106 -24 -160 -17 -30 -34 -73 -38 -97 -9 -55 -109 -192 -154 -211 -19 -8 -41 -31 -59 -64 -17 -28 -50 -80 -75 -115 -26 -36 -46 -68 -46 -72 0 -4 25 -10 56 -14 41 -5 64 -14 90 -37 31 -27 42 -31 88 -29 41 1 56 -2 70 -18 10 -11 35 -22 55 -26 27 -4 42 -14 54 -34 23 -39 65 -47 77 -15 5 13 21 26 35 30 15 4 36 22 49 43 13 20 42 50 66 66 l42 29 32 -18 c17 -10 49 -28 70 -39 l39 -21 38 22 c32 19 42 20 63 10 22 -9 29 -8 45 6 19 17 22 17 74 -13 40 -23 67 -31 103 -31 32 0 54 -6 68 -19 25 -22 79 -41 117 -41 19 0 43 -13 69 -37 l41 -36 35 16 c19 10 43 31 52 49 9 17 36 53 60 80 23 27 42 59 42 72 0 62 11 83 56 104 58 29 218 32 228 6 5 -13 15 -15 50 -10 l45 7 -6 -58 c-4 -39 -12 -62 -25 -73 -18 -14 -17 -17 26 -52 l45 -38 32 33 33 32 15 -38 c13 -31 20 -37 39 -32 17 4 24 0 31 -17 5 -13 21 -34 35 -47 14 -14 26 -32 26 -40 1 -26 97 -121 123 -121 29 0 59 -28 77 -69 9 -22 19 -31 36 -31 12 0 26 -5 30 -11 3 -6 16 -8 29 -5 16 4 25 1 29 -10 10 -27 7 -44 -9 -44 -28 0 -72 -29 -78 -50 -5 -18 0 -20 36 -20 23 0 48 -4 55 -8 6 -5 23 -39 35 -78 28 -80 37 -85 107 -55 49 21 112 26 181 15 31 -5 39 -13 62 -60 15 -30 27 -66 27 -79 0 -31 0 -31 86 -1 54 19 73 22 89 13 18 -10 82 -19 235 -33 l55 -5 67 60 66 61 106 0 c82 0 117 5 161 21 40 15 68 19 93 15 108 -19 108 -19 125 7 9 14 19 37 23 52 4 15 17 30 32 36 21 8 30 5 56 -19 61 -58 96 -64 171 -31 l48 21 48 -22 c55 -26 129 -24 173 6 25 16 27 15 56 -15 25 -27 32 -30 49 -21 12 6 28 24 36 40 13 26 21 30 56 30 22 0 53 -7 69 -15 24 -13 53 -14 155 -9 145 8 148 11 89 93 l-35 50 25 16 c23 15 27 15 85 -14 33 -17 71 -31 83 -31 15 0 81 51 198 156 333 297 353 308 444 238 l46 -35 83 6 82 6 27 -41 c24 -34 33 -40 64 -40 60 0 117 -21 156 -58 36 -34 38 -35 97 -28 34 4 61 4 61 0 0 -4 -16 -24 -35 -45 -19 -22 -35 -43 -35 -48 0 -13 114 -111 185 -158 33 -22 98 -52 144 -68 105 -35 187 -31 286 14 47 21 74 28 98 24 18 -3 51 0 72 6 l39 11 101 -99 c103 -101 134 -124 157 -117 59 19 66 17 78 -18 15 -46 43 -68 87 -70 36 -1 37 1 58 54 19 51 24 55 55 58 65 5 80 12 93 45 8 17 26 38 40 46 22 12 27 22 27 50 0 20 6 45 13 56 14 20 15 127 2 211 -6 37 -11 42 -56 62 -38 16 -53 28 -64 56 -15 34 -18 36 -64 36 -31 0 -53 5 -61 15 -7 8 -20 15 -29 15 -10 0 -40 20 -67 45 -27 25 -57 45 -67 45 -9 0 -22 11 -27 24 -5 14 -20 26 -37 31 -15 3 -35 12 -43 19 -8 8 -28 16 -43 20 -22 5 -27 11 -22 25 4 13 -3 28 -20 45 -14 14 -25 37 -25 51 0 21 5 25 29 25 37 0 45 22 20 54 -17 22 -24 24 -41 15 -21 -12 -38 1 -38 29 0 16 -5 15 -41 -4 -16 -8 -38 -12 -48 -9 -31 9 -61 95 -61 170 0 77 18 127 55 151 22 14 32 15 64 5 70 -20 63 -25 177 104 42 49 57 75 72 131 l19 69 -27 34 c-27 31 -34 34 -112 42 -78 7 -85 10 -108 40 -66 86 -53 81 -166 68 -55 -7 -109 -9 -118 -6 -9 4 -23 22 -31 41 -16 39 -38 51 -55 31 -11 -13 -15 -13 -33 0 -28 19 -57 19 -85 -1 -21 -14 -22 -14 -22 5 0 11 -9 25 -20 31 -12 6 -20 21 -20 36 0 46 -34 81 -87 89 -87 12 -120 27 -182 80 -44 39 -71 55 -103 60 -31 6 -52 17 -75 43 -29 31 -32 41 -27 72 4 19 19 58 35 86 44 78 85 183 103 264 9 40 24 89 32 108 14 35 14 36 -17 68 -44 46 -169 93 -300 114 -64 10 -71 8 -168 -25 -55 -19 -108 -35 -119 -35 -12 0 -23 13 -32 38 -16 46 -66 109 -92 118 -11 3 -28 25 -38 49 -11 25 -34 54 -57 71 -21 15 -54 45 -74 66 -42 43 -63 46 -119 18 -72 -37 -100 -29 -185 51 -84 81 -99 83 -174 34 -37 -25 -39 -29 -43 -86 -3 -46 -10 -65 -30 -87 -25 -25 -26 -29 -12 -55 13 -24 13 -28 -1 -33 -26 -10 -45 4 -45 33 0 30 -75 167 -106 195 -23 19 -153 48 -222 48 -54 0 -129 -23 -209 -64 -45 -22 -65 -26 -142 -26 l-90 0 -12 -42 c-16 -61 -60 -136 -84 -143 -11 -3 -68 -10 -128 -15 -119 -10 -155 -25 -201 -85 -35 -46 -62 -45 -122 5 -47 39 -49 39 -138 42 l-91 3 -19 38 -18 38 43 62 c24 34 51 68 61 75 10 7 25 26 33 41 l14 28 -62 38 c-40 24 -83 40 -122 46 -50 8 -64 15 -85 42 -64 83 -155 142 -250 162 -19 4 -42 13 -50 20 -17 14 -106 35 -150 35 -16 0 -50 11 -76 25 -30 16 -63 25 -91 25 -60 0 -107 27 -200 111 -43 40 -99 92 -125 116 l-48 44 15 41 c18 53 10 64 -63 78 -67 14 -94 29 -144 83 -33 35 -41 39 -60 30 -17 -7 -33 -5 -65 9 -33 14 -47 16 -63 8 -14 -8 -26 -8 -40 0 -30 16 -54 4 -71 -33 -22 -50 -63 -49 -152 5 -40 23 -90 59 -112 79 -54 49 -91 59 -210 59 -71 0 -107 4 -120 14 -14 10 -26 11 -44 4 -14 -5 -34 -8 -45 -7 -62 4 -85 -3 -148 -51 l-66 -50 -119 31 c-169 45 -175 45 -219 15 -50 -34 -87 -33 -143 4 -39 24 -58 30 -121 32 -41 2 -91 -1 -110 -5 -34 -7 -36 -6 -88 62 -46 60 -61 72 -113 91 -46 18 -59 27 -59 43 0 12 -12 34 -27 49 -25 26 -33 28 -102 28 -68 0 -84 4 -146 37 -66 34 -77 36 -190 42 l-121 6 -54 40 c-30 21 -79 61 -109 88 -57 51 -133 93 -216 121 -38 12 -59 27 -85 61 l-35 46 -61 -4 c-47 -2 -72 -9 -104 -31 -39 -26 -49 -28 -109 -24 -72 5 -109 21 -187 78 -33 25 -70 42 -108 50 -33 7 -73 21 -90 31 -29 18 -75 22 -121 12z"/></g><circle cx="733" cy="637" r="9" fill="#ffffff"/><circle cx="415" cy="523" r="9" fill="#ffffff"/><circle cx="250" cy="652" r="9" fill="#ffffff"/></svg>
+<img src="/deck-assets/v6/geo-hospitals-logo.png" alt="GeoHospitals" style="position:absolute;right:26.667px;top:21.333px;width:173.333px;height:72px;object-fit:contain">
+<p style="position:absolute;left:386.667px;top:260px;width:73.333px;text-align:right;font-size:17.333px;font-weight:600;color:#ffffff;text-shadow:0 0.667px 5.333px rgba(15,31,58,0.9)">თბილისი</p>
+<p style="position:absolute;left:232px;top:170px;width:80px;text-align:center;font-size:17.333px;font-weight:600;color:#ffffff;text-shadow:0 0.667px 5.333px rgba(15,31,58,0.9)">ქუთაისი</p>
+<p style="position:absolute;left:180px;top:269.333px;width:80px;text-align:left;font-size:17.333px;font-weight:600;color:#ffffff;text-shadow:0 0.667px 5.333px rgba(15,31,58,0.9)">ბათუმი</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:26.667px">
+<p style="font-size:22.667px;font-style:italic;line-height:1.4;color:#334155">„ამ მასშტაბისა და ხარისხის სისტემის ასე სწრაფად შექმნა და დანერგვა აქამდე შეუძლებელი იყო.“</p>
+<p style="font-size:16px;color:#64748b">ირაკლი გიორგაძე, GeoHospitals-ის ტექნოლოგიური დირექტორი</p>
+<p style="font-size:20px;font-weight:600;line-height:1.3;color:#1a365d;padding:21.333px 0 0 0;border-top:0.667px solid #e2e8f0">ცენტრალურ საავადმყოფოში ლაბორატორია და რადიოლოგია უკვე MediMind-ზე მუშაობს.</p>
+</div>
+</div>
+<div style="position:absolute;left:96px;right:96px;bottom:42.667px;display:flex;flex-direction:row;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:row;align-items:center;gap:8px"><img src="/deck-assets/v6/logo-nine-box-accent.svg" alt="" style="width:24px;height:24px;object-fit:contain"><p style="font-size:16px;font-weight:800;letter-spacing:-0.01em;color:#1a365d">Medi<span style="color:#3182ce">Mind</span></p></div><p style="font-size:16px;color:#64748b">2</p></div>
+        </div>
         <aside class="notes">
           <p>Open the meeting here, on the customer. The point is the whole stack: not a module, not a pilot. One agreement covers records, laboratory, imaging, pharmacy, billing, HR and stock across all 25 facilities, and the old systems go. The central hospital already runs its laboratory and imaging on MediMind; other modules are being brought live site by site.</p>
           <p>The detail (1,147,535 patient records migrated, 15+ analyser lines live within three weeks) is in the sources page if asked; say “patient records”, not “records”, and never “in under a day”.</p>
@@ -214,6 +260,11 @@
         <div class="v6 lang-en" style="background:#ffffff;color:#334155;font-family:'Inter', Arial, sans-serif;padding:64px 96px 106.667px;display:flex;flex-direction:column;justify-content:center;gap:26.667px">
 <p style="font-size:18px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#64748b">The question</p>
 <h1 style="width:1040px;font-size:80px;font-weight:800;line-height:1.04;letter-spacing:-0.03em;color:#1a365d">Why would a 25-hospital network trust <span style="color:#3182ce">a new system</span> with everything?</h1>
+<div style="position:absolute;left:96px;right:96px;bottom:42.667px;display:flex;flex-direction:row;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:row;align-items:center;gap:8px"><img src="/deck-assets/v6/logo-nine-box-accent.svg" alt="" style="width:24px;height:24px;object-fit:contain"><p style="font-size:16px;font-weight:800;letter-spacing:-0.01em;color:#1a365d">Medi<span style="color:#3182ce">Mind</span></p></div><p style="font-size:16px;color:#64748b">3</p></div>
+        </div>
+        <div class="v6 lang-ka" lang="ka" style="background:#ffffff;color:#334155;font-family:'Inter', Arial, sans-serif;padding:64px 96px 106.667px;display:flex;flex-direction:column;justify-content:center;gap:26.667px">
+<p style="font-size:18px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#64748b">კითხვა</p>
+<h1 style="width:1040px;font-size:80px;font-weight:800;line-height:1.04;letter-spacing:-0.03em;color:#1a365d">რატომ ანდობს 25 საავადმყოფოს ქსელი ყველაფერს <span style="color:#3182ce">ახალ სისტემას</span>?</h1>
 <div style="position:absolute;left:96px;right:96px;bottom:42.667px;display:flex;flex-direction:row;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:row;align-items:center;gap:8px"><img src="/deck-assets/v6/logo-nine-box-accent.svg" alt="" style="width:24px;height:24px;object-fit:contain"><p style="font-size:16px;font-weight:800;letter-spacing:-0.01em;color:#1a365d">Medi<span style="color:#3182ce">Mind</span></p></div><p style="font-size:16px;color:#64748b">3</p></div>
         </div>
         <aside class="notes">
@@ -251,6 +302,33 @@
     <p style="font-family:Inter, Arial, sans-serif; font-size:20px; line-height:1.35; color:#334155">of <b>revenue from the state</b> across the hospitals analysed, paid against the record.</p>
   </div>
         </div>
+        <div class="v6 lang-ka" lang="ka" style="background:#ffffff">
+<div style="position:absolute; top:215.893px; right:0; left:0; height:504.107px; display:flex; flex-direction:column; background:#f1f5fb">
+  </div>
+  <div id="e2-1rz2zyn-ka" style="position:absolute; right:96px; bottom:42.667px; left:96px; display:flex; flex-direction:row; align-items:center; justify-content:space-between">
+    <div style="display:flex; flex-direction:row; gap:26.667px; align-items:center">
+      <div style="display:flex; flex-direction:row; gap:8px; align-items:center">
+        <img src="/deck-assets/v6/logo-nine-box-accent.svg" alt="" style="width:24px; height:24px; object-fit:contain">
+        <p style="font-family:Inter, Arial, sans-serif; font-size:16px; font-weight:800; letter-spacing:-0.133px; color:#1a365d">Medi<span style="color:#3182ce">Mind</span></p>
+      </div>
+      <p style="font-family:Inter, Arial, sans-serif; font-size:16px; color:#94a3b8">წყაროები: A5</p>
+    </div>
+    <p style="font-family:Inter, Arial, sans-serif; font-size:16px; color:#64748b">4</p>
+  </div>
+  <h2 id="p3dcdc170781dr0-ddd8b68d-ka" style="position:absolute; top:64px; left:96px; width:1000px; font-family:Inter, Arial, sans-serif; font-size:52px; font-weight:800; line-height:1.08; letter-spacing:-1.067px; color:#1a365d">ქართულ საავადმყოფოებს<br><span style="color:#3182ce">შეცდომის ადგილი თითქმის არ აქვთ</span>.</h2>
+  <div id="p232f9823f3ecc0-e3993f2e-ka" style="position:absolute; top:286px; left:96px; width:546.667px; height:218.667px; display:flex; flex-direction:column; gap:21.333px">
+    <p style="font-family:Inter, Arial, sans-serif; font-size:160px; font-weight:800; line-height:0.9; letter-spacing:-6.4px; color:#1a365d">2.4%</p>
+    <p style="width:466.667px; font-family:Inter, Arial, sans-serif; font-size:22.667px; line-height:1.35; color:#334155"><b>მედიანური წმინდა მარჟა</b> 68 საშუალო ზომის ქართულ საავადმყოფოში (შემოსავალი 5–100 მლნ ლარი).</p>
+  </div>
+  <div id="p232f9823f3ecc1-e3993f2e-ka" style="position:absolute; top:246px; left:690.667px; width:493.333px; height:298px; display:flex; flex-direction:column; gap:32px; padding:0 0 0 48px; border-left:0.667px solid #d5deea">
+  </div>
+  <p id="p232f9823f3ecc1_0_0-e3993f2e-ka" style="position:absolute; top:253.333px; left:739.333px; width:444.667px; height:71.593px; font-family:Inter, Arial, sans-serif; font-size:74.667px; font-weight:800; line-height:0.95; letter-spacing:-3px; color:#c53030">3-დან 1</p>
+  <p id="p232f9823f3ecc1_0_1-e3993f2e-ka" style="position:absolute; top:336px; left:739.333px; width:444.667px; font-family:Inter, Arial, sans-serif; font-size:20px; line-height:1.35; color:#334155">საავადმყოფო <b>ზარალზე გავიდა</b> ბოლო აუდიტირებულ წელს: 68-დან 24.</p>
+  <div id="p232f9823f3ecc1_1-e3993f2e-ka" style="position:absolute; top:410.667px; left:739.333px; width:444.667px; height:133.333px; display:flex; flex-direction:column; gap:16px">
+    <p style="font-family:Inter, Arial, sans-serif; font-size:74.667px; font-weight:800; line-height:0.95; letter-spacing:-3px; color:#1a365d">37%</p>
+    <p style="font-family:Inter, Arial, sans-serif; font-size:20px; line-height:1.35; color:#334155"><b>სახელმწიფოსგან მიღებული შემოსავალი</b> გაანალიზებულ საავადმყოფოებში, ანაზღაურდება სამედიცინო ჩანაწერის მიხედვით.</p>
+  </div>
+        </div>
         <aside class="notes">
           <p>These are from MediMind’s own analysis of the audited statements hospitals file publicly, plus the state programme data. Mid-size means revenue of GEL 5–100M: the hospitals in this room. Lead with the margin: 2.4% is the median, so half of these hospitals keep less than that of what they earn. A third ended their latest audited year in loss. These are a snapshot of profitability across the sample, not a trend; do not say margins are falling. And more than a third of what a hospital earns is paid by the state against the record it submits; when the record is late, incomplete or corrected badly, that money moves or disappears. Do not name other hospitals. Do not give a savings percentage. If asked where the figures come from, the sources page has the detail. Transition: “Three things sit behind these numbers.”</p>
         </aside>
@@ -276,6 +354,24 @@
 </div>
 <div style="position:absolute;left:96px;right:96px;bottom:42.667px;display:flex;flex-direction:row;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:row;align-items:center;gap:8px"><img src="/deck-assets/v6/logo-nine-box-accent.svg" alt="" style="width:24px;height:24px;object-fit:contain"><p style="font-size:16px;font-weight:800;letter-spacing:-0.01em;color:#1a365d">Medi<span style="color:#3182ce">Mind</span></p></div><p style="font-size:16px;color:#64748b">5</p></div>
         </div>
+        <div class="v6 lang-ka" lang="ka" style="background:#ffffff;color:#334155;font-family:'Inter', Arial, sans-serif;padding:64px 96px 106.667px;display:flex;flex-direction:column;gap:53.333px">
+<h2 style="width:1088px;font-size:48px;font-weight:800;line-height:1.08;letter-spacing:-0.02em;color:#1a365d">სამი პრობლემა, რომელიც <span style="color:#3182ce">მოგებას ჭამს</span>.</h2>
+<div style="display:flex;flex-direction:row;gap:53.333px;align-items:start">
+<div style="flex:1;display:flex;flex-direction:column;gap:24px;padding:21.333px 0 0 0;border-top:4px solid #0f1f3a">
+<p style="font-size:29.333px;font-weight:800;line-height:1.15;color:#1a365d">ჯარიმები და დაბრუნებული მოთხოვნები</p>
+<p style="font-size:20px;line-height:1.4;color:#334155;padding:0 16px 0 0">ხარვეზიანი ან უკვალოდ შესწორებული ჩანაწერი სამინისტროს შემოწმებას ვერ გადის.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:24px;padding:21.333px 0 0 0;border-top:4px solid #0f1f3a">
+<p style="font-size:29.333px;font-weight:800;line-height:1.15;color:#1a365d">მართვა სანდო ციფრების გარეშე</p>
+<p style="font-size:20px;line-height:1.4;color:#334155;padding:0 16px 0 0">მარაგი, ინვოისები და გადახდები ერთმანეთს არ ემთხვევა, ამიტომ გადაწყვეტილებები ვარაუდებს ეყრდნობა და თავდაჯერებით მოქმედება არავის შეუძლია.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:24px;padding:21.333px 0 0 0;border-top:4px solid #0f1f3a">
+<p style="font-size:29.333px;font-weight:800;line-height:1.15;color:#1a365d">განმეორებადი ხელით სამუშაოთი გადატვირთული პერსონალი</p>
+<p style="font-size:20px;line-height:1.4;color:#334155;padding:0 16px 0 0">ექიმებს და ექთნებს ერთი და იგივე ინფორმაცია რამდენიმე სისტემაში ხელახლა შეჰყავთ. ეს დრო პაციენტებს შეიძლება დაეთმოს.</p>
+</div>
+</div>
+<div style="position:absolute;left:96px;right:96px;bottom:42.667px;display:flex;flex-direction:row;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:row;align-items:center;gap:8px"><img src="/deck-assets/v6/logo-nine-box-accent.svg" alt="" style="width:24px;height:24px;object-fit:contain"><p style="font-size:16px;font-weight:800;letter-spacing:-0.01em;color:#1a365d">Medi<span style="color:#3182ce">Mind</span></p></div><p style="font-size:16px;color:#64748b">5</p></div>
+        </div>
         <aside class="notes">
           <p>Walk the three as problems. Records: a returned claim or a sanction starts with a record that could not be defended. Numbers: when the warehouse, the invoice and the bank do not agree, management runs on estimates. The team: every field entered twice is a doctor’s time and a second chance for an error.</p>
           <p>Then stop and ask: which of these do you see, and what else slows your team down? Write down what they say in their words; it becomes the scope of the 90-day plan. Do not move on until they have spoken.</p>
@@ -287,6 +383,16 @@
       <section id="pause" data-background-color="#ffffff">
         <div class="v6 lang-en" style="display:flex; flex-direction:column; gap:26.667px; justify-content:center; padding:64px 96px 106.667px; background:#ffffff">
 <h1 style="width:1040px; font-family:Inter, Arial, sans-serif; font-size:80px; font-weight:800; line-height:1.04; letter-spacing:-2.4px; color:#1a365d">Here is how MediMind <span style="color:#3182ce">addresses</span> these challenges.</h1>
+  <div style="position:absolute; right:96px; bottom:42.667px; left:96px; display:flex; flex-direction:row; align-items:center; justify-content:space-between">
+    <div style="display:flex; flex-direction:row; gap:8px; align-items:center">
+      <img src="/deck-assets/v6/logo-nine-box-accent.svg" alt="" style="width:24px; height:24px; object-fit:contain">
+      <p style="font-family:Inter, Arial, sans-serif; font-size:16px; font-weight:800; letter-spacing:-0.133px; color:#1a365d">Medi<span style="color:#3182ce">Mind</span></p>
+    </div>
+    <p style="font-family:Inter, Arial, sans-serif; font-size:16px; color:#64748b">6</p>
+  </div>
+        </div>
+        <div class="v6 lang-ka" lang="ka" style="display:flex; flex-direction:column; gap:26.667px; justify-content:center; padding:64px 96px 106.667px; background:#ffffff">
+<h1 style="width:1040px; font-family:Inter, Arial, sans-serif; font-size:80px; font-weight:800; line-height:1.04; letter-spacing:-2.4px; color:#1a365d">აი, როგორ <span style="color:#3182ce">წყვეტს</span> MediMind ამ გამოწვევებს.</h1>
   <div style="position:absolute; right:96px; bottom:42.667px; left:96px; display:flex; flex-direction:row; align-items:center; justify-content:space-between">
     <div style="display:flex; flex-direction:row; gap:8px; align-items:center">
       <img src="/deck-assets/v6/logo-nine-box-accent.svg" alt="" style="width:24px; height:24px; object-fit:contain">
@@ -308,6 +414,14 @@
 <svg viewBox="0 0 1632 560" aria-label="Six modules connected to one core" style="position:absolute;left:0;top:0;width:1088px;height:373.333px"><circle cx="816" cy="290" r="210" fill="#3182ce" fill-opacity="0.12"/><line x1="470" y1="146" x2="816" y2="290" stroke="#bee3f8" stroke-opacity="0.45" stroke-width="1.5"/><circle cx="643" cy="218" r="5" fill="#bee3f8" fill-opacity="0.9"/><line x1="1162" y1="146" x2="816" y2="290" stroke="#bee3f8" stroke-opacity="0.45" stroke-width="1.5"/><circle cx="989" cy="218" r="5" fill="#bee3f8" fill-opacity="0.9"/><line x1="410" y1="290" x2="816" y2="290" stroke="#bee3f8" stroke-opacity="0.45" stroke-width="1.5"/><circle cx="613" cy="290" r="5" fill="#bee3f8" fill-opacity="0.9"/><line x1="1222" y1="290" x2="816" y2="290" stroke="#bee3f8" stroke-opacity="0.45" stroke-width="1.5"/><circle cx="1019" cy="290" r="5" fill="#bee3f8" fill-opacity="0.9"/><line x1="470" y1="434" x2="816" y2="290" stroke="#bee3f8" stroke-opacity="0.45" stroke-width="1.5"/><circle cx="643" cy="362" r="5" fill="#bee3f8" fill-opacity="0.9"/><line x1="1162" y1="434" x2="816" y2="290" stroke="#bee3f8" stroke-opacity="0.45" stroke-width="1.5"/><circle cx="989" cy="362" r="5" fill="#bee3f8" fill-opacity="0.9"/><circle cx="816" cy="290" r="150" fill="none" stroke="#bee3f8" stroke-opacity="0.35" stroke-width="1.5"/><circle cx="816" cy="290" r="190" fill="none" stroke="#bee3f8" stroke-opacity="0.18" stroke-width="1"/><circle cx="816" cy="290" r="230" fill="none" stroke="#bee3f8" stroke-opacity="0.08" stroke-width="1"/><circle cx="816" cy="290" r="150" fill="none" stroke="#7dd3fc" stroke-width="4" stroke-linecap="round" pathLength="100" stroke-dasharray="26 74" transform="rotate(-120 816 290)"/><circle cx="816" cy="290" r="150" fill="#0f1f3a" fill-opacity="0.55"/></svg><svg style="position:absolute;left:450.667px;top:109.333px;width:186.667px;height:168px" aria-label="Network graphic" viewBox="34 26 140 126" fill="none" aria-hidden="true"> <g stroke="#9ecbf2" stroke-width="1" stroke-linecap="round" opacity="0.5"> <path d="M160 112 166 92 164 70 152 52 132 40 108 33 84 35 62 44 47 60 40 80 42 100 50 116 64 128 80 134 96 130 112 124 130 120 146 117 160 112" stroke="#bee3f8" stroke-width="1.3" opacity="0.75" fill="none"/> <path d="M64 128 98 146 96 130" fill="none"/> <line x1="164" y1="70" x2="150" y2="80"/><line x1="166" y1="92" x2="150" y2="80"/><line x1="160" y1="112" x2="148" y2="100"/><line x1="150" y1="80" x2="140" y2="70"/><line x1="140" y1="70" x2="152" y2="52"/><line x1="140" y1="70" x2="120" y2="55"/><line x1="120" y1="55" x2="132" y2="40"/><line x1="120" y1="55" x2="96" y2="50"/><line x1="96" y1="50" x2="108" y2="33"/><line x1="96" y1="50" x2="84" y2="35"/><line x1="72" y1="62" x2="84" y2="35"/><line x1="72" y1="62" x2="62" y2="44"/><line x1="72" y1="62" x2="58" y2="84"/><line x1="58" y1="84" x2="47" y2="60"/><line x1="58" y1="84" x2="40" y2="80"/><line x1="76" y1="92" x2="72" y2="62"/><line x1="64" y1="106" x2="42" y2="100"/><line x1="64" y1="106" x2="50" y2="116"/><line x1="64" y1="106" x2="76" y2="92"/><line x1="64" y1="106" x2="86" y2="112"/><line x1="86" y1="112" x2="80" y2="134"/><line x1="86" y1="112" x2="110" y2="102"/><line x1="110" y1="102" x2="112" y2="124"/><line x1="110" y1="102" x2="98" y2="80"/><line x1="110" y1="102" x2="130" y2="105"/><line x1="130" y1="105" x2="130" y2="120"/><line x1="130" y1="105" x2="140" y2="92"/><line x1="140" y1="92" x2="148" y2="100"/><line x1="148" y1="100" x2="146" y2="117"/><line x1="140" y1="92" x2="150" y2="80"/><line x1="98" y1="80" x2="120" y2="78"/><line x1="120" y1="78" x2="140" y2="70"/><line x1="120" y1="78" x2="120" y2="55"/><line x1="120" y1="78" x2="140" y2="92"/><line x1="120" y1="78" x2="110" y2="102"/><line x1="58" y1="84" x2="76" y2="92"/> </g> <g stroke="#e3f3ff" stroke-width="1.5" stroke-linecap="round"> <line x1="98" y1="80" x2="76" y2="92"/> <line x1="120" y1="78" x2="140" y2="92"/> <line x1="96" y1="50" x2="98" y2="80"/> </g> <g fill="#dbeafe" opacity="0.95"> <circle cx="160" cy="112" r="1.7"/><circle cx="166" cy="92" r="1.7"/><circle cx="164" cy="70" r="1.7"/><circle cx="152" cy="52" r="1.7"/><circle cx="132" cy="40" r="1.7"/><circle cx="108" cy="33" r="1.7"/><circle cx="84" cy="35" r="1.7"/><circle cx="62" cy="44" r="1.7"/><circle cx="47" cy="60" r="1.7"/><circle cx="40" cy="80" r="1.7"/><circle cx="42" cy="100" r="1.7"/><circle cx="50" cy="116" r="1.7"/><circle cx="64" cy="128" r="1.7"/><circle cx="80" cy="134" r="1.7"/><circle cx="96" cy="130" r="1.7"/><circle cx="112" cy="124" r="1.7"/><circle cx="130" cy="120" r="1.7"/><circle cx="146" cy="117" r="1.7"/><circle cx="98" cy="146" r="1.5"/> <circle cx="140" cy="70" r="2"/><circle cx="96" cy="50" r="2"/><circle cx="72" cy="62" r="2"/><circle cx="58" cy="84" r="2"/><circle cx="64" cy="106" r="2"/><circle cx="86" cy="112" r="2"/><circle cx="110" cy="102" r="2"/><circle cx="140" cy="92" r="2"/><circle cx="148" cy="100" r="2"/> <circle cx="98" cy="80" r="2.7" fill="#ffffff"/><circle cx="120" cy="78" r="2.7" fill="#ffffff"/> </g> <g fill="#ffffff"> <circle cx="120" cy="55" r="2.4"/> <circle cx="76" cy="92" r="2.4"/> <circle cx="130" cy="105" r="2.4"/> <circle cx="150" cy="80" r="2.4"/> </g> </svg><div style="position:absolute;left:26.667px;top:21.333px;display:flex;flex-direction:row;align-items:center;gap:12px"><img src="/deck-assets/v6/logo-nine-box-white.svg" alt="" style="width:37.333px;height:37.333px;object-fit:contain"><p style="font-size:20px;font-weight:600;color:#ffffff">MediMind OS</p></div><div style="position:absolute;left:113.333px;top:73.333px;width:200px;height:48px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.1);border:0.667px solid rgba(255,255,255,0.4);border-radius:9.333px;box-shadow:0 5.333px 16px rgba(0,0,0,0.25)"><p style="font-size:18.667px;font-weight:600;color:#ffffff">Clinical record</p></div><div style="position:absolute;left:774.667px;top:73.333px;width:200px;height:48px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.1);border:0.667px solid rgba(255,255,255,0.4);border-radius:9.333px;box-shadow:0 5.333px 16px rgba(0,0,0,0.25)"><p style="font-size:18.667px;font-weight:600;color:#ffffff">Laboratory</p></div><div style="position:absolute;left:73.333px;top:169.333px;width:200px;height:48px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.1);border:0.667px solid rgba(255,255,255,0.4);border-radius:9.333px;box-shadow:0 5.333px 16px rgba(0,0,0,0.25)"><p style="font-size:18.667px;font-weight:600;color:#ffffff">Imaging and PACS</p></div><div style="position:absolute;left:814.667px;top:169.333px;width:200px;height:48px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.1);border:0.667px solid rgba(255,255,255,0.4);border-radius:9.333px;box-shadow:0 5.333px 16px rgba(0,0,0,0.25)"><p style="font-size:18.667px;font-weight:600;color:#ffffff">Billing and finance</p></div><div style="position:absolute;left:113.333px;top:265.333px;width:200px;height:48px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.1);border:0.667px solid rgba(255,255,255,0.4);border-radius:9.333px;box-shadow:0 5.333px 16px rgba(0,0,0,0.25)"><p style="font-size:18.667px;font-weight:600;color:#ffffff">Pharmacy and stock</p></div><div style="position:absolute;left:774.667px;top:265.333px;width:200px;height:48px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.1);border:0.667px solid rgba(255,255,255,0.4);border-radius:9.333px;box-shadow:0 5.333px 16px rgba(0,0,0,0.25)"><p style="font-size:18.667px;font-weight:600;color:#ffffff">HR and management</p></div>
 </div>
 <div style="display:flex;flex-direction:row;justify-content:center;gap:13.333px"><div style="display:flex;align-items:center;padding:9.333px 18.667px;background:#f1f5fb;border:0.667px solid #d5deea;border-radius:666px"><p style="font-size:17.333px;font-weight:600;color:#1a365d">Built ground-up on FHIR R4, the international standard</p></div><div style="display:flex;align-items:center;padding:9.333px 18.667px;background:#f1f5fb;border:0.667px solid #d5deea;border-radius:666px"><p style="font-size:17.333px;font-weight:600;color:#1a365d">Modern technology stack</p></div><div style="display:flex;align-items:center;padding:9.333px 18.667px;background:#f1f5fb;border:0.667px solid #d5deea;border-radius:666px"><p style="font-size:17.333px;font-weight:600;color:#1a365d">Rapid development by one team</p></div></div>
+<div style="position:absolute;left:96px;right:96px;bottom:42.667px;display:flex;flex-direction:row;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:row;align-items:center;gap:8px"><img src="/deck-assets/v6/logo-nine-box-accent.svg" alt="" style="width:24px;height:24px;object-fit:contain"><p style="font-size:16px;font-weight:800;letter-spacing:-0.01em;color:#1a365d">Medi<span style="color:#3182ce">Mind</span></p></div><p style="font-size:16px;color:#64748b">7</p></div>
+        </div>
+        <div class="v6 lang-ka" lang="ka" style="background:#ffffff;color:#334155;font-family:'Inter', Arial, sans-serif;padding:64px 96px 106.667px;display:flex;flex-direction:column;gap:21.333px">
+<h2 style="width:1088px;font-size:42.667px;font-weight:800;line-height:1.08;letter-spacing:-0.02em;color:#1a365d">MediMind: ყველა პროგრამა თქვენი კლინიკისთვის.<br><span style="color:#3182ce">ერთ სისტემაში.</span></h2>
+<div style="position:relative;width:1088px;height:373.333px;background:linear-gradient(135deg, #0f1f3a 0%, #1a365d 45%, #2b6cb0 100%);border-radius:16px;box-shadow:0 16px 40px rgba(15,31,58,0.25)">
+<svg viewBox="0 0 1632 560" aria-label="Six modules connected to one core" style="position:absolute;left:0;top:0;width:1088px;height:373.333px"><circle cx="816" cy="290" r="210" fill="#3182ce" fill-opacity="0.12"/><line x1="470" y1="146" x2="816" y2="290" stroke="#bee3f8" stroke-opacity="0.45" stroke-width="1.5"/><circle cx="643" cy="218" r="5" fill="#bee3f8" fill-opacity="0.9"/><line x1="1162" y1="146" x2="816" y2="290" stroke="#bee3f8" stroke-opacity="0.45" stroke-width="1.5"/><circle cx="989" cy="218" r="5" fill="#bee3f8" fill-opacity="0.9"/><line x1="410" y1="290" x2="816" y2="290" stroke="#bee3f8" stroke-opacity="0.45" stroke-width="1.5"/><circle cx="613" cy="290" r="5" fill="#bee3f8" fill-opacity="0.9"/><line x1="1222" y1="290" x2="816" y2="290" stroke="#bee3f8" stroke-opacity="0.45" stroke-width="1.5"/><circle cx="1019" cy="290" r="5" fill="#bee3f8" fill-opacity="0.9"/><line x1="470" y1="434" x2="816" y2="290" stroke="#bee3f8" stroke-opacity="0.45" stroke-width="1.5"/><circle cx="643" cy="362" r="5" fill="#bee3f8" fill-opacity="0.9"/><line x1="1162" y1="434" x2="816" y2="290" stroke="#bee3f8" stroke-opacity="0.45" stroke-width="1.5"/><circle cx="989" cy="362" r="5" fill="#bee3f8" fill-opacity="0.9"/><circle cx="816" cy="290" r="150" fill="none" stroke="#bee3f8" stroke-opacity="0.35" stroke-width="1.5"/><circle cx="816" cy="290" r="190" fill="none" stroke="#bee3f8" stroke-opacity="0.18" stroke-width="1"/><circle cx="816" cy="290" r="230" fill="none" stroke="#bee3f8" stroke-opacity="0.08" stroke-width="1"/><circle cx="816" cy="290" r="150" fill="none" stroke="#7dd3fc" stroke-width="4" stroke-linecap="round" pathLength="100" stroke-dasharray="26 74" transform="rotate(-120 816 290)"/><circle cx="816" cy="290" r="150" fill="#0f1f3a" fill-opacity="0.55"/></svg><svg style="position:absolute;left:450.667px;top:109.333px;width:186.667px;height:168px" aria-label="Network graphic" viewBox="34 26 140 126" fill="none" aria-hidden="true"> <g stroke="#9ecbf2" stroke-width="1" stroke-linecap="round" opacity="0.5"> <path d="M160 112 166 92 164 70 152 52 132 40 108 33 84 35 62 44 47 60 40 80 42 100 50 116 64 128 80 134 96 130 112 124 130 120 146 117 160 112" stroke="#bee3f8" stroke-width="1.3" opacity="0.75" fill="none"/> <path d="M64 128 98 146 96 130" fill="none"/> <line x1="164" y1="70" x2="150" y2="80"/><line x1="166" y1="92" x2="150" y2="80"/><line x1="160" y1="112" x2="148" y2="100"/><line x1="150" y1="80" x2="140" y2="70"/><line x1="140" y1="70" x2="152" y2="52"/><line x1="140" y1="70" x2="120" y2="55"/><line x1="120" y1="55" x2="132" y2="40"/><line x1="120" y1="55" x2="96" y2="50"/><line x1="96" y1="50" x2="108" y2="33"/><line x1="96" y1="50" x2="84" y2="35"/><line x1="72" y1="62" x2="84" y2="35"/><line x1="72" y1="62" x2="62" y2="44"/><line x1="72" y1="62" x2="58" y2="84"/><line x1="58" y1="84" x2="47" y2="60"/><line x1="58" y1="84" x2="40" y2="80"/><line x1="76" y1="92" x2="72" y2="62"/><line x1="64" y1="106" x2="42" y2="100"/><line x1="64" y1="106" x2="50" y2="116"/><line x1="64" y1="106" x2="76" y2="92"/><line x1="64" y1="106" x2="86" y2="112"/><line x1="86" y1="112" x2="80" y2="134"/><line x1="86" y1="112" x2="110" y2="102"/><line x1="110" y1="102" x2="112" y2="124"/><line x1="110" y1="102" x2="98" y2="80"/><line x1="110" y1="102" x2="130" y2="105"/><line x1="130" y1="105" x2="130" y2="120"/><line x1="130" y1="105" x2="140" y2="92"/><line x1="140" y1="92" x2="148" y2="100"/><line x1="148" y1="100" x2="146" y2="117"/><line x1="140" y1="92" x2="150" y2="80"/><line x1="98" y1="80" x2="120" y2="78"/><line x1="120" y1="78" x2="140" y2="70"/><line x1="120" y1="78" x2="120" y2="55"/><line x1="120" y1="78" x2="140" y2="92"/><line x1="120" y1="78" x2="110" y2="102"/><line x1="58" y1="84" x2="76" y2="92"/> </g> <g stroke="#e3f3ff" stroke-width="1.5" stroke-linecap="round"> <line x1="98" y1="80" x2="76" y2="92"/> <line x1="120" y1="78" x2="140" y2="92"/> <line x1="96" y1="50" x2="98" y2="80"/> </g> <g fill="#dbeafe" opacity="0.95"> <circle cx="160" cy="112" r="1.7"/><circle cx="166" cy="92" r="1.7"/><circle cx="164" cy="70" r="1.7"/><circle cx="152" cy="52" r="1.7"/><circle cx="132" cy="40" r="1.7"/><circle cx="108" cy="33" r="1.7"/><circle cx="84" cy="35" r="1.7"/><circle cx="62" cy="44" r="1.7"/><circle cx="47" cy="60" r="1.7"/><circle cx="40" cy="80" r="1.7"/><circle cx="42" cy="100" r="1.7"/><circle cx="50" cy="116" r="1.7"/><circle cx="64" cy="128" r="1.7"/><circle cx="80" cy="134" r="1.7"/><circle cx="96" cy="130" r="1.7"/><circle cx="112" cy="124" r="1.7"/><circle cx="130" cy="120" r="1.7"/><circle cx="146" cy="117" r="1.7"/><circle cx="98" cy="146" r="1.5"/> <circle cx="140" cy="70" r="2"/><circle cx="96" cy="50" r="2"/><circle cx="72" cy="62" r="2"/><circle cx="58" cy="84" r="2"/><circle cx="64" cy="106" r="2"/><circle cx="86" cy="112" r="2"/><circle cx="110" cy="102" r="2"/><circle cx="140" cy="92" r="2"/><circle cx="148" cy="100" r="2"/> <circle cx="98" cy="80" r="2.7" fill="#ffffff"/><circle cx="120" cy="78" r="2.7" fill="#ffffff"/> </g> <g fill="#ffffff"> <circle cx="120" cy="55" r="2.4"/> <circle cx="76" cy="92" r="2.4"/> <circle cx="130" cy="105" r="2.4"/> <circle cx="150" cy="80" r="2.4"/> </g> </svg><div style="position:absolute;left:26.667px;top:21.333px;display:flex;flex-direction:row;align-items:center;gap:12px"><img src="/deck-assets/v6/logo-nine-box-white.svg" alt="" style="width:37.333px;height:37.333px;object-fit:contain"><p style="font-size:20px;font-weight:600;color:#ffffff">MediMind OS</p></div><div style="position:absolute;left:113.333px;top:73.333px;width:200px;height:48px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.1);border:0.667px solid rgba(255,255,255,0.4);border-radius:9.333px;box-shadow:0 5.333px 16px rgba(0,0,0,0.25)"><p style="font-size:16px;font-weight:600;color:#ffffff;white-space:nowrap">კლინიკური ჩანაწერი</p></div><div style="position:absolute;left:774.667px;top:73.333px;width:200px;height:48px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.1);border:0.667px solid rgba(255,255,255,0.4);border-radius:9.333px;box-shadow:0 5.333px 16px rgba(0,0,0,0.25)"><p style="font-size:16px;font-weight:600;color:#ffffff;white-space:nowrap">ლაბორატორია</p></div><div style="position:absolute;left:73.333px;top:169.333px;width:200px;height:48px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.1);border:0.667px solid rgba(255,255,255,0.4);border-radius:9.333px;box-shadow:0 5.333px 16px rgba(0,0,0,0.25)"><p style="font-size:16px;font-weight:600;color:#ffffff;white-space:nowrap">რადიოლოგია და PACS</p></div><div style="position:absolute;left:814.667px;top:169.333px;width:200px;height:48px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.1);border:0.667px solid rgba(255,255,255,0.4);border-radius:9.333px;box-shadow:0 5.333px 16px rgba(0,0,0,0.25)"><p style="font-size:16px;font-weight:600;color:#ffffff;white-space:nowrap">ბილინგი და ფინანსები</p></div><div style="position:absolute;left:113.333px;top:265.333px;width:200px;height:48px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.1);border:0.667px solid rgba(255,255,255,0.4);border-radius:9.333px;box-shadow:0 5.333px 16px rgba(0,0,0,0.25)"><p style="font-size:16px;font-weight:600;color:#ffffff;white-space:nowrap">აფთიაქი და საწყობი</p></div><div style="position:absolute;left:774.667px;top:265.333px;width:200px;height:48px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.1);border:0.667px solid rgba(255,255,255,0.4);border-radius:9.333px;box-shadow:0 5.333px 16px rgba(0,0,0,0.25)"><p style="font-size:16px;font-weight:600;color:#ffffff;white-space:nowrap">HR და მართვა</p></div>
+</div>
+<div style="display:flex;flex-direction:row;justify-content:center;gap:13.333px"><div style="display:flex;align-items:center;padding:9.333px 18.667px;background:#f1f5fb;border:0.667px solid #d5deea;border-radius:666px"><p style="font-size:17.333px;font-weight:600;color:#1a365d">ნულიდან აგებული FHIR R4 სტანდარტზე</p></div><div style="display:flex;align-items:center;padding:9.333px 18.667px;background:#f1f5fb;border:0.667px solid #d5deea;border-radius:666px"><p style="font-size:17.333px;font-weight:600;color:#1a365d">თანამედროვე ტექნოლოგიები</p></div><div style="display:flex;align-items:center;padding:9.333px 18.667px;background:#f1f5fb;border:0.667px solid #d5deea;border-radius:666px"><p style="font-size:17.333px;font-weight:600;color:#1a365d">სწრაფი განვითარება ერთი გუნდის მიერ</p></div></div>
 <div style="position:absolute;left:96px;right:96px;bottom:42.667px;display:flex;flex-direction:row;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:row;align-items:center;gap:8px"><img src="/deck-assets/v6/logo-nine-box-accent.svg" alt="" style="width:24px;height:24px;object-fit:contain"><p style="font-size:16px;font-weight:800;letter-spacing:-0.01em;color:#1a365d">Medi<span style="color:#3182ce">Mind</span></p></div><p style="font-size:16px;color:#64748b">7</p></div>
         </div>
         <aside class="notes">
@@ -352,6 +466,38 @@
     <p style="font-family:Inter, Arial, sans-serif; font-size:16px; color:#64748b">8</p>
   </div>
         </div>
+        <div class="v6 lang-ka" lang="ka" style="display:flex; flex-direction:column; gap:42.667px; padding:64px 96px 106.667px; background:#ffffff">
+<h2 style="width:1000px; font-family:Inter, Arial, sans-serif; font-size:52px; font-weight:800; line-height:1.08; letter-spacing:-1.067px; color:#1a365d">რას ნიშნავს ეს თქვენთვის.<br><span style="color:#3182ce">ორი მაგალითი მრავალიდან.</span></h2>
+  <div style="display:flex; flex-direction:row; gap:48px; align-items:start">
+    <div style="display:flex; flex-direction:column; gap:18.667px; flex:1; padding:21.333px 0 0; border-top:4px solid #0f1f3a">
+      <p style="font-family:Inter, Arial, sans-serif; font-size:18px; font-weight:600; letter-spacing:1.467px; text-transform:uppercase; color:#3182ce">ნაკლები ჯარიმა და დაბრუნებული მოთხოვნა</p>
+      <p style="font-family:Inter, Arial, sans-serif; font-size:29.333px; font-weight:800; line-height:1.15; color:#1a365d">ბილინგი თავიდან ბოლომდე</p>
+      <ul style="padding:0 0 0 24px; font-family:Inter, Arial, sans-serif; font-size:20px; line-height:1.45; color:#334155">
+        <li>საბანკო ჩარიცხვები ინვოისებთან ავტომატურად შეჯერდება.</li>
+        <li>შესწორებები ფიქსირდება სრული კვალით.</li>
+        <li>არაპირდაპირი ხარჯები წესის მიხედვით ნაწილდება.</li>
+        <li>ყოველი ინვოისი გაგზავნამდე სრულ ჩანაწერს უკავშირდება.</li>
+      </ul>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:18.667px; flex:1; padding:21.333px 0 0; border-top:4px solid #0f1f3a">
+      <p style="font-family:Inter, Arial, sans-serif; font-size:18px; font-weight:600; letter-spacing:1.467px; text-transform:uppercase; color:#3182ce">ციფრები, რომლებსაც ხელმძღვანელობა ენდობა</p>
+      <p style="font-family:Inter, Arial, sans-serif; font-size:29.333px; font-weight:800; line-height:1.15; color:#1a365d">სრულად შეჯერებული, დეტალიზებული საწყობი</p>
+      <ul style="padding:0 0 0 24px; font-family:Inter, Arial, sans-serif; font-size:20px; line-height:1.45; color:#334155">
+        <li>RS-ის ზედნადებები ავტომატურად შემოდის.</li>
+        <li>მომწოდებლის პოზიციები თქვენს ნომენკლატურას უკავშირდება.</li>
+        <li>სერიები, ვადები და გადაადგილებები აღრიცხულია.</li>
+        <li>მარაგის ციფრები, რომლებიც აუდიტს უძლებს და პაციენტსა და ანგარიშს უკავშირდება.</li>
+      </ul>
+    </div>
+  </div>
+  <div style="position:absolute; right:96px; bottom:42.667px; left:96px; display:flex; flex-direction:row; align-items:center; justify-content:space-between">
+    <div style="display:flex; flex-direction:row; gap:8px; align-items:center">
+      <img src="/deck-assets/v6/logo-nine-box-accent.svg" alt="" style="width:24px; height:24px; object-fit:contain">
+      <p style="font-family:Inter, Arial, sans-serif; font-size:16px; font-weight:800; letter-spacing:-0.133px; color:#1a365d">Medi<span style="color:#3182ce">Mind</span></p>
+    </div>
+    <p style="font-family:Inter, Arial, sans-serif; font-size:16px; color:#64748b">8</p>
+  </div>
+        </div>
         <aside class="notes">
           <p>Two examples the owner feels directly, chosen from many, each tied to a problem from slide 5. Billing answers the first: an invoice that is built from a complete record, reconciled to the bank and corrected with a trace is the invoice that does not come back as a returned claim or a fine. The warehouse answers the second: inventory is one of the largest balances a hospital holds, and it is where auditors most often find stock records they cannot verify or write-downs nobody saw coming; a matched, itemized warehouse is what makes those numbers reliable. The third problem, the team’s day, is answered on request with appendix A3. Billing: almost nobody in Georgia has billing infrastructure that gives good reports, lets a correction be recorded simply, and connects to the bank so receipts match invoices automatically. Analytics are bad because the input is bad; fix the input and the reports become usable, including indirect cost by a rule. Warehouse: the pain is matching. RS receipts coming in automatically against a clean nomenclature, with batches and expiry tracked, removes a whole category of manual work. If they lean in on either, the appendix slides A1 and A2 show the detail with sample data. Do not open the product. Transition: “Now the objection you are already thinking.”</p>
         </aside>
@@ -369,6 +515,17 @@
   </div>
   <p id="pc6982af4121br0-3321a6dd" style="position:absolute; top:146px; left:96px; width:1088px; font-family:Inter, Arial, sans-serif; font-size:18px; font-weight:600; letter-spacing:1.467px; text-transform:uppercase; color:#64748b">The obvious objection</p>
   <h1 id="pc6982af4121br1-3321a6dd" style="position:absolute; top:calc(50% + 19.413px); left:96px; width:1040px; height:377.16px; font-family:Inter, Arial, sans-serif; font-size:80px; font-weight:800; line-height:1.04; letter-spacing:-2.4px; color:#1a365d; transform:translateY(-50%)"><i>“...yes, but replacing everything is risky and slow.”</i><br><br>&nbsp;Here is <span style="color:#3182ce">how we do it</span>.</h1>
+        </div>
+        <div class="v6 lang-ka" lang="ka" style="background:#ffffff">
+<div id="e1-1e6di38-ka" style="position:absolute; right:96px; bottom:42.667px; left:96px; display:flex; flex-direction:row; align-items:center; justify-content:space-between">
+    <div style="display:flex; flex-direction:row; gap:8px; align-items:center">
+      <img src="/deck-assets/v6/logo-nine-box-accent.svg" alt="" style="width:24px; height:24px; object-fit:contain">
+      <p style="font-family:Inter, Arial, sans-serif; font-size:16px; font-weight:800; letter-spacing:-0.133px; color:#1a365d">Medi<span style="color:#3182ce">Mind</span></p>
+    </div>
+    <p style="font-family:Inter, Arial, sans-serif; font-size:16px; color:#64748b">9</p>
+  </div>
+  <p id="pc6982af4121br0-3321a6dd-ka" style="position:absolute; top:146px; left:96px; width:1088px; font-family:Inter, Arial, sans-serif; font-size:18px; font-weight:600; letter-spacing:1.467px; text-transform:uppercase; color:#64748b">მოსალოდნელი შეპასუხება</p>
+  <h1 id="pc6982af4121br1-3321a6dd-ka" style="position:absolute; top:calc(50% + 19.413px); left:96px; width:1040px; height:377.16px; font-family:Inter, Arial, sans-serif; font-size:80px; font-weight:800; line-height:1.04; letter-spacing:-2.4px; color:#1a365d; transform:translateY(-50%)"><i>„...კი, მაგრამ ყველაფრის შეცვლა რისკიანი და ნელია.“</i><br><br>&nbsp;აი, <span style="color:#3182ce">როგორ ვაკეთებთ ამას</span>.</h1>
         </div>
         <aside class="notes">
           <p>Say the objection before they do. Every owner in the room is thinking it: a hospital cannot stop, and software changes are where projects go to die. The next three slides are the answer: the 90-day plan, what protects their data and their operations during the switch, and who does the work.</p>
@@ -408,6 +565,37 @@
 </div>
 <div style="position:absolute;left:96px;right:96px;bottom:42.667px;display:flex;flex-direction:row;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:row;align-items:center;gap:8px"><img src="/deck-assets/v6/logo-nine-box-accent.svg" alt="" style="width:24px;height:24px;object-fit:contain"><p style="font-size:16px;font-weight:800;letter-spacing:-0.01em;color:#1a365d">Medi<span style="color:#3182ce">Mind</span></p></div><p style="font-size:16px;color:#64748b">10</p></div>
         </div>
+        <div class="v6 lang-ka" lang="ka" style="background:#ffffff;color:#334155;font-family:'Inter', Arial, sans-serif;padding:64px 96px 106.667px;display:flex;flex-direction:column;gap:0">
+<h2 style="width:1000px;font-size:52px;font-weight:800;line-height:1.08;letter-spacing:-0.02em;color:#1a365d">ნულიდან გაშვებამდე <span style="color:#3182ce">90 დღეში</span>.</h2>
+<div style="display:flex;flex-direction:row;gap:53.333px;padding:42.667px 0 0 0">
+<div style="flex:1;display:flex;flex-direction:column;gap:18.667px">
+<p style="font-size:18px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#64748b">0–30 დღე</p>
+<div style="height:12px;background:#0f1f3a"></div>
+<p style="font-size:29.333px;font-weight:800;line-height:1.15;color:#1a365d;padding:8px 0 0 0">შეფასება და პარალელური აწყობა</p>
+<p style="font-size:18.667px;line-height:1.4;color:#334155">თქვენს კლინიკას პარალელურად ვაწყობთ: ნომენკლატურა, ფასების ცხრილები, როლები, პროცესები. სატესტო მიგრაცია შეჯერებულია. ჯერ არავის სამუშაო დღე არ იცვლება.</p>
+<p style="font-size:18.667px;line-height:1.4;color:#3182ce"><b>წარმატება:</b> მასშტაბი და საზომები შეთანხმებულია თქვენს ციფრებზე. გადაწყვეტილებას თქვენ იღებთ, უფასოდ.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:18.667px">
+<p style="font-size:18px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#64748b">31–60 დღე</p>
+<div style="height:12px;background:#0f1f3a"></div>
+<p style="font-size:29.333px;font-weight:800;line-height:1.15;color:#1a365d;padding:8px 0 0 0">პრაქტიკული ეტაპი</p>
+<p style="font-size:18.667px;line-height:1.4;color:#334155">ლაბორატორია, რადიოლოგია და ბილინგი დაკავშირებულია. თანამშრომლები როლების მიხედვით მზადდებიან. პირველი მოდულები მუშაობს, დანარჩენი პარალელურად.</p>
+<p style="font-size:18.667px;line-height:1.4;color:#3182ce"><b>წარმატება:</b> პირველი განყოფილების შემთხვევები MediMind-იდან იგზავნება.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:18.667px">
+<p style="font-size:18px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#64748b">61–90 დღე</p>
+<div style="height:12px;background:#3182ce"></div>
+<p style="font-size:29.333px;font-weight:800;line-height:1.15;color:#1a365d;padding:8px 0 0 0">სრული გადასვლა</p>
+<p style="font-size:18.667px;line-height:1.4;color:#334155">დარჩენილი მოდულები გადადის. სარეზერვო გეგმა შეთანხმებული და მზადაა. გუნდი ახალ რუტინას ეჩვევა.</p>
+<p style="font-size:18.667px;line-height:1.4;color:#3182ce"><b>წარმატება:</b> კლინიკა MediMind-ზე მუშაობს, შედეგი თქვენს საწყის მაჩვენებლებთან იზომება.</p>
+</div>
+</div>
+<div style="flex:1"></div>
+<div style="display:flex;flex-direction:column;gap:10.667px;padding:21.333px 0 0 0;border-top:0.667px solid #e2e8f0">
+<p style="font-size:26.667px;font-weight:600;line-height:1.3;color:#3182ce">30-ე დღე: თქვენ წყვეტთ, გავაგრძელოთ თუ არა. 90-ე დღე: სისტემა მუშაობს.</p>
+</div>
+<div style="position:absolute;left:96px;right:96px;bottom:42.667px;display:flex;flex-direction:row;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:row;align-items:center;gap:8px"><img src="/deck-assets/v6/logo-nine-box-accent.svg" alt="" style="width:24px;height:24px;object-fit:contain"><p style="font-size:16px;font-weight:800;letter-spacing:-0.01em;color:#1a365d">Medi<span style="color:#3182ce">Mind</span></p></div><p style="font-size:16px;color:#64748b">10</p></div>
+        </div>
         <aside class="notes">
           <p>This is the “what’s next”, not a feature list. Three phases, each with what we do and what success looks like, measured on their own numbers.</p>
           <p>Days 0–30 is an evaluation for them and a build for us: we set up their hospital as a shadow system while they keep working on what they have. Days 31–60 is hands on: connections made, people trained by role, the first department live. Days 61–90 is the switch and the settling-in, with the fallback still available.</p>
@@ -438,6 +626,28 @@
 </div>
 <div style="flex:1"></div>
 <p style="font-size:18px;line-height:1.4;color:#64748b">Proven at GeoHospitals: 1.1M+ patient records moved with zero gaps and zero duplicates, laboratory running throughout.</p>
+<div style="position:absolute;left:96px;right:96px;bottom:42.667px;display:flex;flex-direction:row;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:row;align-items:center;gap:8px"><img src="/deck-assets/v6/logo-nine-box-accent.svg" alt="" style="width:24px;height:24px;object-fit:contain"><p style="font-size:16px;font-weight:800;letter-spacing:-0.01em;color:#1a365d">Medi<span style="color:#3182ce">Mind</span></p></div><p style="font-size:16px;color:#64748b">11</p></div>
+        </div>
+        <div class="v6 lang-ka" lang="ka" style="background:#ffffff;color:#334155;font-family:'Inter', Arial, sans-serif;padding:64px 96px 106.667px;display:flex;flex-direction:column;gap:0">
+<h2 style="width:1088px;font-size:45.333px;font-weight:800;line-height:1.08;letter-spacing:-0.02em;color:#1a365d">გადასვლა <span style="color:#3182ce">კლინიკის გაჩერების გარეშე</span>.</h2>
+<div style="flex:1"></div>
+<div style="position:relative;width:1088px;height:280px">
+<div style="position:absolute;left:468.667px;top:37.333px;width:2px;height:216px;background:#3182ce"></div>
+<p style="position:absolute;left:309.333px;top:0;width:320px;text-align:center;font-size:18.667px;font-weight:800;color:#3182ce">30-ე დღე · თქვენი გადაწყვეტილება</p>
+<p style="position:absolute;left:160px;top:48px;width:309.333px;text-align:center;font-size:17.333px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#64748b">0–30 დღე</p>
+<p style="position:absolute;left:469.333px;top:48px;width:309.333px;text-align:center;font-size:17.333px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#64748b">30–60 დღე</p>
+<p style="position:absolute;left:778.667px;top:48px;width:309.333px;text-align:center;font-size:17.333px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#64748b">60–90 დღე</p>
+<p style="position:absolute;left:0;top:98.667px;width:153.333px;font-size:20px;font-weight:600;color:#1a365d">არსებული სისტემა</p>
+<div style="position:absolute;left:160px;top:82.667px;width:618.667px;height:56px;display:flex;align-items:center;justify-content:center;background:#d5deea;border:1.333px solid #d5deea"><p style="font-size:20px;color:#1a365d">თქვენი მთავარი სისტემა</p></div>
+<div style="position:absolute;left:778.667px;top:82.667px;width:309.333px;height:56px;display:flex;align-items:center;justify-content:center;background:#ffffff;border:1.333px dashed #94a3b8"><p style="font-size:20px;color:#64748b">სარეზერვო, მზადყოფნაში</p></div>
+<p style="position:absolute;left:0;top:181.333px;width:153.333px;font-size:20px;font-weight:600;color:#3182ce">MediMind</p>
+<div style="position:absolute;left:160px;top:165.333px;width:309.333px;height:56px;display:flex;align-items:center;justify-content:center;background:#ffffff;border:1.333px dashed #3182ce"><p style="font-size:20px;color:#1a365d">აწყობა თქვენს მონაცემებზე</p></div>
+<div style="position:absolute;left:469.333px;top:165.333px;width:309.333px;height:56px;display:flex;align-items:center;justify-content:center;background:#e6f0fb;border:1.333px solid #bfd6ee"><p style="font-size:20px;color:#1a365d">პირველი პროცესები ეშვება</p></div>
+<div style="position:absolute;left:778.667px;top:165.333px;width:309.333px;height:56px;display:flex;align-items:center;justify-content:center;background:#3182ce;border:1.333px solid #3182ce"><p style="font-size:20px;font-weight:600;color:#ffffff">თქვენი მთავარი სისტემა</p></div>
+<p style="position:absolute;left:160px;top:248px;width:928px;text-align:center;font-size:18px;line-height:1.4;color:#64748b">30-ე დღემდე არანაირი ვალდებულება. სარეზერვო გზა შეთანხმებულია თითოეულ პროცესზე. მონაცემები თქვენია: FHIR R4 და სრული ექსპორტი ნებისმიერ დროს.</p>
+</div>
+<div style="flex:1"></div>
+<p style="font-size:18px;line-height:1.4;color:#64748b">გამოცდილია GeoHospitals-ში: 1.1 მლნ-ზე მეტი პაციენტის ჩანაწერი გადატანილია ხარვეზებისა და დუბლიკატების გარეშე, ლაბორატორია მთელი ამ ხნის განმავლობაში მუშაობდა.</p>
 <div style="position:absolute;left:96px;right:96px;bottom:42.667px;display:flex;flex-direction:row;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:row;align-items:center;gap:8px"><img src="/deck-assets/v6/logo-nine-box-accent.svg" alt="" style="width:24px;height:24px;object-fit:contain"><p style="font-size:16px;font-weight:800;letter-spacing:-0.01em;color:#1a365d">Medi<span style="color:#3182ce">Mind</span></p></div><p style="font-size:16px;color:#64748b">11</p></div>
         </div>
         <aside class="notes">
@@ -471,6 +681,27 @@
 <div style="position:absolute;left:64px;bottom:42.667px;display:flex;flex-direction:row;align-items:center;gap:8px"><img src="/deck-assets/v6/logo-nine-box-white.svg" alt="" style="width:24px;height:24px;object-fit:contain"><p style="font-size:16px;font-weight:800;letter-spacing:-0.01em;color:#ffffff">Medi<span style="color:#8fc7f5">Mind</span></p></div>
 <p style="position:absolute;right:96px;bottom:42.667px;width:53.333px;text-align:right;font-size:16px;color:#64748b">12</p>
         </div>
+        <div class="v6 lang-ka" lang="ka" style="background:#ffffff;color:#334155;font-family:'Inter', Arial, sans-serif;padding:0;display:flex;flex-direction:row;gap:0">
+<div style="width:586.667px;height:720px;display:flex;flex-direction:column">
+<img src="/deck-assets/v6/founders.png" alt="Lasha Khoshtaria and ირაკლი ფხოველიშვილი" style="width:586.667px;height:720px;object-fit:cover">
+</div>
+<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:21.333px;padding:64px 96px 106.667px 74.667px">
+<h2 style="font-size:40px;font-weight:800;line-height:1.1;letter-spacing:-0.02em;color:#1a365d">ქმნიან პრაქტიკოსი<br>კარდიოლოგი და<br>პროდუქტის ლიდერი.</h2>
+<div style="display:flex;flex-direction:column;gap:5.333px;padding:16px 0 0 0;border-top:0.667px solid #e2e8f0">
+<p style="font-size:29.333px;font-weight:800;line-height:1.1;color:#1a365d">ლაშა ხოშტარია, MD</p>
+<p style="font-size:18px;font-weight:600;color:#64748b">თანადამფუძნებელი და ტექნოლოგიური დირექტორი</p>
+<p style="font-size:18px;line-height:1.4;color:#334155">ინტერვენციული კარდიოლოგი, თბილისში 2019 წლიდან პრაქტიკოსი ექიმი. სამედიცინო მოწყობილობების 11+ საერთაშორისო კლინიკური კვლევის კოორდინატორი. დააფუძნა DevoteAI (2022): AI სისტემები ისეთი კლიენტებისთვის, როგორიცაა Wizz Air.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:5.333px;padding:16px 0 0 0;border-top:0.667px solid #e2e8f0">
+<p style="font-size:29.333px;font-weight:800;line-height:1.1;color:#1a365d">ირაკლი ფხოველიშვილი</p>
+<p style="font-size:18px;font-weight:600;color:#64748b">თანადამფუძნებელი, პროდუქტი და სტრატეგია</p>
+<p style="font-size:18px;line-height:1.4;color:#334155">9 წელი Riot Games-ში: სტრატეგია და ფინანსები ჰონკონგისა და სინგაპურის სტუდიებისთვის, შემდეგ 150+ კაციანი პროდუქტის გუნდი. Duke MBA.</p>
+</div>
+<p style="font-size:18px;line-height:1.4;color:#64748b;padding:16px 0 0 0;border-top:0.667px solid #e2e8f0">GITA-ს გრანტი · 500 Global · ინოვაციური სტარტაპის სტატუსი</p>
+</div>
+<div style="position:absolute;left:64px;bottom:42.667px;display:flex;flex-direction:row;align-items:center;gap:8px"><img src="/deck-assets/v6/logo-nine-box-white.svg" alt="" style="width:24px;height:24px;object-fit:contain"><p style="font-size:16px;font-weight:800;letter-spacing:-0.01em;color:#ffffff">Medi<span style="color:#8fc7f5">Mind</span></p></div>
+<p style="position:absolute;right:96px;bottom:42.667px;width:53.333px;text-align:right;font-size:16px;color:#64748b">12</p>
+        </div>
         <aside class="notes">
           <p>The point of this slide is one line: the system was built by a doctor who still practises, inside a hospital, not by a software company guessing at hospital work. Lasha leads clinical workflows and medical review; Irakli leads product and the implementation plan.</p>
           <p>The bottom line is the company in three facts: a GITA grant received, 500 Global’s B11 programme, and Innovative Startup status granted in March 2026 (in the second batch). Do not say “1 of 5”.</p>
@@ -482,6 +713,17 @@
         <div class="v6 lang-en" style="display:flex; flex-direction:column; gap:26.667px; justify-content:center; padding:64px 96px 106.667px; background:#ffffff">
 <p style="font-family:Inter, Arial, sans-serif; font-size:18px; font-weight:600; letter-spacing:1.467px; text-transform:uppercase; color:#64748b">The offer</p>
   <h1 style="width:1040px; font-family:Inter, Arial, sans-serif; font-size:80px; font-weight:800; line-height:1.04; letter-spacing:-2.4px; color:#1a365d">Let’s discuss <span style="color:#3182ce">our partnership</span></h1>
+  <div style="position:absolute; right:96px; bottom:42.667px; left:96px; display:flex; flex-direction:row; align-items:center; justify-content:space-between">
+    <div style="display:flex; flex-direction:row; gap:8px; align-items:center">
+      <img src="/deck-assets/v6/logo-nine-box-accent.svg" alt="" style="width:24px; height:24px; object-fit:contain">
+      <p style="font-family:Inter, Arial, sans-serif; font-size:16px; font-weight:800; letter-spacing:-0.133px; color:#1a365d">Medi<span style="color:#3182ce">Mind</span></p>
+    </div>
+    <p style="font-family:Inter, Arial, sans-serif; font-size:16px; color:#64748b">13</p>
+  </div>
+        </div>
+        <div class="v6 lang-ka" lang="ka" style="display:flex; flex-direction:column; gap:26.667px; justify-content:center; padding:64px 96px 106.667px; background:#ffffff">
+<p style="font-family:Inter, Arial, sans-serif; font-size:18px; font-weight:600; letter-spacing:1.467px; text-transform:uppercase; color:#64748b">შეთავაზება</p>
+  <h1 style="width:1040px; font-family:Inter, Arial, sans-serif; font-size:80px; font-weight:800; line-height:1.04; letter-spacing:-2.4px; color:#1a365d">განვიხილოთ <span style="color:#3182ce">ჩვენი პარტნიორობა</span></h1>
   <div style="position:absolute; right:96px; bottom:42.667px; left:96px; display:flex; flex-direction:row; align-items:center; justify-content:space-between">
     <div style="display:flex; flex-direction:row; gap:8px; align-items:center">
       <img src="/deck-assets/v6/logo-nine-box-accent.svg" alt="" style="width:24px; height:24px; object-fit:contain">
@@ -540,6 +782,49 @@
     <p style="font-family:Inter, Arial, sans-serif; font-size:16px; color:#64748b">14</p>
   </div>
         </div>
+        <div class="v6 lang-ka" lang="ka" style="display:flex; flex-direction:column; gap:48px; padding:64px 96px 106.667px; background:#ffffff">
+<h2 style="width:1066.667px; font-family:Inter, Arial, sans-serif; font-size:52px; font-weight:800; line-height:1.08; letter-spacing:-1.067px; color:#1a365d">პირველი პარტნიორების პირობები.<br><span style="color:#3182ce">ორი ადგილი თავისუფალია.</span></h2>
+  <div style="display:flex; flex-direction:row; gap:64px; align-items:start">
+    <div style="width:533.333px; display:flex; flex-direction:column; gap:18.667px; padding:40px 0 0">
+      <div style="display:flex; flex-direction:row; gap:18.667px">
+        <div style="width:165.333px; height:165.333px; display:flex; flex-direction:row; align-items:center; justify-content:center; background:#0f1f3a">
+          <img src="/deck-assets/v6/geo-hospitals-logo-white.png" alt="GeoHospitals" style="width:133.333px; height:60px; object-fit:contain">
+        </div>
+        <div style="width:165.333px; height:165.333px; display:flex; flex-direction:row; align-items:center; justify-content:center; background:#f1f5fb">
+          <p style="font-family:Inter, Arial, sans-serif; font-size:18px; font-weight:600; letter-spacing:1.467px; text-transform:uppercase; color:#64748b">თავისუფალი</p>
+        </div>
+        <div style="width:165.333px; height:165.333px; display:flex; flex-direction:row; align-items:center; justify-content:center; background:#f1f5fb">
+          <p style="font-family:Inter, Arial, sans-serif; font-size:18px; font-weight:600; letter-spacing:1.467px; text-transform:uppercase; color:#64748b">თავისუფალი</p>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; flex:1">
+      <div style="display:flex; flex-direction:column; gap:4px; padding:17.333px 0; border-top:0.667px solid #e2e8f0">
+        <p style="font-family:Inter, Arial, sans-serif; font-size:25.333px; font-weight:600; line-height:1.2; color:#1a365d">უფასო დანერგვა და ტრენინგი</p>
+        <p style="font-family:Inter, Arial, sans-serif; font-size:18px; line-height:1.4; color:#64748b">პირველი 30 დღე ვალდებულების გარეშე</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:4px; padding:17.333px 0; border-top:0.667px solid #e2e8f0">
+        <p style="font-family:Inter, Arial, sans-serif; font-size:25.333px; font-weight:600; line-height:1.2; color:#1a365d">შეუზღუდავი განვითარება, უფასოდ</p>
+        <p style="font-family:Inter, Arial, sans-serif; font-size:18px; line-height:1.4; color:#64748b">თქვენ ითხოვთ, ჩვენ ვქმნით. პასუხი 3 სამუშაო დღეში, საფასურის გარეშე</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:4px; padding:17.333px 0; border-top:0.667px solid #e2e8f0">
+        <p style="font-family:Inter, Arial, sans-serif; font-size:25.333px; font-weight:600; line-height:1.2; color:#1a365d">საწყისი კოდი, თქვენი გარანტია</p>
+        <p style="font-family:Inter, Arial, sans-serif; font-size:18px; line-height:1.4; color:#64748b">თუ ვერ შევასრულებთ, საწყისი კოდი თქვენი ხდება</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:4px; padding:17.333px 0; border-top:0.667px solid #e2e8f0; border-bottom:0.667px solid #e2e8f0">
+        <p style="font-family:Inter, Arial, sans-serif; font-size:25.333px; font-weight:600; line-height:1.2; color:#1a365d">30-ე დღე: არჩევანი. 90-ე დღე: გაშვება</p>
+        <p style="font-family:Inter, Arial, sans-serif; font-size:18px; line-height:1.4; color:#64748b">აგრძელებთ, ახანგრძლივებთ შეფასებას ან ჩერდებით</p>
+      </div>
+    </div>
+  </div>
+  <div style="position:absolute; right:96px; bottom:42.667px; left:96px; display:flex; flex-direction:row; align-items:center; justify-content:space-between">
+    <div style="display:flex; flex-direction:row; gap:8px; align-items:center">
+      <img src="/deck-assets/v6/logo-nine-box-accent.svg" alt="" style="width:24px; height:24px; object-fit:contain">
+      <p style="font-family:Inter, Arial, sans-serif; font-size:16px; font-weight:800; letter-spacing:-0.133px; color:#1a365d">Medi<span style="color:#3182ce">Mind</span></p>
+    </div>
+    <p style="font-family:Inter, Arial, sans-serif; font-size:16px; color:#64748b">14</p>
+  </div>
+        </div>
         <aside class="notes">
           <p>Two places because that is what the team can onboard properly next year, not a sales device. Say so. No price on screen. Price follows the agreed scope and is discussed in the scoping session. Keep the “two places” line only while it is true. Unlimited feature development means the right to request anything within the hospital system, answered in three workdays and built without development fees; the scope and timing of each request are agreed, not promised blind. The source-code fallback is a contractual term: say it only as the contract will define it (what is delivered, what counts as failing to deliver).</p>
         </aside>
@@ -569,6 +854,28 @@
 <p style="font-size:20px;color:rgba(255,255,255,0.6)">lasha@medimind.md</p>
 <div style="position:absolute;left:96px;right:96px;bottom:42.667px;display:flex;flex-direction:row;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:row;align-items:center;gap:8px"><img src="/deck-assets/v6/logo-nine-box-white.svg" alt="" style="width:24px;height:24px;object-fit:contain"><p style="font-size:16px;font-weight:800;letter-spacing:-0.01em;color:#ffffff">Medi<span style="color:#8fc7f5">Mind</span></p></div><p style="font-size:16px;color:rgba(255,255,255,0.6)">15</p></div>
         </div>
+        <div class="v6 lang-ka" lang="ka" style="background:#0f1f3a;color:#ffffff;font-family:'Inter', Arial, sans-serif;padding:80px 96px 106.667px;display:flex;flex-direction:column;justify-content:space-between;gap:32px">
+<h1 style="font-size:90.667px;font-weight:800;line-height:1.02;letter-spacing:-0.03em;color:#ffffff">შემდეგი ნაბიჯები.</h1>
+<div style="display:flex;flex-direction:row;gap:0">
+<div style="flex:1;display:flex;flex-direction:column;gap:18.667px;padding:0 32px 0 0;border-top:1.333px solid rgba(255,255,255,0.3)">
+<div style="width:13.333px;height:13.333px;border-radius:50%;background:#ffffff;transform:translate(-6.667px, -7.333px)"></div>
+<p style="font-size:18px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6)">ნაბიჯი 1</p>
+<p style="font-size:32px;font-weight:800;line-height:1.15;color:#ffffff">მასშტაბის განსაზღვრა თქვენს სამედიცინო და ფინანსურ ხელმძღვანელებთან</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:18.667px;padding:0 32px 0 0;border-top:1.333px solid rgba(255,255,255,0.3)">
+<div style="width:13.333px;height:13.333px;border-radius:50%;background:#ffffff;transform:translate(-6.667px, -7.333px)"></div>
+<p style="font-size:18px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6)">ნაბიჯი 2</p>
+<p style="font-size:32px;font-weight:800;line-height:1.15;color:#ffffff">სარეკომენდაციო ზარი <span style="white-space:nowrap">GeoHospitals-თან</span></p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:18.667px;padding:0 32px 0 0;border-top:1.333px solid rgba(255,255,255,0.3)">
+<div style="width:13.333px;height:13.333px;border-radius:50%;background:#ffffff;transform:translate(-6.667px, -7.333px)"></div>
+<p style="font-size:18px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6)">ნაბიჯი 3</p>
+<p style="font-size:32px;font-weight:800;line-height:1.15;color:#ffffff">სტარტი: 90-დღიანი გეგმის 0 დღე</p>
+</div>
+</div>
+<p style="font-size:20px;color:rgba(255,255,255,0.6)">lasha@medimind.md</p>
+<div style="position:absolute;left:96px;right:96px;bottom:42.667px;display:flex;flex-direction:row;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:row;align-items:center;gap:8px"><img src="/deck-assets/v6/logo-nine-box-white.svg" alt="" style="width:24px;height:24px;object-fit:contain"><p style="font-size:16px;font-weight:800;letter-spacing:-0.01em;color:#ffffff">Medi<span style="color:#8fc7f5">Mind</span></p></div><p style="font-size:16px;color:rgba(255,255,255,0.6)">15</p></div>
+        </div>
         <aside class="notes">
           <p>Ask for one thing: a date for the scoping session with their clinical and finance leads. The reference call with GeoHospitals is offered, not pushed. Kickoff is day 0 of the plan, and the plan’s dates follow from it.</p>
           <p>No dates or placeholders on this slide; say them.</p>
@@ -586,6 +893,18 @@
 <p style="font-size:18.667px;line-height:1.4;color:#64748b;padding:12px 0;border-top:0.667px solid #d5deea">A3 · AI working today</p>
 <p style="font-size:18.667px;line-height:1.4;color:#64748b;padding:12px 0;border-top:0.667px solid #d5deea">A4 · Every module, one system</p>
 <p style="font-size:18.667px;line-height:1.4;color:#64748b;padding:12px 0;border-top:0.667px solid #d5deea;border-bottom:0.667px solid #d5deea">A5 · Where the numbers come from</p>
+</div>
+<div style="position:absolute;left:96px;right:96px;bottom:42.667px;display:flex;flex-direction:row;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:row;align-items:center;gap:8px"><img src="/deck-assets/v6/logo-nine-box-accent.svg" alt="" style="width:24px;height:24px;object-fit:contain"><p style="font-size:16px;font-weight:800;letter-spacing:-0.01em;color:#1a365d">Medi<span style="color:#3182ce">Mind</span></p></div></div>
+        </div>
+        <div class="v6 lang-ka" lang="ka" style="background:#f1f5fb;color:#334155;font-family:'Inter', Arial, sans-serif;padding:64px 96px 106.667px;display:flex;flex-direction:column;justify-content:center;gap:26.667px">
+<p style="font-size:18px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#64748b">ფინანსური, სამედიცინო და IT ხელმძღვანელებისთვის</p>
+<h2 style="font-size:52px;font-weight:800;line-height:1.08;letter-spacing:-0.02em;color:#1a365d">დანართი.</h2>
+<div style="display:flex;flex-direction:column;width:600px">
+<p style="font-size:18.667px;line-height:1.4;color:#64748b;padding:12px 0;border-top:0.667px solid #d5deea">A1 · აფთიაქი და საწყობი</p>
+<p style="font-size:18.667px;line-height:1.4;color:#64748b;padding:12px 0;border-top:0.667px solid #d5deea">A2 · ბილინგი და ფინანსები</p>
+<p style="font-size:18.667px;line-height:1.4;color:#64748b;padding:12px 0;border-top:0.667px solid #d5deea">A3 · AI, რომელიც უკვე მუშაობს</p>
+<p style="font-size:18.667px;line-height:1.4;color:#64748b;padding:12px 0;border-top:0.667px solid #d5deea">A4 · ყველა მოდული, ერთი სისტემა</p>
+<p style="font-size:18.667px;line-height:1.4;color:#64748b;padding:12px 0;border-top:0.667px solid #d5deea;border-bottom:0.667px solid #d5deea">A5 · ციფრების წყაროები</p>
 </div>
 <div style="position:absolute;left:96px;right:96px;bottom:42.667px;display:flex;flex-direction:row;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:row;align-items:center;gap:8px"><img src="/deck-assets/v6/logo-nine-box-accent.svg" alt="" style="width:24px;height:24px;object-fit:contain"><p style="font-size:16px;font-weight:800;letter-spacing:-0.01em;color:#1a365d">Medi<span style="color:#3182ce">Mind</span></p></div></div>
         </div>
@@ -616,6 +935,27 @@
 </div>
 </div>
 <div style="position:absolute;left:96px;right:96px;bottom:42.667px;display:flex;flex-direction:row;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:row;align-items:center;gap:26.667px"><div style="display:flex;flex-direction:row;align-items:center;gap:8px"><img src="/deck-assets/v6/logo-nine-box-accent.svg" alt="" style="width:24px;height:24px;object-fit:contain"><p style="font-size:16px;font-weight:800;letter-spacing:-0.01em;color:#1a365d">Medi<span style="color:#3182ce">Mind</span></p></div><p style="font-size:16px;color:#64748b">Illustration · sample data</p></div><p style="font-size:16px;color:#64748b">A1</p></div>
+        </div>
+        <div class="v6 lang-ka" lang="ka" style="background:#ffffff;color:#334155;font-family:'Inter', Arial, sans-serif;padding:64px 96px 106.667px;display:flex;flex-direction:column;gap:32px">
+<p style="font-size:18px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#64748b">დანართი · აფთიაქი და საწყობი</p>
+<h2 style="width:1066.667px;font-size:52px;font-weight:800;line-height:1.08;letter-spacing:-0.02em;color:#1a365d">მარაგი პოზიციას მიჰყვება <span style="color:#3182ce">ზედნადებიდან პაციენტამდე</span>.</h2>
+<table style="font-size:20px;line-height:1.35;color:#334155;font-variant-numeric:tabular-nums">
+<tr><th style="width:36%;text-align:left;font-size:16px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#64748b">მომწოდებლის პოზიცია RS-ის ზედნადებზე</th><th style="width:44%;text-align:left;font-size:16px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#64748b">კლინიკის პოზიცია და ერთეული</th><th style="width:20%;text-align:right;font-size:16px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#64748b">სტატუსი</th></tr>
+<tr><td>ცეფტრიაქსონი 1გ ფხვ. საინ. ფლ. x100</td><td>ცეფტრიაქსონი 1 გ საინექციო, ფლაკონი · 1 კოლოფი = 100 ფლაკონი</td><td style="text-align:right;font-weight:600;color:#1a365d">დაკავშირებულია</td></tr>
+<tr><td>ნატრ. ქლორიდი 0.9% 500მლ</td><td>შეთავაზება: NaCl 0.9% საინფუზიო, 500 მლ · 1 კოლოფი = 20 პაკეტი</td><td style="text-align:right;font-weight:600;color:#3182ce">შესამოწმებელია</td></tr>
+<tr><td>ხელთათმანი ნიტრილის M 200</td><td>ვერ მოიძებნა: შექმენით ან დააკავშირეთ პოზიცია · გადაეგზავნა აფთიაქის ხელმძღვანელს</td><td style="text-align:right;font-weight:600;color:#1a365d">დაუკავშირებელი</td></tr>
+</table>
+<div style="display:flex;flex-direction:column">
+<div style="display:flex;flex-direction:row;align-items:center;gap:42.667px;padding:18.667px 0;border-top:0.667px solid #e2e8f0">
+<p style="width:373.333px;font-size:24px;font-weight:600;line-height:1.2;color:#1a365d">სერია და ვადა</p>
+<p style="flex:1;font-size:20px;line-height:1.4;color:#334155">ნახეთ, რას გასდის ვადა, სანამ ჩამოიწერება.</p>
+</div>
+<div style="display:flex;flex-direction:row;align-items:center;gap:42.667px;padding:18.667px 0;border-top:0.667px solid #e2e8f0;border-bottom:0.667px solid #e2e8f0">
+<p style="width:373.333px;font-size:24px;font-weight:600;line-height:1.2;color:#1a365d">გაცემა პაციენტზე აისახება</p>
+<p style="flex:1;font-size:20px;line-height:1.4;color:#334155">120 მიღებული, 12 გაცემული მე-3 განყოფილებაში, გამოყენებული 2 პაციენტზე, 108 ნაშთში. ანგარიში იმავე ჩანაწერიდან იწერება.</p>
+</div>
+</div>
+<div style="position:absolute;left:96px;right:96px;bottom:42.667px;display:flex;flex-direction:row;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:row;align-items:center;gap:26.667px"><div style="display:flex;flex-direction:row;align-items:center;gap:8px"><img src="/deck-assets/v6/logo-nine-box-accent.svg" alt="" style="width:24px;height:24px;object-fit:contain"><p style="font-size:16px;font-weight:800;letter-spacing:-0.01em;color:#1a365d">Medi<span style="color:#3182ce">Mind</span></p></div><p style="font-size:16px;color:#64748b">ილუსტრაცია · სატესტო მონაცემები</p></div><p style="font-size:16px;color:#64748b">A1</p></div>
         </div>
         <aside class="notes">
           <p>For the finance lead and the warehouse. The RS receipt lines are matched to the hospital’s own nomenclature; anything uncertain is routed to a named person rather than posted. From receipt on, every movement carries the batch, so stock on hand, expiry and what was given to whom come from one record. Sample data, not a customer’s.</p>
@@ -651,6 +991,33 @@
 <div style="flex:1"></div>
 <div style="position:absolute;left:96px;right:96px;bottom:42.667px;display:flex;flex-direction:row;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:row;align-items:center;gap:26.667px"><div style="display:flex;flex-direction:row;align-items:center;gap:8px"><img src="/deck-assets/v6/logo-nine-box-accent.svg" alt="" style="width:24px;height:24px;object-fit:contain"><p style="font-size:16px;font-weight:800;letter-spacing:-0.01em;color:#1a365d">Medi<span style="color:#3182ce">Mind</span></p></div><p style="font-size:16px;color:#64748b">Illustration · sample data</p></div><p style="font-size:16px;color:#64748b">A2</p></div>
         </div>
+        <div class="v6 lang-ka" lang="ka" style="background:#ffffff;color:#334155;font-family:'Inter', Arial, sans-serif;padding:64px 96px 106.667px;display:flex;flex-direction:column;gap:0">
+<div style="position:absolute;left:0;right:0;top:266.667px;bottom:0;background:#f1f5fb"></div>
+<p style="font-size:18px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#64748b;padding:0 0 21.333px 0">დანართი · ბილინგი და ფინანსები</p>
+<h2 style="width:1066.667px;font-size:52px;font-weight:800;line-height:1.08;letter-spacing:-0.02em;color:#1a365d">თითოეულ ინვოისს <span style="color:#3182ce">გადახდამდე</span> ვადევნებთ თვალს.</h2>
+<p style="width:1000px;font-size:24px;line-height:1.4;color:#334155;padding:16px 0 0 0">ერთი ინვოისი და მისი საბანკო ჩარიცხვები ერთ ხედში. შესწორებები ისტორიას ინარჩუნებს.</p>
+<div style="flex:1"></div>
+<div style="display:flex;flex-direction:row;gap:42.667px">
+<div style="flex:1;display:flex;flex-direction:column;gap:13.333px">
+<p style="font-size:18px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#64748b">გამოწერილია, ლარი</p>
+<p style="font-size:80px;font-weight:800;line-height:0.95;letter-spacing:-0.04em;color:#1a365d">1,000</p>
+<p style="font-size:20px;line-height:1.35;color:#334155">ორი მომსახურება, ერთი პაციენტი</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:13.333px">
+<p style="font-size:18px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#64748b">მიღებულია, ლარი</p>
+<p style="font-size:80px;font-weight:800;line-height:0.95;letter-spacing:-0.04em;color:#1a365d">600</p>
+<p style="font-size:20px;line-height:1.35;color:#334155">ბანკი, 24 ოქტომბერი, შეჯერებულია</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:13.333px">
+<p style="font-size:18px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#64748b">დავალიანება, ლარი</p>
+<p style="font-size:80px;font-weight:800;line-height:0.95;letter-spacing:-0.04em;color:#3182ce">400</p>
+<p style="font-size:20px;line-height:1.35;color:#334155">ჩანს, სანამ არ გადაიხდება</p>
+</div>
+</div>
+<p style="font-size:20px;line-height:1.4;color:#334155;padding:32px 0 0 21.333px;border-left:2px solid #3182ce;transform:translate(0px, 32px)">250 ლარის ჩარიცხვა ინვოისის მითითების გარეშე გამონაკლისების რიგში ელოდება და ბალანსში არ ითვლება.</p>
+<div style="flex:1"></div>
+<div style="position:absolute;left:96px;right:96px;bottom:42.667px;display:flex;flex-direction:row;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:row;align-items:center;gap:26.667px"><div style="display:flex;flex-direction:row;align-items:center;gap:8px"><img src="/deck-assets/v6/logo-nine-box-accent.svg" alt="" style="width:24px;height:24px;object-fit:contain"><p style="font-size:16px;font-weight:800;letter-spacing:-0.01em;color:#1a365d">Medi<span style="color:#3182ce">Mind</span></p></div><p style="font-size:16px;color:#64748b">ილუსტრაცია · სატესტო მონაცემები</p></div><p style="font-size:16px;color:#64748b">A2</p></div>
+        </div>
         <aside class="notes">
           <p>For the finance lead. An invoice is one record; each bank receipt matched to it reduces the outstanding amount, and the outstanding amount stays visible until it reaches zero. A receipt that cannot be matched goes to an exception queue with an owner; it never silently inflates or hides the balance. Corrections are new entries with the old ones kept. Sample data.</p>
         </aside>
@@ -681,6 +1048,30 @@
 </div>
 </div>
 <div style="position:absolute;left:96px;right:96px;bottom:42.667px;display:flex;flex-direction:row;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:row;align-items:center;gap:26.667px"><div style="display:flex;flex-direction:row;align-items:center;gap:8px"><img src="/deck-assets/v6/logo-nine-box-accent.svg" alt="" style="width:24px;height:24px;object-fit:contain"><p style="font-size:16px;font-weight:800;letter-spacing:-0.01em;color:#1a365d">Medi<span style="color:#3182ce">Mind</span></p></div><p style="font-size:16px;color:#64748b">MediMind · demo data</p></div><p style="font-size:16px;color:#64748b">A3</p></div>
+        </div>
+        <div class="v6 lang-ka" lang="ka" style="background:#ffffff;color:#334155;font-family:'Inter', Arial, sans-serif;padding:64px 96px 106.667px;display:flex;flex-direction:column;gap:37.333px">
+<p style="font-size:18px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#64748b">დანართი · პროდუქტი</p>
+<h2 style="width:1066.667px;font-size:52px;font-weight:800;line-height:1.08;letter-spacing:-0.02em;color:#1a365d">AI უკვე მუშაობს. <span style="color:#3182ce">გადაწყვეტს ექიმი.</span></h2>
+<div style="display:flex;flex-direction:row;gap:48px;align-items:start">
+<div style="width:426.667px;display:flex;flex-direction:column">
+<div style="display:flex;flex-direction:column;gap:5.333px;padding:17.333px 0;border-top:0.667px solid #e2e8f0">
+<p style="font-size:24px;font-weight:600;line-height:1.2;color:#1a365d">MediScribe</p>
+<p style="font-size:18px;line-height:1.35;color:#334155">კონსულტაციიდან ამზადებს კლინიკური ჩანაწერის პროექტს. ექიმი ამოწმებს და ხელს აწერს.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:5.333px;padding:17.333px 0;border-top:0.667px solid #e2e8f0">
+<p style="font-size:24px;font-weight:600;line-height:1.2;color:#1a365d">AI ჩატი</p>
+<p style="font-size:18px;line-height:1.35;color:#334155">პასუხობს კითხვებს პაციენტის ჩანაწერისა და კლინიკის პროტოკოლების საფუძველზე.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:5.333px;padding:17.333px 0;border-top:0.667px solid #e2e8f0;border-bottom:0.667px solid #e2e8f0">
+<p style="font-size:24px;font-weight:600;line-height:1.2;color:#1a365d">ექთნის დავალება და მარაგი</p>
+<p style="font-size:18px;line-height:1.35;color:#334155">გაცემული პოზიცია მარაგიდან თავად ჩამოიწერება.</p>
+</div>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;border-top:2.667px solid #3182ce;border-left:0.667px solid #e2e8f0;border-right:0.667px solid #e2e8f0;border-bottom:0.667px solid #e2e8f0">
+<img src="/deck-assets/v6/ai-chat-crop.png" alt="AI chat summarising a demo patient record" style="width:633.333px;height:253.333px;object-fit:cover">
+</div>
+</div>
+<div style="position:absolute;left:96px;right:96px;bottom:42.667px;display:flex;flex-direction:row;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:row;align-items:center;gap:26.667px"><div style="display:flex;flex-direction:row;align-items:center;gap:8px"><img src="/deck-assets/v6/logo-nine-box-accent.svg" alt="" style="width:24px;height:24px;object-fit:contain"><p style="font-size:16px;font-weight:800;letter-spacing:-0.01em;color:#1a365d">Medi<span style="color:#3182ce">Mind</span></p></div><p style="font-size:16px;color:#64748b">MediMind · დემო მონაცემები</p></div><p style="font-size:16px;color:#64748b">A3</p></div>
         </div>
         <aside class="notes">
           <p>For the medical director. AI here is what works today in the product, and the clinician always keeps the decision: MediScribe drafts, the doctor signs. Do not promise minutes saved or extra patients per day; the 90 days measure that on their own data.</p>
@@ -721,6 +1112,38 @@
 </div>
 <div style="position:absolute;left:96px;right:96px;bottom:42.667px;display:flex;flex-direction:row;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:row;align-items:center;gap:26.667px"><div style="display:flex;flex-direction:row;align-items:center;gap:8px"><img src="/deck-assets/v6/logo-nine-box-accent.svg" alt="" style="width:24px;height:24px;object-fit:contain"><p style="font-size:16px;font-weight:800;letter-spacing:-0.01em;color:#1a365d">Medi<span style="color:#3182ce">Mind</span></p></div><p style="font-size:16px;color:#64748b">MediMind · demo data</p></div><p style="font-size:16px;color:#64748b">A4</p></div>
         </div>
+        <div class="v6 lang-ka" lang="ka" style="background:#ffffff;color:#334155;font-family:'Inter', Arial, sans-serif;padding:64px 96px 106.667px;display:flex;flex-direction:column;gap:32px">
+<p style="font-size:18px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#64748b">დანართი · IT კითხვებისთვის</p>
+<h2 style="width:1066.667px;font-size:52px;font-weight:800;line-height:1.08;letter-spacing:-0.02em;color:#1a365d">ყველა მოდული, <span style="color:#3182ce">ერთი სისტემა</span>.</h2>
+<div style="display:flex;flex-direction:row;gap:48px;align-items:start">
+<div style="width:400px;display:flex;flex-direction:column">
+<div style="display:flex;flex-direction:column;gap:2.667px;padding:10.667px 0;border-top:0.667px solid #e2e8f0">
+<p style="font-size:19.333px;font-weight:600;color:#1a365d">კლინიკური ნაწილი</p>
+<p style="font-size:14.667px;line-height:1.3;color:#334155">ჩანაწერი · ხარისხის კონტროლი · MediScribe · ანგარიშგება</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:2.667px;padding:10.667px 0;border-top:0.667px solid #e2e8f0">
+<p style="font-size:19.333px;font-weight:600;color:#1a365d">დიაგნოსტიკა</p>
+<p style="font-size:14.667px;line-height:1.3;color:#334155">ლაბორატორია · ანალიზატორები · რადიოლოგია და DICOM</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:2.667px;padding:10.667px 0;border-top:0.667px solid #e2e8f0">
+<p style="font-size:19.333px;font-weight:600;color:#1a365d">აფთიაქი და საწყობი</p>
+<p style="font-size:14.667px;line-height:1.3;color:#334155">RS ზედნადებები · ნომენკლატურა · სერიები · გადაადგილებები</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:2.667px;padding:10.667px 0;border-top:0.667px solid #e2e8f0">
+<p style="font-size:19.333px;font-weight:600;color:#1a365d">ბილინგი და ფინანსები</p>
+<p style="font-size:14.667px;line-height:1.3;color:#334155">ინვოისები · შესწორებები · საბანკო შეჯერება · გადამხდელები</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:2.667px;padding:10.667px 0;border-top:0.667px solid #e2e8f0;border-bottom:0.667px solid #e2e8f0">
+<p style="font-size:19.333px;font-weight:600;color:#1a365d">ოპერაციები და მართვა</p>
+<p style="font-size:14.667px;line-height:1.3;color:#334155">მენეჯმენტის ხედი · HR · განრიგი · საწოლფონდი · აუდიტი</p>
+</div>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;border-top:2.667px solid #3182ce;border-left:0.667px solid #e2e8f0;border-right:0.667px solid #e2e8f0;border-bottom:0.667px solid #e2e8f0">
+<img src="/deck-assets/v6/module-dashboard.png" alt="MediMind module dashboard" style="width:633.333px;height:373.333px;object-fit:cover">
+</div>
+</div>
+<div style="position:absolute;left:96px;right:96px;bottom:42.667px;display:flex;flex-direction:row;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:row;align-items:center;gap:26.667px"><div style="display:flex;flex-direction:row;align-items:center;gap:8px"><img src="/deck-assets/v6/logo-nine-box-accent.svg" alt="" style="width:24px;height:24px;object-fit:contain"><p style="font-size:16px;font-weight:800;letter-spacing:-0.01em;color:#1a365d">Medi<span style="color:#3182ce">Mind</span></p></div><p style="font-size:16px;color:#64748b">MediMind · დემო მონაცემები</p></div><p style="font-size:16px;color:#64748b">A4</p></div>
+        </div>
         <aside class="notes">
           <p>For the IT lead. One system built on FHIR R4 with one data model underneath every module; no interfaces between separate vendors to maintain. Full export at any time. The phase 3 proactive AI layer is roadmap and not part of the offer; say so if asked.</p>
         </aside>
@@ -742,6 +1165,24 @@
 <p style="font-size:17.333px;line-height:1.4;color:#334155"><b>E5</b> CTO quote, approved by GeoHospitals. Reference call cleared. Level C.</p>
 <p style="font-size:17.333px;line-height:1.4;color:#334155"><b>E6</b> Team of 3; GITA grant of GEL 150,000 received; 500 Global B11 programme; Innovative Startup status granted by government ordinance, effective March 2026, second batch. Company. Level C.</p>
 <p style="font-size:17.333px;line-height:1.4;color:#64748b">Evidence levels: A primary source · B MediMind analysis of publicly filed audited statements and state programme data · C company record.</p>
+</div>
+</div>
+<div style="position:absolute;left:96px;right:96px;bottom:42.667px;display:flex;flex-direction:row;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:row;align-items:center;gap:8px"><img src="/deck-assets/v6/logo-nine-box-accent.svg" alt="" style="width:24px;height:24px;object-fit:contain"><p style="font-size:16px;font-weight:800;letter-spacing:-0.01em;color:#1a365d">Medi<span style="color:#3182ce">Mind</span></p></div><p style="font-size:16px;color:#64748b">A5</p></div>
+        </div>
+        <div class="v6 lang-ka" lang="ka" style="background:#ffffff;color:#334155;font-family:'Inter', Arial, sans-serif;padding:64px 96px 106.667px;display:flex;flex-direction:column;gap:26.667px">
+<p style="font-size:18px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#64748b">დანართი · წყაროები</p>
+<h2 style="width:1066.667px;font-size:52px;font-weight:800;line-height:1.08;letter-spacing:-0.02em;color:#1a365d">საიდან მოდის ციფრები.</h2>
+<div style="display:flex;flex-direction:row;gap:48px;align-items:start">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<p style="font-size:15.333px;line-height:1.4;color:#334155"><b>E1</b> საშუალო ზომის დამოუკიდებელი საავადმყოფოები (შემოსავალი 5–100 მლნ ლარი): მედიანური წმინდა მარჟა 2.4%; წმინდა მოგების მაჩვენებლის მქონე 68-დან 24 ზარალზე გავიდა. MediMind-ის ანალიზი, 2024–25 ფინანსური წლების აუდიტირებული ანგარიშგებები, reportal.ge. დონე B.</p>
+<p style="font-size:15.333px;line-height:1.4;color:#334155"><b>E2</b> საყოველთაო ჯანდაცვის სახელმწიფო პროგრამა: გაანალიზებული საავადმყოფოების შემოსავლის 37%, ჯგუფის შვილობილების გაორმაგების გამორიცხვით, 2025. MediMind-ის ანალიზი, NHA-ს მონაცემები დაწესებულებების მიხედვით. დონე B.</p>
+<p style="font-size:15.333px;line-height:1.4;color:#334155"><b>E3</b> 25 საავადმყოფო ერთი ხელმოწერილი ხელშეკრულებით; ცენტრალურ საავადმყოფოში ლაბორატორია და რადიოლოგია მუშაობს. კომპანია. დონე C.</p>
+<p style="font-size:15.333px;line-height:1.4;color:#334155"><b>E4</b> 1,147,535 პაციენტის ჩანაწერი გადატანილია FHIR-ზე, ხარვეზებისა და დუბლიკატების გარეშე; 15+ ანალიზატორის ხაზი ჩაირთო სამ კვირაში. Medplum-ის გამოქვეყნებული ქეისი, 2026, ციფრები დადასტურებულია GeoHospitals-ის ტექნოლოგიური დირექტორის მიერ. დონე A.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<p style="font-size:15.333px;line-height:1.4;color:#334155"><b>E5</b> ტექნოლოგიური დირექტორის ციტატა, დამტკიცებულია GeoHospitals-ის მიერ. სარეკომენდაციო ზარი შეთანხმებულია. დონე C.</p>
+<p style="font-size:15.333px;line-height:1.4;color:#334155"><b>E6</b> 3-კაციანი გუნდი; მიღებულია GITA-ს 150,000 ლარის გრანტი; 500 Global-ის B11 პროგრამა; ინოვაციური სტარტაპის სტატუსი მინიჭებულია მთავრობის დადგენილებით, ძალაშია 2026 წლის მარტიდან, მეორე ნაკადი. კომპანია. დონე C.</p>
+<p style="font-size:17.333px;line-height:1.4;color:#64748b">მტკიცებულების დონეები: A პირველადი წყარო · B MediMind-ის ანალიზი საჯაროდ წარდგენილი აუდიტირებული ანგარიშგებებისა და სახელმწიფო პროგრამის მონაცემების მიხედვით · C კომპანიის ჩანაწერი.</p>
 </div>
 </div>
 <div style="position:absolute;left:96px;right:96px;bottom:42.667px;display:flex;flex-direction:row;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:row;align-items:center;gap:8px"><img src="/deck-assets/v6/logo-nine-box-accent.svg" alt="" style="width:24px;height:24px;object-fit:contain"><p style="font-size:16px;font-weight:800;letter-spacing:-0.01em;color:#1a365d">Medi<span style="color:#3182ce">Mind</span></p></div><p style="font-size:16px;color:#64748b">A5</p></div>

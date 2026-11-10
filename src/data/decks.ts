@@ -80,7 +80,7 @@ export const DECKS: Deck[] = [
   {
     id: "hospitals-minimal",
     label: "Hospitals (minimal)",
-    blurb: "Minimal hospital sales deck v6, 21 slides incl. appendix A1–A5. EN for now",
+    blurb: "Minimal hospital sales deck v6, 21 slides incl. appendix A1–A5, EN / KA — add ?lang=ka to open in Georgian",
     path: "/hospitals-minimal.html",
     gate: "medimind",
   },

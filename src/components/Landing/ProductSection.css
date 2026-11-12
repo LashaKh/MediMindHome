@@ -1,0 +1,47 @@
+/* Lane C: the path of a flow diagram and the light that travels along it
+   (where the system works, it glows). Phones: down the left; wide: across. */
+.product-flow-path {
+  position: absolute;
+  overflow: hidden;
+  top: 10px;
+  bottom: 10px;
+  left: 5px;
+  width: 9px;
+  background: linear-gradient(var(--mm-line), var(--mm-line)) center / 1px 100% no-repeat;
+}
+.product-flow-pulse {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent calc(100% - 64px), var(--mm-system) calc(100% - 6px), transparent);
+  opacity: 0;
+}
+/* Runs twice when the diagram comes into view (under five seconds), then rests. */
+.is-live .product-flow-pulse {
+  animation: product-flow-down 2.2s cubic-bezier(0.45, 0, 0.55, 1) 2;
+}
+@media (min-width: 768px) {
+  .product-flow-path {
+    top: 5px;
+    bottom: auto;
+    left: 10px;
+    right: calc(25% - 14px); /* ends at the last step's marker */
+    width: auto;
+    height: 9px;
+    background-size: 100% 1px;
+  }
+  .product-flow-pulse {
+    background: linear-gradient(to right, transparent calc(100% - 96px), var(--mm-system) calc(100% - 6px), transparent);
+    animation-name: product-flow-across;
+  }
+}
+@keyframes product-flow-down {
+  from { transform: translateY(-100%); opacity: 1; }
+  to { transform: translateY(100%); opacity: 1; }
+}
+@keyframes product-flow-across {
+  from { transform: translateX(-100%); opacity: 1; }
+  to { transform: translateX(100%); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .product-flow-pulse { display: none; }
+}

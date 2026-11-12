@@ -1,0 +1,550 @@
+{
+  "generated": "2026-11-12",
+  "note": "All screenshots are demo data, cropped to remove patient names, IDs, dates of birth, phones and account emails. Label them \"demo data\" on the page.",
+  "images": [
+    {
+      "id": "hero-bed-board",
+      "section": "hero",
+      "alt": "MediMind bed board for an emergency department: rooms, beds, free beds and occupancy at a glance, with each bed marked occupied or available. Demo data.",
+      "width": 2000,
+      "height": 802,
+      "aspectRatio": "2000 / 802",
+      "fallback": "/landing/hero-bed-board-1400.jpg",
+      "avif": "/landing/hero-bed-board-800.avif 800w, /landing/hero-bed-board-1400.avif 1400w, /landing/hero-bed-board-2000.avif 2000w",
+      "webp": "/landing/hero-bed-board-800.webp 800w, /landing/hero-bed-board-1400.webp 1400w, /landing/hero-bed-board-2000.webp 2000w",
+      "sizes": "(min-width: 1200px) 1100px, 100vw",
+      "files": [
+        {
+          "file": "/landing/hero-bed-board-800.avif",
+          "format": "avif",
+          "width": 800,
+          "height": 322,
+          "bytes": 10456
+        },
+        {
+          "file": "/landing/hero-bed-board-1400.avif",
+          "format": "avif",
+          "width": 1400,
+          "height": 562,
+          "bytes": 21138
+        },
+        {
+          "file": "/landing/hero-bed-board-2000.avif",
+          "format": "avif",
+          "width": 2000,
+          "height": 802,
+          "bytes": 32196
+        },
+        {
+          "file": "/landing/hero-bed-board-1400.jpg",
+          "format": "jpg",
+          "width": 1400,
+          "height": 562,
+          "bytes": 108793
+        },
+        {
+          "file": "/landing/hero-bed-board-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 322,
+          "bytes": 16396
+        },
+        {
+          "file": "/landing/hero-bed-board-1400.webp",
+          "format": "webp",
+          "width": 1400,
+          "height": 562,
+          "bytes": 36244
+        },
+        {
+          "file": "/landing/hero-bed-board-2000.webp",
+          "format": "webp",
+          "width": 2000,
+          "height": 802,
+          "bytes": 57740
+        }
+      ]
+    },
+    {
+      "id": "os-modules",
+      "section": "what-changes",
+      "alt": "MediMind dashboard listing the hospital areas in one system: staff, clinic operations, clinical settings, nomenclature, financial, warehouse, command center, analytics and system configuration. Demo data.",
+      "width": 2000,
+      "height": 1004,
+      "aspectRatio": "2000 / 1004",
+      "fallback": "/landing/os-modules-1400.jpg",
+      "avif": "/landing/os-modules-800.avif 800w, /landing/os-modules-1400.avif 1400w, /landing/os-modules-2000.avif 2000w",
+      "webp": "/landing/os-modules-800.webp 800w, /landing/os-modules-1400.webp 1400w, /landing/os-modules-2000.webp 2000w",
+      "sizes": "(min-width: 1200px) 1100px, 100vw",
+      "files": [
+        {
+          "file": "/landing/os-modules-800.avif",
+          "format": "avif",
+          "width": 800,
+          "height": 402,
+          "bytes": 9222
+        },
+        {
+          "file": "/landing/os-modules-1400.avif",
+          "format": "avif",
+          "width": 1400,
+          "height": 704,
+          "bytes": 18576
+        },
+        {
+          "file": "/landing/os-modules-2000.avif",
+          "format": "avif",
+          "width": 2000,
+          "height": 1004,
+          "bytes": 29081
+        },
+        {
+          "file": "/landing/os-modules-1400.jpg",
+          "format": "jpg",
+          "width": 1400,
+          "height": 704,
+          "bytes": 72343
+        },
+        {
+          "file": "/landing/os-modules-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 402,
+          "bytes": 13790
+        },
+        {
+          "file": "/landing/os-modules-1400.webp",
+          "format": "webp",
+          "width": 1400,
+          "height": 704,
+          "bytes": 29828
+        },
+        {
+          "file": "/landing/os-modules-2000.webp",
+          "format": "webp",
+          "width": 2000,
+          "height": 1004,
+          "bytes": 46578
+        }
+      ]
+    },
+    {
+      "id": "billing-funding",
+      "section": "example-billing",
+      "alt": "MediMind funding request screen: choose a state (SSA) or municipal co-funding request, then the financier. Demo data.",
+      "width": 2000,
+      "height": 594,
+      "aspectRatio": "2000 / 594",
+      "fallback": "/landing/billing-funding-1400.jpg",
+      "avif": "/landing/billing-funding-800.avif 800w, /landing/billing-funding-1400.avif 1400w, /landing/billing-funding-2000.avif 2000w",
+      "webp": "/landing/billing-funding-800.webp 800w, /landing/billing-funding-1400.webp 1400w, /landing/billing-funding-2000.webp 2000w",
+      "sizes": "(min-width: 1200px) 1100px, 100vw",
+      "files": [
+        {
+          "file": "/landing/billing-funding-800.avif",
+          "format": "avif",
+          "width": 800,
+          "height": 238,
+          "bytes": 5301
+        },
+        {
+          "file": "/landing/billing-funding-1400.avif",
+          "format": "avif",
+          "width": 1400,
+          "height": 416,
+          "bytes": 11466
+        },
+        {
+          "file": "/landing/billing-funding-2000.avif",
+          "format": "avif",
+          "width": 2000,
+          "height": 594,
+          "bytes": 18547
+        },
+        {
+          "file": "/landing/billing-funding-1400.jpg",
+          "format": "jpg",
+          "width": 1400,
+          "height": 416,
+          "bytes": 57627
+        },
+        {
+          "file": "/landing/billing-funding-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 238,
+          "bytes": 8040
+        },
+        {
+          "file": "/landing/billing-funding-1400.webp",
+          "format": "webp",
+          "width": 1400,
+          "height": 416,
+          "bytes": 18336
+        },
+        {
+          "file": "/landing/billing-funding-2000.webp",
+          "format": "webp",
+          "width": 2000,
+          "height": 594,
+          "bytes": 30230
+        }
+      ]
+    },
+    {
+      "id": "lab-orders",
+      "section": "lab",
+      "alt": "MediMind order history for one visit: three laboratory orders and one imaging order, each with its status. Demo data.",
+      "width": 2000,
+      "height": 654,
+      "aspectRatio": "2000 / 654",
+      "fallback": "/landing/lab-orders-1400.jpg",
+      "avif": "/landing/lab-orders-800.avif 800w, /landing/lab-orders-1400.avif 1400w, /landing/lab-orders-2000.avif 2000w",
+      "webp": "/landing/lab-orders-800.webp 800w, /landing/lab-orders-1400.webp 1400w, /landing/lab-orders-2000.webp 2000w",
+      "sizes": "(min-width: 1200px) 1100px, 100vw",
+      "files": [
+        {
+          "file": "/landing/lab-orders-800.avif",
+          "format": "avif",
+          "width": 800,
+          "height": 262,
+          "bytes": 5536
+        },
+        {
+          "file": "/landing/lab-orders-1400.avif",
+          "format": "avif",
+          "width": 1400,
+          "height": 458,
+          "bytes": 11962
+        },
+        {
+          "file": "/landing/lab-orders-2000.avif",
+          "format": "avif",
+          "width": 2000,
+          "height": 654,
+          "bytes": 18835
+        },
+        {
+          "file": "/landing/lab-orders-1400.jpg",
+          "format": "jpg",
+          "width": 1400,
+          "height": 458,
+          "bytes": 65537
+        },
+        {
+          "file": "/landing/lab-orders-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 262,
+          "bytes": 8822
+        },
+        {
+          "file": "/landing/lab-orders-1400.webp",
+          "format": "webp",
+          "width": 1400,
+          "height": 458,
+          "bytes": 19992
+        },
+        {
+          "file": "/landing/lab-orders-2000.webp",
+          "format": "webp",
+          "width": 2000,
+          "height": 654,
+          "bytes": 32452
+        }
+      ]
+    },
+    {
+      "id": "imaging-viewer",
+      "section": "imaging",
+      "alt": "MediMind imaging viewer showing a coronary angiogram with cardiology tools and the study series list. Demo data.",
+      "width": 2000,
+      "height": 822,
+      "aspectRatio": "2000 / 822",
+      "fallback": "/landing/imaging-viewer-1400.jpg",
+      "avif": "/landing/imaging-viewer-800.avif 800w, /landing/imaging-viewer-1400.avif 1400w, /landing/imaging-viewer-2000.avif 2000w",
+      "webp": "/landing/imaging-viewer-800.webp 800w, /landing/imaging-viewer-1400.webp 1400w, /landing/imaging-viewer-2000.webp 2000w",
+      "sizes": "(min-width: 1200px) 1100px, 100vw",
+      "files": [
+        {
+          "file": "/landing/imaging-viewer-800.avif",
+          "format": "avif",
+          "width": 800,
+          "height": 328,
+          "bytes": 7077
+        },
+        {
+          "file": "/landing/imaging-viewer-1400.avif",
+          "format": "avif",
+          "width": 1400,
+          "height": 576,
+          "bytes": 14018
+        },
+        {
+          "file": "/landing/imaging-viewer-2000.avif",
+          "format": "avif",
+          "width": 2000,
+          "height": 822,
+          "bytes": 21094
+        },
+        {
+          "file": "/landing/imaging-viewer-1400.jpg",
+          "format": "jpg",
+          "width": 1400,
+          "height": 576,
+          "bytes": 63360
+        },
+        {
+          "file": "/landing/imaging-viewer-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 328,
+          "bytes": 12816
+        },
+        {
+          "file": "/landing/imaging-viewer-1400.webp",
+          "format": "webp",
+          "width": 1400,
+          "height": 576,
+          "bytes": 27354
+        },
+        {
+          "file": "/landing/imaging-viewer-2000.webp",
+          "format": "webp",
+          "width": 2000,
+          "height": 822,
+          "bytes": 44106
+        }
+      ]
+    },
+    {
+      "id": "patient-chart",
+      "section": "patient-chart",
+      "alt": "MediMind clinical dashboard for one patient: safety alerts, active problems with codes, medications, vitals and lab results on one screen. Demo data.",
+      "width": 2000,
+      "height": 790,
+      "aspectRatio": "2000 / 790",
+      "fallback": "/landing/patient-chart-1400.jpg",
+      "avif": "/landing/patient-chart-800.avif 800w, /landing/patient-chart-1400.avif 1400w, /landing/patient-chart-2000.avif 2000w",
+      "webp": "/landing/patient-chart-800.webp 800w, /landing/patient-chart-1400.webp 1400w, /landing/patient-chart-2000.webp 2000w",
+      "sizes": "(min-width: 1200px) 1100px, 100vw",
+      "files": [
+        {
+          "file": "/landing/patient-chart-800.avif",
+          "format": "avif",
+          "width": 800,
+          "height": 316,
+          "bytes": 12222
+        },
+        {
+          "file": "/landing/patient-chart-1400.avif",
+          "format": "avif",
+          "width": 1400,
+          "height": 554,
+          "bytes": 27163
+        },
+        {
+          "file": "/landing/patient-chart-2000.avif",
+          "format": "avif",
+          "width": 2000,
+          "height": 790,
+          "bytes": 43058
+        },
+        {
+          "file": "/landing/patient-chart-1400.jpg",
+          "format": "jpg",
+          "width": 1400,
+          "height": 554,
+          "bytes": 103365
+        },
+        {
+          "file": "/landing/patient-chart-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 316,
+          "bytes": 18360
+        },
+        {
+          "file": "/landing/patient-chart-1400.webp",
+          "format": "webp",
+          "width": 1400,
+          "height": 554,
+          "bytes": 42980
+        },
+        {
+          "file": "/landing/patient-chart-2000.webp",
+          "format": "webp",
+          "width": 2000,
+          "height": 790,
+          "bytes": 68888
+        }
+      ]
+    },
+    {
+      "id": "ai-chat-answer",
+      "section": "ai-today",
+      "alt": "MediMind AI assistant answer summarising a demo patient: age group, the acute diagnosis and chronic conditions. Demo data.",
+      "width": 2000,
+      "height": 398,
+      "aspectRatio": "2000 / 398",
+      "fallback": "/landing/ai-chat-answer-1400.jpg",
+      "avif": "/landing/ai-chat-answer-800.avif 800w, /landing/ai-chat-answer-1400.avif 1400w, /landing/ai-chat-answer-2000.avif 2000w",
+      "webp": "/landing/ai-chat-answer-800.webp 800w, /landing/ai-chat-answer-1400.webp 1400w, /landing/ai-chat-answer-2000.webp 2000w",
+      "sizes": "(min-width: 1200px) 1100px, 100vw",
+      "files": [
+        {
+          "file": "/landing/ai-chat-answer-800.avif",
+          "format": "avif",
+          "width": 800,
+          "height": 160,
+          "bytes": 4369
+        },
+        {
+          "file": "/landing/ai-chat-answer-1400.avif",
+          "format": "avif",
+          "width": 1400,
+          "height": 280,
+          "bytes": 9721
+        },
+        {
+          "file": "/landing/ai-chat-answer-2000.avif",
+          "format": "avif",
+          "width": 2000,
+          "height": 398,
+          "bytes": 15605
+        },
+        {
+          "file": "/landing/ai-chat-answer-1400.jpg",
+          "format": "jpg",
+          "width": 1400,
+          "height": 280,
+          "bytes": 35568
+        },
+        {
+          "file": "/landing/ai-chat-answer-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 160,
+          "bytes": 6240
+        },
+        {
+          "file": "/landing/ai-chat-answer-1400.webp",
+          "format": "webp",
+          "width": 1400,
+          "height": 280,
+          "bytes": 15128
+        },
+        {
+          "file": "/landing/ai-chat-answer-2000.webp",
+          "format": "webp",
+          "width": 2000,
+          "height": 398,
+          "bytes": 24698
+        }
+      ]
+    },
+    {
+      "id": "team-founders",
+      "section": "team",
+      "alt": "MediMind founders Lasha Khoshtaria and Irakli Pkhovelishvili.",
+      "width": 900,
+      "height": 846,
+      "aspectRatio": "900 / 846",
+      "fallback": "/landing/team-founders-900.jpg",
+      "avif": "/landing/team-founders-800.avif 800w, /landing/team-founders-900.avif 900w",
+      "webp": "/landing/team-founders-800.webp 800w, /landing/team-founders-900.webp 900w",
+      "sizes": "(min-width: 900px) 450px, 100vw",
+      "files": [
+        {
+          "file": "/landing/team-founders-800.avif",
+          "format": "avif",
+          "width": 800,
+          "height": 752,
+          "bytes": 17218
+        },
+        {
+          "file": "/landing/team-founders-900.avif",
+          "format": "avif",
+          "width": 900,
+          "height": 846,
+          "bytes": 19668
+        },
+        {
+          "file": "/landing/team-founders-900.jpg",
+          "format": "jpg",
+          "width": 900,
+          "height": 846,
+          "bytes": 69462
+        },
+        {
+          "file": "/landing/team-founders-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 752,
+          "bytes": 29434
+        },
+        {
+          "file": "/landing/team-founders-900.webp",
+          "format": "webp",
+          "width": 900,
+          "height": 846,
+          "bytes": 34118
+        }
+      ]
+    },
+    {
+      "id": "customer-logo-dark",
+      "section": "proof (only when showCustomerName is true)",
+      "alt": "GeoHospitals logo",
+      "width": 378,
+      "height": 157,
+      "aspectRatio": "378 / 157",
+      "fallback": "/landing/customer-logo-dark-378.png",
+      "webp": "/landing/customer-logo-dark-378.webp 378w",
+      "sizes": "190px",
+      "files": [
+        {
+          "file": "/landing/customer-logo-dark-378.png",
+          "format": "png",
+          "width": 378,
+          "height": 157,
+          "bytes": 10389
+        },
+        {
+          "file": "/landing/customer-logo-dark-378.webp",
+          "format": "webp",
+          "width": 378,
+          "height": 157,
+          "bytes": 3424
+        }
+      ]
+    },
+    {
+      "id": "customer-logo-white",
+      "section": "proof on dark background (only when showCustomerName is true)",
+      "alt": "GeoHospitals logo",
+      "width": 378,
+      "height": 157,
+      "aspectRatio": "378 / 157",
+      "fallback": "/landing/customer-logo-white-378.png",
+      "webp": "/landing/customer-logo-white-378.webp 378w",
+      "sizes": "190px",
+      "files": [
+        {
+          "file": "/landing/customer-logo-white-378.png",
+          "format": "png",
+          "width": 378,
+          "height": 157,
+          "bytes": 6686
+        },
+        {
+          "file": "/landing/customer-logo-white-378.webp",
+          "format": "webp",
+          "width": 378,
+          "height": 157,
+          "bytes": 2380
+        }
+      ]
+    }
+  ]
+}

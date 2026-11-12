@@ -7,8 +7,8 @@ import { cn } from '../../utils/cn';
  * Traction (#traction): one quiet line of credentials directly under the
  * hero. Same ink canvas as the hero so it reads as the hero's last line,
  * not a new band. Four facts, hairline separators, a live status light on
- * the one thing in daily use. Static; the light's pulse stops under
- * prefers-reduced-motion.
+ * the one thing in daily use. Fully static (no loop: the design language
+ * allows ambient loops only with a pause control).
  */
 export const TractionStrip: React.FC = () => (
   <section
@@ -36,10 +36,10 @@ export const TractionStrip: React.FC = () => (
           >
             <span className={cn(dMono, 'flex items-center gap-2 text-mm-muted')}>
               {item.live && (
-                <span className="relative inline-flex h-2 w-2" aria-hidden="true">
-                  <span className="absolute inset-0 rounded-full bg-mm-system opacity-60 motion-safe:animate-ping" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-mm-system" />
-                </span>
+                <span
+                  className="inline-flex h-2 w-2 rounded-full bg-mm-system shadow-[0_0_8px_var(--mm-system)]"
+                  aria-hidden="true"
+                />
               )}
               {item.key}
             </span>

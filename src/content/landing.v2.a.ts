@@ -55,15 +55,16 @@ export const orchestrationContent = {
   /** Accessible summary of the whole visual (it is decorative motion over this meaning). */
   summary:
     'Illustration: one patient arrives and seven departments each receive a prepared step. Triage, laboratory, imaging, pharmacy, beds, billing and the ministry form each wait for a person to sign before anything happens.',
-  title: 'One arrival, seven departments',
-  titleShort: 'One arrival',
   devBadge: 'In development',
   patientLabel: 'Patient arrives',
   patientDetail: 'Emergency, chest pain',
-  patientTime: '09:41',
+  /** The clock starts at the arrival and advances through the minutes as the hospital moves. */
+  clockStartHour: 9,
+  clockStartMinute: 41,
+  clockMinutesToSettle: 17,
+  arrivedAt: 'arrived',
   pauseLabel: 'Pause animation',
   playLabel: 'Play animation',
-  preparing: 'Preparing',
   footerSystem: 'Prepared by the system',
   footerHuman: 'Decided by people',
   footerSystemShort: 'Prepared',

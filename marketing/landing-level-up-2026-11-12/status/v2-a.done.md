@@ -17,10 +17,14 @@ Commits on `landing-level-up`: `0122346` design language, `595a3cd` header + her
 - `npx eslint` on all my TS/TSX files: 0 problems. No console errors come from lane A files (errors seen came from other lanes' work in progress).
 
 ## Not done or not checked
-- Reduced motion was checked in code only, not in the browser: it shows a static frame with all seven steps prepared, five signed and two awaiting a person, and no pause button.
-- The phone sticky bar was not re-checked after its tone change, because other lanes' HMR errors interrupted the page.
 - The `og-image.png` / `twitter-card.png` artwork still shows the old line.
 - The lazy visual chunk loads slowly on the shared dev server; in the browser the box keeps its size, so nothing shifts.
+
+## Second pass (orchestrator review, 2026-11-12)
+- The living hospital is now the centrepiece: the headline spans the top, the sub and both buttons sit in one row beneath it, and the orchestration runs across the full content width on the ink canvas (no panel; a hairline readout on top, the honesty line as its caption).
+- lg+: a fan of light paths from the patient to seven departments at different depths (no path crosses another label). Light pulses travel each path when work is sent; nodes go grey, then blue (prepared), then amber (a named person decided). The clock advances 09:41 to 09:58, the patient has a calm rhythm (beat ring and trace), and the readout shows "Prepared by the system" and "Decided by people" counters. The hospital moves once in about 7 s, rests until 13.6 s, fades and replays. Below lg there is a designed vertical form (trunk and seven rows, counters below). Box heights are fixed: 472px lg, 596px below.
+- Verified in the browser, own tab: 1440x900 light and dark (eyebrow, headline, sub, primary button, and patient plus five departments in motion on the first screen), 1024x768, 768x1024, and 375x812 light and dark (headline, sub and button on the first screen; the button ends at 537px). No horizontal scroll at any width, one h1. Reduced motion was checked in the browser (matchMedia forced, hero remounted): static frame with 7/7 prepared, 5/7 decided, beds and ministry form waiting, clock 09:55, no pulses, no pause button. Sticky phone bar: ink bar, 48px white button, appears mid-page in both themes. eslint clean.
+- At 1440x900 the lowest two departments (beds, ministry form) sit just below the fold.
 
 ## For other lanes
 - Use `tone="navy"` for ink sections; never hardcode hex. The second clause of a heading (`accent`) is now the quieter `voice2` ink, not blue.

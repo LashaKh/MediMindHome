@@ -402,8 +402,35 @@ html:not(.dark) .bg-surface-card\/80 {
 }
 .mm-orch-ping      { animation: mm-orch-ping 1.6s cubic-bezier(0.2, 0.7, 0.2, 1) infinite; }
 .mm-orch-ping-slow { animation: mm-orch-ping 1.6s cubic-bezier(0.2, 0.7, 0.2, 1) 1 both; }
+/* One pulse of light travelling a path once (duration set per path). */
+@keyframes mm-orch-send {
+  from { stroke-dashoffset: 0.1; }
+  to   { stroke-dashoffset: -1; }
+}
+.mm-orch-send {
+  stroke-dasharray: 0.1 3;
+  animation: mm-orch-send 900ms cubic-bezier(0.45, 0, 0.25, 1) 1 both;
+}
+/* The patient's calm rhythm: a ring every 1.2 s and a trace that sweeps. */
+@keyframes mm-orch-beat {
+  0%   { transform: scale(1);   opacity: 0.5; }
+  60%  { transform: scale(1.7); opacity: 0; }
+  100% { transform: scale(1.7); opacity: 0; }
+}
+.mm-orch-beat { animation: mm-orch-beat 1.2s cubic-bezier(0.2, 0.7, 0.2, 1) infinite; }
+@keyframes mm-orch-rhythm {
+  from { stroke-dashoffset: 1.35; }
+  to   { stroke-dashoffset: 0; }
+}
+.mm-orch-rhythm {
+  stroke-dasharray: 0.35 1;
+  animation: mm-orch-rhythm 2.4s linear infinite;
+}
 .mm-orch-paused .mm-orch-travel,
-.mm-orch-paused .mm-orch-ping {
+.mm-orch-paused .mm-orch-ping,
+.mm-orch-paused .mm-orch-send,
+.mm-orch-paused .mm-orch-beat,
+.mm-orch-paused .mm-orch-rhythm {
   animation-play-state: paused;
 }
 

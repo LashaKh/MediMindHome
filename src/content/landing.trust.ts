@@ -175,7 +175,7 @@ export const formFields: FieldCopy[] = [
     name: 'email',
     label: 'Work email',
     placeholder: 'name@hospital.org',
-    helper: 'We send the two time options here.',
+    helper: 'We reply to this address.',
     required: true,
     max: 200,
     autoComplete: 'email',

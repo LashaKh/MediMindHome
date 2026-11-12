@@ -15,11 +15,18 @@ const linkClass =
  */
 export const Footer: React.FC = () => (
   <footer className="mm-tone-navy bg-mm-surface text-mm-body">
-    <div className={cn(dEdge, 'border-t border-mm-line py-12 md:py-16')}>
-      <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
+    <div className={dEdge}>
+      <div className="flex flex-col gap-10 border-t border-mm-line py-12 md:flex-row md:items-end md:justify-between md:py-16">
         <div>
-          <MediMindLogo variant="icon" size="sm" tone="dark" />
-          <p className={cn(dDisplay, 'mt-6 text-[1.75rem] leading-tight text-mm-ink md:text-[2.25rem]')}>{footer.line}</p>
+          <MediMindLogo variant="icon" size="md" tone="dark" />
+          <p className={cn(dDisplay, 'mt-6 text-[1.75rem] leading-tight text-mm-ink md:text-[2.25rem]')}>
+            {footer.line.map((sentence, i) => (
+              <span key={sentence} className="block sm:inline">
+                {i > 0 && <span className="hidden sm:inline"> </span>}
+                {sentence}
+              </span>
+            ))}
+          </p>
           <p className={cn(dMono, 'mt-2 text-mm-muted')}>{footer.secondLine}</p>
         </div>
         <nav aria-label="Footer">

@@ -103,7 +103,7 @@ const Field: React.FC = () => {
           key={label}
           x={CX + RINGS[i] + 10}
           y={CY + 4}
-          className="fill-mm-link font-mono max-sm:hidden"
+          className="fill-mm-link font-mono max-lg:hidden"
           style={{ fontSize: 13 }}
         >
           {label}

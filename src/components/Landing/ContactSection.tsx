@@ -46,8 +46,8 @@ const Faces: React.FC = () => (
 );
 
 export const ContactContent: React.FC<ContactContentProps> = ({ headingAs: Heading, headingId, location, backHref }) => (
-  <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-    <div className="lg:col-span-5">
+  <div className="grid gap-12 lg:grid-cols-12 lg:gap-12">
+    <div className="lg:col-span-6 lg:pr-4">
       <Heading id={headingId} className={dH2}>
         {ask.title}
       </Heading>
@@ -73,7 +73,7 @@ export const ContactContent: React.FC<ContactContentProps> = ({ headingAs: Headi
       </div>
     </div>
 
-    <div className="lg:col-span-7">
+    <div className="lg:col-span-6">
       <ScopingForm location={location} backHref={backHref} />
     </div>
   </div>

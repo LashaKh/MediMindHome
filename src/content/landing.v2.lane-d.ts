@@ -135,7 +135,8 @@ export const ask = {
 /* ---------- Footer ---------- */
 
 export const footerV2 = {
-  line: 'One hospital. One operating system.',
+  /** "One hospital. One operating system." as two sentences so a phone breaks between them. */
+  line: ['One hospital.', 'One operating system.'],
   secondLine: 'Built ground-up on FHIR R4.',
   links: [
     { label: 'Privacy', href: '/privacy' },

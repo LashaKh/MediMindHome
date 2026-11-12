@@ -4,8 +4,9 @@ import type { SectionTone } from '../../content/types';
 
 /**
  * Section wrapper: full-width band with a tone and a fixed content grid.
- * The tone re-points the text tokens (text-mm-ink etc.), so the same
- * markup reads correctly on white, pale and navy.
+ * The tone re-points every --mm-* token, so the same markup reads correctly
+ * on white, pale and navy (navy = the ink canvas, dark in both themes).
+ * Content width is max-w-page (1248px), the same edge as the header.
  *
  *   <SectionShell id="problem" tone="pale" labelledBy="problem-title">
  *     <SectionHeading as="h2" id="problem-title" title="…" />
@@ -53,14 +54,14 @@ export const SectionShell: React.FC<SectionShellProps> = ({
       aria-labelledby={labelledBy}
       className={cn(
         `mm-tone-${resolved}`,
-        'relative scroll-mt-16 bg-mm-surface py-16 text-mm-body md:scroll-mt-20 md:py-24 lg:py-28',
+        'relative scroll-mt-16 bg-mm-surface py-20 text-mm-body md:scroll-mt-20 md:py-28 lg:py-32',
         className
       )}
     >
       <div
         className={cn(
           'mx-auto w-full px-4 sm:px-6 lg:px-8',
-          narrow ? 'max-w-3xl' : 'max-w-6xl',
+          narrow ? 'max-w-3xl' : 'max-w-page',
           innerClassName
         )}
       >

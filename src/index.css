@@ -26,6 +26,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Metric-matched stand-in while Fraunces loads, so the hero headline
+   does not jump when the real face arrives. */
+@font-face {
+  font-family: 'Fraunces Fallback';
+  src: local('Georgia');
+  size-adjust: 104%;
+  ascent-override: 94%;
+  descent-override: 24%;
+}
+
 @layer base {
   html {
     color-scheme: light;
@@ -40,6 +50,8 @@
     @apply bg-surface-page text-text antialiased;
     font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
     font-size: 16px;
+    font-feature-settings: 'cv11', 'ss01';
+    text-rendering: optimizeLegibility;
   }
   @media (min-width: 768px) {
     body { font-size: 17px; }
@@ -47,63 +59,98 @@
 
   /* Visible focus everywhere; colour follows the section tone. */
   *:focus-visible {
-    outline: 3px solid var(--mm-focus);
+    outline: 2px solid var(--mm-focus);
     outline-offset: 3px;
+    border-radius: 4px;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply text-text font-semibold;
   }
+
+  ::selection {
+    background: var(--mm-system);
+    color: var(--mm-surface, #fff);
+  }
 }
 
 @layer components {
   /* ============================================================
-     Landing type scale — three text levels per section:
+     Landing type, direction v2: three voices.
+       Fraunces  display, the human editorial voice (mm-display, mm-h2, mm-stat)
+       Inter     body and interface (mm-h3, mm-lead, mm-body, mm-caption)
+       Plex Mono the system's voice: data, labels, status (mm-eyebrow, mm-data)
+     Three text levels per section:
        L1  mm-display (hero h1 only) | mm-h2 (section heading) | mm-stat
        L2  mm-lead (support line)     | mm-h3 (column/card title)
-       L3  mm-body (body)             | mm-eyebrow, mm-caption (labels)
-     Weights: 800 headlines, 600 labels, 400 body.
+       L3  mm-body | mm-eyebrow, mm-caption, mm-data (labels)
+     Sizes are fluid (clamp) between the phone and 1440 values.
      ============================================================ */
-  .mm-display {
-    font-size: 2.25rem;           /* 36px phone */
-    line-height: 1.08;
-    font-weight: 800;
-    letter-spacing: -0.03em;
+  .mm-display,
+  .mm-h2,
+  .mm-stat {
+    font-family: 'Fraunces Variable', 'Fraunces Fallback', Georgia, serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
     color: var(--mm-ink);
+    text-wrap: balance;
+  }
+  .mm-display {
+    font-size: clamp(2.75rem, 0.9rem + 5.9vw, 6.5rem);  /* 44px phone → 99px at 1440 → 104px */
+    line-height: 0.98;
+    letter-spacing: -0.035em;
   }
   .mm-h2 {
-    font-size: 1.875rem;          /* 30px phone */
-    line-height: 1.12;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    color: var(--mm-ink);
+    font-size: clamp(2.125rem, 1rem + 3.4vw, 4rem);     /* 34px phone → 64px */
+    line-height: 1.04;
+    letter-spacing: -0.028em;
+  }
+  .mm-stat {
+    font-size: clamp(3.5rem, 1.6rem + 5.6vw, 7rem);     /* 56px phone → 112px */
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    font-weight: 350;
+    font-variant-numeric: lining-nums tabular-nums;
   }
   .mm-h3 {
-    font-size: 1.25rem;           /* 20px phone */
+    font-size: 1.25rem;           /* 20px phone, 22px md+ */
     line-height: 1.3;
-    font-weight: 800;
-    letter-spacing: -0.01em;
+    font-weight: 600;
+    letter-spacing: -0.012em;
     color: var(--mm-ink);
   }
   .mm-lead {
-    font-size: 1.1875rem;         /* 19px phone */
+    font-size: 1.1875rem;         /* 19px phone, 22px md+ */
     line-height: 1.5;
     font-weight: 400;
+    letter-spacing: -0.006em;
     color: var(--mm-body);
+    text-wrap: pretty;
   }
   .mm-body {
-    font-size: 1rem;              /* 16px phone */
+    font-size: 1rem;              /* 16px phone, 17px md+ */
     line-height: 1.6;
     font-weight: 400;
     color: var(--mm-body);
   }
+  /* Label above a heading: the system's mono voice, sentence case, a short blue tick before it. */
   .mm-eyebrow {
-    font-size: 0.875rem;          /* 14px */
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.8125rem;         /* 13px */
     line-height: 1.4;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.01em;
     color: var(--mm-muted);
+  }
+  .mm-eyebrow::before {
+    content: '';
+    width: 1.25rem;
+    height: 1px;
+    background: var(--mm-system);
+    flex: none;
   }
   .mm-caption {
     font-size: 0.875rem;          /* 14px */
@@ -111,35 +158,84 @@
     font-weight: 400;
     color: var(--mm-muted);
   }
-  .mm-stat {
-    font-size: 3.5rem;            /* 56px phone */
-    line-height: 1;
-    font-weight: 800;
-    letter-spacing: -0.03em;
+  /* System text: data, timestamps, status, prepared steps. */
+  .mm-data {
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.8125rem;         /* 13px */
+    line-height: 1.45;
+    font-weight: 400;
+    letter-spacing: 0;
     font-variant-numeric: tabular-nums;
-    color: var(--mm-ink);
+    color: var(--mm-body);
   }
   @media (min-width: 768px) {
-    .mm-display { font-size: 3rem; }     /* 48px */
-    .mm-h2      { font-size: 2.25rem; }  /* 36px */
     .mm-h3      { font-size: 1.375rem; } /* 22px */
-    .mm-lead    { font-size: 1.3125rem; }/* 21px */
+    .mm-lead    { font-size: 1.375rem; } /* 22px */
     .mm-body    { font-size: 1.0625rem; }/* 17px */
-    .mm-stat    { font-size: 5rem; }     /* 80px */
+    .mm-eyebrow { font-size: 0.875rem; } /* 14px */
   }
-  @media (min-width: 1024px) {
-    .mm-display { font-size: 3.5rem; }   /* 56px */
-    .mm-h2      { font-size: 2.75rem; }  /* 44px */
-    .mm-stat    { font-size: 6rem; }     /* 96px */
-  }
-  /* The one accent phrase inside a heading (large text only). */
-  .mm-accent-text { color: var(--mm-accent); }
+  /* The second clause of a headline: same face, quieter ink. Large text only. */
+  .mm-accent-text { color: var(--mm-voice2); }
 
   /* ============================================================
-     Buttons — pills like the deck, no glow. 44px+ targets.
-     Class names kept so the Header keeps working:
-       .btn-luminous = primary, .btn-ghost = secondary,
-       .btn-quiet = text link-button.
+     Meaning marks. Blue = the system is working. Amber = a person
+     decides. The system moves; people are still: system marks may
+     pulse, human marks never animate.
+       <span class="mm-mark-system">Lab panel drafted</span>
+       <span class="mm-mark-human">Doctor signs</span>
+     ============================================================ */
+  .mm-mark-system,
+  .mm-mark-human {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.8125rem;
+    line-height: 1.3;
+    font-weight: 500;
+  }
+  .mm-mark-system { color: var(--mm-link); }
+  .mm-mark-human  { color: var(--mm-human-text); }
+  .mm-mark-system::before,
+  .mm-mark-human::before {
+    content: '';
+    flex: none;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 9999px;
+  }
+  .mm-mark-system::before { border: 1.5px solid var(--mm-system); }
+  .mm-mark-human::before  { background: var(--mm-human); }
+  /* "In development" marker wherever the brain is shown acting. */
+  .mm-dev-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    min-height: 1.5rem;
+    padding: 0 0.55rem;
+    border: 1px solid var(--mm-line);
+    border-radius: 6px;
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.75rem;
+    line-height: 1;
+    font-weight: 500;
+    color: var(--mm-muted);
+    white-space: nowrap;
+  }
+  .mm-dev-badge::before {
+    content: '';
+    width: 0.375rem;
+    height: 0.375rem;
+    border-radius: 9999px;
+    border: 1px dashed var(--mm-system);
+  }
+
+  /* ============================================================
+     Buttons: squared-off (10px), solid ink on light, solid white
+     on the ink canvas. Blue stays the system's; amber stays the
+     person's, so the button is neither. 48px tall, 44px for text.
+     Class names kept: .btn-luminous = primary, .btn-ghost =
+     secondary, .btn-quiet = text link-button.
      ============================================================ */
   .btn-luminous,
   .btn-ghost {
@@ -148,19 +244,24 @@
     justify-content: center;
     gap: 0.5rem;
     min-height: 48px;
-    padding: 0 1.5rem;
-    border-radius: 9999px;
+    padding: 0 1.375rem;
+    border-radius: 10px;
     font-size: 1rem;
     font-weight: 600;
     line-height: 1.2;
+    letter-spacing: -0.005em;
     text-align: center;
     text-decoration: none;
-    transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease;
+    transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, transform 120ms ease;
+  }
+  .btn-luminous:active,
+  .btn-ghost:active {
+    transform: translateY(1px);
   }
   .btn-luminous {
     background-color: var(--mm-btn-bg);
     color: var(--mm-btn-fg);
-    border: 1.5px solid var(--mm-btn-bg);
+    border: 1px solid var(--mm-btn-bg);
   }
   .btn-luminous:hover {
     background-color: var(--mm-btn-hover);
@@ -169,9 +270,10 @@
   .btn-ghost {
     background-color: transparent;
     color: var(--mm-ink);
-    border: 1.5px solid var(--mm-ink);
+    border: 1px solid var(--mm-line);
   }
   .btn-ghost:hover {
+    border-color: var(--mm-ink);
     background-color: var(--mm-tint);
   }
   .btn-quiet {
@@ -180,28 +282,32 @@
     gap: 0.375rem;
     min-height: 44px;
     font-weight: 600;
-    color: var(--mm-link);
+    color: var(--mm-ink);
     text-decoration: underline;
     text-decoration-thickness: 1px;
-    text-underline-offset: 4px;
-    text-decoration-color: transparent;
-    transition: text-decoration-color 200ms ease;
+    text-underline-offset: 6px;
+    text-decoration-color: var(--mm-line);
+    transition: text-decoration-color 180ms ease, color 180ms ease;
   }
   .btn-quiet:hover {
-    text-decoration-color: currentColor;
+    text-decoration-color: var(--mm-system);
   }
 
   /* ============================================================
-     Reveal — small fade and rise, once. See ui/reveal.tsx.
+     Reveal: 16px rise and fade, 600ms, once. See ui/reveal.tsx.
+     Content is VISIBLE by default. Only a block that starts below
+     the fold is armed (hidden) by JS, and it is shown the moment it
+     enters the screen. No JS, no IntersectionObserver, print or
+     reduced motion: nothing is ever hidden.
      ============================================================ */
-  .mm-reveal {
+  .mm-reveal.is-armed {
     opacity: 0;
-    transform: translateY(12px);
-    transition: opacity 250ms ease-out, transform 250ms ease-out;
+    transform: translateY(16px);
   }
-  .mm-reveal.is-in {
+  .mm-reveal.is-armed.is-in {
     opacity: 1;
     transform: none;
+    transition: opacity 600ms cubic-bezier(0.2, 0.7, 0.2, 1), transform 600ms cubic-bezier(0.2, 0.7, 0.2, 1);
   }
 
   /* Brand gradient — still used by /request-demo */
@@ -278,9 +384,15 @@ html:not(.dark) .bg-surface-card\/80 {
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
-  .mm-reveal {
+  .mm-reveal.is-armed {
     opacity: 1;
     transform: none;
+  }
+}
+@media print {
+  .mm-reveal.is-armed {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
 

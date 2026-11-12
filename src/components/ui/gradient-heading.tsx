@@ -5,7 +5,8 @@ import { EyebrowBadge } from './eyebrow-badge';
 import type { HeadingLevel } from '../../content/types';
 
 /**
- * Section heading: eyebrow, heading with one accent-blue phrase, support line.
+ * Section heading: eyebrow, Fraunces heading whose optional second clause
+ * (`accent`) is set in the quieter --mm-voice2 ink, support line.
  * Left-aligned by default (deck habit). Pass the heading level in; the hero is
  * the only h1. `as="h1"` uses the display size, h2/h3 use the section size.
  *
@@ -44,8 +45,8 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
   const accentNode = accent ? <span className="mm-accent-text">{accent}</span> : null;
 
   return (
-    <div className={cn('max-w-3xl', centered ? 'mx-auto text-center' : 'text-left', className)}>
-      {eyebrow && <EyebrowBadge label={eyebrow} tone={eyebrowTone} className="mb-4" />}
+    <div className={cn('max-w-4xl', centered ? 'mx-auto text-center' : 'text-left', className)}>
+      {eyebrow && <EyebrowBadge label={eyebrow} tone={eyebrowTone} className="mb-5" />}
       <Tag id={id} className={Tag === 'h1' ? 'mm-display' : 'mm-h2'}>
         {accentFirst && accentNode}
         {accentFirst && accentNode && ' '}
@@ -53,7 +54,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
         {!accentFirst && accentNode && ' '}
         {!accentFirst && accentNode}
       </Tag>
-      {support && <p className={cn('mm-lead mt-5', centered ? 'mx-auto max-w-2xl' : 'max-w-2xl')}>{support}</p>}
+      {support && <p className={cn('mm-lead mt-6', centered ? 'mx-auto max-w-2xl' : 'max-w-2xl')}>{support}</p>}
     </div>
   );
 };

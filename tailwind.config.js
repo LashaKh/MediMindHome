@@ -42,19 +42,28 @@ export default {
         'border-default': 'var(--emr-border-color)',
         'border-subtle': 'var(--emr-border-subtle)',
 
-        // ─── Landing page (v6 deck palette, theme + tone aware) ───
-        // Defined in src/styles/brand-tokens.css. Opacity modifiers
-        // (e.g. bg-mm-ink/50) do NOT work on these — use them solid.
+        // ─── Landing page, direction v2 (theme + tone aware) ───
+        // Defined in src/styles/brand-tokens.css; roles in
+        // marketing/landing-level-up-2026-11-12/status/v2-design-language.md.
+        // Opacity modifiers (e.g. bg-mm-ink/50) do NOT work on these.
         mm: {
           page: 'var(--mm-page)',
           pale: 'var(--mm-pale)',
           navy: 'var(--mm-navy)',
+          raised: 'var(--mm-raised)',
           surface: 'var(--mm-surface)',
           ink: 'var(--mm-ink)',
           body: 'var(--mm-body)',
           muted: 'var(--mm-muted)',
+          voice2: 'var(--mm-voice2)',
           accent: 'var(--mm-accent)',
           link: 'var(--mm-link)',
+          system: 'var(--mm-system)',
+          'system-soft': 'var(--mm-system-soft)',
+          human: 'var(--mm-human)',
+          'human-text': 'var(--mm-human-text)',
+          'human-fill': 'var(--mm-human-fill)',
+          'human-fg': 'var(--mm-human-fg)',
           line: 'var(--mm-line)',
           rule: 'var(--mm-rule)',
           tint: 'var(--mm-tint)',
@@ -99,13 +108,17 @@ export default {
         'surface-page': 'var(--emr-bg-page)',
       },
       fontFamily: {
-        // Inter only (self-hosted, @font-face in src/index.css). Georgian glyphs
-        // come from Noto Sans Georgian registered under the same "Inter" name.
+        // Three voices (direction v2). Inter is self-hosted (@font-face in
+        // src/index.css; Georgian glyphs from Noto Sans Georgian under the same
+        // name). Fraunces and Plex Mono come from @fontsource (src/main.tsx).
         sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Arial', 'sans-serif'],
-        // Fraunces and IBM Plex Mono are retired. These aliases keep older
-        // files that still say font-serif / font-mono on Inter. Do not use.
-        serif: ['Inter', 'system-ui', 'sans-serif'],
-        mono: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['"Fraunces Variable"', '"Fraunces Fallback"', 'Georgia', 'serif'],
+        serif: ['"Fraunces Variable"', '"Fraunces Fallback"', 'Georgia', 'serif'],
+        mono: ['"IBM Plex Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
+      },
+      maxWidth: {
+        // The page grid: header, hero and every SectionShell share this edge.
+        page: '78rem',
       },
     },
   },

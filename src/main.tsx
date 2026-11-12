@@ -1,7 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
-// Inter is self-hosted from /public/fonts via @font-face in index.css.
+// Three type voices (direction v2): Fraunces for display, Inter for body
+// (self-hosted via @font-face in index.css), IBM Plex Mono for data and labels.
+import '@fontsource-variable/fraunces/opsz.css';
+import '@fontsource/ibm-plex-mono/400.css';
+import '@fontsource/ibm-plex-mono/500.css';
 import './index.css';
 import { readStoredTheme } from './hooks/useTheme';
 

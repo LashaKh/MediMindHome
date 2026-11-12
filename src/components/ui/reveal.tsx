@@ -1,11 +1,15 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import { cn } from '../../utils/cn';
 
 /**
- * Reveal: a small fade and rise (12px, 250ms) the first time the block
- * scrolls into view. Runs once, never loops. Off under prefers-reduced-motion
- * (shown at once). Do not wrap the hero h1 or the hero image (they must paint
- * immediately).
+ * Reveal: a 16px rise and fade (600ms) the first time a block scrolls into
+ * view. Runs once, never loops.
+ *
+ * Content is never left invisible: the block renders visible, and only a
+ * block that starts BELOW the fold is armed (hidden) before first paint, then
+ * shown as soon as it enters the screen. Blocks already on screen, reduced
+ * motion, no IntersectionObserver and print all show at once.
+ * Do not wrap the hero h1 or the hero visual.
  *
  *   <Reveal><Column title="…">…</Column></Reveal>
  *   <Reveal as="li" delay={100}>…</Reveal>
@@ -21,26 +25,28 @@ interface RevealProps {
   children: React.ReactNode;
 }
 
+type Phase = 'static' | 'armed' | 'in';
+
 export const Reveal: React.FC<RevealProps> = ({ as: Tag = 'div', delay = 0, className, children }) => {
   const ref = useRef<HTMLElement | null>(null);
-  const [shown, setShown] = useState(false);
+  const [phase, setPhase] = useState<Phase>('static');
 
-  useEffect(() => {
+  // Layout effect: decide before the first paint, so nothing flashes.
+  useLayoutEffect(() => {
     const node = ref.current;
-    if (!node) return;
-    const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-    if (reduce || typeof IntersectionObserver === 'undefined') {
-      setShown(true);
-      return;
-    }
+    if (!node || typeof IntersectionObserver === 'undefined') return;
+    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return;
+    if (node.getBoundingClientRect().top < window.innerHeight) return; // already on screen: stay visible
+
+    setPhase('armed');
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries.some((entry) => entry.isIntersecting)) {
-          setShown(true);
+          setPhase('in');
           observer.disconnect();
         }
       },
-      { rootMargin: '0px 0px -10% 0px' }
+      { rootMargin: '0px 0px -8% 0px' }
     );
     observer.observe(node);
     return () => observer.disconnect();
@@ -50,8 +56,8 @@ export const Reveal: React.FC<RevealProps> = ({ as: Tag = 'div', delay = 0, clas
     Tag,
     {
       ref,
-      className: cn('mm-reveal', shown && 'is-in', className),
-      style: delay ? { transitionDelay: `${Math.min(delay, 150)}ms` } : undefined,
+      className: cn('mm-reveal', phase !== 'static' && 'is-armed', phase === 'in' && 'is-in', className),
+      style: delay && phase !== 'static' ? { transitionDelay: `${Math.min(delay, 150)}ms` } : undefined,
     },
     children
   );

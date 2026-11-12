@@ -31,14 +31,14 @@ export const BrowserFrame: React.FC<BrowserFrameProps> = ({
   const sizes = image.sizes ?? '(min-width: 1152px) 1088px, 100vw';
   return (
     <figure className={cn('w-full', className)}>
-      <div className="overflow-hidden rounded-[10px] border border-mm-line bg-mm-page">
-        <div className="flex h-8 items-center gap-3 border-b border-mm-line bg-mm-tint px-3" aria-hidden="true">
+      <div className="overflow-hidden rounded-[14px] border border-mm-line bg-mm-page">
+        <div className="flex h-8 items-center gap-3 border-b border-mm-line bg-mm-raised px-3" aria-hidden="true">
           <span className="flex gap-1.5">
             <span className="h-2.5 w-2.5 rounded-full bg-mm-line" />
             <span className="h-2.5 w-2.5 rounded-full bg-mm-line" />
             <span className="h-2.5 w-2.5 rounded-full bg-mm-line" />
           </span>
-          {label && <span className="mm-caption truncate text-xs">{label}</span>}
+          {label && <span className="mm-data truncate text-xs text-mm-muted">{label}</span>}
         </div>
         <picture>
           {image.avif && <source type="image/avif" srcSet={image.avif} sizes={sizes} />}

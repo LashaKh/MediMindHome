@@ -6,75 +6,102 @@
    Import once in your app's root stylesheet, then use
    var(--emr-primary) etc. throughout.
 
-   Version: 1.1
+   Version: 2.0
    Last updated: 2026-11-12
    ============================================================ */
 
 /* ============================================================
-   LANDING PAGE TOKENS (--mm-*) — the v6 hospital deck palette
+   LANDING PAGE TOKENS (--mm-*) — direction v2 (2026-11-12)
    ============================================================
-   Use these (Tailwind: bg-mm-*, text-mm-*, border-mm-*) for the
-   landing page. Tone classes (.mm-tone-white / -pale / -navy, set
-   by <SectionShell tone>) re-point the text tokens per section, so
-   text-mm-ink is navy on white and white on the navy section.
-   AA contrast checked in both themes. --mm-accent passes AA only
-   at large sizes (headline accent phrase, big stat, rules); small
-   accent text uses --mm-link.
+   Tailwind: bg-mm-*, text-mm-*, border-mm-*. Written down for the
+   lanes in marketing/landing-level-up-2026-11-12/status/
+   v2-design-language.md.
+
+   Three tones (set by <SectionShell tone>) re-point every token:
+     white / pale  light editorial bands (dark surfaces in dark theme)
+     navy          the INK canvas: near-black navy, the same in both
+                   themes (a touch deeper in dark), where the page is
+                   cinematic. Hero, belief, brain, ambition, contact.
+   Two meaning colours, never decoration:
+     --mm-system   luminous clinical blue: the system is working
+     --mm-human    warm signature amber: a person decides / signs
+   AA checked for every text token on every surface.
    ============================================================ */
 :root {
-  --mm-page:     #ffffff;  /* page and white sections */
-  --mm-pale:     #f1f5fb;  /* pale sections */
-  --mm-navy:     #0f1f3a;  /* navy "punch" sections */
-  --mm-surface:  var(--mm-page); /* current section background (set by tone) */
-  --mm-ink:      #1a365d;  /* headlines, titles */
-  --mm-body:     #334155;  /* body text */
-  --mm-muted:    #55657a;  /* eyebrows, captions, source lines (deck #64748b, darkened for AA on pale) */
-  --mm-accent:   #3182ce;  /* ONE accent phrase per heading, big stat, icons; large text only */
-  --mm-link:     #2b6cb0;  /* small accent text, text links */
-  --mm-line:     #e2e8f0;  /* hairlines, frame borders */
-  --mm-rule:     #0f1f3a;  /* 4px column top rule */
-  --mm-tint:     #e3effb;  /* quiet fills (frame bar, chips) */
-  --mm-alert:    #c53030;  /* the loss number only */
-  --mm-btn-bg:   #2b6cb0;  /* primary button */
-  --mm-btn-fg:   #ffffff;
-  --mm-btn-hover:#1a365d;
-  --mm-focus:    #2b6cb0;  /* focus outline */
+  --mm-page:      #ffffff;  /* page and white sections */
+  --mm-pale:      #f2f5f9;  /* pale sections (cool, never cream) */
+  --mm-navy:      #06101f;  /* the ink canvas */
+  --mm-raised:    #f7f9fc;  /* a card or panel lifted off the surface */
+  --mm-surface:   var(--mm-page); /* current section background (set by tone) */
+  --mm-ink:       #0b1b33;  /* headlines, titles */
+  --mm-body:      #3a4a60;  /* body text */
+  --mm-muted:     #5b6b80;  /* eyebrows, captions, source lines */
+  --mm-voice2:    #66768c;  /* second clause of a headline (.mm-accent-text); large text only */
+  --mm-accent:    #1e6bd0;  /* system blue as ink: big stat, icons, rules */
+  --mm-link:      #1a5fbf;  /* small blue text, text links */
+  --mm-system:    #1e6bd0;  /* the system is working (marks, lines, pulses) */
+  --mm-system-soft: #e6effb;/* quiet fill behind system marks */
+  --mm-human:     #b86a00;  /* a person decides: marks and fills */
+  --mm-human-text:#9a5800;  /* small amber text on light (AA) */
+  --mm-human-fill:#f5b84a;  /* amber chip fill; text on it is --mm-human-fg */
+  --mm-human-fg:  #1a1204;
+  --mm-line:      #e3e8ef;  /* hairlines, frame borders */
+  --mm-rule:      #0b1b33;  /* strong top rule (Column) */
+  --mm-tint:      #eaf1fb;  /* quiet fills (frame bar, hover) */
+  --mm-alert:     #c42b2f;  /* harm or loss only */
+  --mm-btn-bg:    #0b1b33;  /* primary button: ink on light, white on ink */
+  --mm-btn-fg:    #ffffff;
+  --mm-btn-hover: #1e3a66;
+  --mm-focus:     #1e6bd0;  /* focus outline */
 }
 :root.dark {
-  --mm-page:     #0b1628;
-  --mm-pale:     #111f35;
-  --mm-navy:     #16305a;
-  --mm-ink:      #f1f5f9;
-  --mm-body:     #cbd5e1;
-  --mm-muted:    #9fb0c6;
-  --mm-accent:   #8fc7f5;
-  --mm-link:     #8fc7f5;
-  --mm-line:     #22324a;
-  --mm-rule:     #63a4e6;
-  --mm-tint:     #172a45;
-  --mm-alert:    #fc8181;
-  --mm-btn-bg:   #8fc7f5;
-  --mm-btn-fg:   #0b1628;
-  --mm-btn-hover:#bee3f8;
-  --mm-focus:    #8fc7f5;
+  --mm-page:      #08111f;
+  --mm-pale:      #0d1828;
+  --mm-navy:      #030913;
+  --mm-raised:    #111e33;
+  --mm-ink:       #f2f5fa;
+  --mm-body:      #bac6d6;
+  --mm-muted:     #8d9cb2;
+  --mm-voice2:    #8796ad;
+  --mm-accent:    #6cb8ff;
+  --mm-link:      #8cc8ff;
+  --mm-system:    #6cb8ff;
+  --mm-system-soft: #10233f;
+  --mm-human:     #f5b84a;
+  --mm-human-text:#f5b84a;
+  --mm-line:      #1c2a3f;
+  --mm-rule:      #6cb8ff;
+  --mm-tint:      #12213a;
+  --mm-alert:     #ff7a7f;
+  --mm-btn-bg:    #f2f5fa;
+  --mm-btn-fg:    #08111f;
+  --mm-btn-hover: #d6e6fa;
+  --mm-focus:     #8cc8ff;
 }
 .mm-tone-white { --mm-surface: var(--mm-page); }
 .mm-tone-pale  { --mm-surface: var(--mm-pale); }
 .mm-tone-navy {
-  --mm-surface:  var(--mm-navy);
-  --mm-ink:      #ffffff;
-  --mm-body:     #d6e2f0;
-  --mm-muted:    #a9bdd6;
-  --mm-accent:   #8fc7f5;
-  --mm-link:     #8fc7f5;
-  --mm-line:     #2a4566;
-  --mm-rule:     #8fc7f5;
-  --mm-tint:     #1d3a63;
-  --mm-alert:    #feb2b2;
-  --mm-btn-bg:   #ffffff;
-  --mm-btn-fg:   #0f1f3a;
-  --mm-btn-hover:#bee3f8;
-  --mm-focus:    #8fc7f5;
+  --mm-surface:   var(--mm-navy);
+  --mm-raised:    #0c1a30;
+  --mm-ink:       #f3f6fb;
+  --mm-body:      #b6c3d5;
+  --mm-muted:     #8b9bb3;
+  --mm-voice2:    #8796ad;
+  --mm-accent:    #6cb8ff;
+  --mm-link:      #8cc8ff;
+  --mm-system:    #6cb8ff;
+  --mm-system-soft: #0f2340;
+  --mm-human:     #f5b84a;
+  --mm-human-text:#f5b84a;
+  --mm-line:      #1a2a42;
+  --mm-rule:      #6cb8ff;
+  --mm-tint:      #0e1c33;
+  --mm-alert:     #ff7a7f;
+  --mm-btn-bg:    #f3f6fb;
+  --mm-btn-fg:    #06101f;
+  --mm-btn-hover: #d6e6fa;
+  --mm-focus:     #8cc8ff;
+  color-scheme: dark;
 }
 
 :root {
@@ -154,7 +181,7 @@
   --emr-text-inverse:   #0f172a;
 
   /* ─── Surface / Background (Dark Mode) ─── */
-  --emr-bg-page:        #0b1628;  /* = --mm-page so header/footer match the landing */
+  --emr-bg-page:        #08111f;  /* = --mm-page so header/footer match the landing */
   --emr-bg-card:        #111f35;
   --emr-bg-modal:       #1e293b;
   --emr-bg-input:       #0f172a;

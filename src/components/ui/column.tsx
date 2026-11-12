@@ -2,8 +2,8 @@ import React from 'react';
 import { cn } from '../../utils/cn';
 
 /**
- * Column block, the deck's signature: 4px navy top rule, bold title,
- * one or two sentences. No box, no shadow. Put two or three in a grid.
+ * Column block: a hairline top rule with a short system-blue segment at its
+ * start, a title, one or two sentences. No box, no shadow. Two or three in a grid.
  *
  *   <div className="grid gap-10 md:grid-cols-3">
  *     <Column title="Fines and returned claims">One sentence on the consequence.</Column>
@@ -21,7 +21,7 @@ interface ColumnProps {
 }
 
 export const Column: React.FC<ColumnProps> = ({ title, as: Tag = 'h3', label, children, className }) => (
-  <div className={cn('border-t-4 border-mm-rule pt-5', className)}>
+  <div className={cn('relative border-t border-mm-line pt-6 before:absolute before:-top-px before:left-0 before:h-[2px] before:w-10 before:bg-mm-rule', className)}>
     {label && <p className="mm-eyebrow mb-2">{label}</p>}
     <Tag className="mm-h3">{title}</Tag>
     {children && <div className="mm-body mt-2">{children}</div>}

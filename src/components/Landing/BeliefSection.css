@@ -1,0 +1,73 @@
+/* Lane B shared styles (Belief, Fragments, AnatomyOs). Classes are prefixed
+   `lb-` so they never collide with the shared tokens in src/index.css.
+   Colour comes only from the v2 tokens (status/v2-design-language.md):
+   blue = the system is working, amber = a person decides, red = harm. */
+
+.lb-scope {
+  --lb-system: var(--mm-system);
+  --lb-human: var(--mm-human);
+  --lb-human-text: var(--mm-human-text);
+  --lb-harm: var(--mm-alert);
+  --lb-ink-glow: color-mix(in srgb, var(--mm-system) 38%, transparent);
+  --lb-system-wash: color-mix(in srgb, var(--mm-system) 11%, transparent);
+}
+
+.lb-display {
+  font-family: 'Fraunces Variable', 'Fraunces Fallback', Georgia, serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 0.98;
+  color: var(--mm-ink);
+  text-wrap: balance;
+}
+.lb-serif {
+  font-family: 'Fraunces Variable', 'Fraunces Fallback', Georgia, serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.18;
+  text-wrap: pretty;
+}
+.lb-mono {
+  font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-feature-settings: 'tnum' 1;
+  letter-spacing: 0;
+}
+
+/* The belief is the page's second display moment: hero scale, on purpose. */
+.lb-belief { font-size: clamp(2.5rem, 0.9rem + 5.9vw, 6.5rem); }
+.lb-beat { font-size: clamp(1.625rem, 3.2vw, 2.75rem); }
+.lb-statement { font-size: clamp(1.75rem, 3.6vw, 3rem); }
+
+/* Ambient life: the nerve pulse and the heart beat. Off for reduced motion. */
+@keyframes lb-pulse {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.18); }
+}
+@keyframes lb-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+@keyframes lb-travel {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: -240; }
+}
+.lb-heartbeat { transform-box: fill-box; transform-origin: center; animation: lb-pulse 1.6s ease-in-out infinite; }
+.lb-cursor { animation: lb-blink 1.1s steps(1) infinite; }
+.lb-signal { stroke-dasharray: 6 34; animation: lb-travel 3.2s linear infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .lb-heartbeat, .lb-cursor, .lb-signal { animation: none; }
+  .lb-scope *, .lb-scope *::before, .lb-scope *::after { transition-duration: 0.01ms !important; }
+}
+
+/* The anatomy rows: the whole row is the button's hit area. */
+.lb-row { position: relative; }
+.lb-row-btn::after { content: ''; position: absolute; inset: 0; border-radius: 14px; }
+.lb-row-btn:focus-visible { outline: none; }
+.lb-row:has(.lb-row-btn:focus-visible) {
+  outline: 2px solid var(--mm-focus);
+  outline-offset: 3px;
+  border-radius: 14px;
+}

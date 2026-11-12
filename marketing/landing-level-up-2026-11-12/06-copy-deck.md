@@ -282,18 +282,17 @@ No headline in this strip (two levels only, by design). Optional logo alt text i
 - Support [L2]: The next step, built on the same operating system. It is not part of today's offer.
 - Two columns [L3]:
 
+- Table intro [L3, bold]: It starts with the paperwork.
+
 | The reactive hospital (most hospitals today) | The proactive hospital (in development) |
 |---|---|
-| Software waits to be asked. | The system will notice what is missing. |
-| Forms are filled in after the patient has gone home. | It will have the work ready before anyone asks. |
-| A missed charge is found late, or never. | A person will approve, edit or reject it. |
-| Safety depends on a tired person remembering at 2 a.m. | Every job will start by only watching, and a named person decides how far it may go. |
+| Software waits to be asked. | The system will notice what is missing and prepare it. |
+| Discharge forms are filled in after the patient has gone home. | Forms will be ready at discharge. The doctor checks and signs. |
+| A missed charge is found late, or never. | A service given but not billed will be flagged, with the charge drafted. Billing staff release it. |
+| Ministry records are chased as the deadline nears. | Records will be ready before the deadline. A named person sends them. |
+| Safety depends on a tired person remembering at 2 a.m. | The person on duty will have the facts in front of them. The decision stays theirs. |
 
-- Examples title [L3, bold]: It starts with the paperwork.
-- Three examples [L3], each ending with a person releasing the work:
-  1. **At discharge.** The forms will be ready, filled from the record. The doctor checks and signs.
-  2. **In billing.** A service given but not billed will be flagged, with the charge drafted. Billing staff release it.
-  3. **For the Ministry.** Records will be ready before the deadline. A named person sends them.
+(Orchestrator edit: each row is now a matched pair, left and right about the same moment. The separate three-example list was folded into the table so nothing is said twice.)
 - Punch block (dark navy, still under the "In development" chip):
   - [L1]: One patient walks in. The whole hospital moves.
   - [L2]: The system prepares. Your doctors decide.
@@ -660,3 +659,20 @@ Left out on purpose, because no brief allows them: any price, any outcome or sav
 7. **Offline and own-server lines.** Both are in the master brief's list but `03` has no fresh status evidence for offline. Confirm both with the founder before launch, or drop item 3 of the safety section.
 8. **Call recording.** Justina wants the page to say whether the call is recorded. No source says, so the copy is silent. If the founders confirm "not recorded", add to the final CTA under the button: The call is not recorded.
 9. **Privacy notice blanks.** Legal entity, data region, retention period and response time are blank for the lawyer and founder.
+
+---
+
+# Part 9 · Orchestrator rulings (2026-11-12). These override anything above that disagrees.
+
+**Copy status: approved for build.**
+
+1. **Section ids and files.** Use the ids and file names in `status/foundation.done.md`, not the anchors listed at the top of this deck. Mapping: `#solution` is `#system`, `#plan` is `#switch`, `#safety` is `#control`. Nav labels stay as written in Part 3.
+2. **Images.** Never load from `public/deck-assets/`. Use only ids from `public/landing/manifest.json` (described in `07-asset-manifest.md`). Where this deck names a deck-assets file, use the matching manifest id. If the right image does not exist, use the closest honest one and caption it for what it really shows; never caption a screen as something it is not. The imaging viewer image (`imaging-viewer`) is not used on the page until the founders confirm the scan may be shown.
+3. **Hero image.** Decided by the orchestrator once the fresh captures land; the hero builder takes the image id from `status/orchestrator-rulings.md`.
+4. **Practice case.** Add the flag `showPracticeCase` to `src/content/site.ts`, default `true` in this preview build. It is on the go-live checklist for Dr. Khoshtaria to confirm.
+5. **Measures examples.** Approved as written.
+6. **Lead source.** Approved: when the page URL carries `utm_source`, `utm_medium` or `utm_campaign`, append ` [src: <source>/<medium>/<campaign>]` to `useCase` on submit. No backend change.
+7. **Founding places, offline line, own-server line.** Keep as written. All three are on the go-live checklist.
+8. **Call recording.** Say nothing.
+9. **Privacy notice.** Build the page with the blanks shown as written and a visible "Draft" note. It is on the go-live checklist.
+10. **Vision table.** Rewritten above as matched pairs; the three-example list is removed.

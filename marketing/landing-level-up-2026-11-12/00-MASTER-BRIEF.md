@@ -52,7 +52,7 @@ The live page fails its own reader. A hospital owner cannot tell in five seconds
 - Allowed: "Free implementation and training." · "The first 30 days with no commitment." · "Day 30: you decide. Day 90: you are live." · "You ask, we build: an answer in 3 workdays, no development fees." · "Your data stays yours: FHIR R4 and full export at any time." · "Two founding-partner places open." (one quiet line, behind a content flag so it can be switched off the day it stops being true).
 - Left out: any price, "price match", "within your current budget", the word "unlimited", "limited time", "won't be available indefinitely", the source-code promise (lawyer first), "free trial" (say "evaluation").
 
-**Customer name.** Default is unnamed: "a 25-hospital network in Georgia". Build a single content flag `showCustomerName` (default `false`). When `true` the page shows "GeoHospitals", its logo and the CTO quote from v6 S2. The founder flips it.
+**Customer name.** Founder ruling 2026-11-12: keep the customer unnamed on the public page. Default is unnamed: "a 25-hospital network in Georgia". Build a single content flag `showCustomerName` (default `false`). When `true` the page shows "GeoHospitals", its logo and the CTO quote from v6 S2. The founder flips it.
 
 **Facts and words.**
 - 25 hospitals are **signed**, never "live". In daily use today: lab and imaging at the central hospital. Everything else is "built and running beside the current system".

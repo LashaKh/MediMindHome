@@ -13,10 +13,10 @@ import { trackLanding } from '../../lib/tracking';
  * Site header: logo, five section links, the primary button, theme toggle and
  * a phone menu.
  *
- * At the top of the landing page it is transparent on the ink hero, so the
- * hero reads as one uninterrupted screen. As soon as the page scrolls it turns
- * solid with one hairline: ink while the hero is under it, then the page tone
- * (white in the light theme, ink in the dark theme). No blur, no shadow.
+ * It takes the tone of whatever is under it: ink with light text over ink
+ * sections, light with ink text over light ones, switching at once (no colour
+ * transition, so never a muddy in-between) with one crisp hairline. At the top
+ * of the landing page it is transparent on the ink hero. No blur, no shadow.
  *
  * On `/` the links are plain fragment links (#belief), so the browser scrolls
  * and the sections' scroll-margin keeps the heading clear of this bar. On any
@@ -26,39 +26,42 @@ import { trackLanding } from '../../lib/tracking';
 const navLinkClass =
   'inline-flex min-h-[44px] items-center whitespace-nowrap rounded-md px-3 text-[15px] font-medium text-mm-body transition-colors duration-150 hover:text-mm-ink';
 
+type Tone = 'navy' | 'white' | 'pale';
+
 /**
- * Where the header sits: `overHero` while the landing hero is still under it,
- * `atTop` before the page has scrolled (only then is it transparent).
+ * The header belongs to whatever is under it: it reads the tone class
+ * (`mm-tone-navy|white|pale`, set by SectionShell and the footer) of the
+ * element just below its bottom edge, so ink sections get an ink header and
+ * light sections a light one, whatever the section order. `atTop` (page not
+ * scrolled, ink under it) makes it transparent over the hero.
  */
-const useHeaderPosition = (enabled: boolean) => {
-  const [position, setPosition] = useState({ overHero: enabled, atTop: true });
+const useHeaderTone = (headerRef: React.RefObject<HTMLElement>) => {
+  const [state, setState] = useState<{ tone: Tone; atTop: boolean }>({ tone: 'navy', atTop: true });
   useEffect(() => {
-    if (!enabled) {
-      setPosition({ overHero: false, atTop: window.scrollY < 8 });
-      return;
-    }
-    let frame = 0;
+    // Runs straight from the scroll event (browsers already fire it once per frame);
+    // a requestAnimationFrame hop could stall in a throttled tab and leave the tone stale.
     const update = () => {
-      frame = 0;
-      const hero = document.getElementById('hero');
-      const headerHeight = window.innerWidth >= 768 ? 80 : 64;
-      const overHero = hero ? hero.getBoundingClientRect().bottom > headerHeight : false;
+      const header = headerRef.current;
+      if (!header) return;
+      const y = header.getBoundingClientRect().bottom + 1;
+      const under = document.elementsFromPoint(2, y).find((el) => !header.contains(el));
+      const match = under?.closest('[class*="mm-tone-"]')?.className.match(/mm-tone-(navy|white|pale)/);
+      const tone: Tone = (match?.[1] as Tone | undefined) ?? 'white';
       const atTop = window.scrollY < 8;
-      setPosition((prev) => (prev.overHero === overHero && prev.atTop === atTop ? prev : { overHero, atTop }));
-    };
-    const onScroll = () => {
-      if (!frame) frame = window.requestAnimationFrame(update);
+      setState((prev) => (prev.tone === tone && prev.atTop === atTop ? prev : { tone, atTop }));
     };
     update();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll);
+    // Sections render after the header (and lazily on other routes): look again once they are in.
+    const late = window.setTimeout(update, 300);
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
     return () => {
-      window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('resize', onScroll);
-      if (frame) window.cancelAnimationFrame(frame);
+      window.clearTimeout(late);
+      window.removeEventListener('scroll', update);
+      window.removeEventListener('resize', update);
     };
-  }, [enabled]);
-  return position;
+  }, [headerRef]);
+  return state;
 };
 
 export const Header: React.FC = () => {
@@ -68,7 +71,8 @@ export const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
-  const { overHero, atTop } = useHeaderPosition(isLanding);
+  const headerRef = useRef<HTMLElement>(null);
+  const { tone, atTop } = useHeaderTone(headerRef);
 
   // Arriving on `/#id` from another route: scroll to that section once it exists (retries briefly while the page renders).
   useEffect(() => {
@@ -113,10 +117,9 @@ export const Header: React.FC = () => {
 
   const closeMenu = () => setMenuOpen(false);
   const isDark = theme === 'dark';
-  // Transparent ink over the top of the hero; solid ink while the hero scrolls
-  // under it (or with the menu open there); solid page tone after the hero.
-  const inkTone = overHero && atTop && !menuOpen;
-  const logoTone: 'dark' | 'light' = isDark || overHero ? 'dark' : 'light';
+  // Transparent only on the ink hero before scrolling; otherwise solid in the tone beneath it.
+  const transparent = isLanding && atTop && tone === 'navy' && !menuOpen;
+  const logoTone: 'dark' | 'light' = isDark || tone === 'navy' ? 'dark' : 'light';
 
   /** Link to a section: a real fragment link on `/`, a router link to `/#id` elsewhere. */
   const sectionLink = (hash: string, className: string, children: React.ReactNode, onClick?: () => void) =>
@@ -137,13 +140,11 @@ export const Header: React.FC = () => {
 
   return (
     <header
+      ref={headerRef}
       className={cn(
-        'fixed inset-x-0 top-0 z-50 border-b transition-colors duration-200',
-        inkTone
-          ? 'mm-tone-navy border-transparent bg-transparent'
-          : overHero
-            ? 'mm-tone-navy border-mm-line bg-mm-surface'
-            : 'mm-tone-white border-mm-line bg-mm-surface'
+        // No transitions inside: a tone switch must be a clean cut, never a fade through grey.
+        `mm-tone-${tone} fixed inset-x-0 top-0 z-50 border-b [&_*]:transition-none`,
+        transparent ? 'border-transparent bg-transparent' : 'border-mm-line bg-mm-surface'
       )}
     >
       <div className="mx-auto flex h-16 max-w-page items-center justify-between gap-4 px-4 sm:px-6 md:h-20 lg:px-8">

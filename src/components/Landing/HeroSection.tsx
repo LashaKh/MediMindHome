@@ -20,21 +20,21 @@ const HeroOrchestration = lazy(() => import('./HeroOrchestration'));
  * nor the animation moves anything.
  * Keep id="hero": the header and the sticky phone bar watch it.
  */
-const visualBox = 'h-[596px] lg:h-[472px]';
+const visualBox = 'h-[596px] lg:h-[426px]';
 
 export const HeroSection: React.FC = () => (
   <SectionShell
     id="hero"
     tone="navy"
     labelledBy="hero-title"
-    className="overflow-hidden pb-14 pt-24 md:pb-16 md:pt-32 lg:pb-14 lg:pt-[6.5rem]"
+    className="overflow-hidden pb-14 pt-24 md:pb-16 md:pt-32 lg:pb-12 lg:pt-24"
   >
     {/* The plane the hospital runs on: a faint grid, strongest behind the visual. */}
     <div aria-hidden="true" className="mm-hero-plane pointer-events-none absolute inset-0" />
 
     <div className="relative">
       <p className="mm-eyebrow">{c.eyebrow}</p>
-      <h1 id="hero-title" className="mm-display mt-5 md:mt-6">
+      <h1 id="hero-title" className="mm-display mt-5 md:mt-6 lg:mt-5">
         {/* One sentence per balanced block: no stranded words at any width. */}
         {c.titleLines.map((line, i) => (
           <React.Fragment key={line}>
@@ -44,8 +44,8 @@ export const HeroSection: React.FC = () => (
         ))}
       </h1>
 
-      <div className="mt-7 flex flex-col gap-8 md:mt-9 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
-        <p className="mm-lead max-w-[36rem] text-mm-body">{c.sub}</p>
+      <div className="mt-7 flex flex-col gap-8 md:mt-9 lg:mt-7 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
+        <p className="mm-lead min-w-0 max-w-[36rem] text-mm-body lg:max-w-[47rem] lg:flex-1 lg:text-[1.25rem]">{c.sub}</p>
         <div className="flex shrink-0 flex-col items-stretch gap-2 sm:flex-row sm:items-center sm:gap-6">
           <ButtonLink
             href={primaryCta.href}
@@ -60,7 +60,7 @@ export const HeroSection: React.FC = () => (
         </div>
       </div>
 
-      <div className="mt-12 md:mt-14 lg:mt-9">
+      <div className="mt-12 md:mt-14 lg:mt-8">
         <div className={visualBox}>
           <Suspense fallback={<div className="h-full border-t border-mm-line" />}>
             <HeroOrchestration />

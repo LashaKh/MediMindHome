@@ -41,9 +41,9 @@ const STATIC_MS = signAt(4) + 120;
 // ---------------------------------------------------------------- Canvas geometry (lg+)
 
 /** Canvas height in px (fixed); x is in per-mille of the width, y in px. */
-const CANVAS_H = 428;
-const LANE_Y0 = 28;
-const LANE_GAP = 58;
+const CANVAS_H = 386;
+const LANE_Y0 = 22;
+const LANE_GAP = 52;
 const PATIENT_X = 150;
 const BEND_END_X = 300;
 /**
@@ -303,7 +303,7 @@ export const HeroOrchestration: React.FC<{ className?: string }> = ({ className 
       </figcaption>
 
       {/* Readout. lg+: clock, both counters, the honesty marker, pause. Below lg: clock, marker, pause. */}
-      <div className="flex h-11 shrink-0 items-center justify-between gap-4 border-b border-mm-line">
+      <div className="flex h-11 shrink-0 items-center justify-between gap-4 border-b border-mm-line lg:h-10">
         <div className="flex min-w-0 items-center gap-8" aria-hidden="true">
           {clock}
           <span className="hidden items-center gap-8 lg:flex">{counters}</span>

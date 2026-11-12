@@ -13,10 +13,10 @@ import { trackLanding } from '../../lib/tracking';
  * Site header: logo, five section links, the primary button, theme toggle and
  * a phone menu.
  *
- * Over the hero (the ink canvas) it is transparent and takes the ink tone, so
- * the hero reads as one uninterrupted screen. Once the hero has scrolled under
- * it, it turns solid with one hairline in the page tone (white in the light
- * theme, ink in the dark theme). No blur, no shadow, no entrance animation.
+ * At the top of the landing page it is transparent on the ink hero, so the
+ * hero reads as one uninterrupted screen. As soon as the page scrolls it turns
+ * solid with one hairline: ink while the hero is under it, then the page tone
+ * (white in the light theme, ink in the dark theme). No blur, no shadow.
  *
  * On `/` the links are plain fragment links (#belief), so the browser scrolls
  * and the sections' scroll-margin keeps the heading clear of this bar. On any
@@ -26,12 +26,15 @@ import { trackLanding } from '../../lib/tracking';
 const navLinkClass =
   'inline-flex min-h-[44px] items-center whitespace-nowrap rounded-md px-3 text-[15px] font-medium text-mm-body transition-colors duration-150 hover:text-mm-ink';
 
-/** True while the landing hero is still under the header. */
-const useOverHero = (enabled: boolean) => {
-  const [overHero, setOverHero] = useState(enabled);
+/**
+ * Where the header sits: `overHero` while the landing hero is still under it,
+ * `atTop` before the page has scrolled (only then is it transparent).
+ */
+const useHeaderPosition = (enabled: boolean) => {
+  const [position, setPosition] = useState({ overHero: enabled, atTop: true });
   useEffect(() => {
     if (!enabled) {
-      setOverHero(false);
+      setPosition({ overHero: false, atTop: window.scrollY < 8 });
       return;
     }
     let frame = 0;
@@ -39,7 +42,9 @@ const useOverHero = (enabled: boolean) => {
       frame = 0;
       const hero = document.getElementById('hero');
       const headerHeight = window.innerWidth >= 768 ? 80 : 64;
-      setOverHero(hero ? hero.getBoundingClientRect().bottom > headerHeight : false);
+      const overHero = hero ? hero.getBoundingClientRect().bottom > headerHeight : false;
+      const atTop = window.scrollY < 8;
+      setPosition((prev) => (prev.overHero === overHero && prev.atTop === atTop ? prev : { overHero, atTop }));
     };
     const onScroll = () => {
       if (!frame) frame = window.requestAnimationFrame(update);
@@ -53,7 +58,7 @@ const useOverHero = (enabled: boolean) => {
       if (frame) window.cancelAnimationFrame(frame);
     };
   }, [enabled]);
-  return overHero;
+  return position;
 };
 
 export const Header: React.FC = () => {
@@ -63,7 +68,7 @@ export const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
-  const overHero = useOverHero(isLanding);
+  const { overHero, atTop } = useHeaderPosition(isLanding);
 
   // Arriving on `/#id` from another route: scroll to that section once it exists (retries briefly while the page renders).
   useEffect(() => {
@@ -108,8 +113,9 @@ export const Header: React.FC = () => {
 
   const closeMenu = () => setMenuOpen(false);
   const isDark = theme === 'dark';
-  // Ink tone over the hero; once scrolled (or with the menu open) the solid page tone.
-  const inkTone = overHero && !menuOpen;
+  // Transparent ink over the top of the hero; solid ink while the hero scrolls
+  // under it (or with the menu open there); solid page tone after the hero.
+  const inkTone = overHero && atTop && !menuOpen;
   const logoTone: 'dark' | 'light' = isDark || overHero ? 'dark' : 'light';
 
   /** Link to a section: a real fragment link on `/`, a router link to `/#id` elsewhere. */

@@ -179,7 +179,7 @@ export const HeroOrchestration: React.FC<{ className?: string }> = ({ className 
       ref={rootRef}
       aria-labelledby="hero-orch-summary"
       className={cn(
-        'mm-orch-enter relative flex h-full flex-col overflow-hidden rounded-[18px] border border-mm-line',
+        'relative flex h-full flex-col overflow-hidden rounded-[18px] border border-mm-line',
         !moving && 'mm-orch-paused',
         className
       )}
@@ -196,7 +196,8 @@ export const HeroOrchestration: React.FC<{ className?: string }> = ({ className 
             {moving && <span className="mm-orch-ping absolute inset-0 rounded-full bg-mm-system" />}
             <span className="relative h-2 w-2 rounded-full bg-mm-system" />
           </span>
-          <span className="truncate">{c.title}</span>
+          <span className="truncate sm:hidden">{c.titleShort}</span>
+          <span className="hidden truncate sm:inline">{c.title}</span>
         </p>
         <div className="flex shrink-0 items-center gap-1">
           <span className="mm-dev-badge">{c.devBadge}</span>
@@ -237,9 +238,9 @@ export const HeroOrchestration: React.FC<{ className?: string }> = ({ className 
             />
           </span>
           <div className="min-w-0 md:absolute md:left-0 md:right-2 md:top-[calc(50%+2.25rem)]">
-            <p className="mm-data flex items-baseline gap-2 text-mm-muted">
-              {c.patientLabel}
+            <p className="mm-data flex flex-wrap items-baseline gap-x-2 text-mm-muted">
               <span className="text-mm-ink">{c.patientTime}</span>
+              <span>{c.patientLabel}</span>
             </p>
             <p className="mt-0.5 text-[13px] leading-snug text-mm-body">{c.patientDetail}</p>
           </div>

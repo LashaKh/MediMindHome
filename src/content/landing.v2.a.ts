@@ -56,6 +56,7 @@ export const orchestrationContent = {
   summary:
     'Illustration: one patient arrives and seven departments each receive a prepared step. Triage, laboratory, imaging, pharmacy, beds, billing and the ministry form each wait for a person to sign before anything happens.',
   title: 'One arrival, seven departments',
+  titleShort: 'One arrival',
   devBadge: 'In development',
   patientLabel: 'Patient arrives',
   patientDetail: 'Emergency, chest pain',

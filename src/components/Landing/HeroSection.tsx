@@ -42,16 +42,17 @@ export const HeroSection: React.FC = () => (
     <div className="relative">
       <p className="mm-eyebrow">{c.eyebrow}</p>
       <h1 id="hero-title" className="mm-display mt-5 md:mt-6">
+        {/* One sentence per balanced block: no stranded words at any width. */}
         {c.titleLines.map((line, i) => (
           <React.Fragment key={line}>
             {i > 0 && ' '}
-            <span className="lg:block">{line}</span>
+            <span className="block">{line}</span>
           </React.Fragment>
         ))}
       </h1>
 
-      <div className="mt-7 grid gap-y-12 md:mt-10 lg:mt-10 lg:grid-cols-12 lg:gap-x-12">
-        <div className="flex flex-col lg:col-span-4">
+      <div className="mt-7 grid grid-cols-1 gap-y-12 md:mt-10 lg:mt-10 lg:grid-cols-12 lg:gap-x-12">
+        <div className="flex min-w-0 flex-col lg:col-span-4">
           <p className="mm-lead max-w-[34rem] text-mm-body">{c.sub}</p>
           <div className="mt-8 flex flex-col items-stretch gap-2 sm:flex-row sm:items-center sm:gap-6 lg:flex-col lg:items-start lg:gap-3">
             <ButtonLink
@@ -68,7 +69,7 @@ export const HeroSection: React.FC = () => (
           <Honesty className="mt-auto hidden max-w-[22rem] pt-10 lg:flex" />
         </div>
 
-        <div className="lg:col-span-8">
+        <div className="min-w-0 lg:col-span-8">
           <div className={visualBox}>
             <Suspense fallback={<div className="h-full rounded-[18px] border border-mm-line" />}>
               <HeroOrchestration />

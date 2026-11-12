@@ -29,10 +29,10 @@ export const contactEmail = 'team@medimind.md';
 
 /**
  * The one primary call to action, repeated across the page.
- * `href` is the on-page contact section. The label is the copy deck's
- * approved wording (06-copy-deck.md, Part 3).
+ * `href` is the on-page contact section. The label follows
+ * direction v2 (09-DIRECTION-V2.md).
  */
 export const primaryCta: CtaLink = {
-  label: 'Get my 90-day plan · 30 min',
+  label: 'Book a founder call · 30 min',
   href: '#contact',
 };

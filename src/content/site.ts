@@ -18,15 +18,21 @@ export const showCustomerName = false;
  */
 export const showFoundingPlaces = true;
 
+/**
+ * When true the vision section shows the short case from Dr. Khoshtaria's
+ * practice. On in the preview build; he confirms every fact before go-live.
+ */
+export const showPracticeCase = true;
+
 /** Public contact address. */
 export const contactEmail = 'team@medimind.md';
 
 /**
  * The one primary call to action, repeated across the page.
- * `href` is the on-page contact section. The label is the master brief's
- * working label; the copy deck may replace it.
+ * `href` is the on-page contact section. The label is the copy deck's
+ * approved wording (06-copy-deck.md, Part 3).
  */
 export const primaryCta: CtaLink = {
-  label: 'Plan my evaluation · 30 min',
+  label: 'Get my 90-day plan · 30 min',
   href: '#contact',
 };

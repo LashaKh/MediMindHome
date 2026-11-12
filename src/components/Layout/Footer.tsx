@@ -1,46 +1,53 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { MediMindLogo } from '../ui/MediMindLogo';
-import { footer } from '../../content/landing.trust';
+import { footerV2 as footer } from '../../content/landing.v2.lane-d';
+import { dDisplay, dEdge, dMono } from '../Landing/laneD.styles';
+import { cn } from '../../utils/cn';
 
 const linkClass =
-  'inline-flex min-h-[44px] items-center text-mm-link underline-offset-4 transition-colors hover:text-mm-ink hover:underline';
+  'inline-flex min-h-[44px] items-center text-mm-body underline-offset-4 transition-colors hover:text-mm-ink hover:underline';
 
+/**
+ * Footer: the ink canvas continues from #contact, so the page ends in one
+ * night. The company line in the display voice, the FHIR line in the
+ * system voice, four links (44px targets), copyright.
+ */
 export const Footer: React.FC = () => (
-  <footer className="mm-tone-white border-t border-mm-line bg-mm-surface py-10">
-    <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-4 sm:px-6 md:flex-row md:items-start md:justify-between lg:px-8">
-      <div className="flex items-start gap-3">
-        <MediMindLogo variant="icon" size="sm" />
+  <footer className="mm-tone-navy bg-mm-surface text-mm-body">
+    <div className={cn(dEdge, 'border-t border-mm-line py-12 md:py-16')}>
+      <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
         <div>
-          <p className="mm-caption font-semibold text-mm-ink">{footer.line}</p>
-          <p className="mm-caption">{footer.secondLine}</p>
+          <MediMindLogo variant="icon" size="sm" tone="dark" />
+          <p className={cn(dDisplay, 'mt-6 text-[1.75rem] leading-tight text-mm-ink md:text-[2.25rem]')}>{footer.line}</p>
+          <p className={cn(dMono, 'mt-2 text-mm-muted')}>{footer.secondLine}</p>
         </div>
-      </div>
-      <div className="md:text-right">
-        <ul className="mm-caption flex flex-wrap gap-x-6 md:justify-end">
-          {footer.links.map((link) => {
-            const external = /^https?:\/\//.test(link.href);
-            return (
-              <li key={link.label}>
-                {link.href.startsWith('/') ? (
-                  <Link to={link.href} className={linkClass}>
-                    {link.label}
-                  </Link>
-                ) : (
-                  <a
-                    href={link.href}
-                    className={linkClass}
-                    target={external ? '_blank' : undefined}
-                    rel={external ? 'noopener noreferrer' : undefined}
-                  >
-                    {link.label}
-                  </a>
-                )}
-              </li>
-            );
-          })}
-        </ul>
-        <p className="mm-caption mt-2">{footer.copyright(new Date().getFullYear())}</p>
+        <nav aria-label="Footer">
+          <ul className="flex flex-wrap gap-x-6 text-[0.9375rem] md:justify-end">
+            {footer.links.map((link) => {
+              const external = /^https?:\/\//.test(link.href);
+              return (
+                <li key={link.label}>
+                  {link.href.startsWith('/') ? (
+                    <Link to={link.href} className={linkClass}>
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className={linkClass}
+                      target={external ? '_blank' : undefined}
+                      rel={external ? 'noopener noreferrer' : undefined}
+                    >
+                      {link.label}
+                    </a>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+          <p className="mm-caption mt-3 md:text-right">{footer.copyright(new Date().getFullYear())}</p>
+        </nav>
       </div>
     </div>
   </footer>

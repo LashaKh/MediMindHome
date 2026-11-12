@@ -102,8 +102,11 @@ interface ScopingFormProps {
   backHref: string;
 }
 
+// Tone-aware: works on the ink canvas (#contact, /request-demo) and on light tones.
 const inputClass =
-  'block min-h-[48px] w-full scroll-mt-28 rounded-md border bg-mm-page px-3 py-2 text-[1rem] text-mm-ink placeholder:text-mm-muted md:text-[1.0625rem]';
+  'block min-h-[48px] w-full scroll-mt-28 rounded-[6px] border bg-transparent px-3.5 py-2.5 text-[1rem] text-mm-ink placeholder:text-mm-muted transition-colors hover:border-mm-ink focus:border-mm-accent focus-visible:outline-offset-1 md:text-[1.0625rem]';
+// The panel the form and its result sit on: a quiet lifted surface with a hairline edge.
+const panelClass = 'relative rounded-[10px] border border-mm-line bg-white/[0.035] p-5 sm:p-8';
 
 export const ScopingForm: React.FC<ScopingFormProps> = ({ location, backHref }) => {
   const uid = useId();
@@ -199,8 +202,8 @@ export const ScopingForm: React.FC<ScopingFormProps> = ({ location, backHref }) 
   if (done) {
     const copy = done.mode === 'deck' ? successCopy.deck : successCopy.call;
     return (
-      <div className="rounded-lg border border-mm-line bg-mm-page p-6 sm:p-8">
-        <h3 ref={successRef} tabIndex={-1} className="mm-h2 scroll-mt-28 focus:outline-none">
+      <div className={panelClass}>
+        <h3 ref={successRef} tabIndex={-1} className="mm-h2 scroll-mt-28 text-balance focus:outline-none">
           {copy.title(done.firstName)}
         </h3>
         <p className="mm-lead mt-4">{copy.body}</p>
@@ -222,7 +225,7 @@ export const ScopingForm: React.FC<ScopingFormProps> = ({ location, backHref }) 
       onSubmit={onSubmit}
       onFocus={markStarted}
       aria-labelledby={mode === 'deck' ? id('deck-title') : undefined}
-      className="relative rounded-lg border border-mm-line bg-mm-page p-5 sm:p-8"
+      className={panelClass}
     >
       {mode === 'deck' && (
         <div className="mb-6">
@@ -254,7 +257,7 @@ export const ScopingForm: React.FC<ScopingFormProps> = ({ location, backHref }) 
           };
           return (
             <div key={field.name} className={half ? '' : 'sm:col-span-2'}>
-              <label htmlFor={id(field.name)} className="mm-body block font-semibold text-mm-ink">
+              <label htmlFor={id(field.name)} className="block text-[0.9375rem] font-semibold leading-snug text-mm-ink md:text-[1rem]">
                 {field.label}
               </label>
               {field.helper && (

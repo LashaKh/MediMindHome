@@ -174,7 +174,7 @@ export const formFields: FieldCopy[] = [
   {
     name: 'email',
     label: 'Work email',
-    placeholder: 'name@hospital.ge',
+    placeholder: 'name@hospital.org',
     helper: 'We send the two time options here.',
     required: true,
     max: 200,
@@ -184,7 +184,7 @@ export const formFields: FieldCopy[] = [
   {
     name: 'phone',
     label: 'Phone (optional)',
-    placeholder: '+995 5XX XX XX XX',
+    placeholder: 'With country code',
     helper: 'Only if you prefer a call to an email.',
     required: false,
     max: 40,
@@ -195,7 +195,7 @@ export const formFields: FieldCopy[] = [
   {
     name: 'useCase',
     label: 'What is the biggest problem you want fixed? (optional)',
-    placeholder: 'For example: claims coming back from the state programme',
+    placeholder: 'For example: claims coming back from insurers',
     helper: 'One line is enough.',
     required: false,
     max: 200,
@@ -229,7 +229,7 @@ export const formErrors = {
     jobTitle: 'Enter your role.',
     email: 'Enter your work email.',
   } as Partial<Record<FieldName, string>>,
-  emailFormat: 'Check your email address. It should look like name@hospital.ge.',
+  emailFormat: 'Check your email address. It should look like name@hospital.org.',
   phoneFormat: 'Check the phone number, or leave it empty.',
   tooLong: 'This is longer than the form accepts. Please shorten it.',
   summary: 'Please fix the marked fields.',

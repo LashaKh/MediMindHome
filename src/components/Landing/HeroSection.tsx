@@ -1,73 +1,82 @@
-import React from 'react';
-import { Check } from 'lucide-react';
-import { SectionShell, BrowserFrame, ButtonLink } from '../ui';
+import React, { Suspense, lazy } from 'react';
+import { SectionShell, ButtonLink } from '../ui';
 import { primaryCta } from '../../content/site';
-import { heroContent as c } from '../../content/landing.top';
+import { heroContent as c } from '../../content/landing.v2.a';
 import { trackLanding } from '../../lib/tracking';
 
+// The visual loads after the words: the headline, sub and button paint first.
+const HeroOrchestration = lazy(() => import('./HeroOrchestration'));
+
 /**
- * Hero: the page's only h1. Words lead, the product follows.
+ * Hero: the page's only h1, on the ink canvas in both themes. The header is
+ * transparent over it (MainLayout adds no top offset on `/`).
  *
- * Desktop: the headline runs across the grid; under it, the sub and the button
- * on the left (7 of 12 columns) and the three benefits on the right; the
- * product screen spans the grid underneath and is visible above the fold.
- * Phone: pre-headline, headline, sub and button fill the first screen;
- * the trust line, benefits and screen follow.
- * Keep id="hero": the sticky phone bar watches it.
+ * Desktop (lg+): eyebrow and the two-sentence headline across the grid; under
+ * it the sub, buttons and honesty line on the left (4 of 12) and the living
+ * hospital on the right (8 of 12).
+ * Tablet and phone: words first, the visual under them, the honesty line under
+ * the visual. On a phone the first screen holds headline, sub and button.
+ * The visual's box has a fixed height per breakpoint, so neither the lazy load
+ * nor the animation moves anything.
+ * Keep id="hero": the header and the sticky phone bar watch it.
  */
+const visualBox = 'h-[604px] md:h-[500px]';
+
+const Honesty: React.FC<{ className?: string }> = ({ className }) => (
+  <p className={`mm-caption flex gap-2.5 ${className ?? ''}`}>
+    <span aria-hidden="true" className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full border border-dashed border-mm-system" />
+    <span className="[text-wrap:pretty]">{c.honesty}</span>
+  </p>
+);
+
 export const HeroSection: React.FC = () => (
   <SectionShell
     id="hero"
-    tone="white"
+    tone="navy"
     labelledBy="hero-title"
-    className="pb-16 pt-8 md:pb-20 md:pt-12 lg:pb-24 lg:pt-10"
+    className="overflow-hidden pb-16 pt-24 md:pb-20 md:pt-32 lg:pb-16 lg:pt-[6.5rem]"
   >
-    <div className="grid gap-y-8 lg:grid-cols-12 lg:gap-x-16 lg:gap-y-8">
-      <div className="lg:col-span-12">
-        <p className="text-base font-semibold text-mm-muted [text-wrap:balance] md:text-[17px]">{c.preHeadline}</p>
-        <h1 id="hero-title" className="mm-display mt-4 max-w-[20ch] [text-wrap:balance] md:mt-5">
-          {c.title}{' '}
-          <span className="mm-accent-text">{c.accent}</span>
-          {c.end}
-        </h1>
-      </div>
+    {/* The plane the hospital runs on: a faint grid, strongest behind the visual. */}
+    <div aria-hidden="true" className="mm-hero-plane pointer-events-none absolute inset-0" />
 
-      <div className="lg:col-span-7">
-        <p className="mm-lead max-w-[38rem] [text-wrap:pretty]">{c.sub}</p>
-        <div className="mt-7 flex flex-col items-start gap-2.5">
-          <ButtonLink
-            href={primaryCta.href}
-            className="w-full sm:w-auto"
-            onClick={() => trackLanding('cta_click', { location: 'hero' })}
-          >
-            {primaryCta.label}
-          </ButtonLink>
-          <p className="mm-caption [text-wrap:balance]">{c.underButton}</p>
-        </div>
-        <p className="mm-caption mt-5 max-w-[38rem] font-semibold text-mm-body [text-wrap:balance]">
-          {c.trust}
-        </p>
-      </div>
-
-      {/* On desktop the list stretches to the left column's height, so its top and bottom hairlines line up with the sub and the trust line. */}
-      <ul className="flex flex-col lg:col-span-5">
-        {c.benefits.map((benefit) => (
-          <li key={benefit} className="mm-body flex items-center border-t border-mm-line py-3.5 last:border-b lg:flex-1">
-            <span className="flex gap-3">
-              <Check className="mt-1 h-5 w-5 shrink-0 text-mm-accent" strokeWidth={2.25} aria-hidden="true" />
-              <span className="[text-wrap:pretty]">{benefit}</span>
-            </span>
-          </li>
+    <div className="relative">
+      <p className="mm-eyebrow">{c.eyebrow}</p>
+      <h1 id="hero-title" className="mm-display mt-5 md:mt-6">
+        {c.titleLines.map((line, i) => (
+          <React.Fragment key={line}>
+            {i > 0 && ' '}
+            <span className="lg:block">{line}</span>
+          </React.Fragment>
         ))}
-      </ul>
-    </div>
+      </h1>
 
-    {/* Phones: the full screen would shrink to 140px and be unreadable, so the frame shows its left part at a readable size (fixed height, no layout shift). */}
-    <BrowserFrame
-      image={c.image}
-      priority
-      caption={c.imageCaption}
-      className="mt-12 md:mt-14 lg:mt-10 max-md:[&_img]:h-[240px] max-md:[&_img]:w-auto max-md:[&_img]:max-w-none"
-    />
+      <div className="mt-7 grid gap-y-12 md:mt-10 lg:mt-10 lg:grid-cols-12 lg:gap-x-12">
+        <div className="flex flex-col lg:col-span-4">
+          <p className="mm-lead max-w-[34rem] text-mm-body">{c.sub}</p>
+          <div className="mt-8 flex flex-col items-stretch gap-2 sm:flex-row sm:items-center sm:gap-6 lg:flex-col lg:items-start lg:gap-3">
+            <ButtonLink
+              href={primaryCta.href}
+              className="whitespace-nowrap"
+              onClick={() => trackLanding('cta_click', { location: 'hero' })}
+            >
+              {primaryCta.label}
+            </ButtonLink>
+            <a href={c.secondary.href} className="btn-quiet self-center sm:self-auto lg:self-start">
+              {c.secondary.label}
+            </a>
+          </div>
+          <Honesty className="mt-auto hidden max-w-[22rem] pt-10 lg:flex" />
+        </div>
+
+        <div className="lg:col-span-8">
+          <div className={visualBox}>
+            <Suspense fallback={<div className="h-full rounded-[18px] border border-mm-line" />}>
+              <HeroOrchestration />
+            </Suspense>
+          </div>
+          <Honesty className="mt-5 max-w-[40rem] lg:hidden" />
+        </div>
+      </div>
+    </div>
   </SectionShell>
 );

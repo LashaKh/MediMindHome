@@ -5,22 +5,56 @@ import { MediMindLogo } from '../ui/MediMindLogo';
 import { buttonClass } from '../ui';
 import { useTheme } from '../../hooks/useTheme';
 import { primaryCta } from '../../content/site';
-import { headerContent } from '../../content/landing.top';
+import { headerContent } from '../../content/landing.v2.a';
 import { cn } from '../../utils/cn';
 import { trackLanding } from '../../lib/tracking';
 
 /**
  * Site header: logo, five section links, the primary button, theme toggle and
- * a phone menu. Quiet on purpose: solid background and one hairline, no blur,
- * no shadow, no entrance animation.
+ * a phone menu.
  *
- * On `/` the links are plain fragment links (#problem), so the browser scrolls
+ * Over the hero (the ink canvas) it is transparent and takes the ink tone, so
+ * the hero reads as one uninterrupted screen. Once the hero has scrolled under
+ * it, it turns solid with one hairline in the page tone (white in the light
+ * theme, ink in the dark theme). No blur, no shadow, no entrance animation.
+ *
+ * On `/` the links are plain fragment links (#belief), so the browser scrolls
  * and the sections' scroll-margin keeps the heading clear of this bar. On any
  * other route they go to `/#id`, and the effect below scrolls once the landing
  * page has rendered.
  */
 const navLinkClass =
-  'inline-flex min-h-[44px] items-center whitespace-nowrap rounded-md px-3 text-[15px] font-semibold text-mm-body transition-colors hover:text-mm-ink';
+  'inline-flex min-h-[44px] items-center whitespace-nowrap rounded-md px-3 text-[15px] font-medium text-mm-body transition-colors duration-150 hover:text-mm-ink';
+
+/** True while the landing hero is still under the header. */
+const useOverHero = (enabled: boolean) => {
+  const [overHero, setOverHero] = useState(enabled);
+  useEffect(() => {
+    if (!enabled) {
+      setOverHero(false);
+      return;
+    }
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const hero = document.getElementById('hero');
+      const headerHeight = window.innerWidth >= 768 ? 80 : 64;
+      setOverHero(hero ? hero.getBoundingClientRect().bottom > headerHeight : false);
+    };
+    const onScroll = () => {
+      if (!frame) frame = window.requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
+  }, [enabled]);
+  return overHero;
+};
 
 export const Header: React.FC = () => {
   const location = useLocation();
@@ -29,6 +63,7 @@ export const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
+  const overHero = useOverHero(isLanding);
 
   // Arriving on `/#id` from another route: scroll to that section once it exists (retries briefly while the page renders).
   useEffect(() => {
@@ -61,7 +96,7 @@ export const Header: React.FC = () => {
       }
     };
     const onResize = () => {
-      if (window.matchMedia('(min-width: 1280px)').matches) setMenuOpen(false);
+      if (window.matchMedia('(min-width: 1024px)').matches) setMenuOpen(false);
     };
     document.addEventListener('keydown', onKey);
     window.addEventListener('resize', onResize);
@@ -73,6 +108,9 @@ export const Header: React.FC = () => {
 
   const closeMenu = () => setMenuOpen(false);
   const isDark = theme === 'dark';
+  // Ink tone over the hero; once scrolled (or with the menu open) the solid page tone.
+  const inkTone = overHero && !menuOpen;
+  const logoTone: 'dark' | 'light' = isDark || overHero ? 'dark' : 'light';
 
   /** Link to a section: a real fragment link on `/`, a router link to `/#id` elsewhere. */
   const sectionLink = (hash: string, className: string, children: React.ReactNode, onClick?: () => void) =>
@@ -92,26 +130,33 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <header className="mm-tone-white fixed inset-x-0 top-0 z-50 border-b border-mm-line bg-mm-surface">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6 md:h-20 lg:px-8">
+    <header
+      className={cn(
+        'fixed inset-x-0 top-0 z-50 border-b transition-colors duration-200',
+        inkTone
+          ? 'mm-tone-navy border-transparent bg-transparent'
+          : overHero
+            ? 'mm-tone-navy border-mm-line bg-mm-surface'
+            : 'mm-tone-white border-mm-line bg-mm-surface'
+      )}
+    >
+      <div className="mx-auto flex h-16 max-w-page items-center justify-between gap-4 px-4 sm:px-6 md:h-20 lg:px-8">
         <Link to="/" className="flex shrink-0 items-center rounded-md" aria-label={headerContent.logoLabel}>
-          <MediMindLogo variant="horizontal" size="md" />
+          <MediMindLogo variant="horizontal" size="md" tone={logoTone} />
         </Link>
 
-        <nav aria-label={headerContent.navLabel} className="hidden xl:block">
-          <ul className="flex items-center gap-1">
+        <nav aria-label={headerContent.navLabel} className="hidden lg:block">
+          <ul className="flex items-center gap-0.5">
             {headerContent.nav.map((item) => (
-              <li key={item.id}>
-                {sectionLink(`#${item.id}`, navLinkClass, item.label)}
-              </li>
+              <li key={item.id}>{sectionLink(`#${item.id}`, navLinkClass, item.label)}</li>
             ))}
           </ul>
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5">
           {sectionLink(
             primaryCta.href,
-            cn(buttonClass('primary'), 'hidden min-h-[44px] whitespace-nowrap px-5 text-[15px] md:inline-flex'),
+            cn(buttonClass('primary'), 'hidden min-h-[44px] whitespace-nowrap px-4 text-[15px] md:inline-flex'),
             primaryCta.label,
             onCtaClick
           )}
@@ -121,7 +166,7 @@ export const Header: React.FC = () => {
             aria-label={isDark ? headerContent.themeToLightLabel : headerContent.themeToDarkLabel}
             className="inline-flex h-11 w-11 items-center justify-center rounded-md text-mm-body transition-colors hover:bg-mm-tint hover:text-mm-ink"
           >
-            {isDark ? <Sun className="h-5 w-5" aria-hidden="true" /> : <Moon className="h-5 w-5" aria-hidden="true" />}
+            {isDark ? <Sun className="h-[18px] w-[18px]" aria-hidden="true" /> : <Moon className="h-[18px] w-[18px]" aria-hidden="true" />}
           </button>
           <button
             ref={menuButtonRef}
@@ -130,7 +175,7 @@ export const Header: React.FC = () => {
             aria-expanded={menuOpen}
             aria-controls="site-menu"
             aria-label={menuOpen ? headerContent.menuCloseLabel : headerContent.menuOpenLabel}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-md text-mm-ink transition-colors hover:bg-mm-tint xl:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-md text-mm-ink transition-colors hover:bg-mm-tint lg:hidden"
           >
             {menuOpen ? <X className="h-6 w-6" aria-hidden="true" /> : <Menu className="h-6 w-6" aria-hidden="true" />}
           </button>
@@ -141,22 +186,22 @@ export const Header: React.FC = () => {
         <div
           id="site-menu"
           ref={menuRef}
-          className="absolute inset-x-0 top-full max-h-[calc(100dvh-4rem)] overflow-y-auto border-b border-mm-line bg-mm-surface xl:hidden"
+          className="absolute inset-x-0 top-full max-h-[calc(100dvh-4rem)] overflow-y-auto border-b border-mm-line bg-mm-surface lg:hidden"
         >
-          <nav aria-label={headerContent.navLabel} className="mx-auto max-w-6xl px-4 pb-6 pt-2 sm:px-6">
+          <nav aria-label={headerContent.navLabel} className="mx-auto max-w-page px-4 pb-6 pt-1 sm:px-6">
             <ul className="divide-y divide-mm-line">
               {headerContent.nav.map((item) => (
                 <li key={item.id}>
                   {sectionLink(
                     `#${item.id}`,
-                    '-mx-2 flex min-h-[52px] items-center rounded-md px-2 text-[17px] font-semibold text-mm-ink',
+                    '-mx-2 flex min-h-[56px] items-center rounded-md px-2 font-display text-[26px] leading-none tracking-[-0.02em] text-mm-ink',
                     item.label,
                     closeMenu
                   )}
                 </li>
               ))}
             </ul>
-            <div className="mt-4">
+            <div className="mt-5">
               {sectionLink(primaryCta.href, buttonClass('primary', true), primaryCta.label, onCtaClick)}
             </div>
           </nav>

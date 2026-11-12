@@ -545,6 +545,195 @@
           "bytes": 2380
         }
       ]
+    },
+    {
+      "id": "warehouse-stock",
+      "section": "example-warehouse",
+      "alt": "MediMind warehouse stock list filtered to low stock: item codes, quantities with low counts in red, prices, units, expiry dates with days remaining and batch series. Demo data.",
+      "width": 2000,
+      "height": 1018,
+      "aspectRatio": "2000 / 1018",
+      "fallback": "/landing/warehouse-stock-1400.jpg",
+      "avif": "/landing/warehouse-stock-800.avif 800w, /landing/warehouse-stock-1400.avif 1400w, /landing/warehouse-stock-2000.avif 2000w",
+      "webp": "/landing/warehouse-stock-800.webp 800w, /landing/warehouse-stock-1400.webp 1400w, /landing/warehouse-stock-2000.webp 2000w",
+      "sizes": "(min-width: 1200px) 1100px, 100vw",
+      "files": [
+        {
+          "file": "/landing/warehouse-stock-800.avif",
+          "format": "avif",
+          "width": 800,
+          "height": 408,
+          "bytes": 14042
+        },
+        {
+          "file": "/landing/warehouse-stock-1400.avif",
+          "format": "avif",
+          "width": 1400,
+          "height": 714,
+          "bytes": 29716
+        },
+        {
+          "file": "/landing/warehouse-stock-2000.avif",
+          "format": "avif",
+          "width": 2000,
+          "height": 1018,
+          "bytes": 42968
+        },
+        {
+          "file": "/landing/warehouse-stock-1400.jpg",
+          "format": "jpg",
+          "width": 1400,
+          "height": 714,
+          "bytes": 142120
+        },
+        {
+          "file": "/landing/warehouse-stock-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 408,
+          "bytes": 25736
+        },
+        {
+          "file": "/landing/warehouse-stock-1400.webp",
+          "format": "webp",
+          "width": 1400,
+          "height": 714,
+          "bytes": 56418
+        },
+        {
+          "file": "/landing/warehouse-stock-2000.webp",
+          "format": "webp",
+          "width": 2000,
+          "height": 1018,
+          "bytes": 91018
+        }
+      ]
+    },
+    {
+      "id": "billing-revenue",
+      "section": "example-billing",
+      "alt": "MediMind revenue report for one month: charges, amounts invoiced to payers, collections received and the outstanding balance, each in lari. Demo data.",
+      "width": 2000,
+      "height": 188,
+      "aspectRatio": "2000 / 188",
+      "fallback": "/landing/billing-revenue-1400.jpg",
+      "avif": "/landing/billing-revenue-800.avif 800w, /landing/billing-revenue-1400.avif 1400w, /landing/billing-revenue-2000.avif 2000w",
+      "webp": "/landing/billing-revenue-800.webp 800w, /landing/billing-revenue-1400.webp 1400w, /landing/billing-revenue-2000.webp 2000w",
+      "sizes": "(min-width: 1200px) 1100px, 100vw",
+      "files": [
+        {
+          "file": "/landing/billing-revenue-800.avif",
+          "format": "avif",
+          "width": 800,
+          "height": 76,
+          "bytes": 2912
+        },
+        {
+          "file": "/landing/billing-revenue-1400.avif",
+          "format": "avif",
+          "width": 1400,
+          "height": 132,
+          "bytes": 7200
+        },
+        {
+          "file": "/landing/billing-revenue-2000.avif",
+          "format": "avif",
+          "width": 2000,
+          "height": 188,
+          "bytes": 6831
+        },
+        {
+          "file": "/landing/billing-revenue-1400.jpg",
+          "format": "jpg",
+          "width": 1400,
+          "height": 132,
+          "bytes": 28865
+        },
+        {
+          "file": "/landing/billing-revenue-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 76,
+          "bytes": 4754
+        },
+        {
+          "file": "/landing/billing-revenue-1400.webp",
+          "format": "webp",
+          "width": 1400,
+          "height": 132,
+          "bytes": 11080
+        },
+        {
+          "file": "/landing/billing-revenue-2000.webp",
+          "format": "webp",
+          "width": 2000,
+          "height": 188,
+          "bytes": 15864
+        }
+      ]
+    },
+    {
+      "id": "os-modules-full",
+      "section": "what-changes",
+      "alt": "MediMind dashboard with every hospital area in one sidebar (staff, clinic operations, clinical settings, nomenclature, financial, warehouse, command center, analytics, system configuration) and module cards. Demo data.",
+      "width": 2000,
+      "height": 1050,
+      "aspectRatio": "2000 / 1050",
+      "fallback": "/landing/os-modules-full-1400.jpg",
+      "avif": "/landing/os-modules-full-800.avif 800w, /landing/os-modules-full-1400.avif 1400w, /landing/os-modules-full-2000.avif 2000w",
+      "webp": "/landing/os-modules-full-800.webp 800w, /landing/os-modules-full-1400.webp 1400w, /landing/os-modules-full-2000.webp 2000w",
+      "sizes": "(min-width: 1200px) 1100px, 100vw",
+      "files": [
+        {
+          "file": "/landing/os-modules-full-800.avif",
+          "format": "avif",
+          "width": 800,
+          "height": 420,
+          "bytes": 8660
+        },
+        {
+          "file": "/landing/os-modules-full-1400.avif",
+          "format": "avif",
+          "width": 1400,
+          "height": 736,
+          "bytes": 19036
+        },
+        {
+          "file": "/landing/os-modules-full-2000.avif",
+          "format": "avif",
+          "width": 2000,
+          "height": 1050,
+          "bytes": 29229
+        },
+        {
+          "file": "/landing/os-modules-full-1400.jpg",
+          "format": "jpg",
+          "width": 1400,
+          "height": 736,
+          "bytes": 83498
+        },
+        {
+          "file": "/landing/os-modules-full-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 420,
+          "bytes": 14366
+        },
+        {
+          "file": "/landing/os-modules-full-1400.webp",
+          "format": "webp",
+          "width": 1400,
+          "height": 736,
+          "bytes": 31358
+        },
+        {
+          "file": "/landing/os-modules-full-2000.webp",
+          "format": "webp",
+          "width": 2000,
+          "height": 1050,
+          "bytes": 49578
+        }
+      ]
     }
   ]
 }

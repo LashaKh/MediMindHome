@@ -41,6 +41,25 @@ export default {
         // ─── Border (theme-aware) ───
         'border-default': 'var(--emr-border-color)',
         'border-subtle': 'var(--emr-border-subtle)',
+
+        // ─── Landing page (v6 deck palette, theme + tone aware) ───
+        // Defined in src/styles/brand-tokens.css. Opacity modifiers
+        // (e.g. bg-mm-ink/50) do NOT work on these — use them solid.
+        mm: {
+          page: 'var(--mm-page)',
+          pale: 'var(--mm-pale)',
+          navy: 'var(--mm-navy)',
+          surface: 'var(--mm-surface)',
+          ink: 'var(--mm-ink)',
+          body: 'var(--mm-body)',
+          muted: 'var(--mm-muted)',
+          accent: 'var(--mm-accent)',
+          link: 'var(--mm-link)',
+          line: 'var(--mm-line)',
+          rule: 'var(--mm-rule)',
+          tint: 'var(--mm-tint)',
+          alert: 'var(--mm-alert)',
+        },
       },
       backgroundImage: {
         // Primary CTA gradient — brandbook light-mode ramp. Kept hardcoded
@@ -80,10 +99,13 @@ export default {
         'surface-page': 'var(--emr-bg-page)',
       },
       fontFamily: {
-        // Display serif — editorial "human" voice (headings, pull-quotes, big numerals).
-        serif: ['"Fraunces Variable"', 'Iowan Old Style', 'Georgia', 'Palatino', 'serif'],
-        // Technical mono — "system" voice (eyebrows, indices, data, thread ticks).
-        mono: ['"IBM Plex Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Consolas', 'monospace'],
+        // Inter only (self-hosted, @font-face in src/index.css). Georgian glyphs
+        // come from Noto Sans Georgian registered under the same "Inter" name.
+        sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Arial', 'sans-serif'],
+        // Fraunces and IBM Plex Mono are retired. These aliases keep older
+        // files that still say font-serif / font-mono on Inter. Do not use.
+        serif: ['Inter', 'system-ui', 'sans-serif'],
+        mono: ['Inter', 'system-ui', 'sans-serif'],
       },
     },
   },

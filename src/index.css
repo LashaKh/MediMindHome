@@ -1,5 +1,27 @@
 @import './styles/brand-tokens.css';
 
+/* ============================================================
+   Inter, self-hosted (same files and registration as the v6
+   hospital deck). Georgian glyphs come from Noto Sans Georgian
+   registered as a second "Inter" face, scaled to Inter's size.
+   ============================================================ */
+@font-face {
+  font-family: Inter;
+  src: url('/fonts/Inter-latin.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Inter;
+  src: url('/fonts/NotoSansGeorgian-georgian.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  size-adjust: 86%;
+  unicode-range: U+0589, U+10A0-10FF, U+1C90-1CBA, U+1CBD-1CBF, U+205A, U+2D00-2D2F, U+2E31;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,14 +38,17 @@
 
   body {
     @apply bg-surface-page text-text antialiased;
-    font-family:
-      -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
-      Arial, 'Noto Sans', 'Noto Sans Georgian', sans-serif,
-      'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    font-size: 16px;
+  }
+  @media (min-width: 768px) {
+    body { font-size: 17px; }
   }
 
+  /* Visible focus everywhere; colour follows the section tone. */
   *:focus-visible {
-    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-surface-page;
+    outline: 3px solid var(--mm-focus);
+    outline-offset: 3px;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -32,51 +57,192 @@
 }
 
 @layer components {
-  /* Brand gradient — light mode default (navy → bright, reads solid on white) */
+  /* ============================================================
+     Landing type scale — three text levels per section:
+       L1  mm-display (hero h1 only) | mm-h2 (section heading) | mm-stat
+       L2  mm-lead (support line)     | mm-h3 (column/card title)
+       L3  mm-body (body)             | mm-eyebrow, mm-caption (labels)
+     Weights: 800 headlines, 600 labels, 400 body.
+     ============================================================ */
+  .mm-display {
+    font-size: 2.25rem;           /* 36px phone */
+    line-height: 1.08;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--mm-ink);
+  }
+  .mm-h2 {
+    font-size: 1.875rem;          /* 30px phone */
+    line-height: 1.12;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--mm-ink);
+  }
+  .mm-h3 {
+    font-size: 1.25rem;           /* 20px phone */
+    line-height: 1.3;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: var(--mm-ink);
+  }
+  .mm-lead {
+    font-size: 1.1875rem;         /* 19px phone */
+    line-height: 1.5;
+    font-weight: 400;
+    color: var(--mm-body);
+  }
+  .mm-body {
+    font-size: 1rem;              /* 16px phone */
+    line-height: 1.6;
+    font-weight: 400;
+    color: var(--mm-body);
+  }
+  .mm-eyebrow {
+    font-size: 0.875rem;          /* 14px */
+    line-height: 1.4;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mm-muted);
+  }
+  .mm-caption {
+    font-size: 0.875rem;          /* 14px */
+    line-height: 1.45;
+    font-weight: 400;
+    color: var(--mm-muted);
+  }
+  .mm-stat {
+    font-size: 3.5rem;            /* 56px phone */
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    font-variant-numeric: tabular-nums;
+    color: var(--mm-ink);
+  }
+  @media (min-width: 768px) {
+    .mm-display { font-size: 3rem; }     /* 48px */
+    .mm-h2      { font-size: 2.25rem; }  /* 36px */
+    .mm-h3      { font-size: 1.375rem; } /* 22px */
+    .mm-lead    { font-size: 1.3125rem; }/* 21px */
+    .mm-body    { font-size: 1.0625rem; }/* 17px */
+    .mm-stat    { font-size: 5rem; }     /* 80px */
+  }
+  @media (min-width: 1024px) {
+    .mm-display { font-size: 3.5rem; }   /* 56px */
+    .mm-h2      { font-size: 2.75rem; }  /* 44px */
+    .mm-stat    { font-size: 6rem; }     /* 96px */
+  }
+  /* The one accent phrase inside a heading (large text only). */
+  .mm-accent-text { color: var(--mm-accent); }
+
+  /* ============================================================
+     Buttons — pills like the deck, no glow. 44px+ targets.
+     Class names kept so the Header keeps working:
+       .btn-luminous = primary, .btn-ghost = secondary,
+       .btn-quiet = text link-button.
+     ============================================================ */
+  .btn-luminous,
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 48px;
+    padding: 0 1.5rem;
+    border-radius: 9999px;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease;
+  }
+  .btn-luminous {
+    background-color: var(--mm-btn-bg);
+    color: var(--mm-btn-fg);
+    border: 1.5px solid var(--mm-btn-bg);
+  }
+  .btn-luminous:hover {
+    background-color: var(--mm-btn-hover);
+    border-color: var(--mm-btn-hover);
+  }
+  .btn-ghost {
+    background-color: transparent;
+    color: var(--mm-ink);
+    border: 1.5px solid var(--mm-ink);
+  }
+  .btn-ghost:hover {
+    background-color: var(--mm-tint);
+  }
+  .btn-quiet {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    min-height: 44px;
+    font-weight: 600;
+    color: var(--mm-link);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+    text-decoration-color: transparent;
+    transition: text-decoration-color 200ms ease;
+  }
+  .btn-quiet:hover {
+    text-decoration-color: currentColor;
+  }
+
+  /* ============================================================
+     Reveal — small fade and rise, once. See ui/reveal.tsx.
+     ============================================================ */
+  .mm-reveal {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 250ms ease-out, transform 250ms ease-out;
+  }
+  .mm-reveal.is-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Brand gradient — still used by /request-demo */
   .brand-gradient {
     background-image: linear-gradient(135deg, #1a365d 0%, #2b6cb0 50%, #3182ce 100%);
   }
-  /* Brand gradient — dark mode (bright → light, pops on dark bg) */
   html.dark .brand-gradient {
     background-image: linear-gradient(135deg, #3182ce 0%, #bee3f8 100%);
   }
-
-  /* Brand gradient on light — hero badges over white surfaces (rare on this site) */
   .brand-gradient-light {
     background-image: linear-gradient(135deg, #1a365d 0%, #2b6cb0 50%, #3182ce 100%);
   }
-
-  /* Inline text with brand gradient — light mode default (navy → bright) */
   .brand-gradient-text {
     background-image: linear-gradient(135deg, #1a365d 0%, #2b6cb0 50%, #3182ce 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
-  /* Inline text with brand gradient — dark mode (bright → light) */
   html.dark .brand-gradient-text {
     background-image: linear-gradient(135deg, #3182ce 0%, #bee3f8 100%);
   }
-
-  /* Hairline divider in brand gradient */
   .brand-divider {
     height: 1px;
     background-image: linear-gradient(90deg, transparent 0%, #3182ce 50%, transparent 100%);
   }
-
-  /* Subtle ring used on cards/badges */
   .brand-ring {
     box-shadow: inset 0 0 0 1px rgba(49, 130, 206, 0.30);
+  }
+
+  /* Older sections' highlight phrase: plain accent ink, no sweep. */
+  .heading-highlight {
+    color: var(--mm-accent);
   }
 }
 
 /* ============================================================
-   Light-mode contrast overrides
+   Light-mode contrast overrides (older pages, e.g. /request-demo)
    ============================================================
    Accent tints (bg-accent/5, border-accent/20, etc.) were tuned
    for dark backgrounds. On white, the low opacities wash out.
-   These rules only apply when html is NOT .dark — dark mode is
-   completely unaffected.
+   These rules only apply when html is NOT .dark.
    ============================================================ */
 html:not(.dark) .bg-accent\/5    { background-color: rgba(49, 130, 206, 0.12); }
 html:not(.dark) .bg-accent\/10   { background-color: rgba(49, 130, 206, 0.18); }
@@ -93,21 +259,16 @@ html:not(.dark) .ring-accent\/20 { --tw-ring-color: rgba(49, 130, 206, 0.45); }
 html:not(.dark) .ring-accent\/30 { --tw-ring-color: rgba(49, 130, 206, 0.55); }
 html:not(.dark) .ring-accent\/40 { --tw-ring-color: rgba(49, 130, 206, 0.65); }
 
-/* Secondary tints — used in eyebrow badges and some accents */
 html:not(.dark) .bg-secondary\/5  { background-color: rgba(43, 108, 176, 0.12); }
 html:not(.dark) .bg-secondary\/10 { background-color: rgba(43, 108, 176, 0.18); }
 html:not(.dark) .border-secondary\/40 { border-color: rgba(43, 108, 176, 0.60); }
 
-/* Card backgrounds — make the /60 opacity actually visible.
-   In dark mode surface-card and surface-page are different colors, so /60
-   shows a clear mid-slate card. In light mode they were both white, so
-   /60 rendered as "white on white". Force solid card bg in light mode. */
 html:not(.dark) .bg-surface-card\/60,
 html:not(.dark) .bg-surface-card\/80 {
   background-color: var(--emr-bg-card);
 }
 
-/* Reduced-motion safety: silence infinite/long-running animations */
+/* Reduced motion: no transitions, no animations, reveals shown at once. */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -117,43 +278,10 @@ html:not(.dark) .bg-surface-card\/80 {
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
-}
-
-/* ============================================================
-   Editorial headings — solid ink + one-shot light sweep
-   ============================================================
-   Highlight phrases are solid ink (no gradient-clip). On first
-   view a single band of brighter light sweeps across the phrase
-   once, then rests at the base color. Reduced-motion: the global
-   kill-switch collapses the animation to its end (uniform ink).
-   ============================================================ */
-.heading-highlight {
-  color: #2b6cb0; /* light mode — secondary */
-}
-html.dark .heading-highlight {
-  color: #bee3f8; /* dark mode — light-accent */
-}
-.heading-highlight.sweep {
-  background-image: linear-gradient(
-    100deg,
-    #2b6cb0 0%, #2b6cb0 42%, #7cc2ff 50%, #2b6cb0 58%, #2b6cb0 100%
-  );
-  background-size: 220% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  animation: heading-sweep 1.15s cubic-bezier(0.22, 1, 0.36, 1) 1 both;
-}
-html.dark .heading-highlight.sweep {
-  background-image: linear-gradient(
-    100deg,
-    #bee3f8 0%, #bee3f8 42%, #ffffff 50%, #bee3f8 58%, #bee3f8 100%
-  );
-}
-@keyframes heading-sweep {
-  from { background-position: 175% 0; }
-  to   { background-position: -55% 0; }
+  .mm-reveal {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* Custom scrollbar */
@@ -172,69 +300,4 @@ html.dark .heading-highlight.sweep {
 }
 .scrollbar-thin::-webkit-scrollbar-thumb:hover {
   background-color: rgba(148, 163, 184, 0.6);
-}
-
-/* ============================================================
-   Hero — technical grid + ECG filament + luminous buttons
-   ============================================================ */
-
-/* Fine engineering grid that fades beneath the lamp light. Lives OUTSIDE the
-   lamp's scale-y-125 wrapper so cells stay square. Colors bypass the accent/*
-   utility remap so both themes read identically. */
-.hero-grid {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    linear-gradient(to right, rgba(49, 130, 206, 0.07) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(49, 130, 206, 0.07) 1px, transparent 1px);
-  background-size: 54px 54px;
-  -webkit-mask-image: radial-gradient(ellipse 60% 46% at 50% 40%, #000 12%, transparent 76%);
-  mask-image: radial-gradient(ellipse 60% 46% at 50% 40%, #000 12%, transparent 76%);
-}
-html:not(.dark) .hero-grid {
-  background-image:
-    linear-gradient(to right, rgba(26, 54, 93, 0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(26, 54, 93, 0.08) 1px, transparent 1px);
-}
-
-/* ECG trace glow + a signal pulse that sweeps the line (CSS → reduced-motion
-   kill-switch stops it automatically). */
-.ecg-line {
-  filter: drop-shadow(0 0 6px rgba(190, 227, 248, 0.95)) drop-shadow(0 0 2px rgba(255, 255, 255, 0.8));
-}
-.ecg-sweep {
-  animation: ecg-sweep 3.2s linear infinite;
-}
-@keyframes ecg-sweep {
-  0%   { left: 0%;   opacity: 0; }
-  10%  { opacity: 1; }
-  90%  { opacity: 1; }
-  100% { left: 100%; opacity: 0; }
-}
-
-/* Luminous button language — squared, brand-gradient, lit edge + glow.
-   Reused across hero, header, and final CTA. */
-.btn-luminous {
-  position: relative;
-  border-radius: 0.5rem;
-  background-image: linear-gradient(135deg, #1a365d 0%, #2b6cb0 50%, #3182ce 100%);
-  color: #fff;
-  box-shadow: inset 0 0 0 1px rgba(190, 227, 248, 0.18), 0 10px 30px -10px rgba(49, 130, 206, 0.75);
-  transition: box-shadow 0.28s ease;
-}
-html.dark .btn-luminous {
-  background-image: linear-gradient(135deg, #2b6cb0 0%, #3182ce 60%, #4c9fe0 100%);
-}
-.btn-luminous:hover {
-  box-shadow: inset 0 0 0 1px rgba(190, 227, 248, 0.4), 0 14px 36px -8px rgba(49, 130, 206, 0.95);
-}
-.btn-ghost {
-  border-radius: 0.5rem;
-  border: 1px solid rgba(49, 130, 206, 0.35);
-  transition: border-color 0.28s ease, background-color 0.28s ease;
-}
-.btn-ghost:hover {
-  border-color: rgba(49, 130, 206, 0.7);
-  background-color: rgba(49, 130, 206, 0.08);
 }

@@ -1,33 +1,35 @@
 import { create } from 'zustand';
 
+type Theme = 'light' | 'dark';
+
 interface ThemeState {
-  theme: 'light' | 'dark';
+  theme: Theme;
   toggleTheme: () => void;
 }
 
-// Initialize theme from localStorage or default to dark
-const getInitialTheme = (): 'light' | 'dark' => {
-  const savedTheme = localStorage.getItem('theme') as 'light' | 'dark';
-  return savedTheme || 'dark';
+/** Stored choice from the toggle, else light (the default). Storage can throw in private mode. */
+export const readStoredTheme = (): Theme => {
+  try {
+    return localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
+  } catch {
+    return 'light';
+  }
 };
 
-// Initialize dark mode on document
-const initializeTheme = () => {
-  const theme = getInitialTheme();
-  if (theme === 'dark') {
-    document.documentElement.classList.add('dark');
-  } else {
-    document.documentElement.classList.remove('dark');
-  }
-  return theme;
+const applyTheme = (theme: Theme) => {
+  document.documentElement.classList.toggle('dark', theme === 'dark');
 };
 
 export const useTheme = create<ThemeState>((set) => ({
-  theme: initializeTheme(),
+  theme: readStoredTheme(),
   toggleTheme: () => set((state) => {
-    const newTheme = state.theme === 'light' ? 'dark' : 'light';
-    document.documentElement.classList.toggle('dark');
-    localStorage.setItem('theme', newTheme);
+    const newTheme: Theme = state.theme === 'light' ? 'dark' : 'light';
+    applyTheme(newTheme);
+    try {
+      localStorage.setItem('theme', newTheme);
+    } catch {
+      // Storage unavailable (private mode): the choice lasts for this visit only.
+    }
     return { theme: newTheme };
   }),
 }));

@@ -1,42 +1,69 @@
 import React from 'react';
 import { cn } from '../../utils/cn';
+import type { SectionTone } from '../../content/types';
 
-type Variant = 'light' | 'dark' | 'gradient' | 'transparent';
+/**
+ * Section wrapper: full-width band with a tone and a fixed content grid.
+ * The tone re-points the text tokens (text-mm-ink etc.), so the same
+ * markup reads correctly on white, pale and navy.
+ *
+ *   <SectionShell id="problem" tone="pale" labelledBy="problem-title">
+ *     <SectionHeading as="h2" id="problem-title" title="…" />
+ *   </SectionShell>
+ */
+type LegacyVariant = 'light' | 'dark' | 'gradient' | 'transparent';
 
 interface SectionShellProps {
   id: string;
-  variant?: Variant;
-  /** Retained for API compatibility. Ambient blobs were removed in the redesign. */
-  ambient?: boolean;
+  tone?: SectionTone;
+  /** id of the section's heading, for aria-labelledby. */
+  labelledBy?: string;
+  /** Narrow column for reading-heavy sections (FAQ, privacy). */
+  narrow?: boolean;
   className?: string;
   innerClassName?: string;
   children: React.ReactNode;
+  /** @deprecated older sections only; use `tone`. */
+  variant?: LegacyVariant;
+  /** @deprecated no effect. */
+  ambient?: boolean;
 }
 
-const variantClasses: Record<Variant, string> = {
-  light: 'bg-white text-slate-900',
-  dark: 'bg-surface-page text-text',
-  gradient: 'bg-gradient-to-b from-surface-page via-surface-section to-surface-page text-text',
-  transparent: 'text-text',
+const legacyTone: Record<LegacyVariant, SectionTone> = {
+  light: 'white',
+  dark: 'white',
+  gradient: 'pale',
+  transparent: 'white',
 };
 
 export const SectionShell: React.FC<SectionShellProps> = ({
   id,
-  variant = 'transparent',
+  tone,
+  labelledBy,
+  narrow = false,
   className,
   innerClassName,
   children,
+  variant,
 }) => {
+  const resolved = tone ?? (variant ? legacyTone[variant] : 'white');
   return (
     <section
       id={id}
+      aria-labelledby={labelledBy}
       className={cn(
-        'relative overflow-hidden py-20 sm:py-24 md:py-28 lg:py-32',
-        variantClasses[variant],
+        `mm-tone-${resolved}`,
+        'relative scroll-mt-16 bg-mm-surface py-16 text-mm-body md:scroll-mt-20 md:py-24 lg:py-28',
         className
       )}
     >
-      <div className={cn('relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8', innerClassName)}>
+      <div
+        className={cn(
+          'mx-auto w-full px-4 sm:px-6 lg:px-8',
+          narrow ? 'max-w-3xl' : 'max-w-6xl',
+          innerClassName
+        )}
+      >
         {children}
       </div>
     </section>

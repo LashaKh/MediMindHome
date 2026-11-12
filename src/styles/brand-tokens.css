@@ -6,9 +6,76 @@
    Import once in your app's root stylesheet, then use
    var(--emr-primary) etc. throughout.
 
-   Version: 1.0
-   Last updated: 2026-04-18
+   Version: 1.1
+   Last updated: 2026-11-12
    ============================================================ */
+
+/* ============================================================
+   LANDING PAGE TOKENS (--mm-*) — the v6 hospital deck palette
+   ============================================================
+   Use these (Tailwind: bg-mm-*, text-mm-*, border-mm-*) for the
+   landing page. Tone classes (.mm-tone-white / -pale / -navy, set
+   by <SectionShell tone>) re-point the text tokens per section, so
+   text-mm-ink is navy on white and white on the navy section.
+   AA contrast checked in both themes. --mm-accent passes AA only
+   at large sizes (headline accent phrase, big stat, rules); small
+   accent text uses --mm-link.
+   ============================================================ */
+:root {
+  --mm-page:     #ffffff;  /* page and white sections */
+  --mm-pale:     #f1f5fb;  /* pale sections */
+  --mm-navy:     #0f1f3a;  /* navy "punch" sections */
+  --mm-surface:  var(--mm-page); /* current section background (set by tone) */
+  --mm-ink:      #1a365d;  /* headlines, titles */
+  --mm-body:     #334155;  /* body text */
+  --mm-muted:    #55657a;  /* eyebrows, captions, source lines (deck #64748b, darkened for AA on pale) */
+  --mm-accent:   #3182ce;  /* ONE accent phrase per heading, big stat, icons; large text only */
+  --mm-link:     #2b6cb0;  /* small accent text, text links */
+  --mm-line:     #e2e8f0;  /* hairlines, frame borders */
+  --mm-rule:     #0f1f3a;  /* 4px column top rule */
+  --mm-tint:     #e3effb;  /* quiet fills (frame bar, chips) */
+  --mm-alert:    #c53030;  /* the loss number only */
+  --mm-btn-bg:   #2b6cb0;  /* primary button */
+  --mm-btn-fg:   #ffffff;
+  --mm-btn-hover:#1a365d;
+  --mm-focus:    #2b6cb0;  /* focus outline */
+}
+:root.dark {
+  --mm-page:     #0b1628;
+  --mm-pale:     #111f35;
+  --mm-navy:     #16305a;
+  --mm-ink:      #f1f5f9;
+  --mm-body:     #cbd5e1;
+  --mm-muted:    #9fb0c6;
+  --mm-accent:   #8fc7f5;
+  --mm-link:     #8fc7f5;
+  --mm-line:     #22324a;
+  --mm-rule:     #63a4e6;
+  --mm-tint:     #172a45;
+  --mm-alert:    #fc8181;
+  --mm-btn-bg:   #8fc7f5;
+  --mm-btn-fg:   #0b1628;
+  --mm-btn-hover:#bee3f8;
+  --mm-focus:    #8fc7f5;
+}
+.mm-tone-white { --mm-surface: var(--mm-page); }
+.mm-tone-pale  { --mm-surface: var(--mm-pale); }
+.mm-tone-navy {
+  --mm-surface:  var(--mm-navy);
+  --mm-ink:      #ffffff;
+  --mm-body:     #d6e2f0;
+  --mm-muted:    #a9bdd6;
+  --mm-accent:   #8fc7f5;
+  --mm-link:     #8fc7f5;
+  --mm-line:     #2a4566;
+  --mm-rule:     #8fc7f5;
+  --mm-tint:     #1d3a63;
+  --mm-alert:    #feb2b2;
+  --mm-btn-bg:   #ffffff;
+  --mm-btn-fg:   #0f1f3a;
+  --mm-btn-hover:#bee3f8;
+  --mm-focus:    #8fc7f5;
+}
 
 :root {
   /* ─── Brand Core (Blue) ─── */
@@ -87,8 +154,8 @@
   --emr-text-inverse:   #0f172a;
 
   /* ─── Surface / Background (Dark Mode) ─── */
-  --emr-bg-page:        #0f172a;
-  --emr-bg-card:        #1e293b;
+  --emr-bg-page:        #0b1628;  /* = --mm-page so header/footer match the landing */
+  --emr-bg-card:        #111f35;
   --emr-bg-modal:       #1e293b;
   --emr-bg-input:       #0f172a;
   --emr-bg-hover:       #334155;

@@ -3,36 +3,33 @@ import type { LucideIcon } from 'lucide-react';
 import { cn } from '../../utils/cn';
 
 /**
- * Section eyebrow — the "system voice." A mono, uppercase, letter-spaced label
- * (no pill, no backdrop-blur). Variation comes from tone (text color), all in
- * the brand palette except `success`.
+ * Eyebrow: small uppercase label above a heading (Inter 600, 14px, muted).
+ * Usually rendered for you by SectionHeading's `eyebrow` prop.
+ *
+ *   <EyebrowBadge label="In development" tone="accent" />
  */
-type Tone = 'accent' | 'light' | 'navy' | 'success';
+type Tone = 'muted' | 'accent' | 'light' | 'navy' | 'success';
 
 interface EyebrowBadgeProps {
-  icon?: LucideIcon;
   label: string;
+  /** muted (default) or accent. Older values map to these. */
   tone?: Tone;
+  icon?: LucideIcon;
   className?: string;
 }
 
 const toneText: Record<Tone, string> = {
-  accent: 'text-accent',
-  light: 'text-secondary dark:text-light-accent',
-  navy: 'text-secondary dark:text-light-accent',
-  success: 'text-success',
+  muted: 'text-mm-muted',
+  accent: 'text-mm-link',
+  light: 'text-mm-muted',
+  navy: 'text-mm-muted',
+  success: 'text-mm-muted',
 };
 
-export const EyebrowBadge: React.FC<EyebrowBadgeProps> = ({ icon: Icon, label, tone = 'accent', className }) => {
+export const EyebrowBadge: React.FC<EyebrowBadgeProps> = ({ icon: Icon, label, tone = 'muted', className }) => {
   return (
-    <span
-      className={cn(
-        'inline-flex items-center gap-2 font-mono text-[11px] font-medium uppercase tracking-[0.2em]',
-        toneText[tone],
-        className
-      )}
-    >
-      {Icon && <Icon className="h-3.5 w-3.5" strokeWidth={2} />}
+    <span className={cn('mm-eyebrow inline-flex items-center gap-2', toneText[tone], className)}>
+      {Icon && <Icon className="h-4 w-4" strokeWidth={2} aria-hidden="true" />}
       {label}
     </span>
   );

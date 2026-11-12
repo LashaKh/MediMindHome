@@ -1,50 +1,65 @@
-import React, { ButtonHTMLAttributes, forwardRef } from 'react';
-import { cva, type VariantProps } from 'class-variance-authority';
+import { AnchorHTMLAttributes, ButtonHTMLAttributes, forwardRef } from 'react';
 import { cn } from '../../utils/cn';
 
-const buttonVariants = cva(
-  "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none",
-  {
-    variants: {
-      variant: {
-        default: "bg-primary text-white hover:bg-primary/90",
-        destructive: "bg-red-500 text-white hover:bg-red-600",
-        outline: "border border-gray-300 dark:border-gray-600 bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800",
-        secondary: "bg-gray-100 text-gray-900 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-gray-600",
-        ghost: "bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800",
-        link: "bg-transparent underline-offset-4 hover:underline text-primary",
-      },
-      size: {
-        default: "h-10 py-2 px-4",
-        sm: "h-9 px-3 rounded-md",
-        lg: "h-11 px-8 rounded-md",
-        icon: "h-10 w-10",
-      },
-    },
-    defaultVariants: {
-      variant: "default",
-      size: "default",
-    },
-  }
-);
+/**
+ * Buttons and link-buttons. Pill shape, 48px tall (text variant 44px),
+ * visible focus outline, colours follow the section tone (white button on navy).
+ *
+ *   <ButtonLink href={primaryCta.href}>{primaryCta.label}</ButtonLink>
+ *   <ButtonLink href="#switch" variant="secondary">See the 90-day plan</ButtonLink>
+ *   <Button type="submit" disabled={busy}>Send</Button>
+ *
+ * variant: 'primary' (one per section) | 'secondary' (outline) | 'text' (link-button).
+ * External links (http…) open in a new tab with rel="noopener noreferrer".
+ */
+export type ButtonVariant = 'primary' | 'secondary' | 'text';
 
-export interface ButtonProps
-  extends ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  asChild?: boolean;
+const variantClass: Record<ButtonVariant, string> = {
+  primary: 'btn-luminous',
+  secondary: 'btn-ghost',
+  text: 'btn-quiet',
+};
+
+export const buttonClass = (variant: ButtonVariant = 'primary', full = false) =>
+  cn(variantClass[variant], full && variant !== 'text' && 'w-full');
+
+interface CommonProps {
+  variant?: ButtonVariant;
+  /** Full width (phones, sticky bar). */
+  full?: boolean;
 }
 
-// Create a utility function for class name merging if it doesn't exist
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, CommonProps {}
+
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
+  ({ className, variant = 'primary', full = false, type = 'button', ...props }, ref) => (
+    <button
+      ref={ref}
+      type={type}
+      className={cn(buttonClass(variant, full), 'disabled:cursor-not-allowed disabled:opacity-60', className)}
+      {...props}
+    />
+  )
+);
+Button.displayName = 'Button';
+
+export interface ButtonLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement>, CommonProps {
+  href: string;
+}
+
+export const ButtonLink = forwardRef<HTMLAnchorElement, ButtonLinkProps>(
+  ({ className, variant = 'primary', full = false, href, target, rel, ...props }, ref) => {
+    const external = /^https?:\/\//.test(href);
     return (
-      <button
-        className={cn(buttonVariants({ variant, size, className }))}
+      <a
         ref={ref}
+        href={href}
+        target={target ?? (external ? '_blank' : undefined)}
+        rel={rel ?? (external ? 'noopener noreferrer' : undefined)}
+        className={cn(buttonClass(variant, full), className)}
         {...props}
       />
     );
   }
 );
-
-Button.displayName = "Button"; 
+ButtonLink.displayName = 'ButtonLink';

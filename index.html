@@ -12,23 +12,33 @@
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon-180.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
-    <meta name="theme-color" content="#1a365d" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0b1628" media="(prefers-color-scheme: dark)" />
 
-    <title>MediMind — The AI-Native Hospital OS</title>
-    <meta name="description" content="One of the first FHIR-native, AI-native hospital operating systems. The whole hospital — EMR, ambient scribe, command center, lab, pharmacy, revenue cycle, government reporting, research, HR, and inventory — built by doctors, for doctors. Live in Georgian hospitals." />
+    <!-- Inter (latin) is used above the fold; Georgian loads only when needed. -->
+    <link rel="preload" href="/fonts/Inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+    <title>MediMind · One operating system for your whole hospital</title>
+    <meta name="description" content="MediMind is one of the first hospital operating systems built ground-up on FHIR R4: registration, clinical care, orders, medicines, lab, imaging, billing, staff and ministry reporting in one place. Built in Georgia. Your data stays yours." />
+    <link rel="canonical" href="https://medimind.md/" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="MediMind — The AI-Native Hospital OS" />
-    <meta property="og:description" content="The whole hospital. One AI-native platform. Built by doctors. Live in Georgian hospitals. Contracted with a 25-hospital chain. Awarded Innovative Startup status by the Government of Georgia." />
-    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:url" content="https://medimind.md/" />
     <meta property="og:site_name" content="MediMind" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="MediMind · One operating system for your whole hospital" />
+    <meta property="og:description" content="One of the first hospital operating systems built ground-up on FHIR R4. Built in Georgia for private hospitals. Your data stays yours." />
+    <meta property="og:image" content="https://medimind.md/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="MediMind hospital operating system" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="MediMind — The AI-Native Hospital OS" />
-    <meta name="twitter:description" content="The whole hospital. One AI-native platform. From bedside to billing — built by doctors, for doctors." />
-    <meta name="twitter:image" content="/twitter-card.png" />
+    <meta name="twitter:title" content="MediMind · One operating system for your whole hospital" />
+    <meta name="twitter:description" content="One of the first hospital operating systems built ground-up on FHIR R4. Built in Georgia for private hospitals." />
+    <meta name="twitter:image" content="https://medimind.md/twitter-card.png" />
 
     <!-- Structured data -->
     <script type="application/ld+json">
@@ -36,8 +46,10 @@
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "MediMind",
-        "description": "The AI-Native Hospital OS",
-        "url": "https://medimind.ge"
+        "url": "https://medimind.md/",
+        "logo": "https://medimind.md/android-chrome-512.png",
+        "email": "team@medimind.md",
+        "description": "One of the first hospital operating systems built ground-up on FHIR R4."
       }
     </script>
   </head>

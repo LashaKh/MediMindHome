@@ -1,16 +1,65 @@
-import React, { useState } from 'react';
-import { motion, useReducedMotion, type Variants } from 'framer-motion';
+import React from 'react';
 import type { LucideIcon } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import { EyebrowBadge } from './eyebrow-badge';
+import type { HeadingLevel } from '../../content/types';
 
 /**
- * Section heading — editorial serif in solid ink (no gradient-clip). The
- * highlight phrase rests at brand-accent ink and is swept once by a band of
- * light on first view. Eyebrow is a mono "system" label flanked by hairlines.
- * Children reveal with an orchestrated blur-in stagger.
+ * Section heading: eyebrow, heading with one accent-blue phrase, support line.
+ * Left-aligned by default (deck habit). Pass the heading level in; the hero is
+ * the only h1. `as="h1"` uses the display size, h2/h3 use the section size.
  *
- * Name kept as `GradientHeading` for API stability across all call sites.
+ *   <SectionHeading as="h2" id="problem-title" eyebrow="The problem"
+ *     title="Margins are thin." accent="Fines make them thinner."
+ *     support="One line that carries the section." />
+ */
+interface SectionHeadingProps {
+  as: HeadingLevel;
+  title: React.ReactNode;
+  /** The ONE accent phrase, rendered after the title (or before with accentFirst). */
+  accent?: React.ReactNode;
+  accentFirst?: boolean;
+  eyebrow?: string;
+  eyebrowTone?: 'muted' | 'accent';
+  support?: React.ReactNode;
+  align?: 'left' | 'center';
+  /** Put on the heading element; pass the same value to SectionShell `labelledBy`. */
+  id?: string;
+  className?: string;
+}
+
+export const SectionHeading: React.FC<SectionHeadingProps> = ({
+  as: Tag,
+  title,
+  accent,
+  accentFirst = false,
+  eyebrow,
+  eyebrowTone = 'muted',
+  support,
+  align = 'left',
+  id,
+  className,
+}) => {
+  const centered = align === 'center';
+  const accentNode = accent ? <span className="mm-accent-text">{accent}</span> : null;
+
+  return (
+    <div className={cn('max-w-3xl', centered ? 'mx-auto text-center' : 'text-left', className)}>
+      {eyebrow && <EyebrowBadge label={eyebrow} tone={eyebrowTone} className="mb-4" />}
+      <Tag id={id} className={Tag === 'h1' ? 'mm-display' : 'mm-h2'}>
+        {accentFirst && accentNode}
+        {accentFirst && accentNode && ' '}
+        {title}
+        {!accentFirst && accentNode && ' '}
+        {!accentFirst && accentNode}
+      </Tag>
+      {support && <p className={cn('mm-lead mt-5', centered ? 'mx-auto max-w-2xl' : 'max-w-2xl')}>{support}</p>}
+    </div>
+  );
+};
+
+/**
+ * @deprecated Older sections' API. Same component as SectionHeading.
  */
 interface GradientHeadingProps {
   eyebrow?: { label: string; icon?: LucideIcon; tone?: 'accent' | 'light' | 'navy' | 'success' };
@@ -22,21 +71,6 @@ interface GradientHeadingProps {
   className?: string;
 }
 
-const container: Variants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.12, delayChildren: 0.04 } },
-};
-const item: Variants = {
-  hidden: { opacity: 0, y: 18, filter: 'blur(6px)' },
-  visible: {
-    opacity: 1,
-    y: 0,
-    filter: 'blur(0px)',
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-    transitionEnd: { filter: 'none' },
-  },
-};
-
 export const GradientHeading: React.FC<GradientHeadingProps> = ({
   eyebrow,
   title,
@@ -45,48 +79,14 @@ export const GradientHeading: React.FC<GradientHeadingProps> = ({
   align = 'center',
   level = 'h2',
   className,
-}) => {
-  const Tag = level;
-  const reduce = useReducedMotion();
-  const [swept, setSwept] = useState(false);
-  const centered = align === 'center';
-
-  return (
-    <motion.div
-      variants={container}
-      initial={reduce ? 'visible' : 'hidden'}
-      whileInView="visible"
-      viewport={{ once: true, margin: '-80px' }}
-      onViewportEnter={() => setSwept(true)}
-      className={cn('max-w-4xl space-y-5', centered ? 'mx-auto text-center' : 'text-left', className)}
-    >
-      {eyebrow && (
-        <motion.div variants={item} className={cn('flex items-center gap-3', centered && 'justify-center')}>
-          <span className="h-px w-8 bg-accent/50" />
-          <EyebrowBadge icon={eyebrow.icon} label={eyebrow.label} tone={eyebrow.tone} />
-          {centered && <span className="h-px w-8 bg-accent/50" />}
-        </motion.div>
-      )}
-
-      <motion.div variants={item}>
-        <Tag className="font-serif text-4xl font-semibold leading-[1.08] tracking-[-0.02em] text-text sm:text-5xl lg:text-6xl">
-          {title}
-          {highlight && ' '}
-          {highlight && <span className={cn('heading-highlight', swept && !reduce && 'sweep')}>{highlight}</span>}
-        </Tag>
-      </motion.div>
-
-      {subhead && (
-        <motion.p
-          variants={item}
-          className={cn(
-            'text-base leading-relaxed text-text-muted sm:text-lg md:text-xl',
-            centered ? 'mx-auto max-w-3xl' : 'max-w-2xl'
-          )}
-        >
-          {subhead}
-        </motion.p>
-      )}
-    </motion.div>
-  );
-};
+}) => (
+  <SectionHeading
+    as={level}
+    eyebrow={eyebrow?.label}
+    title={title}
+    accent={highlight}
+    support={subhead}
+    align={align}
+    className={className}
+  />
+);

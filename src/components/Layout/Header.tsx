@@ -1,148 +1,167 @@
-import React, { useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { ThemeToggle } from '../common/ThemeToggle';
-import { useAuthStore } from '../../store/useAuthStore';
-import { LogOut, ArrowRight, Menu, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useEffect, useRef, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, Moon, Sun, X } from 'lucide-react';
 import { MediMindLogo } from '../ui/MediMindLogo';
+import { buttonClass } from '../ui';
+import { useTheme } from '../../hooks/useTheme';
+import { primaryCta } from '../../content/site';
+import { headerContent } from '../../content/landing.top';
+import { cn } from '../../utils/cn';
+import { trackLanding } from '../../lib/tracking';
 
-const navigationSections = [
-  { id: 'path', label: 'The Path' },
-  { id: 'platform', label: 'Platform' },
-  { id: 'ai', label: 'AI' },
-  { id: 'safety', label: 'Safety' },
-  { id: 'proof', label: 'Proof' },
-];
+/**
+ * Site header: logo, five section links, the primary button, theme toggle and
+ * a phone menu. Quiet on purpose: solid background and one hairline, no blur,
+ * no shadow, no entrance animation.
+ *
+ * On `/` the links are plain fragment links (#problem), so the browser scrolls
+ * and the sections' scroll-margin keeps the heading clear of this bar. On any
+ * other route they go to `/#id`, and the effect below scrolls once the landing
+ * page has rendered.
+ */
+const navLinkClass =
+  'inline-flex min-h-[44px] items-center whitespace-nowrap rounded-md px-3 text-[15px] font-semibold text-mm-body transition-colors hover:text-mm-ink';
 
 export const Header: React.FC = () => {
-  const { user, signOut } = useAuthStore();
   const location = useLocation();
-  const navigate = useNavigate();
-  const isLandingPage = location.pathname === '/';
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const isLanding = location.pathname === '/';
+  const { theme, toggleTheme } = useTheme();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - 80;
-      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-    }
-    setIsMobileMenuOpen(false);
-  };
+  // Arriving on `/#id` from another route: scroll to that section once it exists (retries briefly while the page renders).
+  useEffect(() => {
+    if (location.pathname !== '/' || !location.hash) return;
+    const id = decodeURIComponent(location.hash.slice(1));
+    let tries = 0;
+    let timer = 0;
+    const scroll = () => {
+      const target = document.getElementById(id);
+      if (target) target.scrollIntoView({ block: 'start' });
+      else if (tries++ < 20) timer = window.setTimeout(scroll, 50);
+    };
+    timer = window.setTimeout(scroll, 0);
+    return () => window.clearTimeout(timer);
+  }, [location.pathname, location.hash, location.key]);
 
-  const goToDemo = () => {
-    setIsMobileMenuOpen(false);
-    navigate('/request-demo');
+  // Close the phone menu on route change.
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location.pathname]);
+
+  // Phone menu: focus the first link on open; Escape closes and returns focus to the button.
+  useEffect(() => {
+    if (!menuOpen) return;
+    menuRef.current?.querySelector<HTMLElement>('a')?.focus();
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setMenuOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+    const onResize = () => {
+      if (window.matchMedia('(min-width: 1280px)').matches) setMenuOpen(false);
+    };
+    document.addEventListener('keydown', onKey);
+    window.addEventListener('resize', onResize);
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      window.removeEventListener('resize', onResize);
+    };
+  }, [menuOpen]);
+
+  const closeMenu = () => setMenuOpen(false);
+  const isDark = theme === 'dark';
+
+  /** Link to a section: a real fragment link on `/`, a router link to `/#id` elsewhere. */
+  const sectionLink = (hash: string, className: string, children: React.ReactNode, onClick?: () => void) =>
+    isLanding ? (
+      <a href={hash} className={className} onClick={onClick}>
+        {children}
+      </a>
+    ) : (
+      <Link to={`/${hash}`} className={className} onClick={onClick}>
+        {children}
+      </Link>
+    );
+
+  const onCtaClick = () => {
+    trackLanding('cta_click', { location: 'header' });
+    closeMenu();
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-surface-page/85 backdrop-blur-md border-b border-surface-border shadow-lg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-18 md:h-20">
-        <div className="flex items-center justify-between h-full">
-          <Link to="/" className="flex items-center group" aria-label="MediMind home">
-            <MediMindLogo variant="horizontal" size="md" />
-          </Link>
+    <header className="mm-tone-white fixed inset-x-0 top-0 z-50 border-b border-mm-line bg-mm-surface">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6 md:h-20 lg:px-8">
+        <Link to="/" className="flex shrink-0 items-center rounded-md" aria-label={headerContent.logoLabel}>
+          <MediMindLogo variant="horizontal" size="md" />
+        </Link>
 
-          {isLandingPage && (
-            <nav className="hidden lg:flex items-center space-x-1">
-              {navigationSections.map((section, index) => (
-                <motion.button
-                  key={section.id}
-                  onClick={() => scrollToSection(section.id)}
-                  className="group relative rounded-md px-3 py-2 font-mono text-xs uppercase tracking-[0.12em] text-text-muted transition-colors hover:bg-surface-hover hover:text-text"
-                  initial={{ opacity: 0, y: -16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.06 }}
-                  whileTap={{ scale: 0.97 }}
-                >
-                  {section.label}
-                </motion.button>
-              ))}
+        <nav aria-label={headerContent.navLabel} className="hidden xl:block">
+          <ul className="flex items-center gap-1">
+            {headerContent.nav.map((item) => (
+              <li key={item.id}>
+                {sectionLink(`#${item.id}`, navLinkClass, item.label)}
+              </li>
+            ))}
+          </ul>
+        </nav>
 
-              <motion.button
-                onClick={goToDemo}
-                className="btn-luminous group ml-4 px-5 py-2.5 text-sm font-semibold"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: 0.3 }}
-                whileHover={{ scale: 1.04, y: -1 }}
-                whileTap={{ scale: 0.96 }}
-              >
-                <span className="relative z-10 flex items-center gap-2">
-                  Book Demo
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                </span>
-              </motion.button>
-            </nav>
+        <div className="flex items-center gap-2">
+          {sectionLink(
+            primaryCta.href,
+            cn(buttonClass('primary'), 'hidden min-h-[44px] whitespace-nowrap px-5 text-[15px] md:inline-flex'),
+            primaryCta.label,
+            onCtaClick
           )}
-
-          <div className="flex items-center space-x-3">
-            {isLandingPage && (
-              <motion.button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden p-2 rounded-lg text-text-muted hover:text-text hover:bg-surface-hover transition-colors"
-                whileTap={{ scale: 0.95 }}
-              >
-                {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-              </motion.button>
-            )}
-
-            <ThemeToggle />
-
-            {user && (
-              <div className="flex items-center space-x-3">
-                <span className="hidden sm:inline text-sm text-text-subtle font-medium">{user.email}</span>
-                <motion.button
-                  onClick={() => signOut()}
-                  className="flex items-center space-x-2 text-error hover:text-red-300 px-3 py-1.5 rounded-lg hover:bg-error/10 transition-colors"
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <LogOut className="w-5 h-5" />
-                  <span className="hidden sm:inline font-medium text-sm">Sign Out</span>
-                </motion.button>
-              </div>
-            )}
-          </div>
+          <button
+            type="button"
+            onClick={toggleTheme}
+            aria-label={isDark ? headerContent.themeToLightLabel : headerContent.themeToDarkLabel}
+            className="inline-flex h-11 w-11 items-center justify-center rounded-md text-mm-body transition-colors hover:bg-mm-tint hover:text-mm-ink"
+          >
+            {isDark ? <Sun className="h-5 w-5" aria-hidden="true" /> : <Moon className="h-5 w-5" aria-hidden="true" />}
+          </button>
+          <button
+            ref={menuButtonRef}
+            type="button"
+            onClick={() => setMenuOpen((open) => !open)}
+            aria-expanded={menuOpen}
+            aria-controls="site-menu"
+            aria-label={menuOpen ? headerContent.menuCloseLabel : headerContent.menuOpenLabel}
+            className="inline-flex h-11 w-11 items-center justify-center rounded-md text-mm-ink transition-colors hover:bg-mm-tint xl:hidden"
+          >
+            {menuOpen ? <X className="h-6 w-6" aria-hidden="true" /> : <Menu className="h-6 w-6" aria-hidden="true" />}
+          </button>
         </div>
       </div>
 
-      <AnimatePresence>
-        {isMobileMenuOpen && isLandingPage && (
-          <motion.div
-            className="lg:hidden absolute top-full left-0 right-0 z-50 bg-surface-page border-b border-surface-border shadow-xl"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.25 }}
-          >
-            <div className="max-w-7xl mx-auto px-4 py-6">
-              <nav className="space-y-2">
-                {navigationSections.map((section) => (
-                  <button
-                    key={section.id}
-                    onClick={() => scrollToSection(section.id)}
-                    className="w-full text-left px-4 py-3 text-base font-medium text-text-muted hover:text-text rounded-lg hover:bg-surface-hover transition-colors"
-                  >
-                    {section.label}
-                  </button>
-                ))}
-
-                <motion.button
-                  onClick={goToDemo}
-                  className="btn-luminous mt-4 w-full px-6 py-3.5 font-semibold"
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <span className="flex items-center justify-center gap-2">
-                    Book Demo
-                    <ArrowRight className="w-5 h-5" />
-                  </span>
-                </motion.button>
-              </nav>
+      {menuOpen && (
+        <div
+          id="site-menu"
+          ref={menuRef}
+          className="absolute inset-x-0 top-full max-h-[calc(100dvh-4rem)] overflow-y-auto border-b border-mm-line bg-mm-surface xl:hidden"
+        >
+          <nav aria-label={headerContent.navLabel} className="mx-auto max-w-6xl px-4 pb-6 pt-2 sm:px-6">
+            <ul className="divide-y divide-mm-line">
+              {headerContent.nav.map((item) => (
+                <li key={item.id}>
+                  {sectionLink(
+                    `#${item.id}`,
+                    '-mx-2 flex min-h-[52px] items-center rounded-md px-2 text-[17px] font-semibold text-mm-ink',
+                    item.label,
+                    closeMenu
+                  )}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-4">
+              {sectionLink(primaryCta.href, buttonClass('primary', true), primaryCta.label, onCtaClick)}
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </nav>
+        </div>
+      )}
     </header>
   );
 };

@@ -30,7 +30,7 @@ export const privacy = {
   sections: [
     {
       title: 'Who we are',
-      text: `The website medimind.md is run by LLC Medimind (შპს მედიმაინდ), identification number 405783095, registered with the National Agency of Public Registry of Georgia, [CONFIRM: registered address to publish]. We decide how your details are used (we are the "controller"). Contact: ${contactEmail}.`,
+      text: `The website medimind.md is run by LLC Medimind (შპს მედიმაინდ), identification number 405783095, registered with the National Agency of Public Registry of Georgia, based in Tbilisi, Georgia. We decide how your details are used (we are the "controller"). Contact: ${contactEmail}.`,
     },
     {
       title: 'What we collect',
@@ -46,7 +46,7 @@ export const privacy = {
     },
     {
       title: 'Where it is stored',
-      text: "In MediMind's request database, run for us by Supabase in its Frankfurt, Germany data centre (European Union). Netlify hosts the website itself and, like any web host, briefly handles connection data such as IP addresses to deliver the pages. Resend delivers the emails about your request: a note to our team and a confirmation to you. [CONFIRM: Resend sending region.]",
+      text: "In MediMind's request database, run for us by Supabase in its Frankfurt, Germany data centre (European Union). Netlify hosts the website itself and, like any web host, briefly handles connection data such as IP addresses to deliver the pages. Resend delivers the emails about your request: a note to our team and a confirmation to you. Resend sends them from its data centre in Ireland (European Union).",
     },
     {
       title: 'Who can see it',
@@ -54,11 +54,11 @@ export const privacy = {
     },
     {
       title: 'How long we keep it',
-      text: '[CONFIRM: retention period, for example until you ask us to delete it or 24 months after our last contact, whichever comes first.]',
+      text: 'Until you ask us to delete it, or 24 months after our last contact with you, whichever comes first.',
     },
     {
       title: 'Your rights',
-      text: `You can ask to see what we hold about you, to correct it, to delete it, or to stop us using it. Email ${contactEmail} from the address you used in the form and we will reply within [CONFIRM: number of days, for example 30]. You can also complain to the Personal Data Protection Service of Georgia or to the data protection authority where you live.`,
+      text: `You can ask to see what we hold about you, to correct it, to delete it, or to stop us using it. Email ${contactEmail} from the address you used in the form and we will reply within 30 days. You can also complain to the Personal Data Protection Service of Georgia or to the data protection authority where you live.`,
     },
     {
       title: 'Cookies and analytics',

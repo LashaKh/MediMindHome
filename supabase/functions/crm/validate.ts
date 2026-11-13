@@ -269,7 +269,12 @@ const DEMO_LIMITS: Record<string, number> = {
   timeline: 60,
   budgetRange: 60,
   specificNeeds: 3000,
+  // The slot the visitor asked for (an ISO date-time) and their time zone name.
+  preferredTime: 40,
+  timezone: 60,
 };
+/** A requested call time must be a real date, not in the past and at most this far ahead. */
+const DEMO_MAX_DAYS_AHEAD = 120;
 const DEMO_REQUIRED = ["firstName", "lastName", "email", "companyName"];
 
 export type DemoRequest = Record<string, string>;
@@ -299,6 +304,17 @@ export function cleanDemoRequest(input: unknown): { request: DemoRequest; errors
   if (request.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(request.email)) {
     errors.push("email is not valid");
   }
+  if (request.preferredTime) {
+    // An optional extra: a bad or stale time is dropped, the request itself still counts.
+    const when = Date.parse(request.preferredTime);
+    const now = Date.now();
+    if (Number.isNaN(when) || when < now - 3600_000 || when > now + DEMO_MAX_DAYS_AHEAD * 86400_000) {
+      delete request.preferredTime;
+    } else {
+      request.preferredTime = new Date(when).toISOString();
+    }
+  }
+  if (!request.preferredTime) delete request.timezone;
   return { request, errors };
 }
 
@@ -317,6 +333,7 @@ export function formatDemoRequest(r: DemoRequest): string {
     r.timeline && `Timeline: ${r.timeline}`,
     r.budgetRange && `Budget: ${r.budgetRange}`,
     r.specificNeeds && `Needs: ${r.specificNeeds}`,
+    r.preferredTime && `Requested call time: ${r.preferredTime}${r.timezone ? ` (their zone: ${r.timezone})` : ""}`,
   ];
   return lines.filter(Boolean).join("\n");
 }

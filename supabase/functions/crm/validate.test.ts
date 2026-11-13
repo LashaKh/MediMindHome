@@ -133,3 +133,18 @@ Deno.test("numbers: decimal commas are refused, blanks are empty, sites fit the 
 Deno.test("Tbilisi date is ahead of UTC late in the evening", () => {
   assertEquals(tbilisiToday(new Date("2026-10-22T21:30:00Z")), "2026-10-23");
 });
+
+Deno.test("a requested call time is kept only when it is a real, near-future date", () => {
+  const base = { firstName: "Nino", lastName: "B", email: "nino@hospital.ge", companyName: "Test Clinic" };
+  const soon = new Date(Date.now() + 3 * 86400_000).toISOString();
+  const kept = cleanDemoRequest({ ...base, preferredTime: soon, timezone: "Europe/Berlin" });
+  assertEquals(kept.errors, []);
+  assertEquals(kept.request.preferredTime, soon);
+  assertEquals(kept.request.timezone, "Europe/Berlin");
+  for (const bad of ["tomorrow", "2020-01-01T10:00:00Z", new Date(Date.now() + 400 * 86400_000).toISOString()]) {
+    const dropped = cleanDemoRequest({ ...base, preferredTime: bad, timezone: "Europe/Berlin" });
+    assertEquals(dropped.errors, []);
+    assertEquals("preferredTime" in dropped.request, false);
+    assertEquals("timezone" in dropped.request, false);
+  }
+});

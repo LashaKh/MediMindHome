@@ -22,6 +22,7 @@ import {
   tbilisiToday,
   TOUCH_TYPES,
 } from "./validate.ts";
+import { notifyDemoRequest } from "./notify.ts";
 
 const STAGE_LABEL: Record<string, string> = {
   discovery: "Discovery",
@@ -455,6 +456,20 @@ export async function handleDemoRequest(req: Request): Promise<Response> {
       author: "Website form",
     });
     if (actErr) throw actErr;
+
+    // Tell the team by email and confirm to the visitor. The request is already saved, so a
+    // failed email is written on the account's timeline instead of failing the form.
+    const sent = await notifyDemoRequest(request, formatDemoRequest(request));
+    if (!sent.team || !sent.visitor) {
+      const missed = [!sent.team && "team alert", !sent.visitor && "visitor confirmation"].filter(Boolean).join(" and ");
+      const { error: noteErr } = await db.from("crm_activities").insert({
+        account_id: accountId,
+        type: "note",
+        body: `Email not sent (${missed}). Answer this request by hand.`,
+        author: "Website form",
+      });
+      if (noteErr) console.error("demo-request: could not record the missed email:", noteErr);
+    }
     return json({ ok: true }, 200);
   } catch (err) {
     console.error("demo-request error:", err);

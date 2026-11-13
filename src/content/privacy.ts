@@ -8,6 +8,7 @@
  *   supabase/functions/crm/index.ts (hashIp).
  * - Storage region: Supabase project kvsqtolsjggpyvdtdpss, AWS eu-central-1 (Frankfurt),
  *   the project the site's VITE_SUPABASE_URL and src/lib/crmApi.ts point at.
+ * - Emails: supabase/functions/crm/notify.ts sends team + visitor emails through Resend.
  * - Browser storage: only the theme choice (src/hooks/useTheme.ts). Landing events are a
  *   no-op (src/lib/tracking.ts). Fonts are self-hosted. No analytics, no ad cookies.
  *
@@ -33,7 +34,7 @@ export const privacy = {
     },
     {
       title: 'What we collect',
-      text: 'When you ask for a call or for the hospital deck, the form collects your first and last name, your hospital or group, your role and your work email. A phone number and a short message are optional. To stop automated abuse, our server also keeps a scrambled (hashed) form of your connection\'s IP address, never the address itself.',
+      text: 'When you ask for a call or for the hospital deck, the form collects your first and last name, your hospital or group, your role and your work email. A phone number, a short message and a preferred call time (with your time zone) are optional. To stop automated abuse, our server also keeps a scrambled (hashed) form of your connection\'s IP address, never the address itself.',
     },
     {
       title: 'Why we use it',
@@ -45,11 +46,11 @@ export const privacy = {
     },
     {
       title: 'Where it is stored',
-      text: "In MediMind's request database, run for us by Supabase in its Frankfurt, Germany data centre (European Union). Netlify hosts the website itself and, like any web host, briefly handles connection data such as IP addresses to deliver the pages.",
+      text: "In MediMind's request database, run for us by Supabase in its Frankfurt, Germany data centre (European Union). Netlify hosts the website itself and, like any web host, briefly handles connection data such as IP addresses to deliver the pages. Resend delivers the emails about your request: a note to our team and a confirmation to you. [CONFIRM: Resend sending region.]",
     },
     {
       title: 'Who can see it',
-      text: 'Only the MediMind team members who answer requests. Supabase and Netlify process the data on our behalf as service providers. We share it with no one else unless the law requires us to.',
+      text: 'Only the MediMind team members who answer requests. Supabase, Netlify and Resend process the data on our behalf as service providers. We share it with no one else unless the law requires us to.',
     },
     {
       title: 'How long we keep it',

@@ -30,7 +30,8 @@ Facts used and where they came from: the legal entity is from the founder's Brai
 1. **Registered address to publish.** The NAPR extract lists Tbilisi, Vake, Otar Chkheidze St 12, Apt 14. If that is a home, publish only "Tbilisi, Georgia" or an office address.
 2. **Retention period** for form requests (suggested: until deletion is asked for, or 24 months after last contact, whichever comes first).
 3. **Reply time** for privacy requests (suggested: 30 days).
-4. (Not marked, but a lawyer should check it) the legal-basis wording: "steps you asked for" + legitimate interest for abuse limiting.
+4. **Resend sending region** (the form now emails the team and the visitor through Resend, commit 5928144; region not in the repo).
+5. (Not marked, but a lawyer should check it) the legal-basis wording: "steps you asked for" + legitimate interest for abuse limiting.
 
 ## Needs the founder or another lane
 

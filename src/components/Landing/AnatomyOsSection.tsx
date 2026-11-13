@@ -71,7 +71,7 @@ export const AnatomyOsSection: React.FC = () => {
                     {layer.name}
                   </button>
                   <span className="lb-mono text-[13px] text-mm-link">{layer.verb}</span>
-                  {layer.status && <span className="mm-dev-badge max-sm:ml-11 sm:ml-auto">{layer.status}</span>}
+                  {layer.status && <span className="mm-dev-badge max-sm:ml-11 sm:ml-auto lg:ml-11 xl:ml-auto">{layer.status}</span>}
                 </h3>
                 <div className="lb-legend-line" data-open={isOn}>
                   <div>

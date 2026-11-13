@@ -99,18 +99,47 @@ export const FragmentsField: React.FC<{ progress: MotionValue<number>; still: bo
 
   return (
     <div ref={ref} className={`relative w-full ${className ?? ''}`} role="img" aria-label={fragments.figureAlt}>
+      {/* The field: a fine dot grid that fades out toward the edges. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+        style={{
+          backgroundImage: 'radial-gradient(circle, color-mix(in srgb, var(--mm-ink) 22%, transparent) 1px, transparent 1.4px)',
+          backgroundSize: '18px 18px',
+          backgroundPosition: 'center',
+          maskImage: 'radial-gradient(ellipse 62% 58% at 50% 50%, #000 30%, transparent 100%)',
+          WebkitMaskImage: 'radial-gradient(ellipse 62% 58% at 50% 50%, #000 30%, transparent 100%)',
+        }}
+      />
       {ready && (
         <motion.svg
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 h-full w-full"
           style={{ opacity: still ? 1 : brokenOpacity }}
         >
+          {/* The patient, ringed and alone. */}
+          <g fill="none" stroke="var(--mm-ink)" strokeOpacity="0.14">
+            <ellipse cx={pcx} cy={pcy} rx={patient.w / 2 + 26} ry={tileH / 2 + 22} />
+            <ellipse cx={pcx} cy={pcy} rx={patient.w / 2 + 54} ry={tileH / 2 + 46} strokeDasharray="2 6" />
+          </g>
           {links.map((t) => {
             const mx = (a: number, b: number, k: number) => a + (b - a) * k;
+            // The break: a gap with a short red bar across each end.
+            const len = Math.hypot(t.sx - pcx, t.sy - pcy) || 1;
+            const nx = (-(t.sy - pcy) / len) * 5;
+            const ny = ((t.sx - pcx) / len) * 5;
+            const a = [mx(pcx, t.sx, 0.42), mx(pcy, t.sy, 0.42)];
+            const b = [mx(pcx, t.sx, 0.58), mx(pcy, t.sy, 0.58)];
             return (
-              <g key={t.name} stroke="var(--lb-harm)" strokeWidth="1.25" strokeDasharray="3 5" opacity="0.7">
-                <line x1={pcx} y1={pcy} x2={mx(pcx, t.sx, 0.42)} y2={mx(pcy, t.sy, 0.42)} />
-                <line x1={mx(pcx, t.sx, 0.58)} y1={mx(pcy, t.sy, 0.58)} x2={t.sx} y2={t.sy} />
+              <g key={t.name} stroke="var(--lb-harm)">
+                <g strokeWidth="1.25" strokeDasharray="3 5" opacity="0.7">
+                  <line x1={pcx} y1={pcy} x2={a[0]} y2={a[1]} />
+                  <line x1={b[0]} y1={b[1]} x2={t.sx} y2={t.sy} />
+                </g>
+                <g strokeWidth="1.5" strokeLinecap="round">
+                  <line x1={a[0] - nx} y1={a[1] - ny} x2={a[0] + nx} y2={a[1] + ny} />
+                  <line x1={b[0] - nx} y1={b[1] - ny} x2={b[0] + nx} y2={b[1] + ny} />
+                </g>
               </g>
             );
           })}
@@ -126,10 +155,38 @@ export const FragmentsField: React.FC<{ progress: MotionValue<number>; still: bo
             top: oy - 10,
             width: blockW + 20,
             height: blockH + 20,
-            border: '2px solid var(--lb-system)',
-            backgroundColor: 'var(--mm-pale)',
-            boxShadow: '0 30px 90px -30px var(--lb-ink-glow)',
+            border: '1.5px solid var(--lb-system)',
+            background:
+              'linear-gradient(180deg, color-mix(in srgb, var(--mm-system) 8%, var(--mm-raised)), var(--mm-raised) 70%)',
+            boxShadow:
+              '0 0 0 6px color-mix(in srgb, var(--mm-system) 8%, transparent), 0 30px 90px -30px var(--lb-ink-glow)',
             opacity: still ? 0 : oneOpacity,
+          }}
+        >
+          {/* One surface, many modules: hairline seams where the programs used to end. */}
+          <span
+            className="absolute inset-[10px] overflow-hidden rounded-[4px]"
+            style={{
+              backgroundImage:
+                'linear-gradient(90deg, color-mix(in srgb, var(--mm-system) 18%, transparent) 0 1px, transparent 1px), linear-gradient(0deg, color-mix(in srgb, var(--mm-system) 18%, transparent) 0 1px, transparent 1px)',
+              backgroundSize: `${tileW + gap}px 100%, 100% ${tileH + gap}px`,
+              backgroundPosition: `${tileW + gap / 2}px 0, 0 ${tileH + gap / 2}px`,
+            }}
+          />
+        </motion.div>
+      )}
+
+      {ready && !still && (
+        <motion.span
+          aria-hidden="true"
+          className="pointer-events-none absolute z-10 rounded-full"
+          style={{
+            left: patient.x,
+            top: patient.y,
+            width: patient.w,
+            height: tileH,
+            boxShadow: '0 0 0 5px color-mix(in srgb, var(--mm-system) 16%, transparent), 0 0 0 6px var(--lb-system), 0 10px 30px -6px var(--lb-ink-glow)',
+            opacity: oneOpacity,
           }}
         />
       )}
@@ -190,6 +247,9 @@ export const FragmentsField: React.FC<{ progress: MotionValue<number>; still: bo
   );
 };
 
+/** Forty programs from different makers: no two corners quite alike. */
+const RADII = [6, 3, 9, 4, 7, 2, 8, 5, 10];
+
 const Tile: React.FC<{
   tile: { name: string; sx: number; sy: number; dx: number; dy: number; rot: number };
   w: number;
@@ -220,9 +280,19 @@ const Tile: React.FC<{
         rotate: still ? tile.rot : rotate,
       }}
     >
+      {/* Each program its own little window: its own corner radius, a mark, a shadow. */}
       <motion.span
-        className="absolute inset-0 rounded-[6px] border border-mm-line bg-mm-pale"
-        style={{ opacity: still ? 1 : frame }}
+        className="absolute inset-0 border border-mm-line bg-mm-raised"
+        style={{
+          opacity: still ? 1 : frame,
+          borderRadius: RADII[index % RADII.length],
+          boxShadow: '0 1px 0 var(--mm-line), 0 8px 18px -12px color-mix(in srgb, var(--mm-ink) 35%, transparent)',
+        }}
+      />
+      <motion.span
+        aria-hidden="true"
+        className="absolute left-1.5 top-1.5 block h-1 w-1 rounded-full"
+        style={{ opacity: still ? 0.5 : frame, backgroundColor: 'var(--mm-muted)' }}
       />
       <span className="relative">{tile.name}</span>
     </motion.span>

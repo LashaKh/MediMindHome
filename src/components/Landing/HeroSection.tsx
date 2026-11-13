@@ -22,7 +22,7 @@ const HeroOrchestration = lazy(() => import('./HeroOrchestration'));
  * neither the lazy load nor the animation moves anything.
  * Keep id="hero": the header and the sticky phone bar watch it.
  */
-const visualBox = 'h-[596px] lg:h-[426px]';
+const visualBox = 'h-[596px] lg:h-[436px]';
 
 export const HeroSection: React.FC = () => (
   <SectionShell

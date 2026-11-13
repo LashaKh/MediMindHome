@@ -153,11 +153,11 @@ export const BrainDial: React.FC<{ intro?: React.ReactNode }> = ({ intro }) => {
   const signInner = polar(R - 22, 0);
 
   return (
-    <div className="grid gap-x-10 gap-y-12 lg:grid-cols-12 lg:gap-y-10">
+    <div className="grid gap-x-12 gap-y-10 lg:grid-cols-12 lg:gap-y-12">
       {intro && <div className="lg:col-span-5 lg:row-start-1">{intro}</div>}
 
       {/* ── The dial ─────────────────────────────────────── */}
-      <div className="lg:col-span-7 lg:col-start-6 lg:row-span-2 lg:row-start-1 lg:self-center">
+      <div className="lg:col-span-7 lg:col-start-6 lg:row-span-3 lg:row-start-1 lg:self-center">
         <div
           ref={dialRef}
           role="slider"
@@ -166,7 +166,7 @@ export const BrainDial: React.FC<{ intro?: React.ReactNode }> = ({ intro }) => {
           aria-valuemin={0}
           aria-valuemax={MAX}
           aria-valuenow={shown}
-          aria-valuetext={`${current.name}. ${copy.systemLabel}: ${current.system} ${copy.personLabel}: ${current.person}`}
+          aria-valuetext={`${current.name}. ${current.gist}`}
           aria-disabled={!on || undefined}
           onKeyDown={onKeyDown}
           onPointerDown={onPointerDown}
@@ -175,7 +175,7 @@ export const BrainDial: React.FC<{ intro?: React.ReactNode }> = ({ intro }) => {
           onPointerCancel={endDrag}
           onClick={onClick}
           className={cx(
-            'relative mx-auto w-full max-w-[600px] select-none rounded-[24px] outline-none transition-opacity duration-300',
+            'relative mx-auto w-full max-w-[760px] select-none rounded-[24px] outline-none transition-opacity duration-300',
             'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--mm-focus)]',
             on ? 'cursor-grab active:cursor-grabbing' : 'opacity-45'
           )}
@@ -356,84 +356,60 @@ export const BrainDial: React.FC<{ intro?: React.ReactNode }> = ({ intro }) => {
         <p className="mt-6 text-center font-mono text-[12px] text-mm-muted max-sm:hidden">{copy.hint}</p>
       </div>
 
-      {/* ── What happens at this step ───────────────────── */}
+      {/* ── What this step means ────────────────────────── */}
       <div className="lg:col-span-5 lg:col-start-1 lg:row-start-2">
-        <div className="min-h-[300px] border-t border-mm-line pt-6">
+        <div
+          className={cx(
+            'min-h-[7.5rem] border-l-2 pl-5 transition-colors duration-200',
+            on && pastLine ? 'border-mm-human' : 'border-mm-system'
+          )}
+        >
           <AnimatePresence mode="wait" initial={false}>
-            {on ? (
-              <motion.div
-                key={shown}
-                initial={reduce ? false : { opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={reduce ? undefined : { opacity: 0, y: -4 }}
-                transition={{ duration: 0.18, ease: [0.2, 0.7, 0.2, 1] }}
-              >
-                <p className="m-0 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                  <span className="font-display text-[2rem] leading-none text-mm-ink md:text-[2.5rem]">{current.name}</span>
-                  <span className="mm-caption">{current.gist}</span>
-                </p>
-                <p className="mm-data m-0 mt-3 text-mm-muted">{current.job}</p>
-                <dl className="m-0 mt-6 grid gap-5">
-                  <div className="grid gap-1.5">
-                    <dt className="mm-mark-system">{copy.systemLabel}</dt>
-                    <dd className="mm-body m-0 text-mm-ink">{current.system}</dd>
-                  </div>
-                  <div className="grid gap-1.5">
-                    <dt className="mm-mark-human">{copy.personLabel}</dt>
-                    <dd className="mm-body m-0 text-mm-ink">{current.person}</dd>
-                  </div>
-                </dl>
-                <p
-                  className={cx(
-                    'mm-caption m-0 mt-6 border-l-2 pl-3',
-                    pastLine ? 'border-mm-human text-mm-body' : 'border-mm-line'
-                  )}
-                >
-                  {pastLine ? copy.signatureNote : copy.belowNote}
-                </p>
-              </motion.div>
-            ) : (
-              <motion.div
-                key="off"
-                initial={reduce ? false : { opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={reduce ? undefined : { opacity: 0 }}
-                transition={{ duration: 0.18 }}
-              >
-                <p className="m-0 font-display text-[2rem] leading-[1.05] text-mm-ink md:text-[2.5rem]">{copy.off.title}</p>
-                <p className="mm-body m-0 mt-4">{copy.off.body}</p>
-              </motion.div>
-            )}
+            <motion.div
+              key={on ? shown : 'off'}
+              initial={reduce ? false : { opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={reduce ? undefined : { opacity: 0, y: -4 }}
+              transition={{ duration: 0.18, ease: [0.2, 0.7, 0.2, 1] }}
+            >
+              <p className="m-0 font-display text-[2.25rem] font-normal leading-[1.02] tracking-[-0.025em] text-mm-ink md:text-[3rem]">
+                {on ? current.name : copy.off.title}
+              </p>
+              <p className="mm-lead m-0 mt-3">{on ? current.gist : copy.off.body}</p>
+            </motion.div>
           </AnimatePresence>
         </div>
       </div>
 
-      {/* ── Fixed around it: the three limits and the off switch ── */}
-      <div className="grid gap-4 md:grid-cols-3 lg:col-span-12 lg:grid-cols-[1fr_1fr_1fr_auto]">
-        <h4 className="mm-eyebrow m-0 md:col-span-3 lg:col-span-4">{copy.limitsTitle}</h4>
-        {copy.limits.map((limit) => (
-          <div
-            key={limit}
-            className="relative flex min-h-[112px] flex-col justify-between gap-4 rounded-[10px] border border-mm-line bg-mm-raised p-5"
-          >
-            {/* Rivets: bolted down */}
-            <span aria-hidden="true" className="absolute right-3 top-3 h-1.5 w-1.5 rounded-full bg-mm-line" />
-            <span aria-hidden="true" className="absolute bottom-3 right-3 h-1.5 w-1.5 rounded-full bg-mm-line" />
-            <span className="flex items-center gap-2 font-mono text-[12px] font-medium text-mm-human-text">
-              <Lock className="h-3.5 w-3.5" strokeWidth={2.25} aria-hidden="true" />
-              {copy.fixed}
-            </span>
-            <p className="m-0 pr-4 text-[1.0625rem] font-medium leading-snug text-mm-ink">{limit}</p>
-          </div>
-        ))}
-        <div className="flex flex-col justify-between gap-4 rounded-[10px] border border-mm-line p-5 md:col-span-3 md:flex-row md:items-center lg:col-span-1 lg:min-h-[112px] lg:min-w-[190px] lg:flex-col lg:items-stretch">
-          <span className="font-mono text-[12px] font-medium text-mm-muted">{copy.off.label}</span>
+      {/* ── Fixed beside it: the three limits and the off switch ── */}
+      <div className="lg:col-span-5 lg:col-start-1 lg:row-start-3">
+        <h3 className="m-0 flex items-center gap-2 font-mono text-[13px] font-medium text-mm-human-text">
+          <Lock className="h-3.5 w-3.5" strokeWidth={2.25} aria-hidden="true" />
+          {copy.limitsTitle}
+        </h3>
+        <ul className="m-0 mt-4 list-none p-0">
+          {copy.limits.map((limit) => (
+            <li
+              key={limit}
+              className="flex items-center gap-4 border-t border-mm-line py-3.5 text-[1.0625rem] font-medium leading-snug text-mm-ink md:text-[1.1875rem]"
+            >
+              <span aria-hidden="true" className="h-2 w-2 shrink-0 rounded-full bg-mm-human" />
+              {limit}
+            </li>
+          ))}
+        </ul>
+        <div className="flex flex-wrap items-center justify-between gap-4 border-t border-mm-line pt-4">
+          <span className="font-mono text-[13px] font-medium text-mm-muted">{copy.off.label}</span>
           <button
             type="button"
             aria-pressed={!on}
             onClick={() => setOn((v) => !v)}
-            className="group flex min-h-[44px] items-center gap-3 text-left"
+            className="group flex min-h-[44px] items-center gap-3 rounded-full text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--mm-focus)]"
           >
+            <span className="text-[1.0625rem] font-medium text-mm-ink">
+              <span className="sr-only">{copy.off.label}: </span>
+              {on ? copy.off.on : copy.off.offState}
+            </span>
             <span
               aria-hidden="true"
               className={cx(
@@ -447,10 +423,6 @@ export const BrainDial: React.FC<{ intro?: React.ReactNode }> = ({ intro }) => {
                   on ? 'translate-x-[24px] bg-mm-system' : 'translate-x-1 bg-mm-muted'
                 )}
               />
-            </span>
-            <span className="text-[1.0625rem] font-medium text-mm-ink">
-              <span className="sr-only">{copy.off.label}: </span>
-              {on ? copy.off.on : copy.off.offState}
             </span>
           </button>
         </div>

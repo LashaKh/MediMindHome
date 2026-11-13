@@ -734,6 +734,244 @@
           "bytes": 49578
         }
       ]
+    },
+    {
+      "id": "brain-control-center",
+      "section": "brain",
+      "alt": "MediMind Control Center for the hospital brain: status Running with a Stop switch, 16 of 16 workers active, 11 matters waiting for a person's decision, and the morning brief with stays open now, stays ended yesterday and worker outputs since the last brief. In development, demo data.",
+      "width": 2000,
+      "height": 934,
+      "aspectRatio": "2000 / 934",
+      "fallback": "/landing/brain-control-center-1400.jpg",
+      "avif": "/landing/brain-control-center-800.avif 800w, /landing/brain-control-center-1400.avif 1400w, /landing/brain-control-center-2000.avif 2000w",
+      "webp": "/landing/brain-control-center-800.webp 800w, /landing/brain-control-center-1400.webp 1400w, /landing/brain-control-center-2000.webp 2000w",
+      "sizes": "(min-width: 1200px) 1100px, 100vw",
+      "files": [
+        {
+          "file": "/landing/brain-control-center-800.avif",
+          "format": "avif",
+          "width": 800,
+          "height": 374,
+          "bytes": 6511
+        },
+        {
+          "file": "/landing/brain-control-center-1400.avif",
+          "format": "avif",
+          "width": 1400,
+          "height": 654,
+          "bytes": 13004
+        },
+        {
+          "file": "/landing/brain-control-center-2000.avif",
+          "format": "avif",
+          "width": 2000,
+          "height": 934,
+          "bytes": 22239
+        },
+        {
+          "file": "/landing/brain-control-center-1400.jpg",
+          "format": "jpg",
+          "width": 1400,
+          "height": 654,
+          "bytes": 48427
+        },
+        {
+          "file": "/landing/brain-control-center-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 374,
+          "bytes": 10258
+        },
+        {
+          "file": "/landing/brain-control-center-1400.webp",
+          "format": "webp",
+          "width": 1400,
+          "height": 654,
+          "bytes": 23374
+        },
+        {
+          "file": "/landing/brain-control-center-2000.webp",
+          "format": "webp",
+          "width": 2000,
+          "height": 934,
+          "bytes": 37114
+        }
+      ]
+    },
+    {
+      "id": "brain-workers",
+      "section": "brain",
+      "alt": "MediMind Control Center, Workers tab: the coverage checker, bed and move watcher and theatre watcher, each with what it may do and a six-step level dial from Watching to Owns it, set at Prepares and capped at level 2. In development, demo data.",
+      "width": 2000,
+      "height": 1232,
+      "aspectRatio": "2000 / 1232",
+      "fallback": "/landing/brain-workers-1400.jpg",
+      "avif": "/landing/brain-workers-800.avif 800w, /landing/brain-workers-1400.avif 1400w, /landing/brain-workers-2000.avif 2000w",
+      "webp": "/landing/brain-workers-800.webp 800w, /landing/brain-workers-1400.webp 1400w, /landing/brain-workers-2000.webp 2000w",
+      "sizes": "(min-width: 1200px) 1100px, 100vw",
+      "files": [
+        {
+          "file": "/landing/brain-workers-800.avif",
+          "format": "avif",
+          "width": 800,
+          "height": 493,
+          "bytes": 8112
+        },
+        {
+          "file": "/landing/brain-workers-1400.avif",
+          "format": "avif",
+          "width": 1400,
+          "height": 862,
+          "bytes": 18200
+        },
+        {
+          "file": "/landing/brain-workers-2000.avif",
+          "format": "avif",
+          "width": 2000,
+          "height": 1232,
+          "bytes": 27264
+        },
+        {
+          "file": "/landing/brain-workers-1400.jpg",
+          "format": "jpg",
+          "width": 1400,
+          "height": 862,
+          "bytes": 84901
+        },
+        {
+          "file": "/landing/brain-workers-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 493,
+          "bytes": 18068
+        },
+        {
+          "file": "/landing/brain-workers-1400.webp",
+          "format": "webp",
+          "width": 1400,
+          "height": 862,
+          "bytes": 39972
+        },
+        {
+          "file": "/landing/brain-workers-2000.webp",
+          "format": "webp",
+          "width": 2000,
+          "height": 1232,
+          "bytes": 62218
+        }
+      ]
+    },
+    {
+      "id": "brain-proof",
+      "section": "brain",
+      "alt": "MediMind Control Center, Proof tab: the map of administrative jobs the brain covers (closing findings, record correction checks, missing charges, claim pre-checks, payment matching, appeal drafts, closing packs, ministry records), the worker that covers each, its department and its current level. In development, demo data.",
+      "width": 1356,
+      "height": 1260,
+      "aspectRatio": "1356 / 1260",
+      "fallback": "/landing/brain-proof-1356.jpg",
+      "avif": "/landing/brain-proof-800.avif 800w, /landing/brain-proof-1356.avif 1356w",
+      "webp": "/landing/brain-proof-800.webp 800w, /landing/brain-proof-1356.webp 1356w",
+      "sizes": "(min-width: 900px) 680px, 100vw",
+      "files": [
+        {
+          "file": "/landing/brain-proof-800.avif",
+          "format": "avif",
+          "width": 800,
+          "height": 743,
+          "bytes": 18090
+        },
+        {
+          "file": "/landing/brain-proof-1356.avif",
+          "format": "avif",
+          "width": 1356,
+          "height": 1260,
+          "bytes": 15637
+        },
+        {
+          "file": "/landing/brain-proof-1356.jpg",
+          "format": "jpg",
+          "width": 1356,
+          "height": 1260,
+          "bytes": 144041
+        },
+        {
+          "file": "/landing/brain-proof-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 743,
+          "bytes": 43252
+        },
+        {
+          "file": "/landing/brain-proof-1356.webp",
+          "format": "webp",
+          "width": 1356,
+          "height": 1260,
+          "bytes": 83608
+        }
+      ]
+    },
+    {
+      "id": "brain-money",
+      "section": "brain",
+      "alt": "MediMind Control Center money panel: missing charges, claims that would be returned, open payment lines with the open difference in lari, and appealable denials with their value. In development, demo data.",
+      "width": 2000,
+      "height": 338,
+      "aspectRatio": "2000 / 338",
+      "fallback": "/landing/brain-money-1400.jpg",
+      "avif": "/landing/brain-money-800.avif 800w, /landing/brain-money-1400.avif 1400w, /landing/brain-money-2000.avif 2000w",
+      "webp": "/landing/brain-money-800.webp 800w, /landing/brain-money-1400.webp 1400w, /landing/brain-money-2000.webp 2000w",
+      "sizes": "(min-width: 1200px) 1100px, 100vw",
+      "files": [
+        {
+          "file": "/landing/brain-money-800.avif",
+          "format": "avif",
+          "width": 800,
+          "height": 135,
+          "bytes": 3737
+        },
+        {
+          "file": "/landing/brain-money-1400.avif",
+          "format": "avif",
+          "width": 1400,
+          "height": 237,
+          "bytes": 7994
+        },
+        {
+          "file": "/landing/brain-money-2000.avif",
+          "format": "avif",
+          "width": 2000,
+          "height": 338,
+          "bytes": 11778
+        },
+        {
+          "file": "/landing/brain-money-1400.jpg",
+          "format": "jpg",
+          "width": 1400,
+          "height": 237,
+          "bytes": 23454
+        },
+        {
+          "file": "/landing/brain-money-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 135,
+          "bytes": 5776
+        },
+        {
+          "file": "/landing/brain-money-1400.webp",
+          "format": "webp",
+          "width": 1400,
+          "height": 237,
+          "bytes": 11438
+        },
+        {
+          "file": "/landing/brain-money-2000.webp",
+          "format": "webp",
+          "width": 2000,
+          "height": 338,
+          "bytes": 18556
+        }
+      ]
     }
   ]
 }

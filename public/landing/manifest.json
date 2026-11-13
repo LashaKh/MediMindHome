@@ -801,7 +801,7 @@
     {
       "id": "brain-workers",
       "section": "brain",
-      "alt": "MediMind Control Center, Workers tab: the coverage checker, bed and move watcher and theatre watcher, each with what it may do and a six-step level dial from Watching to Owns it, set at Prepares and capped at level 2. In development, demo data.",
+      "alt": "MediMind Control Center, Workers tab: the coverage checker, bed and move watcher and theatre watcher, each with what it may do, its branch and a six-step level dial from Watching to Owns it, set at Prepares and capped at level 2. In development, demo data; branch names neutralised.",
       "width": 2000,
       "height": 1232,
       "aspectRatio": "2000 / 1232",
@@ -815,98 +815,112 @@
           "format": "avif",
           "width": 800,
           "height": 493,
-          "bytes": 8112
+          "bytes": 8562
         },
         {
           "file": "/landing/brain-workers-1400.avif",
           "format": "avif",
           "width": 1400,
           "height": 862,
-          "bytes": 18200
+          "bytes": 19210
         },
         {
           "file": "/landing/brain-workers-2000.avif",
           "format": "avif",
           "width": 2000,
           "height": 1232,
-          "bytes": 27264
+          "bytes": 29125
         },
         {
           "file": "/landing/brain-workers-1400.jpg",
           "format": "jpg",
           "width": 1400,
           "height": 862,
-          "bytes": 84901
+          "bytes": 89085
         },
         {
           "file": "/landing/brain-workers-800.webp",
           "format": "webp",
           "width": 800,
           "height": 493,
-          "bytes": 18068
+          "bytes": 19162
         },
         {
           "file": "/landing/brain-workers-1400.webp",
           "format": "webp",
           "width": 1400,
           "height": 862,
-          "bytes": 39972
+          "bytes": 42766
         },
         {
           "file": "/landing/brain-workers-2000.webp",
           "format": "webp",
           "width": 2000,
           "height": 1232,
-          "bytes": 62218
+          "bytes": 66356
         }
       ]
     },
     {
       "id": "brain-proof",
       "section": "brain",
-      "alt": "MediMind Control Center, Proof tab: the map of administrative jobs the brain covers (closing findings, record correction checks, missing charges, claim pre-checks, payment matching, appeal drafts, closing packs, ministry records), the worker that covers each, its department and its current level. In development, demo data.",
-      "width": 1356,
-      "height": 1260,
-      "aspectRatio": "1356 / 1260",
-      "fallback": "/landing/brain-proof-1356.jpg",
-      "avif": "/landing/brain-proof-800.avif 800w, /landing/brain-proof-1356.avif 1356w",
-      "webp": "/landing/brain-proof-800.webp 800w, /landing/brain-proof-1356.webp 1356w",
-      "sizes": "(min-width: 900px) 680px, 100vw",
+      "alt": "MediMind Control Center, Proof tab: the map of administrative jobs the hospital brain covers, with tags, the covering worker, the department and the current level per branch. In development, demo data; branch names neutralised.",
+      "width": 2000,
+      "height": 1433,
+      "aspectRatio": "2000 / 1433",
+      "fallback": "/landing/brain-proof-1400.jpg",
+      "avif": "/landing/brain-proof-800.avif 800w, /landing/brain-proof-1400.avif 1400w, /landing/brain-proof-2000.avif 2000w",
+      "webp": "/landing/brain-proof-800.webp 800w, /landing/brain-proof-1400.webp 1400w, /landing/brain-proof-2000.webp 2000w",
+      "sizes": "(min-width: 1200px) 1100px, 100vw",
       "files": [
         {
           "file": "/landing/brain-proof-800.avif",
           "format": "avif",
           "width": 800,
-          "height": 743,
-          "bytes": 18090
+          "height": 573,
+          "bytes": 15611
         },
         {
-          "file": "/landing/brain-proof-1356.avif",
+          "file": "/landing/brain-proof-1400.avif",
           "format": "avif",
-          "width": 1356,
-          "height": 1260,
-          "bytes": 15637
+          "width": 1400,
+          "height": 1003,
+          "bytes": 27212
         },
         {
-          "file": "/landing/brain-proof-1356.jpg",
+          "file": "/landing/brain-proof-2000.avif",
+          "format": "avif",
+          "width": 2000,
+          "height": 1433,
+          "bytes": 42365
+        },
+        {
+          "file": "/landing/brain-proof-1400.jpg",
           "format": "jpg",
-          "width": 1356,
-          "height": 1260,
-          "bytes": 144041
+          "width": 1400,
+          "height": 1003,
+          "bytes": 127630
         },
         {
           "file": "/landing/brain-proof-800.webp",
           "format": "webp",
           "width": 800,
-          "height": 743,
-          "bytes": 43252
+          "height": 573,
+          "bytes": 31980
         },
         {
-          "file": "/landing/brain-proof-1356.webp",
+          "file": "/landing/brain-proof-1400.webp",
           "format": "webp",
-          "width": 1356,
-          "height": 1260,
-          "bytes": 83608
+          "width": 1400,
+          "height": 1003,
+          "bytes": 71804
+        },
+        {
+          "file": "/landing/brain-proof-2000.webp",
+          "format": "webp",
+          "width": 2000,
+          "height": 1433,
+          "bytes": 114228
         }
       ]
     },
@@ -1039,7 +1053,7 @@
     {
       "id": "brain-workers-dark",
       "section": "brain",
-      "alt": "MediMind Control Center in dark theme, Workers tab: the coverage checker, bed and move watcher and theatre watcher, each with what it may do and a six-step level dial from Watching to Owns it, set at Prepares and capped at level 2. In development, demo data.",
+      "alt": "MediMind (dark theme) Control Center, Workers tab: the coverage checker, bed and move watcher and theatre watcher, each with what it may do, its branch and a six-step level dial from Watching to Owns it, set at Prepares and capped at level 2. In development, demo data; branch names neutralised.",
       "width": 2000,
       "height": 1232,
       "aspectRatio": "2000 / 1232",
@@ -1053,98 +1067,112 @@
           "format": "avif",
           "width": 800,
           "height": 493,
-          "bytes": 8036
+          "bytes": 8441
         },
         {
           "file": "/landing/brain-workers-dark-1400.avif",
           "format": "avif",
           "width": 1400,
           "height": 862,
-          "bytes": 18308
+          "bytes": 19277
         },
         {
           "file": "/landing/brain-workers-dark-2000.avif",
           "format": "avif",
           "width": 2000,
           "height": 1232,
-          "bytes": 26404
+          "bytes": 28270
         },
         {
           "file": "/landing/brain-workers-dark-1400.jpg",
           "format": "jpg",
           "width": 1400,
           "height": 862,
-          "bytes": 88282
+          "bytes": 92185
         },
         {
           "file": "/landing/brain-workers-dark-800.webp",
           "format": "webp",
           "width": 800,
           "height": 493,
-          "bytes": 18774
+          "bytes": 19948
         },
         {
           "file": "/landing/brain-workers-dark-1400.webp",
           "format": "webp",
           "width": 1400,
           "height": 862,
-          "bytes": 41146
+          "bytes": 43964
         },
         {
           "file": "/landing/brain-workers-dark-2000.webp",
           "format": "webp",
           "width": 2000,
           "height": 1232,
-          "bytes": 63776
+          "bytes": 67706
         }
       ]
     },
     {
       "id": "brain-proof-dark",
       "section": "brain",
-      "alt": "MediMind Control Center in dark theme, Proof tab: the map of administrative jobs the brain covers (closing findings, record correction checks, missing charges, claim pre-checks, payment matching, appeal drafts, closing packs, ministry records), the worker that covers each, its department and its current level. In development, demo data.",
-      "width": 1356,
-      "height": 1260,
-      "aspectRatio": "1356 / 1260",
-      "fallback": "/landing/brain-proof-dark-1356.jpg",
-      "avif": "/landing/brain-proof-dark-800.avif 800w, /landing/brain-proof-dark-1356.avif 1356w",
-      "webp": "/landing/brain-proof-dark-800.webp 800w, /landing/brain-proof-dark-1356.webp 1356w",
-      "sizes": "(min-width: 900px) 680px, 100vw",
+      "alt": "MediMind (dark theme) Control Center, Proof tab: the map of administrative jobs the hospital brain covers, with tags, the covering worker, the department and the current level per branch. In development, demo data; branch names neutralised.",
+      "width": 2000,
+      "height": 1433,
+      "aspectRatio": "2000 / 1433",
+      "fallback": "/landing/brain-proof-dark-1400.jpg",
+      "avif": "/landing/brain-proof-dark-800.avif 800w, /landing/brain-proof-dark-1400.avif 1400w, /landing/brain-proof-dark-2000.avif 2000w",
+      "webp": "/landing/brain-proof-dark-800.webp 800w, /landing/brain-proof-dark-1400.webp 1400w, /landing/brain-proof-dark-2000.webp 2000w",
+      "sizes": "(min-width: 1200px) 1100px, 100vw",
       "files": [
         {
           "file": "/landing/brain-proof-dark-800.avif",
           "format": "avif",
           "width": 800,
-          "height": 743,
-          "bytes": 18961
+          "height": 573,
+          "bytes": 16269
         },
         {
-          "file": "/landing/brain-proof-dark-1356.avif",
+          "file": "/landing/brain-proof-dark-1400.avif",
           "format": "avif",
-          "width": 1356,
-          "height": 1260,
-          "bytes": 14436
+          "width": 1400,
+          "height": 1003,
+          "bytes": 27763
         },
         {
-          "file": "/landing/brain-proof-dark-1356.jpg",
+          "file": "/landing/brain-proof-dark-2000.avif",
+          "format": "avif",
+          "width": 2000,
+          "height": 1433,
+          "bytes": 80870
+        },
+        {
+          "file": "/landing/brain-proof-dark-1400.jpg",
           "format": "jpg",
-          "width": 1356,
-          "height": 1260,
-          "bytes": 154587
+          "width": 1400,
+          "height": 1003,
+          "bytes": 137568
         },
         {
           "file": "/landing/brain-proof-dark-800.webp",
           "format": "webp",
           "width": 800,
-          "height": 743,
-          "bytes": 48100
+          "height": 573,
+          "bytes": 34372
         },
         {
-          "file": "/landing/brain-proof-dark-1356.webp",
+          "file": "/landing/brain-proof-dark-1400.webp",
           "format": "webp",
-          "width": 1356,
-          "height": 1260,
-          "bytes": 89968
+          "width": 1400,
+          "height": 1003,
+          "bytes": 76536
+        },
+        {
+          "file": "/landing/brain-proof-dark-2000.webp",
+          "format": "webp",
+          "width": 2000,
+          "height": 1433,
+          "bytes": 121428
         }
       ]
     },

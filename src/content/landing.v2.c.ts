@@ -226,15 +226,17 @@ export interface ProofNumber {
   /** Smaller word set after the value, inside the same figure. */
   unit?: string;
   line: string;
+  /** Optional literal count drawn in fine marks under the figure. */
+  marks?: { kind: 'dots' | 'ticks'; count: number };
 }
 
 export const proof = {
   title: ['Not a pilot.', 'A hospital network, running today.'],
   numbers: [
-    { value: '25', line: 'hospitals in one network, run on MediMind' },
+    { value: '25', line: 'hospitals in one network, run on MediMind', marks: { kind: 'dots', count: 25 } },
     { value: '1M+', line: 'patients' },
     { value: '3M+', line: 'encounters on MediMind' },
-    { value: '60', unit: 'days', line: 'to go live' },
+    { value: '60', unit: 'days', line: 'to go live', marks: { kind: 'ticks', count: 60 } },
   ] satisfies ProofNumber[],
   recognitionTitle: 'Backed and recognised',
   recognitions: [

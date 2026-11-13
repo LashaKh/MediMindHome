@@ -62,7 +62,8 @@ export const Shot: React.FC<{
   children?: React.ReactNode;
 }> = ({ screen, crop = FULL, lgPx, vw, manifest, decorative = false, className, children }) => {
   const isDark = useIsDark();
-  const { image } = screen;
+  // Sizes and files come from the manifest when it has the id (captures get re-shot); the content file is the fallback.
+  const image = manifest.get(screen.id) ?? screen.image;
   const twin = isDark ? manifest.get(`${screen.id}-dark`) : undefined;
   const shown = twin ?? image;
   const settle = isDark && !twin;
@@ -136,7 +137,7 @@ const uy = (n: number) => `${(n / H) * 100}%`;
 export const HeroScene: React.FC = () => {
   const manifest = useLandingManifest();
   const hero = copy.hero;
-  const front = hero.front.image;
+  const front = manifest.get(hero.front.id) ?? hero.front.image;
   const frontImgH = (FRONT.w * front.height) / front.width;
   const origin = { x: FRONT.x, y: FRONT.y + FRONT.bar };
   const lens = hero.lens.crop;
@@ -301,6 +302,11 @@ export const HeroScene: React.FC = () => {
  */
 export const OpsTileView: React.FC<{ tile: OpsTile; className?: string }> = ({ tile, className }) => {
   const manifest = useLandingManifest();
+  // The window keeps one shape (tile.frame) whatever the capture's size: the left part of a wide screen, the top of a tall one.
+  const base = manifest.get(tile.screen.id) ?? tile.screen.image;
+  const ratio = base.width / base.height;
+  const crop =
+    ratio >= tile.frame ? { x: 0, y: 0, w: tile.frame / ratio, h: 1 } : { x: 0, y: 0, w: 1, h: ratio / tile.frame };
   return (
     <figure className={cn('lc-stage lc-stage--small lc-tile m-0 flex min-w-0 flex-col', className)}>
       <figcaption className="px-6 pt-6 md:px-7 md:pt-7">
@@ -309,7 +315,7 @@ export const OpsTileView: React.FC<{ tile: OpsTile; className?: string }> = ({ t
       </figcaption>
       <div className="mt-auto pb-6 pl-6 pt-6 md:pb-7 md:pl-7 md:pt-7">
         <Window label={tile.name} lit className="w-[118%] dark:w-[112%]">
-          <Shot screen={tile.screen} crop={tile.crop} lgPx={(GRID_PX / 3) * 1.18} vw={110} manifest={manifest} />
+          <Shot screen={tile.screen} crop={crop} lgPx={(GRID_PX / 3) * 1.18} vw={110} manifest={manifest} />
         </Window>
       </div>
     </figure>

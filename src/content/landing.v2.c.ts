@@ -49,16 +49,17 @@ function shotSet(id: string, widths: number[], width: number, height: number, fa
 }
 
 /**
- * An operations tile: a name, one short tag, and a window onto the left
- * part of a wide screen (`crop`), drawn a little wider than the tile so it
- * runs off the right edge. All three crops share one shape (2 : 1).
+ * An operations tile: a name, one short tag, and a window onto a screen,
+ * drawn a little wider than the tile so it runs off the right edge. `frame`
+ * is the window's shape (width / height); the crop is worked out from the
+ * capture's real size in the manifest, so a re-shot screen still fits.
  */
 export interface OpsTile {
   id: string;
   name: string;
   tag: string;
   screen: Screen;
-  crop: Crop;
+  frame: number;
 }
 
 const patientChart = shot(
@@ -171,7 +172,7 @@ export const product = {
           'MediMind bed board for one department: rooms, beds, free beds and occupancy across the top, then each bed marked occupied or available. Demo data.'
         ),
       },
-      crop: { x: 0, y: 0, w: 0.622, h: 1 },
+      frame: 2,
     },
     {
       id: 'medication',
@@ -185,7 +186,7 @@ export const product = {
           'MediMind medication timeline: each scheduled medicine on a 24-hour grid, with late doses and the current hour marked. Demo data.'
         ),
       },
-      crop: { x: 0, y: 0, w: 0.636, h: 1 },
+      frame: 2,
     },
     {
       id: 'revenue',
@@ -199,7 +200,7 @@ export const product = {
           'MediMind revenue dashboard: total outstanding, days sales outstanding, clean claim rate and payer share across the top, with a financial alert below. Demo data.'
         ),
       },
-      crop: { x: 0, y: 0, w: 0.468, h: 1 },
+      frame: 2,
     },
   ] satisfies OpsTile[],
 };

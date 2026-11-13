@@ -36,9 +36,7 @@
 }
 
 /* The belief is the page's second display moment: hero scale, on purpose. */
-.lb-belief { font-size: clamp(2.5rem, 0.9rem + 5.9vw, 6.5rem); }
-.lb-beat { font-size: clamp(1.625rem, 3.2vw, 2.75rem); }
-.lb-statement { font-size: clamp(1.75rem, 3.6vw, 3rem); }
+.lb-belief { font-size: clamp(2.5rem, 0.9rem + 5.9vw, 7.5rem); }
 
 /* Ambient life: the nerve pulse and the heart beat. Off for reduced motion. */
 @keyframes lb-pulse {

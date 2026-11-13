@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import './BeliefSection.css';
 import { SectionShell } from '../ui';
 import { anatomy, type LayerId } from '../../content/landing.v2.b';
@@ -6,108 +6,71 @@ import { AnatomyOsFigure } from './AnatomyOsFigure';
 
 /**
  * One operating system (#system), lane B. "A hospital with a body made of
- * software": the locked taxonomy, Heart · Brain · Muscle · Skin · Nerve, as
- * an explorable figure beside five always-visible rows. Scrolling lights the
- * row in view; hover, focus or tap on a row (or the figure) takes over.
+ * software": the headline beside the figure, then the locked taxonomy,
+ * Heart · Brain · Muscle · Skin · Nerve, as five columns across the page.
+ * Hover, focus or tap on a part (or the figure) lights it in the body; with
+ * nothing chosen the whole body is lit.
  */
 export const AnatomyOsSection: React.FC = () => {
-  const [scrolled, setScrolled] = useState<LayerId>('heart');
+  const [picked, setPicked] = useState<LayerId | null>(null);
   const [pointed, setPointed] = useState<LayerId | null>(null);
-  const rowRefs = useRef<(HTMLLIElement | null)[]>([]);
-  const shown = pointed ?? scrolled;
-
-  useEffect(() => {
-    const nodes = rowRefs.current.filter((n): n is HTMLLIElement => n !== null);
-    if (!nodes.length || typeof IntersectionObserver === 'undefined') return;
-    const io = new IntersectionObserver(
-      (entries) => {
-        for (const e of entries) {
-          if (e.isIntersecting) setScrolled((e.target as HTMLElement).dataset.layer as LayerId);
-        }
-      },
-      { rootMargin: '-50% 0px -40% 0px' }
-    );
-    nodes.forEach((n) => io.observe(n));
-    return () => io.disconnect();
-  }, []);
+  const shown = pointed ?? picked;
+  const toggle = (id: LayerId) => {
+    setPicked((cur) => (cur === id ? null : id));
+    setPointed(null);
+  };
 
   return (
     <SectionShell id="system" tone="navy" labelledBy="system-title" className="lb-scope">
-      <div className="grid gap-8 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:items-end lg:gap-16">
-        <h2 id="system-title" className="mm-h2 max-w-[14ch]">
+      <div className="grid items-center gap-8 lg:grid-cols-12">
+        <h2 id="system-title" className="mm-h2 max-w-[18ch] lg:col-span-7">
           {anatomy.title}
         </h2>
-        <p className="mm-lead max-w-[44ch]">{anatomy.support}</p>
+        <AnatomyOsFigure
+          active={shown}
+          onHover={setPointed}
+          onPick={toggle}
+          className="mx-auto h-[260px] w-full sm:h-[360px] lg:col-span-5 lg:h-[420px]"
+        />
       </div>
 
-      <div className="mt-12 grid gap-6 md:mt-16 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:gap-16">
-        {/* The figure: sticky so it stays in view while the rows scroll. */}
-        <div className="sticky top-16 z-10 -mx-4 bg-mm-surface px-4 pb-3 pt-2 sm:-mx-6 sm:px-6 md:top-20 lg:static lg:mx-0 lg:bg-transparent lg:p-0">
-          <div className="lg:sticky lg:top-[calc(50vh-300px)]">
-            <AnatomyOsFigure
-              active={shown}
-              onHover={setPointed}
-              onPick={(id) => {
-                setScrolled(id);
-                setPointed(null);
+      <ol
+        className="mt-10 grid gap-3 sm:grid-cols-2 lg:mt-12 lg:grid-cols-5"
+        onMouseLeave={() => setPointed(null)}
+      >
+        {anatomy.layers.map((layer) => {
+          const isOn = shown === layer.id;
+          return (
+            <li
+              key={layer.id}
+              onMouseEnter={() => setPointed(layer.id)}
+              className="lb-row flex flex-col gap-2 rounded-[14px] border p-4 transition-[background-color,border-color] duration-300 sm:p-5 lg:gap-3 lg:p-6"
+              style={{
+                borderColor: isOn ? 'var(--lb-system)' : 'var(--mm-line)',
+                backgroundColor: isOn ? 'var(--lb-system-wash)' : 'transparent',
               }}
-              className="mx-auto h-[30svh] max-h-[560px] lg:max-h-none min-h-[220px] w-full md:h-[44svh] lg:h-[600px]"
-            />
-            <p className="mm-caption mt-3 hidden text-center lg:block">{anatomy.interactHint}</p>
-          </div>
-        </div>
-
-        <ol className="flex flex-col gap-3" onMouseLeave={() => setPointed(null)}>
-          {anatomy.layers.map((layer, i) => {
-            const isOn = shown === layer.id;
-            return (
-              <li
-                key={layer.id}
-                ref={(el) => {
-                  rowRefs.current[i] = el;
-                }}
-                data-layer={layer.id}
-                onMouseEnter={() => setPointed(layer.id)}
-                className="lb-row rounded-[14px] border p-5 transition-[background-color,border-color] duration-300 sm:p-7"
-                style={{
-                  borderColor: isOn ? 'var(--lb-system)' : 'var(--mm-line)',
-                  backgroundColor: isOn ? 'var(--lb-system-wash)' : 'transparent',
-                }}
-              >
-                <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-                  <h3 className="lb-serif text-[32px] leading-none sm:text-[40px]">
-                    <button
-                      type="button"
-                      className="lb-row-btn text-left transition-colors duration-300"
-                      style={{ color: isOn ? 'var(--mm-ink)' : 'var(--mm-muted)' }}
-                      aria-pressed={isOn}
-                      onFocus={() => setPointed(layer.id)}
-                      onBlur={() => setPointed(null)}
-                      onClick={() => {
-                        setScrolled(layer.id);
-                        setPointed(null);
-                      }}
-                    >
-                      {layer.name}
-                    </button>
-                  </h3>
-                  <span className="lb-mono text-sm text-mm-link">{layer.verb}</span>
-                  {layer.status && (
-                    <span className="mm-dev-badge">{layer.status}</span>
-                  )}
-                </div>
-                <p className="mm-lead mt-4 text-mm-ink">{layer.is}</p>
-                <p className="mm-body mt-2 max-w-[58ch]">{layer.means}</p>
-              </li>
-            );
-          })}
-        </ol>
-      </div>
-
-      <div className="mt-16 flex flex-col gap-3 border-t border-mm-line pt-10 md:mt-24">
-        <p className="lb-serif text-[22px] text-mm-ink sm:text-[28px] lg:text-[32px]">{anatomy.memoryLine}</p>
-        <p className="mm-caption">{anatomy.closing}</p>
-      </div>
+            >
+              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                <h3 className="lb-serif text-[26px] leading-none text-mm-ink sm:text-[32px] lg:text-[36px]">
+                  <button
+                    type="button"
+                    className="lb-row-btn text-left"
+                    aria-pressed={picked === layer.id}
+                    onFocus={() => setPointed(layer.id)}
+                    onBlur={() => setPointed(null)}
+                    onClick={() => toggle(layer.id)}
+                  >
+                    {layer.name}
+                  </button>
+                </h3>
+                <span className="lb-mono text-sm text-mm-link">{layer.verb}</span>
+              </div>
+              <p className="mm-body text-mm-ink">{layer.line}</p>
+              {layer.status && <span className="mm-dev-badge self-start">{layer.status}</span>}
+            </li>
+          );
+        })}
+      </ol>
     </SectionShell>
   );
 };

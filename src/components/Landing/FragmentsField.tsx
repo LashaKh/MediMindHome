@@ -25,7 +25,7 @@ interface Layout {
 
 function layoutFor(width: number): Layout {
   if (width >= 900) {
-    return { cols: 6, rows: 7, pc: 2, tileW: 124, tileH: 38, gap: 4, notes: [[0, 0], [4, 1], [1, 2], [5, 3], [0, 4], [3, 5]] };
+    return { cols: 6, rows: 7, pc: 2, tileW: Math.min(150, (width - 60) / 6), tileH: 44, gap: 4, notes: [[0, 0], [4, 1], [1, 2], [5, 3], [0, 4], [3, 5]] };
   }
   if (width >= 560) {
     return { cols: 6, rows: 7, pc: 2, tileW: Math.min(108, (width - 40) / 6), tileH: 36, gap: 4, notes: [[0, 0], [4, 1], [1, 4], [4, 5]] };

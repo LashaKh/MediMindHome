@@ -168,22 +168,6 @@ export const product = {
     valveCallout: { x: 0.404, y: 0.262, label: 'Valve ring, measured' } satisfies Callout,
   },
 
-  /**
-   * The bridge into the brain: the AI proposing next steps for one patient,
-   * a doctor accepting or dismissing each. Shown when `brain-patient-recommendations`
-   * exists in the manifest (night twin `-dark`). `pin` marks the Accept control
-   * (fractions of the capture), set once the capture lands.
-   */
-  bridge: {
-    id: 'brain-patient-recommendations',
-    chip: 'In development',
-    name: 'Proactive care',
-    tag: 'The system proposes the next step. A doctor accepts or dismisses it.',
-    label: 'Recommendations',
-    pin: null as { x: number; y: number } | null,
-    pinLabel: 'A doctor decides',
-  },
-
   tiles: [
     {
       id: 'beds',
@@ -254,21 +238,20 @@ export const brain = {
    * frame in development and left out of the built page.
    * `frame` is the window's shape (width / height); `focus` is the part of
    * the capture that stays in view when the frame is narrower than it.
-   * `scene`: the Control Center with workers and money laid over it.
-   * `more`: smaller stages beneath (one alone becomes a wide band).
-   * The staff inbox and a separate morning brief were dropped at capture
-   * (the brief already sits inside the Control Center); add an entry here
-   * if a clean capture arrives later.
+   * `scene`: the Control Center with the workers over its edge and the
+   * morning brief across its foot. `more`: smaller stages beneath (one
+   * alone becomes a wide band).
    */
   screens: {
     scene: [
-      { id: 'brain-control-center', name: 'Control Center', tag: 'Running, with one stop switch.', frame: 2000 / 934, focus: 'left top',
-        pin: { x: 0.978, y: 0.073, label: 'One switch stops it', dir: 'right' } },
+      { id: 'brain-control-center', name: 'Control Center', tag: 'Data gaps, money and flow, counted for every branch.', frame: 2, focus: 'left top' },
       { id: 'brain-workers', name: 'Workers', tag: 'Each job has a level and a cap.', frame: 2000 / 900, focus: 'left top',
         pin: { x: 0.699, y: 0.426, label: 'Capped by a person', dir: 'down', human: true } },
-      { id: 'brain-money', name: 'Money', tag: 'Missing charges and claim risks, found first.', frame: 2000 / 340, focus: 'left top' },
+      { id: 'brain-morning-brief', name: 'Morning brief', tag: 'The night, read before rounds.', frame: 3.4, focus: 'left top',
+        pin: { x: 0.275, y: 0.16, label: 'Decisions wait for a person', dir: 'right', human: true } },
     ],
     more: [
+      { id: 'brain-inbox', name: 'Staff inbox', tag: 'Prepared work, waiting for a person.', frame: 16 / 10, focus: 'left top' },
       { id: 'brain-proof', name: 'Proof', tag: 'Every job, the worker that covers it, its level.', frame: 16 / 10, focus: 'left top' },
     ],
   } satisfies { scene: BrainScreen[]; more: BrainScreen[] },

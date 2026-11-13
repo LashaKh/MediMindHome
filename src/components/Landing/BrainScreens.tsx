@@ -10,14 +10,15 @@ import './LaneCScreens.css';
 /**
  * Lane C helper: real screens of the hospital brain (in development), under
  * the autonomy dial. The Control Center large, the workers (each with its
- * own level dial) over its edge and the money panel across its foot; then
- * proof (the map of jobs and their levels) as a wide band. Every screen comes
+ * own level dial) over its edge and the morning brief across its foot; then
+ * the staff inbox and proof (the map of jobs and their levels). Every screen comes
  * from the manifest by id (`brain-*`, night twin `brain-*-dark`). A screen
  * not captured yet is a named empty frame while developing and is left out
  * of the built page.
  */
 
-const SHOW_SLOTS = import.meta.env.DEV;
+/** Named empty frames for missing captures; off, since the founder reviews the dev server. */
+const SHOW_SLOTS = false;
 
 const BrainShot: React.FC<{ screen: BrainScreen; manifest: ManifestMap; lgPx: number; vw: number }> = ({
   screen,
@@ -55,11 +56,11 @@ const BrainShot: React.FC<{ screen: BrainScreen; manifest: ManifestMap; lgPx: nu
 };
 
 /* The scene, in units of a 1000-wide box: Control Center, workers over its edge, money across its foot. */
-const H = 492;
+const H = 552;
 const SCENE = [
-  { x: 0, y: 0, w: 700, bar: 18 },
-  { x: 476, y: 128, w: 524, bar: 14 },
-  { x: 110, y: 364, w: 620, bar: 14 },
+  { x: 0, y: 0, w: 660, bar: 18 },
+  { x: 500, y: 150, w: 500, bar: 14 },
+  { x: 90, y: 352, w: 600, bar: 14 },
 ];
 const ux = (n: number) => `${n / 10}%`;
 const uy = (n: number) => `${(n / H) * 100}%`;
@@ -212,12 +213,12 @@ export const BrainScreens: React.FC = () => {
                 >
                   <Window
                     label={s.name}
-                    className={cn('absolute left-6 top-0 md:left-8', alone ? 'w-[110%] md:left-0' : 'w-[140%]')}
+                    className={cn('absolute left-6 top-0 md:left-8', alone ? 'w-[110%] md:left-0' : 'w-[114%]')}
                   >
                     <BrainShot
                       screen={s}
                       manifest={manifest}
-                      lgPx={alone ? ((GRID_PX * 7) / 12) * 1.1 : (GRID_PX / Math.max(more.length, 2)) * 1.4}
+                      lgPx={alone ? ((GRID_PX * 7) / 12) * 1.1 : (GRID_PX / Math.max(more.length, 2)) * 1.14}
                       vw={130}
                     />
                   </Window>

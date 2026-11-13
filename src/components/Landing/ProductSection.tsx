@@ -3,15 +3,13 @@ import { SectionShell } from '../ui';
 import { product as copy } from '../../content/landing.v2.c';
 import { HeroScene, OpsTileView } from './ProductPlate';
 import { ImagingStage } from './ProductImaging';
-import { ProductBridge } from './ProductBridge';
 import { cn } from '../../utils/cn';
 
 /**
  * The product (#product, lane C). The headline and one line, then three
  * movements: the imaging display (a CT scan in 3D beside heart-valve
  * planning), the clinical record in front of every hospital area, and a
- * row of operations tiles, then the bridge into the brain (the AI
- * proposing next steps, a doctor deciding). Real screens
+ * row of operations tiles. Real screens
  * only, a name and one short tag each, a quiet demo-data note.
  */
 
@@ -49,10 +47,6 @@ export const ProductSection: React.FC = () => (
           windowClassName={cn(i === 2 && 'md:max-lg:w-[66%]')}
         />
       ))}
-    </div>
-
-    <div className="mt-6 lg:mt-8">
-      <ProductBridge />
     </div>
   </SectionShell>
 );

@@ -1399,6 +1399,419 @@
           "bytes": 89634
         }
       ]
+    },
+    {
+      "id": "pacs-3d-vessel",
+      "section": "product-imaging",
+      "alt": "MediMind imaging viewer: a 3D volume render of a CT scan showing the vessels, heart, kidneys and skeleton of the chest and abdomen in warm orange on black. No patient details shown.",
+      "width": 1000,
+      "height": 1430,
+      "aspectRatio": "1000 / 1430",
+      "fallback": "/landing/pacs-3d-vessel-1000.jpg",
+      "avif": "/landing/pacs-3d-vessel-500.avif 500w, /landing/pacs-3d-vessel-1000.avif 1000w",
+      "webp": "/landing/pacs-3d-vessel-500.webp 500w, /landing/pacs-3d-vessel-1000.webp 1000w",
+      "sizes": "(min-width: 1200px) 1100px, 100vw",
+      "files": [
+        {
+          "file": "/landing/pacs-3d-vessel-500.avif",
+          "format": "avif",
+          "width": 500,
+          "height": 716,
+          "bytes": 36473
+        },
+        {
+          "file": "/landing/pacs-3d-vessel-500.webp",
+          "format": "webp",
+          "width": 500,
+          "height": 716,
+          "bytes": 52426
+        },
+        {
+          "file": "/landing/pacs-3d-vessel-1000.avif",
+          "format": "avif",
+          "width": 1000,
+          "height": 1430,
+          "bytes": 67053
+        },
+        {
+          "file": "/landing/pacs-3d-vessel-1000.webp",
+          "format": "webp",
+          "width": 1000,
+          "height": 1430,
+          "bytes": 113508
+        },
+        {
+          "file": "/landing/pacs-3d-vessel-1000.jpg",
+          "format": "jpeg",
+          "width": 1000,
+          "height": 1430,
+          "bytes": 208606
+        }
+      ]
+    },
+    {
+      "id": "pacs-3d-bone",
+      "section": "product-imaging",
+      "alt": "MediMind imaging viewer: the same CT scan rendered with the bone preset, the rib cage, spine and pelvis in pale ivory on black. No patient details shown.",
+      "width": 1000,
+      "height": 1430,
+      "aspectRatio": "1000 / 1430",
+      "fallback": "/landing/pacs-3d-bone-1000.jpg",
+      "avif": "/landing/pacs-3d-bone-500.avif 500w, /landing/pacs-3d-bone-1000.avif 1000w",
+      "webp": "/landing/pacs-3d-bone-500.webp 500w, /landing/pacs-3d-bone-1000.webp 1000w",
+      "sizes": "(min-width: 1200px) 1100px, 100vw",
+      "files": [
+        {
+          "file": "/landing/pacs-3d-bone-500.avif",
+          "format": "avif",
+          "width": 500,
+          "height": 716,
+          "bytes": 31080
+        },
+        {
+          "file": "/landing/pacs-3d-bone-500.webp",
+          "format": "webp",
+          "width": 500,
+          "height": 716,
+          "bytes": 46270
+        },
+        {
+          "file": "/landing/pacs-3d-bone-1000.avif",
+          "format": "avif",
+          "width": 1000,
+          "height": 1430,
+          "bytes": 56448
+        },
+        {
+          "file": "/landing/pacs-3d-bone-1000.webp",
+          "format": "webp",
+          "width": 1000,
+          "height": 1430,
+          "bytes": 96050
+        },
+        {
+          "file": "/landing/pacs-3d-bone-1000.jpg",
+          "format": "jpeg",
+          "width": 1000,
+          "height": 1430,
+          "bytes": 165807
+        }
+      ]
+    },
+    {
+      "id": "tavi-root",
+      "section": "product-imaging",
+      "alt": "MediMind heart-valve planning: three CT views of the heart with the aortic root outlined in blue, and a side panel of segmentation tools. No patient details shown.",
+      "width": 1920,
+      "height": 912,
+      "aspectRatio": "1920 / 912",
+      "fallback": "/landing/tavi-root-1400.jpg",
+      "avif": "/landing/tavi-root-800.avif 800w, /landing/tavi-root-1400.avif 1400w, /landing/tavi-root-1920.avif 1920w",
+      "webp": "/landing/tavi-root-800.webp 800w, /landing/tavi-root-1400.webp 1400w, /landing/tavi-root-1920.webp 1920w",
+      "sizes": "(min-width: 1200px) 1100px, 100vw",
+      "files": [
+        {
+          "file": "/landing/tavi-root-800.avif",
+          "format": "avif",
+          "width": 800,
+          "height": 380,
+          "bytes": 22587
+        },
+        {
+          "file": "/landing/tavi-root-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 380,
+          "bytes": 36710
+        },
+        {
+          "file": "/landing/tavi-root-1400.avif",
+          "format": "avif",
+          "width": 1400,
+          "height": 666,
+          "bytes": 42301
+        },
+        {
+          "file": "/landing/tavi-root-1400.webp",
+          "format": "webp",
+          "width": 1400,
+          "height": 666,
+          "bytes": 72496
+        },
+        {
+          "file": "/landing/tavi-root-1920.avif",
+          "format": "avif",
+          "width": 1920,
+          "height": 912,
+          "bytes": 57546
+        },
+        {
+          "file": "/landing/tavi-root-1920.webp",
+          "format": "webp",
+          "width": 1920,
+          "height": 912,
+          "bytes": 105092
+        },
+        {
+          "file": "/landing/tavi-root-1400.jpg",
+          "format": "jpeg",
+          "width": 1400,
+          "height": 665,
+          "bytes": 134661
+        }
+      ]
+    },
+    {
+      "id": "tavi-valve",
+      "section": "product-imaging",
+      "alt": "MediMind heart-valve planning: the valve ring measured on CT with markers around it, and a workflow panel listing the completed planning steps. No patient details shown.",
+      "width": 1920,
+      "height": 912,
+      "aspectRatio": "1920 / 912",
+      "fallback": "/landing/tavi-valve-1400.jpg",
+      "avif": "/landing/tavi-valve-800.avif 800w, /landing/tavi-valve-1400.avif 1400w, /landing/tavi-valve-1920.avif 1920w",
+      "webp": "/landing/tavi-valve-800.webp 800w, /landing/tavi-valve-1400.webp 1400w, /landing/tavi-valve-1920.webp 1920w",
+      "sizes": "(min-width: 1200px) 1100px, 100vw",
+      "files": [
+        {
+          "file": "/landing/tavi-valve-800.avif",
+          "format": "avif",
+          "width": 800,
+          "height": 380,
+          "bytes": 13812
+        },
+        {
+          "file": "/landing/tavi-valve-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 380,
+          "bytes": 24558
+        },
+        {
+          "file": "/landing/tavi-valve-1400.avif",
+          "format": "avif",
+          "width": 1400,
+          "height": 666,
+          "bytes": 26714
+        },
+        {
+          "file": "/landing/tavi-valve-1400.webp",
+          "format": "webp",
+          "width": 1400,
+          "height": 666,
+          "bytes": 49362
+        },
+        {
+          "file": "/landing/tavi-valve-1920.avif",
+          "format": "avif",
+          "width": 1920,
+          "height": 912,
+          "bytes": 37940
+        },
+        {
+          "file": "/landing/tavi-valve-1920.webp",
+          "format": "webp",
+          "width": 1920,
+          "height": 912,
+          "bytes": 71750
+        },
+        {
+          "file": "/landing/tavi-valve-1400.jpg",
+          "format": "jpeg",
+          "width": 1400,
+          "height": 665,
+          "bytes": 102133
+        }
+      ]
+    },
+    {
+      "id": "revenue-kpis",
+      "section": "product-operations",
+      "alt": "MediMind revenue cycle dashboard: total outstanding, days sales outstanding, clean claim rate, top payer share and net collection rate, with one financial alert. Demo data.",
+      "width": 2000,
+      "height": 468,
+      "aspectRatio": "2000 / 468",
+      "fallback": "/landing/revenue-kpis-1400.jpg",
+      "avif": "/landing/revenue-kpis-800.avif 800w, /landing/revenue-kpis-1400.avif 1400w, /landing/revenue-kpis-2000.avif 2000w",
+      "webp": "/landing/revenue-kpis-800.webp 800w, /landing/revenue-kpis-1400.webp 1400w, /landing/revenue-kpis-2000.webp 2000w",
+      "sizes": "(min-width: 1200px) 1100px, 100vw",
+      "files": [
+        {
+          "file": "/landing/revenue-kpis-800.avif",
+          "format": "avif",
+          "width": 800,
+          "height": 188,
+          "bytes": 6546
+        },
+        {
+          "file": "/landing/revenue-kpis-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 188,
+          "bytes": 11588
+        },
+        {
+          "file": "/landing/revenue-kpis-1400.avif",
+          "format": "avif",
+          "width": 1400,
+          "height": 328,
+          "bytes": 13923
+        },
+        {
+          "file": "/landing/revenue-kpis-1400.webp",
+          "format": "webp",
+          "width": 1400,
+          "height": 328,
+          "bytes": 25920
+        },
+        {
+          "file": "/landing/revenue-kpis-2000.avif",
+          "format": "avif",
+          "width": 2000,
+          "height": 468,
+          "bytes": 20962
+        },
+        {
+          "file": "/landing/revenue-kpis-2000.webp",
+          "format": "webp",
+          "width": 2000,
+          "height": 468,
+          "bytes": 41954
+        },
+        {
+          "file": "/landing/revenue-kpis-1400.jpg",
+          "format": "jpeg",
+          "width": 1400,
+          "height": 327,
+          "bytes": 80059
+        }
+      ]
+    },
+    {
+      "id": "bed-board-grid",
+      "section": "product-operations",
+      "alt": "MediMind bed board for an emergency department: 6 rooms, 20 beds, 11 free, 45 percent occupancy, and a row of bed cards marked occupied or available. Demo data.",
+      "width": 2000,
+      "height": 622,
+      "aspectRatio": "2000 / 622",
+      "fallback": "/landing/bed-board-grid-1400.jpg",
+      "avif": "/landing/bed-board-grid-800.avif 800w, /landing/bed-board-grid-1400.avif 1400w, /landing/bed-board-grid-2000.avif 2000w",
+      "webp": "/landing/bed-board-grid-800.webp 800w, /landing/bed-board-grid-1400.webp 1400w, /landing/bed-board-grid-2000.webp 2000w",
+      "sizes": "(min-width: 1200px) 1100px, 100vw",
+      "files": [
+        {
+          "file": "/landing/bed-board-grid-800.avif",
+          "format": "avif",
+          "width": 800,
+          "height": 250,
+          "bytes": 6916
+        },
+        {
+          "file": "/landing/bed-board-grid-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 250,
+          "bytes": 12350
+        },
+        {
+          "file": "/landing/bed-board-grid-1400.avif",
+          "format": "avif",
+          "width": 1400,
+          "height": 436,
+          "bytes": 13140
+        },
+        {
+          "file": "/landing/bed-board-grid-1400.webp",
+          "format": "webp",
+          "width": 1400,
+          "height": 436,
+          "bytes": 26448
+        },
+        {
+          "file": "/landing/bed-board-grid-2000.avif",
+          "format": "avif",
+          "width": 2000,
+          "height": 622,
+          "bytes": 19674
+        },
+        {
+          "file": "/landing/bed-board-grid-2000.webp",
+          "format": "webp",
+          "width": 2000,
+          "height": 622,
+          "bytes": 41138
+        },
+        {
+          "file": "/landing/bed-board-grid-1400.jpg",
+          "format": "jpeg",
+          "width": 1400,
+          "height": 436,
+          "bytes": 86209
+        }
+      ]
+    },
+    {
+      "id": "medication-timeline",
+      "section": "product-operations",
+      "alt": "MediMind medication administration record: five medicines on a 24-hour timeline with due and overdue marks. Demo data.",
+      "width": 2000,
+      "height": 636,
+      "aspectRatio": "2000 / 636",
+      "fallback": "/landing/medication-timeline-1400.jpg",
+      "avif": "/landing/medication-timeline-800.avif 800w, /landing/medication-timeline-1400.avif 1400w, /landing/medication-timeline-2000.avif 2000w",
+      "webp": "/landing/medication-timeline-800.webp 800w, /landing/medication-timeline-1400.webp 1400w, /landing/medication-timeline-2000.webp 2000w",
+      "sizes": "(min-width: 1200px) 1100px, 100vw",
+      "files": [
+        {
+          "file": "/landing/medication-timeline-800.avif",
+          "format": "avif",
+          "width": 800,
+          "height": 256,
+          "bytes": 4907
+        },
+        {
+          "file": "/landing/medication-timeline-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 256,
+          "bytes": 9070
+        },
+        {
+          "file": "/landing/medication-timeline-1400.avif",
+          "format": "avif",
+          "width": 1400,
+          "height": 446,
+          "bytes": 9555
+        },
+        {
+          "file": "/landing/medication-timeline-1400.webp",
+          "format": "webp",
+          "width": 1400,
+          "height": 446,
+          "bytes": 21238
+        },
+        {
+          "file": "/landing/medication-timeline-2000.avif",
+          "format": "avif",
+          "width": 2000,
+          "height": 636,
+          "bytes": 15049
+        },
+        {
+          "file": "/landing/medication-timeline-2000.webp",
+          "format": "webp",
+          "width": 2000,
+          "height": 636,
+          "bytes": 34496
+        },
+        {
+          "file": "/landing/medication-timeline-1400.jpg",
+          "format": "jpeg",
+          "width": 1400,
+          "height": 446,
+          "bytes": 68066
+        }
+      ]
     }
   ]
 }

@@ -73,3 +73,25 @@ Captured from the development system (test data) with headless Chromium at 1440 
 **Skipped**
 - **Management overview (command center or analytics).** The test data makes it look broken: the hub shows 11% occupancy with "0 min" turnaround, 0 discharges, 0 transfers and "No staffing data, ratio 1:0.0"; the census page shows a 1188-hour "CRITICAL" turnaround and 30 alerts timed in hundreds of hours, and its 10 occupied + 58 free beds do not add up to the 91 total; the capacity heatmap says "No departments found"; discharge readiness is empty; department analytics never finished loading. Needs seeded census data before a capture.
 - **Laboratory queue.** The queue was empty for the selected branch and dates ("No matching orders"), the header showed "3 critical alerts, oldest 723h" and "Preferences not synced". Clearing filters did not load orders, and a second attempt timed out under heavy machine load. The queue cards also carry patient names. Keep `lab-orders` for now.
+
+## Round 4 captures 2026-11-13 (brain screens and dark theme)
+
+Same recipe as above: headless Chromium, 1440 px wide, 2x, English UI, owner test seat on the development system (test data); ffmpeg/Pillow Lanczos resize, `cwebp -q 80 -m 6 -sharp_yuv`, AVIF `libaom-av1 -still-picture 1 -crf 30` 4:4:4; 800 / 1400 / 2000 px plus a 1400 px JPEG. Every crop removes the top bar (branch, seat, module menu). Nothing was saved, approved or changed: only pages, tabs, the task-type filter and the header branch filter were used. The brain screens come from the `brain-stage-1` worktree (a separate dev server on port 3011, now stopped) and carry the "In development" status on the page.
+
+**Branch names masked.** The brain screens print the demo branch name (a real hospital name in the test data) inside a few cells. Those few words are painted over with the surrounding background colour: the branch box on each worker card, the branch cell of the money table and the branch column header of the proof table. Nothing else is altered.
+
+| id | Route | What it shows | Section | Notes |
+|---|---|---|---|---|
+| `brain-control-center` | `/emr/dashboard/control-center` | Control Center header (Running, Stop switch, workers 16 of 16), the Overview / Workers / Rules / Proof / Log tabs, "Needs a decision 11" band and the morning brief tiles (stays open 98, ended yesterday 30, worker outputs 1). Keeps the Command Center sidebar. | brain | Best hero for the Brain section. The morning brief lives here, so there is no separate `brain-morning-brief`. |
+| `brain-workers` | `…?tab=workers` | Three worker cards (coverage checker, bed and move watcher, theatre watcher): status, what each may do, tags, and the six-step level dial (Watching … Owns it) set at Prepares, capped at level 2. | brain | Branch box masked (shows empty). |
+| `brain-proof` | `…?tab=proof` | Map of administrative jobs: action type, tags, covering worker, department and the current level per job. | brain | Narrow table crop: largest file is 1356 px (2x for ~680 css px), `sizes` set to 680px. The level column header is masked (was a branch name); a second branch column is cut off. |
+| `brain-money` | Overview, Money panel | Missing charges 22, would be returned 7, open payment lines 6 (GEL 150.00 difference), appealable denials 11 (GEL 1,160.00). | brain | Wide strip (about 5.9 : 1). Branch cell masked. Extra candidate (not on the original list). |
+| `brain-*-dark` (4) | same routes, dark theme | Dark twins of the four above, same boxes and masks. | brain | Captured a few hours later; counts differ slightly (for example 19 workers, 6 decisions) because another session is adding test data. |
+| `os-modules-full-dark` | `/emr/dashboard` (1440 x 1100) | Dark twin of `os-modules-full`, same framing. | what changes | Account box cut off as in the light version. |
+| `billing-revenue-dark` | `/emr/billing/revenue` | Dark twin of the four-figure money band. | example, billing | Charges and outstanding read 30,398.82 / 29,158.82 GEL (test data changed since the light capture). |
+| `warehouse-stock-dark` | `/emr/dashboard/warehouse/stock?stockStatus=low-stock` | Dark twin of the low-stock list, same framing and same 73 items. | example, warehouse | In dark theme low counts are not red. |
+
+**Skipped**
+- `brain-inbox`: the staff inbox filtered to Brain shows the prepared cards, but every card title begins with a real branch name (one in Georgian), and opening a card shows "The brief could not load" instead of the Approve / Edit / Reject view. Not usable yet.
+- `brain-morning-brief`: already contained in `brain-control-center`; a separate crop added nothing.
+- Dark twins of `hero-bed-board`, `patient-chart`, `lab-orders`, `billing-funding`, `ai-chat-answer`: the light originals are older deck screenshots of a previous UI version and of specific demo patients. The current bed board prints a real branch name and address on every department card, and the patient screens would need a new patient choice and new crops, so "same framing" is not possible. Lane C should tone the frame for these in night mode.

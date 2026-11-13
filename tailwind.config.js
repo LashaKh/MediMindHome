@@ -118,7 +118,7 @@ export default {
       },
       maxWidth: {
         // The page grid: header, hero and every SectionShell share this edge.
-        page: '78rem',
+        page: '96rem',
       },
     },
   },

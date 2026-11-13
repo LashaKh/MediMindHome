@@ -1,6 +1,6 @@
 import React from 'react';
 import type { ResponsiveImage } from '../../content/types';
-import type { Crop, Scene, Screen } from '../../content/landing.v2.c';
+import type { Crop, OpsTile, Screen } from '../../content/landing.v2.c';
 import { product as copy } from '../../content/landing.v2.c';
 import { isPending, useIsDark, useLandingManifest, useMinWidth } from './laneC.manifest';
 import type { ManifestMap } from './laneC.manifest';
@@ -100,11 +100,13 @@ export const Window: React.FC<{
   back?: boolean;
   /** Top bar height as a share of the window width (keeps scenes in proportion); omit for a fixed 30px bar. */
   barRatio?: number;
+  /** A light screen that stays bright at night, with a cool bloom around its frame. */
+  lit?: boolean;
   className?: string;
   style?: React.CSSProperties;
   children: React.ReactNode;
-}> = ({ label, back = false, barRatio, className, style, children }) => (
-  <div className={cn('lc-window', back && 'lc-window--back', className)} style={style}>
+}> = ({ label, back = false, barRatio, lit = false, className, style, children }) => (
+  <div className={cn('lc-window', back && 'lc-window--back', lit && 'lc-window--lit', className)} style={style}>
     <div
       className="lc-chrome"
       style={barRatio ? { aspectRatio: `${1 / barRatio}` } : { height: 30 }}
@@ -124,7 +126,7 @@ export const Window: React.FC<{
  * same units), so windows, the lens and its cone stay locked together at
  * every width from 1024 up.
  */
-const H = 528;
+const H = 520;
 const BACK = { x: 0, y: 0, w: 470, bar: 18 };
 const FRONT = { x: 150, y: 104, w: 850, bar: 22 };
 const LENS = { x: 640, y: 444, w: 340 };
@@ -155,10 +157,10 @@ export const HeroScene: React.FC = () => {
 
   return (
     <figure className="m-0">
-      <div className="lc-stage p-4 md:p-8 lg:px-10 lg:pb-12 lg:pt-10 xl:px-14 xl:pb-14 xl:pt-12">
+      <div className="lc-stage p-4 md:p-8 lg:px-10 lg:pb-10 lg:pt-9 xl:px-12 xl:pb-11 xl:pt-10">
         {/* Below 1024: the record alone, cropped to its first two (phones) or three (tablets) columns */}
         {!lg && (
-          <Window label={hero.frontLabel}>
+          <Window label={hero.frontLabel} lit>
             <Shot
               screen={hero.front}
               crop={{ x: 0, y: 0.27, w: md ? 0.755 : 0.52, h: 0.73 }}
@@ -191,6 +193,7 @@ export const HeroScene: React.FC = () => {
             <Window
               label={hero.frontLabel}
               barRatio={FRONT.bar / FRONT.w}
+              lit
               className="absolute"
               style={{
                 left: ux(FRONT.x),
@@ -248,7 +251,7 @@ export const HeroScene: React.FC = () => {
 
             {/* The lens */}
             <div className="absolute" style={{ left: ux(LENS.x), top: uy(LENS.y), width: ux(LENS.w) }}>
-              <div className="lc-window" style={{ borderRadius: 10 }}>
+              <div className="lc-window lc-window--lit" style={{ borderRadius: 10 }}>
                 <Shot
                   screen={hero.front}
                   crop={lens}
@@ -289,44 +292,25 @@ export const HeroScene: React.FC = () => {
   );
 };
 
-// ─── A supporting scene ──────────────────────────────────────────────
+// ─── An operations tile ──────────────────────────────────────────────
 
-export const SceneStage: React.FC<{
-  scene: Scene;
-  /** Share of the grid the stage spans on wide screens (0 to 1). */
-  span: number;
-  className?: string;
-}> = ({ scene, span, className }) => {
+/**
+ * A wide, short screen in a refined frame: the name and tag above, the
+ * window running off the tile's right edge on purpose. At night the screen
+ * is a lit display (full brightness, a cool bloom), drawn a touch smaller.
+ */
+export const OpsTileView: React.FC<{ tile: OpsTile; className?: string }> = ({ tile, className }) => {
   const manifest = useLandingManifest();
-  const pad = 32;
-  const lgWindow = scene.scale * (span * GRID_PX - pad);
   return (
-    <figure className={cn('lc-stage lc-stage--small m-0 flex min-w-0 flex-col', className)}>
-      <figcaption className="relative z-[4] px-6 pt-6 md:px-8 md:pt-7">
-        <span className="mm-h3 block">{scene.name}</span>
-        <span className="mm-body mt-1 block text-pretty text-mm-muted">{scene.tag}</span>
+    <figure className={cn('lc-stage lc-stage--small lc-tile m-0 flex min-w-0 flex-col', className)}>
+      <figcaption className="px-6 pt-6 md:px-7 md:pt-7">
+        <span className="mm-h3 block">{tile.name}</span>
+        <span className="mm-body mt-1 block text-pretty text-mm-muted">{tile.tag}</span>
       </figcaption>
-      <div className="relative mt-6 min-h-0 flex-1 md:mt-7">
-        <Window
-          label={scene.name}
-          className="absolute left-6 top-0 md:left-8"
-          style={{ width: `calc((100% - ${pad}px) * ${scene.scale})` }}
-        >
-          <Shot screen={scene.screen} crop={scene.crop} lgPx={lgWindow} vw={scene.scale * 90} manifest={manifest} />
+      <div className="mt-auto pb-6 pl-6 pt-6 md:pb-7 md:pl-7 md:pt-7">
+        <Window label={tile.name} lit className="w-[118%] dark:w-[112%]">
+          <Shot screen={tile.screen} crop={tile.crop} lgPx={(GRID_PX / 3) * 1.18} vw={110} manifest={manifest} />
         </Window>
-        {scene.front && (
-          <div className="absolute bottom-[9%] right-[-12%] z-[3]" style={{ width: `${scene.front.width * 100}%` }}>
-            <div className="lc-window" style={{ borderRadius: 10 }}>
-              <Shot
-                screen={scene.front.screen}
-                crop={scene.front.crop}
-                lgPx={span * GRID_PX * scene.front.width}
-                vw={scene.front.width * 90}
-                manifest={manifest}
-              />
-            </div>
-          </div>
-        )}
       </div>
     </figure>
   );

@@ -42,21 +42,23 @@ export interface Callout {
   label: string;
 }
 
+/** A screenshot with its own file widths (the PACS and planning captures are not 800/1400/2000). */
+function shotSet(id: string, widths: number[], width: number, height: number, fallbackWidth: number, alt: string): ResponsiveImage {
+  const set = (ext: string) => widths.map((w) => `/landing/${id}-${w}.${ext} ${w}w`).join(', ');
+  return { alt, width, height, fallback: `/landing/${id}-${fallbackWidth}.jpg`, avif: set('avif'), webp: set('webp') };
+}
+
 /**
- * A supporting scene: a name, one short tag, and a window onto the screen
- * that bleeds off the stage's right and bottom edge. `crop` is the part of the
- * screen the window holds; `scale` is the window's width as a share of the
- * stage (above 1 it runs off the edge, which is the point). `front` is an
- * optional second screen lifted across the window's foot.
+ * An operations tile: a name, one short tag, and a window onto the left
+ * part of a wide screen (`crop`), drawn a little wider than the tile so it
+ * runs off the right edge. All three crops share one shape (2 : 1).
  */
-export interface Scene {
+export interface OpsTile {
   id: string;
   name: string;
   tag: string;
   screen: Screen;
   crop: Crop;
-  scale: number;
-  front?: { screen: Screen; crop: Crop; width: number };
 }
 
 const patientChart = shot(
@@ -93,65 +95,113 @@ export const product = {
     lens: { crop: { x: 0.264, y: 0.566, w: 0.236, h: 0.118 } satisfies Crop, label: 'High-alert medicine marked' },
   },
 
-  scenes: [
-    {
-      id: 'stock',
-      name: 'Pharmacy and stock',
-      tag: 'Low stock flagged before the shelf is empty.',
-      screen: {
-        id: 'warehouse-stock',
-        image: shot(
-          'warehouse-stock',
-          1018,
-          'MediMind warehouse stock list filtered to low stock: item codes, quantities with low counts in red, prices, expiry dates and batch series. Demo data.'
+  /**
+   * The imaging stage: a dark display in both themes. The 3D render of one
+   * CT scan crossfades between vessels and bone; heart-valve planning stands
+   * beside it with two thin callouts. Points are fractions of each screen.
+   */
+  imaging: {
+    title: 'Imaging and planning',
+    line: 'CT in 3D and heart-valve planning, inside the same system as the record.',
+    modesLabel: '3D view',
+    modes: [
+      {
+        id: 'vessel',
+        label: 'Vessel',
+        image: shotSet(
+          'pacs-3d-vessel',
+          [500, 1000],
+          1000,
+          1430,
+          1000,
+          'MediMind imaging: a CT scan of the chest and abdomen rendered in 3D, vessels in warm orange over the skeleton. Demo data.'
         ),
       },
-      crop: { x: 0.195, y: 0.125, w: 0.805, h: 0.875 },
-      scale: 1.42,
-    },
-    {
-      id: 'lab',
-      name: 'Laboratory',
-      tag: 'Every order and its status, one list.',
-      screen: {
-        id: 'lab-orders',
-        image: shot(
-          'lab-orders',
-          654,
-          'MediMind order history for one visit: three laboratory orders and one imaging order, each with its status. Demo data.'
+      {
+        id: 'bone',
+        label: 'Bone',
+        image: shotSet(
+          'pacs-3d-bone',
+          [500, 1000],
+          1000,
+          1430,
+          1000,
+          'The same CT scan rendered in 3D as bone, in ivory. Demo data.'
         ),
       },
-      crop: { x: 0, y: 0.105, w: 0.5, h: 0.895 },
-      scale: 1.3,
-    },
+    ],
+    root: {
+      id: 'tavi-root',
+      image: shotSet(
+        'tavi-root',
+        [800, 1400, 1920],
+        1920,
+        912,
+        1400,
+        'MediMind heart-valve planning: the aortic root outlined in blue on coronal, sagittal and axial CT views, with the segmentation tools beside them. Demo data.'
+      ),
+    } satisfies Screen,
+    rootLabel: 'Valve planning',
+    valve: {
+      id: 'tavi-valve',
+      image: shotSet(
+        'tavi-valve',
+        [800, 1400, 1920],
+        1920,
+        912,
+        1400,
+        'MediMind heart-valve planning: the valve ring measured on the axial view, with the workflow progress panel. Demo data.'
+      ),
+    } satisfies Screen,
+    valveLabel: 'Annulus',
+    rootCallout: { x: 0.178, y: 0.215, label: 'Aortic root, outlined' } satisfies Callout,
+    valveCallout: { x: 0.404, y: 0.262, label: 'Valve ring, measured' } satisfies Callout,
+  },
+
+  tiles: [
     {
-      id: 'billing',
-      name: 'Billing',
-      tag: 'Charges straight from the record.',
+      id: 'beds',
+      name: 'Beds',
+      tag: 'Every bed, live.',
       screen: {
-        id: 'billing-funding',
+        id: 'bed-board-grid',
         image: shot(
-          'billing-funding',
-          594,
-          'MediMind funding request screen: choose a state or municipal co-funding request, then the financier. Demo data.'
+          'bed-board-grid',
+          622,
+          'MediMind bed board for one department: rooms, beds, free beds and occupancy across the top, then each bed marked occupied or available. Demo data.'
         ),
       },
-      crop: { x: 0, y: 0, w: 0.56, h: 1 },
-      scale: 1.16,
-      front: {
-        screen: {
-          id: 'billing-revenue',
-          image: shot(
-            'billing-revenue',
-            188,
-            'MediMind revenue report for one month: charges, amounts invoiced to payers, collections and the outstanding balance, in lari. Demo data.'
-          ),
-        },
-        crop: { x: 0, y: 0, w: 0.5, h: 1 },
-        width: 0.94,
-      },
+      crop: { x: 0, y: 0, w: 0.622, h: 1 },
     },
-  ] satisfies Scene[],
+    {
+      id: 'medication',
+      name: 'Medication',
+      tag: 'Every dose on one timeline.',
+      screen: {
+        id: 'medication-timeline',
+        image: shot(
+          'medication-timeline',
+          636,
+          'MediMind medication timeline: each scheduled medicine on a 24-hour grid, with late doses and the current hour marked. Demo data.'
+        ),
+      },
+      crop: { x: 0, y: 0, w: 0.636, h: 1 },
+    },
+    {
+      id: 'revenue',
+      name: 'Revenue',
+      tag: 'The numbers leadership asks for.',
+      screen: {
+        id: 'revenue-kpis',
+        image: shot(
+          'revenue-kpis',
+          468,
+          'MediMind revenue dashboard: total outstanding, days sales outstanding, clean claim rate and payer share across the top, with a financial alert below. Demo data.'
+        ),
+      },
+      crop: { x: 0, y: 0, w: 0.468, h: 1 },
+    },
+  ] satisfies OpsTile[],
 };
 
 // ─── 7. Brain (#brain) ───────────────────────────────────────────────

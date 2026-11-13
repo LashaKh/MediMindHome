@@ -1,23 +1,17 @@
 import React from 'react';
 import { SectionShell } from '../ui';
 import { product as copy } from '../../content/landing.v2.c';
-import { HeroScene, SceneStage } from './ProductPlate';
+import { HeroScene, OpsTileView } from './ProductPlate';
+import { ImagingStage } from './ProductImaging';
 import { cn } from '../../utils/cn';
 
 /**
- * The product (#product, lane C). The headline, one line, then one large
- * composed scene (the clinical record in front of every hospital area,
- * with two thin callouts on the telling detail), then three supporting
- * scenes: pharmacy and stock, laboratory, billing. Real screens only, a
- * name and one short tag each, a quiet demo-data note.
+ * The product (#product, lane C). The headline and one line, then three
+ * movements: the imaging display (a CT scan in 3D beside heart-valve
+ * planning), the clinical record in front of every hospital area, and a
+ * row of three operations tiles (beds, medication, revenue). Real screens
+ * only, a name and one short tag each, a quiet demo-data note.
  */
-
-/** Where each supporting scene sits: its classes and its share of the grid on wide screens. */
-const PLACE: Record<string, { className: string; span: number }> = {
-  stock: { className: 'md:col-span-2 lg:col-span-7 lg:row-span-2 max-lg:aspect-[16/11] max-md:aspect-[4/5]', span: 7 / 12 },
-  lab: { className: 'lg:col-span-5 max-lg:aspect-[5/6] max-md:aspect-[4/5]', span: 5 / 12 },
-  billing: { className: 'lg:col-span-5 max-lg:aspect-[5/6] max-md:aspect-[4/5]', span: 5 / 12 },
-};
 
 export const ProductSection: React.FC = () => (
   <SectionShell id="product" tone="white" labelledBy="product-title">
@@ -36,14 +30,17 @@ export const ProductSection: React.FC = () => (
     </div>
 
     <div className="mt-10 md:mt-14">
+      <ImagingStage />
+    </div>
+
+    <div className="mt-6 lg:mt-8">
       <HeroScene />
     </div>
 
-    <div className="mt-5 grid gap-5 md:grid-cols-2 lg:mt-6 lg:auto-rows-[clamp(19rem,24vw,22.5rem)] lg:grid-cols-12 lg:gap-6">
-      {copy.scenes.map((scene) => {
-        const place = PLACE[scene.id];
-        return <SceneStage key={scene.id} scene={scene} span={place.span} className={place.className} />;
-      })}
+    <div className="mt-6 grid gap-5 md:grid-cols-2 lg:mt-8 lg:grid-cols-3 lg:gap-6">
+      {copy.tiles.map((tile, i) => (
+        <OpsTileView key={tile.id} tile={tile} className={cn(i === 2 && 'md:max-lg:col-span-2')} />
+      ))}
     </div>
   </SectionShell>
 );

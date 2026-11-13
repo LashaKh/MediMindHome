@@ -162,10 +162,10 @@ const Field: React.FC = () => {
     <svg
       ref={ref}
       viewBox={`0 0 ${W} ${H}`}
-      className="block h-[300px] w-full sm:h-auto"
+      // Phones: the field is drawn wider than the screen and shifted so the network sits left of centre with its region in view.
+      className="-ml-[16%] block h-auto w-[170%] max-w-none sm:ml-0 sm:w-full"
       aria-hidden="true"
       focusable="false"
-      preserveAspectRatio="xMinYMid slice"
     >
       <defs>
         <radialGradient id="ambition-glow" cx={CORE.x} cy={CORE.y} r={340} gradientUnits="userSpaceOnUse">
@@ -306,7 +306,7 @@ export const AmbitionWorldSection: React.FC = () => (
       </h2>
     </div>
 
-    <div className="relative mx-auto mt-6 w-full max-w-[110rem] md:-mt-6">
+    <div className="relative mx-auto -mt-2 w-full max-w-[110rem] md:-mt-6">
       <Field />
     </div>
 

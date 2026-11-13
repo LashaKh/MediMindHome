@@ -206,7 +206,7 @@ const Timeline: React.FC = () => {
             ))}
 
             {/* System names, sitting on their lines. */}
-            <span className="absolute left-0 text-[0.875rem] text-mm-muted" style={{ top: CUR_Y - 28 }}>
+            <span className="absolute left-0 bg-mm-surface pr-2 text-[0.875rem] text-mm-muted" style={{ top: CUR_Y - 28 }}>
               {copy.lanes.current}
             </span>
             {!narrow && (
@@ -214,7 +214,7 @@ const Timeline: React.FC = () => {
                 {copy.wayBack}
               </span>
             )}
-            <span className="absolute left-0 text-[0.875rem] font-semibold text-mm-ink" style={{ top: MM_Y - 30 }}>
+            <span className="absolute left-0 bg-mm-surface pr-2 text-[0.875rem] font-semibold text-mm-ink" style={{ top: MM_Y - 30 }}>
               {copy.lanes.medimind}
             </span>
           </>
@@ -222,14 +222,14 @@ const Timeline: React.FC = () => {
       </div>
 
       {/* Milestones: the decision at day 20, live at day 60. Real text. */}
-      <div className="relative mt-2 h-10">
+      <div className={cn('relative mt-2', narrow ? 'h-[4.5rem]' : 'h-10')}>
         <p className="absolute top-0" style={{ left: w > 0 ? x(20) + 12 : '33.3%' }}>
           <span className="sr-only">{copy.decide.day}: </span>
           <span className={cn(dDisplay, 'block whitespace-nowrap text-[1.25rem] leading-tight text-mm-human-text sm:text-[1.5rem]')}>
             {copy.decide.text}
           </span>
         </p>
-        <p className="absolute right-0 top-0 text-right">
+        <p className={cn('absolute right-0 text-right', narrow ? 'top-9' : 'top-0')}>
           <span className="sr-only">{copy.live.day}: </span>
           <span className={cn(dDisplay, 'block whitespace-nowrap text-[1.25rem] leading-tight text-mm-link sm:text-[1.5rem]')}>
             {copy.live.text}

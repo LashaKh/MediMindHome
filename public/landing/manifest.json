@@ -738,10 +738,10 @@
     {
       "id": "brain-control-center",
       "section": "brain",
-      "alt": "MediMind Control Center for the hospital brain: status Running with a Stop switch, 16 of 16 workers active, 11 matters waiting for a person's decision, and the morning brief with stays open now, stays ended yesterday and worker outputs since the last brief. In development, demo data.",
+      "alt": "MediMind Control Center for the hospital brain: data gaps per branch (missing ministry records, codes, endings, unsigned forms), the money panel (missing charges, claims that would be returned, open payment lines, appealable denials) and the flow panel (coverage gaps, beds and moves, theatre, late samples and studies), with late items in red. In development, demo data; branch names neutralised.",
       "width": 2000,
-      "height": 934,
-      "aspectRatio": "2000 / 934",
+      "height": 1470,
+      "aspectRatio": "2000 / 1470",
       "fallback": "/landing/brain-control-center-1400.jpg",
       "avif": "/landing/brain-control-center-800.avif 800w, /landing/brain-control-center-1400.avif 1400w, /landing/brain-control-center-2000.avif 2000w",
       "webp": "/landing/brain-control-center-800.webp 800w, /landing/brain-control-center-1400.webp 1400w, /landing/brain-control-center-2000.webp 2000w",
@@ -751,50 +751,50 @@
           "file": "/landing/brain-control-center-800.avif",
           "format": "avif",
           "width": 800,
-          "height": 374,
-          "bytes": 6511
+          "height": 588,
+          "bytes": 10647
         },
         {
           "file": "/landing/brain-control-center-1400.avif",
           "format": "avif",
           "width": 1400,
-          "height": 654,
-          "bytes": 13004
+          "height": 1029,
+          "bytes": 21162
         },
         {
           "file": "/landing/brain-control-center-2000.avif",
           "format": "avif",
           "width": 2000,
-          "height": 934,
-          "bytes": 22239
+          "height": 1470,
+          "bytes": 29621
         },
         {
           "file": "/landing/brain-control-center-1400.jpg",
           "format": "jpg",
           "width": 1400,
-          "height": 654,
-          "bytes": 48427
+          "height": 1029,
+          "bytes": 84861
         },
         {
           "file": "/landing/brain-control-center-800.webp",
           "format": "webp",
           "width": 800,
-          "height": 374,
-          "bytes": 10258
+          "height": 588,
+          "bytes": 18000
         },
         {
           "file": "/landing/brain-control-center-1400.webp",
           "format": "webp",
           "width": 1400,
-          "height": 654,
-          "bytes": 23374
+          "height": 1029,
+          "bytes": 41042
         },
         {
           "file": "/landing/brain-control-center-2000.webp",
           "format": "webp",
           "width": 2000,
-          "height": 934,
-          "bytes": 37114
+          "height": 1470,
+          "bytes": 63368
         }
       ]
     },
@@ -976,10 +976,10 @@
     {
       "id": "brain-control-center-dark",
       "section": "brain",
-      "alt": "MediMind Control Center in dark theme for the hospital brain: status Running with a Stop switch, 16 of 16 workers active, 11 matters waiting for a person's decision, and the morning brief with stays open now, stays ended yesterday and worker outputs since the last brief. In development, demo data.",
+      "alt": "MediMind (dark theme) Control Center for the hospital brain: data gaps per branch (missing ministry records, codes, endings, unsigned forms), the money panel (missing charges, claims that would be returned, open payment lines, appealable denials) and the flow panel (coverage gaps, beds and moves, theatre, late samples and studies), with late items in red. In development, demo data; branch names neutralised.",
       "width": 2000,
-      "height": 934,
-      "aspectRatio": "2000 / 934",
+      "height": 1470,
+      "aspectRatio": "2000 / 1470",
       "fallback": "/landing/brain-control-center-dark-1400.jpg",
       "avif": "/landing/brain-control-center-dark-800.avif 800w, /landing/brain-control-center-dark-1400.avif 1400w, /landing/brain-control-center-dark-2000.avif 2000w",
       "webp": "/landing/brain-control-center-dark-800.webp 800w, /landing/brain-control-center-dark-1400.webp 1400w, /landing/brain-control-center-dark-2000.webp 2000w",
@@ -989,50 +989,50 @@
           "file": "/landing/brain-control-center-dark-800.avif",
           "format": "avif",
           "width": 800,
-          "height": 374,
-          "bytes": 6278
+          "height": 588,
+          "bytes": 12296
         },
         {
           "file": "/landing/brain-control-center-dark-1400.avif",
           "format": "avif",
           "width": 1400,
-          "height": 654,
-          "bytes": 14195
+          "height": 1029,
+          "bytes": 26911
         },
         {
           "file": "/landing/brain-control-center-dark-2000.avif",
           "format": "avif",
           "width": 2000,
-          "height": 934,
-          "bytes": 21734
+          "height": 1470,
+          "bytes": 41547
         },
         {
           "file": "/landing/brain-control-center-dark-1400.jpg",
           "format": "jpg",
           "width": 1400,
-          "height": 654,
-          "bytes": 50244
+          "height": 1029,
+          "bytes": 93767
         },
         {
           "file": "/landing/brain-control-center-dark-800.webp",
           "format": "webp",
           "width": 800,
-          "height": 374,
-          "bytes": 9910
+          "height": 588,
+          "bytes": 19612
         },
         {
           "file": "/landing/brain-control-center-dark-1400.webp",
           "format": "webp",
           "width": 1400,
-          "height": 654,
-          "bytes": 22942
+          "height": 1029,
+          "bytes": 43472
         },
         {
           "file": "/landing/brain-control-center-dark-2000.webp",
           "format": "webp",
           "width": 2000,
-          "height": 934,
-          "bytes": 36250
+          "height": 1470,
+          "bytes": 67044
         }
       ]
     },
@@ -2062,6 +2062,230 @@
           "width": 2000,
           "height": 836,
           "bytes": 50054
+        }
+      ]
+    },
+    {
+      "id": "brain-morning-brief",
+      "section": "brain",
+      "alt": "MediMind Control Center overview: 10 matters waiting for a person's decision and the morning brief for the day (stays open now, stays ended yesterday, worker outputs since the last brief). In development, demo data.",
+      "width": 2000,
+      "height": 781,
+      "aspectRatio": "2000 / 781",
+      "fallback": "/landing/brain-morning-brief-1400.jpg",
+      "avif": "/landing/brain-morning-brief-800.avif 800w, /landing/brain-morning-brief-1400.avif 1400w, /landing/brain-morning-brief-2000.avif 2000w",
+      "webp": "/landing/brain-morning-brief-800.webp 800w, /landing/brain-morning-brief-1400.webp 1400w, /landing/brain-morning-brief-2000.webp 2000w",
+      "sizes": "(min-width: 1200px) 1100px, 100vw",
+      "files": [
+        {
+          "file": "/landing/brain-morning-brief-800.avif",
+          "format": "avif",
+          "width": 800,
+          "height": 312,
+          "bytes": 4186
+        },
+        {
+          "file": "/landing/brain-morning-brief-1400.avif",
+          "format": "avif",
+          "width": 1400,
+          "height": 547,
+          "bytes": 9522
+        },
+        {
+          "file": "/landing/brain-morning-brief-2000.avif",
+          "format": "avif",
+          "width": 2000,
+          "height": 781,
+          "bytes": 12317
+        },
+        {
+          "file": "/landing/brain-morning-brief-1400.jpg",
+          "format": "jpg",
+          "width": 1400,
+          "height": 547,
+          "bytes": 31821
+        },
+        {
+          "file": "/landing/brain-morning-brief-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 312,
+          "bytes": 6614
+        },
+        {
+          "file": "/landing/brain-morning-brief-1400.webp",
+          "format": "webp",
+          "width": 1400,
+          "height": 547,
+          "bytes": 14604
+        },
+        {
+          "file": "/landing/brain-morning-brief-2000.webp",
+          "format": "webp",
+          "width": 2000,
+          "height": 781,
+          "bytes": 22602
+        }
+      ]
+    },
+    {
+      "id": "brain-morning-brief-dark",
+      "section": "brain",
+      "alt": "MediMind (dark theme) Control Center overview: 10 matters waiting for a person's decision and the morning brief for the day (stays open now, stays ended yesterday, worker outputs since the last brief). In development, demo data.",
+      "width": 2000,
+      "height": 781,
+      "aspectRatio": "2000 / 781",
+      "fallback": "/landing/brain-morning-brief-dark-1400.jpg",
+      "avif": "/landing/brain-morning-brief-dark-800.avif 800w, /landing/brain-morning-brief-dark-1400.avif 1400w, /landing/brain-morning-brief-dark-2000.avif 2000w",
+      "webp": "/landing/brain-morning-brief-dark-800.webp 800w, /landing/brain-morning-brief-dark-1400.webp 1400w, /landing/brain-morning-brief-dark-2000.webp 2000w",
+      "sizes": "(min-width: 1200px) 1100px, 100vw",
+      "files": [
+        {
+          "file": "/landing/brain-morning-brief-dark-800.avif",
+          "format": "avif",
+          "width": 800,
+          "height": 312,
+          "bytes": 4286
+        },
+        {
+          "file": "/landing/brain-morning-brief-dark-1400.avif",
+          "format": "avif",
+          "width": 1400,
+          "height": 547,
+          "bytes": 8718
+        },
+        {
+          "file": "/landing/brain-morning-brief-dark-2000.avif",
+          "format": "avif",
+          "width": 2000,
+          "height": 781,
+          "bytes": 13178
+        },
+        {
+          "file": "/landing/brain-morning-brief-dark-1400.jpg",
+          "format": "jpg",
+          "width": 1400,
+          "height": 547,
+          "bytes": 34719
+        },
+        {
+          "file": "/landing/brain-morning-brief-dark-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 312,
+          "bytes": 6536
+        },
+        {
+          "file": "/landing/brain-morning-brief-dark-1400.webp",
+          "format": "webp",
+          "width": 1400,
+          "height": 547,
+          "bytes": 14570
+        },
+        {
+          "file": "/landing/brain-morning-brief-dark-2000.webp",
+          "format": "webp",
+          "width": 2000,
+          "height": 781,
+          "bytes": 22224
+        }
+      ]
+    },
+    {
+      "id": "brain-inbox",
+      "section": "brain",
+      "alt": "MediMind Staff task inbox filtered to the hospital brain: prepared cards from named workers (bed and move watcher, stock watcher, sample tracker, roster watcher, study tracker, theatre watcher, supplier document watcher), each with the number of late items. In development, demo data; branch names neutralised.",
+      "width": 1118,
+      "height": 1192,
+      "aspectRatio": "1118 / 1192",
+      "fallback": "/landing/brain-inbox-1118.jpg",
+      "avif": "/landing/brain-inbox-800.avif 800w, /landing/brain-inbox-1118.avif 1118w",
+      "webp": "/landing/brain-inbox-800.webp 800w, /landing/brain-inbox-1118.webp 1118w",
+      "sizes": "(min-width: 1200px) 1100px, 100vw",
+      "files": [
+        {
+          "file": "/landing/brain-inbox-800.avif",
+          "format": "avif",
+          "width": 800,
+          "height": 853,
+          "bytes": 23154
+        },
+        {
+          "file": "/landing/brain-inbox-1118.avif",
+          "format": "avif",
+          "width": 1118,
+          "height": 1192,
+          "bytes": 34352
+        },
+        {
+          "file": "/landing/brain-inbox-1118.jpg",
+          "format": "jpg",
+          "width": 1118,
+          "height": 1192,
+          "bytes": 98436
+        },
+        {
+          "file": "/landing/brain-inbox-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 853,
+          "bytes": 34590
+        },
+        {
+          "file": "/landing/brain-inbox-1118.webp",
+          "format": "webp",
+          "width": 1118,
+          "height": 1192,
+          "bytes": 53716
+        }
+      ]
+    },
+    {
+      "id": "brain-inbox-dark",
+      "section": "brain",
+      "alt": "MediMind (dark theme) Staff task inbox filtered to the hospital brain: prepared cards from named workers (bed and move watcher, stock watcher, sample tracker, roster watcher, study tracker, theatre watcher, supplier document watcher), each with the number of late items. In development, demo data; branch names neutralised.",
+      "width": 1118,
+      "height": 1192,
+      "aspectRatio": "1118 / 1192",
+      "fallback": "/landing/brain-inbox-dark-1118.jpg",
+      "avif": "/landing/brain-inbox-dark-800.avif 800w, /landing/brain-inbox-dark-1118.avif 1118w",
+      "webp": "/landing/brain-inbox-dark-800.webp 800w, /landing/brain-inbox-dark-1118.webp 1118w",
+      "sizes": "(min-width: 1200px) 1100px, 100vw",
+      "files": [
+        {
+          "file": "/landing/brain-inbox-dark-800.avif",
+          "format": "avif",
+          "width": 800,
+          "height": 853,
+          "bytes": 23911
+        },
+        {
+          "file": "/landing/brain-inbox-dark-1118.avif",
+          "format": "avif",
+          "width": 1118,
+          "height": 1192,
+          "bytes": 11043
+        },
+        {
+          "file": "/landing/brain-inbox-dark-1118.jpg",
+          "format": "jpg",
+          "width": 1118,
+          "height": 1192,
+          "bytes": 99627
+        },
+        {
+          "file": "/landing/brain-inbox-dark-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 853,
+          "bytes": 36826
+        },
+        {
+          "file": "/landing/brain-inbox-dark-1118.webp",
+          "format": "webp",
+          "width": 1118,
+          "height": 1192,
+          "bytes": 56530
         }
       ]
     }

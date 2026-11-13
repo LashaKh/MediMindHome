@@ -1,9 +1,37 @@
 # Netlify config for MediMind Landing Page (medimind.md)
 # Hosts: landing site, /briefing/[token] gateway, /admin dashboard, /deck.html static deck.
+# SPA fallback (/privacy, /request-demo work on reload) lives in public/_redirects.
 
 [build]
   publish = "dist"
   command = "npm run build"
+
+# ─── Security headers on every response ───
+# frame-ancestors 'self' / SAMEORIGIN: only our own pages may frame us (the decks
+# embed /walkthrough). No full Content-Security-Policy yet: script/style/connect
+# rules for Supabase, fonts and the decks' inline scripts were not verified, so a
+# CSP that only sets frame-ancestors is the safe subset.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+    Content-Security-Policy = "frame-ancestors 'self'"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()"
+
+# ─── Landing images (names are not content-hashed: a replaced image keeps its
+# name, so 30 days + background refresh instead of a one-year immutable cache) ───
+[[headers]]
+  for = "/landing/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000, stale-while-revalidate=86400"
+
+# ─── Share image: social sites fetch it rarely; a week is plenty ───
+[[headers]]
+  for = "/og-medimind.png"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
 
 # Shareable workshop brief: always serve the latest version, without search indexing.
 [[headers]]

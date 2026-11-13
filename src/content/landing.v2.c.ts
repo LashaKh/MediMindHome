@@ -40,6 +40,8 @@ export interface Callout {
   x: number;
   y: number;
   label: string;
+  /** Run the leader up to this height (fraction of the capture) and set the words there, instead of to the right. */
+  upTo?: number;
 }
 
 /** A screenshot with its own file widths (the PACS and planning captures are not 800/1400/2000). */
@@ -64,12 +66,6 @@ export interface OpsTile {
   focus?: { x: number; y: number };
 }
 
-const patientChart = shot(
-  'patient-chart',
-  790,
-  'MediMind clinical dashboard for one patient: a fall-risk alert and a drug-interaction alert above active problems, medications with a high-alert flag, vitals and lab results. Demo data.'
-);
-
 // ─── 6. Product (#product) ───────────────────────────────────────────
 
 export const product = {
@@ -77,12 +73,22 @@ export const product = {
   support: 'One record and one codebase, from the bedside to the balance sheet.',
   demoData: 'Real screens, demo data.',
 
-  /** The hero scene: the clinical record in front, every hospital area behind it. */
+  /**
+   * The record scene: one patient's overview in front, every hospital area
+   * behind it. Callouts are points on the overview (fractions of the capture).
+   */
   hero: {
-    name: 'Clinical record',
-    tag: 'Every signal for one patient, on one screen.',
-    front: { id: 'patient-chart', image: patientChart } satisfies Screen,
-    frontLabel: 'Clinical record',
+    name: 'Patient overview',
+    tag: 'The visit, allergies and vital signs on one screen.',
+    front: {
+      id: 'patient-overview',
+      image: shot(
+        'patient-overview',
+        836,
+        'MediMind patient overview: visit summary with length of stay, department and physician, allergy status, reason for visit and the latest vital signs with two flagged high. Demo data.'
+      ),
+    } satisfies Screen,
+    frontLabel: 'Patient overview',
     back: {
       id: 'os-modules-full',
       image: shot(
@@ -92,10 +98,11 @@ export const product = {
       ),
     } satisfies Screen,
     backLabel: 'Every hospital area',
-    /** Interaction banner: a ring where the text ends, the words in the banner's empty run. */
-    callout: { x: 0.257, y: 0.41, label: 'Drug interaction flagged' } satisfies Callout,
-    /** The lens: the warfarin line with its high-alert mark, lifted and enlarged. */
-    lens: { crop: { x: 0.264, y: 0.566, w: 0.236, h: 0.118 } satisfies Crop, label: 'High-alert medicine marked' },
+    /** A ring where the allergy line ends (words in the banner's empty run); a ring by the high heart rate, words in the empty header above. */
+    callouts: [
+      { x: 0.256, y: 0.343, label: 'Allergy status, up front' },
+      { x: 0.213, y: 0.872, label: 'Abnormal vitals flagged', upTo: 0.745 },
+    ] satisfies Callout[],
   },
 
   /**
@@ -181,44 +188,32 @@ export const product = {
     {
       id: 'beds',
       name: 'Beds',
-      tag: 'Every bed, live.',
+      tag: 'Every bed and its state, live.',
       screen: {
         id: 'bed-board-grid',
         image: shot(
           'bed-board-grid',
-          622,
-          'MediMind bed board for one department: rooms, beds, free beds and occupancy across the top, then each bed marked occupied or available. Demo data.'
+          1442,
+          'MediMind bed board for a cardiology ward: rooms with bed cards coloured by state (occupied, cleaning required, available) and ward occupancy. Demo data.'
         ),
       },
-      frame: 2,
+      frame: 1.8,
     },
     {
       id: 'medication',
       name: 'Medication',
-      tag: 'Every dose on one timeline.',
+      tag: 'Every dose due on the ward, overdue first.',
       screen: {
         id: 'medication-timeline',
         image: shot(
           'medication-timeline',
-          636,
-          'MediMind medication timeline: each scheduled medicine on a 24-hour grid, with late doses and the current hour marked. Demo data.'
+          1723,
+          'MediMind ward medication board: every outstanding dose for the day across the ward, grouped as overdue and due now, with drug, dose, route and time. Demo data.'
         ),
       },
-      frame: 2,
-    },
-    {
-      id: 'revenue',
-      name: 'Revenue',
-      tag: 'The numbers leadership asks for.',
-      screen: {
-        id: 'revenue-kpis',
-        image: shot(
-          'revenue-kpis',
-          468,
-          'MediMind revenue dashboard: total outstanding, days sales outstanding, clean claim rate and payer share across the top, with a financial alert below. Demo data.'
-        ),
-      },
-      frame: 2,
+      frame: 1.8,
+      /** Start below the ward header the bed board already shows, on the overdue doses. */
+      focus: { x: 0, y: 0.25 },
     },
   ] satisfies OpsTile[],
 };

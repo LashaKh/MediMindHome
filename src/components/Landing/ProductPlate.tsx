@@ -123,35 +123,22 @@ export const Window: React.FC<{
 // ─── The hero scene ──────────────────────────────────────────────────
 
 /*
- * Geometry of the hero scene in units of a 1000-wide box (heights in the
- * same units), so windows, the lens and its cone stay locked together at
- * every width from 1024 up.
+ * Geometry of the record scene in units of a 1000-wide box (heights in the
+ * same units), so the windows and callouts stay locked together at every
+ * width from 1024 up. The record's height comes from its capture.
  */
-const H = 520;
 const BACK = { x: 0, y: 0, w: 470, bar: 18 };
 const FRONT = { x: 150, y: 104, w: 850, bar: 22 };
-const LENS = { x: 640, y: 444, w: 340 };
-const ux = (n: number) => `${n / 10}%`;
-const uy = (n: number) => `${(n / H) * 100}%`;
 
 export const HeroScene: React.FC = () => {
   const manifest = useLandingManifest();
   const hero = copy.hero;
   const front = manifest.get(hero.front.id) ?? hero.front.image;
   const frontImgH = (FRONT.w * front.height) / front.width;
+  const H = Math.round(FRONT.y + FRONT.bar + frontImgH + 8);
+  const ux = (n: number) => `${n / 10}%`;
+  const uy = (n: number) => `${(n / H) * 100}%`;
   const origin = { x: FRONT.x, y: FRONT.y + FRONT.bar };
-  const lens = hero.lens.crop;
-  const lensH = (LENS.w * lens.h * front.height) / (lens.w * front.width);
-  const src = {
-    x: origin.x + lens.x * FRONT.w,
-    y: origin.y + lens.y * frontImgH,
-    w: lens.w * FRONT.w,
-    h: lens.h * frontImgH,
-  };
-  const pin = {
-    x: origin.x + hero.callout.x * FRONT.w,
-    y: origin.y + hero.callout.y * frontImgH,
-  };
   const lgStage = GRID_PX - 96; // stage padding on wide screens
   const md = useMinWidth(768);
   const lg = useMinWidth(1024);
@@ -159,12 +146,12 @@ export const HeroScene: React.FC = () => {
   return (
     <figure className="m-0">
       <div className="lc-stage p-4 md:p-8 lg:px-10 lg:pb-10 lg:pt-9 xl:px-12 xl:pb-11 xl:pt-10">
-        {/* Below 1024: the record alone, cropped to its first two (phones) or three (tablets) columns */}
+        {/* Below 1024: the overview alone, cropped to its left part */}
         {!lg && (
           <Window label={hero.frontLabel} lit>
             <Shot
               screen={hero.front}
-              crop={{ x: 0, y: 0.27, w: md ? 0.755 : 0.52, h: 0.73 }}
+              crop={{ x: 0, y: 0, w: md ? 0.78 : 0.56, h: 1 }}
               lgPx={0}
               vw={md ? 88 : 92}
               manifest={manifest}
@@ -196,98 +183,47 @@ export const HeroScene: React.FC = () => {
               barRatio={FRONT.bar / FRONT.w}
               lit
               className="absolute"
-              style={{
-                left: ux(FRONT.x),
-                top: uy(FRONT.y),
-                width: ux(FRONT.w),
-              }}
+              style={{ left: ux(FRONT.x), top: uy(FRONT.y), width: ux(FRONT.w) }}
             >
               <Shot screen={hero.front} lgPx={(lgStage * FRONT.w) / 1000} vw={85} manifest={manifest} />
             </Window>
 
-            {/* The lens cone: from the warfarin line to its enlarged copy */}
-            <svg
-              className="pointer-events-none absolute inset-0 h-full w-full"
-              viewBox={`0 0 1000 ${H}`}
-              preserveAspectRatio="none"
-              aria-hidden="true"
-            >
-              <polygon
-                points={`${src.x + src.w},${src.y} ${LENS.x + LENS.w},${LENS.y} ${LENS.x},${LENS.y + lensH} ${src.x},${src.y + src.h}`}
-                fill="var(--mm-system)"
-                fillOpacity={0.07}
-              />
-              <line
-                x1={src.x + src.w}
-                y1={src.y}
-                x2={LENS.x + LENS.w}
-                y2={LENS.y}
-                stroke="var(--mm-system)"
-                strokeOpacity={0.4}
-                strokeWidth={1}
-                vectorEffect="non-scaling-stroke"
-              />
-              <line
-                x1={src.x}
-                y1={src.y + src.h}
-                x2={LENS.x}
-                y2={LENS.y + lensH}
-                stroke="var(--mm-system)"
-                strokeOpacity={0.4}
-                strokeWidth={1}
-                vectorEffect="non-scaling-stroke"
-              />
-              <rect
-                x={src.x}
-                y={src.y}
-                width={src.w}
-                height={src.h}
-                rx={3}
-                fill="none"
-                stroke="var(--mm-system)"
-                strokeWidth={1.5}
-                vectorEffect="non-scaling-stroke"
-              />
-            </svg>
-
-            {/* The lens */}
-            <div className="absolute" style={{ left: ux(LENS.x), top: uy(LENS.y), width: ux(LENS.w) }}>
-              <div className="lc-window lc-window--lit" style={{ borderRadius: 10 }}>
-                <Shot
-                  screen={hero.front}
-                  crop={lens}
-                  lgPx={(lgStage * LENS.w) / 1000}
-                  vw={34}
-                  manifest={manifest}
-                  decorative
-                />
-              </div>
-              <span className="lc-chip absolute bottom-1 right-full mr-4" aria-hidden="true">
-                <span className="h-2 w-2 rounded-full border-[1.5px] border-current" />
-                {hero.lens.label}
-              </span>
-            </div>
-
-            {/* The interaction callout: a ring where the banner's text ends, the words in its empty run */}
-            <span className="lc-ring" style={{ left: ux(pin.x), top: uy(pin.y) }} aria-hidden="true" />
-            <span
-              className="absolute flex -translate-y-1/2 items-center"
-              style={{ left: `calc(${ux(pin.x)} + 8px)`, top: uy(pin.y) }}
-              aria-hidden="true"
-            >
-              <span className="h-px w-8 bg-mm-ink lg:w-12" />
-              <span className="lc-chip">{hero.callout.label}</span>
-            </span>
+            {/* Thin callouts: a ring on the detail, a short leader, the words */}
+            {hero.callouts.map((c) => {
+              const p = { x: origin.x + c.x * FRONT.w, y: origin.y + c.y * frontImgH };
+              const top = c.upTo !== undefined ? origin.y + c.upTo * frontImgH : null;
+              return (
+                <React.Fragment key={c.label}>
+                  <span className="lc-ring z-[4]" style={{ left: ux(p.x), top: uy(p.y) }} aria-hidden="true" />
+                  {top !== null ? (
+                    <span
+                      className="absolute z-[4] flex -translate-x-1/2 -translate-y-3 flex-col items-center"
+                      style={{ left: ux(p.x), top: uy(top), height: `calc(${uy(p.y - top)} + 5px)` }}
+                      aria-hidden="true"
+                    >
+                      <span className="lc-chip shrink-0">{c.label}</span>
+                      <span className="w-px flex-1 bg-mm-ink" />
+                    </span>
+                  ) : (
+                    <span
+                      className="absolute z-[4] flex -translate-y-1/2 items-center"
+                      style={{ left: `calc(${ux(p.x)} + 8px)`, top: uy(p.y) }}
+                      aria-hidden="true"
+                    >
+                      <span className="h-px w-8 bg-mm-ink lg:w-12" />
+                      <span className="lc-chip">{c.label}</span>
+                    </span>
+                  )}
+                </React.Fragment>
+              );
+            })}
           </div>
         )}
       </div>
       <figcaption className="mt-4 lg:sr-only">
         <span className="mm-h3 block">{hero.name}</span>
         <span className="mm-body mt-1 block text-mm-muted">{hero.tag}</span>
-        <span className="sr-only">
-          {' '}
-          {hero.callout.label}. {hero.lens.label}.
-        </span>
+        <span className="sr-only"> {hero.callouts.map((c) => `${c.label}.`).join(' ')}</span>
       </figcaption>
     </figure>
   );

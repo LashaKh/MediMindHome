@@ -39,7 +39,8 @@ export const ProductSection: React.FC = () => (
       <HeroScene />
     </div>
 
-    <div className="mt-6 grid gap-5 md:grid-cols-2 lg:mt-8 lg:grid-cols-3 lg:gap-6">
+    {/* Two or three tiles: three share a row on wide screens, two split it */}
+    <div className={cn('mt-6 grid gap-5 md:grid-cols-2 lg:mt-8 lg:gap-6', copy.tiles.length > 2 && 'lg:grid-cols-3')}>
       {copy.tiles.map((tile, i) => (
         <OpsTileView
           key={tile.id}

@@ -9,6 +9,7 @@ const SignIn = lazy(() => import('./components/Auth/SignIn').then((m) => ({ defa
 const SignUp = lazy(() => import('./components/Auth/SignUp').then((m) => ({ default: m.SignUp })));
 const RequestDemo = lazy(() => import('./components/Demo/RequestDemo').then((m) => ({ default: m.RequestDemo })));
 const PrivacyNotice = lazy(() => import('./components/Legal/PrivacyNotice').then((m) => ({ default: m.PrivacyNotice })));
+const NotFound = lazy(() => import('./components/Legal/NotFound').then((m) => ({ default: m.NotFound })));
 const BriefingGate = lazy(() => import('./pages/BriefingGate').then((m) => ({ default: m.BriefingGate })));
 const BriefingLocked = lazy(() => import('./pages/BriefingLocked').then((m) => ({ default: m.BriefingLocked })));
 const AdminLogin = lazy(() => import('./pages/AdminLogin').then((m) => ({ default: m.AdminLogin })));
@@ -52,6 +53,7 @@ function App() {
             <Route path="/signup" element={<SignUp />} />
             <Route path="/request-demo" element={<RequestDemo />} />
             <Route path="/privacy" element={<PrivacyNotice />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </Suspense>

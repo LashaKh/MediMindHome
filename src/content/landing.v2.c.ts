@@ -161,6 +161,22 @@ export const product = {
     valveCallout: { x: 0.404, y: 0.262, label: 'Valve ring, measured' } satisfies Callout,
   },
 
+  /**
+   * The bridge into the brain: the AI proposing next steps for one patient,
+   * a doctor accepting or dismissing each. Shown when `brain-patient-recommendations`
+   * exists in the manifest (night twin `-dark`). `pin` marks the Accept control
+   * (fractions of the capture), set once the capture lands.
+   */
+  bridge: {
+    id: 'brain-patient-recommendations',
+    chip: 'In development',
+    name: 'Proactive care',
+    tag: 'The system proposes the next step. A doctor accepts or dismisses it.',
+    label: 'Recommendations',
+    pin: null as { x: number; y: number } | null,
+    pinLabel: 'A doctor decides',
+  },
+
   tiles: [
     {
       id: 'beds',

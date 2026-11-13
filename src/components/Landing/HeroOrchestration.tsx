@@ -364,10 +364,9 @@ const WideCanvas: React.FC<{
                       <path
                         d={d}
                         pathLength={1}
-                        stroke="var(--mm-ink)"
                         strokeWidth="2.5"
                         strokeLinecap="round"
-                        className="mm-orch-head"
+                        className="mm-orch-head stroke-mm-system dark:stroke-mm-ink"
                         style={{ animationDuration: duration }}
                       />
                     </>
@@ -662,7 +661,7 @@ export const HeroOrchestration: React.FC<{ className?: string }> = ({ className 
   const clock = (
     <span className="mm-data flex items-baseline gap-2.5 whitespace-nowrap">
       <span className="text-[15px] font-medium text-mm-ink">{clockText(f.minute)}</span>
-      <span className="text-mm-muted">
+      <span className="hidden text-mm-muted sm:inline">
         {c.arrivedAt} {clockText(0)}
       </span>
     </span>

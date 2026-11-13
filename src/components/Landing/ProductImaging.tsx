@@ -150,11 +150,13 @@ export const ImagingStage: React.FC = () => {
             style={{ left: ux(BODY.x + BODY.w + 4) }}
           />
 
-          <figcaption className="absolute z-[6]" style={{ left: ux(ROOT.x), top: uy(40), width: ux(560) }}>
-            <span className="block text-[1.25rem] font-semibold leading-snug tracking-[-0.012em] text-white">
+          <figcaption className="absolute z-[6]" style={{ left: ux(ROOT.x), top: uy(36), width: ux(590) }}>
+            <span className="block text-[1.125rem] font-semibold leading-snug tracking-[-0.012em] text-white xl:text-[1.25rem]">
               {img.title}
             </span>
-            <span className="mt-1.5 block text-[1.0625rem] leading-relaxed text-[#a9b8cc]">{img.line}</span>
+            <span className="mt-1 block text-[0.9375rem] leading-relaxed text-[#a9b8cc] xl:mt-1.5 xl:text-[1.0625rem]">
+              {img.line}
+            </span>
             <span className="sr-only">
               {' '}
               {img.rootCallout.label}. {img.valveCallout.label}.

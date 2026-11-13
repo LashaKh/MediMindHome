@@ -9,7 +9,7 @@ import { orchestrationContent as c, type DepartmentId } from '../../content/land
  * department receives a prepared step (system blue) and then a named person
  * decides (amber). The system moves; people are still.
  *
- * Timing: the whole hospital moves once in about seven seconds, rests in its
+ * Timing: the hospital responds once in about seven seconds, rests in its
  * final state, fades and replays. One clock drives everything; React re-renders
  * only when something visible changes. Transform, opacity and SVG dash offsets
  * only. The clock runs only while the visual is on screen and the tab is
@@ -302,7 +302,7 @@ export const HeroOrchestration: React.FC<{ className?: string }> = ({ className 
         {c.summary}
       </figcaption>
 
-      {/* Readout. lg+: clock, both counters, the honesty marker, pause. Below lg: clock, marker, pause. */}
+      {/* Readout. lg+: clock, both counters, the "In development" chip, pause. Below lg: clock, chip, pause. */}
       <div className="flex h-11 shrink-0 items-center justify-between gap-4 border-b border-mm-line lg:h-10">
         <div className="flex min-w-0 items-center gap-8" aria-hidden="true">
           {clock}

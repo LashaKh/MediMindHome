@@ -27,12 +27,15 @@ export const headerContent = {
 
 export const heroContent = {
   eyebrow: 'The AI-native hospital operating system',
-  /** The page's only h1, exactly as briefed; two sentences, one per line on wide screens. */
-  titleLines: ['One patient walks in.', 'The whole hospital moves.'],
-  sub: 'MediMind runs the whole hospital on one operating system. It prepares the next step for every department. Your doctors and staff decide.',
+  /**
+   * The page's only h1 (founder ruling 5, 2026-11-13), broken into balanced
+   * lines on wide screens. Alternatives the founder can swap in with one edit:
+   *   titleLines: ['One operating system.', 'The entire hospital.'],
+   *   titleLines: ['The end of the', 'reactive hospital.'],
+   */
+  titleLines: ['The hospital', 'that thinks ahead.'],
+  sub: 'One operating system runs the whole hospital and prepares every next step. Your doctors decide.',
   secondary: { label: 'See how it works', href: '#system' },
-  honesty:
-    'The proactive orchestration shown here is in development. The operating system underneath it is built and running today.',
 };
 
 // ---------------------------------------------------------------- Hero visual
@@ -70,12 +73,12 @@ export const orchestrationContent = {
   footerSystemShort: 'Prepared',
   footerHumanShort: 'Decided',
   steps: [
-    { id: 'triage', name: 'Triage', prepared: 'Priority suggested from vitals', waiting: 'Nurse to confirm', signed: 'Nurse confirmed' },
-    { id: 'lab', name: 'Laboratory', prepared: 'Cardiac lab panel drafted', waiting: 'Doctor to sign', signed: 'Doctor signed' },
-    { id: 'imaging', name: 'Imaging', prepared: 'Chest X-ray request ready', waiting: 'Doctor to sign', signed: 'Doctor signed' },
-    { id: 'pharmacy', name: 'Pharmacy', prepared: 'Medicines checked for interactions', waiting: 'Pharmacist to approve', signed: 'Pharmacist approved' },
+    { id: 'triage', name: 'Triage', prepared: 'Priority suggested', waiting: 'Nurse to confirm', signed: 'Nurse confirmed' },
+    { id: 'lab', name: 'Laboratory', prepared: 'Cardiac panel drafted', waiting: 'Doctor to sign', signed: 'Doctor signed' },
+    { id: 'imaging', name: 'Imaging', prepared: 'Chest X-ray ready', waiting: 'Doctor to sign', signed: 'Doctor signed' },
+    { id: 'pharmacy', name: 'Pharmacy', prepared: 'Interactions checked', waiting: 'Pharmacist to approve', signed: 'Pharmacist approved' },
     { id: 'beds', name: 'Beds', prepared: 'Cardiology bed held', waiting: 'Nurse to confirm', signed: 'Nurse confirmed' },
-    { id: 'billing', name: 'Billing', prepared: 'Insurance claim prepared', waiting: 'Billing to release', signed: 'Billing released' },
-    { id: 'ministry', name: 'Ministry form', prepared: 'Ministry report pre-filled', waiting: 'Doctor to sign', signed: 'Doctor signed' },
+    { id: 'billing', name: 'Billing', prepared: 'Claim prepared', waiting: 'Billing to release', signed: 'Billing released' },
+    { id: 'ministry', name: 'Ministry form', prepared: 'Report pre-filled', waiting: 'Doctor to sign', signed: 'Doctor signed' },
   ] satisfies DepartmentStep[],
 };

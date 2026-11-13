@@ -167,6 +167,15 @@ export interface BrainScreen {
   id: string;
   name: string;
   tag: string;
+  /** Window shape, width / height. */
+  frame: number;
+  /** CSS object-position: what stays in view when the frame crops the capture. */
+  focus: string;
+  /**
+   * Optional thin callout: a point inside the frame (fractions), a few words,
+   * which way the leader runs, and amber when it marks a person's decision.
+   */
+  pin?: { x: number; y: number; label: string; dir: 'right' | 'down'; human?: boolean };
 }
 
 export const brain = {
@@ -176,17 +185,28 @@ export const brain = {
   support: 'Every job starts at watch. A named person turns it up, on proof.',
   /**
    * Real screens of the hospital brain (manifest ids `brain-*`, night twins
-   * `brain-*-dark`). A slot shows its screen as soon as the id exists in
-   * public/landing/manifest.json; until then it stays a named, empty frame.
-   * The first is the large one.
+   * `brain-*-dark`), read from public/landing/manifest.json at runtime. A
+   * screen shows as soon as its id exists; until then it is a named empty
+   * frame in development and left out of the built page.
+   * `frame` is the window's shape (width / height); `focus` is the part of
+   * the capture that stays in view when the frame is narrower than it.
+   * `scene`: the Control Center with workers and money laid over it.
+   * `more`: smaller stages beneath.
    */
-  screens: [
-    { id: 'brain-control-center', name: 'Control Center', tag: 'Every job, its level, its owner.' },
-    { id: 'brain-inbox', name: 'Staff inbox', tag: 'Prepared cards. A person signs.' },
-    { id: 'brain-morning-brief', name: 'Morning brief', tag: 'The night, read before rounds.' },
-    { id: 'brain-workers', name: 'Workers', tag: 'Each job earns its step.' },
-    { id: 'brain-proof', name: 'Proof', tag: 'The record behind every step up.' },
-  ] satisfies BrainScreen[],
+  screens: {
+    scene: [
+      { id: 'brain-control-center', name: 'Control Center', tag: 'Running, with one stop switch.', frame: 2000 / 934, focus: 'left top',
+        pin: { x: 0.978, y: 0.073, label: 'One switch stops it', dir: 'right' } },
+      { id: 'brain-workers', name: 'Workers', tag: 'Each job has a level and a cap.', frame: 2000 / 900, focus: 'left top',
+        pin: { x: 0.699, y: 0.426, label: 'Capped by a person', dir: 'down', human: true } },
+      { id: 'brain-money', name: 'Money', tag: 'Missing charges and claim risks, found first.', frame: 2000 / 340, focus: 'left top' },
+    ],
+    more: [
+      { id: 'brain-inbox', name: 'Staff inbox', tag: 'Prepared cards. A person signs.', frame: 16 / 10, focus: 'left top' },
+      { id: 'brain-proof', name: 'Proof', tag: 'Every job, its worker, its level.', frame: 16 / 10, focus: 'left top' },
+      { id: 'brain-morning-brief', name: 'Morning brief', tag: 'The night, read before rounds.', frame: 16 / 10, focus: 'left top' },
+    ],
+  } satisfies { scene: BrainScreen[]; more: BrainScreen[] },
   screensNote: 'Screens from the harness in development. Demo data.',
   dial: {
     ariaLabel: 'Autonomy dial: how much one job may do on its own',

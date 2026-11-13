@@ -177,6 +177,11 @@
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--mm-system) 22%, transparent);
 }
 
+.lc-ring--human {
+  border-color: var(--mm-human);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--mm-human) 26%, transparent);
+}
+
 /* Empty slot for a screen still being captured: a named frame, quietly drawn. */
 .lc-slot {
   position: absolute;

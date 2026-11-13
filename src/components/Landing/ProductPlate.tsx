@@ -21,7 +21,7 @@ export const GRID_PX = 1280;
 
 const FULL: Crop = { x: 0, y: 0, w: 1, h: 1 };
 
-const Picture: React.FC<{
+export const Picture: React.FC<{
   image: ResponsiveImage;
   sizes: string;
   alt: string;
@@ -124,7 +124,7 @@ export const Window: React.FC<{
  * same units), so windows, the lens and its cone stay locked together at
  * every width from 768 up.
  */
-const H = 540;
+const H = 528;
 const BACK = { x: 0, y: 0, w: 470, bar: 18 };
 const FRONT = { x: 150, y: 104, w: 850, bar: 22 };
 const LENS = { x: 640, y: 444, w: 340 };

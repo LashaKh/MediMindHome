@@ -1,8 +1,6 @@
 import React from 'react';
 import { SectionShell } from '../ui';
 import { foundersPhoto as photo, team } from '../../content/landing.v2.lane-d';
-import { dMono } from './laneD.styles';
-import { cn } from '../../utils/cn';
 
 /**
  * Founders (#team): "Built from inside a hospital." Across the full grid:
@@ -28,9 +26,6 @@ export const FoundersSection: React.FC = () => (
           ))}
         </ul>
 
-        <p className={cn(dMono, 'mt-10 text-mm-muted md:mt-14')}>
-          {team.backersLead} <span className="text-mm-ink">{team.backers.join(' · ')}</span>
-        </p>
       </div>
 
       <figure className="lg:col-span-5">

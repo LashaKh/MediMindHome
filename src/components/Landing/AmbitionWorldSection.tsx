@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useInView, useReducedMotion } from 'framer-motion';
 import { ambition as copy } from '../../content/landing.v2.lane-d';
-import { dDisplay, dEdge, dH2, dMono } from './laneD.styles';
+import { dEdge, dH2 } from './laneD.styles';
 import { cn } from '../../utils/cn';
 
 /**
@@ -169,21 +169,8 @@ export const AmbitionWorldSection: React.FC = () => (
         ))}
       </ol>
 
-      <div className="grid gap-5 pb-20 pt-20 md:pb-28 md:pt-28 lg:grid-cols-12 lg:gap-16">
-        <p className={cn(dMono, 'text-mm-muted lg:col-span-2 lg:pt-5')} aria-hidden="true">
-          02:00
-        </p>
-        <p
-          className={cn(
-            dDisplay,
-            'text-[2.5rem] leading-[1.02] text-mm-ink sm:text-[3.75rem] lg:col-span-10 lg:text-[5.25rem] text-balance'
-          )}
-        >
-          {copy.beliefLead}
-          <br />
-          {copy.beliefEnd}
-        </p>
-      </div>
+      {/* The belief line lives once, in BeliefSection (founder: say more with less). */}
+      <div className="pb-16 md:pb-24" aria-hidden="true" />
     </div>
   </section>
 );

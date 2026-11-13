@@ -1,29 +1,39 @@
 import React from 'react';
 import type { ResponsiveImage } from '../../content/types';
-import type { ProductTile } from '../../content/landing.v2.c';
-import { liftShadow } from './ProductPlate.styles';
+import type { Crop, Scene, Screen } from '../../content/landing.v2.c';
+import { product as copy } from '../../content/landing.v2.c';
+import { useLandingManifest } from './laneC.manifest';
+import type { ManifestMap } from './laneC.manifest';
 import { cn } from '../../utils/cn';
+import './LaneCScreens.css';
 
 /**
- * Lane C helper: one tile of the product composition. The tile is a window
- * onto a real screen, zoomed so the telling part fills it, with one short
- * tag laid on the screen and the area's name beneath. The screens are light
- * captures, so they sit on white in both themes; everything around them
- * follows the theme through mm-* tokens.
+ * Lane C helpers: real product screens as composed scenes. A window holds
+ * one real screen (cropped to its telling part) with a slim named top bar,
+ * a thin highlight edge and a long soft shadow; windows stand on a lit
+ * stage, overlap and run off its edge. In night mode a screen's night twin
+ * (`<id>-dark` in the manifest) replaces it; until then the light capture
+ * is settled so it never reads as a white slab on ink.
  */
+
+/** Content width of the page grid at its widest (88rem less 2 x 64px side padding). */
+export const GRID_PX = 1280;
+
+const FULL: Crop = { x: 0, y: 0, w: 1, h: 1 };
 
 const Picture: React.FC<{
   image: ResponsiveImage;
   sizes: string;
+  alt: string;
   className?: string;
   style?: React.CSSProperties;
-}> = ({ image, sizes, className, style }) => (
+}> = ({ image, sizes, alt, className, style }) => (
   <picture>
     {image.avif && <source type="image/avif" srcSet={image.avif} sizes={sizes} />}
     {image.webp && <source type="image/webp" srcSet={image.webp} sizes={sizes} />}
     <img
       src={image.fallback}
-      alt={image.alt}
+      alt={alt}
       width={image.width}
       height={image.height}
       loading="lazy"
@@ -35,60 +45,237 @@ const Picture: React.FC<{
   </picture>
 );
 
-export const ProductTileView: React.FC<{
-  tile: ProductTile;
-  /** Share of the 96rem grid this tile spans on wide screens (0 to 1). */
-  span: number;
+/**
+ * A crop of a real screen: the box takes the crop's shape (from the light
+ * capture, so the frame never shifts) and the picture is zoomed and shifted
+ * inside it. Shows the night twin under `:root.dark` when it exists.
+ */
+export const Shot: React.FC<{
+  screen: Screen;
+  crop?: Crop;
+  /** CSS width the crop is drawn at on wide screens, and as vw below lg. */
+  lgPx: number;
+  vw: number;
+  manifest: ManifestMap;
+  decorative?: boolean;
   className?: string;
-  screenClassName?: string;
-}> = ({ tile, span, className, screenClassName }) => {
-  const { image, view, front } = tile;
-  const sizes = `(min-width: 1024px) ${Math.round((span * 1536) / view.w)}px, ${Math.round(100 / view.w)}vw`;
+  children?: React.ReactNode;
+}> = ({ screen, crop = FULL, lgPx, vw, manifest, decorative = false, className, children }) => {
+  const { image } = screen;
+  const dark = manifest.get(`${screen.id}-dark`);
+  const sizes = `(min-width: 1024px) ${Math.round(lgPx / crop.w)}px, ${Math.round(vw / crop.w)}vw`;
+  const place: React.CSSProperties = {
+    width: `${100 / crop.w}%`,
+    height: 'auto',
+    left: `${(-crop.x / crop.w) * 100}%`,
+    top: `${(-crop.y / crop.h) * 100}%`,
+  };
   return (
-    <figure className={cn('m-0 flex min-w-0 flex-col', className)}>
-      <div
-        className={cn(
-          'relative min-h-0 flex-1 overflow-hidden rounded-[12px] border border-mm-line bg-white',
-          screenClassName
-        )}
-        style={{ boxShadow: liftShadow }}
-      >
+    <div
+      className={cn('relative overflow-hidden', !dark && 'lc-settle', className)}
+      style={{ aspectRatio: `${crop.w * image.width} / ${crop.h * image.height}` }}
+    >
+      <div className={cn('absolute inset-0', dark && 'dark:hidden')}>
         <Picture
           image={image}
           sizes={sizes}
-          className="absolute top-0 max-w-none"
-          style={{
-            width: `${100 / view.w}%`,
-            height: 'auto',
-            left: `${(-view.x / view.w) * 100}%`,
-            transform: `translateY(${-view.y * 100}%)`,
-          }}
+          alt={decorative ? '' : image.alt}
+          className={cn('absolute max-w-none', !dark && 'lc-shot-light')}
+          style={place}
         />
-        {front && (
-          <div
-            className="absolute inset-x-[5%] bottom-[9%] overflow-hidden rounded-[8px] border border-mm-line bg-white"
-            style={{ boxShadow: liftShadow }}
+      </div>
+      {dark && (
+        <div className="absolute inset-0 hidden dark:block">
+          <Picture image={dark} sizes={sizes} alt={decorative ? '' : dark.alt || image.alt} className="absolute max-w-none" style={place} />
+        </div>
+      )}
+      {children}
+    </div>
+  );
+};
+
+/** A window: a slim top bar carrying the screen's name, then the screen. */
+export const Window: React.FC<{
+  label: string;
+  back?: boolean;
+  /** Top bar height as a share of the window width (keeps scenes in proportion); omit for a fixed 30px bar. */
+  barRatio?: number;
+  className?: string;
+  style?: React.CSSProperties;
+  children: React.ReactNode;
+}> = ({ label, back = false, barRatio, className, style, children }) => (
+  <div className={cn('lc-window', back && 'lc-window--back', className)} style={style}>
+    <div
+      className="lc-chrome"
+      style={barRatio ? { aspectRatio: `${1 / barRatio}` } : { height: 30 }}
+      aria-hidden="true"
+    >
+      <span className="lc-chrome__dot" />
+      <span className="truncate max-md:hidden">{label}</span>
+    </div>
+    {children}
+  </div>
+);
+
+// ─── The hero scene ──────────────────────────────────────────────────
+
+/*
+ * Geometry of the hero scene in units of a 1000-wide box (heights in the
+ * same units), so windows, the lens and its cone stay locked together at
+ * every width from 768 up.
+ */
+const H = 540;
+const BACK = { x: 0, y: 0, w: 470, bar: 18 };
+const FRONT = { x: 150, y: 104, w: 850, bar: 22 };
+const LENS = { x: 640, y: 444, w: 340 };
+const ux = (n: number) => `${n / 10}%`;
+const uy = (n: number) => `${(n / H) * 100}%`;
+
+export const HeroScene: React.FC = () => {
+  const manifest = useLandingManifest();
+  const hero = copy.hero;
+  const front = hero.front.image;
+  const frontImgH = (FRONT.w * front.height) / front.width;
+  const origin = { x: FRONT.x, y: FRONT.y + FRONT.bar };
+  const lens = hero.lens.crop;
+  const lensH = (LENS.w * lens.h * front.height) / (lens.w * front.width);
+  const src = {
+    x: origin.x + lens.x * FRONT.w,
+    y: origin.y + lens.y * frontImgH,
+    w: lens.w * FRONT.w,
+    h: lens.h * frontImgH,
+  };
+  const pin = { x: origin.x + hero.callout.x * FRONT.w, y: origin.y + hero.callout.y * frontImgH };
+  const lgStage = GRID_PX - 96; // stage padding on wide screens
+
+  return (
+    <figure className="m-0">
+      <div className="lc-stage px-4 pb-4 pt-4 md:px-10 md:pb-12 md:pt-10 xl:px-14 xl:pb-14 xl:pt-12">
+        {/* Phones: the record alone, cropped to its first two columns */}
+        <div className="md:hidden">
+          <Window label={hero.frontLabel}>
+            <Shot screen={hero.front} crop={{ x: 0, y: 0.165, w: 0.52, h: 0.835 }} lgPx={0} vw={92} manifest={manifest} />
+          </Window>
+        </div>
+
+        {/* From 768 up: the composed scene */}
+        <div className="relative max-md:hidden" style={{ aspectRatio: `1000 / ${H}` }}>
+          <Window
+            label={hero.backLabel}
+            back
+            barRatio={BACK.bar / BACK.w}
+            className="absolute"
+            style={{ left: ux(BACK.x), top: uy(BACK.y), width: ux(BACK.w) }}
           >
-            <Picture
-              image={front.image}
-              sizes={`(min-width: 1024px) ${Math.round(span * 1536 * 0.9)}px, 90vw`}
-              className="block h-auto w-full"
+            <Shot screen={hero.back} lgPx={(lgStage * BACK.w) / 1000} vw={47} manifest={manifest} decorative />
+          </Window>
+
+          {/* Name and tag, in the open band above the record */}
+          <div className="absolute max-lg:hidden" style={{ left: ux(530), top: uy(14), width: ux(440) }} aria-hidden="true">
+            <span className="mm-h3 block">{hero.name}</span>
+            <span className="mm-body mt-1.5 block text-pretty text-mm-muted">{hero.tag}</span>
+          </div>
+
+          <Window
+            label={hero.frontLabel}
+            barRatio={FRONT.bar / FRONT.w}
+            className="absolute"
+            style={{ left: ux(FRONT.x), top: uy(FRONT.y), width: ux(FRONT.w) }}
+          >
+            <Shot screen={hero.front} lgPx={(lgStage * FRONT.w) / 1000} vw={85} manifest={manifest} />
+          </Window>
+
+          {/* The lens cone: from the warfarin line to its enlarged copy */}
+          <svg
+            className="pointer-events-none absolute inset-0 h-full w-full"
+            viewBox={`0 0 1000 ${H}`}
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <polygon
+              points={`${src.x + src.w},${src.y} ${LENS.x + LENS.w},${LENS.y} ${LENS.x},${LENS.y + lensH} ${src.x},${src.y + src.h}`}
+              fill="var(--mm-system)"
+              fillOpacity={0.07}
             />
+            <line x1={src.x + src.w} y1={src.y} x2={LENS.x + LENS.w} y2={LENS.y} stroke="var(--mm-system)" strokeOpacity={0.55} strokeWidth={1} vectorEffect="non-scaling-stroke" />
+            <line x1={src.x} y1={src.y + src.h} x2={LENS.x} y2={LENS.y + lensH} stroke="var(--mm-system)" strokeOpacity={0.55} strokeWidth={1} vectorEffect="non-scaling-stroke" />
+            <rect x={src.x} y={src.y} width={src.w} height={src.h} rx={3} fill="none" stroke="var(--mm-system)" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
+          </svg>
+
+          {/* The lens */}
+          <div className="absolute" style={{ left: ux(LENS.x), top: uy(LENS.y), width: ux(LENS.w) }}>
+            <div className="lc-window" style={{ borderRadius: 10 }}>
+              <Shot screen={hero.front} crop={lens} lgPx={(lgStage * LENS.w) / 1000} vw={34} manifest={manifest} decorative />
+            </div>
+            <span className="lc-chip absolute bottom-1 right-full mr-4" aria-hidden="true">
+              <span className="h-2 w-2 rounded-full border-[1.5px] border-current" />
+              {hero.lens.label}
+            </span>
+          </div>
+
+          {/* The interaction callout: a ring where the banner's text ends, the words in its empty run */}
+          <span className="lc-ring" style={{ left: ux(pin.x), top: uy(pin.y) }} aria-hidden="true" />
+          <span
+            className="absolute flex -translate-y-1/2 items-center"
+            style={{ left: `calc(${ux(pin.x)} + 8px)`, top: uy(pin.y) }}
+            aria-hidden="true"
+          >
+            <span className="h-px w-8 bg-mm-ink lg:w-12" />
+            <span className="lc-chip">{hero.callout.label}</span>
+          </span>
+        </div>
+      </div>
+      <figcaption className="mt-4 lg:sr-only">
+        <span className="mm-h3 block">{hero.name}</span>
+        <span className="mm-body mt-1 block text-mm-muted">{hero.tag}</span>
+        <span className="sr-only">
+          {' '}
+          {hero.callout.label}. {hero.lens.label}.
+        </span>
+      </figcaption>
+    </figure>
+  );
+};
+
+// ─── A supporting scene ──────────────────────────────────────────────
+
+export const SceneStage: React.FC<{
+  scene: Scene;
+  /** Share of the grid the stage spans on wide screens (0 to 1). */
+  span: number;
+  className?: string;
+}> = ({ scene, span, className }) => {
+  const manifest = useLandingManifest();
+  const pad = 32;
+  const lgWindow = scene.scale * (span * GRID_PX - pad);
+  return (
+    <figure className={cn('lc-stage lc-stage--small m-0 flex min-w-0 flex-col', className)}>
+      <figcaption className="relative z-[4] px-6 pt-6 md:px-8 md:pt-7">
+        <span className="mm-h3 block">{scene.name}</span>
+        <span className="mm-body mt-1 block text-pretty text-mm-muted">{scene.tag}</span>
+      </figcaption>
+      <div className="relative mt-6 min-h-0 flex-1 md:mt-7">
+        <Window
+          label={scene.name}
+          className="absolute left-6 top-0 md:left-8"
+          style={{ width: `calc((100% - ${pad}px) * ${scene.scale})` }}
+        >
+          <Shot screen={scene.screen} crop={scene.crop} lgPx={lgWindow} vw={scene.scale * 90} manifest={manifest} />
+        </Window>
+        {scene.front && (
+          <div className="absolute bottom-[9%] right-[-12%] z-[3]" style={{ width: `${scene.front.width * 100}%` }}>
+            <div className="lc-window" style={{ borderRadius: 10 }}>
+              <Shot
+                screen={scene.front.screen}
+                crop={scene.front.crop}
+                lgPx={span * GRID_PX * scene.front.width}
+                vw={scene.front.width * 90}
+                manifest={manifest}
+              />
+            </div>
           </div>
         )}
-        <span
-          aria-hidden="true"
-          className="absolute left-3 top-3 inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-mm-ink px-3 py-1.5 font-mono text-[12px] font-medium leading-none text-mm-surface dark:bg-mm-surface dark:text-mm-ink lg:[left:var(--tx)] lg:[top:var(--ty)]"
-          style={{ '--tx': `${tile.tagAt.x * 100}%`, '--ty': `${tile.tagAt.y * 100}%` } as React.CSSProperties}
-        >
-          <span className="h-2 w-2 rounded-full border-[1.5px] border-current" />
-          {tile.tag}
-        </span>
       </div>
-      <figcaption className="mt-3 flex items-baseline justify-between gap-4">
-        <span className="text-[15px] font-semibold text-mm-ink lg:text-base">{tile.name}</span>
-        <span className="sr-only">: {tile.tag}</span>
-      </figcaption>
     </figure>
   );
 };

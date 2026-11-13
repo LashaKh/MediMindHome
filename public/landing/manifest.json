@@ -1336,6 +1336,69 @@
           "bytes": 15886
         }
       ]
+    },
+    {
+      "id": "warehouse-stock-dark",
+      "section": "example-warehouse",
+      "alt": "MediMind (dark theme) warehouse stock list filtered to low stock: item codes, quantities, prices, units, expiry dates with days remaining and batch series. Demo data.",
+      "width": 2000,
+      "height": 1019,
+      "aspectRatio": "2000 / 1019",
+      "fallback": "/landing/warehouse-stock-dark-1400.jpg",
+      "avif": "/landing/warehouse-stock-dark-800.avif 800w, /landing/warehouse-stock-dark-1400.avif 1400w, /landing/warehouse-stock-dark-2000.avif 2000w",
+      "webp": "/landing/warehouse-stock-dark-800.webp 800w, /landing/warehouse-stock-dark-1400.webp 1400w, /landing/warehouse-stock-dark-2000.webp 2000w",
+      "sizes": "(min-width: 1200px) 1100px, 100vw",
+      "files": [
+        {
+          "file": "/landing/warehouse-stock-dark-800.avif",
+          "format": "avif",
+          "width": 800,
+          "height": 408,
+          "bytes": 13751
+        },
+        {
+          "file": "/landing/warehouse-stock-dark-1400.avif",
+          "format": "avif",
+          "width": 1400,
+          "height": 714,
+          "bytes": 29630
+        },
+        {
+          "file": "/landing/warehouse-stock-dark-2000.avif",
+          "format": "avif",
+          "width": 2000,
+          "height": 1019,
+          "bytes": 42425
+        },
+        {
+          "file": "/landing/warehouse-stock-dark-1400.jpg",
+          "format": "jpg",
+          "width": 1400,
+          "height": 714,
+          "bytes": 105322
+        },
+        {
+          "file": "/landing/warehouse-stock-dark-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 408,
+          "bytes": 25360
+        },
+        {
+          "file": "/landing/warehouse-stock-dark-1400.webp",
+          "format": "webp",
+          "width": 1400,
+          "height": 714,
+          "bytes": 56424
+        },
+        {
+          "file": "/landing/warehouse-stock-dark-2000.webp",
+          "format": "webp",
+          "width": 2000,
+          "height": 1019,
+          "bytes": 89634
+        }
+      ]
     }
   ]
 }

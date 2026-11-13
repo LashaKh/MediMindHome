@@ -84,7 +84,9 @@
        L1  mm-display (hero h1 only) | mm-h2 (section heading) | mm-stat
        L2  mm-lead (support line)     | mm-h3 (column/card title)
        L3  mm-body | mm-eyebrow, mm-caption, mm-data (labels)
-     Sizes are fluid (clamp) between the phone and 1440 values.
+     Sizes are fluid (clamp) between the phone and 1440 values and stop
+     growing near 1600px (round 4: a precise instrument at 100 percent).
+     Desktop: display 88-92, h2 52-56, stat 80-88, lead 20, body 17.
      ============================================================ */
   .mm-display,
   .mm-h2,
@@ -96,31 +98,31 @@
     text-wrap: balance;
   }
   .mm-display {
-    font-size: clamp(2.75rem, 0.9rem + 5.9vw, 6.5rem);  /* 44px phone → 99px at 1440 → 104px */
+    font-size: clamp(2.75rem, 1rem + 4.9vw, 5.75rem);   /* 44px phone → 87px at 1440 → 92px cap */
     line-height: 0.98;
-    letter-spacing: -0.035em;
+    letter-spacing: -0.034em;
   }
   .mm-h2 {
-    font-size: clamp(2.125rem, 1rem + 3.4vw, 4rem);     /* 34px phone → 64px */
-    line-height: 1.04;
+    font-size: clamp(2.125rem, 1rem + 2.5vw, 3.5rem);   /* 34px phone → 52px at 1440 → 56px cap */
+    line-height: 1.06;
     letter-spacing: -0.028em;
   }
   .mm-stat {
-    font-size: clamp(3.5rem, 1.6rem + 5.6vw, 7rem);     /* 56px phone → 112px */
+    font-size: clamp(3.25rem, 1.5rem + 4vw, 5.5rem);    /* 52px phone → 82px at 1440 → 88px cap */
     line-height: 0.95;
     letter-spacing: -0.04em;
     font-weight: 350;
     font-variant-numeric: lining-nums tabular-nums;
   }
   .mm-h3 {
-    font-size: 1.25rem;           /* 20px phone, 22px md+ */
+    font-size: 1.1875rem;         /* 19px phone, 20px md+ */
     line-height: 1.3;
     font-weight: 600;
     letter-spacing: -0.012em;
     color: var(--mm-ink);
   }
   .mm-lead {
-    font-size: 1.1875rem;         /* 19px phone, 22px md+ */
+    font-size: 1.125rem;          /* 18px phone, 20px md+ */
     line-height: 1.5;
     font-weight: 400;
     letter-spacing: -0.006em;
@@ -169,19 +171,9 @@
     color: var(--mm-body);
   }
   @media (min-width: 768px) {
-    .mm-h3      { font-size: 1.375rem; } /* 22px */
-    .mm-lead    { font-size: 1.375rem; } /* 22px */
+    .mm-h3      { font-size: 1.25rem; }  /* 20px */
+    .mm-lead    { font-size: 1.25rem; }  /* 20px */
     .mm-body    { font-size: 1.0625rem; }/* 17px */
-    .mm-eyebrow { font-size: 0.875rem; } /* 14px */
-  }
-  /* Very wide screens (the 96rem grid): display type keeps growing so a
-     1728 or 1920 screen feels full, not a 1440 page floating in space. */
-  @media (min-width: 1600px) {
-    .mm-display { font-size: clamp(6.5rem, 1rem + 5.6vw, 7.75rem); } /* 104 → 124px */
-    .mm-h2      { font-size: clamp(4rem, 0.5rem + 3.6vw, 4.75rem); }  /* 64 → 76px */
-    .mm-stat    { font-size: clamp(7rem, 1rem + 6vw, 8.25rem); }      /* 112 → 132px */
-    .mm-lead    { font-size: 1.5rem; }                                /* 24px */
-    .mm-h3      { font-size: 1.5rem; }                                /* 24px */
   }
   /* The second clause of a headline: same face, quieter ink. Large text only. */
   .mm-accent-text { color: var(--mm-voice2); }
@@ -242,7 +234,7 @@
   /* ============================================================
      Buttons: squared-off (10px), solid ink on light, solid white
      on the ink canvas. Blue stays the system's; amber stays the
-     person's, so the button is neither. 48px tall, 44px for text.
+     person's, so the button is neither. 46px tall, 44px for text.
      Class names kept: .btn-luminous = primary, .btn-ghost =
      secondary, .btn-quiet = text link-button.
      ============================================================ */
@@ -252,10 +244,10 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    min-height: 48px;
-    padding: 0 1.375rem;
-    border-radius: 10px;
-    font-size: 1rem;
+    min-height: 46px;
+    padding: 0 1.25rem;
+    border-radius: 9px;
+    font-size: 0.9375rem;
     font-weight: 600;
     line-height: 1.2;
     letter-spacing: -0.005em;

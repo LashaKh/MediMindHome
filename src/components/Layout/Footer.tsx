@@ -19,7 +19,7 @@ export const Footer: React.FC = () => (
       <div className="flex flex-col gap-10 border-t border-mm-line py-12 md:flex-row md:items-end md:justify-between md:py-16">
         <div>
           <MediMindLogo variant="icon" size="md" />
-          <p className={cn(dDisplay, 'mt-6 text-[1.75rem] leading-tight text-mm-ink md:text-[2.25rem]')}>
+          <p className={cn(dDisplay, 'mt-6 text-[1.625rem] leading-tight text-mm-ink md:text-[1.875rem]')}>
             {footer.line.map((sentence, i) => (
               <span key={sentence} className="block sm:inline">
                 {i > 0 && <span className="hidden sm:inline"> </span>}

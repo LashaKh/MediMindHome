@@ -147,7 +147,7 @@ export const Header: React.FC = () => {
         transparent ? 'border-transparent bg-transparent' : 'border-mm-line bg-mm-surface'
       )}
     >
-      <div className="mx-auto flex h-16 max-w-page items-center justify-between gap-4 px-4 sm:px-6 md:h-20 lg:px-8">
+      <div className="mx-auto flex h-16 max-w-page items-center justify-between gap-4 px-6 md:h-[4.5rem] md:px-10 xl:px-16">
         <Link to="/" className="flex shrink-0 items-center rounded-md" aria-label={headerContent.logoLabel}>
           <MediMindLogo variant="horizontal" size="md" />
         </Link>
@@ -195,7 +195,7 @@ export const Header: React.FC = () => {
           ref={menuRef}
           className="absolute inset-x-0 top-full max-h-[calc(100dvh-4rem)] overflow-y-auto border-b border-mm-line bg-mm-surface lg:hidden"
         >
-          <nav aria-label={headerContent.navLabel} className="mx-auto max-w-page px-4 pb-6 pt-1 sm:px-6">
+          <nav aria-label={headerContent.navLabel} className="mx-auto max-w-page px-6 pb-6 pt-1 md:px-10">
             <ul className="divide-y divide-mm-line">
               {headerContent.nav.map((item) => (
                 <li key={item.id}>

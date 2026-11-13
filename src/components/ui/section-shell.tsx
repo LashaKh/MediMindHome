@@ -6,8 +6,9 @@ import type { SectionTone } from '../../content/types';
  * Section wrapper: full-width band with a tone and a fixed content grid.
  * The tone re-points every --mm-* token, so the same markup reads correctly
  * on white, pale and navy (navy = daylight blue-white in the light theme,
- * the ink canvas in the dark theme). Content width is max-w-page (96rem,
- * 1536px), the same edge as the header. Vertical padding 56/80/96px.
+ * the ink canvas in the dark theme). Content width is max-w-page (88rem,
+ * 1408px) with side padding 24/40/64px (phone/768/1280), the same edge as
+ * the header and footer. Vertical padding 56/80/96px.
  *
  *   <SectionShell id="problem" tone="pale" labelledBy="problem-title">
  *     <SectionHeading as="h2" id="problem-title" title="…" />
@@ -61,7 +62,7 @@ export const SectionShell: React.FC<SectionShellProps> = ({
     >
       <div
         className={cn(
-          'mx-auto w-full px-4 sm:px-6 lg:px-8',
+          'mx-auto w-full px-6 md:px-10 xl:px-16',
           narrow ? 'max-w-3xl' : 'max-w-page',
           innerClassName
         )}

@@ -16,4 +16,4 @@ export const dH2 = 'mm-h2 text-balance';
 export const dMono = 'mm-data';
 
 /** Content edge shared with the header and every SectionShell. */
-export const dEdge = 'mx-auto w-full max-w-page px-4 sm:px-6 lg:px-8';
+export const dEdge = 'mx-auto w-full max-w-page px-6 md:px-10 xl:px-16';

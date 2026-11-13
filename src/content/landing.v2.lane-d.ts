@@ -109,7 +109,6 @@ export const footerV2 = {
     { label: 'Privacy', href: '/privacy' },
     { label: 'Contact', href: `mailto:${contactEmail}` },
     { label: 'Innovative Startup status', href: 'https://innovationstatus.gov.ge/ka/awarded-companies/11464' },
-    { label: 'MediMind Expert', href: 'https://medimind.md/expert' },
   ],
   copyright: (year: number) => `© ${year} MediMind.`,
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import type { ResponsiveImage } from '../../content/types';
 import type { Crop, Scene, Screen } from '../../content/landing.v2.c';
 import { product as copy } from '../../content/landing.v2.c';
-import { useLandingManifest } from './laneC.manifest';
+import { isPending, useIsDark, useLandingManifest, useMinWidth } from './laneC.manifest';
 import type { ManifestMap } from './laneC.manifest';
 import { cn } from '../../utils/cn';
 import './LaneCScreens.css';
@@ -61,33 +61,33 @@ export const Shot: React.FC<{
   className?: string;
   children?: React.ReactNode;
 }> = ({ screen, crop = FULL, lgPx, vw, manifest, decorative = false, className, children }) => {
+  const isDark = useIsDark();
   const { image } = screen;
-  const dark = manifest.get(`${screen.id}-dark`);
+  const twin = isDark ? manifest.get(`${screen.id}-dark`) : undefined;
+  const shown = twin ?? image;
+  const settle = isDark && !twin;
   const sizes = `(min-width: 1024px) ${Math.round(lgPx / crop.w)}px, ${Math.round(vw / crop.w)}vw`;
-  const place: React.CSSProperties = {
-    width: `${100 / crop.w}%`,
-    height: 'auto',
-    left: `${(-crop.x / crop.w) * 100}%`,
-    top: `${(-crop.y / crop.h) * 100}%`,
-  };
   return (
     <div
-      className={cn('relative overflow-hidden', !dark && 'lc-settle', className)}
-      style={{ aspectRatio: `${crop.w * image.width} / ${crop.h * image.height}` }}
+      className={cn('relative overflow-hidden', settle && 'lc-settle', className)}
+      style={{
+        aspectRatio: `${crop.w * image.width} / ${crop.h * image.height}`,
+      }}
     >
-      <div className={cn('absolute inset-0', dark && 'dark:hidden')}>
+      {!(isDark && isPending(manifest)) && (
         <Picture
-          image={image}
+          key={shown.fallback}
+          image={shown}
           sizes={sizes}
-          alt={decorative ? '' : image.alt}
-          className={cn('absolute max-w-none', !dark && 'lc-shot-light')}
-          style={place}
+          alt={decorative ? '' : shown.alt || image.alt}
+          className={cn('absolute max-w-none', settle && 'lc-shot-light')}
+          style={{
+            width: `${100 / crop.w}%`,
+            height: 'auto',
+            left: `${(-crop.x / crop.w) * 100}%`,
+            top: `${(-crop.y / crop.h) * 100}%`,
+          }}
         />
-      </div>
-      {dark && (
-        <div className="absolute inset-0 hidden dark:block">
-          <Picture image={dark} sizes={sizes} alt={decorative ? '' : dark.alt || image.alt} className="absolute max-w-none" style={place} />
-        </div>
       )}
       {children}
     </div>
@@ -122,7 +122,7 @@ export const Window: React.FC<{
 /*
  * Geometry of the hero scene in units of a 1000-wide box (heights in the
  * same units), so windows, the lens and its cone stay locked together at
- * every width from 768 up.
+ * every width from 1024 up.
  */
 const H = 528;
 const BACK = { x: 0, y: 0, w: 470, bar: 18 };
@@ -145,90 +145,137 @@ export const HeroScene: React.FC = () => {
     w: lens.w * FRONT.w,
     h: lens.h * frontImgH,
   };
-  const pin = { x: origin.x + hero.callout.x * FRONT.w, y: origin.y + hero.callout.y * frontImgH };
+  const pin = {
+    x: origin.x + hero.callout.x * FRONT.w,
+    y: origin.y + hero.callout.y * frontImgH,
+  };
   const lgStage = GRID_PX - 96; // stage padding on wide screens
+  const md = useMinWidth(768);
+  const lg = useMinWidth(1024);
 
   return (
     <figure className="m-0">
       <div className="lc-stage p-4 md:p-8 lg:px-10 lg:pb-12 lg:pt-10 xl:px-14 xl:pb-14 xl:pt-12">
         {/* Below 1024: the record alone, cropped to its first two (phones) or three (tablets) columns */}
-        <div className="md:hidden">
+        {!lg && (
           <Window label={hero.frontLabel}>
-            <Shot screen={hero.front} crop={{ x: 0, y: 0.27, w: 0.52, h: 0.73 }} lgPx={0} vw={92} manifest={manifest} />
+            <Shot
+              screen={hero.front}
+              crop={{ x: 0, y: 0.27, w: md ? 0.755 : 0.52, h: 0.73 }}
+              lgPx={0}
+              vw={md ? 88 : 92}
+              manifest={manifest}
+            />
           </Window>
-        </div>
-        <div className="max-md:hidden lg:hidden">
-          <Window label={hero.frontLabel}>
-            <Shot screen={hero.front} crop={{ x: 0, y: 0.27, w: 0.755, h: 0.73 }} lgPx={0} vw={88} manifest={manifest} />
-          </Window>
-        </div>
+        )}
 
         {/* From 1024 up: the composed scene */}
-        <div className="relative max-lg:hidden" style={{ aspectRatio: `1000 / ${H}` }}>
-          <Window
-            label={hero.backLabel}
-            back
-            barRatio={BACK.bar / BACK.w}
-            className="absolute"
-            style={{ left: ux(BACK.x), top: uy(BACK.y), width: ux(BACK.w) }}
-          >
-            <Shot screen={hero.back} lgPx={(lgStage * BACK.w) / 1000} vw={47} manifest={manifest} decorative />
-          </Window>
+        {lg && (
+          <div className="relative" style={{ aspectRatio: `1000 / ${H}` }}>
+            <Window
+              label={hero.backLabel}
+              back
+              barRatio={BACK.bar / BACK.w}
+              className="absolute"
+              style={{ left: ux(BACK.x), top: uy(BACK.y), width: ux(BACK.w) }}
+            >
+              <Shot screen={hero.back} lgPx={(lgStage * BACK.w) / 1000} vw={47} manifest={manifest} decorative />
+            </Window>
 
-          {/* Name and tag, in the open band above the record */}
-          <div className="absolute" style={{ left: ux(530), top: uy(14), width: ux(440) }} aria-hidden="true">
-            <span className="mm-h3 block">{hero.name}</span>
-            <span className="mm-body mt-1.5 block text-pretty text-mm-muted">{hero.tag}</span>
-          </div>
-
-          <Window
-            label={hero.frontLabel}
-            barRatio={FRONT.bar / FRONT.w}
-            className="absolute"
-            style={{ left: ux(FRONT.x), top: uy(FRONT.y), width: ux(FRONT.w) }}
-          >
-            <Shot screen={hero.front} lgPx={(lgStage * FRONT.w) / 1000} vw={85} manifest={manifest} />
-          </Window>
-
-          {/* The lens cone: from the warfarin line to its enlarged copy */}
-          <svg
-            className="pointer-events-none absolute inset-0 h-full w-full"
-            viewBox={`0 0 1000 ${H}`}
-            preserveAspectRatio="none"
-            aria-hidden="true"
-          >
-            <polygon
-              points={`${src.x + src.w},${src.y} ${LENS.x + LENS.w},${LENS.y} ${LENS.x},${LENS.y + lensH} ${src.x},${src.y + src.h}`}
-              fill="var(--mm-system)"
-              fillOpacity={0.07}
-            />
-            <line x1={src.x + src.w} y1={src.y} x2={LENS.x + LENS.w} y2={LENS.y} stroke="var(--mm-system)" strokeOpacity={0.4} strokeWidth={1} vectorEffect="non-scaling-stroke" />
-            <line x1={src.x} y1={src.y + src.h} x2={LENS.x} y2={LENS.y + lensH} stroke="var(--mm-system)" strokeOpacity={0.4} strokeWidth={1} vectorEffect="non-scaling-stroke" />
-            <rect x={src.x} y={src.y} width={src.w} height={src.h} rx={3} fill="none" stroke="var(--mm-system)" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
-          </svg>
-
-          {/* The lens */}
-          <div className="absolute" style={{ left: ux(LENS.x), top: uy(LENS.y), width: ux(LENS.w) }}>
-            <div className="lc-window" style={{ borderRadius: 10 }}>
-              <Shot screen={hero.front} crop={lens} lgPx={(lgStage * LENS.w) / 1000} vw={34} manifest={manifest} decorative />
+            {/* Name and tag, in the open band above the record */}
+            <div className="absolute" style={{ left: ux(530), top: uy(14), width: ux(440) }} aria-hidden="true">
+              <span className="mm-h3 block">{hero.name}</span>
+              <span className="mm-body mt-1.5 block text-pretty text-mm-muted">{hero.tag}</span>
             </div>
-            <span className="lc-chip absolute bottom-1 right-full mr-4" aria-hidden="true">
-              <span className="h-2 w-2 rounded-full border-[1.5px] border-current" />
-              {hero.lens.label}
+
+            <Window
+              label={hero.frontLabel}
+              barRatio={FRONT.bar / FRONT.w}
+              className="absolute"
+              style={{
+                left: ux(FRONT.x),
+                top: uy(FRONT.y),
+                width: ux(FRONT.w),
+              }}
+            >
+              <Shot screen={hero.front} lgPx={(lgStage * FRONT.w) / 1000} vw={85} manifest={manifest} />
+            </Window>
+
+            {/* The lens cone: from the warfarin line to its enlarged copy */}
+            <svg
+              className="pointer-events-none absolute inset-0 h-full w-full"
+              viewBox={`0 0 1000 ${H}`}
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <polygon
+                points={`${src.x + src.w},${src.y} ${LENS.x + LENS.w},${LENS.y} ${LENS.x},${LENS.y + lensH} ${src.x},${src.y + src.h}`}
+                fill="var(--mm-system)"
+                fillOpacity={0.07}
+              />
+              <line
+                x1={src.x + src.w}
+                y1={src.y}
+                x2={LENS.x + LENS.w}
+                y2={LENS.y}
+                stroke="var(--mm-system)"
+                strokeOpacity={0.4}
+                strokeWidth={1}
+                vectorEffect="non-scaling-stroke"
+              />
+              <line
+                x1={src.x}
+                y1={src.y + src.h}
+                x2={LENS.x}
+                y2={LENS.y + lensH}
+                stroke="var(--mm-system)"
+                strokeOpacity={0.4}
+                strokeWidth={1}
+                vectorEffect="non-scaling-stroke"
+              />
+              <rect
+                x={src.x}
+                y={src.y}
+                width={src.w}
+                height={src.h}
+                rx={3}
+                fill="none"
+                stroke="var(--mm-system)"
+                strokeWidth={1.5}
+                vectorEffect="non-scaling-stroke"
+              />
+            </svg>
+
+            {/* The lens */}
+            <div className="absolute" style={{ left: ux(LENS.x), top: uy(LENS.y), width: ux(LENS.w) }}>
+              <div className="lc-window" style={{ borderRadius: 10 }}>
+                <Shot
+                  screen={hero.front}
+                  crop={lens}
+                  lgPx={(lgStage * LENS.w) / 1000}
+                  vw={34}
+                  manifest={manifest}
+                  decorative
+                />
+              </div>
+              <span className="lc-chip absolute bottom-1 right-full mr-4" aria-hidden="true">
+                <span className="h-2 w-2 rounded-full border-[1.5px] border-current" />
+                {hero.lens.label}
+              </span>
+            </div>
+
+            {/* The interaction callout: a ring where the banner's text ends, the words in its empty run */}
+            <span className="lc-ring" style={{ left: ux(pin.x), top: uy(pin.y) }} aria-hidden="true" />
+            <span
+              className="absolute flex -translate-y-1/2 items-center"
+              style={{ left: `calc(${ux(pin.x)} + 8px)`, top: uy(pin.y) }}
+              aria-hidden="true"
+            >
+              <span className="h-px w-8 bg-mm-ink lg:w-12" />
+              <span className="lc-chip">{hero.callout.label}</span>
             </span>
           </div>
-
-          {/* The interaction callout: a ring where the banner's text ends, the words in its empty run */}
-          <span className="lc-ring" style={{ left: ux(pin.x), top: uy(pin.y) }} aria-hidden="true" />
-          <span
-            className="absolute flex -translate-y-1/2 items-center"
-            style={{ left: `calc(${ux(pin.x)} + 8px)`, top: uy(pin.y) }}
-            aria-hidden="true"
-          >
-            <span className="h-px w-8 bg-mm-ink lg:w-12" />
-            <span className="lc-chip">{hero.callout.label}</span>
-          </span>
-        </div>
+        )}
       </div>
       <figcaption className="mt-4 lg:sr-only">
         <span className="mm-h3 block">{hero.name}</span>

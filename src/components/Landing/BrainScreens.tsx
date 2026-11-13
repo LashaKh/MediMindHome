@@ -1,7 +1,7 @@
 import React from 'react';
 import { brain as copy } from '../../content/landing.v2.c';
 import type { BrainScreen } from '../../content/landing.v2.c';
-import { useLandingManifest } from './laneC.manifest';
+import { useIsDark, useLandingManifest, useMinWidth } from './laneC.manifest';
 import type { ManifestMap } from './laneC.manifest';
 import { GRID_PX, Picture, Window } from './ProductPlate';
 import { cn } from '../../utils/cn';
@@ -25,24 +25,26 @@ const BrainShot: React.FC<{ screen: BrainScreen; manifest: ManifestMap; lgPx: nu
   lgPx,
   vw,
 }) => {
+  const isDark = useIsDark();
   const light = manifest.get(screen.id);
-  const dark = manifest.get(`${screen.id}-dark`);
+  const twin = isDark ? manifest.get(`${screen.id}-dark`) : undefined;
+  const shown = twin ?? light;
+  const settle = isDark && !twin;
   const sizes = `(min-width: 1024px) ${Math.round(lgPx)}px, ${vw}vw`;
-  const fill = 'absolute inset-0 h-full w-full max-w-none object-cover';
-  const pos = { objectPosition: screen.focus };
   return (
-    <div className={cn('relative overflow-hidden', light && !dark && 'lc-settle')} style={{ aspectRatio: `${screen.frame}` }}>
-      {light ? (
-        <>
-          <div className={cn('absolute inset-0', dark && 'dark:hidden')}>
-            <Picture image={light} sizes={sizes} alt={light.alt} className={cn(fill, !dark && 'lc-shot-light')} style={pos} />
-          </div>
-          {dark && (
-            <div className="absolute inset-0 hidden dark:block">
-              <Picture image={dark} sizes={sizes} alt={dark.alt || light.alt} className={fill} style={pos} />
-            </div>
-          )}
-        </>
+    <div
+      className={cn('relative overflow-hidden', shown && settle && 'lc-settle')}
+      style={{ aspectRatio: `${screen.frame}` }}
+    >
+      {shown ? (
+        <Picture
+          key={shown.fallback}
+          image={shown}
+          sizes={sizes}
+          alt={shown.alt || light?.alt || screen.name}
+          className={cn('absolute inset-0 h-full w-full max-w-none object-cover', settle && 'lc-shot-light')}
+          style={{ objectPosition: screen.focus }}
+        />
       ) : (
         <div className="lc-slot" data-slot={screen.id}>
           <span className="font-mono text-[12px] text-mm-muted">{screen.name}</span>
@@ -72,6 +74,7 @@ const Caption: React.FC<{ screen: BrainScreen; className?: string }> = ({ screen
 
 export const BrainScreens: React.FC = () => {
   const manifest = useLandingManifest();
+  const lg = useMinWidth(1024);
   const has = (s: BrainScreen) => SHOW_SLOTS || manifest.has(s.id);
   const scene = copy.screens.scene;
   const sceneShown = scene.filter(has);
@@ -85,67 +88,83 @@ export const BrainScreens: React.FC = () => {
         <>
           <div className="lc-stage p-4 md:p-8 lg:p-10 xl:px-14 xl:py-12">
             {/* Below 1024: the screens one under another */}
-            <div className="grid gap-6 md:grid-cols-2 md:gap-8 lg:hidden">
-              {sceneShown.map((s) => (
-                <figure key={s.id} className="m-0 md:odd:last:col-span-2">
-                  <Window label={s.name}>
-                    <BrainShot screen={s} manifest={manifest} lgPx={0} vw={92} />
-                  </Window>
-                  <figcaption className="mt-3">
-                    <Caption screen={s} />
-                  </figcaption>
-                </figure>
-              ))}
-            </div>
+            {!lg && (
+              <div className="grid gap-6 md:grid-cols-2 md:gap-8">
+                {sceneShown.map((s) => (
+                  <figure key={s.id} className="m-0 md:odd:last:col-span-2">
+                    <Window label={s.name}>
+                      <BrainShot screen={s} manifest={manifest} lgPx={0} vw={92} />
+                    </Window>
+                    <figcaption className="mt-3">
+                      <Caption screen={s} />
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            )}
 
             {/* From 1024 up: the composed scene */}
-            <div className="relative max-lg:hidden" style={{ aspectRatio: `1000 / ${H}` }}>
-              {scene.map((s, i) => {
-                const g = SCENE[i];
-                if (!s.pin || !manifest.has(s.id)) return null;
-                const at = {
-                  x: g.x + s.pin.x * g.w,
-                  y: g.y + g.bar + s.pin.y * (g.w / s.frame),
-                };
-                const right = s.pin.dir === 'right';
-                return (
-                  <React.Fragment key={`${s.id}-pin`}>
-                    <span
-                      className={cn('lc-ring z-[5]', s.pin.human && 'lc-ring--human')}
-                      style={{ left: ux(at.x), top: uy(at.y) }}
-                      aria-hidden="true"
-                    />
-                    <span
-                      className={cn('absolute z-[5] flex', right ? '-translate-y-1/2 items-center' : '-translate-x-1/2 flex-col items-center')}
-                      style={right ? { left: `calc(${ux(at.x)} + 8px)`, top: uy(at.y) } : { left: ux(at.x), top: `calc(${uy(at.y)} + 8px)` }}
-                      aria-hidden="true"
-                    >
-                      <span className={cn('bg-mm-ink', right ? 'h-px w-10 lg:w-16' : 'h-20 w-px lg:h-40')} />
-                      <span className="lc-chip">
-                        <span className={cn('h-2 w-2 rounded-full', s.pin.human ? 'bg-mm-human' : 'border-[1.5px] border-current')} />
-                        {s.pin.label}
+            {lg && (
+              <div className="relative" style={{ aspectRatio: `1000 / ${H}` }}>
+                {scene.map((s, i) => {
+                  const g = SCENE[i];
+                  if (!s.pin || !manifest.has(s.id)) return null;
+                  const at = {
+                    x: g.x + s.pin.x * g.w,
+                    y: g.y + g.bar + s.pin.y * (g.w / s.frame),
+                  };
+                  const right = s.pin.dir === 'right';
+                  return (
+                    <React.Fragment key={`${s.id}-pin`}>
+                      <span
+                        className={cn('lc-ring z-[5]', s.pin.human && 'lc-ring--human')}
+                        style={{ left: ux(at.x), top: uy(at.y) }}
+                        aria-hidden="true"
+                      />
+                      <span
+                        className={cn(
+                          'absolute z-[5] flex',
+                          right ? '-translate-y-1/2 items-center' : '-translate-x-1/2 flex-col items-center',
+                        )}
+                        style={
+                          right
+                            ? { left: `calc(${ux(at.x)} + 8px)`, top: uy(at.y) }
+                            : { left: ux(at.x), top: `calc(${uy(at.y)} + 8px)` }
+                        }
+                        aria-hidden="true"
+                      >
+                        <span className={cn('bg-mm-ink', right ? 'h-px w-10 lg:w-16' : 'h-20 w-px lg:h-40')} />
+                        <span className="lc-chip">
+                          <span
+                            className={cn(
+                              'h-2 w-2 rounded-full',
+                              s.pin.human ? 'bg-mm-human' : 'border-[1.5px] border-current',
+                            )}
+                          />
+                          {s.pin.label}
+                        </span>
                       </span>
-                    </span>
-                  </React.Fragment>
-                );
-              })}
-              {scene.map((s, i) => {
-                if (!has(s)) return null;
-                const g = SCENE[i];
-                return (
-                  <Window
-                    key={s.id}
-                    label={s.name}
-                    back={i === 0}
-                    barRatio={g.bar / g.w}
-                    className="absolute"
-                    style={{ left: ux(g.x), top: uy(g.y), width: ux(g.w), zIndex: i + 1 }}
-                  >
-                    <BrainShot screen={s} manifest={manifest} lgPx={(lgStage * g.w) / 1000} vw={(g.w / 10) * 0.9} />
-                  </Window>
-                );
-              })}
-            </div>
+                    </React.Fragment>
+                  );
+                })}
+                {scene.map((s, i) => {
+                  if (!has(s)) return null;
+                  const g = SCENE[i];
+                  return (
+                    <Window
+                      key={s.id}
+                      label={s.name}
+                      back={i === 0}
+                      barRatio={g.bar / g.w}
+                      className="absolute"
+                      style={{ left: ux(g.x), top: uy(g.y), width: ux(g.w), zIndex: i + 1 }}
+                    >
+                      <BrainShot screen={s} manifest={manifest} lgPx={(lgStage * g.w) / 1000} vw={(g.w / 10) * 0.9} />
+                    </Window>
+                  );
+                })}
+              </div>
+            )}
           </div>
 
           {/* Names and tags, in the order the screens stand */}
@@ -158,7 +177,13 @@ export const BrainScreens: React.FC = () => {
       )}
 
       {more.length > 0 && (
-        <div className={cn('mt-10 grid gap-5 lg:mt-12 lg:gap-6', more.length > 1 && 'md:grid-cols-2', more.length > 2 && 'lg:grid-cols-3')}>
+        <div
+          className={cn(
+            'mt-10 grid gap-5 lg:mt-12 lg:gap-6',
+            more.length > 1 && 'md:grid-cols-2',
+            more.length > 2 && 'lg:grid-cols-3',
+          )}
+        >
           {more.map((s, i) => {
             // One stage alone becomes a wide band: the words left, the screen running off the right edge.
             const alone = more.length === 1;
@@ -168,19 +193,27 @@ export const BrainScreens: React.FC = () => {
                 className={cn(
                   'lc-stage lc-stage--small m-0 flex flex-col',
                   alone && 'md:grid md:grid-cols-12',
-                  more.length === 3 && i === 2 && 'md:max-lg:col-span-2'
+                  more.length === 3 && i === 2 && 'md:max-lg:col-span-2',
                 )}
               >
-                <figcaption className={cn('px-6 pt-6 md:px-8 md:pt-7', alone && 'md:col-span-5 md:self-center md:pb-7 md:pt-0 lg:px-10')}>
+                <figcaption
+                  className={cn(
+                    'px-6 pt-6 md:px-8 md:pt-7',
+                    alone && 'md:col-span-5 md:self-center md:pb-7 md:pt-0 lg:px-10',
+                  )}
+                >
                   <Caption screen={s} />
                 </figcaption>
                 <div
                   className={cn(
                     'relative mt-6 md:mt-7',
-                    alone ? 'aspect-[16/9] md:col-span-7 md:mt-8 md:aspect-[16/8]' : 'aspect-[16/9]'
+                    alone ? 'aspect-[16/9] md:col-span-7 md:mt-8 md:aspect-[16/8]' : 'aspect-[16/9]',
                   )}
                 >
-                  <Window label={s.name} className={cn('absolute left-6 top-0 md:left-8', alone ? 'w-[110%] md:left-0' : 'w-[140%]')}>
+                  <Window
+                    label={s.name}
+                    className={cn('absolute left-6 top-0 md:left-8', alone ? 'w-[110%] md:left-0' : 'w-[140%]')}
+                  >
                     <BrainShot
                       screen={s}
                       manifest={manifest}

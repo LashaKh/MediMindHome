@@ -48,7 +48,7 @@ const Faces: React.FC = () => (
 
 export const ContactContent: React.FC<ContactContentProps> = ({ headingAs: Heading, headingId, location, backHref }) => (
   <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-    <div className="lg:col-span-5">
+    <div className="lg:sticky lg:top-28 lg:col-span-5 lg:self-start">
       <Heading id={headingId} className={cn(dH2, 'max-w-[14ch]')}>
         {ask.title}
       </Heading>

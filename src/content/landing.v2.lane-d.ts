@@ -80,9 +80,9 @@ export const ambition = {
   /** Small labels on the three rings of the field (decorative; the steps say the same). */
   ringLabels: ['25 hospitals', 'The region', 'Every hospital'],
   steps: [
-    { title: 'Today.', text: 'A 25-hospital network runs on MediMind.' },
-    { title: 'Now.', text: 'Expanding across local and regional markets.' },
-    { title: 'Next.', text: 'Every hospital still running on forty systems.' },
+    { title: '25 hospitals.', text: 'Running today.' },
+    { title: 'The region.', text: 'Expanding across local and regional markets.' },
+    { title: 'Every hospital.', text: 'Anywhere one still runs on forty systems.' },
   ],
   beliefLead: 'We believe no patient should be missed at 2 a.m.',
   beliefEnd: 'In any hospital. Anywhere.',

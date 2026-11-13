@@ -143,6 +143,13 @@ export const ImagingStage: React.FC = () => {
             style={{ left: ux(BODY.x + BODY.w / 2) }}
           />
 
+          {/* A hairline between the scan and the planning, fading at both ends */}
+          <span
+            aria-hidden="true"
+            className="absolute inset-y-[8%] w-px bg-gradient-to-b from-transparent via-white/[0.09] to-transparent"
+            style={{ left: ux(BODY.x + BODY.w + 4) }}
+          />
+
           <figcaption className="absolute z-[6]" style={{ left: ux(ROOT.x), top: uy(40), width: ux(560) }}>
             <span className="block text-[1.25rem] font-semibold leading-snug tracking-[-0.012em] text-white">
               {img.title}

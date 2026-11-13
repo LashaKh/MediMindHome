@@ -12,8 +12,8 @@ import './LaneCScreens.css';
  * one real screen (cropped to its telling part) with a slim named top bar,
  * a thin highlight edge and a long soft shadow; windows stand on a lit
  * stage, overlap and run off its edge. In night mode a screen's night twin
- * (`<id>-dark` in the manifest) replaces it; until then the light capture
- * is settled so it never reads as a white slab on ink.
+ * (`<id>-dark` in the manifest) replaces it; a light capture without one is
+ * shown as a lit display (near-full brightness, a cool bloom on its frame).
  */
 
 /** Content width of the page grid at its widest (88rem less 2 x 64px side padding). */

@@ -1689,11 +1689,11 @@
     },
     {
       "id": "bed-board-grid",
-      "section": "product-operations",
-      "alt": "MediMind bed board for an emergency department: 6 rooms, 20 beds, 11 free, 45 percent occupancy, and a row of bed cards marked occupied or available. Demo data.",
+      "section": "product",
+      "alt": "MediMind bed board for a cardiology ward: rooms with bed cards coloured by state (occupied, cleaning required, available), ward occupancy 75 percent. Demo data; names replaced with neutral demo labels.",
       "width": 2000,
-      "height": 622,
-      "aspectRatio": "2000 / 622",
+      "height": 1442,
+      "aspectRatio": "2000 / 1442",
       "fallback": "/landing/bed-board-grid-1400.jpg",
       "avif": "/landing/bed-board-grid-800.avif 800w, /landing/bed-board-grid-1400.avif 1400w, /landing/bed-board-grid-2000.avif 2000w",
       "webp": "/landing/bed-board-grid-800.webp 800w, /landing/bed-board-grid-1400.webp 1400w, /landing/bed-board-grid-2000.webp 2000w",
@@ -1703,60 +1703,60 @@
           "file": "/landing/bed-board-grid-800.avif",
           "format": "avif",
           "width": 800,
-          "height": 250,
-          "bytes": 6916
-        },
-        {
-          "file": "/landing/bed-board-grid-800.webp",
-          "format": "webp",
-          "width": 800,
-          "height": 250,
-          "bytes": 12350
+          "height": 577,
+          "bytes": 10777
         },
         {
           "file": "/landing/bed-board-grid-1400.avif",
           "format": "avif",
           "width": 1400,
-          "height": 436,
-          "bytes": 13140
-        },
-        {
-          "file": "/landing/bed-board-grid-1400.webp",
-          "format": "webp",
-          "width": 1400,
-          "height": 436,
-          "bytes": 26448
+          "height": 1010,
+          "bytes": 18351
         },
         {
           "file": "/landing/bed-board-grid-2000.avif",
           "format": "avif",
           "width": 2000,
-          "height": 622,
-          "bytes": 19674
+          "height": 1442,
+          "bytes": 32784
+        },
+        {
+          "file": "/landing/bed-board-grid-1400.jpg",
+          "format": "jpg",
+          "width": 1400,
+          "height": 1010,
+          "bytes": 84868
+        },
+        {
+          "file": "/landing/bed-board-grid-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 577,
+          "bytes": 19362
+        },
+        {
+          "file": "/landing/bed-board-grid-1400.webp",
+          "format": "webp",
+          "width": 1400,
+          "height": 1010,
+          "bytes": 38426
         },
         {
           "file": "/landing/bed-board-grid-2000.webp",
           "format": "webp",
           "width": 2000,
-          "height": 622,
-          "bytes": 41138
-        },
-        {
-          "file": "/landing/bed-board-grid-1400.jpg",
-          "format": "jpeg",
-          "width": 1400,
-          "height": 436,
-          "bytes": 86209
+          "height": 1442,
+          "bytes": 59206
         }
       ]
     },
     {
       "id": "medication-timeline",
-      "section": "product-operations",
-      "alt": "MediMind medication administration record: five medicines on a 24-hour timeline with due and overdue marks. Demo data.",
+      "section": "product",
+      "alt": "MediMind ward medication board: every outstanding dose for the day across the ward, grouped as overdue and due now, with drug, dose, route, scheduled time and lateness. Demo data; names replaced with neutral demo labels.",
       "width": 2000,
-      "height": 636,
-      "aspectRatio": "2000 / 636",
+      "height": 1723,
+      "aspectRatio": "2000 / 1723",
       "fallback": "/landing/medication-timeline-1400.jpg",
       "avif": "/landing/medication-timeline-800.avif 800w, /landing/medication-timeline-1400.avif 1400w, /landing/medication-timeline-2000.avif 2000w",
       "webp": "/landing/medication-timeline-800.webp 800w, /landing/medication-timeline-1400.webp 1400w, /landing/medication-timeline-2000.webp 2000w",
@@ -1766,50 +1766,302 @@
           "file": "/landing/medication-timeline-800.avif",
           "format": "avif",
           "width": 800,
-          "height": 256,
-          "bytes": 4907
-        },
-        {
-          "file": "/landing/medication-timeline-800.webp",
-          "format": "webp",
-          "width": 800,
-          "height": 256,
-          "bytes": 9070
+          "height": 689,
+          "bytes": 14515
         },
         {
           "file": "/landing/medication-timeline-1400.avif",
           "format": "avif",
           "width": 1400,
-          "height": 446,
-          "bytes": 9555
-        },
-        {
-          "file": "/landing/medication-timeline-1400.webp",
-          "format": "webp",
-          "width": 1400,
-          "height": 446,
-          "bytes": 21238
+          "height": 1206,
+          "bytes": 26920
         },
         {
           "file": "/landing/medication-timeline-2000.avif",
           "format": "avif",
           "width": 2000,
-          "height": 636,
-          "bytes": 15049
+          "height": 1723,
+          "bytes": 42611
+        },
+        {
+          "file": "/landing/medication-timeline-1400.jpg",
+          "format": "jpg",
+          "width": 1400,
+          "height": 1206,
+          "bytes": 152302
+        },
+        {
+          "file": "/landing/medication-timeline-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 689,
+          "bytes": 32442
+        },
+        {
+          "file": "/landing/medication-timeline-1400.webp",
+          "format": "webp",
+          "width": 1400,
+          "height": 1206,
+          "bytes": 72062
         },
         {
           "file": "/landing/medication-timeline-2000.webp",
           "format": "webp",
           "width": 2000,
-          "height": 636,
-          "bytes": 34496
+          "height": 1723,
+          "bytes": 110924
+        }
+      ]
+    },
+    {
+      "id": "bed-board-grid-dark",
+      "section": "product",
+      "alt": "MediMind (dark theme) bed board for a cardiology ward: rooms with bed cards coloured by state (occupied, cleaning required, available), ward occupancy 75 percent. Demo data; names replaced with neutral demo labels.",
+      "width": 2000,
+      "height": 1442,
+      "aspectRatio": "2000 / 1442",
+      "fallback": "/landing/bed-board-grid-dark-1400.jpg",
+      "avif": "/landing/bed-board-grid-dark-800.avif 800w, /landing/bed-board-grid-dark-1400.avif 1400w, /landing/bed-board-grid-dark-2000.avif 2000w",
+      "webp": "/landing/bed-board-grid-dark-800.webp 800w, /landing/bed-board-grid-dark-1400.webp 1400w, /landing/bed-board-grid-dark-2000.webp 2000w",
+      "sizes": "(min-width: 1200px) 1100px, 100vw",
+      "files": [
+        {
+          "file": "/landing/bed-board-grid-dark-800.avif",
+          "format": "avif",
+          "width": 800,
+          "height": 577,
+          "bytes": 10423
         },
         {
-          "file": "/landing/medication-timeline-1400.jpg",
-          "format": "jpeg",
+          "file": "/landing/bed-board-grid-dark-1400.avif",
+          "format": "avif",
           "width": 1400,
-          "height": 446,
-          "bytes": 68066
+          "height": 1010,
+          "bytes": 21230
+        },
+        {
+          "file": "/landing/bed-board-grid-dark-2000.avif",
+          "format": "avif",
+          "width": 2000,
+          "height": 1442,
+          "bytes": 31083
+        },
+        {
+          "file": "/landing/bed-board-grid-dark-1400.jpg",
+          "format": "jpg",
+          "width": 1400,
+          "height": 1010,
+          "bytes": 85428
+        },
+        {
+          "file": "/landing/bed-board-grid-dark-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 577,
+          "bytes": 19422
+        },
+        {
+          "file": "/landing/bed-board-grid-dark-1400.webp",
+          "format": "webp",
+          "width": 1400,
+          "height": 1010,
+          "bytes": 39098
+        },
+        {
+          "file": "/landing/bed-board-grid-dark-2000.webp",
+          "format": "webp",
+          "width": 2000,
+          "height": 1442,
+          "bytes": 59520
+        }
+      ]
+    },
+    {
+      "id": "medication-timeline-dark",
+      "section": "product",
+      "alt": "MediMind (dark theme) ward medication board: every outstanding dose for the day across the ward, grouped as overdue and due now, with drug, dose, route, scheduled time and lateness. Demo data; names replaced with neutral demo labels.",
+      "width": 2000,
+      "height": 1723,
+      "aspectRatio": "2000 / 1723",
+      "fallback": "/landing/medication-timeline-dark-1400.jpg",
+      "avif": "/landing/medication-timeline-dark-800.avif 800w, /landing/medication-timeline-dark-1400.avif 1400w, /landing/medication-timeline-dark-2000.avif 2000w",
+      "webp": "/landing/medication-timeline-dark-800.webp 800w, /landing/medication-timeline-dark-1400.webp 1400w, /landing/medication-timeline-dark-2000.webp 2000w",
+      "sizes": "(min-width: 1200px) 1100px, 100vw",
+      "files": [
+        {
+          "file": "/landing/medication-timeline-dark-800.avif",
+          "format": "avif",
+          "width": 800,
+          "height": 689,
+          "bytes": 22205
+        },
+        {
+          "file": "/landing/medication-timeline-dark-1400.avif",
+          "format": "avif",
+          "width": 1400,
+          "height": 1206,
+          "bytes": 29323
+        },
+        {
+          "file": "/landing/medication-timeline-dark-2000.avif",
+          "format": "avif",
+          "width": 2000,
+          "height": 1723,
+          "bytes": 75321
+        },
+        {
+          "file": "/landing/medication-timeline-dark-1400.jpg",
+          "format": "jpg",
+          "width": 1400,
+          "height": 1206,
+          "bytes": 163264
+        },
+        {
+          "file": "/landing/medication-timeline-dark-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 689,
+          "bytes": 35400
+        },
+        {
+          "file": "/landing/medication-timeline-dark-1400.webp",
+          "format": "webp",
+          "width": 1400,
+          "height": 1206,
+          "bytes": 78738
+        },
+        {
+          "file": "/landing/medication-timeline-dark-2000.webp",
+          "format": "webp",
+          "width": 2000,
+          "height": 1723,
+          "bytes": 120810
+        }
+      ]
+    },
+    {
+      "id": "patient-overview",
+      "section": "product",
+      "alt": "MediMind patient overview: visit summary with length of stay, department and physician, allergy status, reason for visit and the latest vital signs with high heart and respiratory rates flagged. Demo data, synthetic patient.",
+      "width": 2000,
+      "height": 836,
+      "aspectRatio": "2000 / 836",
+      "fallback": "/landing/patient-overview-1400.jpg",
+      "avif": "/landing/patient-overview-800.avif 800w, /landing/patient-overview-1400.avif 1400w, /landing/patient-overview-2000.avif 2000w",
+      "webp": "/landing/patient-overview-800.webp 800w, /landing/patient-overview-1400.webp 1400w, /landing/patient-overview-2000.webp 2000w",
+      "sizes": "(min-width: 1200px) 1100px, 100vw",
+      "files": [
+        {
+          "file": "/landing/patient-overview-800.avif",
+          "format": "avif",
+          "width": 800,
+          "height": 335,
+          "bytes": 8745
+        },
+        {
+          "file": "/landing/patient-overview-1400.avif",
+          "format": "avif",
+          "width": 1400,
+          "height": 586,
+          "bytes": 17871
+        },
+        {
+          "file": "/landing/patient-overview-2000.avif",
+          "format": "avif",
+          "width": 2000,
+          "height": 836,
+          "bytes": 25608
+        },
+        {
+          "file": "/landing/patient-overview-1400.jpg",
+          "format": "jpg",
+          "width": 1400,
+          "height": 586,
+          "bytes": 64832
+        },
+        {
+          "file": "/landing/patient-overview-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 335,
+          "bytes": 14326
+        },
+        {
+          "file": "/landing/patient-overview-1400.webp",
+          "format": "webp",
+          "width": 1400,
+          "height": 586,
+          "bytes": 32046
+        },
+        {
+          "file": "/landing/patient-overview-2000.webp",
+          "format": "webp",
+          "width": 2000,
+          "height": 836,
+          "bytes": 51310
+        }
+      ]
+    },
+    {
+      "id": "patient-overview-dark",
+      "section": "product",
+      "alt": "MediMind (dark theme) patient overview: visit summary with length of stay, department and physician, allergy status, reason for visit and the latest vital signs with high heart and respiratory rates flagged. Demo data, synthetic patient.",
+      "width": 2000,
+      "height": 836,
+      "aspectRatio": "2000 / 836",
+      "fallback": "/landing/patient-overview-dark-1400.jpg",
+      "avif": "/landing/patient-overview-dark-800.avif 800w, /landing/patient-overview-dark-1400.avif 1400w, /landing/patient-overview-dark-2000.avif 2000w",
+      "webp": "/landing/patient-overview-dark-800.webp 800w, /landing/patient-overview-dark-1400.webp 1400w, /landing/patient-overview-dark-2000.webp 2000w",
+      "sizes": "(min-width: 1200px) 1100px, 100vw",
+      "files": [
+        {
+          "file": "/landing/patient-overview-dark-800.avif",
+          "format": "avif",
+          "width": 800,
+          "height": 335,
+          "bytes": 8535
+        },
+        {
+          "file": "/landing/patient-overview-dark-1400.avif",
+          "format": "avif",
+          "width": 1400,
+          "height": 586,
+          "bytes": 16992
+        },
+        {
+          "file": "/landing/patient-overview-dark-2000.avif",
+          "format": "avif",
+          "width": 2000,
+          "height": 836,
+          "bytes": 30184
+        },
+        {
+          "file": "/landing/patient-overview-dark-1400.jpg",
+          "format": "jpg",
+          "width": 1400,
+          "height": 586,
+          "bytes": 65478
+        },
+        {
+          "file": "/landing/patient-overview-dark-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 335,
+          "bytes": 14224
+        },
+        {
+          "file": "/landing/patient-overview-dark-1400.webp",
+          "format": "webp",
+          "width": 1400,
+          "height": 586,
+          "bytes": 31614
+        },
+        {
+          "file": "/landing/patient-overview-dark-2000.webp",
+          "format": "webp",
+          "width": 2000,
+          "height": 836,
+          "bytes": 50054
         }
       ]
     }

@@ -55,11 +55,11 @@ const BrainShot: React.FC<{ screen: BrainScreen; manifest: ManifestMap; lgPx: nu
 };
 
 /* The scene, in units of a 1000-wide box: Control Center, workers over its edge, money across its foot. */
-const H = 516;
+const H = 492;
 const SCENE = [
-  { x: 0, y: 0, w: 690, bar: 18 },
-  { x: 500, y: 168, w: 500, bar: 14 },
-  { x: 70, y: 388, w: 600, bar: 14 },
+  { x: 0, y: 0, w: 700, bar: 18 },
+  { x: 476, y: 128, w: 524, bar: 14 },
+  { x: 110, y: 364, w: 620, bar: 14 },
 ];
 const ux = (n: number) => `${n / 10}%`;
 const uy = (n: number) => `${(n / H) * 100}%`;

@@ -1210,6 +1210,132 @@
           "bytes": 18836
         }
       ]
+    },
+    {
+      "id": "os-modules-full-dark",
+      "section": "what-changes",
+      "alt": "MediMind (dark theme) dashboard with every hospital area in one sidebar (staff, clinic operations, clinical settings, nomenclature, financial, warehouse, command center, analytics, system configuration) and module cards. Demo data.",
+      "width": 2000,
+      "height": 1051,
+      "aspectRatio": "2000 / 1051",
+      "fallback": "/landing/os-modules-full-dark-1400.jpg",
+      "avif": "/landing/os-modules-full-dark-800.avif 800w, /landing/os-modules-full-dark-1400.avif 1400w, /landing/os-modules-full-dark-2000.avif 2000w",
+      "webp": "/landing/os-modules-full-dark-800.webp 800w, /landing/os-modules-full-dark-1400.webp 1400w, /landing/os-modules-full-dark-2000.webp 2000w",
+      "sizes": "(min-width: 1200px) 1100px, 100vw",
+      "files": [
+        {
+          "file": "/landing/os-modules-full-dark-800.avif",
+          "format": "avif",
+          "width": 800,
+          "height": 421,
+          "bytes": 9038
+        },
+        {
+          "file": "/landing/os-modules-full-dark-1400.avif",
+          "format": "avif",
+          "width": 1400,
+          "height": 736,
+          "bytes": 18884
+        },
+        {
+          "file": "/landing/os-modules-full-dark-2000.avif",
+          "format": "avif",
+          "width": 2000,
+          "height": 1051,
+          "bytes": 29259
+        },
+        {
+          "file": "/landing/os-modules-full-dark-1400.jpg",
+          "format": "jpg",
+          "width": 1400,
+          "height": 736,
+          "bytes": 62046
+        },
+        {
+          "file": "/landing/os-modules-full-dark-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 421,
+          "bytes": 14170
+        },
+        {
+          "file": "/landing/os-modules-full-dark-1400.webp",
+          "format": "webp",
+          "width": 1400,
+          "height": 736,
+          "bytes": 31700
+        },
+        {
+          "file": "/landing/os-modules-full-dark-2000.webp",
+          "format": "webp",
+          "width": 2000,
+          "height": 1051,
+          "bytes": 49866
+        }
+      ]
+    },
+    {
+      "id": "billing-revenue-dark",
+      "section": "example-billing",
+      "alt": "MediMind (dark theme) revenue report for one month: charges, amounts invoiced to payers, collections received and the outstanding balance, each in lari. Demo data.",
+      "width": 2000,
+      "height": 188,
+      "aspectRatio": "2000 / 188",
+      "fallback": "/landing/billing-revenue-dark-1400.jpg",
+      "avif": "/landing/billing-revenue-dark-800.avif 800w, /landing/billing-revenue-dark-1400.avif 1400w, /landing/billing-revenue-dark-2000.avif 2000w",
+      "webp": "/landing/billing-revenue-dark-800.webp 800w, /landing/billing-revenue-dark-1400.webp 1400w, /landing/billing-revenue-dark-2000.webp 2000w",
+      "sizes": "(min-width: 1200px) 1100px, 100vw",
+      "files": [
+        {
+          "file": "/landing/billing-revenue-dark-800.avif",
+          "format": "avif",
+          "width": 800,
+          "height": 75,
+          "bytes": 2454
+        },
+        {
+          "file": "/landing/billing-revenue-dark-1400.avif",
+          "format": "avif",
+          "width": 1400,
+          "height": 132,
+          "bytes": 5822
+        },
+        {
+          "file": "/landing/billing-revenue-dark-2000.avif",
+          "format": "avif",
+          "width": 2000,
+          "height": 188,
+          "bytes": 6482
+        },
+        {
+          "file": "/landing/billing-revenue-dark-1400.jpg",
+          "format": "jpg",
+          "width": 1400,
+          "height": 132,
+          "bytes": 16039
+        },
+        {
+          "file": "/landing/billing-revenue-dark-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 75,
+          "bytes": 4426
+        },
+        {
+          "file": "/landing/billing-revenue-dark-1400.webp",
+          "format": "webp",
+          "width": 1400,
+          "height": 132,
+          "bytes": 9690
+        },
+        {
+          "file": "/landing/billing-revenue-dark-2000.webp",
+          "format": "webp",
+          "width": 2000,
+          "height": 188,
+          "bytes": 15886
+        }
+      ]
     }
   ]
 }

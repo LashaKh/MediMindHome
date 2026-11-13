@@ -214,7 +214,7 @@ export const formCopy = {
   softPathLead: 'Not ready for a call?',
   softPathButton: 'Get the hospital deck by email',
   deckTitle: 'Get the hospital deck by email',
-  deckLine: 'A short deck for your board: the problems, the 90-day plan and the terms.',
+  deckLine: 'A short deck for your board: the problems, the 60-day plan and the terms.',
   deckBack: 'Book the 30-minute call instead',
   deckUseCase: '[Deck request]',
   privacy: 'Your details are used only to arrange the call. No mailing list. Never shared or sold.',

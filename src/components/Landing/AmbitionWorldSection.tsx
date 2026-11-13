@@ -6,10 +6,12 @@ import { cn } from '../../utils/cn';
 
 /**
  * Where this goes (#ambition): the page's last statement before the ask.
- * Ink canvas, like the hero: the page ends in the same night. A still field of
- * dim points stands for hospitals everywhere; exactly 25 points are lit
- * (the signed network). Three hairline rings widen from them: one
- * network, then a region, then anywhere. Then the belief, large and alone.
+ * Same tone as the hero: light in the light theme, ink in the dark theme.
+ * A still field of dim points stands for hospitals everywhere; exactly 25
+ * points are lit (the network running today). Three hairline rings widen
+ * from them: the network, the region, every hospital. Then the belief,
+ * large and alone. In the light theme the lit points are solid system blue
+ * and the wash is quieter; in the dark theme they glow.
  *
  * Motion: the lit points and rings arrive once when the field scrolls in;
  * nothing loops. Under prefers-reduced-motion everything is drawn at once.
@@ -17,9 +19,9 @@ import { cn } from '../../utils/cn';
  */
 
 const W = 1200;
-const H = 440;
+const H = 360;
 const CX = 330;
-const CY = 230;
+const CY = 190;
 const RINGS = [70, 230, 640];
 
 /** Small deterministic PRNG so the field is identical on every render. */
@@ -77,7 +79,7 @@ const Field: React.FC = () => {
           <stop offset="1" style={{ stopColor: 'var(--mm-system)' }} stopOpacity="0" />
         </radialGradient>
       </defs>
-      <rect x="0" y="0" width={W} height={H} fill="url(#ambition-glow)" />
+      <rect x="0" y="0" width={W} height={H} fill="url(#ambition-glow)" className="opacity-60 dark:opacity-100" />
       {FIELD.dim.map((p, i) => (
         <circle key={i} cx={p.x} cy={p.y} r={p.r} className="fill-mm-muted" opacity={p.o} />
       ))}
@@ -116,8 +118,8 @@ const Field: React.FC = () => {
           animate={{ opacity: on ? 1 : 0 }}
           transition={{ duration: 0.5, delay: i * 0.03 }}
         >
-          <circle cx={p.x} cy={p.y} r={7} className="fill-mm-system" opacity={0.2} />
-          <circle cx={p.x} cy={p.y} r={2.6} className="fill-mm-ink" />
+          <circle cx={p.x} cy={p.y} r={7} className="fill-mm-system opacity-[0.14] dark:opacity-20" />
+          <circle cx={p.x} cy={p.y} r={2.6} className="fill-mm-system dark:fill-mm-ink" />
         </motion.g>
       ))}
     </svg>
@@ -143,14 +145,13 @@ export const AmbitionWorldSection: React.FC = () => (
     aria-labelledby="ambition-title"
     className="mm-tone-navy relative scroll-mt-16 overflow-hidden bg-mm-surface text-mm-body md:scroll-mt-20"
   >
-    <div className={cn(dEdge, 'relative pt-24 md:pt-32 lg:pt-36')}>
-      <h2 id="ambition-title" className={cn(dH2, 'max-w-4xl')}>
+    <div className={cn(dEdge, 'relative pt-20 md:pt-28')}>
+      <h2 id="ambition-title" className={cn(dH2, 'max-w-[18ch] lg:max-w-[24ch]')}>
         {copy.title}
       </h2>
-      <p className="mm-lead mt-6 max-w-2xl text-pretty">{copy.support}</p>
     </div>
 
-    <div className="relative mx-auto mt-10 w-full max-w-[90rem] md:mt-4">
+    <div className="relative mx-auto mt-6 w-full max-w-[110rem] md:-mt-6">
       <Field />
     </div>
 
@@ -162,20 +163,20 @@ export const AmbitionWorldSection: React.FC = () => (
             <RingGlyph step={i} />
             <div>
               <p className="text-[1.125rem] font-semibold leading-snug text-mm-ink">{step.title}</p>
-              <p className="mm-body mt-1 max-w-[30ch] text-pretty">{step.text}</p>
+              <p className="mm-body mt-1 max-w-[32ch] text-pretty">{step.text}</p>
             </div>
           </li>
         ))}
       </ol>
 
-      <div className="pb-24 pt-28 md:pb-32 md:pt-40">
-        <p className={cn(dMono, 'text-mm-muted')} aria-hidden="true">
+      <div className="grid gap-5 pb-20 pt-20 md:pb-28 md:pt-28 lg:grid-cols-12 lg:gap-16">
+        <p className={cn(dMono, 'text-mm-muted lg:col-span-2 lg:pt-5')} aria-hidden="true">
           02:00
         </p>
         <p
           className={cn(
             dDisplay,
-            'mt-5 max-w-5xl text-[2.5rem] leading-[1.02] text-mm-ink sm:text-[3.75rem] lg:text-[5.25rem] text-balance'
+            'text-[2.5rem] leading-[1.02] text-mm-ink sm:text-[3.75rem] lg:col-span-10 lg:text-[5.25rem] text-balance'
           )}
         >
           {copy.beliefLead}

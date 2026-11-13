@@ -1,14 +1,15 @@
 import React from 'react';
 import { ScopingForm } from '../Demo/ScopingForm';
 import { ask, foundersPhoto } from '../../content/landing.v2.lane-d';
-import { dEdge, dH2, dMono } from './laneD.styles';
+import { dEdge, dH2 } from './laneD.styles';
 import { cn } from '../../utils/cn';
 
 /**
  * The ask: heading, who the visitor meets (two faces cropped from the real
- * founders photo), what they leave with, and the form. Shared by #contact
- * and /request-demo (which needs the heading as its h1). Ink canvas, so the
- * page ends in the same night it began in.
+ * founders photo), three short lines on what they leave with, and the form
+ * across the wider half of the grid. Shared by #contact and /request-demo
+ * (which needs the heading as its h1). Same tone as the hero: light in the
+ * light theme, ink in the dark theme.
  */
 interface ContactContentProps {
   headingAs: 'h1' | 'h2';
@@ -46,9 +47,9 @@ const Faces: React.FC = () => (
 );
 
 export const ContactContent: React.FC<ContactContentProps> = ({ headingAs: Heading, headingId, location, backHref }) => (
-  <div className="grid gap-12 lg:grid-cols-12 lg:gap-12">
-    <div className="lg:col-span-6 lg:pr-4">
-      <Heading id={headingId} className={dH2}>
+  <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+    <div className="lg:col-span-5">
+      <Heading id={headingId} className={cn(dH2, 'max-w-[14ch]')}>
         {ask.title}
       </Heading>
 
@@ -59,21 +60,17 @@ export const ContactContent: React.FC<ContactContentProps> = ({ headingAs: Headi
         </p>
       </div>
 
-      <div className="mt-10 border-t border-mm-line pt-6">
-        <p className={cn(dMono, 'text-mm-muted')}>{ask.leaveTitle}</p>
-        <ul className="mt-4 space-y-3">
-          {ask.leave.map((item) => (
-            <li key={item} className="mm-body flex gap-3 text-mm-ink">
-              <span className="mt-[0.6em] h-px w-4 shrink-0 bg-mm-accent" aria-hidden="true" />
-              <span className="text-pretty">{item}</span>
-            </li>
-          ))}
-        </ul>
-        <p className="mm-body mt-6">{ask.commitment}</p>
-      </div>
+      <ul className="mt-10 space-y-3 border-t border-mm-line pt-6">
+        {ask.leave.map((item) => (
+          <li key={item} className="mm-body flex gap-3 text-mm-ink">
+            <span className="mt-[0.6em] h-px w-4 shrink-0 bg-mm-accent" aria-hidden="true" />
+            <span className="text-pretty">{item}</span>
+          </li>
+        ))}
+      </ul>
     </div>
 
-    <div className="lg:col-span-6">
+    <div className="lg:col-span-7">
       <ScopingForm location={location} backHref={backHref} />
     </div>
   </div>
@@ -87,7 +84,7 @@ export const ContactSection: React.FC = () => (
     className="mm-tone-navy relative scroll-mt-16 bg-mm-surface text-mm-body md:scroll-mt-20"
   >
     <div className={dEdge}>
-      <div className="border-t border-mm-line py-20 md:py-28">
+      <div className="border-t border-mm-line py-20 md:py-24">
         <ContactContent headingAs="h2" headingId="contact-title" location="final" backHref="#hero" />
       </div>
     </div>

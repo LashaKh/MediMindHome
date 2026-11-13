@@ -1,6 +1,6 @@
 /**
  * Lane D strings, direction v2 (marketing/landing-level-up-2026-11-12/
- * 09-DIRECTION-V2.md rows 2, 9, 10, 11, 12): traction line, the 90-day
+ * 09-DIRECTION-V2.md rows 2, 9, 10, 11, 12): traction facts, the 60-day
  * switch, founders, where this goes, the final ask and the footer.
  *
  * Named `.lane-d.ts`, not `.d.ts`: a `.d.ts` file is a TypeScript
@@ -17,11 +17,12 @@ import type { ResponsiveImage } from './types';
 export const traction = {
   /** Screen-reader heading; the strip itself has no visible title. */
   srTitle: 'MediMind today',
+  /** Four facts (round 3, ruling 2). `label` sits above, `figure` is the large line. */
   items: [
-    { key: 'Signed', text: 'a 25-hospital network' },
-    { key: 'Migrated', text: '1.1M+ patient records' },
-    { key: 'In daily use', text: 'laboratory and imaging', live: true },
-    { key: 'Backed by', text: '500 Global' },
+    { label: 'Runs a network of', figure: '25 hospitals' },
+    { label: 'Patients', figure: '1M+' },
+    { label: 'Encounters', figure: '3M+' },
+    { label: 'Backed by', figure: '500 Global' },
   ],
 };
 
@@ -29,39 +30,21 @@ export const traction = {
 
 export const switchPlan = {
   title: 'Replace everything without stopping anything.',
-  support: 'Live in 90 days, built beside the system you run today. Nothing stops while it happens.',
-  timelineLabel: 'The 90 days, from first build to full switch',
+  support: 'Live in 60 days, built beside the system you run today.',
+  faster: 'We are streamlining integration to bring it under 30.',
+  data: 'Your data stays yours: FHIR R4, the international standard. Full export at any time.',
+  timelineLabel: 'The 60 days, from first build to full switch',
   lanes: { current: 'Your current system', medimind: 'MediMind' },
   wayBack: 'Kept as a way back',
-  shadow: 'Built in the shadow',
-  ticks: ['Day 0', 'Day 30', 'Day 60', 'Day 90'],
-  decide: { day: 'Day 30', text: 'You decide.' },
-  live: { day: 'Day 90', text: 'You are live.' },
+  ticks: ['Day 0', 'Day 20', 'Day 40', 'Day 60'],
+  decide: { day: 'Day 20', text: 'You decide.' },
+  live: { day: 'Day 60', text: 'You are live.' },
+  /** The three stretches, a few words each, set under the drawing. */
   steps: [
-    {
-      range: 'Days 0 to 30',
-      title: 'Built in the shadow.',
-      body: "Your hospital is built in MediMind beside the current system. Nobody's day changes.",
-    },
-    {
-      range: 'Days 31 to 60',
-      title: 'First departments go live.',
-      body: 'One department at a time, staff trained by role. Everyone else works as before.',
-    },
-    {
-      range: 'Days 61 to 90',
-      title: 'The full switch.',
-      body: 'Every area moves to MediMind, with a way back for each one.',
-    },
+    { range: 'Days 0 to 20', title: 'Built in the shadow.' },
+    { range: 'Days 20 to 40', title: 'Departments go live.' },
+    { range: 'Days 40 to 60', title: 'The full switch.' },
   ],
-  data: {
-    title: 'Your data stays yours.',
-    body: 'Stored in FHIR R4, the international standard for health records. Full export, at any time.',
-  },
-  proof: {
-    figure: '1.1M+',
-    text: 'patient records moved with zero gaps and zero duplicates, while the laboratory kept working.',
-  },
 };
 
 /* ---------- 10. Founders (#team) ---------- */
@@ -74,42 +57,32 @@ export const foundersPhoto: ResponsiveImage = {
   fallback: '/landing/team-founders-900.jpg',
   avif: '/landing/team-founders-800.avif 800w, /landing/team-founders-900.avif 900w',
   webp: '/landing/team-founders-800.webp 800w, /landing/team-founders-900.webp 900w',
-  sizes: '(min-width: 1024px) 560px, 100vw',
+  sizes: '(min-width: 1024px) 620px, 100vw',
 };
 
 export const team = {
   title: 'Built from inside a hospital.',
-  lead: 'MediMind is designed by a cardiologist who still practises.',
-  statement: 'The person who feels the problem at 2 a.m. is the one writing the system.',
+  lead: 'Two founders, backed by a strong team of AI engineers.',
   people: [
-    {
-      name: 'Dr. Lasha Khoshtaria',
-      role: 'Co-founder and CTO',
-      bio: 'Interventional cardiologist, practising in Tbilisi since 2019. Study coordinator on 11+ international device trials.',
-    },
-    {
-      name: 'Irakli Pkhovelishvili',
-      role: 'Co-founder, product and strategy',
-      bio: 'Nine years at Riot Games in strategy and finance for its Hong Kong and Singapore studios, then led a product team of more than 150 people. Duke MBA.',
-    },
+    { name: 'Dr. Lasha Khoshtaria', role: 'Practising interventional cardiologist' },
+    { name: 'Irakli Pkhovelishvili', role: 'Nine years at Riot Games' },
+    { name: 'AI engineering team', role: 'Building the operating system with them' },
   ],
   backersLead: 'Backed by',
-  backers: ['500 Global', 'GITA grant', 'Innovative Startup status, Government of Georgia'],
+  backers: ['500 Global', 'GITA grant', 'Innovative Startup status'],
 };
 
 /* ---------- 11. Where this goes (#ambition) ---------- */
 
 export const ambition = {
-  title: 'Proven first in Georgia. Built for every hospital.',
-  support:
-    'Hospitals everywhere still run on forty systems that never see the whole patient. MediMind is built to replace them, wherever they are.',
+  title: 'Running a 25-hospital network today. Built for every hospital.',
   horizonLabel: 'How MediMind grows',
   /** Small labels on the three rings of the field (decorative; the steps say the same). */
-  ringLabels: ['25 hospitals', 'A region', 'Anywhere'],
+  ringLabels: ['25 hospitals', 'The region', 'Every hospital'],
   steps: [
-    { title: 'One network.', text: '25 hospitals, signed.' },
-    { title: 'Then a region.', text: 'The same operating system, hospital after hospital.' },
-    { title: 'Then anywhere.', text: 'Anywhere a hospital still runs on forty systems.' },
+    { title: 'Today.', text: 'A 25-hospital network runs on MediMind.' },
+    { title: 'Now.', text: 'Expanding across local and regional markets.' },
+    { title: 'Next.', text: 'Every hospital still running on forty systems.' },
   ],
   beliefLead: 'We believe no patient should be missed at 2 a.m.',
   beliefEnd: 'In any hospital. Anywhere.',
@@ -121,15 +94,9 @@ export const ask = {
   title: 'Run your hospital on MediMind.',
   support: 'Thirty minutes with the founders, online or at your hospital.',
   withLine: 'Dr. Lasha Khoshtaria and Irakli Pkhovelishvili',
-  leaveTitle: 'You leave with',
-  leave: [
-    'Your three biggest problems, in your own numbers.',
-    'A dated 90-day plan for your hospital.',
-    'The measures you will judge MediMind on at day 30.',
-  ],
-  commitment: 'No commitment. Nothing is signed on the call.',
+  /** At most three very short items (round 3, ruling 3). */
+  leave: ['A dated 60-day plan for your hospital.', 'Your three biggest problems, in numbers.', 'No commitment.'],
   formTitle: primaryCta.label,
-  formLine: 'Five fields. We reply within one working day.',
 };
 
 /* ---------- Footer ---------- */

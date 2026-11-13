@@ -12,8 +12,9 @@ const HeroOrchestration = lazy(() => import('./HeroOrchestration'));
  * by night). The header is transparent over it (MainLayout adds no top offset
  * on `/`).
  *
- * lg and up: the headline owns the left of the grid, the sub-sentence and the
- * buttons sit at its baseline on the right, and the living hospital runs
+ * xl and up: the headline owns the left of the grid, the sub-sentence and the
+ * buttons sit at its baseline on the right (lg: one row of sub and buttons
+ * under the headline), and the living hospital runs
  * across the full content width beneath. Headline, buttons and the whole
  * canvas fit one 1440x900 screen. On a phone the first screen holds the
  * headline, the sub-sentence and the button; the visual follows in its own
@@ -35,7 +36,7 @@ export const HeroSection: React.FC = () => (
     <div aria-hidden="true" className="mm-hero-plane pointer-events-none absolute inset-0" />
 
     <div className="relative">
-      <div className="grid gap-7 md:gap-9 lg:grid-cols-[minmax(0,1fr)_minmax(0,25rem)] lg:items-end lg:gap-16 2xl:grid-cols-[minmax(0,1fr)_minmax(0,29rem)]">
+      <div className="grid gap-7 md:gap-9 lg:gap-7 xl:grid-cols-[minmax(0,1fr)_minmax(0,27rem)] xl:items-end xl:gap-16 2xl:grid-cols-[minmax(0,1fr)_minmax(0,31rem)]">
         <div>
           <p className="mm-eyebrow">{c.eyebrow}</p>
           <h1 id="hero-title" className="mm-display mt-5 md:mt-6">
@@ -49,9 +50,9 @@ export const HeroSection: React.FC = () => (
           </h1>
         </div>
 
-        <div className="lg:pb-3">
+        <div className="lg:flex lg:items-end lg:justify-between lg:gap-12 xl:block xl:pb-3">
           <p className="mm-lead max-w-[34rem] text-mm-body">{c.sub}</p>
-          <div className="mt-6 flex flex-col items-stretch gap-2 sm:flex-row sm:items-center sm:gap-6 md:mt-7">
+          <div className="mt-6 flex shrink-0 flex-col items-stretch gap-2 sm:flex-row sm:items-center sm:gap-6 md:mt-7 lg:mt-0 xl:mt-7">
             <ButtonLink
               href={primaryCta.href}
               className="whitespace-nowrap"
@@ -59,7 +60,7 @@ export const HeroSection: React.FC = () => (
             >
               {primaryCta.label}
             </ButtonLink>
-            <a href={c.secondary.href} className="btn-quiet self-center sm:self-auto">
+            <a href={c.secondary.href} className="btn-quiet self-center whitespace-nowrap sm:self-auto">
               {c.secondary.label}
             </a>
           </div>

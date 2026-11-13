@@ -30,3 +30,10 @@ Deno.test("a picked time adds a calendar request for the team and a tentative en
   assertStringIncludes(ics.replace(/\r\n /g, ""), "RSVP=TRUE:mailto:team@medimind.md");
   for (const line of ics.split("\r\n")) assertEquals(new TextEncoder().encode(line).length <= 75, true);
 });
+
+Deno.test("a deck request is answered as a deck request, not as a call", () => {
+  const [team, visitor] = buildDemoEmails({ ...BASE, useCase: "[Deck request]" }, "team@medimind.md", "Name: Nino Beridze");
+  assertStringIncludes(team.subject, "New deck request");
+  assertStringIncludes(visitor.text, "hospital deck");
+  assertEquals(visitor.text.includes("30-minute call"), false);
+});

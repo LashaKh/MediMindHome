@@ -1,4 +1,5 @@
 import React, { useId, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { submitDemoRequest } from '../../lib/crmApi';
 import { trackLanding } from '../../lib/tracking';
 import { contactEmail } from '../../content/site';
@@ -18,7 +19,9 @@ import { cn } from '../../utils/cn';
  * The scoping-call form, used by #contact on the landing page and by
  * /request-demo. Posts through the existing submitDemoRequest (no backend
  * change). Two modes: "call" (default) and "deck" (the soft path: same form,
- * phone and question hidden, useCase sent as "[Deck request]").
+ * phone and question hidden, useCase sent as "[Deck request]"). In call mode
+ * the visitor may pick a preferred time; the server then emails the team a
+ * calendar request for that slot (supabase/functions/crm/notify.ts).
  *
  * Accessibility: every label is tied to its input; helper and error text are
  * tied with aria-describedby; invalid fields get aria-invalid; the summary and
@@ -116,7 +119,15 @@ export const ScopingForm: React.FC<ScopingFormProps> = ({ location, backHref }) 
   const [attempted, setAttempted] = useState(false);
   const [sending, setSending] = useState(false);
   const [serverError, setServerError] = useState<ServerError | null>(null);
-  const [done, setDone] = useState<{ mode: Mode; firstName: string } | null>(null);
+  const [done, setDone] = useState<{ mode: Mode; firstName: string; withTime: boolean } | null>(null);
+  // Optional slot, as the browser's local "YYYY-MM-DDTHH:mm"; sent to the server as an exact instant.
+  const [preferredTime, setPreferredTime] = useState('');
+  // Earliest slot offered: the top of the next hour, in local time.
+  const [minTime] = useState(() => {
+    const d = new Date(Date.now() + 3600_000);
+    d.setMinutes(0, 0, 0);
+    return new Date(d.getTime() - d.getTimezoneOffset() * 60_000).toISOString().slice(0, 16);
+  });
 
   const sendingRef = useRef(false);
   const startedRef = useRef(false);
@@ -180,6 +191,12 @@ export const ScopingForm: React.FC<ScopingFormProps> = ({ location, backHref }) 
     if (mode === 'call' && values.phone.trim()) payload.phone = values.phone.trim();
     const useCase = buildUseCase(values.useCase, mode);
     if (useCase) payload.useCase = useCase;
+    const slot = mode === 'call' && preferredTime ? new Date(preferredTime) : null;
+    const withTime = !!slot && !Number.isNaN(slot.getTime()) && slot.getTime() > Date.now();
+    if (slot && withTime) {
+      payload.preferredTime = slot.toISOString();
+      payload.timezone = Intl.DateTimeFormat().resolvedOptions().timeZone ?? '';
+    }
 
     sendingRef.current = true;
     setSending(true);
@@ -189,7 +206,7 @@ export const ScopingForm: React.FC<ScopingFormProps> = ({ location, backHref }) 
 
     if (result === 'ok') {
       trackLanding(mode === 'deck' ? 'deck_request_success' : 'form_submit_success', { location });
-      setDone({ mode, firstName: payload.firstName });
+      setDone({ mode, firstName: payload.firstName, withTime });
       setTimeout(() => successRef.current?.focus(), 0);
       return;
     }
@@ -206,7 +223,7 @@ export const ScopingForm: React.FC<ScopingFormProps> = ({ location, backHref }) 
         <h3 ref={successRef} tabIndex={-1} className="mm-h2 scroll-mt-28 text-balance focus:outline-none">
           {copy.title(done.firstName)}
         </h3>
-        <p className="mm-lead mt-4">{copy.body}</p>
+        <p className="mm-lead mt-4">{done.mode === 'call' && done.withTime ? successCopy.call.bodyWithTime : copy.body}</p>
         <p className="mm-body mt-3">{withMailLink(copy.detail)}</p>
         <ButtonLink href={backHref} variant="secondary" className="mt-6">
           {successCopy.back}
@@ -294,6 +311,27 @@ export const ScopingForm: React.FC<ScopingFormProps> = ({ location, backHref }) 
             </div>
           );
         })}
+        {mode === 'call' && (
+          <div className="sm:col-span-2">
+            <label htmlFor={id('preferredTime')} className="block text-[0.875rem] font-semibold leading-snug tracking-[-0.003em] text-mm-ink">
+              {formCopy.timeLabel}
+            </label>
+            <p id={id('preferredTime-help')} className="mm-caption mt-0.5 text-[0.8125rem]">
+              {formCopy.timeHelper}
+            </p>
+            <input
+              id={id('preferredTime')}
+              name="preferredTime"
+              type="datetime-local"
+              min={minTime}
+              step={900}
+              value={preferredTime}
+              onChange={(e) => setPreferredTime(e.target.value)}
+              aria-describedby={id('preferredTime-help')}
+              className={cn(inputClass, 'mt-2')}
+            />
+          </div>
+        )}
       </div>
 
       {/* Honeypot: invisible to people and screen readers; bots fill it and the server drops the request. */}
@@ -335,7 +373,12 @@ export const ScopingForm: React.FC<ScopingFormProps> = ({ location, backHref }) 
 
       {mode === 'call' ? (
         <>
-          <p className="mm-caption mt-4">{formCopy.privacy}</p>
+          <p className="mm-caption mt-4">
+            {formCopy.privacy}{' '}
+            <Link to="/privacy" className="font-semibold text-mm-link underline underline-offset-2">
+              {formCopy.privacyLink}
+            </Link>
+          </p>
           <p className="mm-caption mt-1">{formCopy.next}</p>
           <p className="mm-caption mt-5 flex flex-wrap items-center gap-x-2 border-t border-mm-line pt-4">
             <span>{formCopy.softPathLead}</span>

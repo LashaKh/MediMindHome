@@ -219,6 +219,9 @@ export const formCopy = {
   deckUseCase: '[Deck request]',
   privacy: 'Your details are used only to arrange the call. No mailing list. Never shared or sold.',
   next: 'We reply within one working day with two time options.',
+  timeLabel: 'Preferred time for the call (optional)',
+  timeHelper: 'In your local time. We confirm it by email, or offer another.',
+  privacyLink: 'Privacy notice',
 };
 
 export const formErrors = {
@@ -243,7 +246,8 @@ export const successCopy = {
   call: {
     title: (firstName: string) => `Thank you, ${firstName}. Your request is in.`,
     body: 'We reply within one working day with two time options for your 30-minute call.',
-    detail: `Watch for an email from ${contactEmail}.`,
+    bodyWithTime: 'We confirm your requested time, or offer another, within one working day.',
+    detail: `A confirmation email is on its way to you. Our reply comes from ${contactEmail}.`,
   },
   deck: {
     title: (firstName: string) => `Thank you, ${firstName}.`,

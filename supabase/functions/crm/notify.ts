@@ -120,12 +120,18 @@ export function buildDemoEmails(r: DemoRequest, teamEmail: string, summary: stri
   const name = `${r.firstName} ${r.lastName}`.trim();
   const when = describeTime(r);
   const uid = `${crypto.randomUUID()}@medimind.md`;
+  // The form's soft path: the visitor asked for the hospital deck by email, not for a call.
+  const wantsDeck = (r.useCase ?? "").startsWith("[Deck request]");
 
   const teamText = [
     "New request from the website form.",
     "",
     summary,
-    when ? `Requested time: ${when}` : "No time picked: offer two options.",
+    wantsDeck
+      ? "They asked for the hospital deck by email, not a call."
+      : when
+      ? `Requested time: ${when}`
+      : "No time picked: offer two options.",
     "",
     "Reply to this email to answer the visitor directly.",
     "The request is also saved in the CRM (/admin/crm).",
@@ -134,12 +140,16 @@ export function buildDemoEmails(r: DemoRequest, teamEmail: string, summary: stri
   const visitorText = [
     `Hello ${r.firstName},`,
     "",
-    "Thank you. We received your request for a 30-minute call with the MediMind founders,",
-    "Dr. Lasha Khoshtaria and Irakli Pkhovelishvili.",
-    "",
-    when
-      ? `You asked for ${when}. We will confirm this time, or offer another, within one working day.`
-      : "We will reply within one working day with two time options.",
+    ...(wantsDeck
+      ? ["Thank you. We received your request for the MediMind hospital deck.", "", "We will email it to you within one working day."]
+      : [
+        "Thank you. We received your request for a 30-minute call with the MediMind founders,",
+        "Dr. Lasha Khoshtaria and Irakli Pkhovelishvili.",
+        "",
+        when
+          ? `You asked for ${when}. We will confirm this time, or offer another, within one working day.`
+          : "We will reply within one working day with two time options.",
+      ]),
     "",
     "You can answer this email with anything you want us to prepare.",
     "",
@@ -155,7 +165,7 @@ export function buildDemoEmails(r: DemoRequest, teamEmail: string, summary: stri
   return [
     {
       to: teamEmail,
-      subject: `New founder call request: ${r.companyName} (${name})`,
+      subject: `${wantsDeck ? "New deck request" : "New founder call request"}: ${r.companyName} (${name})`,
       text: teamText,
       html: html(teamText),
       replyTo: r.email,

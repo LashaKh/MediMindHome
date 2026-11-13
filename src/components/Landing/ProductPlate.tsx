@@ -300,7 +300,11 @@ export const HeroScene: React.FC = () => {
  * window running off the tile's right edge on purpose. At night the screen
  * is a lit display (full brightness, a cool bloom), drawn a touch smaller.
  */
-export const OpsTileView: React.FC<{ tile: OpsTile; className?: string }> = ({ tile, className }) => {
+export const OpsTileView: React.FC<{ tile: OpsTile; className?: string; windowClassName?: string }> = ({
+  tile,
+  className,
+  windowClassName,
+}) => {
   const manifest = useLandingManifest();
   // The window keeps one shape (tile.frame) whatever the capture's size: the left part of a wide screen, the top of a tall one.
   const base = manifest.get(tile.screen.id) ?? tile.screen.image;
@@ -314,7 +318,7 @@ export const OpsTileView: React.FC<{ tile: OpsTile; className?: string }> = ({ t
         <span className="mm-body mt-1 block text-pretty text-mm-muted">{tile.tag}</span>
       </figcaption>
       <div className="mt-auto pb-6 pl-6 pt-6 md:pb-7 md:pl-7 md:pt-7">
-        <Window label={tile.name} lit className="w-[118%] dark:w-[112%]">
+        <Window label={tile.name} lit className={cn('w-[118%] dark:w-[112%]', windowClassName)}>
           <Shot screen={tile.screen} crop={crop} lgPx={(GRID_PX / 3) * 1.18} vw={110} manifest={manifest} />
         </Window>
       </div>

@@ -39,7 +39,12 @@ export const ProductSection: React.FC = () => (
 
     <div className="mt-6 grid gap-5 md:grid-cols-2 lg:mt-8 lg:grid-cols-3 lg:gap-6">
       {copy.tiles.map((tile, i) => (
-        <OpsTileView key={tile.id} tile={tile} className={cn(i === 2 && 'md:max-lg:col-span-2')} />
+        <OpsTileView
+          key={tile.id}
+          tile={tile}
+          className={cn(i === 2 && 'md:max-lg:col-span-2')}
+          windowClassName={cn(i === 2 && 'md:max-lg:w-[66%]')}
+        />
       ))}
     </div>
   </SectionShell>

@@ -111,7 +111,7 @@ export const Window: React.FC<{
       aria-hidden="true"
     >
       <span className="lc-chrome__dot" />
-      <span className="truncate max-md:hidden">{label}</span>
+      <span className={cn('truncate', barRatio && 'max-lg:hidden')}>{label}</span>
     </div>
     {children}
   </div>
@@ -150,16 +150,21 @@ export const HeroScene: React.FC = () => {
 
   return (
     <figure className="m-0">
-      <div className="lc-stage px-4 pb-4 pt-4 md:px-10 md:pb-12 md:pt-10 xl:px-14 xl:pb-14 xl:pt-12">
-        {/* Phones: the record alone, cropped to its first two columns */}
+      <div className="lc-stage p-4 md:p-8 lg:px-10 lg:pb-12 lg:pt-10 xl:px-14 xl:pb-14 xl:pt-12">
+        {/* Below 1024: the record alone, cropped to its first two (phones) or three (tablets) columns */}
         <div className="md:hidden">
           <Window label={hero.frontLabel}>
-            <Shot screen={hero.front} crop={{ x: 0, y: 0.165, w: 0.52, h: 0.835 }} lgPx={0} vw={92} manifest={manifest} />
+            <Shot screen={hero.front} crop={{ x: 0, y: 0.27, w: 0.52, h: 0.73 }} lgPx={0} vw={92} manifest={manifest} />
+          </Window>
+        </div>
+        <div className="max-md:hidden lg:hidden">
+          <Window label={hero.frontLabel}>
+            <Shot screen={hero.front} crop={{ x: 0, y: 0.27, w: 0.755, h: 0.73 }} lgPx={0} vw={88} manifest={manifest} />
           </Window>
         </div>
 
-        {/* From 768 up: the composed scene */}
-        <div className="relative max-md:hidden" style={{ aspectRatio: `1000 / ${H}` }}>
+        {/* From 1024 up: the composed scene */}
+        <div className="relative max-lg:hidden" style={{ aspectRatio: `1000 / ${H}` }}>
           <Window
             label={hero.backLabel}
             back
@@ -171,7 +176,7 @@ export const HeroScene: React.FC = () => {
           </Window>
 
           {/* Name and tag, in the open band above the record */}
-          <div className="absolute max-lg:hidden" style={{ left: ux(530), top: uy(14), width: ux(440) }} aria-hidden="true">
+          <div className="absolute" style={{ left: ux(530), top: uy(14), width: ux(440) }} aria-hidden="true">
             <span className="mm-h3 block">{hero.name}</span>
             <span className="mm-body mt-1.5 block text-pretty text-mm-muted">{hero.tag}</span>
           </div>
@@ -197,8 +202,8 @@ export const HeroScene: React.FC = () => {
               fill="var(--mm-system)"
               fillOpacity={0.07}
             />
-            <line x1={src.x + src.w} y1={src.y} x2={LENS.x + LENS.w} y2={LENS.y} stroke="var(--mm-system)" strokeOpacity={0.55} strokeWidth={1} vectorEffect="non-scaling-stroke" />
-            <line x1={src.x} y1={src.y + src.h} x2={LENS.x} y2={LENS.y + lensH} stroke="var(--mm-system)" strokeOpacity={0.55} strokeWidth={1} vectorEffect="non-scaling-stroke" />
+            <line x1={src.x + src.w} y1={src.y} x2={LENS.x + LENS.w} y2={LENS.y} stroke="var(--mm-system)" strokeOpacity={0.4} strokeWidth={1} vectorEffect="non-scaling-stroke" />
+            <line x1={src.x} y1={src.y + src.h} x2={LENS.x} y2={LENS.y + lensH} stroke="var(--mm-system)" strokeOpacity={0.4} strokeWidth={1} vectorEffect="non-scaling-stroke" />
             <rect x={src.x} y={src.y} width={src.w} height={src.h} rx={3} fill="none" stroke="var(--mm-system)" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
           </svg>
 

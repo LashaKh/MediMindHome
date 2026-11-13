@@ -11,7 +11,7 @@ import './LaneCScreens.css';
  * Lane C helper: real screens of the hospital brain (in development), under
  * the autonomy dial. The Control Center large, the workers (each with its
  * own level dial) over its edge and the money panel across its foot; then
- * smaller stages for the inbox, proof and morning brief. Every screen comes
+ * proof (the map of jobs and their levels) as a wide band. Every screen comes
  * from the manifest by id (`brain-*`, night twin `brain-*-dark`). A screen
  * not captured yet is a named empty frame while developing and is left out
  * of the built page.
@@ -83,11 +83,11 @@ export const BrainScreens: React.FC = () => {
     <div className="mt-16 md:mt-20 lg:mt-24">
       {sceneShown.length > 0 && (
         <>
-          <div className="lc-stage px-4 py-4 md:px-10 md:py-10 xl:px-14 xl:py-12">
-            {/* Below 768: the screens one under another */}
-            <div className="grid gap-6 md:hidden">
+          <div className="lc-stage p-4 md:p-8 lg:p-10 xl:px-14 xl:py-12">
+            {/* Below 1024: the screens one under another */}
+            <div className="grid gap-6 md:grid-cols-2 md:gap-8 lg:hidden">
               {sceneShown.map((s) => (
-                <figure key={s.id} className="m-0">
+                <figure key={s.id} className="m-0 md:odd:last:col-span-2">
                   <Window label={s.name}>
                     <BrainShot screen={s} manifest={manifest} lgPx={0} vw={92} />
                   </Window>
@@ -98,8 +98,8 @@ export const BrainScreens: React.FC = () => {
               ))}
             </div>
 
-            {/* From 768 up: the composed scene */}
-            <div className="relative max-md:hidden" style={{ aspectRatio: `1000 / ${H}` }}>
+            {/* From 1024 up: the composed scene */}
+            <div className="relative max-lg:hidden" style={{ aspectRatio: `1000 / ${H}` }}>
               {scene.map((s, i) => {
                 const g = SCENE[i];
                 if (!s.pin || !manifest.has(s.id)) return null;
@@ -149,7 +149,7 @@ export const BrainScreens: React.FC = () => {
           </div>
 
           {/* Names and tags, in the order the screens stand */}
-          <div className="mt-6 grid gap-6 max-md:hidden md:grid-cols-3 md:gap-8">
+          <div className="mt-6 grid gap-6 max-lg:hidden lg:grid-cols-3 lg:gap-8">
             {sceneShown.map((s) => (
               <Caption key={s.id} screen={s} className="border-t border-mm-line pt-4" />
             ))}
@@ -159,21 +159,39 @@ export const BrainScreens: React.FC = () => {
 
       {more.length > 0 && (
         <div className={cn('mt-10 grid gap-5 lg:mt-12 lg:gap-6', more.length > 1 && 'md:grid-cols-2', more.length > 2 && 'lg:grid-cols-3')}>
-          {more.map((s, i) => (
-            <figure
-              key={s.id}
-              className={cn('lc-stage lc-stage--small m-0 flex flex-col', more.length === 3 && i === 2 && 'md:max-lg:col-span-2')}
-            >
-              <figcaption className="px-6 pt-6 md:px-8 md:pt-7">
-                <Caption screen={s} />
-              </figcaption>
-              <div className="relative mt-6 aspect-[16/9] md:mt-7">
-                <Window label={s.name} className="absolute left-6 top-0 w-[112%] md:left-8">
-                  <BrainShot screen={s} manifest={manifest} lgPx={(GRID_PX / Math.max(more.length, 2)) * 1.12} vw={100} />
-                </Window>
-              </div>
-            </figure>
-          ))}
+          {more.map((s, i) => {
+            // One stage alone becomes a wide band: the words left, the screen running off the right edge.
+            const alone = more.length === 1;
+            return (
+              <figure
+                key={s.id}
+                className={cn(
+                  'lc-stage lc-stage--small m-0 flex flex-col',
+                  alone && 'md:grid md:grid-cols-12',
+                  more.length === 3 && i === 2 && 'md:max-lg:col-span-2'
+                )}
+              >
+                <figcaption className={cn('px-6 pt-6 md:px-8 md:pt-7', alone && 'md:col-span-5 md:self-center md:pb-7 md:pt-0 lg:px-10')}>
+                  <Caption screen={s} />
+                </figcaption>
+                <div
+                  className={cn(
+                    'relative mt-6 md:mt-7',
+                    alone ? 'aspect-[16/9] md:col-span-7 md:mt-8 md:aspect-[16/8]' : 'aspect-[16/9]'
+                  )}
+                >
+                  <Window label={s.name} className={cn('absolute left-6 top-0 md:left-8', alone ? 'w-[110%] md:left-0' : 'w-[140%]')}>
+                    <BrainShot
+                      screen={s}
+                      manifest={manifest}
+                      lgPx={alone ? ((GRID_PX * 7) / 12) * 1.1 : (GRID_PX / Math.max(more.length, 2)) * 1.4}
+                      vw={130}
+                    />
+                  </Window>
+                </div>
+              </figure>
+            );
+          })}
         </div>
       )}
 

@@ -191,7 +191,10 @@ export const brain = {
    * `frame` is the window's shape (width / height); `focus` is the part of
    * the capture that stays in view when the frame is narrower than it.
    * `scene`: the Control Center with workers and money laid over it.
-   * `more`: smaller stages beneath.
+   * `more`: smaller stages beneath (one alone becomes a wide band).
+   * The staff inbox and a separate morning brief were dropped at capture
+   * (the brief already sits inside the Control Center); add an entry here
+   * if a clean capture arrives later.
    */
   screens: {
     scene: [
@@ -202,9 +205,7 @@ export const brain = {
       { id: 'brain-money', name: 'Money', tag: 'Missing charges and claim risks, found first.', frame: 2000 / 340, focus: 'left top' },
     ],
     more: [
-      { id: 'brain-inbox', name: 'Staff inbox', tag: 'Prepared cards. A person signs.', frame: 16 / 10, focus: 'left top' },
-      { id: 'brain-proof', name: 'Proof', tag: 'Every job, its worker, its level.', frame: 16 / 10, focus: 'left top' },
-      { id: 'brain-morning-brief', name: 'Morning brief', tag: 'The night, read before rounds.', frame: 16 / 10, focus: 'left top' },
+      { id: 'brain-proof', name: 'Proof', tag: 'Every job, the worker that covers it, its level.', frame: 16 / 10, focus: 'left top' },
     ],
   } satisfies { scene: BrainScreen[]; more: BrainScreen[] },
   screensNote: 'Screens from the harness in development. Demo data.',

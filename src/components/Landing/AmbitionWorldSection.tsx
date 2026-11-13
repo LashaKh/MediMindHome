@@ -7,22 +7,30 @@ import { cn } from '../../utils/cn';
 /**
  * Where this goes (#ambition): the page's last statement before the ask.
  * Same tone as the hero: light in the light theme, ink in the dark theme.
- * A still field of dim points stands for hospitals everywhere; exactly 25
- * points are lit (the network running today). Three hairline rings widen
- * from them: the network, the region, every hospital. Then the belief,
- * large and alone. In the light theme the lit points are solid system blue
- * and the wash is quieter; in the dark theme they glow.
+ * One network on a dotted globe. The globe's dots are laid out in rings
+ * around the place it started, so the whole world reads as organised around
+ * that network: 25 lit hospitals linked to their neighbours, a faint blue
+ * region with five routes of expansion, then every other hospital out to the
+ * horizon (smaller and fainter as the globe curves away). Three labels name
+ * the rings; no country names.
  *
- * Motion: the lit points and rings arrive once when the field scrolls in;
- * nothing loops. Under prefers-reduced-motion everything is drawn at once.
- * The field is decorative (aria-hidden); every idea is also real text.
+ * Motion: the network, region, rings and routes arrive once when the field
+ * scrolls in; nothing loops. Under prefers-reduced-motion everything is drawn
+ * at once. The field is decorative (aria-hidden); every idea is also real text.
  */
 
 const W = 1200;
-const H = 360;
-const CX = 330;
-const CY = 190;
-const RINGS = [70, 230, 640];
+const H = 430;
+/** The globe: a large sphere seen from the front, its upper cap filling the field. */
+const SC = { x: 640, y: 1130 };
+const R = 1040;
+/** Angular spacing of the dots (radians): about 15px at the front of the globe. */
+const STEP = 15 / R;
+/** Where the network sits on the globe (projected), and the rings around it. */
+const CORE = { x: 380, y: 300 };
+const NET_RINGS = 6.6; // in dot rings: the 25 hospitals
+const REGION_RINGS = 13; // the region
+type V3 = [number, number, number];
 
 /** Small deterministic PRNG so the field is identical on every render. */
 function rng(seed: number) {
@@ -33,95 +41,242 @@ function rng(seed: number) {
   };
 }
 
+const norm = (v: V3): V3 => {
+  const l = Math.hypot(v[0], v[1], v[2]);
+  return [v[0] / l, v[1] / l, v[2] / l];
+};
+const cross = (a: V3, b: V3): V3 => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]];
+
+/** Unit vector of the network on the sphere (y up, z toward the viewer). */
+const P: V3 = (() => {
+  const px = (CORE.x - SC.x) / R;
+  const py = (SC.y - CORE.y) / R;
+  return [px, py, Math.sqrt(Math.max(0, 1 - px * px - py * py))];
+})();
+const U = norm(cross(P, [0, 0, 1]));
+const Vb = cross(P, U);
+
+/** A point `theta` radians from the network, at azimuth `phi`, projected. z > 0 faces the viewer. */
+const at = (theta: number, phi: number) => {
+  const c = Math.cos(theta);
+  const s = Math.sin(theta);
+  const d: V3 = [
+    c * P[0] + s * (Math.cos(phi) * U[0] + Math.sin(phi) * Vb[0]),
+    c * P[1] + s * (Math.cos(phi) * U[1] + Math.sin(phi) * Vb[1]),
+    c * P[2] + s * (Math.cos(phi) * U[2] + Math.sin(phi) * Vb[2]),
+  ];
+  return { x: SC.x + R * d[0], y: SC.y - R * d[1], z: d[2] };
+};
+const inField = (p: { x: number; y: number; z: number }, m = 8) => p.z > 0.02 && p.x > -m && p.x < W + m && p.y > -m && p.y < H + m;
+
+/** Rings of dots around the network: the whole globe organised around where it started. */
 const FIELD = (() => {
-  const rand = rng(11464);
-  const dim: { x: number; y: number; r: number; o: number }[] = [];
-  const cols = 48;
-  const rows = 16;
-  for (let c = 0; c < cols; c++) {
-    for (let r = 0; r < rows; r++) {
-      if (rand() < 0.42) continue;
-      const x = (c + 0.5 + (rand() - 0.5) * 0.9) * (W / cols);
-      const y = (r + 0.5 + (rand() - 0.5) * 0.9) * (H / rows);
-      if (Math.hypot(x - CX, y - CY) < RINGS[0] + 6) continue;
-      dim.push({ x, y, r: 1.1 + rand() * 0.9, o: 0.18 + rand() * 0.22 });
+  const near: { x: number; y: number; z: number }[] = [];
+  const region: { x: number; y: number; z: number }[] = [];
+  const world: { x: number; y: number; z: number }[] = [];
+  const maxRing = Math.ceil(1.75 / STEP);
+  for (let k = 0; k <= maxRing; k++) {
+    const theta = k * STEP;
+    const count = k === 0 ? 1 : Math.max(6, Math.round((2 * Math.PI * Math.sin(theta)) / STEP));
+    const turn = (k % 2) * (Math.PI / count); // stagger alternate rings
+    for (let j = 0; j < count; j++) {
+      const p = at(theta, turn + (j / count) * 2 * Math.PI);
+      if (!inField(p)) continue;
+      if (k <= 6) near.push(p);
+      else if (k <= REGION_RINGS) region.push(p);
+      else world.push(p);
     }
   }
-  const lit: { x: number; y: number }[] = [];
-  while (lit.length < 25) {
-    const a = rand() * Math.PI * 2;
-    const d = Math.sqrt(rand()) * (RINGS[0] - 14);
-    const x = CX + Math.cos(a) * d;
-    const y = CY + Math.sin(a) * d * 0.9;
-    if (lit.every((p) => Math.hypot(p.x - x, p.y - y) > 11)) lit.push({ x, y });
-  }
-  return { dim, lit };
+  // The 25 hospitals: the first dot and 24 others scattered through the network ring, like a real network (seeded, identical every render).
+  const rand = rng(11464);
+  const order = near.slice(1).map((p) => ({ p, key: rand() })).sort((a, b) => a.key - b.key);
+  const lit = [near[0], ...order.slice(0, 24).map((o) => o.p)];
+  order.slice(24).forEach((o) => region.push(o.p));
+  // The network's own links: each hospital to its two nearest neighbours.
+  const links: [number, number][] = [];
+  lit.forEach((a, i) => {
+    lit
+      .map((b, j) => ({ j, d: Math.hypot(a.x - b.x, a.y - b.y) }))
+      .filter((o) => o.j !== i)
+      .sort((m, n) => m.d - n.d)
+      .slice(0, 2)
+      .forEach(({ j }) => {
+        if (!links.some(([m, n]) => (m === j && n === i) || (m === i && n === j))) links.push([i, j]);
+      });
+  });
+  return { lit, region, world, links };
 })();
+
+/** A ring at `theta` around the network, as a path through its visible part. */
+const ringPath = (theta: number) => {
+  let d = '';
+  let pen = false;
+  for (let j = 0; j <= 360; j++) {
+    const p = at(theta, (j / 360) * 2 * Math.PI);
+    if (inField(p, 40)) {
+      d += `${pen ? 'L' : 'M'}${p.x.toFixed(1)} ${p.y.toFixed(1)} `;
+      pen = true;
+    } else pen = false;
+  }
+  return d;
+};
+/** The visible point of a ring that lies furthest along (dx, dy): where its label goes. */
+const ringLabelAt = (theta: number, dx: number, dy: number) => {
+  let best = at(theta, 0);
+  let score = -Infinity;
+  for (let j = 0; j < 360; j++) {
+    const p = at(theta, (j / 360) * 2 * Math.PI);
+    if (inField(p, -24) && p.x * dx + p.y * dy > score) {
+      score = p.x * dx + p.y * dy;
+      best = p;
+    }
+  }
+  return best;
+};
+
+/** The globe's horizon: the visible arc of its edge, and where "Every hospital" sits on it. */
+const HORIZON = `M ${SC.x - R} ${SC.y} A ${R} ${R} 0 0 1 ${SC.x + R} ${SC.y}`;
+const HORIZON_LABEL = { x: W - 28, y: SC.y - Math.sqrt(R * R - (W - 28 - SC.x) ** 2) - 12 };
+
+/** Five routes of expansion: arcs from the network out to the region's edge. */
+const ROUTES = [0.35, 1.25, 2.4, 3.6, 5.1].map((phi) => {
+  let d = '';
+  for (let k = 0; k <= 24; k++) {
+    const p = at(((REGION_RINGS + 1.5) * STEP * k) / 24, phi);
+    d += `${k ? 'L' : 'M'}${p.x.toFixed(1)} ${p.y.toFixed(1)} `;
+  }
+  const end = at((REGION_RINGS + 1.5) * STEP, phi);
+  return { d, end };
+}).filter((r) => inField(r.end));
 
 const Field: React.FC = () => {
   const reduce = useReducedMotion();
-  // One observer on the whole field (not per shape: a 1280-unit ring never reaches a visibility threshold).
+  // One observer on the whole field (a ring path never reaches a visibility threshold on its own).
   const ref = useRef<SVGSVGElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.3 });
   const on = reduce || inView;
+  const ease = [0.2, 0.7, 0.2, 1] as const;
+  const netLabel = ringLabelAt(NET_RINGS * STEP, 0.7, 0.7);
+  const regionLabel = ringLabelAt(REGION_RINGS * STEP + STEP * 0.5, 0.8, -0.6);
   return (
     <svg
       ref={ref}
       viewBox={`0 0 ${W} ${H}`}
-      className="block h-[260px] w-full sm:h-auto"
+      className="block h-[300px] w-full sm:h-auto"
       aria-hidden="true"
       focusable="false"
       preserveAspectRatio="xMinYMid slice"
     >
       <defs>
-        <radialGradient id="ambition-glow" cx={CX} cy={CY} r={RINGS[1]} gradientUnits="userSpaceOnUse">
-          <stop offset="0" style={{ stopColor: 'var(--mm-system)' }} stopOpacity="0.2" />
+        <radialGradient id="ambition-glow" cx={CORE.x} cy={CORE.y} r={340} gradientUnits="userSpaceOnUse">
+          <stop offset="0" style={{ stopColor: 'var(--mm-system)' }} stopOpacity="0.22" />
+          <stop offset="0.45" style={{ stopColor: 'var(--mm-system)' }} stopOpacity="0.06" />
           <stop offset="1" style={{ stopColor: 'var(--mm-system)' }} stopOpacity="0" />
         </radialGradient>
+        <linearGradient id="ambition-fade" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" style={{ stopColor: 'var(--mm-surface)' }} stopOpacity="0" />
+          <stop offset="1" style={{ stopColor: 'var(--mm-surface)' }} stopOpacity="1" />
+        </linearGradient>
       </defs>
-      <rect x="0" y="0" width={W} height={H} fill="url(#ambition-glow)" className="opacity-60 dark:opacity-100" />
-      {FIELD.dim.map((p, i) => (
-        <circle key={i} cx={p.x} cy={p.y} r={p.r} className="fill-mm-muted" opacity={p.o} />
+
+      {/* Light rising from the network. */}
+      <rect x="0" y="0" width={W} height={H} fill="url(#ambition-glow)" className="opacity-70 dark:opacity-100" />
+
+      {/* The globe's edge: every hospital, out to the horizon. */}
+      <path d={HORIZON} className="stroke-mm-link" strokeOpacity="0.35" strokeWidth="1" fill="none" vectorEffect="non-scaling-stroke" />
+
+      {/* Every other hospital: dim dots, smaller and fainter toward the horizon. */}
+      {FIELD.world.map((p, i) => (
+        <circle key={i} cx={p.x} cy={p.y} r={0.55 + p.z * 1.25} className="fill-mm-muted" opacity={0.12 + p.z * 0.42} />
       ))}
-      {RINGS.map((r, i) => (
-        <motion.circle
-          key={r}
-          cx={CX}
-          cy={CY}
-          r={r}
+
+      {/* The region: the same dots, lit faintly blue. */}
+      <motion.g initial={reduce ? false : { opacity: 0 }} animate={{ opacity: on ? 1 : 0 }} transition={{ duration: 1.4, delay: 0.9, ease }}>
+        {FIELD.region.map((p, i) => (
+          <circle key={i} cx={p.x} cy={p.y} r={0.8 + p.z * 1.3} className="fill-mm-system" opacity={0.28 + p.z * 0.4} />
+        ))}
+      </motion.g>
+
+      {/* Rings: the network, then the region. */}
+      {[NET_RINGS, REGION_RINGS + 0.5].map((rings, i) => (
+        <motion.path
+          key={rings}
+          d={ringPath(rings * STEP)}
           fill="none"
           className="stroke-mm-link"
-          strokeOpacity={0.55 - i * 0.15}
-          strokeWidth={1}
+          strokeOpacity={i === 0 ? 0.7 : 0.5}
+          strokeWidth="1"
+          strokeDasharray={i === 0 ? undefined : '2 4'}
           vectorEffect="non-scaling-stroke"
-          style={{ transformOrigin: `${CX}px ${CY}px` }}
-          initial={reduce ? false : { scale: 0.55, opacity: 0 }}
-          animate={on ? { scale: 1, opacity: 1 } : { scale: 0.55, opacity: 0 }}
-          transition={{ duration: 1.6, delay: 0.5 + i * 0.45, ease: [0.2, 0.7, 0.2, 1] }}
+          initial={reduce ? false : { pathLength: 0, opacity: 0 }}
+          animate={on ? { pathLength: 1, opacity: 1 } : { pathLength: 0, opacity: 0 }}
+          transition={{ duration: 1.6, delay: 0.3 + i * 0.6, ease }}
         />
       ))}
-      {copy.ringLabels.map((label, i) => (
-        <text
-          key={label}
-          x={CX + RINGS[i] + 10}
-          y={CY + 4}
-          className="fill-mm-link font-mono max-lg:hidden"
-          style={{ fontSize: 13 }}
-        >
-          {label}
-        </text>
+
+      {/* Routes of expansion, drawn once. */}
+      {ROUTES.map((route, i) => (
+        <g key={i}>
+          <motion.path
+            d={route.d}
+            fill="none"
+            className="stroke-mm-system"
+            strokeWidth="1.25"
+            strokeLinecap="round"
+            vectorEffect="non-scaling-stroke"
+            initial={reduce ? false : { pathLength: 0 }}
+            animate={{ pathLength: on ? 1 : 0 }}
+            transition={{ duration: 1.3, delay: 0.8 + i * 0.12, ease }}
+          />
+          <motion.circle
+            cx={route.end.x}
+            cy={route.end.y}
+            r="3.5"
+            className="fill-mm-surface stroke-mm-system"
+            strokeWidth="1.5"
+            initial={reduce ? false : { opacity: 0 }}
+            animate={{ opacity: on ? 1 : 0 }}
+            transition={{ duration: 0.4, delay: 2 + i * 0.12 }}
+          />
+        </g>
       ))}
-      {FIELD.lit.map((p, i) => (
-        <motion.g
-          key={i}
-          initial={reduce ? false : { opacity: 0 }}
-          animate={{ opacity: on ? 1 : 0 }}
-          transition={{ duration: 0.5, delay: i * 0.03 }}
-        >
-          <circle cx={p.x} cy={p.y} r={7} className="fill-mm-system opacity-[0.14] dark:opacity-20" />
-          <circle cx={p.x} cy={p.y} r={2.6} className="fill-mm-system dark:fill-mm-ink" />
-        </motion.g>
-      ))}
+
+      {/* The network running today: 25 hospitals, linked. */}
+      <motion.g initial={reduce ? false : { opacity: 0 }} animate={{ opacity: on ? 1 : 0 }} transition={{ duration: 0.8, ease }}>
+        {FIELD.links.map(([a, b], i) => (
+          <line
+            key={i}
+            x1={FIELD.lit[a].x}
+            y1={FIELD.lit[a].y}
+            x2={FIELD.lit[b].x}
+            y2={FIELD.lit[b].y}
+            className="stroke-mm-system"
+            strokeOpacity="0.6"
+            strokeWidth="1"
+            vectorEffect="non-scaling-stroke"
+          />
+        ))}
+        {FIELD.lit.map((p, i) => (
+          <g key={i}>
+            <circle cx={p.x} cy={p.y} r={6} className="fill-mm-system opacity-[0.16] dark:opacity-25" />
+            <circle cx={p.x} cy={p.y} r={2.4} className="fill-mm-system dark:fill-mm-ink" />
+          </g>
+        ))}
+      </motion.g>
+
+      {/* The globe sinks into the page at the bottom edge. */}
+      <rect x="0" y={H - 70} width={W} height="70" fill="url(#ambition-fade)" />
+
+      {/* Ring labels. */}
+      <text x={netLabel.x + 12} y={netLabel.y + 4} className="fill-mm-link font-mono max-sm:hidden" style={{ fontSize: 12.5 }}>
+        {copy.ringLabels[0]}
+      </text>
+      <text x={regionLabel.x + 12} y={regionLabel.y + 4} className="fill-mm-link font-mono max-sm:hidden" style={{ fontSize: 12.5 }}>
+        {copy.ringLabels[1]}
+      </text>
+      <text x={HORIZON_LABEL.x} y={HORIZON_LABEL.y} textAnchor="end" className="fill-mm-link font-mono max-sm:hidden" style={{ fontSize: 12.5 }}>
+        {copy.ringLabels[2]}
+      </text>
     </svg>
   );
 };

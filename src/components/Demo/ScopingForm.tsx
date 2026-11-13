@@ -103,10 +103,10 @@ interface ScopingFormProps {
 }
 
 // Tone-aware: works on the ink canvas (#contact, /request-demo) and on light tones.
-const inputClass =
-  'block min-h-[48px] w-full scroll-mt-28 rounded-[6px] border bg-transparent px-3.5 py-2.5 text-[1rem] text-mm-ink placeholder:text-mm-muted transition-colors hover:border-mm-ink focus:border-mm-accent focus-visible:outline-offset-1 md:text-[1.0625rem]';
-// The panel the form and its result sit on: a lifted surface (white on daylight, a deeper blue on ink) with a hairline edge.
-const panelClass = 'relative rounded-[10px] border border-mm-line bg-mm-raised p-5 sm:p-8';
+// Field look lives in index.css (.mm-field): a sunk well, blue edge and halo on focus, red edge when aria-invalid.
+const inputClass = 'mm-field scroll-mt-28';
+// The panel the form and its result sit on (.mm-form-panel): lifted, white on daylight, a deeper blue on ink.
+const panelClass = 'mm-form-panel p-5 sm:p-9 lg:p-10';
 
 export const ScopingForm: React.FC<ScopingFormProps> = ({ location, backHref }) => {
   const uid = useId();
@@ -236,7 +236,7 @@ export const ScopingForm: React.FC<ScopingFormProps> = ({ location, backHref }) 
         </div>
       )}
 
-      <div className="grid gap-x-5 gap-y-5 sm:grid-cols-2">
+      <div className="grid gap-x-4 gap-y-6 sm:grid-cols-2">
         {fields.map((field) => {
           const error = errors[field.name];
           const helperId = field.helper ? id(`${field.name}-help`) : undefined;
@@ -257,11 +257,11 @@ export const ScopingForm: React.FC<ScopingFormProps> = ({ location, backHref }) 
           };
           return (
             <div key={field.name} className={half ? '' : 'sm:col-span-2'}>
-              <label htmlFor={id(field.name)} className="block text-[0.9375rem] font-semibold leading-snug text-mm-ink md:text-[1rem]">
+              <label htmlFor={id(field.name)} className="block text-[0.875rem] font-semibold leading-snug tracking-[-0.003em] text-mm-ink">
                 {field.label}
               </label>
               {field.helper && (
-                <p id={helperId} className="mm-caption mt-1">
+                <p id={helperId} className="mm-caption mt-0.5 text-[0.8125rem]">
                   {field.helper}
                 </p>
               )}
@@ -273,7 +273,7 @@ export const ScopingForm: React.FC<ScopingFormProps> = ({ location, backHref }) 
                   }}
                   rows={2}
                   {...shared}
-                  className={cn(inputClass, 'mt-2 resize-y', error ? 'border-2 border-mm-alert' : 'border-mm-muted')}
+                  className={cn(inputClass, 'mt-2 resize-y')}
                 />
               ) : (
                 <input
@@ -283,11 +283,11 @@ export const ScopingForm: React.FC<ScopingFormProps> = ({ location, backHref }) 
                   type={field.type}
                   inputMode={field.type === 'tel' ? 'tel' : field.type === 'email' ? 'email' : undefined}
                   {...shared}
-                  className={cn(inputClass, 'mt-2', error ? 'border-2 border-mm-alert' : 'border-mm-muted')}
+                  className={cn(inputClass, 'mt-2')}
                 />
               )}
               {error && (
-                <p id={errorId} className="mm-body mt-2 font-semibold text-mm-alert">
+                <p id={errorId} className="mt-1.5 text-[0.875rem] font-semibold text-mm-alert">
                   {error}
                 </p>
               )}
@@ -319,12 +319,12 @@ export const ScopingForm: React.FC<ScopingFormProps> = ({ location, backHref }) 
         </div>
       )}
 
-      <div className="mt-6">
+      <div className="mt-8">
         <Button
           type="submit"
           full
           aria-disabled={sending || undefined}
-          className={cn('sm:w-auto', sending && 'cursor-wait opacity-70')}
+          className={cn('min-h-[52px] rounded-[11px] text-[1rem]', sending && 'cursor-wait opacity-70')}
         >
           {sending ? formCopy.sending : mode === 'deck' ? formCopy.submitDeck : formCopy.submitCall}
         </Button>

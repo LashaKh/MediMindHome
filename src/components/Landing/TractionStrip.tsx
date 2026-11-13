@@ -25,7 +25,7 @@ export const TractionStrip: React.FC = () => (
           <li
             key={item.label}
             className={cn(
-              'flex flex-col gap-2 py-6 md:py-9',
+              'flex flex-col gap-2.5 py-6 md:py-8',
               // hairline separators: between columns on desktop, a 2 x 2 grid on smaller screens
               i % 2 === 1 && 'border-l border-mm-line pl-4 sm:pl-8',
               i % 2 === 0 && 'pr-4 sm:pr-8',
@@ -33,11 +33,11 @@ export const TractionStrip: React.FC = () => (
               i === 2 && 'lg:border-l lg:pl-8'
             )}
           >
-            <span className={cn(dMono, 'text-mm-muted')}>{item.label}</span>
+            <span className={cn(dMono, 'text-[12px] text-mm-muted')}>{item.label}</span>
             <span
               className={cn(
                 dDisplay,
-                'text-[1.75rem] leading-[1.02] text-mm-ink [font-variant-numeric:lining-nums] sm:text-[2.5rem] xl:text-[3.25rem]'
+                'text-[1.75rem] leading-[1.02] text-mm-ink [font-variant-numeric:lining-nums] sm:text-[2.25rem] xl:text-[2.75rem]'
               )}
             >
               {item.figure}

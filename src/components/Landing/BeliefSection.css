@@ -10,6 +10,15 @@
   --lb-harm: var(--mm-alert);
   --lb-ink-glow: color-mix(in srgb, var(--mm-system) 38%, transparent);
   --lb-system-wash: color-mix(in srgb, var(--mm-system) 11%, transparent);
+  /* The anatomy body: a lit disc with light from the upper left. */
+  --lb-ana-disc-hi: var(--mm-raised);
+  --lb-ana-disc-mid: color-mix(in srgb, var(--mm-system) 4%, var(--mm-raised));
+  --lb-ana-disc-lo: color-mix(in srgb, var(--mm-system) 9%, var(--mm-surface));
+  --lb-ana-shadow: color-mix(in srgb, var(--mm-ink) 16%, transparent);
+  --lb-ana-band: color-mix(in srgb, var(--mm-system) 7%, var(--mm-raised));
+}
+html.dark .lb-scope {
+  --lb-ana-shadow: color-mix(in srgb, var(--mm-system) 20%, transparent);
 }
 
 .lb-display {
@@ -36,7 +45,7 @@
 }
 
 /* The belief is the page's second display moment: hero scale, on purpose. */
-.lb-belief { font-size: clamp(2.5rem, 0.9rem + 5.9vw, 7.5rem); }
+.lb-belief { font-size: clamp(2.5rem, 1rem + 4.4vw, 5.5rem); }
 
 /* Ambient life: the nerve pulse and the heart beat. Off for reduced motion. */
 @keyframes lb-pulse {
@@ -55,8 +64,34 @@
 .lb-cursor { animation: lb-blink 1.1s steps(1) infinite; }
 .lb-signal { stroke-dasharray: 6 34; animation: lb-travel 3.2s linear infinite; }
 
+/* The anatomy organism (AnatomyOsOrganism). */
+.lb-ana-part { transition: opacity 450ms cubic-bezier(.2,.7,.2,1); }
+.lb-ana-dim { opacity: 0.2; }
+.lb-ana-role { font-size: 19px; letter-spacing: 0.04em; font-weight: 500; }
+.lb-ana-micro { font-size: 10.5px; letter-spacing: 0.02em; }
+@media (max-width: 639px) {
+  .lb-ana-role { font-size: 31px; letter-spacing: 0.02em; }
+}
+@keyframes lb-spin { to { transform: rotate(360deg); } }
+@keyframes lb-act {
+  0% { opacity: 1; }
+  14%, 100% { opacity: 0.62; }
+}
+@keyframes lb-ripple {
+  0% { transform: scale(1); opacity: 0.7; }
+  100% { transform: scale(4.3); opacity: 0; }
+}
+.lb-ana-spin { transform-box: view-box; transform-origin: 0 0; animation: lb-spin 36s linear infinite; }
+.lb-ana-act { animation: lb-act 6s linear infinite; }
+.lb-ana-ripple { transform-box: fill-box; transform-origin: center; vector-effect: non-scaling-stroke; animation: lb-ripple 2.8s cubic-bezier(.2,.7,.2,1) infinite; }
+
+/* Anatomy legend rows: the line opens under the active part. */
+.lb-legend-line { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 360ms cubic-bezier(.2,.7,.2,1); }
+.lb-legend-line[data-open='true'] { grid-template-rows: 1fr; }
+.lb-legend-line > * { overflow: hidden; }
+
 @media (prefers-reduced-motion: reduce) {
-  .lb-heartbeat, .lb-cursor, .lb-signal { animation: none; }
+  .lb-heartbeat, .lb-cursor, .lb-signal, .lb-ana-spin, .lb-ana-act, .lb-ana-ripple { animation: none; }
   .lb-scope *, .lb-scope *::before, .lb-scope *::after { transition-duration: 0.01ms !important; }
 }
 

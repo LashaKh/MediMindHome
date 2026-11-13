@@ -99,17 +99,18 @@ export interface AnatomyLayerCopy {
 export const anatomy = {
   title: 'A hospital with a body made of software.',
   figureAlt:
-    'A human figure drawn in fine lines. The heart at its centre is the record, the head is the brain, the limbs are the muscle reaching out to ministries, insurers and pharmacies, the outer circle is the skin where staff and patients meet it, and nerves run through all of it.',
+    'The operating system as a cross-section of one living body. At the core, the heart: the patient record. Around it, the muscle: a ring of commands with one audited door. Nerve fibres carry pulses from the heart out to the skin, the outer surface where doctors, nurses, patients, pharmacy, finance, the ministry, insurers and devices meet the system. Around everything, the brain reads the whole body.',
   layers: [
     { id: 'heart', name: 'Heart', verb: 'holds', line: 'The record, ground-up on FHIR R4.' },
     { id: 'brain', name: 'Brain', verb: 'thinks', line: 'AI prepares. A doctor signs.', status: 'Partly in development' },
     { id: 'muscle', name: 'Muscle', verb: 'acts', line: 'Every action through one audited door.' },
-    { id: 'skin', name: 'Skin', verb: 'meets', line: 'One system for every role.' },
+    { id: 'skin', name: 'Skin', verb: 'meets', line: 'One surface for every role.' },
     { id: 'nerve', name: 'Nerve', verb: 'feels', line: 'Every change, traced as it happens.' },
   ] satisfies AnatomyLayerCopy[],
-  /** Labels drawn inside the figure. */
+  /** Labels drawn inside the figure. `roles` sit on the skin, clockwise from the top. */
   figureLabels: {
     world: ['Ministry', 'Insurer', 'Pharmacy', 'Devices'],
     people: ['Doctor', 'Nurse', 'Patient', 'Finance'],
+    roles: ['Doctor', 'Nurse', 'Patient', 'Pharmacy', 'Finance', 'Ministry', 'Insurer', 'Devices'],
   },
 } as const;

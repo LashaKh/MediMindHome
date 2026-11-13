@@ -10398,7 +10398,7 @@
            ═══════════════════════════════════════════════ -->
       <section class="mkq-slide">
         <style>
-          .mkq-slide .mkq-route { position: relative; margin-top: 34px; display: grid; grid-template-columns: 1fr 1fr 1fr; }
+          .mkq-slide .mkq-route { position: relative; margin-top: 44px; display: grid; grid-template-columns: 1fr 1fr 1fr; }
           .mkq-slide .mkq-route::before { content: ""; position: absolute; left: 9px; right: 0; top: 8px; height: 2px; border-radius: 2px;
             background: linear-gradient(to right, #9fc0e4 0%, #2b6cb0 66.6%, rgba(43,108,176,0) 100%); }
           .mkq-slide .mkq-stop { position: relative; display: flex; flex-direction: column; padding-right: 20px; }
@@ -10409,53 +10409,31 @@
           .mkq-slide .mkq-stop--hi i { background: #1a365d; border-color: #1a365d; box-shadow: 0 0 0 6px rgba(43,108,176,.20); }
           .mkq-slide .mkq-stop--hi b { color: #2b6cb0; }
 
-          .mkq-slide .mkq-row { flex: 1; min-height: 0; margin-top: 28px; display: grid; grid-template-columns: 1.55fr 1fr; gap: 24px; }
-          .mkq-slide .mkq-market, .mkq-slide .mkq-pay { position: relative; overflow: hidden; border-radius: 24px; background: #fff; border: 1px solid #e3eaf2; box-shadow: 0 14px 34px rgba(26,54,93,.08); min-height: 0; }
-
-          .mkq-slide .mkq-curve { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
-          .mkq-slide .mkq-curve .mkq-line { fill: none; stroke: #2b6cb0; stroke-width: 3; stroke-linecap: round; vector-effect: non-scaling-stroke; }
-          .mkq-slide .mkq-dot { position: absolute; box-sizing: border-box; border-radius: 50%; transform: translate(-50%, -50%); }
-          .mkq-slide .mkq-dot--a { left: 12.57%; top: 75.42%; width: 16px; height: 16px; background: #fff; border: 3px solid #2b6cb0; }
-          .mkq-slide .mkq-dot--b { left: 88.94%; top: 37.12%; width: 20px; height: 20px; background: #1a365d; border: 3px solid #fff; box-shadow: 0 0 0 7px rgba(43,108,176,.20); }
-          .mkq-slide .mkq-cap { position: absolute; left: 30px; top: 26px; font-size: .8em; font-weight: 600; color: #74839a; }
-          .mkq-slide .mkq-now, .mkq-slide .mkq-then { position: absolute; display: flex; flex-direction: column; }
-          .mkq-slide .mkq-now { left: 30px; bottom: calc(24.58% + 20px); }
-          .mkq-slide .mkq-then { right: 30px; bottom: calc(62.88% + 34px); align-items: flex-end; }
-          .mkq-slide .mkq-now b { font-size: 1.75em; line-height: 1; font-weight: 800; letter-spacing: -.035em; color: #5a6a83; }
-          .mkq-slide .mkq-then b { font-size: 3.4em; line-height: 1; font-weight: 900; letter-spacing: -.045em; color: #1a365d;
-            background: linear-gradient(120deg, #1a365d 10%, #2b6cb0 90%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-          .mkq-slide .mkq-now span, .mkq-slide .mkq-then span { margin-top: 5px; font-size: .74em; font-weight: 700; color: #94a3b8; }
-          .mkq-slide .mkq-one { position: absolute; right: 30px; bottom: 26px; padding: 9px 18px; border-radius: 999px; font-size: .8em; font-weight: 600; color: #33435c; white-space: nowrap;
-            background: #fff; border: 1px solid #cfe0f3; box-shadow: 0 6px 16px rgba(26,54,93,.08); }
-          .mkq-slide .mkq-one b { font-weight: 800; color: #2b6cb0; }
-
-          .mkq-slide .mkq-pay { display: flex; flex-direction: column; }
-          .mkq-slide .mkq-pay-cap { padding: 26px 30px 0; font-size: .8em; font-weight: 600; color: #74839a; }
-          .mkq-slide .mkq-pay-step { position: relative; flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 14px 30px; }
-          .mkq-slide .mkq-pay-step span { font-size: .7em; font-weight: 700; color: #2b6cb0; }
-          .mkq-slide .mkq-pay-step b { margin-top: 3px; font-size: 1.22em; line-height: 1.15; font-weight: 800; letter-spacing: -.025em; color: #1a365d; }
-          .mkq-slide .mkq-pay-step--next { flex: 1.25; background: linear-gradient(28deg, #eef4fb 10%, #dcebfb 100%); border-top: 1px solid #d5e3f3; }
-          .mkq-slide .mkq-pay-arrow { position: absolute; right: 30px; top: -19px; width: 38px; height: 38px; box-sizing: border-box; border-radius: 50%; display: grid; place-items: center;
-            background: #fff; border: 1px solid #cfe0f3; color: #2b6cb0; box-shadow: 0 6px 14px rgba(26,54,93,.10); }
-          .mkq-slide .mkq-pay-arrow svg { width: 20px; height: 20px; display: block; }
+          .mkq-slide .mkq-row { flex: 1; min-height: 0; margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+          .mkq-slide .mkq-card { display: flex; flex-direction: column; justify-content: center; padding: 30px 38px; border-radius: 24px;
+            background: linear-gradient(28deg, #f7f9fc 30%, #e9f2fc 100%); border: 1px solid #e6edf5; min-height: 0; }
+          .mkq-slide .mkq-label { font-size: .78em; font-weight: 700; color: #74839a; }
+          .mkq-slide .mkq-big { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; margin-top: 12px; line-height: 1.05; letter-spacing: -.035em; white-space: nowrap; }
+          .mkq-slide .mkq-from { display: flex; align-items: center; gap: 12px; }
+          .mkq-slide .mkq-big span { font-size: 1.5em; font-weight: 800; color: #7b8aa0; }
+          .mkq-slide .mkq-big b { font-size: 2.7em; font-weight: 900; color: #1a365d; }
+          .mkq-slide .mkq-big svg { flex: 0 0 auto; width: 26px; height: 26px; color: #2b6cb0; }
+          .mkq-slide .mkq-note { margin-top: 16px; font-size: .8em; line-height: 1.4; font-weight: 500; color: #5a6a83; }
+          .mkq-slide .mkq-note b { font-weight: 800; color: #2b6cb0; }
 
           @media (max-width: 768px) {
             .mkq-slide .mkq-route { display: block; margin-top: 16px; padding-left: 2px; }
-            .mkq-slide .mkq-route::before { left: 10px; right: auto; top: 8px; bottom: 30px; width: 2px; height: auto; background: linear-gradient(to bottom, #9fc0e4, #2b6cb0); }
+            .mkq-slide .mkq-route::before { left: 10px; right: auto; top: 8px; bottom: 44px; width: 2px; height: auto; background: linear-gradient(to bottom, #9fc0e4, #2b6cb0); }
             .mkq-slide .mkq-stop { padding: 0 0 16px 34px; }
             .mkq-slide .mkq-stop i { position: absolute; left: 0; top: 0; margin: 0; }
             .mkq-slide .mkq-stop b { font-size: 1.25em; }
-            .mkq-slide .mkq-row { display: block; margin-top: 8px; }
-            .mkq-slide .mkq-market { display: flex; flex-direction: column; gap: 10px; padding: 18px; margin-bottom: 14px; }
-            .mkq-slide .mkq-curve, .mkq-slide .mkq-dot { display: none; }
-            .mkq-slide .mkq-cap, .mkq-slide .mkq-now, .mkq-slide .mkq-then, .mkq-slide .mkq-one { position: static; }
-            .mkq-slide .mkq-then { align-items: flex-start; }
-            .mkq-slide .mkq-then b { font-size: 2.6em; }
-            .mkq-slide .mkq-one { white-space: normal; align-self: flex-start; }
-            .mkq-slide .mkq-pay { margin-bottom: 44px; }
-            .mkq-slide .mkq-pay-cap { padding: 18px 18px 0; }
-            .mkq-slide .mkq-pay-step { padding: 14px 18px 18px; }
-            .mkq-slide .mkq-pay-arrow { right: 18px; }
+            .mkq-slide .mkq-row { display: block; margin-top: 6px; }
+            .mkq-slide .mkq-card { padding: 18px 20px; margin-bottom: 14px; }
+            .mkq-slide .mkq-card:last-child { margin-bottom: 44px; }
+            .mkq-slide .mkq-big { white-space: normal; }
+            .mkq-slide .mkq-big span { font-size: 1.3em; }
+            .mkq-slide .mkq-big b { font-size: 1.9em; }
+            .mkq-slide .mkq-big svg { width: 22px; height: 22px; }
           }
         </style>
         <div class="slide-inner">
@@ -10469,28 +10447,8 @@
           </div>
 
           <div class="mkq-row">
-            <div class="mkq-market">
-              <svg class="mkq-curve" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-                <defs>
-                  <linearGradient id="mkqFill" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0" stop-color="#2b6cb0" stop-opacity=".20"/>
-                    <stop offset="1" stop-color="#2b6cb0" stop-opacity="0"/>
-                  </linearGradient>
-                </defs>
-                <path d="M0 76 C36 76 62 63 100 27 L100 100 L0 100 Z" fill="url(#mkqFill)"/>
-                <path class="mkq-line" d="M0 76 C36 76 62 63 100 27"/>
-              </svg>
-              <i class="mkq-dot mkq-dot--a"></i><i class="mkq-dot mkq-dot--b"></i>
-              <div class="mkq-cap">Hospital core IT spend, per year</div>
-              <div class="mkq-now"><b>$52.8B</b><span>today</span></div>
-              <div class="mkq-then"><b>$120B</b><span>by 2034</span></div>
-              <div class="mkq-one"><b>1%</b> of the 2034 market = <b>$1.2B ARR</b></div>
-            </div>
-            <div class="mkq-pay">
-              <div class="mkq-pay-cap">How we earn</div>
-              <div class="mkq-pay-step"><span>Today</span><b>Subscription per seat</b></div>
-              <div class="mkq-pay-step mkq-pay-step--next"><div class="mkq-pay-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="M6 13l6 6 6-6"/></svg></div><span>Next</span><b>A share of the value we create</b></div>
-            </div>
+            <div class="mkq-card"><div class="mkq-label">The market</div><div class="mkq-big"><div class="mkq-from"><span>$52.8B</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></div><b>$120B</b></div><div class="mkq-note">Hospital core IT spend per year, by 2034. <b>1% of it is $1.2B ARR.</b></div></div>
+            <div class="mkq-card"><div class="mkq-label">How we earn</div><div class="mkq-big"><div class="mkq-from"><span>Per seat</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></div><b>Value share</b></div><div class="mkq-note">A subscription per seat today. Next, <b>a share of the value we create.</b></div></div>
           </div>
         </div>
         <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>

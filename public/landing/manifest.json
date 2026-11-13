@@ -972,6 +972,244 @@
           "bytes": 18556
         }
       ]
+    },
+    {
+      "id": "brain-control-center-dark",
+      "section": "brain",
+      "alt": "MediMind Control Center in dark theme for the hospital brain: status Running with a Stop switch, 16 of 16 workers active, 11 matters waiting for a person's decision, and the morning brief with stays open now, stays ended yesterday and worker outputs since the last brief. In development, demo data.",
+      "width": 2000,
+      "height": 934,
+      "aspectRatio": "2000 / 934",
+      "fallback": "/landing/brain-control-center-dark-1400.jpg",
+      "avif": "/landing/brain-control-center-dark-800.avif 800w, /landing/brain-control-center-dark-1400.avif 1400w, /landing/brain-control-center-dark-2000.avif 2000w",
+      "webp": "/landing/brain-control-center-dark-800.webp 800w, /landing/brain-control-center-dark-1400.webp 1400w, /landing/brain-control-center-dark-2000.webp 2000w",
+      "sizes": "(min-width: 1200px) 1100px, 100vw",
+      "files": [
+        {
+          "file": "/landing/brain-control-center-dark-800.avif",
+          "format": "avif",
+          "width": 800,
+          "height": 374,
+          "bytes": 6278
+        },
+        {
+          "file": "/landing/brain-control-center-dark-1400.avif",
+          "format": "avif",
+          "width": 1400,
+          "height": 654,
+          "bytes": 14195
+        },
+        {
+          "file": "/landing/brain-control-center-dark-2000.avif",
+          "format": "avif",
+          "width": 2000,
+          "height": 934,
+          "bytes": 21734
+        },
+        {
+          "file": "/landing/brain-control-center-dark-1400.jpg",
+          "format": "jpg",
+          "width": 1400,
+          "height": 654,
+          "bytes": 50244
+        },
+        {
+          "file": "/landing/brain-control-center-dark-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 374,
+          "bytes": 9910
+        },
+        {
+          "file": "/landing/brain-control-center-dark-1400.webp",
+          "format": "webp",
+          "width": 1400,
+          "height": 654,
+          "bytes": 22942
+        },
+        {
+          "file": "/landing/brain-control-center-dark-2000.webp",
+          "format": "webp",
+          "width": 2000,
+          "height": 934,
+          "bytes": 36250
+        }
+      ]
+    },
+    {
+      "id": "brain-workers-dark",
+      "section": "brain",
+      "alt": "MediMind Control Center in dark theme, Workers tab: the coverage checker, bed and move watcher and theatre watcher, each with what it may do and a six-step level dial from Watching to Owns it, set at Prepares and capped at level 2. In development, demo data.",
+      "width": 2000,
+      "height": 1232,
+      "aspectRatio": "2000 / 1232",
+      "fallback": "/landing/brain-workers-dark-1400.jpg",
+      "avif": "/landing/brain-workers-dark-800.avif 800w, /landing/brain-workers-dark-1400.avif 1400w, /landing/brain-workers-dark-2000.avif 2000w",
+      "webp": "/landing/brain-workers-dark-800.webp 800w, /landing/brain-workers-dark-1400.webp 1400w, /landing/brain-workers-dark-2000.webp 2000w",
+      "sizes": "(min-width: 1200px) 1100px, 100vw",
+      "files": [
+        {
+          "file": "/landing/brain-workers-dark-800.avif",
+          "format": "avif",
+          "width": 800,
+          "height": 493,
+          "bytes": 8036
+        },
+        {
+          "file": "/landing/brain-workers-dark-1400.avif",
+          "format": "avif",
+          "width": 1400,
+          "height": 862,
+          "bytes": 18308
+        },
+        {
+          "file": "/landing/brain-workers-dark-2000.avif",
+          "format": "avif",
+          "width": 2000,
+          "height": 1232,
+          "bytes": 26404
+        },
+        {
+          "file": "/landing/brain-workers-dark-1400.jpg",
+          "format": "jpg",
+          "width": 1400,
+          "height": 862,
+          "bytes": 88282
+        },
+        {
+          "file": "/landing/brain-workers-dark-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 493,
+          "bytes": 18774
+        },
+        {
+          "file": "/landing/brain-workers-dark-1400.webp",
+          "format": "webp",
+          "width": 1400,
+          "height": 862,
+          "bytes": 41146
+        },
+        {
+          "file": "/landing/brain-workers-dark-2000.webp",
+          "format": "webp",
+          "width": 2000,
+          "height": 1232,
+          "bytes": 63776
+        }
+      ]
+    },
+    {
+      "id": "brain-proof-dark",
+      "section": "brain",
+      "alt": "MediMind Control Center in dark theme, Proof tab: the map of administrative jobs the brain covers (closing findings, record correction checks, missing charges, claim pre-checks, payment matching, appeal drafts, closing packs, ministry records), the worker that covers each, its department and its current level. In development, demo data.",
+      "width": 1356,
+      "height": 1260,
+      "aspectRatio": "1356 / 1260",
+      "fallback": "/landing/brain-proof-dark-1356.jpg",
+      "avif": "/landing/brain-proof-dark-800.avif 800w, /landing/brain-proof-dark-1356.avif 1356w",
+      "webp": "/landing/brain-proof-dark-800.webp 800w, /landing/brain-proof-dark-1356.webp 1356w",
+      "sizes": "(min-width: 900px) 680px, 100vw",
+      "files": [
+        {
+          "file": "/landing/brain-proof-dark-800.avif",
+          "format": "avif",
+          "width": 800,
+          "height": 743,
+          "bytes": 18961
+        },
+        {
+          "file": "/landing/brain-proof-dark-1356.avif",
+          "format": "avif",
+          "width": 1356,
+          "height": 1260,
+          "bytes": 14436
+        },
+        {
+          "file": "/landing/brain-proof-dark-1356.jpg",
+          "format": "jpg",
+          "width": 1356,
+          "height": 1260,
+          "bytes": 154587
+        },
+        {
+          "file": "/landing/brain-proof-dark-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 743,
+          "bytes": 48100
+        },
+        {
+          "file": "/landing/brain-proof-dark-1356.webp",
+          "format": "webp",
+          "width": 1356,
+          "height": 1260,
+          "bytes": 89968
+        }
+      ]
+    },
+    {
+      "id": "brain-money-dark",
+      "section": "brain",
+      "alt": "MediMind Control Center in dark theme money panel: missing charges, claims that would be returned, open payment lines with the open difference in lari, and appealable denials with their value. In development, demo data.",
+      "width": 2000,
+      "height": 338,
+      "aspectRatio": "2000 / 338",
+      "fallback": "/landing/brain-money-dark-1400.jpg",
+      "avif": "/landing/brain-money-dark-800.avif 800w, /landing/brain-money-dark-1400.avif 1400w, /landing/brain-money-dark-2000.avif 2000w",
+      "webp": "/landing/brain-money-dark-800.webp 800w, /landing/brain-money-dark-1400.webp 1400w, /landing/brain-money-dark-2000.webp 2000w",
+      "sizes": "(min-width: 1200px) 1100px, 100vw",
+      "files": [
+        {
+          "file": "/landing/brain-money-dark-800.avif",
+          "format": "avif",
+          "width": 800,
+          "height": 135,
+          "bytes": 3908
+        },
+        {
+          "file": "/landing/brain-money-dark-1400.avif",
+          "format": "avif",
+          "width": 1400,
+          "height": 237,
+          "bytes": 7267
+        },
+        {
+          "file": "/landing/brain-money-dark-2000.avif",
+          "format": "avif",
+          "width": 2000,
+          "height": 338,
+          "bytes": 12493
+        },
+        {
+          "file": "/landing/brain-money-dark-1400.jpg",
+          "format": "jpg",
+          "width": 1400,
+          "height": 237,
+          "bytes": 25187
+        },
+        {
+          "file": "/landing/brain-money-dark-800.webp",
+          "format": "webp",
+          "width": 800,
+          "height": 135,
+          "bytes": 6110
+        },
+        {
+          "file": "/landing/brain-money-dark-1400.webp",
+          "format": "webp",
+          "width": 1400,
+          "height": 237,
+          "bytes": 12076
+        },
+        {
+          "file": "/landing/brain-money-dark-2000.webp",
+          "format": "webp",
+          "width": 2000,
+          "height": 338,
+          "bytes": 18836
+        }
+      ]
     }
   ]
 }

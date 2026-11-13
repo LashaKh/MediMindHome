@@ -95,3 +95,28 @@ Same recipe as above: headless Chromium, 1440 px wide, 2x, English UI, owner tes
 - `brain-inbox`: the staff inbox filtered to Brain shows the prepared cards, but every card title begins with a real branch name (one in Georgian), and opening a card shows "The brief could not load" instead of the Approve / Edit / Reject view. Not usable yet.
 - `brain-morning-brief`: already contained in `brain-control-center`; a separate crop added nothing.
 - Dark twins of `hero-bed-board`, `patient-chart`, `lab-orders`, `billing-funding`, `ai-chat-answer`: the light originals are older deck screenshots of a previous UI version and of specific demo patients. The current bed board prints a real branch name and address on every department card, and the patient screens would need a new patient choice and new crops, so "same framing" is not possible. Lane C should tone the frame for these in night mode.
+
+## Round 5 captures 2026-11-13 (light/dark pairs, English only)
+
+Same recipe (headless Chromium, 1440 px, 2x, top bar cropped, 800/1400/2000 AVIF+WebP plus JPEG). Every id below exists as a light and a `-dark` pair with identical crop boxes. Nothing was created or changed in the product: only navigation, tabs, the task-type filter and view toggles (Grid/Board) were used. Brain screens come from the `brain-stage-1` worktree on port 3011 (server stopped afterwards).
+
+**English via DOM text replacement (client side only, in the headless page, nothing saved or sent).** The test data is Georgian in many places. Before each shot the visible strings were replaced with plain English: ward and room names ("Cardiology", "Coronary intensive care unit", "Room 101", "Bed 1"), the branch line ("Central hospital / First floor"), drug names translated literally ("Nolpaza 40 mg (pantoprazole) N84 tab", "Fresh frozen plasma", "Fentanyl citrate Kalceks 0.05 mg/ml 2 ml"), every Georgian patient name ("Demo Patient A" … consistent within a frame, identical in light and dark), and the brain branch names ("Central hospital", "North branch"). Numbers, statuses and times are untouched. A check after replacement listed no Georgian left inside the crop.
+
+| id (+ `-dark`) | Size | Route | What it shows | DOM replacement |
+|---|---|---|---|---|
+| `bed-board-grid` | 2352x1696 | `/emr/medications/mar` → Cardiology → Grid | Ward header (7 rooms, 18 patients, 75% occupancy) and rooms of bed cards: occupied (red), cleaning required, available (green). | yes |
+| `medication-timeline` | 2352x2026 | same ward → Board | Ward medication board: overdue doses (red, "20 h late") and due-now doses (blue) with drug, dose, route and time. Replaces the old sparse 24 h grid; no patient-level MAR in the test system has a full day of doses (all show "No active medications" or cancelled marks). | yes |
+| `patient-overview` | 2690x1125 | patient card overview of the synthetic "Giorgi Demo-Patient" (identity row cropped) | Visit summary, allergy status, reason for visit, vitals with HR 108 and RR 22 flagged. | no (already English) |
+| `brain-control-center` | 2292x1685 | Control Center overview | Data gaps, money and flow panels with red late counts. Replaces the round 4 crop. | branch names |
+| `brain-morning-brief` | 2292x895 | Control Center overview | 10 decisions waiting, morning brief tiles. | no |
+| `brain-inbox` | 1118x1192 (portrait) | task inbox, type = Brain | Seven prepared worker cards with red "late N". | branch names |
+| `brain-workers` | 2340x1441 | Control Center → Workers | Three workers with level dials; branch box now reads "Central hospital" (round 4 used a blank mask). | branch names |
+| `brain-proof` | 2298x1646 | Control Center → Proof | Job map with both branch columns of levels; now full width (round 4 was a 1356 px crop). | branch names |
+
+**Skipped, with reasons**
+- `revenue-kpis`: the revenue cycle dashboard shows "No financial KPI data", a "--" denial rate and tiny charts; A/R aging contradicts itself (GEL 0.00 tiles over a GEL 314,358 chart); payer mix is empty.
+- `lab-board`: the board view is not populated; the list shows ten rows of the same "complete blood count" with TEST barcodes and a "3 critical alerts, oldest 749 h" banner.
+- `clinical-record`: no test patient has a populated medication list, a high-alert drug or an interaction alert; the richest English chart is used as `patient-overview` instead.
+- `brain-patient-recommendations`: the proactive recommendations panel (`ProactiveCasePanel`) is not mounted in any screen of the main checkout or the brain worktree; "Open MediMind Brain" opens an empty chat.
+- `scene-*`: OR board, command center hub, nursing station, analytics and charge board were checked. They are sparse in the test data, full of `[TEST]` labels, or show error states, so none passes the homepage test.
+- Still in Georgian from earlier rounds (do not use): `warehouse-stock`(-dark), and the deck shots `hero-bed-board`, `billing-funding`, `lab-orders`, `patient-chart`. `brain-money`(-dark) has a blank branch cell, not Georgian.

@@ -60,6 +60,8 @@ export interface OpsTile {
   tag: string;
   screen: Screen;
   frame: number;
+  /** Where the crop sits inside a capture of a different shape: 0 = left / top, 1 = right / bottom. */
+  focus?: { x: number; y: number };
 }
 
 const patientChart = shot(

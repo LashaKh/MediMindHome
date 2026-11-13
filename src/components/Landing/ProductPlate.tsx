@@ -306,11 +306,14 @@ export const OpsTileView: React.FC<{ tile: OpsTile; className?: string; windowCl
   windowClassName,
 }) => {
   const manifest = useLandingManifest();
-  // The window keeps one shape (tile.frame) whatever the capture's size: the left part of a wide screen, the top of a tall one.
+  // The window keeps one shape (tile.frame) whatever the capture's size; `focus` says where the densest part sits (0 = left/top, 1 = right/bottom).
   const base = manifest.get(tile.screen.id) ?? tile.screen.image;
   const ratio = base.width / base.height;
-  const crop =
-    ratio >= tile.frame ? { x: 0, y: 0, w: tile.frame / ratio, h: 1 } : { x: 0, y: 0, w: 1, h: ratio / tile.frame };
+  const w = Math.min(1, tile.frame / ratio);
+  const h = Math.min(1, ratio / tile.frame);
+  const fx = tile.focus?.x ?? 0;
+  const fy = tile.focus?.y ?? 0;
+  const crop = { x: (1 - w) * fx, y: (1 - h) * fy, w, h };
   return (
     <figure className={cn('lc-stage lc-stage--small lc-tile m-0 flex min-w-0 flex-col', className)}>
       <figcaption className="px-6 pt-6 md:px-7 md:pt-7">

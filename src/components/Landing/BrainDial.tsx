@@ -79,10 +79,12 @@ export const BrainDial: React.FC<{ intro?: React.ReactNode }> = ({ intro }) => {
   const activeD = useTransform(angle, (a) => arc(R, START, a));
   const knobX = useTransform(angle, (a) => polar(R, a).x);
   const knobY = useTransform(angle, (a) => polar(R, a).y);
-  const needleX1 = useTransform(angle, (a) => polar(84, a).x);
-  const needleY1 = useTransform(angle, (a) => polar(84, a).y);
-  const needleX2 = useTransform(angle, (a) => polar(R - 18, a).x);
-  const needleY2 = useTransform(angle, (a) => polar(R - 18, a).y);
+  const needle = useTransform(angle, (a) => {
+    const tip = polar(R - 22, a);
+    const l = polar(82, a - 1.6);
+    const r = polar(82, a + 1.6);
+    return `${l.x},${l.y} ${tip.x},${tip.y} ${r.x},${r.y}`;
+  });
 
   const set = useCallback((next: number) => setLevel(Math.max(0, Math.min(MAX, next))), []);
 
@@ -202,25 +204,51 @@ export const BrainDial: React.FC<{ intro?: React.ReactNode }> = ({ intro }) => {
             className="absolute inset-0 h-full w-full overflow-visible"
             aria-hidden="true"
           >
-            {/* Instrument ticks */}
-            {Array.from({ length: 31 }, (_, i) => {
-              const a = START + (i * SWEEP) / 30;
+            <defs>
+              <radialGradient id="lc-dial-hub" cx="50%" cy="38%" r="70%">
+                <stop offset="0%" stopColor="var(--mm-raised)" />
+                <stop offset="100%" stopColor="var(--mm-surface)" />
+              </radialGradient>
+              <linearGradient id="lc-dial-arc" gradientUnits="userSpaceOnUse" x1={CX - R} y1={CY + R} x2={CX + R} y2={CY - R}>
+                <stop offset="0%" stopColor="var(--mm-system)" stopOpacity={0.55} />
+                <stop offset="100%" stopColor="var(--mm-system)" />
+              </linearGradient>
+            </defs>
+            {/* Bezel: two hairlines that close the instrument */}
+            <circle cx={CX} cy={CY} r={R + 30} fill="none" stroke="var(--mm-line)" strokeWidth={1} />
+            <circle cx={CX} cy={CY} r={R + 33} fill="none" stroke="var(--mm-line)" strokeWidth={0.5} strokeOpacity={0.6} />
+            {/* Scale: a fine tick every 3 degrees, a long one at each step */}
+            {Array.from({ length: SWEEP / 3 + 1 }, (_, i) => {
+              const a = START + i * 3;
+              const major = Math.abs((a - START) % STEP) < 0.01;
+              const mid = !major && i % 5 === 0;
               const p0 = polar(R + 12, a);
-              const p1 = polar(R + (i % 5 === 0 ? 20 : 16), a);
+              const p1 = polar(R + (major ? 25 : mid ? 19 : 16), a);
               return (
-                <line key={i} x1={p0.x} y1={p0.y} x2={p1.x} y2={p1.y} stroke="var(--mm-line)" strokeWidth={1.25} />
+                <line
+                  key={i}
+                  x1={p0.x}
+                  y1={p0.y}
+                  x2={p1.x}
+                  y2={p1.y}
+                  stroke={major ? 'var(--mm-muted)' : 'var(--mm-line)'}
+                  strokeWidth={major ? 1.25 : 1}
+                />
               );
             })}
+            {/* Inner scale ring */}
+            <path d={arc(R - 15, START, START + SWEEP)} fill="none" stroke="var(--mm-line)" strokeWidth={1} strokeDasharray="1 5" />
             {/* Track: solid where a person always decides, dashed past the signature line */}
             <path d={arc(R, START, 0)} fill="none" stroke="var(--mm-muted)" strokeOpacity={0.45} strokeWidth={2} />
             <path d={arc(R, 0, START + SWEEP)} fill="none" stroke="var(--mm-muted)" strokeOpacity={0.55} strokeWidth={2} strokeDasharray="2 7" strokeLinecap="round" />
             {/* Active arc: the system's share of the work */}
-            <motion.path d={activeD} fill="none" stroke="var(--mm-system)" strokeWidth={10} strokeLinecap="round" opacity={0.16} />
-            <motion.path d={activeD} fill="none" stroke="var(--mm-system)" strokeWidth={3.5} strokeLinecap="round" />
-            {/* Hub */}
-            <circle cx={CX} cy={CY} r={78} fill="var(--mm-surface)" stroke="var(--mm-line)" strokeWidth={1} />
-            {/* Needle */}
-            <motion.line x1={needleX1} y1={needleY1} x2={needleX2} y2={needleY2} stroke="var(--mm-system)" strokeWidth={1.5} opacity={0.7} />
+            <motion.path d={activeD} fill="none" stroke="var(--mm-system)" strokeWidth={12} strokeLinecap="round" opacity={0.14} />
+            <motion.path d={activeD} fill="none" stroke="url(#lc-dial-arc)" strokeWidth={3.5} strokeLinecap="round" />
+            {/* Hub: a lit face with a hairline inner ring */}
+            <circle cx={CX} cy={CY} r={80} fill="url(#lc-dial-hub)" stroke="var(--mm-line)" strokeWidth={1} />
+            <circle cx={CX} cy={CY} r={71} fill="none" stroke="var(--mm-line)" strokeWidth={0.75} strokeDasharray="0.75 3.5" />
+            {/* Needle: tapered, from the hub's rim to just short of the track */}
+            <motion.polygon points={needle} fill="var(--mm-system)" opacity={0.85} />
             {/* Step detents */}
             {LEVELS.map((l, i) => {
               const p = polar(R, angleOf(i));
@@ -238,10 +266,12 @@ export const BrainDial: React.FC<{ intro?: React.ReactNode }> = ({ intro }) => {
               );
             })}
             {/* The signature line: fixed, amber, never moves */}
+            <line x1={signInner.x} y1={signInner.y} x2={signOuter.x} y2={signOuter.y} stroke="var(--mm-human)" strokeWidth={9} strokeLinecap="round" opacity={0.16} />
             <line x1={signInner.x} y1={signInner.y} x2={signOuter.x} y2={signOuter.y} stroke="var(--mm-human)" strokeWidth={3} strokeLinecap="round" />
             {/* Knob */}
             <motion.circle cx={knobX} cy={knobY} r={20} fill="var(--mm-system)" opacity={0.14} />
             <motion.circle cx={knobX} cy={knobY} r={11} fill="var(--mm-surface)" stroke="var(--mm-system)" strokeWidth={3} />
+            <motion.circle cx={knobX} cy={knobY} r={3} fill="var(--mm-system)" />
           </svg>
 
           {/* Signature line label */}

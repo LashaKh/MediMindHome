@@ -45,7 +45,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
   const accentNode = accent ? <span className="mm-accent-text">{accent}</span> : null;
 
   return (
-    <div className={cn('max-w-4xl', centered ? 'mx-auto text-center' : 'text-left', className)}>
+    <div className={cn('max-w-4xl 2xl:max-w-5xl', centered ? 'mx-auto text-center' : 'text-left', className)}>
       {eyebrow && <EyebrowBadge label={eyebrow} tone={eyebrowTone} className="mb-5" />}
       <Tag id={id} className={Tag === 'h1' ? 'mm-display' : 'mm-h2'}>
         {accentFirst && accentNode}

@@ -7,13 +7,19 @@ interface ThemeState {
   toggleTheme: () => void;
 }
 
-/** Stored choice from the toggle, else light (the default). Storage can throw in private mode. */
+/** The device's preference (prefers-color-scheme); light when it cannot be read. */
+const deviceTheme = (): Theme =>
+  typeof window !== 'undefined' && window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+
+/** Stored choice from the toggle, else the device's preference. Storage can throw in private mode. */
 export const readStoredTheme = (): Theme => {
   try {
-    return localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
+    const stored = localStorage.getItem('theme');
+    if (stored === 'dark' || stored === 'light') return stored;
   } catch {
-    return 'light';
+    // Storage unavailable: fall through to the device's preference.
   }
+  return deviceTheme();
 };
 
 const applyTheme = (theme: Theme) => {

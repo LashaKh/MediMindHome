@@ -9,8 +9,8 @@ const linkClass =
   'inline-flex min-h-[44px] items-center text-mm-body underline-offset-4 transition-colors hover:text-mm-ink hover:underline';
 
 /**
- * Footer: the ink canvas continues from #contact, so the page ends in one
- * night. The company line in the display voice, the FHIR line in the
+ * Footer: the navy tone continues from #contact (daylight in the light
+ * theme, the ink canvas in the dark theme). The logo follows the theme. The company line in the display voice, the FHIR line in the
  * system voice, four links (44px targets), copyright.
  */
 export const Footer: React.FC = () => (
@@ -18,7 +18,7 @@ export const Footer: React.FC = () => (
     <div className={dEdge}>
       <div className="flex flex-col gap-10 border-t border-mm-line py-12 md:flex-row md:items-end md:justify-between md:py-16">
         <div>
-          <MediMindLogo variant="icon" size="md" tone="dark" />
+          <MediMindLogo variant="icon" size="md" />
           <p className={cn(dDisplay, 'mt-6 text-[1.75rem] leading-tight text-mm-ink md:text-[2.25rem]')}>
             {footer.line.map((sentence, i) => (
               <span key={sentence} className="block sm:inline">

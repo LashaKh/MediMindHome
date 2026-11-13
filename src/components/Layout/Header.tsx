@@ -13,10 +13,11 @@ import { trackLanding } from '../../lib/tracking';
  * Site header: logo, five section links, the primary button, theme toggle and
  * a phone menu.
  *
- * It takes the tone of whatever is under it: ink with light text over ink
- * sections, light with ink text over light ones, switching at once (no colour
- * transition, so never a muddy in-between) with one crisp hairline. At the top
- * of the landing page it is transparent on the ink hero. No blur, no shadow.
+ * It takes the surface of whatever section is under it (white, pale or navy;
+ * the tokens already carry the theme, so the same code is right by day and
+ * by night), switching at once (no colour transition, so never a muddy
+ * in-between) with one crisp hairline. At the top of the landing page it is
+ * transparent over the hero. The logo follows the theme. No blur, no shadow.
  *
  * On `/` the links are plain fragment links (#belief), so the browser scrolls
  * and the sections' scroll-margin keeps the heading clear of this bar. On any
@@ -33,7 +34,7 @@ type Tone = 'navy' | 'white' | 'pale';
  * (`mm-tone-navy|white|pale`, set by SectionShell and the footer) of the
  * element just below its bottom edge, so ink sections get an ink header and
  * light sections a light one, whatever the section order. `atTop` (page not
- * scrolled, ink under it) makes it transparent over the hero.
+ * scrolled) makes it transparent over the hero.
  */
 const useHeaderTone = (headerRef: React.RefObject<HTMLElement>) => {
   const [state, setState] = useState<{ tone: Tone; atTop: boolean }>({ tone: 'navy', atTop: true });
@@ -117,9 +118,8 @@ export const Header: React.FC = () => {
 
   const closeMenu = () => setMenuOpen(false);
   const isDark = theme === 'dark';
-  // Transparent only on the ink hero before scrolling; otherwise solid in the tone beneath it.
-  const transparent = isLanding && atTop && tone === 'navy' && !menuOpen;
-  const logoTone: 'dark' | 'light' = isDark || tone === 'navy' ? 'dark' : 'light';
+  // Transparent over the hero before scrolling; otherwise solid in the tone beneath it.
+  const transparent = isLanding && atTop && !menuOpen;
 
   /** Link to a section: a real fragment link on `/`, a router link to `/#id` elsewhere. */
   const sectionLink = (hash: string, className: string, children: React.ReactNode, onClick?: () => void) =>
@@ -149,7 +149,7 @@ export const Header: React.FC = () => {
     >
       <div className="mx-auto flex h-16 max-w-page items-center justify-between gap-4 px-4 sm:px-6 md:h-20 lg:px-8">
         <Link to="/" className="flex shrink-0 items-center rounded-md" aria-label={headerContent.logoLabel}>
-          <MediMindLogo variant="horizontal" size="md" tone={logoTone} />
+          <MediMindLogo variant="horizontal" size="md" />
         </Link>
 
         <nav aria-label={headerContent.navLabel} className="hidden lg:block">

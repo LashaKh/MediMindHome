@@ -5,7 +5,7 @@ import { buttonClass } from './button';
 
 /**
  * Slim sticky call-to-action bar, phones only (hidden from md up), on the
- * ink canvas in both themes so it reads over light and dark sections alike.
+ * navy tone: daylight in the light theme, the ink canvas in the dark theme.
  * Appears once the hero has scrolled off the top and hides again when the
  * contact section (the form) reaches the screen. Rendered once by Landing.tsx;
  * section builders do not need to add it.

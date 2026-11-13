@@ -9,7 +9,7 @@ import '@fontsource/ibm-plex-mono/500.css';
 import './index.css';
 import { readStoredTheme } from './hooks/useTheme';
 
-// Light by default; a stored choice from the theme toggle wins.
+// Follows the device (prefers-color-scheme); a stored choice from the theme toggle wins.
 document.documentElement.classList.toggle('dark', readStoredTheme() === 'dark');
 
 // Force English language instead of reading from localStorage

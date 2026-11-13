@@ -1,0 +1,18 @@
+# medimind.md
+# Public pages are open to every crawler. Private areas (admin, investor
+# briefing, gated walkthrough and demo media) stay out of search.
+# Link-only decks are not listed here on purpose: they send
+# "X-Robots-Tag: noindex" instead, so their names are not advertised.
+
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /briefing
+Disallow: /walkthrough
+Disallow: /founder-demo
+Disallow: /media/
+Disallow: /share/
+Disallow: /signin
+Disallow: /signup
+
+Sitemap: https://medimind.md/sitemap.xml

@@ -39,7 +39,7 @@ const HANDIN = [
   ["failed", "ვინ ვერ შევიდა (WebMed № და მიზეზი)"],
   ["prs", "გახსნილი PR-ები"],
   ["asks", "რა მოითხოვეს თანამშრომლებმა, რასაც MediMind ჯერ არ აკეთებს"],
-  ["roster", "სიის შესწორებები (აკლია, აღარ მუშაობს, სხვა როლი)"],
+  ["roster", "სიის შესწორებები: ვინ აკლია სიას, ვინ აღარ მუშაობს, ვის აქვს სხვა როლი (ხარვეზები აქ არ იწერება)"],
   ["other", "სხვა შენიშვნა"],
 ] as const;
 
@@ -86,7 +86,7 @@ export function TestDay() {
       {!token ? (
         <Gate onIn={(s) => { saveSession(s); setToken(s.token); }} />
       ) : !name ? (
-        <NameStep onName={(n) => { saveName(n); setName(n); }} />
+        <NameStep token={token} onName={(n) => { saveName(n); setName(n); }} />
       ) : (
         <Portal token={token} name={name} onLogout={logout} onRename={() => setName("")} />
       )}
@@ -98,16 +98,17 @@ function Gate({ onIn }: { onIn: (s: { token: string; exp: number }) => void }) {
   const [pw, setPw] = useState("");
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
+  const [show, setShow] = useState(false);
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!pw || busy) return;
+    if (!pw.trim() || busy) return;
     setBusy(true);
     setErr("");
-    const r = await tdLogin(pw);
+    const r = await tdLogin(pw.trim());
     setBusy(false);
     if (typeof r === "object") return onIn(r);
     setErr({
-      wrong: "პაროლი არასწორია.",
+      wrong: "პაროლი არასწორია. შეამოწმეთ ასოების სიდიდე და კლავიატურის ენა.",
       locked: "ძალიან ბევრი მცდელობა. სცადეთ 15 წუთში.",
       off: "პორტალი ჯერ არ არის ჩართული. დაუკავშირდით დამფუძნებელს.",
       network: "სერვერს ვერ დავუკავშირდით. შეამოწმეთ ინტერნეტი.",
@@ -119,22 +120,46 @@ function Gate({ onIn }: { onIn: (s: { token: string; exp: number }) => void }) {
       <div className="td-kicker">MediMind · მხოლოდ გუნდისთვის</div>
       <h1>მცხეთის სატესტო დღე</h1>
       <label className="td-label" htmlFor="td-pw">გუნდის პაროლი</label>
-      <input id="td-pw" className="td-input" type="password" autoComplete="current-password" autoFocus
-        value={pw} onChange={(e) => setPw(e.target.value)} />
+      {/* Phones capitalise and "correct" words: switched off, and the password can be shown to check it. */}
+      <div className="td-pw">
+        <input id="td-pw" className="td-input" type={show ? "text" : "password"} autoComplete="current-password" autoFocus
+          autoCapitalize="none" autoCorrect="off" spellCheck={false} aria-invalid={!!err}
+          value={pw} onChange={(e) => { setPw(e.target.value); setErr(""); }} />
+        <button type="button" className="td-mini" onClick={() => setShow(!show)} aria-pressed={show}>{show ? "დამალვა" : "ჩვენება"}</button>
+      </div>
       {err && <p className="td-err" role="alert">{err}</p>}
       <button className="td-btn td-btn-primary" disabled={busy || !pw}>{busy ? "მოწმდება…" : "შესვლა"}</button>
     </form>
   );
 }
 
-function NameStep({ onName }: { onName: (n: string) => void }) {
+// Who is ticking. Type the first letters of a name or a WebMed user and pick from the list (that also opens the
+// person's card), or keep what you typed. The list loads in the background; without it, free text still works.
+function NameStep({ token, onName }: { token: string; onName: (n: string) => void }) {
   const [n, setN] = useState("");
+  const [users, setUsers] = useState<User[]>([]);
+  const nav = useNavigate();
+  useEffect(() => { tdState(token).then((s) => setUsers(s.users)).catch(() => {}); }, [token]);
+  const qq = n.trim().toLowerCase();
+  const found = qq ? users.filter((u) => u.name.toLowerCase().split(/\s+/).some((w) => w.startsWith(qq)) || u.name.toLowerCase().startsWith(qq)
+    || (u.logins ?? "").toLowerCase().split(/[\s,]+/).some((l) => l.startsWith(qq))).slice(0, 6) : [];
+  const pick = (u: User) => { onName(u.name); nav(`${BASE}/d/${u.dept_slug}#u${u.id}`); };
   return (
-    <form className="td-gate" onSubmit={(e) => { e.preventDefault(); if (n.trim()) onName(n.trim()); }}>
-      <h1>თქვენი სახელი</h1>
-      <p className="td-muted">ყველა მონიშვნასთან ჩანს, ვინ გააკეთა. ერთხელ ჩაწერეთ.</p>
-      <input className="td-input" autoFocus value={n} onChange={(e) => setN(e.target.value)} placeholder="მაგ.: ნინო ბ." maxLength={60} />
-      <button className="td-btn td-btn-primary" disabled={!n.trim()}>დაწყება</button>
+    <form className="td-gate" onSubmit={(e) => { e.preventDefault(); if (found.length === 1) pick(found[0]); else if (n.trim()) onName(n.trim()); }}>
+      <h1>ვინ ხართ?</h1>
+      <p className="td-muted">აკრიფეთ თქვენი სახელი ან WebMed-ის მომხმარებელი და აირჩიეთ სიიდან. ეს მხოლოდ ერთხელ დაგჭირდებათ ამ მოწყობილობაზე.</p>
+      <input className="td-input" autoFocus value={n} onChange={(e) => setN(e.target.value)} placeholder="სახელი ან WebMed-ის მომხმარებელი" maxLength={60}
+        autoCapitalize="none" autoCorrect="off" spellCheck={false} />
+      {found.length > 0 && (
+        <ul className="td-find-list td-find-static" role="listbox">
+          {found.map((u) => (
+            <li key={u.id}><button type="button" onClick={() => pick(u)}>
+              <span className="td-find-main"><span className="td-find-name">{u.name}</span><span className="td-sub">{u.roles}{u.logins ? ` · ${u.logins}` : ""}</span></span>
+            </button></li>
+          ))}
+        </ul>
+      )}
+      <button className="td-btn td-btn-primary" disabled={!n.trim()}>{found.length === 1 ? "ეს მე ვარ" : "დაწყება"}</button>
     </form>
   );
 }
@@ -243,7 +268,7 @@ function Portal({ token, name, onLogout, onRename }: { token: string; name: stri
       </main>
       {state && (
         <button className="td-fab" onClick={() => setReport({ dept: slug })}>
-          <span aria-hidden="true">!</span> ხარვეზი
+          <span aria-hidden="true">!</span> ხარვეზის ჩაწერა
         </button>
       )}
       {state && report && <ReportSheet state={state} ctx={report} write={write} onClose={() => setReport(null)} />}
@@ -261,7 +286,8 @@ function Skeleton() {
 }
 
 // ───────────────────────── stats ─────────────────────────
-interface DeptStat { total: number; done: number; partial: number; signed: number; failed: number; flowsDone: number; open: number }
+// idle = signed in, but neither the main screen nor an action is ticked: someone has to go and walk them through.
+interface DeptStat { total: number; done: number; partial: number; signed: number; failed: number; flowsDone: number; open: number; idle: number }
 type DeptState = "empty" | "todo" | "going" | "done";
 function deptState(s: DeptStat, flows: number): DeptState {
   if (s.total === 0 && s.flowsDone === 0) return "empty";
@@ -278,7 +304,7 @@ function useStats(state: State) {
     const by = new Map<string, DeptStat>();
     for (const d of state.departments) {
       by.set(d.slug, {
-        total: 0, done: 0, partial: 0, signed: 0, failed: 0, open: 0,
+        total: 0, done: 0, partial: 0, signed: 0, failed: 0, open: 0, idle: 0,
         flowsDone: d.flows.filter((_, i) => flows.get(`${d.slug}:${i}`)?.done).length,
       });
     }
@@ -291,12 +317,13 @@ function useStats(state: State) {
       else if (c && !problem(c) && (c.signed_in || c.key_screen_ok || c.actions_ok)) s.partial++;
       if (c?.signed_in) s.signed++;
       if (problem(c)) s.failed++;
+      if (c?.signed_in && !c.key_screen_ok && !c.actions_ok) s.idle++;
     }
     for (const i of state.issues) if (i.dept_slug && isActive(i)) { const s = by.get(i.dept_slug); if (s) s.open++; }
     const all = [...by.values()].reduce((a, s) => ({
       total: a.total + s.total, done: a.done + s.done, partial: a.partial + s.partial, signed: a.signed + s.signed,
-      failed: a.failed + s.failed, flowsDone: a.flowsDone + s.flowsDone, open: a.open,
-    }), { total: 0, done: 0, partial: 0, signed: 0, failed: 0, flowsDone: 0, open: state.issues.filter(isActive).length });
+      failed: a.failed + s.failed, flowsDone: a.flowsDone + s.flowsDone, open: a.open, idle: a.idle + s.idle,
+    }), { total: 0, done: 0, partial: 0, signed: 0, failed: 0, flowsDone: 0, open: state.issues.filter(isActive).length, idle: 0 });
     return { checks, flows, by, all };
   }, [state]);
 }
@@ -461,7 +488,7 @@ function Picker({ state }: { state: State }) {
 }
 
 // ───────────────────────── department page ─────────────────────────
-const SECTIONS = [["people", "ხალხი"], ["flows", "მოქმედებები"], ["issues", "ხარვეზები"], ["handin", "ჩაბარება"], ["help", "დახმარება"]] as const;
+const SECTIONS = [["flows", "მოქმედებები"], ["people", "ხალხი"], ["issues", "ხარვეზები"], ["help", "დახმარება"], ["handin", "ჩაბარება"]] as const;
 const SECTION_IDS = SECTIONS.map(([id]) => id);
 
 // Which section is on screen, so the contents can highlight it.
@@ -500,12 +527,12 @@ function DeptPage({ state, slug, write }: { state: State; slug: string; write: W
   useEffect(() => {
     if (!hash.startsWith("#u")) { window.scrollTo(0, 0); return; }
     const id = hash.slice(1);
-    const t = setTimeout(() => {
-      document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "center" });
-      setFlash(id);
-    }, 60);
+    const to = (smooth: boolean) => document.getElementById(id)?.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "center" });
+    const t = setTimeout(() => { to(true); setFlash(id); }, 60);
+    // Cards above may still grow (fonts, wrapping) while the first scroll runs: settle once more.
+    const t1 = setTimeout(() => to(false), 700);
     const t2 = setTimeout(() => setFlash(null), 2600);
-    return () => { clearTimeout(t); clearTimeout(t2); };
+    return () => { clearTimeout(t); clearTimeout(t1); clearTimeout(t2); };
   }, [slug, hash]);
   if (!dept) return <div className="td-pad"><div className="td-state"><b>განყოფილება ვერ მოიძებნა</b><Link className="td-btn td-btn-ghost" to={BASE}>ყველა განყოფილება</Link></div></div>;
   const s = stats.by.get(slug)!;
@@ -544,8 +571,8 @@ function DeptPage({ state, slug, write }: { state: State; slug: string; write: W
             <h1>{dept.title}</h1>
           </div>
           {dept.warn && <p className="td-warn">{dept.warn}</p>}
-          <People users={users} checks={stats.checks} write={write} dept={dept} flash={flash} />
           <Flows dept={dept} flows={stats.flows} write={write} />
+          <People users={users} checks={stats.checks} write={write} dept={dept} flash={flash} />
           <section id="issues" className="td-section">
             <div className="td-h2row">
               <h2>ხარვეზები <span className="td-count">{issues.length}</span></h2>
@@ -553,7 +580,6 @@ function DeptPage({ state, slug, write }: { state: State; slug: string; write: W
             </div>
             <IssueList issues={issues} state={state} write={write} hideDept />
           </section>
-          <Handin dept={dept} note={state.notes.find((n) => n.dept_slug === slug)} summary={`${s.signed} შევიდა · ${s.done} / ${s.total} სრულად`} write={write} />
           <section id="help" className="td-section td-help">
             <h2>დახმარება</h2>
             <div className="td-help-grid">
@@ -565,6 +591,7 @@ function DeptPage({ state, slug, write }: { state: State; slug: string; write: W
               <Teach dept={dept} />
             </div>
           </section>
+          <Handin dept={dept} note={state.notes.find((n) => n.dept_slug === slug)} summary={`${s.signed} შევიდა · ${s.done} / ${s.total} სრულად`} write={write} />
         </div>
         <aside className="td-side td-side-dept">
           <div className="td-card td-side-sum">
@@ -751,8 +778,8 @@ function Flows({ dept, flows, write }: { dept: Department; flows: Map<string, Fl
     }), setFlow);
   return (
     <section id="flows" className="td-section">
-      <h2>სარკისებური მოქმედებები <span className="td-count">{dept.flows.length}</span></h2>
-      <p className="td-hint">რასაც თანამშრომელი WebMed-ში აკეთებს, იმავე პაციენტზე გაიმეორეთ MediMind-ში. მონიშნეთ, როცა „შედეგი ეკრანზე“ ნამდვილად ჩანს.</p>
+      <h2>მოქმედებები <span className="td-count">{dept.flows.filter((_, i) => flows.get(`${dept.slug}:${i}`)?.done).length}/{dept.flows.length}</span></h2>
+      <p className="td-hint">რასაც თანამშრომელი WebMed-ში აკეთებს, იმავე პაციენტზე გაიმეორეთ MediMind-ში. როცა შედეგს ეკრანზე ნამდვილად ხედავთ, დააჭირეთ „შესრულდა“. არ გამოვიდა? დააჭირეთ „პრობლემა“.</p>
       {dept.flows.length === 0 ? <p className="td-empty">ამ განყოფილებას მოქმედებების სია არ აქვს.</p> : (
         <ol className="td-flows">
           {dept.flows.map((f, i) => {
@@ -773,16 +800,19 @@ function FlowItem({ f, i, c, dept, onDone, onNote }: { f: Department["flows"][nu
   return (
     <li className={`td-card td-flow ${c?.done ? "is-done" : ""}`}>
       <div className="td-flow-head">
-        <button className={`td-tick td-tick-sq ${c?.done ? "on" : ""}`} aria-pressed={!!c?.done} onClick={onDone} aria-label={`შესრულდა: ${f.w}`}>
-          <span className="td-box">{c?.done ? "✓" : ""}</span>
-        </button>
         <button className="td-flow-title" onClick={() => setOpen(!open)} aria-expanded={open}>
           <span className="td-num">{i + 1}</span><span>{q(f.w)}</span><span className="td-caret" aria-hidden="true">{open ? "▾" : "▸"}</span>
         </button>
-        <button className="td-mini td-mini-prob" onClick={() => report({ dept, screen: q(f.w) })} aria-label={`პრობლემა: ${f.w}`}>!</button>
       </div>
       {open && <ol className="td-flow-body">{f.steps.map((s) => <li key={s}>{q(s)}</li>)}</ol>}
       <div className="td-result"><b>შედეგი ეკრანზე:</b> {q(f.result)}</div>
+      <div className="td-acts">
+        <button className={`td-ok ${c?.done ? "on" : ""}`} aria-pressed={!!c?.done} aria-label={`შესრულდა: ${f.w}`}
+          onClick={() => { onDone(); if (!c?.done) toast.success(`შესრულდა: ${q(f.w)}`, { duration: 1500 }); }}>
+          <span className="td-box">✓</span>{c?.done ? "შესრულდა" : "მონიშნეთ: შესრულდა"}
+        </button>
+        <button className="td-prob" onClick={() => report({ dept, screen: q(f.w) })}>პრობლემა</button>
+      </div>
       {(open || c?.note) && (
         <textarea className="td-input td-note" rows={1} placeholder="შენიშვნა (რა არ გამოვიდა)" value={note}
           onChange={(e) => setNote(e.target.value)} onBlur={() => { if ((note.trim() || null) !== (c?.note ?? null)) onNote(note.trim() || null); }} />
@@ -809,6 +839,7 @@ function Teach({ dept }: { dept: Department }) {
 }
 
 function Handin({ dept, note, summary, write }: { dept: Department; note?: Note; summary: string; write: Write }) {
+  const report = useReport();
   const [form, setForm] = useState<Record<string, string>>(note?.handin ?? {});
   const [dirty, setDirty] = useState(false);
   useEffect(() => { if (!dirty) setForm(note?.handin ?? {}); }, [note, dirty]);
@@ -823,7 +854,11 @@ function Handin({ dept, note, summary, write }: { dept: Department; note?: Note;
     <section id="handin" className="td-section">
       {/* Folded during the day: five optional boxes are only for the end of the shift. */}
       <details className="td-card td-form td-handin" open={!!note}>
-        <summary><h2>დღის ბოლოს ჩააბარეთ</h2>{note?.updated_by && <span className="td-by">{note.updated_by} · {hhmm(note.updated_at)}</span>}</summary>
+        <summary><h2>დღის ბოლოს ჩააბარეთ <span className="td-tag">MediMind-ის წარმომადგენელი</span></h2>{note?.updated_by && <span className="td-by">{note.updated_by} · {hhmm(note.updated_at)}</span>}</summary>
+        <div className="td-handin-warn">
+          <span>პრობლემები აქ არ იწერება. ჩაწერეთ ისინი ხარვეზად, რომ გუნდმა დაინახოს და გაასწოროს.</span>
+          <button type="button" className="td-btn td-btn-amber td-btn-sm" onClick={() => report({ dept: dept.slug })}>ხარვეზის ჩაწერა</button>
+        </div>
         <p className="td-sum"><b>შემოწმდა:</b> {summary}. შეავსეთ მხოლოდ ის, რაც გაქვთ.</p>
         <div className="td-handin-grid">
           {HANDIN.map(([k, label]) => (
@@ -1013,10 +1048,12 @@ function Overview({ state }: { state: State }) {
   const states = state.departments.map((d) => deptState(by.get(d.slug)!, d.flows.length));
   const nDone = states.filter((s) => s === "done").length;
   const nTodo = states.filter((s) => s === "todo").length;
+  // Signed in, then nothing: people with only "signed in", or a department with sign-ins and no action ticked.
+  const chase = state.departments.filter((d) => { const s = by.get(d.slug)!; return s.idle > 0 || (s.signed > 0 && s.flowsDone === 0); });
   // Departments that need someone first: failures and open issues on top, then the ones not started.
   const rows = [...state.departments].sort((a, b) => {
     const sa = by.get(a.slug)!, sb = by.get(b.slug)!;
-    const w = (s: DeptStat, d: Department) => s.failed * 3 + s.open * 2 + (deptState(s, d.flows.length) === "todo" ? 1 : 0);
+    const w = (s: DeptStat, d: Department) => s.failed * 3 + s.open * 2 + s.idle * 2 + (s.signed > 0 && s.flowsDone === 0 ? 2 : 0) + (deptState(s, d.flows.length) === "todo" ? 1 : 0);
     return w(sb, b) - w(sa, a);
   });
 
@@ -1052,13 +1089,13 @@ function Overview({ state }: { state: State }) {
       <div className="td-ov-grid">
         <div className="td-card td-table-wrap">
           <table className="td-table">
-            <thead><tr><th>განყოფილება</th><th>მდგომარეობა</th><th>სრულად</th><th>ვერ</th><th>მოქმ.</th><th>ხარვ.</th></tr></thead>
+            <thead><tr><th>განყოფილება</th><th>მდგომარეობა</th><th>სრულად</th><th title="შევიდა, მეტი არაფერი">მხოლოდ შევიდა</th><th>ვერ</th><th>მოქმ.</th><th>ხარვ.</th></tr></thead>
             <tbody>
               {rows.map((d) => { const s = by.get(d.slug)!; const st = deptState(s, d.flows.length); return (
                 <tr key={d.slug}>
                   <td><Link to={`${BASE}/d/${d.slug}`}>{d.title}</Link><Bar s={s} /></td>
                   <td><span className={`td-pill p-${st}`}>{STATE_KA[st]}</span></td>
-                  <td>{s.done}/{s.total}</td><td className={s.failed ? "red" : "zero"}>{s.failed}</td>
+                  <td>{s.done}/{s.total}</td><td className={s.idle ? "amber" : "zero"}>{s.idle}</td><td className={s.failed ? "red" : "zero"}>{s.failed}</td>
                   <td>{s.flowsDone}/{d.flows.length}</td><td className={s.open ? "amber" : "zero"}>{s.open}</td>
                 </tr>
               ); })}
@@ -1066,6 +1103,15 @@ function Overview({ state }: { state: State }) {
           </table>
         </div>
         <div className="td-sections">
+          <section className={`td-card ${chase.length ? "td-chase" : ""}`}>
+            <h2>შევიდნენ, მერე არაფერი <span className="td-count">{chase.length}</span></h2>
+            {chase.length === 0 ? <p className="td-sub">ასეთი განყოფილება არ არის.</p> : (
+              <ul className="td-list">{chase.map((d) => { const s = by.get(d.slug)!; return (
+                <li key={d.slug}><Link to={`${BASE}/d/${d.slug}`}><b>{d.title}</b></Link>
+                  <div className="td-sub">{[s.idle > 0 && `${s.idle} ადამიანმა მხოლოდ „შევიდა“ მონიშნა`, s.flowsDone === 0 && "არცერთი მოქმედება არ მონიშნულა"].filter(Boolean).join(" · ")}</div></li>
+              ); })}</ul>
+            )}
+          </section>
           <section className="td-card">
             <h2>ვერ შევიდა <span className="td-count">{failed.length}</span></h2>
             {failed.length === 0 ? <p className="td-sub">ჯერ არავინ.</p> : (

@@ -47,6 +47,7 @@ const CHECKS: UserCheck[] = [
   ...byDept("pharm").map((u) => check(u, { signed_in: true, key_screen_ok: true, actions_ok: true })),
   check(byDept("therapy")[0], { signed_in: true, key_screen_ok: true }),
   check(byDept("icu")[2], { sign_in_failed: true }),
+  ...byDept("reg").slice(0, 4).map((u) => check(u, { signed_in: true })),
 ];
 const FLOW_CHECKS: FlowCheck[] = [
   ...[0, 1, 2, 3].map((i) => ({ dept_slug: "er", flow_idx: i, done: true, note: null, checked_by: "ტესტერი", checked_at: at(30 - i) })),

@@ -5,7 +5,7 @@ const ROLE_KA = {
   clinicalDirector: 'კლინიკური დირექტორი', manager: 'მენეჯერი', hrManager: 'კადრების მენეჯერი', registrar: 'რეგისტრატორი',
   cashier: 'მოლარე', ambulatoryRegistrar: 'ამბულატორიის რეგისტრატორი', billingManager: 'ბილინგის მენეჯერი', billingHead: 'ბილინგის უფროსი',
   labWorker: 'ლაბორანტი', labHead: 'ლაბორატორიის უფროსი', radTech: 'რენტგენ-ლაბორანტი', pharmacist: 'ფარმაცევტი',
-  departmentWarehouseManager: 'განყ. მარაგები', branchWarehouseManager: 'ფილიალის საწყობი', viewAdmin: 'მხოლოდ ნახვა',
+  departmentWarehouseManager: 'განყ. მარაგები', branchWarehouseManager: 'ფილიალის საწყობი',
 };
 // First screen after sign-in, by the strongest role the person holds (first match wins).
 const FIRST_SCREEN = [
@@ -16,7 +16,6 @@ const FIRST_SCREEN = [
   ['surgeon', '„პაციენტის ჰაბი"'], ['physician', '„პაციენტის ჰაბი"'], ['departmentHead', '„პაციენტის ჰაბი"'],
   ['seniorNurse', '„საექთნო პოსტი"'], ['nurse', '„საექთნო პოსტი"'],
   ['clinicalDirector', '„მართვის პანელი"'], ['manager', '„მართვის პანელი"'], ['hrManager', '„მართვის პანელი"'],
-  ['viewAdmin', '„პაციენტის ჰაბი"'],
 ];
 
 // ---------- mirrored actions: [WebMed action, [MediMind steps]] ----------
@@ -225,7 +224,6 @@ const SPOT = {
   clinicalDirector: ['„მართვის პანელი" იხსნება', 'ანგარიშები იხსნება'],
   manager: ['„მართვის პანელი" იხსნება', 'ანგარიშები იხსნება'],
   hrManager: ['კადრები და გრაფიკი იხსნება'],
-  viewAdmin: ['პაციენტის ისტორია იხსნება', 'გადახდები და დავალიანება ჩანს'],
 };
 const SPOT_ORDER = FIRST_SCREEN.map(([r]) => r).concat('departmentWarehouseManager');
 const spotFor = (codes) => SPOT[SPOT_ORDER.find((r) => codes.includes(r))] ?? ['პაციენტის ბარათის გახსნა'];

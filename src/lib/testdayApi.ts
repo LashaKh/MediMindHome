@@ -31,31 +31,11 @@ export interface State {
   issues: Issue[]; seats: Seat[]; notes: Note[]; at: string;
 }
 
-// Local fake data (Vite dev server + ?mock only). import.meta.env.DEV is false in production builds,
-// so the mock module is never fetched there. ?mock=error and ?mock=slow show the error and loading states.
-const MOCK = (() => {
-  if (!import.meta.env.DEV) return false;
-  try {
-    const m = new URLSearchParams(window.location.search).get("mock");
-    if (m !== null) sessionStorage.setItem("td-mock", m);
-    return sessionStorage.getItem("td-mock") !== null;
-  } catch { return false; }
-})();
-const mock = () => import("./testdayMock");
-
 export class TdError extends Error {
   constructor(readonly status: number, code: string) { super(code); }
 }
 
 async function post<T>(body: Record<string, unknown>, token?: string): Promise<T> {
-  if (MOCK) {
-    const m = await mock();
-    if (body.action === "login") return { token: "mock", exp: Date.now() / 1000 + 50_000 } as T;
-    try {
-      if (body.action === "state") return (await m.mockState()) as T;
-      return { row: await m.mockWrite(String(body.action), body) } as T;
-    } catch { throw new TdError(0, "network"); }
-  }
   let res: Response;
   try {
     res = await fetch(API, {

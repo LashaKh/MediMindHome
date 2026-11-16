@@ -37,7 +37,7 @@ const MORNING = [
 // Five stages people see. Day-1 values fold in: pr reads as "in work", wontfix as "answered".
 type Stage = "open" | "work" | "fixed" | "closed" | "answered";
 const stage = (s: IssueStatus): Stage => (s === "pr" ? "work" : s === "wontfix" ? "answered" : s);
-const STAGE_KA: Record<Stage, string> = { open: "ღია", work: "მუშავდება", fixed: "გასწორდა, გადაამოწმეთ", closed: "დადასტურდა", answered: "პასუხი მიიღო" };
+const STAGE_KA: Record<Stage, string> = { open: "ღია", work: "მუშავდება", fixed: "გასწორდა, გადაამოწმეთ", closed: "დადასტურდა", answered: "პასუხი გაცემულია" };
 const STATUS_KA: Record<IssueStatus, string> = { ...STAGE_KA, pr: STAGE_KA.work, wontfix: STAGE_KA.answered };
 const TEAM_STAGES: Stage[] = ["open", "work", "fixed", "answered", "closed"];
 // Waiting for the tester first, then open, in work, and the finished ones last.
@@ -1024,8 +1024,6 @@ function IssueItem({ i, dept, update, team, compact }: { i: Issue; dept: string 
         <span className={`td-chip c-${st}`}>{STAGE_KA[st]}</span>
         <span className="td-sub">#{i.id} · {hhmm(i.created_at)}{dept ? ` · ${dept}` : ""}</span>
       </div>
-      {/* "In work" read as "nobody fixed it": say plainly where the fix is (Codex-reviewed wording). */}
-      {st === "work" && <div className="td-work-note">გამოსწორება უკვე დავწერეთ. დღეს ღამით Shadow-ზე დავაყენებთ, შემდეგ შევამოწმებთ და მოვნიშნავთ, რომ მოგვარდა.</div>}
       <div className="td-issue-what">{i.what}</div>
       {!compact && i.expected && <div className="td-sub"><b>ელოდნენ:</b> {i.expected}</div>}
       {!compact && (i.person || i.screen || i.reported_by) && <div className="td-sub td-issue-who">{[i.person, i.screen, i.reported_by && `ჩაწერა: ${i.reported_by}`].filter(Boolean).join(" · ")}</div>}
@@ -1079,7 +1077,7 @@ function IssuesPage({ state, write }: { state: State; write: Write }) {
         <div className="td-row td-filters">
           <div className="td-chips">
             {([["fixed", "გადასამოწმებელი"], ["open", "ღია"], ["work", "მუშავდება"], ["closed", "მოგვარდა"], ["all", "ყველა"]] as const).map(([k, l]) => (
-              <button key={k} className={`f-${k} ${filter === k ? "on" : ""}`} aria-pressed={filter === k} onClick={() => setFilter(k)}>{l} <span>{count(k)}</span></button>
+              <button key={k} className={filter === k ? "on" : ""} aria-pressed={filter === k} onClick={() => setFilter(k)}>{l} <span>{count(k)}</span></button>
             ))}
           </div>
           <select className="td-input td-input-sm td-dept-filter" value={dept} onChange={(e) => setDept(e.target.value)} aria-label="განყოფილება">

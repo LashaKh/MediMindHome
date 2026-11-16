@@ -506,24 +506,3 @@ textarea.td-input { resize: vertical; min-height: 44px; }
 .td-person .td-issues-compact .td-recheck .td-btn { min-height: 30px; padding: 2px 10px; font-size: 12.5px; }
 .td-person .td-issues-compact .td-sub { font-size: 11.5px; }
 .td-person .td-name { white-space: normal; overflow-wrap: anywhere; line-height: 1.25; }
-
-/* Stage colours (founder 01:28: solved must look solved, not gray): open red, in work blue, re-check amber, solved green. */
-.c-open { background: var(--red-bg); color: var(--red); }
-.c-work { background: var(--blue-bg); color: var(--blue); }
-.c-fixed { background: var(--amber-bg); color: #8a5a10; }
-.c-closed, .c-answered { background: var(--green); color: #fff; }
-.c-closed::before, .c-answered::before { content: "✓"; margin-right: 4px; font-weight: 800; }
-.td-issue.sg-open { border-left-color: var(--red); }
-.td-issue.sg-work { border-left-color: var(--blue); }
-.td-issue.sg-fixed { border-left-color: var(--amber); box-shadow: 0 0 0 1px #ecd3a3 inset; }
-.td-issue.sg-closed, .td-issue.sg-answered { border-left-color: var(--green); opacity: 1; background: #f7fcf9; }
-.td-answer.a-answered { background: var(--green-bg); }
-.td-work-note { font-size: 13px; color: #1f4f80; background: var(--blue-bg); border-radius: 8px; padding: 6px 10px; }
-.td-issues-compact .td-work-note { font-size: 12px; padding: 4px 8px; }
-.td-seg .s-fixed { background: var(--amber); }
-.td-seg .s-answered { background: var(--green); }
-.td-chips button.f-closed span { color: var(--green); font-weight: 700; }
-.td-chips button.f-closed.on { background: var(--green); border-color: var(--green); }
-.td-chips button.f-closed.on span { color: #fff; }
-.td-chips button.f-fixed span { color: #8a5a10; font-weight: 700; }
-.td-chips button.f-work span { color: var(--blue); font-weight: 700; }

@@ -5,7 +5,7 @@
 //
 //   zsh -ic 'node scripts/testday-seed.mjs'          # needs SUPABASE_ACCESS_TOKEN (exported in ~/.zshrc)
 //   node scripts/testday-seed.mjs --dry               # counts only, sends nothing
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { join } from 'node:path';
 import { FIRST_SCREEN, ROLE_KA, SEAT_NOTE, SEAT_ROLE_KA, SHEETS, TEST_SEATS, spotFor } from './testday-content.mjs';
@@ -16,8 +16,12 @@ const DRY = process.argv.includes('--dry');
 
 // Same mapping as the PDF guide (rep-guide-pdf.mjs), so the page and the paper agree.
 const shortDept = (name) => String(name).replace(/^\./u, '').replace(/\s*\(მცხეთა - მ\.ს\.ც\.\)\s*$/u, '').trim();
-const matrix = JSON.parse(readFileSync(join(SEATS, 'matrix.json'), 'utf8')).rows;
-const roster = new Map(JSON.parse(readFileSync(join(SEATS, 'roster.json'), 'utf8')).people.map((p) => [String(p.code), p]));
+// Shared WebMed logins with no person behind them (AP 129 runs the warehouse, VIEW reads histories) never reach the HR
+// roster, so they live in a private extra file: { matrix: [matrix-shaped rows], people: [roster-shaped rows] }.
+const EXTRA = join(SEATS, 'extra-users.json');
+const extra = existsSync(EXTRA) ? JSON.parse(readFileSync(EXTRA, 'utf8')) : { matrix: [], people: [] };
+const matrix = [...JSON.parse(readFileSync(join(SEATS, 'matrix.json'), 'utf8')).rows, ...extra.matrix];
+const roster = new Map([...JSON.parse(readFileSync(join(SEATS, 'roster.json'), 'utf8')).people, ...extra.people].map((p) => [String(p.code), p]));
 const loginText = (l) => (typeof l === 'string' ? l : l?.username ?? l?.login ?? '');
 const titleText = (t) => (typeof t === 'string' ? t : t?.name ?? t?.title ?? '');
 const collator = new Intl.Collator('ka');

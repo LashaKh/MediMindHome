@@ -1024,7 +1024,10 @@ function IssueItem({ i, dept, update, team, compact }: { i: Issue; dept: string 
       {!compact && i.expected && <div className="td-sub"><b>ელოდნენ:</b> {i.expected}</div>}
       {!compact && (i.person || i.screen || i.reported_by) && <div className="td-sub td-issue-who">{[i.person, i.screen, i.reported_by && `ჩაწერა: ${i.reported_by}`].filter(Boolean).join(" · ")}</div>}
       {i.recheck_note && (st === "open" || st === "work") && <div className="td-recheck-note"><b>ტესტერი:</b> {i.recheck_note}</div>}
-      {i.answer && !answerOpen && <div className={`td-answer a-${st}`}><b>{st === "answered" ? "პასუხი:" : "რა შევცვალეთ:"}</b> {i.answer}</div>}
+      {/* Testers see our answer only once it is true (fixed, confirmed, answered); a prepared answer on an open or
+          in-work item shows to the team alone, marked as not yet visible. */}
+      {i.answer && !answerOpen && (st === "fixed" || st === "closed" || st === "answered") && <div className={`td-answer a-${st}`}><b>{st === "answered" ? "პასუხი:" : "რა შევცვალეთ:"}</b> {i.answer}</div>}
+      {i.answer && !answerOpen && team && (st === "open" || st === "work") && <div className="td-answer a-draft"><b>მომზადებული პასუხი (ტესტერი ჯერ ვერ ხედავს):</b> {i.answer}</div>}
       {st === "fixed" && <Recheck i={i} update={update} />}
       {team && (
         <div className="td-team">

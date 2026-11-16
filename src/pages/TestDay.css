@@ -438,6 +438,7 @@ textarea.td-input { resize: vertical; min-height: 44px; }
 .td-issue-head { justify-content: flex-start; }
 .td-answer { font-size: 14px; background: var(--green-bg); border-radius: 8px; padding: 8px 10px; white-space: pre-wrap; }
 .td-answer.a-answered { background: var(--pale); }
+.td-answer.a-draft { background: #fff; border: 1px dashed var(--line); color: var(--muted); }
 .td-recheck-note { font-size: 13.5px; background: var(--red-bg); color: #8a1f1f; border-radius: 8px; padding: 6px 10px; }
 .td-recheck { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
 .td-recheck .td-input { flex: 1 1 200px; }

@@ -1,9 +1,10 @@
-// Mtskheta test-day portal (medimind.md/admin/testday), Mon 2026-11-16.
-// One idea: a department's day on one scrolling page you tick as you go.
-// Gate → tester name → department picker / department page / issues / overview.
+// Mtskheta test-day portal (medimind.md/admin/testday).
+// One idea: a ward checklist you work with your thumb. Find the person, tap "all fine", tap "problem".
+// Gate → tester name → departments / department page / issues / overview. A problem is reported from anywhere in
+// one sheet that already knows who, where and which action; only "what happened" is typed.
 // All data (names, WebMed logins, seats) comes from the gated testday API; this file holds only UI wording.
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import {
   loadName, loadSession, saveName, saveSession, TdError, tdLogin, tdState, tdWrite,
@@ -28,6 +29,11 @@ const MISSION = [
   ["სარკე", "რასაც თანამშრომელი WebMed-ში აკეთებს, იმავე პაციენტზე გაიმეორეთ MediMind-ში."],
   ["ხარვეზები", "ყოველი ხარვეზი ჩაწერეთ აქ, ხარვეზების გვერდზე."],
 ];
+const MORNING = [
+  "სიის ყველა ადამიანი შედის თავისი WebMed-ის მომხმარებლით და პაროლით. მონიშნეთ „შევიდა“.",
+  "ვინც ვერ შევიდა: მონიშნეთ „ვერ შევიდა“ და შენიშვნაში ჩაწერეთ შეცდომის ზუსტი ტექსტი.",
+  "ვინც შევიდა, მაგრამ ძირითადი ეკრანი არ ჩანს: შენიშვნაში ჩაწერეთ, რა ჩანს, და დაარეგისტრირეთ ხარვეზი.",
+];
 const STATUS_KA: Record<IssueStatus, string> = { open: "ღია", pr: "PR გახსნილია", fixed: "გასწორდა", wontfix: "არ სჭირდება" };
 const HANDIN = [
   ["failed", "ვინ ვერ შევიდა (WebMed № და მიზეზი)"],
@@ -42,6 +48,9 @@ const q = (s: string) => s.replace(/„([^"„]*)"/gu, "„$1“");
 const hhmm = (iso: string) => new Date(iso).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: "Asia/Tbilisi" });
 const done = (c?: UserCheck) => !!c && c.signed_in && c.key_screen_ok && c.actions_ok;
 const problem = (c?: UserCheck) => !!c && c.sign_in_failed;
+const isActive = (i: Issue) => i.status === "open" || i.status === "pr";
+// A real mouse means a desk computer: there the search box may take the focus without opening a phone keyboard.
+const finePointer = () => typeof window !== "undefined" && window.matchMedia?.("(pointer: fine)").matches;
 
 async function copy(text: string) {
   try {
@@ -73,7 +82,7 @@ export function TestDay() {
 
   return (
     <div className={redact ? "td td-redact" : "td"}>
-      <Toaster position="bottom-center" toastOptions={{ style: { fontFamily: "inherit", fontSize: 14 } }} />
+      <Toaster position="top-center" toastOptions={{ style: { fontFamily: "inherit", fontSize: 14 } }} />
       {!token ? (
         <Gate onIn={(s) => { saveSession(s); setToken(s.token); }} />
       ) : !name ? (
@@ -109,7 +118,6 @@ function Gate({ onIn }: { onIn: (s: { token: string; exp: number }) => void }) {
       <img src="/favicon.svg" alt="" width={44} height={44} />
       <div className="td-kicker">MediMind · მხოლოდ გუნდისთვის</div>
       <h1>მცხეთის სატესტო დღე</h1>
-      <p className="td-muted">ორშაბათი, 16 ნოემბერი · 18 განყოფილება</p>
       <label className="td-label" htmlFor="td-pw">გუნდის პაროლი</label>
       <input id="td-pw" className="td-input" type="password" autoComplete="current-password" autoFocus
         value={pw} onChange={(e) => setPw(e.target.value)} />
@@ -133,10 +141,15 @@ function NameStep({ onName }: { onName: (n: string) => void }) {
 
 // ───────────────────────── data + writes ─────────────────────────
 type Write = <T>(action: string, payload: Record<string, unknown>, optimistic: (s: State) => State, apply: (s: State, row: T) => State) => void;
+// What the problem sheet already knows when it opens: department, person, action. Only "what happened" is typed.
+interface ReportCtx { dept?: string; person?: string; screen?: string }
+const ReportContext = createContext<(ctx: ReportCtx) => void>(() => {});
+const useReport = () => useContext(ReportContext);
 
 function Portal({ token, name, onLogout, onRename }: { token: string; name: string; onLogout: () => void; onRename: () => void }) {
   const [state, setState] = useState<State | null>(null);
   const [loadErr, setLoadErr] = useState(false);
+  const [report, setReport] = useState<ReportCtx | null>(null);
   const pending = useRef(0);
   const { pathname } = useLocation();
 
@@ -191,24 +204,35 @@ function Portal({ token, name, onLogout, onRename }: { token: string; name: stri
 
   const parts = pathname.replace(BASE, "").split("/").filter(Boolean);
   const view = parts[0] ?? "";
+  const slug = view === "d" ? parts[1] : undefined;
+  const openCount = state ? state.issues.filter(isActive).length : null;
 
   return (
-    <>
+    <ReportContext.Provider value={setReport}>
       <header className="td-top">
-        <Link to={BASE} className="td-brand"><img src="/favicon.svg" alt="" width={24} height={24} /><span>სატესტო დღე</span></Link>
-        <nav className="td-nav">
-          <Link to={BASE} className={view === "" || view === "d" ? "on" : ""}>განყოფილებები</Link>
-          <Link to={`${BASE}/issues`} className={view === "issues" ? "on" : ""}>ხარვეზები{state ? <b>{state.issues.filter((i) => i.status === "open" || i.status === "pr").length}</b> : null}</Link>
-          <Link to={`${BASE}/overview`} className={view === "overview" ? "on" : ""}>მიმოხილვა</Link>
-        </nav>
-        <button className="td-me" onClick={onRename} title="სახელის შეცვლა">{name}</button>
+        <div className="td-top-in">
+          <Link to={BASE} className="td-brand"><img src="/favicon.svg" alt="" width={24} height={24} /><span>სატესტო დღე</span></Link>
+          <nav className="td-nav">
+            <Link to={BASE} className={view === "" || view === "d" ? "on" : ""}>განყოფილებები</Link>
+            <Link to={`${BASE}/issues`} className={view === "issues" ? "on" : ""}>ხარვეზები{openCount ? <b>{openCount}</b> : null}</Link>
+            <Link to={`${BASE}/overview`} className={view === "overview" ? "on" : ""}>მიმოხილვა</Link>
+          </nav>
+          {state && view !== "" && <div className="td-top-find"><FindPerson state={state} compact /></div>}
+          <button className="td-me" onClick={onRename} title="სახელის შეცვლა">{name}</button>
+        </div>
       </header>
-      {loadErr && <div className="td-banner">კავშირი გაწყდა. ბოლო მონაცემებს ვაჩვენებ, ვცდი ხელახლა.</div>}
+      {loadErr && state && <div className="td-banner" role="status">კავშირი გაწყდა. ბოლო მონაცემებს ვაჩვენებ, ვცდი ხელახლა.</div>}
       <main className="td-main">
         {!state ? (
-          <p className="td-muted td-pad">{loadErr ? "სერვერს ვერ დავუკავშირდით. ვცდი ხელახლა…" : "იტვირთება…"}</p>
-        ) : view === "d" && parts[1] ? (
-          <DeptPage state={state} slug={parts[1]} write={write} />
+          loadErr ? (
+            <div className="td-state" role="alert">
+              <b>სერვერს ვერ დავუკავშირდით</b>
+              <span>შეამოწმეთ ინტერნეტი. ვცდილობთ ხელახლა ყოველ 5 წამში.</span>
+              <button className="td-btn td-btn-ghost" onClick={refresh}>ახლავე ცდა</button>
+            </div>
+          ) : <Skeleton />
+        ) : slug ? (
+          <DeptPage state={state} slug={slug} write={write} />
         ) : view === "issues" ? (
           <IssuesPage state={state} write={write} />
         ) : view === "overview" ? (
@@ -217,19 +241,44 @@ function Portal({ token, name, onLogout, onRename }: { token: string; name: stri
           <Picker state={state} />
         )}
       </main>
-    </>
+      {state && (
+        <button className="td-fab" onClick={() => setReport({ dept: slug })}>
+          <span aria-hidden="true">!</span> ხარვეზი
+        </button>
+      )}
+      {state && report && <ReportSheet state={state} ctx={report} write={write} onClose={() => setReport(null)} />}
+    </ReportContext.Provider>
+  );
+}
+
+function Skeleton() {
+  return (
+    <div className="td-pad" aria-busy="true" aria-label="იტვირთება">
+      <div className="td-sk td-sk-h" />
+      <div className="td-grid">{Array.from({ length: 8 }, (_, i) => <div key={i} className="td-sk td-sk-card" />)}</div>
+    </div>
   );
 }
 
 // ───────────────────────── stats ─────────────────────────
+interface DeptStat { total: number; done: number; partial: number; signed: number; failed: number; flowsDone: number; open: number }
+type DeptState = "empty" | "todo" | "going" | "done";
+function deptState(s: DeptStat, flows: number): DeptState {
+  if (s.total === 0 && s.flowsDone === 0) return "empty";
+  if (s.done === s.total && s.flowsDone === flows) return "done";
+  if (s.signed + s.failed + s.flowsDone + s.partial > 0) return "going";
+  return "todo";
+}
+const STATE_KA: Record<DeptState, string> = { empty: "სია ცარიელია", todo: "არ დაწყებულა", going: "მიმდინარეობს", done: "დასრულდა" };
+
 function useStats(state: State) {
   return useMemo(() => {
     const checks = new Map(state.userChecks.map((c) => [c.user_id, c]));
     const flows = new Map(state.flowChecks.map((f) => [`${f.dept_slug}:${f.flow_idx}`, f]));
-    const by = new Map<string, { total: number; done: number; signed: number; failed: number; flowsDone: number; open: number }>();
+    const by = new Map<string, DeptStat>();
     for (const d of state.departments) {
       by.set(d.slug, {
-        total: 0, done: 0, signed: 0, failed: 0, open: 0,
+        total: 0, done: 0, partial: 0, signed: 0, failed: 0, open: 0,
         flowsDone: d.flows.filter((_, i) => flows.get(`${d.slug}:${i}`)?.done).length,
       });
     }
@@ -239,89 +288,183 @@ function useStats(state: State) {
       const c = checks.get(u.id);
       s.total++;
       if (done(c)) s.done++;
+      else if (c && !problem(c) && (c.signed_in || c.key_screen_ok || c.actions_ok)) s.partial++;
       if (c?.signed_in) s.signed++;
       if (problem(c)) s.failed++;
     }
-    for (const i of state.issues) if (i.dept_slug && (i.status === "open" || i.status === "pr")) by.get(i.dept_slug)!.open++;
-    return { checks, flows, by };
+    for (const i of state.issues) if (i.dept_slug && isActive(i)) { const s = by.get(i.dept_slug); if (s) s.open++; }
+    const all = [...by.values()].reduce((a, s) => ({
+      total: a.total + s.total, done: a.done + s.done, partial: a.partial + s.partial, signed: a.signed + s.signed,
+      failed: a.failed + s.failed, flowsDone: a.flowsDone + s.flowsDone, open: a.open,
+    }), { total: 0, done: 0, partial: 0, signed: 0, failed: 0, flowsDone: 0, open: state.issues.filter(isActive).length });
+    return { checks, flows, by, all };
   }, [state]);
 }
 
-function Bar({ value, total }: { value: number; total: number }) {
-  const pct = total ? Math.round((value / total) * 100) : 0;
-  return <div className="td-bar" aria-hidden="true"><i style={{ width: `${pct}%` }} /></div>;
+// One bar, four colours: fully checked, started, could not sign in, not yet touched.
+function Bar({ s }: { s: Pick<DeptStat, "total" | "done" | "partial" | "failed"> }) {
+  const pct = (n: number) => (s.total ? `${(n / s.total) * 100}%` : "0%");
+  return (
+    <div className="td-bar" aria-hidden="true">
+      <i className="b-done" style={{ width: pct(s.done) }} />
+      <i className="b-part" style={{ width: pct(s.partial) }} />
+      <i className="b-fail" style={{ width: pct(s.failed) }} />
+    </div>
+  );
 }
 
-// ───────────────────────── picker ─────────────────────────
-function Picker({ state }: { state: State }) {
-  const { by } = useStats(state);
-  const [rules, setRules] = useState(false);
+// ───────────────────────── find a person (whole hospital) ─────────────────────────
+// Keyboard first: "/" focuses it anywhere, arrows move, Enter opens. One letter is enough.
+function FindPerson({ state, compact, autoFocus }: { state: State; compact?: boolean; autoFocus?: boolean }) {
+  const { checks } = useStats(state);
+  const nav = useNavigate();
+  const ref = useRef<HTMLInputElement>(null);
   const [find, setFind] = useState("");
+  const [sel, setSel] = useState(0);
+  const [open, setOpen] = useState(false);
   const qq = find.trim().toLowerCase();
-  const found = qq.length < 2 ? [] : state.users.filter((u) => u.name.toLowerCase().includes(qq) || (u.logins ?? "").toLowerCase().includes(qq)).slice(0, 20);
+  const found = useMemo(() => {
+    if (!qq) return [];
+    const hit = (u: User) => {
+      const n = u.name.toLowerCase();
+      if (n.startsWith(qq) || n.split(/\s+/).some((w) => w.startsWith(qq))) return 0;
+      if ((u.logins ?? "").toLowerCase().split(/[\s,]+/).some((l) => l.startsWith(qq))) return 0;
+      return n.includes(qq) || (u.logins ?? "").toLowerCase().includes(qq) ? 1 : 2;
+    };
+    return state.users.map((u) => [u, hit(u)] as const).filter(([, h]) => h < 2).sort((a, b) => a[1] - b[1]).slice(0, 8).map(([u]) => u);
+  }, [qq, state.users]);
   const deptTitle = (slug: string) => state.departments.find((d) => d.slug === slug)?.title ?? "";
-  const all = [...by.values()].reduce((a, s) => ({ total: a.total + s.total, done: a.done + s.done }), { total: 0, done: 0 });
+  const go = (u: User) => { setFind(""); setOpen(false); ref.current?.blur(); nav(`${BASE}/d/${u.dept_slug}#u${u.id}`); };
+
+  useEffect(() => {
+    if (autoFocus && finePointer()) ref.current?.focus();
+    const key = (e: KeyboardEvent) => {
+      const t = e.target as HTMLElement;
+      if (e.key === "/" && !/INPUT|TEXTAREA|SELECT/.test(t.tagName)) { e.preventDefault(); ref.current?.focus(); }
+    };
+    // Only one box listens: the page's own box when there is one, else the top bar's.
+    if (compact && document.querySelector(".td-find-big")) return;
+    document.addEventListener("keydown", key);
+    return () => document.removeEventListener("keydown", key);
+  }, [autoFocus, compact]);
+
   return (
-    <div className="td-pad">
-      <div className="td-hero">
-        <div>
-          <div className="td-kicker">მცხეთა · Shadow</div>
-          <h1>აირჩიეთ განყოფილება</h1>
-          <a className="td-link" href={SHADOW} target="_blank" rel="noreferrer">{SHADOW.replace("https://", "")}</a>
+    <div className={compact ? "td-find td-find-compact" : "td-find td-find-big"} onBlur={(e) => { if (!e.currentTarget.contains(e.relatedTarget)) setOpen(false); }}>
+      <input ref={ref} className="td-input" type="search" enterKeyHint="go" autoComplete="off"
+        placeholder={compact ? "ძებნა: სახელი ან WebMed" : "ვის ეძებთ? სახელი ან WebMed მომხმარებელი"}
+        aria-label="თანამშრომლის ძებნა" value={find}
+        onFocus={() => setOpen(true)}
+        onChange={(e) => { setFind(e.target.value); setSel(0); setOpen(true); }}
+        onKeyDown={(e) => {
+          if (e.key === "ArrowDown") { e.preventDefault(); setSel((i) => Math.min(i + 1, found.length - 1)); }
+          if (e.key === "ArrowUp") { e.preventDefault(); setSel((i) => Math.max(i - 1, 0)); }
+          if (e.key === "Enter" && found[sel]) { e.preventDefault(); go(found[sel]); }
+          if (e.key === "Escape") { setFind(""); ref.current?.blur(); }
+        }} />
+      {!compact && !qq && <kbd className="td-kbd" aria-hidden="true">/</kbd>}
+      {open && qq && (
+        <ul className="td-find-list" role="listbox">
+          {found.length === 0 && <li className="td-find-none">ვერავინ მოიძებნა. სცადეთ გვარი ან WebMed-ის ნომერი.</li>}
+          {found.map((u, i) => {
+            const c = checks.get(u.id);
+            const st = done(c) ? "ok" : problem(c) ? "bad" : c ? "part" : "";
+            return (
+              <li key={u.id} role="option" aria-selected={i === sel}>
+                <button type="button" className={i === sel ? "on" : ""} onMouseEnter={() => setSel(i)} onClick={() => go(u)}>
+                  <span className={`td-dot ${st}`} aria-hidden="true" />
+                  <span className="td-find-main"><span className="td-find-name">{u.name}</span><span className="td-sub">{u.roles}{u.logins ? ` · ${u.logins}` : ""}</span></span>
+                  <span className="td-tag">{deptTitle(u.dept_slug)}</span>
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      )}
+    </div>
+  );
+}
+
+// ───────────────────────── departments (home) ─────────────────────────
+function Picker({ state }: { state: State }) {
+  const { by, all, checks } = useStats(state);
+  const title = (slug: string | null) => state.departments.find((d) => d.slug === slug)?.title ?? "";
+  const failed = state.users.filter((u) => problem(checks.get(u.id)));
+  const open = state.issues.filter(isActive);
+  return (
+    <div className="td-pad td-split">
+      <div className="td-split-main">
+        <div className="td-hero">
+          <div className="td-kicker">მცხეთა · Shadow · <a className="td-link" href={SHADOW} target="_blank" rel="noreferrer">{SHADOW.replace("https://", "")}</a></div>
+          <h1>ვის ამოწმებთ?</h1>
         </div>
-        <div className="td-hero-num"><b>{all.done}</b><span>/ {all.total} შემოწმდა</span></div>
+        <FindPerson state={state} autoFocus />
+        <h2 className="td-grid-h">განყოფილებები</h2>
+        <div className="td-grid">
+          {state.departments.map((d) => {
+            const s = by.get(d.slug)!;
+            const st = deptState(s, d.flows.length);
+            return (
+              <Link key={d.slug} to={`${BASE}/d/${d.slug}`} className={`td-dept st-${st}`}>
+                <div className="td-dept-top">
+                  <span className="td-dept-title">{d.title}</span>
+                  <span className={`td-pill p-${st}`}>{STATE_KA[st]}</span>
+                </div>
+                <div className="td-dept-nums">
+                  <span><b>{s.done}</b>/{s.total} ადამიანი</span>
+                  <span><b>{s.flowsDone}</b>/{d.flows.length} მოქმედება</span>
+                </div>
+                <Bar s={s} />
+                {(s.failed > 0 || s.open > 0) && (
+                  <div className="td-dept-tags">
+                    {s.failed > 0 && <span className="td-tag td-tag-red">{s.failed} ვერ შევიდა</span>}
+                    {s.open > 0 && <span className="td-tag td-tag-amber">{s.open} ხარვეზი</span>}
+                  </div>
+                )}
+              </Link>
+            );
+          })}
+        </div>
       </div>
-      <button className="td-rules-toggle" onClick={() => setRules(!rules)} aria-expanded={rules}>
-        {rules ? "▾" : "▸"} დღის მისია და მთავარი წესი
-      </button>
-      {rules && (
-        <div className="td-card td-rules">
+      <aside className="td-side">
+        <div className="td-card td-side-sum">
+          <div className="td-big"><b>{all.done}</b><span>/ {all.total} შემოწმდა</span></div>
+          <Bar s={all} />
+          <div className="td-legend">
+            <span><i className="b-done" />სრულად {all.done}</span>
+            <span><i className="b-part" />დაწყებული {all.partial}</span>
+            <span><i className="b-fail" />ვერ შევიდა {all.failed}</span>
+          </div>
+          <Link to={`${BASE}/overview`} className="td-link">სრული მიმოხილვა</Link>
+        </div>
+        {(failed.length > 0 || open.length > 0) && (
+          <div className="td-card td-side-list">
+            <h3>ყურადღება სჭირდება</h3>
+            <ul>
+              {failed.slice(0, 4).map((u) => (
+                <li key={`u${u.id}`}><Link to={`${BASE}/d/${u.dept_slug}#u${u.id}`}><span className="td-dot bad" /><span><span className="td-find-name">{u.name}</span><span className="td-sub"> ვერ შევიდა · {title(u.dept_slug)}</span></span></Link></li>
+              ))}
+              {open.slice(0, 4).map((i) => (
+                <li key={`i${i.id}`}><Link to={`${BASE}/issues`}><span className="td-dot warn" /><span><span className="td-clamp">{i.what}</span><span className="td-sub"> {title(i.dept_slug) || "საერთო"}</span></span></Link></li>
+              ))}
+            </ul>
+          </div>
+        )}
+        <details className="td-card td-rules">
+          <summary>დღის მისია და მთავარი წესი</summary>
           <ol className="td-mission">{MISSION.map(([k, t]) => <li key={k}><b>{k}.</b> {t}</li>)}</ol>
           <h3>მთავარი წესი</h3>
           <ul>{RULE.map((r) => <li key={r}>{r}</li>)}</ul>
-        </div>
-      )}
-      <div className="td-find">
-        <input className="td-input" type="search" placeholder="ვის ეძებთ? სახელი ან WebMed მომხმარებელი" value={find} onChange={(e) => setFind(e.target.value)} />
-        {qq.length >= 2 && (found.length === 0 ? <p className="td-empty" style={{ marginTop: 8 }}>ვერ მოიძებნა.</p> : (
-          <ul className="td-find-list">
-            {found.map((u) => (
-              <li key={u.id}><Link to={`${BASE}/d/${u.dept_slug}`} className="td-card"><span><span className="td-find-name">{u.name}</span><div className="td-sub">{u.roles}</div></span><span className="td-tag">{deptTitle(u.dept_slug)}</span></Link></li>
-            ))}
-          </ul>
-        ))}
-      </div>
-      <div className="td-grid">
-        {state.departments.map((d) => {
-          const s = by.get(d.slug)!;
-          return (
-            <Link key={d.slug} to={`${BASE}/d/${d.slug}`} className="td-card td-dept">
-              <div className="td-dept-title">{d.title}</div>
-              <div className="td-dept-nums">
-                <span><b>{s.done}</b> / {s.total} ადამიანი</span>
-                <span>{s.flowsDone} / {d.flows.length} მოქმედება</span>
-              </div>
-              <Bar value={s.done} total={s.total} />
-              <div className="td-dept-tags">
-                {s.failed > 0 && <span className="td-tag td-tag-red">{s.failed} ვერ შევიდა</span>}
-                {s.open > 0 && <span className="td-tag td-tag-amber">{s.open} ღია ხარვეზი</span>}
-                {s.total > 0 && s.done === s.total && <span className="td-tag td-tag-green">ყველა შემოწმდა</span>}
-              </div>
-            </Link>
-          );
-        })}
-      </div>
+        </details>
+      </aside>
     </div>
   );
 }
 
 // ───────────────────────── department page ─────────────────────────
-const SECTIONS = [
-  ["people", "ხალხი"], ["seats", "სატესტო ანგარიშები"], ["morning", "დილის 15 წუთი"],
-  ["flows", "მოქმედებები"], ["teach", "სასწავლო"], ["issues", "ხარვეზები"], ["handin", "ჩაბარება"],
-] as const;
+const SECTIONS = [["people", "ხალხი"], ["flows", "მოქმედებები"], ["issues", "ხარვეზები"], ["handin", "ჩაბარება"], ["help", "დახმარება"]] as const;
+const SECTION_IDS = SECTIONS.map(([id]) => id);
 
-// Which section is on screen, so the sticky contents bar can highlight it.
+// Which section is on screen, so the contents can highlight it.
 function useActiveSection(ids: readonly string[]) {
   const [active, setActive] = useState(ids[0]);
   useEffect(() => {
@@ -329,94 +472,134 @@ function useActiveSection(ids: readonly string[]) {
       let cur = ids[0];
       for (const id of ids) {
         const el = document.getElementById(id);
-        if (el && el.getBoundingClientRect().top < 190) cur = id;
+        if (el && el.getBoundingClientRect().top < 200) cur = id;
       }
       setActive(cur);
     };
     onScroll();
-    // Capture, so it also hears a scrolling body (not only the window).
     document.addEventListener("scroll", onScroll, { passive: true, capture: true });
     return () => document.removeEventListener("scroll", onScroll, { capture: true });
   }, [ids]);
   return active;
 }
-const SECTION_IDS = SECTIONS.map(([id]) => id);
 const jump = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
 
 function DeptPage({ state, slug, write }: { state: State; slug: string; write: Write }) {
   const dept = state.departments.find((d) => d.slug === slug);
   const stats = useStats(state);
   const active = useActiveSection(SECTION_IDS);
-  const [issueOpen, setIssueOpen] = useState(false);
+  const report = useReport();
+  const { hash } = useLocation();
   const tocRef = useRef<HTMLElement>(null);
-  // Keep the highlighted chip in view as the page scrolls.
+  const [flash, setFlash] = useState<string | null>(null);
   useEffect(() => {
     const chip = tocRef.current?.querySelector<HTMLElement>(`[data-id="${active}"]`);
     if (chip && tocRef.current) tocRef.current.scrollLeft = chip.offsetLeft - tocRef.current.offsetLeft - 12;
   }, [active]);
-  useEffect(() => { window.scrollTo(0, 0); }, [slug]);
-  if (!dept) return <p className="td-pad">განყოფილება ვერ მოიძებნა. <Link to={BASE}>უკან</Link></p>;
+  // Arriving from the search (#u<id>): bring that person to the middle of the screen and light the card up.
+  useEffect(() => {
+    if (!hash.startsWith("#u")) { window.scrollTo(0, 0); return; }
+    const id = hash.slice(1);
+    const t = setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "center" });
+      setFlash(id);
+    }, 60);
+    const t2 = setTimeout(() => setFlash(null), 2600);
+    return () => { clearTimeout(t); clearTimeout(t2); };
+  }, [slug, hash]);
+  if (!dept) return <div className="td-pad"><div className="td-state"><b>განყოფილება ვერ მოიძებნა</b><Link className="td-btn td-btn-ghost" to={BASE}>ყველა განყოფილება</Link></div></div>;
   const s = stats.by.get(slug)!;
+  const st = deptState(s, dept.flows.length);
   const users = state.users.filter((u) => u.dept_slug === slug);
+  const issues = state.issues.filter((i) => i.dept_slug === slug);
+  const toc = (cls: string) => (
+    <nav className={cls} aria-label="ნაწილები" ref={cls === "td-toc" ? tocRef : undefined}>
+      {SECTIONS.map(([id, label]) => (
+        <a key={id} data-id={id} href={`#${id}`} className={active === id ? "on" : ""} aria-current={active === id ? "true" : undefined}
+          onClick={(e) => { e.preventDefault(); jump(id); }}>
+          {label}
+          {id === "people" && <small>{s.done}/{s.total}</small>}
+          {id === "flows" && <small>{s.flowsDone}/{dept.flows.length}</small>}
+          {id === "issues" && s.open > 0 && <small className="amber">{s.open}</small>}
+        </a>
+      ))}
+    </nav>
+  );
   return (
     <div>
+      {/* Phone: one sticky bar with name, progress and contents. Desktop uses the side panel instead. */}
       <div className="td-stick">
         <div className="td-stick-row">
           <Link to={BASE} className="td-stick-back" aria-label="ყველა განყოფილება">←</Link>
           <div className="td-stick-title">{dept.title}</div>
           <div className="td-stick-num" title="სრულად შემოწმდა"><b>{s.done}</b>/{s.total}</div>
         </div>
-        <Bar value={s.done} total={s.total} />
-        <nav className="td-toc" aria-label="ნაწილები" ref={tocRef}>
-          {SECTIONS.map(([id, label]) => (
-            <a key={id} data-id={id} href={`#${id}`} className={active === id ? "on" : ""} aria-current={active === id ? "true" : undefined}
-              onClick={(e) => { e.preventDefault(); jump(id); }}>{label}</a>
-          ))}
-        </nav>
+        <div className="td-stick-bar"><Bar s={s} /></div>
+        {toc("td-toc")}
       </div>
-      <div className="td-pad td-dept-sum">
-        <span><b>{s.signed}</b> შევიდა</span>
-        <span className={s.failed ? "red" : ""}><b>{s.failed}</b> ვერ შევიდა</span>
-        <span><b>{s.flowsDone}</b>/{dept.flows.length} მოქმედება</span>
-        <span className={s.open ? "amber" : ""}><b>{s.open}</b> ღია ხარვეზი</span>
-      </div>
-      <button className="td-fab" onClick={() => { if (issueOpen) jump("issues"); else setIssueOpen(true); }}>+ ხარვეზი</button>
-      <div className="td-pad td-sections">
-        {dept.warn && <p className="td-warn">{dept.warn}</p>}
-        <People users={users} checks={stats.checks} write={write} />
-        <Seats dept={dept} state={state} />
-        <Morning />
-        <Flows dept={dept} flows={stats.flows} write={write} />
-        <Teach dept={dept} />
-        <section id="issues" className="td-section">
-          <h2>ხარვეზები</h2>
-          <IssueForm state={state} dept={slug} write={write} open={issueOpen} setOpen={setIssueOpen} />
-          <IssueList issues={state.issues.filter((i) => i.dept_slug === slug)} state={state} write={write} />
-        </section>
-        <Handin dept={dept} note={state.notes.find((n) => n.dept_slug === slug)} summary={`${s.signed} შევიდა · ${s.done} / ${s.total} სრულად`} write={write} />
+      <div className="td-pad td-split">
+        <div className="td-split-main td-sections">
+          <div className="td-dept-head">
+            <Link to={BASE} className="td-back">← ყველა განყოფილება</Link>
+            <h1>{dept.title}</h1>
+          </div>
+          {dept.warn && <p className="td-warn">{dept.warn}</p>}
+          <People users={users} checks={stats.checks} write={write} dept={dept} flash={flash} />
+          <Flows dept={dept} flows={stats.flows} write={write} />
+          <section id="issues" className="td-section">
+            <div className="td-h2row">
+              <h2>ხარვეზები <span className="td-count">{issues.length}</span></h2>
+              <button className="td-btn td-btn-amber" onClick={() => report({ dept: slug })}>+ ხარვეზი</button>
+            </div>
+            <IssueList issues={issues} state={state} write={write} hideDept />
+          </section>
+          <Handin dept={dept} note={state.notes.find((n) => n.dept_slug === slug)} summary={`${s.signed} შევიდა · ${s.done} / ${s.total} სრულად`} write={write} />
+          <section id="help" className="td-section td-help">
+            <h2>დახმარება</h2>
+            <div className="td-help-grid">
+              <div className="td-card">
+                <h3>დილის 15 წუთი</h3>
+                <ol className="td-steps">{MORNING.map((m) => <li key={m}>{m}</li>)}</ol>
+              </div>
+              <Seats dept={dept} state={state} />
+              <Teach dept={dept} />
+            </div>
+          </section>
+        </div>
+        <aside className="td-side td-side-dept">
+          <div className="td-card td-side-sum">
+            <span className={`td-pill p-${st}`}>{STATE_KA[st]}</span>
+            <div className="td-big"><b>{s.done}</b><span>/ {s.total} შემოწმდა</span></div>
+            <Bar s={s} />
+            <div className="td-side-kv">
+              <span><b>{s.signed}</b> შევიდა</span>
+              <span className={s.failed ? "red" : ""}><b>{s.failed}</b> ვერ შევიდა</span>
+              <span><b>{s.flowsDone}</b>/{dept.flows.length} მოქმედება</span>
+              <span className={s.open ? "amber" : ""}><b>{s.open}</b> ღია ხარვეზი</span>
+            </div>
+          </div>
+          {toc("td-vtoc")}
+        </aside>
       </div>
     </div>
   );
 }
 
 type Filter = "all" | "todo" | "problem" | "done";
-function People({ users, checks, write }: { users: User[]; checks: Map<number, UserCheck>; write: Write }) {
+function People({ users, checks, write, dept, flash }: { users: User[]; checks: Map<number, UserCheck>; write: Write; dept: Department; flash: string | null }) {
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState<Filter>("all");
-  const [sort, setSort] = useState<"name" | "todo">("name");
   const list = useMemo(() => {
     const qq = query.trim().toLowerCase();
-    let l = users.filter((u) => !qq || u.name.toLowerCase().includes(qq) || (u.logins ?? "").toLowerCase().includes(qq) || u.roles.toLowerCase().includes(qq));
-    l = l.filter((u) => {
+    return users.filter((u) => {
+      if (qq && !(u.name.toLowerCase().includes(qq) || (u.logins ?? "").toLowerCase().includes(qq) || u.roles.toLowerCase().includes(qq))) return false;
       const c = checks.get(u.id);
       if (filter === "done") return done(c);
       if (filter === "problem") return problem(c) || !!c?.note;
       if (filter === "todo") return !done(c);
       return true;
     });
-    if (sort === "todo") l = [...l].sort((a, b) => Number(done(checks.get(a.id))) - Number(done(checks.get(b.id))));
-    return l;
-  }, [users, checks, query, filter, sort]);
+  }, [users, checks, query, filter]);
 
   const counts = {
     all: users.length,
@@ -427,21 +610,28 @@ function People({ users, checks, write }: { users: User[]; checks: Map<number, U
 
   return (
     <section id="people" className="td-section">
-      <h2>ხალხი <span className="td-count">{users.length}</span></h2>
-      <p className="td-hint">ყოველ ადამიანზე: შევიდა საკუთარი WebMed-ის მომხმარებლით · გაიხსნა ძირითადი ეკრანი · მისი ანგარიშით შესრულდა „რა უნდა შეეძლოს“. სიაში არ მყოფი ადამიანი ჩაწერეთ „ჩაბარებაში“.</p>
-      <div className="td-tools">
-        <input className="td-input" type="search" placeholder="ძებნა: სახელი, WebMed, როლი" value={query} onChange={(e) => setQuery(e.target.value)} />
-        <div className="td-chips">
-          {([["all", "ყველა"], ["todo", "დარჩა"], ["problem", "პრობლემა"], ["done", "დასრულდა"]] as const).map(([k, l]) => (
-            <button key={k} className={filter === k ? "on" : ""} onClick={() => setFilter(k)}>{l} <span>{counts[k]}</span></button>
-          ))}
-          <button className="td-sort" onClick={() => setSort(sort === "name" ? "todo" : "name")}>{sort === "name" ? "ა-ჰ" : "დარჩენილი ზემოთ"}</button>
-        </div>
+      <div className="td-h2row">
+        <h2>ხალხი <span className="td-count">{users.length}</span></h2>
+        {users.length > 0 && (
+          <div className="td-chips">
+            {([["all", "ყველა"], ["todo", "დარჩა"], ["problem", "პრობლემა"], ["done", "დასრულდა"]] as const).map(([k, l]) => (
+              <button key={k} className={filter === k ? "on" : ""} aria-pressed={filter === k} onClick={() => setFilter(k)}>{l} <span>{counts[k]}</span></button>
+            ))}
+          </div>
+        )}
       </div>
-      {users.length === 0 && <p className="td-empty">ამ განყოფილებაზე სიაში არავინაა. ადგილზე ჩაწერეთ, ვინ მუშაობს („ჩაბარება“, სიის შესწორებები).</p>}
+      {users.length > 6 && (
+        <input className="td-input td-people-find" type="search" placeholder="ამ განყოფილებაში: სახელი, WebMed, როლი" value={query} onChange={(e) => setQuery(e.target.value)} />
+      )}
+      {users.length === 0 && (
+        <div className="td-empty">
+          <b>ამ განყოფილებაზე სიაში არავინაა.</b>
+          <span>ადგილზე ჩაწერეთ, ვინ მუშაობს: „ჩაბარება“, სიის შესწორებები.</span>
+        </div>
+      )}
       {users.length > 0 && list.length === 0 && <p className="td-empty">ამ ფილტრით არავინ ჩანს.</p>}
       <ul className="td-people">
-        {list.map((u) => <Person key={u.id} u={u} c={checks.get(u.id)} write={write} />)}
+        {list.map((u) => <Person key={u.id} u={u} c={checks.get(u.id)} write={write} dept={dept} flash={flash === `u${u.id}`} />)}
       </ul>
     </section>
   );
@@ -453,59 +643,74 @@ const BLANK = (id: number): UserCheck => ({
 const setCheck = (s: State, row: UserCheck): State => ({
   ...s, userChecks: s.userChecks.some((c) => c.user_id === row.user_id) ? s.userChecks.map((c) => (c.user_id === row.user_id ? row : c)) : [...s.userChecks, row],
 });
+const STEPS = [["signed_in", "შევიდა"], ["key_screen_ok", "ეკრანი"], ["actions_ok", "მოქმედებები"]] as const;
 
-function Person({ u, c, write }: { u: User; c?: UserCheck; write: Write }) {
+function Person({ u, c, write, dept, flash }: { u: User; c?: UserCheck; write: Write; dept: Department; flash: boolean }) {
+  const report = useReport();
   const [note, setNote] = useState(c?.note ?? "");
   const [editing, setEditing] = useState(false);
+  const [noteOpen, setNoteOpen] = useState(false);
   useEffect(() => { if (!editing) setNote(c?.note ?? ""); }, [c?.note, editing]);
 
   const tick = (field: keyof UserCheck, value: boolean | string | null) => {
-    const patch: Partial<UserCheck> = { [field]: value };
     // "signed in" and "could not sign in" exclude each other.
     const extra: [keyof UserCheck, boolean][] = [];
     if (field === "signed_in" && value === true && c?.sign_in_failed) extra.push(["sign_in_failed", false]);
     if (field === "sign_in_failed" && value === true && c?.signed_in) extra.push(["signed_in", false]);
-    const send = (f: keyof UserCheck, v: unknown, p: Partial<UserCheck>) =>
+    const send = (f: keyof UserCheck, v: unknown) =>
       write<UserCheck>("tick_user", { user_id: u.id, field: f, value: v },
-        (s) => setCheck(s, { ...(s.userChecks.find((x) => x.user_id === u.id) ?? BLANK(u.id)), ...p }), setCheck);
-    send(field, value, patch);
-    for (const [f, v] of extra) send(f, v, { [f]: v });
+        (s) => setCheck(s, { ...(s.userChecks.find((x) => x.user_id === u.id) ?? BLANK(u.id)), [f]: v }), setCheck);
+    send(field, value);
+    for (const [f, v] of extra) send(f, v);
   };
-  const box = (field: "signed_in" | "key_screen_ok" | "actions_ok", label: string) => (
-    <button className={`td-tick ${c?.[field] ? "on" : ""}`} aria-pressed={!!c?.[field]} onClick={() => tick(field, !c?.[field])}>
-      <span className="td-box">{c?.[field] ? "✓" : ""}</span>{label}
-    </button>
-  );
+  // The one-tap path: signed in, saw the main screen, did the day's actions.
+  const allFine = () => { for (const [f] of STEPS) if (!c?.[f]) tick(f, true); };
   const isDone = done(c);
+  const failed = problem(c);
+  const showNote = noteOpen || !!c?.note || failed;
   return (
-    <li className={`td-card td-person ${isDone ? "is-done" : ""} ${problem(c) ? "is-problem" : ""} ${u.seat_ok ? "" : "is-off"}`}>
+    <li id={`u${u.id}`} className={`td-card td-person ${isDone ? "is-done" : ""} ${failed ? "is-problem" : ""} ${u.seat_ok ? "" : "is-off"} ${flash ? "is-flash" : ""}`}>
       <div className="td-person-head">
-        <div>
+        <div className="td-person-id">
           <div className="td-name">{u.name}</div>
-          {u.title && <div className="td-sub">{u.title}</div>}
+          <div className="td-sub">{[u.title, u.roles || "როლი არ აქვს"].filter(Boolean).join(" · ")}</div>
         </div>
         {u.logins ? (
           <button className="td-login" onClick={() => copy(u.logins!.split(",")[0].trim())} title="კოპირება">{u.logins}</button>
-        ) : <span className="td-sub">WebMed მომხმარებელი არ აქვს</span>}
+        ) : <span className="td-tag td-tag-amber">WebMed-ის ანგარიში არ აქვს</span>}
       </div>
-      <div className="td-meta">
-        <span><i>როლი</i>{u.roles || "არ აქვს"}</span>
-        <span><i>ძირითადი ეკრანი</i>{q(u.first_screen)}</span>
-        {u.how && u.how !== "WebMed-ის მომხმარებლით" && <span><i>შესვლა</i>{u.how}</span>}
-      </div>
-      <div className="td-spot"><i>რა უნდა შეეძლოს</i>{u.spot.map((x) => <span key={x}>{q(x)}</span>)}</div>
-      <div className="td-ticks">
-        {box("signed_in", "შევიდა")}
-        <button className={`td-tick td-tick-fail ${c?.sign_in_failed ? "on" : ""}`} aria-pressed={!!c?.sign_in_failed} onClick={() => tick("sign_in_failed", !c?.sign_in_failed)}>
-          <span className="td-box">{c?.sign_in_failed ? "✕" : ""}</span>ვერ შევიდა
+      {!isDone && (
+        <div className="td-meta">
+          <span><i>ძირითადი ეკრანი</i>{q(u.first_screen)}</span>
+          {u.how && u.how !== "WebMed-ის მომხმარებლით" && <span><i>შესვლა</i>{u.how}</span>}
+          {u.spot.length > 0 && <span className="td-spot"><i>რა უნდა შეეძლოს</i>{u.spot.map((x) => <em key={x}>{q(x)}</em>)}</span>}
+        </div>
+      )}
+      <div className="td-acts">
+        <button className={`td-ok ${isDone ? "on" : ""}`} aria-pressed={isDone} onClick={allFine} disabled={isDone}>
+          <span className="td-box">✓</span>{isDone ? "შემოწმდა" : "ყველაფერი რიგზეა"}
         </button>
-        {box("key_screen_ok", "ეკრანი")}
-        {box("actions_ok", "მოქმედებები")}
+        <button className="td-prob" onClick={() => report({ dept: dept.slug, person: `${u.name} (${u.roles})` })}>პრობლემა</button>
       </div>
-      <textarea className="td-input td-note" rows={1} placeholder={c?.sign_in_failed ? "შეცდომის ზუსტი ტექსტი" : "შენიშვნა"} value={note}
-        onFocus={() => setEditing(true)} onChange={(e) => setNote(e.target.value)}
-        onBlur={() => { setEditing(false); if ((note.trim() || null) !== (c?.note ?? null)) tick("note", note.trim() || null); }} />
-      {c?.checked_by && <div className="td-by">{c.checked_by} · {hhmm(c.checked_at)}</div>}
+      <div className="td-ticks" role="group" aria-label="ნაბიჯები">
+        {STEPS.map(([f, label]) => (
+          <button key={f} className={`td-tick ${c?.[f] ? "on" : ""}`} aria-pressed={!!c?.[f]} onClick={() => tick(f, !c?.[f])}>
+            <span className="td-box">{c?.[f] ? "✓" : ""}</span>{label}
+          </button>
+        ))}
+        <button className={`td-tick td-tick-fail ${failed ? "on" : ""}`} aria-pressed={failed} onClick={() => tick("sign_in_failed", !failed)}>
+          <span className="td-box">{failed ? "✕" : ""}</span>ვერ შევიდა
+        </button>
+      </div>
+      {showNote ? (
+        <textarea className="td-input td-note" rows={1} autoFocus={noteOpen && !c?.note} placeholder={failed ? "შეცდომის ზუსტი ტექსტი" : "შენიშვნა"} value={note}
+          onFocus={() => setEditing(true)} onChange={(e) => setNote(e.target.value)}
+          onBlur={() => { setEditing(false); setNoteOpen(false); if ((note.trim() || null) !== (c?.note ?? null)) tick("note", note.trim() || null); }} />
+      ) : null}
+      <div className="td-person-foot">
+        {!showNote && <button className="td-mini" onClick={() => setNoteOpen(true)}>+ შენიშვნა</button>}
+        {c?.checked_by && <span className="td-by">{c.checked_by} · {hhmm(c.checked_at)}</span>}
+      </div>
     </li>
   );
 }
@@ -514,35 +719,20 @@ function Seats({ dept, state }: { dept: Department; state: State }) {
   const [show, setShow] = useState(false);
   const seats = dept.seats.map((e) => state.seats.find((s) => s.email === e)).filter(Boolean) as State["seats"];
   return (
-    <section id="seats" className="td-section">
-      <h2>სატესტო ანგარიშები <span className="td-tag td-tag-red">მხოლოდ გუნდისთვის</span></h2>
+    <div className="td-card td-seats">
+      <h3>სატესტო ანგარიშები <span className="td-tag td-tag-red">მხოლოდ გუნდისთვის</span></h3>
       <p className="td-hint">მხოლოდ სათადარიგოდ: როცა რეალური ადამიანი ვერ შედის, არ არის ან უფლება აკლია. მიზეზი ჩაწერეთ შენიშვნაში.</p>
       {dept.seat_note && <p className="td-warn">{dept.seat_note}</p>}
-      <div className="td-card td-seats">
-        {seats.map((s) => (
-          <div key={s.email} className="td-seat">
-            <div><button className="td-login" onClick={() => copy(s.email)}>{s.email}</button><div className="td-sub">{s.role}</div></div>
-            {s.password && (show
-              ? <button className="td-login" onClick={() => copy(s.password!)}>{s.password}</button>
-              : <button className="td-btn td-btn-ghost" onClick={() => setShow(true)}>პაროლი</button>)}
-          </div>
-        ))}
-        {seats.length === 0 && <p className="td-empty">ამ განყოფილებას სატესტო ანგარიში არ აქვს.</p>}
-      </div>
-    </section>
-  );
-}
-
-function Morning() {
-  return (
-    <section id="morning" className="td-section">
-      <h2>დილის 15 წუთი</h2>
-      <ol className="td-card td-steps">
-        <li>სიის ყველა ადამიანი შედის თავისი WebMed-ის მომხმარებლით და პაროლით. მონიშნეთ „შევიდა“.</li>
-        <li>ვინც ვერ შევიდა: მონიშნეთ „ვერ შევიდა“ და შენიშვნაში ჩაწერეთ შეცდომის ზუსტი ტექსტი.</li>
-        <li>ვინც შევიდა, მაგრამ ძირითადი ეკრანი არ ჩანს: შენიშვნაში ჩაწერეთ, რა ჩანს, და დაარეგისტრირეთ ხარვეზი.</li>
-      </ol>
-    </section>
+      {seats.map((s) => (
+        <div key={s.email} className="td-seat">
+          <div><button className="td-login" onClick={() => copy(s.email)}>{s.email}</button><div className="td-sub">{s.role}</div></div>
+          {s.password && (show
+            ? <button className="td-login" onClick={() => copy(s.password!)}>{s.password}</button>
+            : <button className="td-btn td-btn-ghost td-btn-sm" onClick={() => setShow(true)}>პაროლი</button>)}
+        </div>
+      ))}
+      {seats.length === 0 && <p className="td-sub">ამ განყოფილებას სატესტო ანგარიში არ აქვს.</p>}
+    </div>
   );
 }
 
@@ -563,35 +753,35 @@ function Flows({ dept, flows, write }: { dept: Department; flows: Map<string, Fl
     <section id="flows" className="td-section">
       <h2>სარკისებური მოქმედებები <span className="td-count">{dept.flows.length}</span></h2>
       <p className="td-hint">რასაც თანამშრომელი WebMed-ში აკეთებს, იმავე პაციენტზე გაიმეორეთ MediMind-ში. მონიშნეთ, როცა „შედეგი ეკრანზე“ ნამდვილად ჩანს.</p>
-      <ol className="td-flows">
-        {dept.flows.map((f, i) => {
-          const c = flows.get(`${dept.slug}:${i}`);
-          return <FlowItem key={i} f={f} i={i} c={c} onDone={() => send(i, { done: !c?.done })} onNote={(note) => send(i, { note })} />;
-        })}
-      </ol>
+      {dept.flows.length === 0 ? <p className="td-empty">ამ განყოფილებას მოქმედებების სია არ აქვს.</p> : (
+        <ol className="td-flows">
+          {dept.flows.map((f, i) => {
+            const c = flows.get(`${dept.slug}:${i}`);
+            return <FlowItem key={i} f={f} i={i} c={c} dept={dept.slug} onDone={() => send(i, { done: !c?.done })} onNote={(note) => send(i, { note })} />;
+          })}
+        </ol>
+      )}
     </section>
   );
 }
 
-function FlowItem({ f, i, c, onDone, onNote }: { f: Department["flows"][number]; i: number; c?: FlowCheck; onDone: () => void; onNote: (n: string | null) => void }) {
+function FlowItem({ f, i, c, dept, onDone, onNote }: { f: Department["flows"][number]; i: number; c?: FlowCheck; dept: string; onDone: () => void; onNote: (n: string | null) => void }) {
+  const report = useReport();
   const [open, setOpen] = useState(false);
   const [note, setNote] = useState(c?.note ?? "");
   useEffect(() => setNote(c?.note ?? ""), [c?.note]);
   return (
     <li className={`td-card td-flow ${c?.done ? "is-done" : ""}`}>
       <div className="td-flow-head">
-        <button className={`td-tick ${c?.done ? "on" : ""}`} aria-pressed={!!c?.done} onClick={onDone} aria-label="შესრულდა">
+        <button className={`td-tick td-tick-sq ${c?.done ? "on" : ""}`} aria-pressed={!!c?.done} onClick={onDone} aria-label={`შესრულდა: ${f.w}`}>
           <span className="td-box">{c?.done ? "✓" : ""}</span>
         </button>
         <button className="td-flow-title" onClick={() => setOpen(!open)} aria-expanded={open}>
-          <span className="td-num">{i + 1}</span>{q(f.w)}<span className="td-caret">{open ? "▾" : "▸"}</span>
+          <span className="td-num">{i + 1}</span><span>{q(f.w)}</span><span className="td-caret" aria-hidden="true">{open ? "▾" : "▸"}</span>
         </button>
+        <button className="td-mini td-mini-prob" onClick={() => report({ dept, screen: q(f.w) })} aria-label={`პრობლემა: ${f.w}`}>!</button>
       </div>
-      {open && (
-        <div className="td-flow-body">
-          <ol>{f.steps.map((s) => <li key={s}>{q(s)}</li>)}</ol>
-        </div>
-      )}
+      {open && <ol className="td-flow-body">{f.steps.map((s) => <li key={s}>{q(s)}</li>)}</ol>}
       <div className="td-result"><b>შედეგი ეკრანზე:</b> {q(f.result)}</div>
       {(open || c?.note) && (
         <textarea className="td-input td-note" rows={1} placeholder="შენიშვნა (რა არ გამოვიდა)" value={note}
@@ -604,17 +794,17 @@ function FlowItem({ f, i, c, onDone, onNote }: { f: Department["flows"][number];
 
 function Teach({ dept }: { dept: Department }) {
   return (
-    <section id="teach" className="td-section">
-      <h2>სასწავლო წერტილები</h2>
-      {dept.teach.length === 0 ? <p className="td-empty">ამ განყოფილებას დღეს განსაკუთრებული წერტილი არ აქვს.</p> : (
+    <div className="td-card">
+      <h3>სასწავლო წერტილები</h3>
+      {dept.teach.length === 0 ? <p className="td-sub">ამ განყოფილებას დღეს განსაკუთრებული წერტილი არ აქვს.</p> : (
         <ul className="td-teach">
           {dept.teach.map((t) => (
             // Teach text is our own copy from the seed (may hold <b>), never user input.
-            <li key={t.t} className="td-card"><span className="td-tag">{t.h}</span><span dangerouslySetInnerHTML={{ __html: q(t.t) }} /></li>
+            <li key={t.t}><span className="td-tag">{t.h}</span><span dangerouslySetInnerHTML={{ __html: q(t.t) }} /></li>
           ))}
         </ul>
       )}
-    </section>
+    </div>
   );
 }
 
@@ -631,128 +821,172 @@ function Handin({ dept, note, summary, write }: { dept: Department; note?: Note;
   };
   return (
     <section id="handin" className="td-section">
-      <h2>დღის ბოლოს ჩააბარეთ</h2>
-      <div className="td-card td-form">
-        <p className="td-sum"><b>შემოწმდა:</b> {summary}</p>
-        {HANDIN.map(([k, label]) => (
-          <label key={k} className="td-field">
-            <span className="td-label">{label}</span>
-            <textarea className="td-input" rows={2} value={form[k] ?? ""} onChange={(e) => { setDirty(true); setForm({ ...form, [k]: e.target.value }); }} />
-          </label>
-        ))}
+      {/* Folded during the day: five optional boxes are only for the end of the shift. */}
+      <details className="td-card td-form td-handin" open={!!note}>
+        <summary><h2>დღის ბოლოს ჩააბარეთ</h2>{note?.updated_by && <span className="td-by">{note.updated_by} · {hhmm(note.updated_at)}</span>}</summary>
+        <p className="td-sum"><b>შემოწმდა:</b> {summary}. შეავსეთ მხოლოდ ის, რაც გაქვთ.</p>
+        <div className="td-handin-grid">
+          {HANDIN.map(([k, label]) => (
+            <label key={k} className="td-field">
+              <span className="td-label">{label}</span>
+              <textarea className="td-input" rows={2} value={form[k] ?? ""} onChange={(e) => { setDirty(true); setForm({ ...form, [k]: e.target.value }); }} />
+            </label>
+          ))}
+        </div>
         <div className="td-row">
           <button className="td-btn td-btn-primary" onClick={save} disabled={!dirty}>შენახვა</button>
-          {note?.updated_by && <span className="td-by">{note.updated_by} · {hhmm(note.updated_at)}</span>}
         </div>
-      </div>
+      </details>
     </section>
   );
 }
 
-// ───────────────────────── issues ─────────────────────────
-function IssueForm({ state, dept: fixedDept, write, ...ctl }: { state: State; dept?: string; write: Write; open?: boolean; setOpen?: (o: boolean) => void }) {
-  const empty = { dept: fixedDept ?? "", person: "", screen: "", what: "", expected: "", pr_url: "" };
-  const [f, setF] = useState(empty);
-  const [ownOpen, setOwnOpen] = useState(false);
-  const open = ctl.open ?? ownOpen;
-  const setOpen = ctl.setOpen ?? setOwnOpen;
-  const people = state.users.filter((u) => !f.dept || u.dept_slug === f.dept);
-  const submit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!f.what.trim()) return;
-    write<Issue>("issue_add", { ...f, dept: f.dept || null }, (s) => s, (s, row) => ({ ...s, issues: [row, ...s.issues] }));
+// ───────────────────────── report a problem (one sheet, from anywhere) ─────────────────────────
+function ReportSheet({ state, ctx, write, onClose }: { state: State; ctx: ReportCtx; write: Write; onClose: () => void }) {
+  const [what, setWhat] = useState("");
+  const [dept, setDept] = useState(ctx.dept ?? "");
+  const [person, setPerson] = useState(ctx.person ?? "");
+  const [screen, setScreen] = useState(ctx.screen ?? "");
+  const [expected, setExpected] = useState("");
+  const [pr, setPr] = useState("");
+  const [more, setMore] = useState(false);
+  const people = state.users.filter((u) => !dept || u.dept_slug === dept);
+  const deptTitle = state.departments.find((d) => d.slug === dept)?.title;
+  useEffect(() => {
+    const esc = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+    document.addEventListener("keydown", esc);
+    return () => document.removeEventListener("keydown", esc);
+  }, [onClose]);
+  const submit = (e?: React.FormEvent) => {
+    e?.preventDefault();
+    if (!what.trim()) return;
+    write<Issue>("issue_add", { dept: dept || null, person, screen, what: what.trim(), expected, pr_url: pr }, (s) => s, (s, row) => ({ ...s, issues: [row, ...s.issues] }));
     toast.success("ხარვეზი ჩაიწერა");
-    setF(empty);
-    setOpen(false);
+    onClose();
   };
-  const set = (k: keyof typeof empty) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => setF({ ...f, [k]: e.target.value });
-  if (!open) return <button className="td-btn td-btn-primary td-wide" onClick={() => setOpen(true)}>+ ახალი ხარვეზი</button>;
   return (
-    <form className="td-card td-form" onSubmit={submit}>
-      <div className="td-sub">დრო ავტომატურად იწერება: {hhmm(new Date().toISOString())}</div>
-      {!fixedDept && (
-        <label className="td-field"><span className="td-label">განყოფილება</span>
-          <select className="td-input" value={f.dept} onChange={set("dept")}>
-            <option value="">აირჩიეთ</option>
-            {state.departments.map((d) => <option key={d.slug} value={d.slug}>{d.title}</option>)}
-          </select>
-        </label>
-      )}
-      <label className="td-field"><span className="td-label">მომხმარებელი და როლი</span>
-        <input className="td-input" list="td-people-list" value={f.person} onChange={set("person")} />
-        <datalist id="td-people-list">{people.map((u) => <option key={u.id} value={`${u.name} (${u.roles})`} />)}</datalist>
-      </label>
-      <label className="td-field"><span className="td-label">ეკრანი</span><input className="td-input" value={f.screen} onChange={set("screen")} placeholder="მაგ.: საექთნო პოსტი → MAR" /></label>
-      <label className="td-field"><span className="td-label">რა მოხდა *</span><textarea className="td-input" rows={3} required autoFocus value={f.what} onChange={set("what")} /></label>
-      <label className="td-field"><span className="td-label">რას ელოდით</span><textarea className="td-input" rows={2} value={f.expected} onChange={set("expected")} /></label>
-      <label className="td-field"><span className="td-label">PR-ის ბმული (თუ უკვე გახსენით)</span><input className="td-input" type="url" value={f.pr_url} onChange={set("pr_url")} placeholder="https://github.com/…" /></label>
-      <div className="td-row">
-        <button className="td-btn td-btn-primary" disabled={!f.what.trim()}>ჩაწერა</button>
-        <button type="button" className="td-btn td-btn-ghost" onClick={() => { setF(empty); setOpen(false); }}>გაუქმება</button>
-      </div>
-    </form>
+    <div className="td-sheet-bg" onMouseDown={(e) => { if (e.target === e.currentTarget) onClose(); }}>
+      <form className="td-sheet" role="dialog" aria-modal="true" aria-labelledby="td-sheet-h" onSubmit={submit}>
+        <div className="td-sheet-grip" aria-hidden="true" />
+        <div className="td-h2row">
+          <h2 id="td-sheet-h">ხარვეზის ჩაწერა</h2>
+          <button type="button" className="td-mini" onClick={onClose} aria-label="დახურვა">✕</button>
+        </div>
+        <div className="td-ctx">
+          {ctx.dept ? <span className="td-tag">{deptTitle}</span> : (
+            <select className="td-input td-input-sm" value={dept} onChange={(e) => setDept(e.target.value)} aria-label="განყოფილება">
+              <option value="">განყოფილება (არჩევითი)</option>
+              {state.departments.map((d) => <option key={d.slug} value={d.slug}>{d.title}</option>)}
+            </select>
+          )}
+          {person && <span className="td-tag td-tag-x">{person}<button type="button" onClick={() => setPerson("")} aria-label="მოხსნა">✕</button></span>}
+          {screen && <span className="td-tag td-tag-x">{screen}<button type="button" onClick={() => setScreen("")} aria-label="მოხსნა">✕</button></span>}
+          <span className="td-sub">{hhmm(new Date().toISOString())}</span>
+        </div>
+        <textarea className="td-input" rows={3} autoFocus required placeholder="რა მოხდა?" value={what}
+          onChange={(e) => setWhat(e.target.value)}
+          onKeyDown={(e) => { if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) submit(); }} />
+        {!more ? (
+          <button type="button" className="td-mini td-more" onClick={() => setMore(true)}>+ ეკრანი, მომხმარებელი, რას ელოდით, PR</button>
+        ) : (
+          <div className="td-more-fields">
+            {!person && (
+              <label className="td-field"><span className="td-label">მომხმარებელი და როლი</span>
+                <input className="td-input" list="td-people-list" value={person} onChange={(e) => setPerson(e.target.value)} />
+                <datalist id="td-people-list">{people.map((u) => <option key={u.id} value={`${u.name} (${u.roles})`} />)}</datalist>
+              </label>
+            )}
+            {!ctx.screen && <label className="td-field"><span className="td-label">ეკრანი</span><input className="td-input" value={screen} onChange={(e) => setScreen(e.target.value)} placeholder="მაგ.: საექთნო პოსტი → MAR" /></label>}
+            <label className="td-field"><span className="td-label">რას ელოდით</span><textarea className="td-input" rows={2} value={expected} onChange={(e) => setExpected(e.target.value)} /></label>
+            <label className="td-field"><span className="td-label">PR-ის ბმული</span><input className="td-input" type="url" value={pr} onChange={(e) => setPr(e.target.value)} placeholder="https://github.com/…" /></label>
+          </div>
+        )}
+        <button className="td-btn td-btn-amber td-wide" disabled={!what.trim()}>ჩაწერა</button>
+      </form>
+    </div>
   );
 }
 
 const setIssue = (s: State, row: Issue): State => ({ ...s, issues: s.issues.map((i) => (i.id === row.id ? row : i)) });
 
-function IssueList({ issues, state, write }: { issues: Issue[]; state: State; write: Write }) {
+function IssueList({ issues, state, write, hideDept }: { issues: Issue[]; state: State; write: Write; hideDept?: boolean }) {
   if (issues.length === 0) return <p className="td-empty">ხარვეზი ჯერ არ ჩაწერილა.</p>;
-  const title = (slug: string | null) => state.departments.find((d) => d.slug === slug)?.title ?? "განყოფილების გარეშე";
+  const title = (slug: string | null) => state.departments.find((d) => d.slug === slug)?.title ?? "საერთო";
   const update = (i: Issue, patch: Partial<Issue>) =>
     write<Issue>("issue_update", { id: i.id, ...patch }, (s) => setIssue(s, { ...i, ...patch }), setIssue);
   return (
     <ul className="td-issues">
-      {issues.map((i) => <IssueItem key={i.id} i={i} dept={title(i.dept_slug)} update={update} />)}
+      {issues.map((i) => <IssueItem key={i.id} i={i} dept={hideDept ? null : title(i.dept_slug)} update={update} />)}
     </ul>
   );
 }
 
-function IssueItem({ i, dept, update }: { i: Issue; dept: string; update: (i: Issue, p: Partial<Issue>) => void }) {
+function IssueItem({ i, dept, update }: { i: Issue; dept: string | null; update: (i: Issue, p: Partial<Issue>) => void }) {
   const [pr, setPr] = useState(i.pr_url ?? "");
+  const [prOpen, setPrOpen] = useState(false);
   useEffect(() => setPr(i.pr_url ?? ""), [i.pr_url]);
   return (
     <li className={`td-card td-issue st-${i.status}`}>
       <div className="td-issue-head">
-        <span className="td-sub">#{i.id} · {hhmm(i.created_at)} · {dept}</span>
-        <select className="td-status" value={i.status} onChange={(e) => update(i, { status: e.target.value as IssueStatus })}>
-          {(Object.keys(STATUS_KA) as IssueStatus[]).map((s) => <option key={s} value={s}>{STATUS_KA[s]}</option>)}
-        </select>
+        <span className="td-sub">#{i.id} · {hhmm(i.created_at)}{dept ? ` · ${dept}` : ""}</span>
+        <div className="td-seg" role="group" aria-label="სტატუსი">
+          {(Object.keys(STATUS_KA) as IssueStatus[]).map((s) => (
+            <button key={s} className={i.status === s ? `on s-${s}` : ""} aria-pressed={i.status === s} onClick={() => { if (i.status !== s) update(i, { status: s }); }}>{STATUS_KA[s]}</button>
+          ))}
+        </div>
       </div>
       <div className="td-issue-what">{i.what}</div>
       {i.expected && <div className="td-sub"><b>ელოდნენ:</b> {i.expected}</div>}
-      <div className="td-sub">{[i.person, i.screen, i.reported_by && `ჩაწერა: ${i.reported_by}`].filter(Boolean).join(" · ")}</div>
+      {(i.person || i.screen || i.reported_by) && <div className="td-sub td-issue-who">{[i.person, i.screen, i.reported_by && `ჩაწერა: ${i.reported_by}`].filter(Boolean).join(" · ")}</div>}
       <div className="td-row">
-        <input className="td-input" type="url" placeholder="PR-ის ბმული" value={pr} onChange={(e) => setPr(e.target.value)}
-          onBlur={() => { if ((pr.trim() || null) !== i.pr_url) update(i, { pr_url: pr.trim() || null, ...(pr.trim() && i.status === "open" ? { status: "pr" as IssueStatus } : {}) }); }} />
-        {i.pr_url && <a className="td-link" href={i.pr_url} target="_blank" rel="noreferrer">გახსნა</a>}
+        {i.pr_url && !prOpen && <a className="td-link" href={i.pr_url} target="_blank" rel="noreferrer">PR გახსნა</a>}
+        {prOpen ? (
+          <input className="td-input td-input-sm" type="url" autoFocus placeholder="PR-ის ბმული" value={pr} onChange={(e) => setPr(e.target.value)}
+            onBlur={() => { setPrOpen(false); if ((pr.trim() || null) !== i.pr_url) update(i, { pr_url: pr.trim() || null, ...(pr.trim() && i.status === "open" ? { status: "pr" as IssueStatus } : {}) }); }} />
+        ) : <button className="td-mini" onClick={() => setPrOpen(true)}>{i.pr_url ? "ბმულის შეცვლა" : "+ PR-ის ბმული"}</button>}
       </div>
     </li>
   );
 }
 
 function IssuesPage({ state, write }: { state: State; write: Write }) {
-  const [filter, setFilter] = useState<"active" | "all">("active");
-  const list = state.issues.filter((i) => filter === "all" || i.status === "open" || i.status === "pr");
+  const report = useReport();
+  const [filter, setFilter] = useState<IssueStatus | "active" | "all">("active");
+  const [dept, setDept] = useState("");
+  const count = (f: typeof filter) => state.issues.filter((i) => (f === "all" || (f === "active" ? isActive(i) : i.status === f)) && (!dept || i.dept_slug === dept)).length;
+  const list = state.issues.filter((i) => (filter === "all" || (filter === "active" ? isActive(i) : i.status === filter)) && (!dept || i.dept_slug === dept));
   return (
-    <div className="td-pad td-sections">
-      <h1>ხარვეზები</h1>
-      <div className="td-card td-rules">
-        <h3>როგორ</h3>
-        <ol>
-          <li>ჩაწერეთ აქ: დრო, ეკრანი, მომხმარებელი და როლი, რა მოხდა, რას ელოდით. სკრინშოტი პაციენტის მონაცემების გარეშე.</li>
-          <li>გახსენით PR EMR-ის რეპოზიტორიაში, <b>develop</b> ბრენჩზე. ერთი ხარვეზი, ერთი PR.</li>
-          <li>ბრენჩი: <code>test-day/&lt;განყოფილება&gt;-&lt;მოკლე-სახელი&gt;</code>, მაგ. <code>test-day/therapy-mar-dose</code></li>
-          <li>სათაური: <code>Mtskheta სატესტო დღე 11-16: &lt;ხარვეზი&gt;</code></li>
-          <li>PR-ის ბმული ჩასვით ხარვეზის ბარათში.</li>
-        </ol>
+    <div className="td-pad td-split">
+      <div className="td-split-main td-sections">
+        <div className="td-h2row">
+          <h1>ხარვეზები</h1>
+          <button className="td-btn td-btn-amber" onClick={() => report({})}>+ ხარვეზი</button>
+        </div>
+        <div className="td-row td-filters">
+          <div className="td-chips">
+            {([["active", "ღია"], ["pr", "PR"], ["fixed", "გასწორდა"], ["all", "ყველა"]] as const).map(([k, l]) => (
+              <button key={k} className={filter === k ? "on" : ""} aria-pressed={filter === k} onClick={() => setFilter(k)}>{l} <span>{count(k)}</span></button>
+            ))}
+          </div>
+          <select className="td-input td-input-sm td-dept-filter" value={dept} onChange={(e) => setDept(e.target.value)} aria-label="განყოფილება">
+            <option value="">ყველა განყოფილება</option>
+            {state.departments.map((d) => <option key={d.slug} value={d.slug}>{d.title}</option>)}
+          </select>
+        </div>
+        <IssueList issues={list} state={state} write={write} />
       </div>
-      <IssueForm state={state} write={write} />
-      <div className="td-chips">
-        <button className={filter === "active" ? "on" : ""} onClick={() => setFilter("active")}>ღია</button>
-        <button className={filter === "all" ? "on" : ""} onClick={() => setFilter("all")}>ყველა <span>{state.issues.length}</span></button>
-      </div>
-      <IssueList issues={list} state={state} write={write} />
+      <aside className="td-side">
+        <details className="td-card td-rules" open>
+          <summary>როგორ მიდის ხარვეზი PR-მდე</summary>
+          <ol>
+            <li>ჩაწერეთ აქ: დრო, ეკრანი, მომხმარებელი და როლი, რა მოხდა, რას ელოდით. სკრინშოტი პაციენტის მონაცემების გარეშე.</li>
+            <li>გახსენით PR EMR-ის რეპოზიტორიაში, <b>develop</b> ბრენჩზე. ერთი ხარვეზი, ერთი PR.</li>
+            <li>ბრენჩი: <code>test-day/&lt;განყოფილება&gt;-&lt;მოკლე-სახელი&gt;</code>, მაგ. <code>test-day/therapy-mar-dose</code></li>
+            <li>სათაური: <code>Mtskheta სატესტო დღე: &lt;ხარვეზი&gt;</code></li>
+            <li>PR-ის ბმული ჩასვით ხარვეზის ბარათში.</li>
+          </ol>
+        </details>
+      </aside>
     </div>
   );
 }
@@ -770,13 +1004,21 @@ function download(name: string, text: string) {
 }
 
 function Overview({ state }: { state: State }) {
-  const { by, checks } = useStats(state);
-  const title = (slug: string | null) => state.departments.find((d) => d.slug === slug)?.title ?? "";
+  const { by, checks, all } = useStats(state);
+  const title = (slug: string | null) => state.departments.find((d) => d.slug === slug)?.title ?? "საერთო";
   const failed = state.users.filter((u) => problem(checks.get(u.id)));
-  const open = state.issues.filter((i) => i.status === "open" || i.status === "pr");
-  const tot = [...by.values()].reduce((a, s) => ({ total: a.total + s.total, done: a.done + s.done, signed: a.signed + s.signed, failed: a.failed + s.failed }), { total: 0, done: 0, signed: 0, failed: 0 });
+  const open = state.issues.filter(isActive);
   const flowsAll = state.departments.reduce((a, d) => a + d.flows.length, 0);
-  const flowsDone = [...by.values()].reduce((a, s) => a + s.flowsDone, 0);
+  const pct = all.total ? Math.round((all.done / all.total) * 100) : 0;
+  const states = state.departments.map((d) => deptState(by.get(d.slug)!, d.flows.length));
+  const nDone = states.filter((s) => s === "done").length;
+  const nTodo = states.filter((s) => s === "todo").length;
+  // Departments that need someone first: failures and open issues on top, then the ones not started.
+  const rows = [...state.departments].sort((a, b) => {
+    const sa = by.get(a.slug)!, sb = by.get(b.slug)!;
+    const w = (s: DeptStat, d: Department) => s.failed * 3 + s.open * 2 + (deptState(s, d.flows.length) === "todo" ? 1 : 0);
+    return w(sb, b) - w(sa, a);
+  });
 
   const exportUsers = () => download("mtskheta-testday-users.csv", csv([
     ["განყოფილება", "სახელი", "WebMed", "როლი", "შევიდა", "ვერ შევიდა", "ეკრანი", "მოქმედებები", "შენიშვნა", "ვინ", "როდის"],
@@ -789,52 +1031,63 @@ function Overview({ state }: { state: State }) {
 
   return (
     <div className="td-pad td-sections">
-      <div className="td-row td-between"><h1>მიმოხილვა</h1><span className="td-sub">განახლდა {hhmm(state.at)}</span></div>
+      <div className="td-h2row">
+        <div>
+          <h1>მიმოხილვა</h1>
+          <p className="td-headline"><b>{pct}%</b> შემოწმებულია: {all.done} / {all.total} ადამიანი. დასრულებულია {nDone} განყოფილება, {nTodo} ჯერ არ დაწყებულა.</p>
+        </div>
+        <div className="td-row">
+          <span className="td-sub">განახლდა {hhmm(state.at)}</span>
+          <button className="td-btn td-btn-ghost td-btn-sm" onClick={exportUsers}>ხალხი CSV</button>
+          <button className="td-btn td-btn-ghost td-btn-sm" onClick={exportIssues}>ხარვეზები CSV</button>
+        </div>
+      </div>
       <div className="td-kpis">
-        <div className="td-card"><b>{tot.done}<small>/{tot.total}</small></b><span>სრულად შემოწმდა</span></div>
-        <div className="td-card"><b>{tot.signed}</b><span>შევიდა</span></div>
-        <div className="td-card is-red"><b>{tot.failed}</b><span>ვერ შევიდა</span></div>
-        <div className="td-card"><b>{flowsDone}<small>/{flowsAll}</small></b><span>მოქმედება</span></div>
-        <div className="td-card is-amber"><b>{open.length}</b><span>ღია ხარვეზი</span></div>
+        <div className="td-card"><b>{all.done}<small>/{all.total}</small></b><span>სრულად შემოწმდა</span><Bar s={all} /></div>
+        <div className="td-card"><b>{all.signed}</b><span>შევიდა</span></div>
+        <div className={`td-card ${all.failed ? "is-red" : ""}`}><b>{all.failed}</b><span>ვერ შევიდა</span></div>
+        <div className="td-card"><b>{all.flowsDone}<small>/{flowsAll}</small></b><span>მოქმედება</span></div>
+        <div className={`td-card ${open.length ? "is-amber" : ""}`}><b>{open.length}</b><span>ღია ხარვეზი</span></div>
       </div>
-      <div className="td-row">
-        <button className="td-btn td-btn-ghost" onClick={exportUsers}>ხალხი CSV</button>
-        <button className="td-btn td-btn-ghost" onClick={exportIssues}>ხარვეზები CSV</button>
-      </div>
-      <div className="td-card td-table-wrap">
-        <table className="td-table">
-          <thead><tr><th>განყოფილება</th><th>სრულად</th><th>შევიდა</th><th>ვერ</th><th>მოქმ.</th><th>ხარვ.</th></tr></thead>
-          <tbody>
-            {state.departments.map((d) => { const s = by.get(d.slug)!; return (
-              <tr key={d.slug}>
-                <td><Link to={`${BASE}/d/${d.slug}`}>{d.title}</Link><Bar value={s.done} total={s.total} /></td>
-                <td>{s.done}/{s.total}</td><td>{s.signed}</td><td className={s.failed ? "red" : ""}>{s.failed}</td>
-                <td>{s.flowsDone}/{d.flows.length}</td><td className={s.open ? "amber" : ""}>{s.open}</td>
-              </tr>
-            ); })}
-          </tbody>
-        </table>
+      <div className="td-ov-grid">
+        <div className="td-card td-table-wrap">
+          <table className="td-table">
+            <thead><tr><th>განყოფილება</th><th>მდგომარეობა</th><th>სრულად</th><th>ვერ</th><th>მოქმ.</th><th>ხარვ.</th></tr></thead>
+            <tbody>
+              {rows.map((d) => { const s = by.get(d.slug)!; const st = deptState(s, d.flows.length); return (
+                <tr key={d.slug}>
+                  <td><Link to={`${BASE}/d/${d.slug}`}>{d.title}</Link><Bar s={s} /></td>
+                  <td><span className={`td-pill p-${st}`}>{STATE_KA[st]}</span></td>
+                  <td>{s.done}/{s.total}</td><td className={s.failed ? "red" : "zero"}>{s.failed}</td>
+                  <td>{s.flowsDone}/{d.flows.length}</td><td className={s.open ? "amber" : "zero"}>{s.open}</td>
+                </tr>
+              ); })}
+            </tbody>
+          </table>
+        </div>
+        <div className="td-sections">
+          <section className="td-card">
+            <h2>ვერ შევიდა <span className="td-count">{failed.length}</span></h2>
+            {failed.length === 0 ? <p className="td-sub">ჯერ არავინ.</p> : (
+              <ul className="td-list">{failed.map((u) => { const c = checks.get(u.id)!; return (
+                <li key={u.id}><Link to={`${BASE}/d/${u.dept_slug}#u${u.id}`}><b className="td-find-name">{u.name}</b> <span className="td-sub">{u.logins} · {title(u.dept_slug)}</span></Link>{c.note && <div>{c.note}</div>}</li>
+              ); })}</ul>
+            )}
+          </section>
+          <section className="td-card">
+            <h2>ღია ხარვეზები <span className="td-count">{open.length}</span></h2>
+            {open.length === 0 ? <p className="td-sub">ღია ხარვეზი არ არის.</p> : (
+              <ul className="td-list">{open.map((i) => (
+                <li key={i.id}><span className="td-sub">#{i.id} · {hhmm(i.created_at)} · {title(i.dept_slug)} · {STATUS_KA[i.status]}</span><div>{i.what}</div>{i.pr_url && <a className="td-link" href={i.pr_url} target="_blank" rel="noreferrer">PR</a>}</li>
+              ))}</ul>
+            )}
+          </section>
+        </div>
       </div>
       <section className="td-section">
-        <h2>ვერ შევიდა <span className="td-count">{failed.length}</span></h2>
-        {failed.length === 0 ? <p className="td-empty">ჯერ არავინ.</p> : (
-          <ul className="td-list">{failed.map((u) => { const c = checks.get(u.id)!; return (
-            <li key={u.id} className="td-card"><b>{u.name}</b> <span className="td-sub">{u.logins} · {title(u.dept_slug)}</span>{c.note && <div>{c.note}</div>}<div className="td-by">{c.checked_by} · {hhmm(c.checked_at)}</div></li>
-          ); })}</ul>
-        )}
-      </section>
-      <section className="td-section">
-        <h2>ღია ხარვეზები <span className="td-count">{open.length}</span></h2>
-        {open.length === 0 ? <p className="td-empty">ღია ხარვეზი არ არის.</p> : (
-          <ul className="td-list">{open.map((i) => (
-            <li key={i.id} className="td-card"><span className="td-sub">#{i.id} · {hhmm(i.created_at)} · {title(i.dept_slug)} · {STATUS_KA[i.status]}</span><div>{i.what}</div>{i.pr_url && <a className="td-link" href={i.pr_url} target="_blank" rel="noreferrer">PR</a>}</li>
-          ))}</ul>
-        )}
-      </section>
-      <section className="td-section">
-        <h2>ჩაბარებები</h2>
+        <h2>ჩაბარებები <span className="td-count">{state.notes.length}/{state.departments.length}</span></h2>
         {state.notes.length === 0 ? <p className="td-empty">ჯერ არცერთი განყოფილება არ ჩაბარებულა.</p> : (
-          <ul className="td-list">{state.notes.map((n) => (
+          <ul className="td-list td-handins">{state.notes.map((n) => (
             <li key={n.dept_slug} className="td-card"><b>{title(n.dept_slug)}</b> <span className="td-by">{n.updated_by} · {hhmm(n.updated_at)}</span>
               {HANDIN.filter(([k]) => n.handin[k]).map(([k, l]) => <div key={k}><span className="td-sub">{l}:</span> {n.handin[k]}</div>)}
             </li>

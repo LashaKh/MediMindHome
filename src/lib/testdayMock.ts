@@ -47,8 +47,7 @@ const CHECKS: UserCheck[] = [
   ...byDept("pharm").map((u) => check(u, { signed_in: true, key_screen_ok: true, actions_ok: true })),
   check(byDept("therapy")[0], { signed_in: true, key_screen_ok: true }),
   check(byDept("icu")[2], { sign_in_failed: true }),
-  check(byDept("reg")[1], { signed_in: true, note: "ნაწილი ბარათით, ნაწილი ნაღდით ვერ გავყავი. ამ როლით ამბულატორია არ ჩანს." }),
-  ...byDept("reg").slice(2, 6).map((u) => check(u, { signed_in: true })),
+  ...byDept("reg").slice(0, 4).map((u) => check(u, { signed_in: true })),
 ];
 const FLOW_CHECKS: FlowCheck[] = [
   ...[0, 1, 2, 3].map((i) => ({ dept_slug: "er", flow_idx: i, done: true, note: null, checked_by: "ტესტერი", checked_at: at(30 - i) })),
@@ -59,22 +58,14 @@ let iid = 1;
 const issue = (dept_slug: string | null, what: string, status: Issue["status"], extra: Partial<Issue> = {}): Issue => ({
   id: iid++, created_at: at(90 - iid * 7), dept_slug, person: null, screen: null, what, expected: null, pr_url: null, status, reported_by: "ტესტერი", updated_at: at(5), ...extra,
 });
-const ER = byDept("er"), REG = byDept("reg");
 const ISSUES: Issue[] = [
-  issue("er", "ტრიაჟის დაფაზე ახალი პაციენტი 2 წუთის შემდეგ გამოჩნდა.", "open", { screen: "ტრიაჟის დაფა", flow_idx: 1, source: "handin:er:roster" }),
-  issue("er", "კარდიოლოგი შეტყობინებებში ვერ ხედავს ემერჯენსის კონსულტაციას.", "fixed", { source: "handin:er:roster", fixed_at: at(60), answer: "კონსულტაცია ახლა კარდიოლოგიას და ტრავმატოლოგიას მისდის. სცადეთ: დანიშნეთ კონსულტაცია და ჰკითხეთ კარდიოლოგს, ხედავს თუ არა „ახალში“." }),
-  issue("er", "MAR-ში დოზის ერთეული მგ-ში ჩანს, აფთიაქი ამპულით გასცემს.", "work", { pr_url: "https://github.com/example/pr/1", flow_idx: 4 }),
-  issue("er", "ფორმა 300-12/ა: ლუმბალური პუნქციის თანხმობა ვერ ვიპოვე.", "answered", { source: "handin:er:roster", closed_at: at(30), answer: "ეს ფორმა ჯერ არ არის. დღეს გამოიყენეთ ქაღალდის თანხმობა, ფორმას მალე დავამატებთ." }),
-  issue("er", "4-300/ა: გასაგზავნი ველების პანელი ძალიან პატარაა.", "closed", { user_id: ER[0].id, closed_at: at(20), answer: "პანელი გავადიდეთ." }),
-  issue("reg", "ნაწილი ბარათით, ნაწილი ნაღდით: გადახდა ვერ გავყავი.", "fixed", { user_id: REG[1].id, source: `note:user:${REG[1].id}`, fixed_at: at(45), answer: "სალაროში ახლა ორი გადახდის ხაზი შეიძლება. სცადეთ: ჯერ ბარათით ნაწილი, მერე „დამატება“ და ნაღდი." }),
-  issue("reg", "ამ როლით ამბულატორიული პაციენტები არ ჩანს.", "open", { user_id: REG[1].id, source: `note:user:${REG[1].id}`, recheck_note: "გვერდი ისევ ცარიელია, 09:40" }),
+  issue("er", "ტრიაჟის დაფაზე ახალი პაციენტი 2 წუთის შემდეგ გამოჩნდა.", "open", { screen: "ტრიაჟის დაფა", person: "ნინო ტესტაძე (ექთანი)" }),
+  issue("er", "MAR-ში დოზის ერთეული მგ-ში ჩანს, აფთიაქი ამპულით გასცემს.", "pr", { pr_url: "https://github.com/example/pr/1" }),
   issue("icu", "ვერ შევიდა: პაროლის შეცვლის ფანჯარა არ იხურება.", "open"),
-  issue(null, "Shadow-ის მისამართი ზოგ კომპიუტერზე სერტიფიკატის გაფრთხილებას აჩვენებს.", "closed", { closed_at: at(60 * 20), answer: "სერტიფიკატი განახლდა." }),
+  issue("therapy", "ვიტალური ნიშნების ფორმა ტელეფონზე ორ სვეტად არ ეტევა.", "fixed"),
+  issue(null, "Shadow-ის მისამართი ზოგ კომპიუტერზე სერტიფიკატის გაფრთხილებას აჩვენებს.", "open"),
 ];
-const NOTES: Note[] = [
-  { dept_slug: "lab", handin: { failed: "არავინ", other: "ყველაფერი გაიარა." }, updated_by: "ტესტერი", updated_at: at(10) },
-  { dept_slug: "er", handin: { roster: "1. კარდიოლოგი კონსულტაციას ვერ ხედავს. 2. ტრიაჟის დაფა აგვიანებს. 3. ლუმბალური პუნქციის თანხმობა არ არის." }, updated_by: "ტესტერი", updated_at: at(300) },
-];
+const NOTES: Note[] = [{ dept_slug: "lab", handin: { failed: "არავინ", other: "ყველაფერი გაიარა." }, updated_by: "ტესტერი", updated_at: at(10) }];
 
 const store: State = {
   departments: DEPTS.map((d, i) => ({ ...d, sort: i })), users: USERS, userChecks: CHECKS, flowChecks: FLOW_CHECKS,
@@ -109,19 +100,13 @@ export async function mockWrite(action: string, p: Record<string, unknown>): Pro
     return row;
   }
   if (action === "issue_add") {
-    const row = issue((p.dept as string) || null, String(p.what), "open", { person: (p.person as string) || null, screen: (p.screen as string) || null, expected: (p.expected as string) || null, pr_url: (p.pr_url as string) || null, reported_by: by, created_at: now, user_id: (p.user_id as number) ?? null, flow_idx: (p.flow_idx as number) ?? null });
+    const row = issue((p.dept as string) || null, String(p.what), "open", { person: (p.person as string) || null, screen: (p.screen as string) || null, expected: (p.expected as string) || null, pr_url: (p.pr_url as string) || null, reported_by: by, created_at: now });
     store.issues = [row, ...store.issues];
     return row;
   }
   if (action === "issue_update") {
     const prev = store.issues.find((i) => i.id === p.id)!;
-    const st = p.status as Issue["status"] | undefined;
-    const row = {
-      ...prev, ...(st ? { status: st } : {}), ...(p.pr_url !== undefined ? { pr_url: p.pr_url } : {}),
-      ...(p.answer !== undefined ? { answer: p.answer } : {}), ...(p.recheck_note !== undefined ? { recheck_note: p.recheck_note } : {}),
-      ...(st === "fixed" ? { fixed_at: now } : {}), ...(st === "closed" || st === "answered" || st === "wontfix" ? { closed_at: now } : {}),
-      ...(st === "open" || st === "work" ? { closed_at: null } : {}), updated_at: now,
-    } as Issue;
+    const row = { ...prev, ...(p.status ? { status: p.status } : {}), ...(p.pr_url !== undefined ? { pr_url: p.pr_url } : {}), updated_at: now } as Issue;
     store.issues = store.issues.map((i) => (i.id === row.id ? row : i));
     return row;
   }

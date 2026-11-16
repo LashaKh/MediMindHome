@@ -691,7 +691,6 @@ function Person({ u, c, write, dept, flash, items, state }: { u: User; c?: UserC
   const [note, setNote] = useState(c?.note ?? "");
   const [editing, setEditing] = useState(false);
   const [noteOpen, setNoteOpen] = useState(false);
-  const [more, setMore] = useState(false);
   useEffect(() => { if (!editing) setNote(c?.note ?? ""); }, [c?.note, editing]);
 
   const tick = (field: keyof UserCheck, value: boolean | string | null) => {
@@ -714,15 +713,14 @@ function Person({ u, c, write, dept, flash, items, state }: { u: User; c?: UserC
     <li id={`u${u.id}`} className={`td-card td-person ${isDone ? "is-done" : ""} ${failed ? "is-problem" : ""} ${u.seat_ok ? "" : "is-off"} ${flash ? "is-flash" : ""}`}>
       <div className="td-person-head">
         <div className="td-person-id">
-          <div className="td-name" title={u.name}>{u.name}</div>
-          {/* One line; the full role list sits in the tooltip and in "details". */}
-          <div className="td-sub td-one" title={[u.title, u.roles].filter(Boolean).join(" · ")}>{[u.title, u.roles || "როლი არ აქვს"].filter(Boolean).join(" · ")}</div>
+          <div className="td-name">{u.name}</div>
+          <div className="td-sub">{[u.title, u.roles || "როლი არ აქვს"].filter(Boolean).join(" · ")}</div>
         </div>
         {u.logins ? (
           <button className="td-login" onClick={() => copy(u.logins!.split(",")[0].trim())} title="კოპირება">{u.logins}</button>
-        ) : <span className="td-tag td-tag-amber">WebMed არა</span>}
+        ) : <span className="td-tag td-tag-amber">WebMed-ის ანგარიში არ აქვს</span>}
       </div>
-      {more && (
+      {!isDone && (
         <div className="td-meta">
           <span><i>ძირითადი ეკრანი</i>{q(u.first_screen)}</span>
           {u.how && u.how !== "WebMed-ის მომხმარებლით" && <span><i>შესვლა</i>{u.how}</span>}
@@ -733,8 +731,7 @@ function Person({ u, c, write, dept, flash, items, state }: { u: User; c?: UserC
         <button className={`td-ok ${isDone ? "on" : ""}`} aria-pressed={isDone} onClick={allFine} disabled={isDone}>
           <span className="td-box">✓</span>{isDone ? "შემოწმდა" : "ყველაფერი რიგზეა"}
         </button>
-        <button className="td-prob td-prob-sq" onClick={() => report({ dept: dept.slug, person: `${u.name} (${u.roles})`, userId: u.id })}
-          aria-label="პრობლემა" title="პრობლემა">!</button>
+        <button className="td-prob" onClick={() => report({ dept: dept.slug, person: `${u.name} (${u.roles})`, userId: u.id })}>პრობლემა</button>
       </div>
       <div className="td-ticks" role="group" aria-label="ნაბიჯები">
         {STEPS.map(([f, label]) => (
@@ -757,7 +754,6 @@ function Person({ u, c, write, dept, flash, items, state }: { u: User; c?: UserC
       {items.length > 0 && <IssueList issues={items} state={state} write={write} hideDept compact />}
       <div className="td-person-foot">
         {!showNote && <button className="td-mini" onClick={() => setNoteOpen(true)}>+ შენიშვნა</button>}
-        <button className="td-mini" onClick={() => setMore(!more)} aria-expanded={more}>{more ? "ნაკლები" : "დეტალები"}</button>
         {c?.checked_by && <span className="td-by">{c.checked_by} · {hhmm(c.checked_at)}</span>}
       </div>
     </li>

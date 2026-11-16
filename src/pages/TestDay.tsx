@@ -56,6 +56,8 @@ async function copy(text: string) {
 export function TestDay() {
   const [token, setToken] = useState<string | null>(() => loadSession());
   const [name, setName] = useState(() => loadName());
+  // ?redact blurs names and logins, for screenshots that leave the team.
+  const [redact] = useState(() => new URLSearchParams(window.location.search).has("redact"));
 
   useEffect(() => {
     const meta = document.createElement("meta");
@@ -70,7 +72,7 @@ export function TestDay() {
   const logout = useCallback(() => { saveSession(null); setToken(null); }, []);
 
   return (
-    <div className="td">
+    <div className={redact ? "td td-redact" : "td"}>
       <Toaster position="bottom-center" toastOptions={{ style: { fontFamily: "inherit", fontSize: 14 } }} />
       {!token ? (
         <Gate onIn={(s) => { saveSession(s); setToken(s.token); }} />
@@ -253,6 +255,10 @@ function Bar({ value, total }: { value: number; total: number }) {
 function Picker({ state }: { state: State }) {
   const { by } = useStats(state);
   const [rules, setRules] = useState(false);
+  const [find, setFind] = useState("");
+  const qq = find.trim().toLowerCase();
+  const found = qq.length < 2 ? [] : state.users.filter((u) => u.name.toLowerCase().includes(qq) || (u.logins ?? "").toLowerCase().includes(qq)).slice(0, 20);
+  const deptTitle = (slug: string) => state.departments.find((d) => d.slug === slug)?.title ?? "";
   const all = [...by.values()].reduce((a, s) => ({ total: a.total + s.total, done: a.done + s.done }), { total: 0, done: 0 });
   return (
     <div className="td-pad">
@@ -274,6 +280,16 @@ function Picker({ state }: { state: State }) {
           <ul>{RULE.map((r) => <li key={r}>{r}</li>)}</ul>
         </div>
       )}
+      <div className="td-find">
+        <input className="td-input" type="search" placeholder="ვის ეძებთ? სახელი ან WebMed მომხმარებელი" value={find} onChange={(e) => setFind(e.target.value)} />
+        {qq.length >= 2 && (found.length === 0 ? <p className="td-empty" style={{ marginTop: 8 }}>ვერ მოიძებნა.</p> : (
+          <ul className="td-find-list">
+            {found.map((u) => (
+              <li key={u.id}><Link to={`${BASE}/d/${u.dept_slug}`} className="td-card"><span><span className="td-find-name">{u.name}</span><div className="td-sub">{u.roles}</div></span><span className="td-tag">{deptTitle(u.dept_slug)}</span></Link></li>
+            ))}
+          </ul>
+        ))}
+      </div>
       <div className="td-grid">
         {state.departments.map((d) => {
           const s = by.get(d.slug)!;
@@ -304,27 +320,66 @@ const SECTIONS = [
   ["flows", "მოქმედებები"], ["teach", "სასწავლო"], ["issues", "ხარვეზები"], ["handin", "ჩაბარება"],
 ] as const;
 
+// Which section is on screen, so the sticky contents bar can highlight it.
+function useActiveSection(ids: readonly string[]) {
+  const [active, setActive] = useState(ids[0]);
+  useEffect(() => {
+    const onScroll = () => {
+      let cur = ids[0];
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top < 190) cur = id;
+      }
+      setActive(cur);
+    };
+    onScroll();
+    // Capture, so it also hears a scrolling body (not only the window).
+    document.addEventListener("scroll", onScroll, { passive: true, capture: true });
+    return () => document.removeEventListener("scroll", onScroll, { capture: true });
+  }, [ids]);
+  return active;
+}
+const SECTION_IDS = SECTIONS.map(([id]) => id);
+const jump = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+
 function DeptPage({ state, slug, write }: { state: State; slug: string; write: Write }) {
   const dept = state.departments.find((d) => d.slug === slug);
   const stats = useStats(state);
+  const active = useActiveSection(SECTION_IDS);
+  const [issueOpen, setIssueOpen] = useState(false);
+  const tocRef = useRef<HTMLElement>(null);
+  // Keep the highlighted chip in view as the page scrolls.
+  useEffect(() => {
+    const chip = tocRef.current?.querySelector<HTMLElement>(`[data-id="${active}"]`);
+    if (chip && tocRef.current) tocRef.current.scrollLeft = chip.offsetLeft - tocRef.current.offsetLeft - 12;
+  }, [active]);
+  useEffect(() => { window.scrollTo(0, 0); }, [slug]);
   if (!dept) return <p className="td-pad">განყოფილება ვერ მოიძებნა. <Link to={BASE}>უკან</Link></p>;
   const s = stats.by.get(slug)!;
   const users = state.users.filter((u) => u.dept_slug === slug);
   return (
     <div>
-      <div className="td-pad td-dept-head">
-        <Link to={BASE} className="td-back">← განყოფილებები</Link>
-        <h1>{dept.title}</h1>
-        <div className="td-dept-nums">
-          <span><b>{s.done}</b> / {s.total} ადამიანი შემოწმდა</span>
-          <span>{s.signed} შევიდა</span>
-          <span>{s.flowsDone} / {dept.flows.length} მოქმედება</span>
+      <div className="td-stick">
+        <div className="td-stick-row">
+          <Link to={BASE} className="td-stick-back" aria-label="ყველა განყოფილება">←</Link>
+          <div className="td-stick-title">{dept.title}</div>
+          <div className="td-stick-num" title="სრულად შემოწმდა"><b>{s.done}</b>/{s.total}</div>
         </div>
         <Bar value={s.done} total={s.total} />
+        <nav className="td-toc" aria-label="ნაწილები" ref={tocRef}>
+          {SECTIONS.map(([id, label]) => (
+            <a key={id} data-id={id} href={`#${id}`} className={active === id ? "on" : ""} aria-current={active === id ? "true" : undefined}
+              onClick={(e) => { e.preventDefault(); jump(id); }}>{label}</a>
+          ))}
+        </nav>
       </div>
-      <nav className="td-toc" aria-label="ნაწილები">
-        {SECTIONS.map(([id, label]) => <a key={id} href={`#${id}`} onClick={(e) => { e.preventDefault(); document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" }); }}>{label}</a>)}
-      </nav>
+      <div className="td-pad td-dept-sum">
+        <span><b>{s.signed}</b> შევიდა</span>
+        <span className={s.failed ? "red" : ""}><b>{s.failed}</b> ვერ შევიდა</span>
+        <span><b>{s.flowsDone}</b>/{dept.flows.length} მოქმედება</span>
+        <span className={s.open ? "amber" : ""}><b>{s.open}</b> ღია ხარვეზი</span>
+      </div>
+      <button className="td-fab" onClick={() => { if (issueOpen) jump("issues"); else setIssueOpen(true); }}>+ ხარვეზი</button>
       <div className="td-pad td-sections">
         {dept.warn && <p className="td-warn">{dept.warn}</p>}
         <People users={users} checks={stats.checks} write={write} />
@@ -334,7 +389,7 @@ function DeptPage({ state, slug, write }: { state: State; slug: string; write: W
         <Teach dept={dept} />
         <section id="issues" className="td-section">
           <h2>ხარვეზები</h2>
-          <IssueForm state={state} dept={slug} write={write} />
+          <IssueForm state={state} dept={slug} write={write} open={issueOpen} setOpen={setIssueOpen} />
           <IssueList issues={state.issues.filter((i) => i.dept_slug === slug)} state={state} write={write} />
         </section>
         <Handin dept={dept} note={state.notes.find((n) => n.dept_slug === slug)} summary={`${s.signed} შევიდა · ${s.done} / ${s.total} სრულად`} write={write} />
@@ -594,10 +649,12 @@ function Handin({ dept, note, summary, write }: { dept: Department; note?: Note;
 }
 
 // ───────────────────────── issues ─────────────────────────
-function IssueForm({ state, dept: fixedDept, write }: { state: State; dept?: string; write: Write }) {
+function IssueForm({ state, dept: fixedDept, write, ...ctl }: { state: State; dept?: string; write: Write; open?: boolean; setOpen?: (o: boolean) => void }) {
   const empty = { dept: fixedDept ?? "", person: "", screen: "", what: "", expected: "", pr_url: "" };
   const [f, setF] = useState(empty);
-  const [open, setOpen] = useState(false);
+  const [ownOpen, setOwnOpen] = useState(false);
+  const open = ctl.open ?? ownOpen;
+  const setOpen = ctl.setOpen ?? setOwnOpen;
   const people = state.users.filter((u) => !f.dept || u.dept_slug === f.dept);
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -625,7 +682,7 @@ function IssueForm({ state, dept: fixedDept, write }: { state: State; dept?: str
         <datalist id="td-people-list">{people.map((u) => <option key={u.id} value={`${u.name} (${u.roles})`} />)}</datalist>
       </label>
       <label className="td-field"><span className="td-label">ეკრანი</span><input className="td-input" value={f.screen} onChange={set("screen")} placeholder="მაგ.: საექთნო პოსტი → MAR" /></label>
-      <label className="td-field"><span className="td-label">რა მოხდა *</span><textarea className="td-input" rows={3} required value={f.what} onChange={set("what")} /></label>
+      <label className="td-field"><span className="td-label">რა მოხდა *</span><textarea className="td-input" rows={3} required autoFocus value={f.what} onChange={set("what")} /></label>
       <label className="td-field"><span className="td-label">რას ელოდით</span><textarea className="td-input" rows={2} value={f.expected} onChange={set("expected")} /></label>
       <label className="td-field"><span className="td-label">PR-ის ბმული (თუ უკვე გახსენით)</span><input className="td-input" type="url" value={f.pr_url} onChange={set("pr_url")} placeholder="https://github.com/…" /></label>
       <div className="td-row">

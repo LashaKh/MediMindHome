@@ -244,3 +244,6 @@ textarea.td-input { resize: vertical; min-height: 44px; }
 .td-find-list { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
 .td-find-list a { display: flex; justify-content: space-between; gap: 10px; align-items: center; min-height: 52px; text-decoration: none; }
 .td-find-name { font-weight: 700; }
+/* two cards per row on desktop: keep the ticks two per line so labels never wrap */
+@media (min-width: 900px) { .td-people .td-ticks { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 400px) { .td-nav a { padding: 8px 10px; font-size: 13.5px; } }

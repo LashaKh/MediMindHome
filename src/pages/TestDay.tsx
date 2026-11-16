@@ -149,6 +149,7 @@ function Portal({ token, name, onLogout, onRename }: { token: string; name: stri
     } catch (e) {
       if (e instanceof TdError && e.status === 401) return onLogout();
       setLoadErr(true);
+      setTimeout(refresh, 5000); // don't wait a full poll when the connection drops
     }
   }, [token, onLogout]);
 
@@ -205,7 +206,7 @@ function Portal({ token, name, onLogout, onRename }: { token: string; name: stri
       {loadErr && <div className="td-banner">კავშირი გაწყდა. ბოლო მონაცემებს ვაჩვენებ, ვცდი ხელახლა.</div>}
       <main className="td-main">
         {!state ? (
-          <p className="td-muted td-pad">იტვირთება…</p>
+          <p className="td-muted td-pad">{loadErr ? "სერვერს ვერ დავუკავშირდით. ვცდი ხელახლა…" : "იტვირთება…"}</p>
         ) : view === "d" && parts[1] ? (
           <DeptPage state={state} slug={parts[1]} write={write} />
         ) : view === "issues" ? (

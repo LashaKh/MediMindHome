@@ -40,6 +40,8 @@ async function post<T>(body: Record<string, unknown>, token?: string): Promise<T
   try {
     res = await fetch(API, {
       method: "POST",
+      // A hung hospital Wi-Fi request fails after 15 s, so the page can say so and retry.
+      signal: typeof AbortSignal.timeout === "function" ? AbortSignal.timeout(15_000) : undefined, // old iPhones lack it
       headers: { "Content-Type": "application/json", ...(token ? { Authorization: `Bearer ${token}` } : {}) },
       body: JSON.stringify(body),
     });

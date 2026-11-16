@@ -422,3 +422,42 @@ textarea.td-input { resize: vertical; min-height: 44px; }
 .td-list li { font-size: 14px; }
 .td-list a { text-decoration: none; }
 .td-handins { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 10px; }
+
+/* issue life: stage chip, our answer, tester re-check, team controls, overview showcase */
+.td-chip { display: inline-flex; align-items: center; font-size: 12px; font-weight: 700; padding: 2px 9px; border-radius: 999px; white-space: nowrap; }
+.c-open { background: var(--amber-bg); color: var(--amber); }
+.c-work { background: var(--blue-bg); color: var(--blue); }
+.c-fixed { background: var(--green); color: #fff; }
+.c-closed { background: var(--green-bg); color: var(--green); }
+.c-answered { background: var(--grey-bg); color: var(--navy); }
+.td-issue.sg-open { border-left-color: var(--amber); }
+.td-issue.sg-work { border-left-color: var(--blue); }
+.td-issue.sg-fixed { border-left-color: var(--green); box-shadow: 0 0 0 1px var(--green) inset; }
+.td-issue.sg-closed { border-left-color: var(--green); opacity: .85; }
+.td-issue.sg-answered { border-left-color: #8a9bb0; }
+.td-issue-head { justify-content: flex-start; }
+.td-answer { font-size: 14px; background: var(--green-bg); border-radius: 8px; padding: 8px 10px; white-space: pre-wrap; }
+.td-answer.a-answered { background: var(--pale); }
+.td-recheck-note { font-size: 13.5px; background: var(--red-bg); color: #8a1f1f; border-radius: 8px; padding: 6px 10px; }
+.td-recheck { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.td-recheck .td-input { flex: 1 1 200px; }
+.td-btn-green { background: var(--green); color: #fff !important; }
+.td-btn-red { background: var(--red); color: #fff !important; }
+.td-btn-redtext { color: var(--red) !important; }
+.td-team { display: flex; flex-direction: column; gap: 6px; border-top: 1px dashed var(--line); padding-top: 8px; margin-top: 2px; }
+.td-seg .s-work { background: var(--blue); }
+.td-seg .s-closed { background: var(--green); }
+.td-seg .s-answered { background: var(--muted); }
+.td-madeinto { font-size: 12.5px; color: var(--blue) !important; font-weight: 600; text-decoration: none; display: inline-block; margin-top: 4px; }
+.td-issues-compact { gap: 6px; }
+.td-issues-compact .td-issue { padding: 10px; border-left-width: 4px; gap: 6px; }
+.td-issues-compact .td-issue-what { font-size: 14px; }
+.td-showcase { display: grid; gap: 12px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 900px) { .td-showcase { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); } }
+.td-showcase section { display: flex; flex-direction: column; gap: 8px; }
+.td-solved { border-color: #b7dcc5; background: #f7fcf9; }
+.td-waiting { border-color: #cfe0f2; }
+.td-solved-n { font-size: 30px; line-height: 1; color: var(--green); }
+.td-waiting .td-solved-n { color: var(--blue); }
+.td-showcase .td-list li { border-top: 1px solid var(--line); padding-top: 6px; }
+.td-showcase .td-list li:first-child { border-top: 0; padding-top: 0; }

@@ -19,10 +19,15 @@ export interface UserCheck {
   note: string | null; checked_by: string | null; checked_at: string;
 }
 export interface FlowCheck { dept_slug: string; flow_idx: number; done: boolean; note: string | null; checked_by: string | null; checked_at: string }
-export type IssueStatus = "open" | "pr" | "fixed" | "wontfix";
+// Life of an item: open → work → fixed (please re-check) → closed (tester confirmed) | open (still broken);
+// answered = training or a decision. pr and wontfix are day-1 values that stay readable.
+export type IssueStatus = "open" | "work" | "pr" | "fixed" | "closed" | "answered" | "wontfix";
 export interface Issue {
   id: number; created_at: string; dept_slug: string | null; person: string | null; screen: string | null; what: string;
   expected: string | null; pr_url: string | null; status: IssueStatus; reported_by: string | null; updated_at: string;
+  // Added by migration 0007; optional so a row from before it still reads.
+  user_id?: number | null; flow_idx?: number | null; answer?: string | null; recheck_note?: string | null;
+  source?: string | null; ref?: string | null; fixed_at?: string | null; closed_at?: string | null;
 }
 export interface Seat { email: string; role: string | null; password: string | null }
 export interface Note { dept_slug: string; handin: Record<string, string>; updated_by: string | null; updated_at: string }

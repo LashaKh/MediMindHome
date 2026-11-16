@@ -34,7 +34,16 @@ const MORNING = [
   "ვინც ვერ შევიდა: მონიშნეთ „ვერ შევიდა“ და შენიშვნაში ჩაწერეთ შეცდომის ზუსტი ტექსტი.",
   "ვინც შევიდა, მაგრამ ძირითადი ეკრანი არ ჩანს: შენიშვნაში ჩაწერეთ, რა ჩანს, და დაარეგისტრირეთ ხარვეზი.",
 ];
-const STATUS_KA: Record<IssueStatus, string> = { open: "ღია", pr: "PR გახსნილია", fixed: "გასწორდა", wontfix: "არ სჭირდება" };
+// Five stages people see. Day-1 values fold in: pr reads as "in work", wontfix as "answered".
+type Stage = "open" | "work" | "fixed" | "closed" | "answered";
+const stage = (s: IssueStatus): Stage => (s === "pr" ? "work" : s === "wontfix" ? "answered" : s);
+const STAGE_KA: Record<Stage, string> = { open: "ღია", work: "მუშავდება", fixed: "გასწორდა, გადაამოწმეთ", closed: "დადასტურდა", answered: "პასუხი გაცემულია" };
+const STATUS_KA: Record<IssueStatus, string> = { ...STAGE_KA, pr: STAGE_KA.work, wontfix: STAGE_KA.answered };
+const TEAM_STAGES: Stage[] = ["open", "work", "fixed", "answered", "closed"];
+// Waiting for the tester first, then open, in work, and the finished ones last.
+const STAGE_ORDER: Record<Stage, number> = { fixed: 0, open: 1, work: 2, answered: 3, closed: 4 };
+const sortIssues = (l: Issue[]) => [...l].sort((a, b) => STAGE_ORDER[stage(a.status)] - STAGE_ORDER[stage(b.status)] || b.id - a.id);
+const isSolved = (i: Issue) => stage(i.status) === "closed" || stage(i.status) === "answered";
 const HANDIN = [
   ["failed", "ვინ ვერ შევიდა (WebMed № და მიზეზი)"],
   ["prs", "გახსნილი PR-ები"],
@@ -48,7 +57,8 @@ const q = (s: string) => s.replace(/„([^"„]*)"/gu, "„$1“");
 const hhmm = (iso: string) => new Date(iso).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: "Asia/Tbilisi" });
 const done = (c?: UserCheck) => !!c && c.signed_in && c.key_screen_ok && c.actions_ok;
 const problem = (c?: UserCheck) => !!c && c.sign_in_failed;
-const isActive = (i: Issue) => i.status === "open" || i.status === "pr";
+// Still on our side: open or in work. A fixed item waits for the tester and is counted on its own.
+const isActive = (i: Issue) => stage(i.status) === "open" || stage(i.status) === "work";
 // A real mouse means a desk computer: there the search box may take the focus without opening a phone keyboard.
 const finePointer = () => typeof window !== "undefined" && window.matchMedia?.("(pointer: fine)").matches;
 
@@ -167,7 +177,7 @@ function NameStep({ token, onName }: { token: string; onName: (n: string) => voi
 // ───────────────────────── data + writes ─────────────────────────
 type Write = <T>(action: string, payload: Record<string, unknown>, optimistic: (s: State) => State, apply: (s: State, row: T) => State) => void;
 // What the problem sheet already knows when it opens: department, person, action. Only "what happened" is typed.
-interface ReportCtx { dept?: string; person?: string; screen?: string }
+interface ReportCtx { dept?: string; person?: string; screen?: string; userId?: number; flowIdx?: number }
 const ReportContext = createContext<(ctx: ReportCtx) => void>(() => {});
 const useReport = () => useContext(ReportContext);
 
@@ -525,7 +535,11 @@ function DeptPage({ state, slug, write }: { state: State; slug: string; write: W
   }, [active]);
   // Arriving from the search (#u<id>): bring that person to the middle of the screen and light the card up.
   useEffect(() => {
-    if (!hash.startsWith("#u")) { window.scrollTo(0, 0); return; }
+    if (!hash.startsWith("#u")) {
+      const sec = hash.slice(1);
+      if ((SECTION_IDS as readonly string[]).includes(sec)) setTimeout(() => jump(sec), 60); else window.scrollTo(0, 0);
+      return;
+    }
     const id = hash.slice(1);
     const to = (smooth: boolean) => document.getElementById(id)?.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "center" });
     const t = setTimeout(() => { to(true); setFlash(id); }, 60);
@@ -572,7 +586,7 @@ function DeptPage({ state, slug, write }: { state: State; slug: string; write: W
           </div>
           {dept.warn && <p className="td-warn">{dept.warn}</p>}
           <Flows dept={dept} flows={stats.flows} write={write} />
-          <People users={users} checks={stats.checks} write={write} dept={dept} flash={flash} />
+          <People users={users} checks={stats.checks} write={write} dept={dept} flash={flash} issues={issues} state={state} />
           <section id="issues" className="td-section">
             <div className="td-h2row">
               <h2>ხარვეზები <span className="td-count">{issues.length}</span></h2>
@@ -591,7 +605,7 @@ function DeptPage({ state, slug, write }: { state: State; slug: string; write: W
               <Teach dept={dept} />
             </div>
           </section>
-          <Handin dept={dept} note={state.notes.find((n) => n.dept_slug === slug)} summary={`${s.signed} შევიდა · ${s.done} / ${s.total} სრულად`} write={write} />
+          <Handin dept={dept} note={state.notes.find((n) => n.dept_slug === slug)} summary={`${s.signed} შევიდა · ${s.done} / ${s.total} სრულად`} write={write} issues={issues} />
         </div>
         <aside className="td-side td-side-dept">
           <div className="td-card td-side-sum">
@@ -613,7 +627,7 @@ function DeptPage({ state, slug, write }: { state: State; slug: string; write: W
 }
 
 type Filter = "all" | "todo" | "problem" | "done";
-function People({ users, checks, write, dept, flash }: { users: User[]; checks: Map<number, UserCheck>; write: Write; dept: Department; flash: string | null }) {
+function People({ users, checks, write, dept, flash, issues, state }: { users: User[]; checks: Map<number, UserCheck>; write: Write; dept: Department; flash: string | null; issues: Issue[]; state: State }) {
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState<Filter>("all");
   const list = useMemo(() => {
@@ -658,7 +672,7 @@ function People({ users, checks, write, dept, flash }: { users: User[]; checks: 
       )}
       {users.length > 0 && list.length === 0 && <p className="td-empty">ამ ფილტრით არავინ ჩანს.</p>}
       <ul className="td-people">
-        {list.map((u) => <Person key={u.id} u={u} c={checks.get(u.id)} write={write} dept={dept} flash={flash === `u${u.id}`} />)}
+        {list.map((u) => <Person key={u.id} u={u} c={checks.get(u.id)} write={write} dept={dept} flash={flash === `u${u.id}`} items={issues.filter((i) => i.user_id === u.id)} state={state} />)}
       </ul>
     </section>
   );
@@ -672,7 +686,7 @@ const setCheck = (s: State, row: UserCheck): State => ({
 });
 const STEPS = [["signed_in", "შევიდა"], ["key_screen_ok", "ეკრანი"], ["actions_ok", "მოქმედებები"]] as const;
 
-function Person({ u, c, write, dept, flash }: { u: User; c?: UserCheck; write: Write; dept: Department; flash: boolean }) {
+function Person({ u, c, write, dept, flash, items, state }: { u: User; c?: UserCheck; write: Write; dept: Department; flash: boolean; items: Issue[]; state: State }) {
   const report = useReport();
   const [note, setNote] = useState(c?.note ?? "");
   const [editing, setEditing] = useState(false);
@@ -717,7 +731,7 @@ function Person({ u, c, write, dept, flash }: { u: User; c?: UserCheck; write: W
         <button className={`td-ok ${isDone ? "on" : ""}`} aria-pressed={isDone} onClick={allFine} disabled={isDone}>
           <span className="td-box">✓</span>{isDone ? "შემოწმდა" : "ყველაფერი რიგზეა"}
         </button>
-        <button className="td-prob" onClick={() => report({ dept: dept.slug, person: `${u.name} (${u.roles})` })}>პრობლემა</button>
+        <button className="td-prob" onClick={() => report({ dept: dept.slug, person: `${u.name} (${u.roles})`, userId: u.id })}>პრობლემა</button>
       </div>
       <div className="td-ticks" role="group" aria-label="ნაბიჯები">
         {STEPS.map(([f, label]) => (
@@ -734,6 +748,10 @@ function Person({ u, c, write, dept, flash }: { u: User; c?: UserCheck; write: W
           onFocus={() => setEditing(true)} onChange={(e) => setNote(e.target.value)}
           onBlur={() => { setEditing(false); setNoteOpen(false); if ((note.trim() || null) !== (c?.note ?? null)) tick("note", note.trim() || null); }} />
       ) : null}
+      {c?.note && items.some((i) => i.source === `note:user:${u.id}`) && (
+        <div className="td-madeinto">→ {items.filter((i) => i.source === `note:user:${u.id}`).length} საკითხად იქცა, იხ. ქვემოთ</div>
+      )}
+      {items.length > 0 && <IssueList issues={items} state={state} write={write} hideDept compact />}
       <div className="td-person-foot">
         {!showNote && <button className="td-mini" onClick={() => setNoteOpen(true)}>+ შენიშვნა</button>}
         {c?.checked_by && <span className="td-by">{c.checked_by} · {hhmm(c.checked_at)}</span>}
@@ -811,7 +829,7 @@ function FlowItem({ f, i, c, dept, onDone, onNote }: { f: Department["flows"][nu
           onClick={() => { onDone(); if (!c?.done) toast.success(`შესრულდა: ${q(f.w)}`, { duration: 1500 }); }}>
           <span className="td-box">✓</span>{c?.done ? "შესრულდა" : "მონიშნეთ: შესრულდა"}
         </button>
-        <button className="td-prob" onClick={() => report({ dept, screen: q(f.w) })}>პრობლემა</button>
+        <button className="td-prob" onClick={() => report({ dept, screen: q(f.w), flowIdx: i })}>პრობლემა</button>
       </div>
       {(open || c?.note) && (
         <textarea className="td-input td-note" rows={1} placeholder="შენიშვნა (რა არ გამოვიდა)" value={note}
@@ -838,8 +856,9 @@ function Teach({ dept }: { dept: Department }) {
   );
 }
 
-function Handin({ dept, note, summary, write }: { dept: Department; note?: Note; summary: string; write: Write }) {
+function Handin({ dept, note, summary, write, issues }: { dept: Department; note?: Note; summary: string; write: Write; issues: Issue[] }) {
   const report = useReport();
+  const made = (k: string) => issues.filter((i) => i.source === `handin:${dept.slug}:${k}`).length;
   const [form, setForm] = useState<Record<string, string>>(note?.handin ?? {});
   const [dirty, setDirty] = useState(false);
   useEffect(() => { if (!dirty) setForm(note?.handin ?? {}); }, [note, dirty]);
@@ -865,6 +884,7 @@ function Handin({ dept, note, summary, write }: { dept: Department; note?: Note;
             <label key={k} className="td-field">
               <span className="td-label">{label}</span>
               <textarea className="td-input" rows={2} value={form[k] ?? ""} onChange={(e) => { setDirty(true); setForm({ ...form, [k]: e.target.value }); }} />
+              {made(k) > 0 && <a className="td-madeinto" href="#issues" onClick={(e) => { e.preventDefault(); jump("issues"); }}>→ {made(k)} საკითხად იქცა</a>}
             </label>
           ))}
         </div>
@@ -895,7 +915,11 @@ function ReportSheet({ state, ctx, write, onClose }: { state: State; ctx: Report
   const submit = (e?: React.FormEvent) => {
     e?.preventDefault();
     if (!what.trim()) return;
-    write<Issue>("issue_add", { dept: dept || null, person, screen, what: what.trim(), expected, pr_url: pr }, (s) => s, (s, row) => ({ ...s, issues: [row, ...s.issues] }));
+    write<Issue>("issue_add", {
+      dept: dept || null, person, screen, what: what.trim(), expected, pr_url: pr,
+      // Link to the person and the action only while their chips are still on the sheet.
+      ...(person && ctx.userId ? { user_id: ctx.userId } : {}), ...(screen && ctx.flowIdx !== undefined ? { flow_idx: ctx.flowIdx } : {}),
+    }, (s) => s, (s, row) => ({ ...s, issues: [row, ...s.issues] }));
     toast.success("ხარვეზი ჩაიწერა");
     onClose();
   };
@@ -944,52 +968,98 @@ function ReportSheet({ state, ctx, write, onClose }: { state: State; ctx: Report
 
 const setIssue = (s: State, row: Issue): State => ({ ...s, issues: s.issues.map((i) => (i.id === row.id ? row : i)) });
 
-function IssueList({ issues, state, write, hideDept }: { issues: Issue[]; state: State; write: Write; hideDept?: boolean }) {
+// One issue item, two views. "staff": state chip, our answer, and for a fixed item the two re-check buttons (testers
+// on the department page and their own card). "team": the same plus one-tap state change and the answer box (issues tab).
+function useIssueUpdate(write: Write) {
+  return useCallback((i: Issue, patch: Partial<Issue>) =>
+    write<Issue>("issue_update", { id: i.id, ...patch }, (s) => setIssue(s, { ...i, ...patch }), setIssue), [write]);
+}
+
+function IssueList({ issues, state, write, hideDept, team, compact }: { issues: Issue[]; state: State; write: Write; hideDept?: boolean; team?: boolean; compact?: boolean }) {
+  const update = useIssueUpdate(write);
   if (issues.length === 0) return <p className="td-empty">ხარვეზი ჯერ არ ჩაწერილა.</p>;
   const title = (slug: string | null) => state.departments.find((d) => d.slug === slug)?.title ?? "საერთო";
-  const update = (i: Issue, patch: Partial<Issue>) =>
-    write<Issue>("issue_update", { id: i.id, ...patch }, (s) => setIssue(s, { ...i, ...patch }), setIssue);
   return (
-    <ul className="td-issues">
-      {issues.map((i) => <IssueItem key={i.id} i={i} dept={hideDept ? null : title(i.dept_slug)} update={update} />)}
+    <ul className={compact ? "td-issues td-issues-compact" : "td-issues"}>
+      {sortIssues(issues).map((i) => <IssueItem key={i.id} i={i} dept={hideDept ? null : title(i.dept_slug)} update={update} team={team} compact={compact} />)}
     </ul>
   );
 }
 
-function IssueItem({ i, dept, update }: { i: Issue; dept: string | null; update: (i: Issue, p: Partial<Issue>) => void }) {
+function Recheck({ i, update }: { i: Issue; update: (i: Issue, p: Partial<Issue>) => void }) {
+  const [broken, setBroken] = useState(false);
+  const [line, setLine] = useState("");
+  if (broken) {
+    return (
+      <form className="td-recheck" onSubmit={(e) => { e.preventDefault(); update(i, { status: "open", recheck_note: line.trim() || "ისევ არ მუშაობს" }); toast("გუნდს დაუბრუნდა", { icon: "↩" }); setBroken(false); }}>
+        <input className="td-input td-input-sm" autoFocus placeholder="რა არ მუშაობს? (არჩევითი)" value={line} onChange={(e) => setLine(e.target.value)} />
+        <button className="td-btn td-btn-sm td-btn-red">ისევ არ მუშაობს</button>
+        <button type="button" className="td-mini" onClick={() => setBroken(false)}>გაუქმება</button>
+      </form>
+    );
+  }
+  return (
+    <div className="td-recheck">
+      <button className="td-btn td-btn-sm td-btn-green" onClick={() => { update(i, { status: "closed" }); toast.success("დადასტურდა. მადლობა!"); }}>✓ ახლა მუშაობს</button>
+      <button className="td-btn td-btn-sm td-btn-ghost td-btn-redtext" onClick={() => setBroken(true)}>ისევ არ მუშაობს</button>
+    </div>
+  );
+}
+
+function IssueItem({ i, dept, update, team, compact }: { i: Issue; dept: string | null; update: (i: Issue, p: Partial<Issue>) => void; team?: boolean; compact?: boolean }) {
+  const [answer, setAnswer] = useState(i.answer ?? "");
+  const [answerOpen, setAnswerOpen] = useState(false);
   const [pr, setPr] = useState(i.pr_url ?? "");
   const [prOpen, setPrOpen] = useState(false);
   useEffect(() => setPr(i.pr_url ?? ""), [i.pr_url]);
+  useEffect(() => { if (!answerOpen) setAnswer(i.answer ?? ""); }, [i.answer, answerOpen]);
+  const st = stage(i.status);
   return (
-    <li className={`td-card td-issue st-${i.status}`}>
+    <li className={`td-card td-issue sg-${st}`}>
       <div className="td-issue-head">
+        <span className={`td-chip c-${st}`}>{STAGE_KA[st]}</span>
         <span className="td-sub">#{i.id} · {hhmm(i.created_at)}{dept ? ` · ${dept}` : ""}</span>
-        <div className="td-seg" role="group" aria-label="სტატუსი">
-          {(Object.keys(STATUS_KA) as IssueStatus[]).map((s) => (
-            <button key={s} className={i.status === s ? `on s-${s}` : ""} aria-pressed={i.status === s} onClick={() => { if (i.status !== s) update(i, { status: s }); }}>{STATUS_KA[s]}</button>
-          ))}
-        </div>
       </div>
       <div className="td-issue-what">{i.what}</div>
-      {i.expected && <div className="td-sub"><b>ელოდნენ:</b> {i.expected}</div>}
-      {(i.person || i.screen || i.reported_by) && <div className="td-sub td-issue-who">{[i.person, i.screen, i.reported_by && `ჩაწერა: ${i.reported_by}`].filter(Boolean).join(" · ")}</div>}
-      <div className="td-row">
-        {i.pr_url && !prOpen && <a className="td-link" href={i.pr_url} target="_blank" rel="noreferrer">PR გახსნა</a>}
-        {prOpen ? (
-          <input className="td-input td-input-sm" type="url" autoFocus placeholder="PR-ის ბმული" value={pr} onChange={(e) => setPr(e.target.value)}
-            onBlur={() => { setPrOpen(false); if ((pr.trim() || null) !== i.pr_url) update(i, { pr_url: pr.trim() || null, ...(pr.trim() && i.status === "open" ? { status: "pr" as IssueStatus } : {}) }); }} />
-        ) : <button className="td-mini" onClick={() => setPrOpen(true)}>{i.pr_url ? "ბმულის შეცვლა" : "+ PR-ის ბმული"}</button>}
-      </div>
+      {!compact && i.expected && <div className="td-sub"><b>ელოდნენ:</b> {i.expected}</div>}
+      {!compact && (i.person || i.screen || i.reported_by) && <div className="td-sub td-issue-who">{[i.person, i.screen, i.reported_by && `ჩაწერა: ${i.reported_by}`].filter(Boolean).join(" · ")}</div>}
+      {i.recheck_note && (st === "open" || st === "work") && <div className="td-recheck-note"><b>ტესტერი:</b> {i.recheck_note}</div>}
+      {i.answer && !answerOpen && <div className={`td-answer a-${st}`}><b>{st === "answered" ? "პასუხი:" : "რა შევცვალეთ:"}</b> {i.answer}</div>}
+      {st === "fixed" && <Recheck i={i} update={update} />}
+      {team && (
+        <div className="td-team">
+          <div className="td-seg" role="group" aria-label="მდგომარეობა">
+            {TEAM_STAGES.map((s) => (
+              <button key={s} className={st === s ? `on s-${s}` : ""} aria-pressed={st === s} onClick={() => { if (i.status !== s) update(i, { status: s }); }}>{STAGE_KA[s]}</button>
+            ))}
+          </div>
+          {answerOpen ? (
+            <textarea className="td-input" rows={2} autoFocus placeholder="მოკლე პასუხი ტესტერს: რა შევცვალეთ და რა სცადოს ახლა" value={answer}
+              onChange={(e) => setAnswer(e.target.value)}
+              onBlur={() => { setAnswerOpen(false); if ((answer.trim() || null) !== (i.answer ?? null)) update(i, { answer: answer.trim() || null }); }} />
+          ) : (
+            <div className="td-row">
+              <button className="td-mini" onClick={() => setAnswerOpen(true)}>{i.answer ? "პასუხის შეცვლა" : "+ პასუხი ტესტერს"}</button>
+              {i.pr_url && !prOpen && <a className="td-link" href={i.pr_url} target="_blank" rel="noreferrer">PR გახსნა</a>}
+              {prOpen ? (
+                <input className="td-input td-input-sm" type="url" autoFocus placeholder="PR-ის ბმული" value={pr} onChange={(e) => setPr(e.target.value)}
+                  onBlur={() => { setPrOpen(false); if ((pr.trim() || null) !== i.pr_url) update(i, { pr_url: pr.trim() || null, ...(pr.trim() && i.status === "open" ? { status: "work" as IssueStatus } : {}) }); }} />
+              ) : <button className="td-mini" onClick={() => setPrOpen(true)}>{i.pr_url ? "ბმულის შეცვლა" : "+ PR-ის ბმული"}</button>}
+            </div>
+          )}
+        </div>
+      )}
     </li>
   );
 }
 
 function IssuesPage({ state, write }: { state: State; write: Write }) {
   const report = useReport();
-  const [filter, setFilter] = useState<IssueStatus | "active" | "all">("active");
+  const [filter, setFilter] = useState<Stage | "all">(() => (state.issues.some((i) => stage(i.status) === "fixed") ? "fixed" : "all"));
   const [dept, setDept] = useState("");
-  const count = (f: typeof filter) => state.issues.filter((i) => (f === "all" || (f === "active" ? isActive(i) : i.status === f)) && (!dept || i.dept_slug === dept)).length;
-  const list = state.issues.filter((i) => (filter === "all" || (filter === "active" ? isActive(i) : i.status === filter)) && (!dept || i.dept_slug === dept));
+  const match = (i: Issue, f: typeof filter) => (f === "all" || stage(i.status) === f || (f === "closed" && isSolved(i))) && (!dept || i.dept_slug === dept);
+  const count = (f: typeof filter) => state.issues.filter((i) => match(i, f)).length;
+  const list = state.issues.filter((i) => match(i, filter));
   return (
     <div className="td-pad td-split">
       <div className="td-split-main td-sections">
@@ -999,7 +1069,7 @@ function IssuesPage({ state, write }: { state: State; write: Write }) {
         </div>
         <div className="td-row td-filters">
           <div className="td-chips">
-            {([["active", "ღია"], ["pr", "PR"], ["fixed", "გასწორდა"], ["all", "ყველა"]] as const).map(([k, l]) => (
+            {([["fixed", "გადასამოწმებელი"], ["open", "ღია"], ["work", "მუშავდება"], ["closed", "მოგვარდა"], ["all", "ყველა"]] as const).map(([k, l]) => (
               <button key={k} className={filter === k ? "on" : ""} aria-pressed={filter === k} onClick={() => setFilter(k)}>{l} <span>{count(k)}</span></button>
             ))}
           </div>
@@ -1008,7 +1078,7 @@ function IssuesPage({ state, write }: { state: State; write: Write }) {
             {state.departments.map((d) => <option key={d.slug} value={d.slug}>{d.title}</option>)}
           </select>
         </div>
-        <IssueList issues={list} state={state} write={write} />
+        <IssueList issues={list} state={state} write={write} team />
       </div>
       <aside className="td-side">
         <details className="td-card td-rules" open>
@@ -1043,6 +1113,12 @@ function Overview({ state }: { state: State }) {
   const title = (slug: string | null) => state.departments.find((d) => d.slug === slug)?.title ?? "საერთო";
   const failed = state.users.filter((u) => problem(checks.get(u.id)));
   const open = state.issues.filter(isActive);
+  // Showcase: solved since the start of yesterday (Tbilisi, UTC+4 all year) and items waiting for the tester.
+  const DAY = 86_400_000, TZ = 4 * 3_600_000;
+  const since = Math.floor((Date.now() + TZ) / DAY) * DAY - TZ - DAY;
+  const solved = state.issues.filter((i) => isSolved(i) && new Date(i.closed_at ?? i.updated_at).getTime() >= since)
+    .sort((a, b) => (b.closed_at ?? b.updated_at).localeCompare(a.closed_at ?? a.updated_at));
+  const recheck = state.issues.filter((i) => stage(i.status) === "fixed");
   const flowsAll = state.departments.reduce((a, d) => a + d.flows.length, 0);
   const pct = all.total ? Math.round((all.done / all.total) * 100) : 0;
   const states = state.departments.map((d) => deptState(by.get(d.slug)!, d.flows.length));
@@ -1085,6 +1161,24 @@ function Overview({ state }: { state: State }) {
         <div className={`td-card ${all.failed ? "is-red" : ""}`}><b>{all.failed}</b><span>ვერ შევიდა</span></div>
         <div className="td-card"><b>{all.flowsDone}<small>/{flowsAll}</small></b><span>მოქმედება</span></div>
         <div className={`td-card ${open.length ? "is-amber" : ""}`}><b>{open.length}</b><span>ღია ხარვეზი</span></div>
+      </div>
+      <div className="td-showcase">
+        <section className="td-card td-solved">
+          <div className="td-h2row"><h2>მოგვარდა გუშინდლიდან</h2><b className="td-solved-n">{solved.length}</b></div>
+          {solved.length === 0 ? <p className="td-sub">ჯერ არაფერი. აქ გამოჩნდება ყველა დადასტურებული და პასუხგაცემული საკითხი.</p> : (
+            <ul className="td-list">{solved.slice(0, 12).map((i) => (
+              <li key={i.id}><span className={`td-chip c-${stage(i.status)}`}>{STAGE_KA[stage(i.status)]}</span> <span className="td-sub">{title(i.dept_slug)}</span><div>{i.what}</div>{i.answer && <div className="td-sub">{i.answer}</div>}</li>
+            ))}</ul>
+          )}
+        </section>
+        <section className="td-card td-waiting">
+          <div className="td-h2row"><h2>ელოდება ტესტერის გადამოწმებას</h2><b className="td-solved-n">{recheck.length}</b></div>
+          {recheck.length === 0 ? <p className="td-sub">ასეთი საკითხი არ არის.</p> : (
+            <ul className="td-list">{recheck.map((i) => (
+              <li key={i.id}><Link to={i.dept_slug ? `${BASE}/d/${i.dept_slug}${i.user_id ? `#u${i.user_id}` : "#issues"}` : `${BASE}/issues`}><span className="td-sub">{title(i.dept_slug)}</span><div>{i.what}</div></Link></li>
+            ))}</ul>
+          )}
+        </section>
       </div>
       <div className="td-ov-grid">
         <div className="td-card td-table-wrap">

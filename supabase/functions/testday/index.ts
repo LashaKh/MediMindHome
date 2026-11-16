@@ -7,8 +7,10 @@
 // POST Bearer <token> { action: "state" }                → everything the page shows (gated: names, logins, seats)
 // POST Bearer <token> { action: "tick_user", user_id, field, value, by }
 // POST Bearer <token> { action: "tick_flow", dept, idx, done?, note?, by }
-// POST Bearer <token> { action: "issue_add", dept, person, screen, what, expected, pr_url, by }
-// POST Bearer <token> { action: "issue_update", id, status?, pr_url?, by }
+// POST Bearer <token> { action: "issue_add", dept, person, screen, what, expected, pr_url, user_id?, flow_idx?, by }
+// POST Bearer <token> { action: "issue_update", id, status?, pr_url?, answer?, recheck_note?, by }
+//   status life: open → work → fixed (please re-check) → closed (tester confirmed) | open again (still broken);
+//   answered = training or a decision, with the answer. pr and wontfix stay valid for day-1 rows.
 // POST Bearer <token> { action: "handin", dept, handin, by }
 
 import { create, getNumericDate, verify } from "https://deno.land/x/djwt@v3.0.2/mod.ts";
@@ -20,7 +22,8 @@ const MAX_FAILURES = 10;
 const WINDOW_MS = 15 * 60_000;
 const TOKEN_HOURS = 14; // one working day
 const USER_FIELDS = new Set(["signed_in", "sign_in_failed", "key_screen_ok", "actions_ok", "note"]);
-const STATUSES = new Set(["open", "pr", "fixed", "wontfix"]);
+const STATUSES = new Set(["open", "work", "pr", "fixed", "closed", "answered", "wontfix"]);
+const int = (v: unknown) => (Number.isInteger(Number(v)) && v !== null && v !== "" ? Number(v) : null);
 
 function db() {
   return createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
@@ -140,6 +143,8 @@ async function write(body: any): Promise<Response> {
         pr_url: str(body.pr_url, 500),
         status: str(body.pr_url, 500) ? "pr" : "open",
         reported_by: by,
+        user_id: int(body.user_id),
+        flow_idx: int(body.flow_idx),
       }).select().single();
       if (error) return fail("issue_add", error);
       return json({ row: data });
@@ -148,8 +153,16 @@ async function write(body: any): Promise<Response> {
       const id = Number(body.id);
       if (!Number.isInteger(id)) return json({ error: "bad_request" }, 400);
       const patch: Record<string, unknown> = { updated_at: now() };
-      if (STATUSES.has(body.status)) patch.status = body.status;
+      if (STATUSES.has(body.status)) {
+        patch.status = body.status;
+        // Stamps for "solved since yesterday" and "waiting for re-check"; reopening clears the close stamp.
+        if (body.status === "fixed") patch.fixed_at = now();
+        if (body.status === "closed" || body.status === "answered" || body.status === "wontfix") patch.closed_at = now();
+        if (body.status === "open" || body.status === "work") patch.closed_at = null;
+      }
       if ("pr_url" in body) patch.pr_url = str(body.pr_url, 500);
+      if ("answer" in body) patch.answer = str(body.answer);
+      if ("recheck_note" in body) patch.recheck_note = str(body.recheck_note, 1000);
       const { data, error } = await sb.from("testday_issues").update(patch).eq("id", id).select().single();
       if (error) return fail("issue_update", error);
       return json({ row: data });

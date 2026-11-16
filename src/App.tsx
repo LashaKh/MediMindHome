@@ -16,6 +16,7 @@ const AdminLogin = lazy(() => import('./pages/AdminLogin').then((m) => ({ defaul
 const AdminDashboard = lazy(() => import('./pages/AdminDashboard').then((m) => ({ default: m.AdminDashboard })));
 const AdminCrm = lazy(() => import('./pages/AdminCrm').then((m) => ({ default: m.AdminCrm })));
 const Walkthrough = lazy(() => import('./pages/Walkthrough').then((m) => ({ default: m.Walkthrough })));
+const TestDay = lazy(() => import('./pages/TestDay').then((m) => ({ default: m.TestDay })));
 const FounderDemo = lazy(() => import('./pages/FounderDemo').then((m) => ({ default: m.FounderDemo })));
 
 // Quiet placeholder while a lazy route loads (keeps the footer from jumping up).
@@ -43,6 +44,7 @@ function App() {
           <Route path="/admin" element={<AdminLogin />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/admin/crm" element={<AdminCrm />} />
+          <Route path="/admin/testday/*" element={<TestDay />} />
           <Route path="/walkthrough" element={<Walkthrough />} />
           <Route path="/founder-demo" element={<FounderDemo />} />
 

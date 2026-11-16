@@ -10,6 +10,7 @@ import { handleAdminLogin } from "../admin-login/index.ts";
 import { handleAdminWrite } from "../admin-write/index.ts";
 import { handleCrm, handleDemoRequest } from "../crm/index.ts";
 import { handleInvestorLogin } from "../investor-login/index.ts";
+import { handleTestday } from "../testday/index.ts";
 
 export type LandingRoute =
   | "track-event"
@@ -18,7 +19,8 @@ export type LandingRoute =
   | "admin-write"
   | "investor-login"
   | "crm"
-  | "demo-request";
+  | "demo-request"
+  | "testday";
 
 const LANDING_ROUTES = new Set<LandingRoute>([
   "track-event",
@@ -28,6 +30,7 @@ const LANDING_ROUTES = new Set<LandingRoute>([
   "investor-login",
   "crm",
   "demo-request",
+  "testday",
 ]);
 
 export function resolveLandingRoute(url: string): LandingRoute | null {
@@ -100,6 +103,8 @@ export async function handleLandingApi(req: Request): Promise<Response> {
       return handleCrm(req);
     case "demo-request":
       return handleDemoRequest(req);
+    case "testday":
+      return handleTestday(req);
     case "track-event":
       return handleTrackEvent(req);
     default:

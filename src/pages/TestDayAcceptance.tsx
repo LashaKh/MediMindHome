@@ -1,12 +1,14 @@
-import { useCallback, useEffect, useRef, useState, type FormEvent } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import {
-  ACCEPTANCE_AREAS,
+  ACCEPTANCE_AREAS, PREVIOUS_BILLING_GROUPS,
   type AcceptanceArea, type AcceptanceCase, type AcceptanceEnvironment,
   type AcceptanceEvent, type AcceptanceOwner, type CaseOutcome, type DecisionOutcome,
 } from "../../supabase/functions/testday/acceptanceCatalog";
 import { TdError, tdWrite } from "../lib/testdayApi";
 import "./TestDayAcceptance.css";
+import { TestDayBilling } from "./TestDayBilling";
+import { BILLING_RESULT } from "../lib/testdayBillingLabels";
 
 const BASE = "/admin/testday/acceptance";
 const BUILD = String.raw`[a-zA-Z0-9][a-zA-Z0-9._\-]{6,79}`;
@@ -26,6 +28,12 @@ const ERRORS: Record<string, string> = {
   acceptance_issue: "ამ ნომრით ხარვეზი ვერ მოიძებნა.",
 };
 
+const EMR_HOST: Record<AcceptanceEnvironment, string> = {
+  shadow: "https://emr-shadow.gh.ge:8443",
+  foundation: "https://emr.gh.ge",
+};
+
+type ReportAction = (test: AcceptanceCase) => void;
 type Scope = { environment: AcceptanceEnvironment; build: string };
 type Save = (action: string, payload: Record<string, unknown>) => Promise<void>;
 
@@ -59,13 +67,17 @@ function statusOf(area: AcceptanceArea, events: AcceptanceEvent[]) {
   return { cases, records, latest, completed, basis, decision, approved };
 }
 
-export function TestDayAcceptance({ slug, token, name, onLogout }: {
-  slug?: string; token: string; name: string; onLogout: () => void;
+export function TestDayAcceptance({ slug, token, name, onLogout, onReport }: {
+  slug?: string; token: string; name: string; onLogout: () => void; onReport?: ReportAction;
 }) {
   const [params, setParams] = useSearchParams();
   const build = params.get("build") ?? "";
   const environment = params.get("env") === "foundation" ? "foundation" : "shadow";
-  const area = ACCEPTANCE_AREAS.find(({ id }) => id === slug);
+  const currentArea = ACCEPTANCE_AREAS.find(({ id }) => id === slug);
+  const archive = slug === "billing" && params.get("list") === "previous";
+  const billing = slug === "billing" && !archive;
+  const area = archive && currentArea ? { ...currentArea, groups: PREVIOUS_BILLING_GROUPS } : currentArea;
+  const settings = useRef<HTMLDetailsElement>(null);
   const [owners, setOwners] = useState<AcceptanceOwner[] | null>(null);
   const [ownerError, setOwnerError] = useState(false);
   const owner = owners?.find((item) => item.area === area?.id);
@@ -95,7 +107,12 @@ export function TestDayAcceptance({ slug, token, name, onLogout }: {
   }
 
   const selected = new URLSearchParams(params);
-  const href = selected.size ? `?${selected}` : "";
+  const directory = new URLSearchParams(params);
+  directory.delete("list");
+  directory.delete("action");
+  const href = directory.size ? `?${directory}` : "";
+  const previous = new URLSearchParams(directory);
+  previous.set("list", "previous");
 
   function chooseBuild(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -103,46 +120,100 @@ export function TestDayAcceptance({ slug, token, name, onLogout }: {
     selected.set("build", String(values.get("build")).trim().toLowerCase());
     selected.set("env", String(values.get("environment")));
     setParams(selected);
+    if (settings.current) settings.current.open = false;
   }
 
+  function showSettings() {
+    if (!settings.current) return;
+    settings.current.open = true;
+    settings.current.querySelector<HTMLInputElement>('input[name="build"]')?.focus();
+    settings.current.scrollIntoView({ block: "nearest" });
+  }
+
+  const ownerEditor = area && !archive && owners && !ownerError && (
+    <OwnerEditor key={area.id} owner={owner} onSave={saveOwner} onRefresh={refreshOwners} />
+  );
+  const buildPicker = (
+    <form className="td-card td-accept-build" onSubmit={chooseBuild} key={environment + build}>
+      <label className="td-label">გარემო
+        <select name="environment" defaultValue={environment} className="td-input">
+          <option value="shadow">{ENV.shadow}</option>
+          <option value="foundation">{ENV.foundation}</option>
+        </select>
+      </label>
+      <label className="td-label">გამოცდილი ვერსიის კოდი
+        <input className="td-input" name="build" defaultValue={build} pattern={BUILD} required spellCheck={false}
+          autoComplete="off" placeholder={billing ? "ჩასვით ვერსიის კოდი" : "მაგ. 579d2ff94ead"} />
+      </label>
+      <button className="td-btn td-btn-primary" type="submit">{billing ? "ვერსიის არჩევა" : "ვერსიის გახსნა"}</button>
+    </form>
+  );
+  const ownerWarning = ownerError && !archive && (
+    <div className="td-row">
+      <p role="alert" className="td-err">პასუხისმგებელი პირების სია ვერ ჩაიტვირთა.</p>
+      <button className="td-btn td-btn-ghost" type="button" onClick={refreshOwners}>სიის განახლება</button>
+    </div>
+  );
+  const workspace = (
+    <Workspace key={`${environment}/${build}/${slug ?? ""}/${archive}`} scope={{ environment, build }}
+      token={token} name={name} onLogout={onLogout} area={area} href={href} archive={archive}
+      owners={ownerError ? [] : owners ?? []} onRefreshOwners={refreshOwners} onSettings={showSettings} onReport={onReport} />
+  );
+
+  if (billing) {
+    return (
+      <div className="td-pad td-accept td-billing-page">
+        <header className="td-billing-page-top">
+          <div>
+            <Link className="td-link" to={BASE + href}>ყველა მიმართულება</Link>
+            <h1>ბილინგის შემოწმება</h1>
+            <div className="td-sub">მცხეთის საავადმყოფო{build ? ` · ${ENV[environment]} · ${build}` : ""}</div>
+          </div>
+        </header>
+        <details className="td-billing-settings" ref={settings}>
+          <summary>პასუხისმგებელი და ვერსია</summary>
+          <div className="td-billing-settings-main">{ownerEditor}{buildPicker}</div>
+          {ownerWarning}
+          <div className="td-row td-billing-settings-links">
+            <a className="td-link" href={EMR_HOST.shadow + "/version.json"} target="_blank" rel="noreferrer">სატესტო ვერსიის კოდი</a>
+            <a className="td-link" href={EMR_HOST.foundation + "/version.json"} target="_blank" rel="noreferrer">სამუშაო ვერსიის კოდი</a>
+            <Link className="td-link" to={`${BASE}/billing?${previous}`}>წინა სია და შედეგები</Link>
+          </div>
+        </details>
+        {workspace}
+      </div>
+    );
+  }
   return (
     <div className="td-pad td-accept">
-      {slug && <Link className="td-link" to={BASE + href}>ყველა მიმართულება</Link>}
+      {slug && <Link className="td-link" to={archive ? `${BASE}/billing${href}` : BASE + href}>
+        {archive ? "ბილინგის მიმდინარე სია" : "ყველა მიმართულება"}
+      </Link>}
       <header className="td-accept-heading">
         <p className="td-sub">GeoHospitals · მცხეთის საავადმყოფო</p>
-        <h1>{area?.title ?? "შემოწმება და მიღება"}</h1>
-        <p>{area?.owner ?? "აირჩიეთ მიმართულება, ჩაატარეთ პრაქტიკული შემოწმება და ჩაიწერეთ შედეგები."}</p>
+        <h1>{archive ? "ბილინგის წინა სია" : area?.title ?? "შემოწმება და მიღება"}</h1>
+        <p>{archive ? "წინა სიის შედეგები ჩანს არჩეული ვერსიის მიხედვით." : area?.owner ?? "აირჩიეთ მიმართულება, ჩაატარეთ პრაქტიკული შემოწმება და ჩაიწერეთ შედეგები."}</p>
       </header>
-      {ownerError && <div className="td-row">
-        <p role="alert" className="td-err">პასუხისმგებელი პირების სია ვერ ჩაიტვირთა.</p>
-        <button className="td-btn td-btn-ghost" type="button" onClick={refreshOwners}>სიის განახლება</button>
-      </div>}
-      {area && owners && !ownerError && <OwnerEditor key={area.id} owner={owner} onSave={saveOwner} onRefresh={refreshOwners} />}
-      <form className="td-card td-accept-build" onSubmit={chooseBuild} key={environment + build}>
-        <label className="td-label">გარემო
-          <select name="environment" defaultValue={environment} className="td-input">
-            <option value="shadow">{ENV.shadow}</option>
-            <option value="foundation">{ENV.foundation}</option>
-          </select>
-        </label>
-        <label className="td-label">გამოცდილი ვერსიის კოდი
-          <input className="td-input" name="build" defaultValue={build} pattern={BUILD} required spellCheck={false} autoComplete="off" placeholder="მაგ. 579d2ff94ead" />
-        </label>
-        <button className="td-btn td-btn-primary" type="submit">ვერსიის გახსნა</button>
-      </form>
-      {slug && !area ? <p className="td-empty">მიმართულება ვერ მოიძებნა.</p> : (
-        <Workspace key={environment + "/" + build} scope={{ environment, build }} token={token} name={name} onLogout={onLogout}
-          area={area} href={href} owners={ownerError ? [] : owners ?? []} onRefreshOwners={refreshOwners} />
-      )}
+      {ownerWarning}
+      {ownerEditor}
+      {buildPicker}
+      {slug && !area ? <p className="td-empty">მიმართულება ვერ მოიძებნა.</p> : workspace}
     </div>
   );
 }
 
-function Workspace({ scope, token, name, onLogout, area, href, owners, onRefreshOwners }: {
+type StatePage = { events: AcceptanceEvent[]; before: number | null };
+
+function Workspace({ scope, token, name, onLogout, area, href, owners, onRefreshOwners, archive, onSettings, onReport }: {
   scope: Scope; token: string; name: string; onLogout: () => void; area?: AcceptanceArea; href: string;
   owners: AcceptanceOwner[]; onRefreshOwners: () => Promise<void>;
+  archive: boolean; onSettings: () => void; onReport?: ReportAction;
 }) {
   const { build, environment } = scope;
+  const areaId = area?.id;
+  const readScope = useMemo(() => ({
+    build, environment, ...(areaId && { area: areaId }), ...(archive && { archive: true }),
+  }), [build, environment, areaId, archive]);
   const [events, setEvents] = useState<AcceptanceEvent[]>([]);
   const [loaded, setLoaded] = useState(!scope.build);
   const [error, setError] = useState(false);
@@ -154,8 +225,14 @@ function Workspace({ scope, token, name, onLogout, area, href, owners, onRefresh
     setLoaded(false);
     setError(false);
     try {
-      const result = await tdWrite<{ events: AcceptanceEvent[]; before: number | null }>(token, "acceptance_state", { build, environment });
-      setEvents(result.events);
+      const results = await Promise.all([
+        tdWrite<StatePage>(token, "acceptance_state", readScope),
+        ...(!areaId ? [tdWrite<StatePage>(token, "acceptance_state", { build, environment, area: "billing" })] : []),
+      ]);
+      const [result, billingResult] = results;
+      setEvents(billingResult
+        ? [...result.events.filter((row) => row.area !== "billing"), ...billingResult.events].sort((a, b) => b.id - a.id)
+        : result.events);
       setBefore(result.before);
     } catch (e) {
       if (e instanceof TdError && e.status === 401) onLogout();
@@ -163,7 +240,7 @@ function Workspace({ scope, token, name, onLogout, area, href, owners, onRefresh
     } finally {
       setLoaded(true);
     }
-  }, [build, environment, onLogout, token]);
+  }, [areaId, build, environment, onLogout, readScope, token]);
 
   useEffect(() => { if (build) void refresh(); }, [build, refresh]);
 
@@ -181,7 +258,7 @@ function Workspace({ scope, token, name, onLogout, area, href, owners, onRefresh
     setLoadingHistory(true);
     setHistoryError(false);
     try {
-      const result = await tdWrite<{ events: AcceptanceEvent[]; before: number | null }>(token, "acceptance_state", { ...scope, before });
+      const result = await tdWrite<StatePage>(token, "acceptance_state", { ...readScope, before });
       setEvents((current) => {
         const byId = new Map([...current, ...result.events].map((item) => [item.id, item]));
         return [...byId.values()].sort((a, b) => b.id - a.id);
@@ -199,7 +276,57 @@ function Workspace({ scope, token, name, onLogout, area, href, owners, onRefresh
     if (!area.groups) return <p className="td-empty"><b>დაგეგმილია</b>{area.scope}</p>;
     const status = statusOf(area, events);
     const owner = owners.find((item) => item.area === area.id);
-    const editable = !!scope.build && loaded && !error;
+    const editable = !!scope.build && loaded && !error && !archive;
+    const decision = (
+      <Decision status={status} editable={editable} owner={owner}
+        onSave={(payload) => save("acceptance_sign", {
+          ...payload, area: area.id, basis: status.basis, owner_updated_at: owner?.updated_at,
+        })}
+        onRefresh={async () => { await Promise.all([refresh(), onRefreshOwners()]); }} />
+    );
+    const loading = scope.build && !loaded && <p role="status" className="td-hint">შედეგები იტვირთება…</p>;
+    const loadError = error && (
+      <div className="td-row">
+        <p role="alert" className="td-err">შედეგები ვერ ჩაიტვირთა.</p>
+        <button className="td-btn td-btn-ghost" type="button" onClick={refresh}>ხელახლა ჩატვირთვა</button>
+      </div>
+    );
+    const moreHistory = before !== null && (
+      <div>
+        <button className="td-btn td-btn-ghost" type="button" disabled={loadingHistory} onClick={loadHistory}>ძველი შედეგების ჩატვირთვა</button>
+        {historyError && <p className="td-err" role="alert">ძველი შედეგები ვერ ჩაიტვირთა.</p>}
+      </div>
+    );
+    const onSaveCase = (id: string, payload: Record<string, unknown>) => save("acceptance_run", { ...payload, area: area.id, case_id: id });
+
+    if (area.id === "billing" && !archive) {
+      return (
+        <>
+          {loading}
+          {loadError}
+          <TestDayBilling groups={area.groups} latest={status.latest} completed={status.completed}
+            buildReady={!!build} target={EMR_HOST[environment]} onSettings={onSettings} onReport={onReport}
+            renderResult={(test) => {
+              const history = status.records.filter((item) => item.case_id === test[0]);
+              return (
+                <div key={test[0]}>
+                  {editable && <ResultForm test={test} onSave={(payload) => onSaveCase(test[0], payload)} billing />}
+                  {!!history.length && <details className="td-accept-history">
+                    <summary>წინა ცდები ({history.length})</summary>
+                    <EventList events={history} billing />
+                  </details>}
+                </div>
+              );
+            }}
+            decision={build && !error ? <div className="td-billing-main">
+              {decision}
+              {moreHistory}
+              <button className="td-btn td-btn-ghost" type="button" disabled={!loaded} onClick={refresh}>შედეგების განახლება</button>
+            </div> : null} />
+        </>
+      );
+    }
+
     return (
       <div className="td-accept-work">
         <div className="td-accept-status">
@@ -209,27 +336,20 @@ function Workspace({ scope, token, name, onLogout, area, href, owners, onRefresh
           </div>
           {scope.build && <button className="td-btn td-btn-ghost" type="button" disabled={!loaded} onClick={refresh}>შედეგების განახლება</button>}
         </div>
-        {!scope.build && <p className="td-warn">შედეგის შესანახად გახსენით გამოცდილი ვერსია.</p>}
-        {scope.build && !loaded && <p role="status" className="td-hint">შედეგები იტვირთება…</p>}
-        {error && <p role="alert" className="td-err">შედეგები ვერ ჩაიტვირთა. დააჭირეთ „შედეგების განახლებას“.</p>}
+        {!scope.build && <p className="td-warn">{archive ? "წინა შედეგების სანახავად აირჩიეთ გამოცდილი ვერსია." : "შედეგის შესანახად გახსენით გამოცდილი ვერსია."}</p>}
+        {loading}
+        {loadError}
         {area.groups.map(({ title, role, cases }) => (
           <section className="td-accept-group" key={title}>
             <h2>{title}</h2>
             <p className="td-sub">{role}</p>
             {cases.map((test) => <CaseRow key={test[0]} test={test} current={status.latest.get(test[0])}
               history={status.records.filter((item) => item.case_id === test[0])} editable={editable}
-              onSave={(payload) => save("acceptance_run", { ...payload, area: area.id, case_id: test[0] })} />)}
+              onSave={(payload) => onSaveCase(test[0], payload)} />)}
           </section>
         ))}
-        <Decision status={status} editable={editable} owner={owner}
-          onSave={(payload) => save("acceptance_sign", {
-            ...payload, area: area.id, basis: status.basis, owner_updated_at: owner?.updated_at,
-          })}
-          onRefresh={async () => { await Promise.all([refresh(), onRefreshOwners()]); }} />
-        {before !== null && <div>
-          <button className="td-btn td-btn-ghost" type="button" disabled={loadingHistory} onClick={loadHistory}>ძველი შედეგების ჩატვირთვა</button>
-          {historyError && <p className="td-err" role="alert">ძველი შედეგები ვერ ჩაიტვირთა.</p>}
-        </div>}
+        {decision}
+        {moreHistory}
       </div>
     );
   }
@@ -336,7 +456,31 @@ function CaseRow({ test, current, history, editable, onSave }: {
   test: AcceptanceCase; current?: AcceptanceEvent; history: AcceptanceEvent[]; editable: boolean;
   onSave: (payload: Record<string, unknown>) => Promise<void>;
 }) {
-  const [id, title, reference, exercise, expected, conditional] = test;
+  const [id, title, reference, exercise, expected] = test;
+  return (
+    <details className="td-accept-case">
+      <summary>
+        <span><span className="td-accept-id">{id}</span> <strong>{title}</strong></span>
+        <span className={`td-accept-pill is-${current?.outcome ?? "open"}`}>{current ? LABEL[current.outcome] : "შესამოწმებელია"}</span>
+      </summary>
+      <div className="td-accept-case-body">
+        <p className="td-sub">WebMed · {reference}</p>
+        <p>{exercise}</p>
+        <p className="td-accept-expected"><strong>რას ველოდებით</strong> {expected}</p>
+        {history.length > 0 && <details className="td-accept-history">
+          <summary>შენახული შედეგები ({history.length})</summary>
+          <EventList events={history} />
+        </details>}
+        {editable && <ResultForm test={test} onSave={onSave} />}
+      </div>
+    </details>
+  );
+}
+
+function ResultForm({ test, onSave, billing = false }: {
+  test: AcceptanceCase; onSave: (payload: Record<string, unknown>) => Promise<void>; billing?: boolean;
+}) {
+  const conditional = test[5];
   const [outcome, setOutcome] = useState("");
   const action = useSave(onSave);
   const acceptOutcomes: CaseOutcome[] = conditional
@@ -354,35 +498,22 @@ function CaseRow({ test, current, history, editable, onSave }: {
   }
 
   return (
-    <details className="td-accept-case">
-      <summary>
-        <span><span className="td-accept-id">{id}</span> <strong>{title}</strong></span>
-        <span className={`td-accept-pill is-${current?.outcome ?? "open"}`}>{current ? LABEL[current.outcome] : "შესამოწმებელია"}</span>
-      </summary>
-      <div className="td-accept-case-body">
-        <p className="td-sub">WebMed · {reference}</p>
-        <p>{exercise}</p>
-        <p className="td-accept-expected"><strong>რას ველოდებით</strong> {expected}</p>
-        {history.length > 0 && <details className="td-accept-history">
-          <summary>შენახული შედეგები ({history.length})</summary>
-          <EventList events={history} />
-        </details>}
-        {editable && <form className="td-accept-form" onSubmit={submit} onChange={action.edited}>
+        <form className="td-accept-form" onSubmit={submit} onChange={action.edited}>
           <fieldset disabled={action.saving}>
-            <legend>ჩაწერეთ შემოწმების შედეგი</legend>
+            {!billing && <legend>ჩაწერეთ შემოწმების შედეგი</legend>}
             <label className="td-label">შედეგი
               <select required className="td-input" value={outcome} onChange={(event) => setOutcome(event.target.value)}>
                 <option value="">აირჩიეთ შედეგი</option>
-                {acceptOutcomes.map((value) => <option key={value} value={value}>{LABEL[value]}</option>)}
+                {acceptOutcomes.map((value) => <option key={value} value={value}>{billing ? BILLING_RESULT[value] : LABEL[value]}</option>)}
               </select>
             </label>
-            {outcome === "pass" && <label className="td-label">თანამშრომელი, რომელმაც მოქმედება თავად შეასრულა
+            {outcome === "pass" && <label className="td-label">{billing ? "ვინ შეასრულა ქმედება დამოუკიდებლად" : "თანამშრომელი, რომელმაც მოქმედება თავად შეასრულა"}
               <input className="td-input" name="trainee" maxLength={100} required />
               <span className="td-hint">ჯერ აჩვენეთ მოქმედება, შემდეგ თანამშრომელმა თავად გაიმეოროს თავისი როლით.</span>
             </label>}
             <label className="td-label">{outcome === "not_applicable" ? "რატომ არ გამოიყენება ფილიალში" : "რა მოხდა და რით დასტურდება"}
               <textarea className="td-input" name="evidence" required maxLength={2000} rows={3} />
-              <span className="td-hint">მიუთითეთ სატესტო ჩანაწერი ან დაცულ მასალაზე მითითება. პაციენტის მონაცემები არ ჩაწეროთ.</span>
+              <span className="td-hint">მიუთითეთ საცდელი ჩანაწერის კოდი ან დაცულ მასალაზე ბმული. პაციენტის მონაცემები არ ჩაწეროთ.</span>
             </label>
             <label className="td-label">დაკავშირებული ხარვეზის ნომერი, თუ არსებობს
               <input className="td-input" name="issue" type="number" min={1} max={Number.MAX_SAFE_INTEGER} step={1} />
@@ -390,17 +521,15 @@ function CaseRow({ test, current, history, editable, onSave }: {
             <button type="submit" className="td-btn td-btn-primary">{action.saving ? "ინახება…" : "შედეგის შენახვა"}</button>
           </fieldset>
           {action.message && <p className={action.failed ? "td-err" : "td-hint"} role={action.failed ? "alert" : "status"}>{action.message}</p>}
-        </form>}
-      </div>
-    </details>
+        </form>
   );
 }
 
-function EventList({ events }: { events: AcceptanceEvent[] }) {
+function EventList({ events, billing = false }: { events: AcceptanceEvent[]; billing?: boolean }) {
   return (
     <ul className="td-accept-events">
       {events.map((item) => <li key={item.id}>
-        <strong>{LABEL[item.outcome]}</strong> <span className="td-sub">{item.department_owner ? "ჩაწერა " : ""}{item.actor} · {testDate(item.created_at)}</span>
+        <strong>{billing ? BILLING_RESULT[item.outcome] ?? LABEL[item.outcome] : LABEL[item.outcome]}</strong> <span className="td-sub">{item.department_owner ? "ჩაწერა " : ""}{item.actor} · {testDate(item.created_at)}</span>
         {item.department_owner && <div className="td-sub">პასუხისმგებელი პირი: {item.department_owner}</div>}
         {item.trainee && <div className="td-sub">თავად შეასრულა: {item.trainee}</div>}
         {item.issue_id && <div className="td-sub">ხარვეზი №{item.issue_id}</div>}

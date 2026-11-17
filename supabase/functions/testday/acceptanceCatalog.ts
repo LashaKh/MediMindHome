@@ -1,9 +1,17 @@
+import { BILLING_GROUPS } from "./billingAcceptance.ts";
+
 // Mtskheta Hospital. Stable IDs identify operations across edits and retests.
 // Bump the revision when the required cases or their acceptance conditions change.
 export const ACCEPTANCE_REVISION = "mts-hospital-v1";
 
+export type AcceptanceProcedure = {
+  fixture: string;
+  steps: readonly string[];
+  evidence: string;
+  path: string;
+};
 export type AcceptanceCase = readonly [
-  id: string, title: string, webmed: string, exercise: string, expected: string, conditional?: true,
+  id: string, title: string, webmed: string, exercise: string, expected: string, conditional?: true, procedure?: AcceptanceProcedure,
 ];
 export type AcceptanceGroup = { title: string; role: string; cases: readonly AcceptanceCase[] };
 export type AcceptanceArea = { id: string; title: string; owner: string; scope?: string; groups?: readonly AcceptanceGroup[] };
@@ -71,7 +79,7 @@ const cashier: AcceptanceGroup[] = [{
   ],
 }];
 
-const billing: AcceptanceGroup[] = [
+export const PREVIOUS_BILLING_GROUPS: AcceptanceGroup[] = [
   {
     title: "შემთხვევის დათვლა", role: "ბილინგის სპეციალისტი", cases: [
       ["BILL-01", "გახსენით სწორი შემთხვევა და დაადასტურეთ უფლებები", "PatientCases / Calculation", "მოძებნეთ სატესტო ამბულატორიული და სტაციონარული შემთხვევა. გამოცადეთ მოლარის, ბილერის და სხვა ფილიალის ანგარიშები.", "ბილერი ხედავს თავისი ფილიალის დათვლას. სხვა როლს მხოლოდ მისთვის ნებადართული მოქმედებები აქვს."],
@@ -112,7 +120,7 @@ export const ACCEPTANCE_AREAS: readonly AcceptanceArea[] = [
   { id: "pharmacy", title: "აფთიაქი და მედიკამენტების გაცემა", owner: "აფთიაქის ხელმძღვანელი", scope: "დანიშნულების განხილვა, გაცემა, დეფიციტი, დაბრუნება და ნაშთის შეჯერება." },
   { id: "warehouse", title: "საწყობი და შესყიდვები", owner: "საწყობისა და შესყიდვების ხელმძღვანელები", scope: "მიღება, გადატანა, გაცემა, აღწერა, ჩამოწერა, დაბრუნება და ნაშთების შეჯერება." },
   { id: "cashier", title: "სალარო და ბუღალტერია", owner: "მოლარე და ბუღალტერი", groups: cashier },
-  { id: "billing", title: "ბილინგი, დაზღვევა და დაფინანსება", owner: "ბილინგის ხელმძღვანელი", groups: billing },
+  { id: "billing", title: "ბილინგი, დაზღვევა და დაფინანსება", owner: "ბილინგის ხელმძღვანელი", groups: BILLING_GROUPS },
   { id: "ministry", title: "სამინისტრო და სამედიცინო დოკუმენტები", owner: "წარდგენასა და ხარისხზე პასუხისმგებელი პირები", scope: "სავალდებულო ფორმები, ხელმოწერა, წარდგენა, შესწორება და მიღების პასუხი." },
   { id: "operations", title: "ადმინისტრაცია, ანგარიშები და IT", owner: "ადმინისტრაცია და IT", scope: "ფილიალის პარამეტრები, ცნობარები, ანგარიშები, ბეჭდვა და შეფერხების შემდეგ მუშაობის აღდგენა." },
 ];

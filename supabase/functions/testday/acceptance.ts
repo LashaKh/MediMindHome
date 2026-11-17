@@ -1,5 +1,6 @@
 import type { SupabaseClient } from "https://esm.sh/@supabase/supabase-js@2.39.3";
 import { ACCEPTANCE_AREAS, ACCEPTANCE_REVISION } from "./acceptanceCatalog.ts";
+import { BILLING_ACCEPTANCE_REVISION } from "./billingAcceptance.ts";
 
 const BUILD = /^[a-z0-9][a-z0-9._-]{6,79}$/;
 const UUID = /^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/;
@@ -59,12 +60,17 @@ export async function acceptanceAction(body: Record<string, unknown>, sb: Supaba
     return json({ error: "acceptance_bad_build" }, 400);
   }
 
-  const scope = { revision: ACCEPTANCE_REVISION, environment, build };
+  const area = ACCEPTANCE_AREAS.find((item) => item.id === body.area);
+  const archive = action === "acceptance_state" && area?.id === "billing" && body.archive === true;
+  const revision = area?.id === "billing" && !archive ? BILLING_ACCEPTANCE_REVISION : ACCEPTANCE_REVISION;
+  const scope = { revision, environment, build };
   if (action === "acceptance_state") {
     const before = body.before;
-    if (before != null && !positiveInt(before)) return json({ error: "acceptance_invalid" }, 400);
+    if ((before != null && !positiveInt(before)) || (body.area != null && !area)) {
+      return json({ error: "acceptance_invalid" }, 400);
+    }
     const recent = sb.from("testday_acceptance_events").select(COLUMNS)
-      .match(scope).order("id", { ascending: false }).limit(200);
+      .match(area ? { ...scope, area: area.id } : scope).order("id", { ascending: false }).limit(200);
     const { data, error } = await (before == null ? recent : recent.lt("id", before));
     if (error) {
       console.error("testday acceptance_state", error.code);
@@ -73,9 +79,10 @@ export async function acceptanceAction(body: Record<string, unknown>, sb: Supaba
     const next = data.length === 200 ? data.at(-1)?.id ?? null : null;
     if (before == null && next !== null) {
       // Include current results even if they are older than the initial history page.
-      const { data: latest, error: latestError } = await sb.rpc("testday_acceptance_latest", {
+      const latestQuery = sb.rpc("testday_acceptance_latest", {
         p_revision: scope.revision, p_environment: scope.environment, p_build: scope.build,
-      }).select(COLUMNS);
+      });
+      const { data: latest, error: latestError } = await (area ? latestQuery.eq("area", area.id) : latestQuery).select(COLUMNS);
       if (latestError) {
         console.error("testday acceptance_latest", latestError.code);
         return json({ error: "server" }, 500);
@@ -86,7 +93,6 @@ export async function acceptanceAction(body: Record<string, unknown>, sb: Supaba
     return json({ row: { events: data, before: next } });
   }
 
-  const area = ACCEPTANCE_AREAS.find((item) => item.id === body.area);
   const cases = area?.groups?.flatMap((group) => group.cases);
   const request_id = clean(body.request_id, 36);
   const evidence = clean(body.evidence, 2000);

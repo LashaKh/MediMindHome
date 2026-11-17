@@ -2,6 +2,21 @@
 
 Open `/admin/testday/acceptance` after signing in through the Test Day gate. The initial scope is Mtskheta Hospital. HR/access and payroll form one workstream. Billing and Cashier/accounting form the other. Each of those four areas has its own decision. The other eleven areas show their planned scope.
 
+## Billing procedures
+
+Open `/admin/testday/acceptance/billing`. Staff can browse the procedures before choosing the build. Use **პასუხისმგებელი და ვერსია** to assign the area owner and select the environment and build when recording results. **წინა სია და შედეგები** opens the original 17 checks and their results for the selected build. The expanded Billing checklist has a separate revision. Other areas use the existing checklist revision.
+
+The Billing worklist maps 164 actions across 11 groups. Each action provides the test setup, the steps to perform, the expected result, and the evidence to record. A case that depends on use at Mtskheta is marked as conditional. Record why it does not apply or record the blocker if a workflow the branch needs is unavailable.
+
+| Procedures | WebMed and MediMind evidence used |
+|---|---|
+| Finding cases, service lines, tariffs | WebMed case calculation, service entry and effective-dated pricing in the legacy screen inventory and billing model. MediMind Billing Workbench and medical service catalogue routes. |
+| Funding, relief, DRG and closing | WebMed insurance, case and per-service documents, relief terms and approval branches. Mtskheta sponsor classes and October replay findings, including per-payer relief and package charge handling. |
+| Invoices, insurer files and remittances | WebMed patient invoice print, payer exports (templates 59 and 60), and settlement per claim line. MediMind invoice register and settlement. The 29 named worksheet checks are drawn from Mtskheta's 14 insurer mappings, including the second GPI case sheet. |
+| Reports and handoffs | MediMind Report Center inventory and WebMed report catalogue. Admission journal and inpatient census use their own routes. Case handoffs cover Registration, Cashier, Payroll, and Ministry. |
+
+For source verification, see the EMR repository's `documentation/migration/LEGACY-BILLING-MODEL.md`, `documentation/migration/LEGACY-BILLING-WORKFLOW-PARITY.md`, and `deploy/shadow/BRANCH-CUTOVER-PLAYBOOK.md`, along with `deploy/shadow/reports/2026-11-14-mtskheta-i2-i7-insurer-sheets.md` and the Billing case, report and insurer identity definitions under `packages/app/src/emr`. Confirm active contracts, staff permissions, enabled bank/insurer connections and actual export acceptance with the Mtskheta team during testing.
+
 ## Run a department session
 
 1. Confirm the environment and the served build identifier with the session lead. Enter both on the acceptance page.

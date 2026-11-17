@@ -178,7 +178,7 @@ function NameStep({ token, onName }: { token: string; onName: (n: string) => voi
 // ───────────────────────── data + writes ─────────────────────────
 type Write = <T>(action: string, payload: Record<string, unknown>, optimistic: (s: State) => State, apply: (s: State, row: T) => State) => void;
 // What the problem sheet already knows when it opens: department, person, action. Only "what happened" is typed.
-interface ReportCtx { dept?: string; person?: string; screen?: string; userId?: number; flowIdx?: number }
+interface ReportCtx { dept?: string; person?: string; screen?: string; expected?: string; userId?: number; flowIdx?: number }
 const ReportContext = createContext<(ctx: ReportCtx) => void>(() => {});
 const useReport = () => useContext(ReportContext);
 
@@ -273,14 +273,15 @@ function Portal({ token, name, onLogout, onRename }: { token: string; name: stri
         ) : view === "issues" ? (
           <IssuesPage state={state} write={write} />
         ) : view === "acceptance" ? (
-          <TestDayAcceptance slug={parts[1]} token={token} name={name} onLogout={onLogout} />
+          <TestDayAcceptance slug={parts[1]} token={token} name={name} onLogout={onLogout}
+            onReport={(test) => setReport({ dept: "billing", screen: `${test[0]} · ${test[1]}`, expected: test[4] })} />
         ) : view === "overview" ? (
           <Overview state={state} />
         ) : (
           <Picker state={state} />
         )}
       </main>
-      {state && (
+      {state && !(view === "acceptance" && parts[1] === "billing") && (
         <button className="td-fab" onClick={() => setReport({ dept: slug })}>
           <span aria-hidden="true">!</span> ხარვეზის ჩაწერა
         </button>
@@ -910,7 +911,7 @@ function ReportSheet({ state, ctx, write, onClose }: { state: State; ctx: Report
   const [dept, setDept] = useState(ctx.dept ?? "");
   const [person, setPerson] = useState(ctx.person ?? "");
   const [screen, setScreen] = useState(ctx.screen ?? "");
-  const [expected, setExpected] = useState("");
+  const [expected, setExpected] = useState(ctx.expected ?? "");
   const [pr, setPr] = useState("");
   const [more, setMore] = useState(false);
   const people = state.users.filter((u) => !dept || u.dept_slug === dept);

@@ -11,7 +11,7 @@
 .pilot-fixture { display: flex; gap: 16px; padding: 16px 20px; background: #e8f2f8; border-left: 4px solid #3182ae; line-height: 1.55; }
 .pilot-fixture strong { flex: none; color: #16466b; }
 .pilot-layout { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 24px; margin-top: 24px; align-items: start; }
-.pilot-steps { background: #f4f7fa; border-radius: 12px; padding: 16px 10px; }
+.pilot-steps { background: #e3edf5; border-radius: 12px; padding: 16px 10px; }
 .pilot-progress { display: flex; gap: 8px; align-items: baseline; padding: 0 8px; font-size: 13px; }
 .pilot-progress strong { color: #153759; font-size: 20px; }
 .pilot-steps progress { width: calc(100% - 16px); margin: 10px 8px 14px; accent-color: #28729c; height: 6px; }
@@ -66,7 +66,7 @@
 .pilot-guidance { font-size: 13px; line-height: 1.5; color: #3c5c73; }
 .pilot-next { display: block; margin: 24px 0 0 auto; border: 1px solid #b8c9d8; background: white; color: #1b527f; border-radius: 8px; padding: 12px 16px; font-weight: 700; }
 @media (max-width: 760px) {
-  .pilot-step-menu > summary { display: block; padding: 12px 16px; background: #f4f7fa; border-radius: 8px; font-weight: 700; cursor: pointer; }
+  .pilot-step-menu > summary { display: block; padding: 12px 16px; background: #e3edf5; border-radius: 8px; font-weight: 700; cursor: pointer; }
   .pilot-step-menu .pilot-steps { display: block; overflow: visible; }
   .pilot-step-menu .pilot-step { width: 100%; }
   .pilot-header { padding: 14px 0; }

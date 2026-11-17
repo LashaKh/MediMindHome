@@ -300,9 +300,11 @@ export function CaseWalkthrough(
   const previous = index > phaseStart ? CASE_STEPS[index - 1] : undefined;
   const successfulEvent = (id: string) =>
     [...events].filter((event) => event.case_id === id && event.outcome === "pass").sort((a, b) => b.id - a.id)[0];
-  const phaseStartEvent = successfulEvent(CASE_STEPS[phaseStart].id);
+  // A builder may have retested a later handoff before the team starts this round.
+  const roundSteps = CASE_STEPS.slice(phaseStart, phaseStart + 11);
+  const phaseStartEvent = events.find((event) => event.outcome === "pass" && roundSteps.some((s) => s.id === event.case_id));
   const recordedVisit = phaseStartEvent?.evidence.match(/^ვიზიტი: ([^\n]+)/)?.[1]?.trim() ?? "";
-  const visit = index === phaseStart ? draft.visit : recordedVisit || draft.visit;
+  const visit = recordedVisit || draft.visit;
   const firstVisit = successfulEvent(CASE_STEPS[0].id)?.evidence.match(/^ვიზიტი: ([^\n]+)/)?.[1]?.trim() ?? "";
   const repeatedVisit = phaseStart === 11 && Boolean(firstVisit && visit.trim() && firstVisit === visit.trim());
   const gap = !(params.get("issue") && params.get("from") && build && params.get("from") !== build) &&
@@ -512,7 +514,7 @@ export function CaseWalkthrough(
             maxLength={100}
             value={visit}
             onChange={(event) => update({ visit: event.target.value })}
-            readOnly={index !== phaseStart && Boolean(recordedVisit)}
+            readOnly={Boolean(recordedVisit)}
             disabled={!editable || saving}
           />
         </label>

@@ -31,3 +31,9 @@ The catalog references WebMed operations from the legacy screen inventory and co
 ## Release
 
 Apply the Test Day acceptance migrations in order, deploy the `track-event` function with its existing JWT configuration, then release the landing frontend. The existing Test Day login is the gate for owner assignments, results and decisions.
+
+## Mtskheta discharge exercise
+
+Billing opens an eight-step rehearsal on Shadow. Prepare two synthetic emergency visits on the selected build. Use the first to demonstrate the workflow and the second for staff to repeat it independently. The prices and coverage in this exercise are training data.
+
+Each saved step records the performer, the tester, the observed amounts and supporting references. A failed step creates a linked builder issue in the same transaction. On the issue, open the retest link, select the corrected build and repeat that step. A successful linked retest closes the issue. The original result remains visible on the original build. A build is eligible for the department owner's pilot decision when all eight steps pass, including independent repetition. Pilot results are stored under `mts-billing-er-pilot-v1`; the 164-action catalog retains its own decisions.

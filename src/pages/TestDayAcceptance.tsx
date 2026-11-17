@@ -7,6 +7,8 @@ import {
 } from "../../supabase/functions/testday/acceptanceCatalog";
 import { TdError, tdWrite } from "../lib/testdayApi";
 import "./TestDayAcceptance.css";
+import { BillingPilot } from "./BillingPilot";
+import { PILOT_GROUP } from "../../supabase/functions/testday/billingPilot";
 import { TestDayBilling } from "./TestDayBilling";
 import { BILLING_RESULT } from "../lib/testdayBillingLabels";
 
@@ -76,7 +78,9 @@ export function TestDayAcceptance({ slug, token, name, onLogout, onReport }: {
   const currentArea = ACCEPTANCE_AREAS.find(({ id }) => id === slug);
   const archive = slug === "billing" && params.get("list") === "previous";
   const billing = slug === "billing" && !archive;
-  const area = archive && currentArea ? { ...currentArea, groups: PREVIOUS_BILLING_GROUPS } : currentArea;
+  const pilot = billing && environment === "shadow" && !params.has("action") && params.get("list") !== "actions";
+  const [lastBuild, setLastBuild] = useState(() => localStorage.getItem("mts-billing-pilot-build") ?? "");
+  const area = pilot && currentArea ? { ...currentArea, groups: [PILOT_GROUP] } : archive && currentArea ? { ...currentArea, groups: PREVIOUS_BILLING_GROUPS } : currentArea;
   const settings = useRef<HTMLDetailsElement>(null);
   const [owners, setOwners] = useState<AcceptanceOwner[] | null>(null);
   const [ownerError, setOwnerError] = useState(false);
@@ -110,6 +114,14 @@ export function TestDayAcceptance({ slug, token, name, onLogout, onReport }: {
   const directory = new URLSearchParams(params);
   directory.delete("list");
   directory.delete("action");
+  for (const key of ["step", "from", "issue"]) directory.delete(key);
+  const pilotParams = new URLSearchParams(directory);
+  if (environment === "foundation") pilotParams.delete("build");
+  pilotParams.set("env", "shadow");
+  const actions = new URLSearchParams(directory);
+  actions.set("list", "actions");
+  const resumeParams = new URLSearchParams(pilotParams);
+  resumeParams.set("build", lastBuild);
   const href = directory.size ? `?${directory}` : "";
   const previous = new URLSearchParams(directory);
   previous.set("list", "previous");
@@ -119,6 +131,11 @@ export function TestDayAcceptance({ slug, token, name, onLogout, onReport }: {
     const values = new FormData(event.currentTarget);
     selected.set("build", String(values.get("build")).trim().toLowerCase());
     selected.set("env", String(values.get("environment")));
+    if (pilot) {
+      const version = selected.get("build") ?? "";
+      localStorage.setItem("mts-billing-pilot-build", version);
+      setLastBuild(version);
+    }
     setParams(selected);
     if (settings.current) settings.current.open = false;
   }
@@ -138,7 +155,7 @@ export function TestDayAcceptance({ slug, token, name, onLogout, onReport }: {
       <label className="td-label">გარემო
         <select name="environment" defaultValue={environment} className="td-input">
           <option value="shadow">{ENV.shadow}</option>
-          <option value="foundation">{ENV.foundation}</option>
+          {!pilot && <option value="foundation">{ENV.foundation}</option>}
         </select>
       </label>
       <label className="td-label">გამოცდილი ვერსიის კოდი
@@ -155,7 +172,7 @@ export function TestDayAcceptance({ slug, token, name, onLogout, onReport }: {
     </div>
   );
   const workspace = (
-    <Workspace key={`${environment}/${build}/${slug ?? ""}/${archive}`} scope={{ environment, build }}
+    <Workspace key={`${environment}/${build}/${slug ?? ""}/${archive}/${pilot}`} pilot={pilot} scope={{ environment, build }}
       token={token} name={name} onLogout={onLogout} area={area} href={href} archive={archive}
       owners={ownerError ? [] : owners ?? []} onRefreshOwners={refreshOwners} onSettings={showSettings} onReport={onReport} />
   );
@@ -180,6 +197,11 @@ export function TestDayAcceptance({ slug, token, name, onLogout, onReport }: {
             <Link className="td-link" to={`${BASE}/billing?${previous}`}>წინა სია და შედეგები</Link>
           </div>
         </details>
+        <nav className="td-row" aria-label="ბილინგის სამუშაო სივრცე">
+          <Link className={pilot ? "td-btn td-btn-primary" : "td-btn td-btn-ghost"} aria-current={pilot ? "page" : undefined} to={`?${pilotParams}`}>სასწავლო შემთხვევა</Link>
+          <Link className={!pilot ? "td-btn td-btn-primary" : "td-btn td-btn-ghost"} aria-current={!pilot ? "page" : undefined} to={`?${actions}`}>ქმედებების სრული სია</Link>
+          {pilot && !build && !params.has("issue") && lastBuild && <Link className="td-link" to={`?${resumeParams}`}>შემოწმების გაგრძელება · {lastBuild}</Link>}
+        </nav>
         {workspace}
       </div>
     );
@@ -204,16 +226,16 @@ export function TestDayAcceptance({ slug, token, name, onLogout, onReport }: {
 
 type StatePage = { events: AcceptanceEvent[]; before: number | null };
 
-function Workspace({ scope, token, name, onLogout, area, href, owners, onRefreshOwners, archive, onSettings, onReport }: {
+function Workspace({ pilot, scope, token, name, onLogout, area, href, owners, onRefreshOwners, archive, onSettings, onReport }: {
   scope: Scope; token: string; name: string; onLogout: () => void; area?: AcceptanceArea; href: string;
   owners: AcceptanceOwner[]; onRefreshOwners: () => Promise<void>;
-  archive: boolean; onSettings: () => void; onReport?: ReportAction;
+  pilot: boolean; archive: boolean; onSettings: () => void; onReport?: ReportAction;
 }) {
   const { build, environment } = scope;
   const areaId = area?.id;
   const readScope = useMemo(() => ({
-    build, environment, ...(areaId && { area: areaId }), ...(archive && { archive: true }),
-  }), [build, environment, areaId, archive]);
+    build, environment, ...(areaId && { area: areaId }), ...(archive && { archive: true }), ...(pilot && { pilot: true }),
+  }), [build, environment, areaId, archive, pilot]);
   const [events, setEvents] = useState<AcceptanceEvent[]>([]);
   const [loaded, setLoaded] = useState(!scope.build);
   const [error, setError] = useState(false);
@@ -246,7 +268,7 @@ function Workspace({ scope, token, name, onLogout, area, href, owners, onRefresh
 
   const save: Save = async (action, payload) => {
     try {
-      const saved = await tdWrite<AcceptanceEvent>(token, action, { ...scope, ...payload, by: name });
+      const saved = await tdWrite<AcceptanceEvent>(token, action, { ...scope, ...payload, ...(pilot && { pilot: true }), by: name });
       setEvents((current) => [...current.filter((item) => item.id !== saved.id), saved].sort((a, b) => b.id - a.id));
     } catch (e) {
       if (e instanceof TdError && e.status === 401) onLogout();
@@ -299,6 +321,16 @@ function Workspace({ scope, token, name, onLogout, area, href, owners, onRefresh
     );
     const onSaveCase = (id: string, payload: Record<string, unknown>) => save("acceptance_run", { ...payload, area: area.id, case_id: id });
 
+    if (pilot) return <>{loading}{loadError}
+      <BillingPilot events={status.records} build={build} target={EMR_HOST.shadow} editable={editable} ownerName={owner?.name}
+        onSettings={onSettings} onSave={onSaveCase} decision={<>
+          <p>აქ ბილინგის განყოფილება ადასტურებს ამ სასწავლო შემთხვევის შედეგს არჩეულ ვერსიაზე.</p>
+          {!owner && <button className="td-btn td-btn-ghost" type="button" onClick={onSettings}>პასუხისმგებელი პირის მითითება</button>}
+          {decision}
+        </>} />
+      {moreHistory}
+      {build && <button className="td-btn td-btn-ghost" type="button" disabled={!loaded} onClick={refresh}>შენახული შედეგების განახლება</button>}
+    </>;
     if (area.id === "billing" && !archive) {
       return (
         <>

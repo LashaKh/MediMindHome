@@ -1023,8 +1023,10 @@ function IssueItem({ i, dept, update, team, compact }: { i: Issue; dept: string 
   useEffect(() => setPr(i.pr_url ?? ""), [i.pr_url]);
   useEffect(() => { if (!answerOpen) setAnswer(i.answer ?? ""); }, [i.answer, answerOpen]);
   const st = stage(i.status);
+  const pilotRef = i.source === "billing-er-v1" && i.ref?.match(/^billing-er-v1:(shadow):([a-z0-9._-]{7,80}):(ER-0[1-8])$/);
+  const pilotPath = pilotRef && `${BASE}/acceptance/billing?env=${pilotRef[1]}&step=${pilotRef[3]}&build=${pilotRef[2]}`;
   return (
-    <li className={`td-card td-issue sg-${st}`}>
+    <li id={`issue-${i.id}`} className={`td-card td-issue sg-${st}`}>
       <div className="td-issue-head">
         <span className={`td-chip c-${st}`}>{STAGE_KA[st]}</span>
         <span className="td-sub">#{i.id} · {hhmm(i.created_at)}{dept ? ` · ${dept}` : ""}</span>
@@ -1032,6 +1034,10 @@ function IssueItem({ i, dept, update, team, compact }: { i: Issue; dept: string 
       {/* "In work" read as "nobody fixed it": say plainly where the fix is (Codex-reviewed wording). */}
       {st === "work" && <div className="td-work-note">გამოსწორება უკვე დავწერეთ. დღეს ღამით Shadow-ზე დავაყენებთ, შემდეგ შევამოწმებთ და მოვნიშნავთ, რომ მოგვარდა.</div>}
       <div className="td-issue-what">{i.what}</div>
+      {pilotRef && pilotPath && <div className="td-row">
+        <Link className="td-link" to={pilotPath}>ნაბიჯი და მტკიცებულება · {pilotRef[2]}</Link>
+        <Link className="td-btn td-btn-ghost" to={`${pilotPath}&from=${pilotRef[2]}&issue=${i.id}`}>შესწორების შემოწმება</Link>
+      </div>}
       {!compact && i.expected && <div className="td-sub"><b>ელოდნენ:</b> {i.expected}</div>}
       {!compact && (i.person || i.screen || i.reported_by) && <div className="td-sub td-issue-who">{[i.person, i.screen, i.reported_by && `ჩაწერა: ${i.reported_by}`].filter(Boolean).join(" · ")}</div>}
       {i.recheck_note && (st === "open" || st === "work") && <div className="td-recheck-note"><b>ტესტერი:</b> {i.recheck_note}</div>}
@@ -1039,7 +1045,7 @@ function IssueItem({ i, dept, update, team, compact }: { i: Issue; dept: string 
           in-work item shows to the team alone, marked as not yet visible. */}
       {i.answer && !answerOpen && (st === "fixed" || st === "closed" || st === "answered") && <div className={`td-answer a-${st}`}><b>{st === "answered" ? "პასუხი:" : "რა შევცვალეთ:"}</b> {i.answer}</div>}
       {i.answer && !answerOpen && team && (st === "open" || st === "work") && <div className="td-answer a-draft"><b>მომზადებული პასუხი (ტესტერი ჯერ ვერ ხედავს):</b> {i.answer}</div>}
-      {st === "fixed" && <Recheck i={i} update={update} />}
+      {st === "fixed" && !pilotRef && <Recheck i={i} update={update} />}
       {team && (
         <div className="td-team">
           <div className="td-seg" role="group" aria-label="მდგომარეობა">
@@ -1069,7 +1075,10 @@ function IssueItem({ i, dept, update, team, compact }: { i: Issue; dept: string 
 
 function IssuesPage({ state, write }: { state: State; write: Write }) {
   const report = useReport();
-  const [filter, setFilter] = useState<Stage | "all">(() => (state.issues.some((i) => stage(i.status) === "fixed") ? "fixed" : "all"));
+  const { hash } = useLocation();
+  const linkedIssue = /^#issue-\d+$/.test(hash) ? hash.slice(1) : "";
+  useEffect(() => { if (linkedIssue) jump(linkedIssue); }, [linkedIssue, state.issues.length]);
+  const [filter, setFilter] = useState<Stage | "all">(() => (!linkedIssue && state.issues.some((i) => stage(i.status) === "fixed") ? "fixed" : "all"));
   const [dept, setDept] = useState("");
   const match = (i: Issue, f: typeof filter) => (f === "all" || stage(i.status) === f || (f === "closed" && isSolved(i))) && (!dept || i.dept_slug === dept);
   const count = (f: typeof filter) => state.issues.filter((i) => match(i, f)).length;

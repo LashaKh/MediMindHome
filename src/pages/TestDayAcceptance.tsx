@@ -3,7 +3,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import {
   ACCEPTANCE_AREAS,
   type AcceptanceArea, type AcceptanceCase, type AcceptanceEnvironment,
-  type AcceptanceEvent, type CaseOutcome, type DecisionOutcome,
+  type AcceptanceEvent, type AcceptanceOwner, type CaseOutcome, type DecisionOutcome,
 } from "../../supabase/functions/testday/acceptanceCatalog";
 import { TdError, tdWrite } from "../lib/testdayApi";
 import "./TestDayAcceptance.css";
@@ -18,8 +18,8 @@ const ENV: Record<AcceptanceEnvironment, string> = { shadow: "სატესტ
 const ERRORS: Record<string, string> = {
   acceptance_bad_build: "შეამოწმეთ გარემო და ვერსიის კოდი.",
   acceptance_invalid: "შეამოწმეთ შევსებული ველები.",
-  acceptance_signer: "ამ კოდით ამ მიმართულების დამტკიცება ვერ მოხერხდა. გადაამოწმეთ კოდი და თქვენი უფლებამოსილება.",
-  acceptance_signer_setup: "ხელმძღვანელების კოდები ჯერ არ არის გაცემული. მიმართეთ MediMind-ის წარმომადგენელს.",
+  acceptance_owner_required: "გადაწყვეტილების ჩაწერამდე მიუთითეთ პასუხისმგებელი პირი.",
+  acceptance_owner_stale: "პასუხისმგებელი პირი შეიცვალა. განაახლეთ მონაცემები და ისევ სცადეთ.",
   acceptance_incomplete: "დამტკიცებამდე დაასრულეთ ყველა სავალდებულო შემოწმება და პრაქტიკული დავალება.",
   acceptance_stale: "შემოწმების შედეგები შეიცვალა. გადახედეთ ახალ შედეგებს და ისევ სცადეთ.",
   acceptance_request_conflict: "ეს შედეგი უკვე შეიცვალა. განაახლეთ სია და ისევ სცადეთ.",
@@ -66,6 +66,34 @@ export function TestDayAcceptance({ slug, token, name, onLogout }: {
   const build = params.get("build") ?? "";
   const environment = params.get("env") === "foundation" ? "foundation" : "shadow";
   const area = ACCEPTANCE_AREAS.find(({ id }) => id === slug);
+  const [owners, setOwners] = useState<AcceptanceOwner[] | null>(null);
+  const [ownerError, setOwnerError] = useState(false);
+  const owner = owners?.find((item) => item.area === area?.id);
+
+  const refreshOwners = useCallback(async () => {
+    setOwnerError(false);
+    try {
+      setOwners(await tdWrite<AcceptanceOwner[]>(token, "acceptance_owners", {}));
+    } catch (e) {
+      if (e instanceof TdError && e.status === 401) onLogout();
+      else setOwnerError(true);
+    }
+  }, [onLogout, token]);
+
+  useEffect(() => { void refreshOwners(); }, [refreshOwners]);
+
+  async function saveOwner(payload: Record<string, unknown>) {
+    try {
+      const saved = await tdWrite<AcceptanceOwner>(token, "acceptance_owner", {
+        ...payload, area: area?.id, by: name, owner_updated_at: owner?.updated_at ?? null,
+      });
+      setOwners((current) => [...(current ?? []).filter((item) => item.area !== saved.area), saved]);
+    } catch (e) {
+      if (e instanceof TdError && e.status === 401) onLogout();
+      throw e;
+    }
+  }
+
   const selected = new URLSearchParams(params);
   const href = selected.size ? `?${selected}` : "";
 
@@ -85,6 +113,11 @@ export function TestDayAcceptance({ slug, token, name, onLogout }: {
         <h1>{area?.title ?? "შემოწმება და მიღება"}</h1>
         <p>{area?.owner ?? "აირჩიეთ მიმართულება, ჩაატარეთ პრაქტიკული შემოწმება და ჩაიწერეთ შედეგები."}</p>
       </header>
+      {ownerError && <div className="td-row">
+        <p role="alert" className="td-err">პასუხისმგებელი პირების სია ვერ ჩაიტვირთა.</p>
+        <button className="td-btn td-btn-ghost" type="button" onClick={refreshOwners}>სიის განახლება</button>
+      </div>}
+      {area && owners && !ownerError && <OwnerEditor key={area.id} owner={owner} onSave={saveOwner} onRefresh={refreshOwners} />}
       <form className="td-card td-accept-build" onSubmit={chooseBuild} key={environment + build}>
         <label className="td-label">გარემო
           <select name="environment" defaultValue={environment} className="td-input">
@@ -98,14 +131,16 @@ export function TestDayAcceptance({ slug, token, name, onLogout }: {
         <button className="td-btn td-btn-primary" type="submit">ვერსიის გახსნა</button>
       </form>
       {slug && !area ? <p className="td-empty">მიმართულება ვერ მოიძებნა.</p> : (
-        <Workspace key={environment + "/" + build} scope={{ environment, build }} token={token} name={name} onLogout={onLogout} area={area} href={href} />
+        <Workspace key={environment + "/" + build} scope={{ environment, build }} token={token} name={name} onLogout={onLogout}
+          area={area} href={href} owners={ownerError ? [] : owners ?? []} onRefreshOwners={refreshOwners} />
       )}
     </div>
   );
 }
 
-function Workspace({ scope, token, name, onLogout, area, href }: {
+function Workspace({ scope, token, name, onLogout, area, href, owners, onRefreshOwners }: {
   scope: Scope; token: string; name: string; onLogout: () => void; area?: AcceptanceArea; href: string;
+  owners: AcceptanceOwner[]; onRefreshOwners: () => Promise<void>;
 }) {
   const { build, environment } = scope;
   const [events, setEvents] = useState<AcceptanceEvent[]>([]);
@@ -163,6 +198,7 @@ function Workspace({ scope, token, name, onLogout, area, href }: {
   if (area) {
     if (!area.groups) return <p className="td-empty"><b>დაგეგმილია</b>{area.scope}</p>;
     const status = statusOf(area, events);
+    const owner = owners.find((item) => item.area === area.id);
     const editable = !!scope.build && loaded && !error;
     return (
       <div className="td-accept-work">
@@ -185,9 +221,11 @@ function Workspace({ scope, token, name, onLogout, area, href }: {
               onSave={(payload) => save("acceptance_run", { ...payload, area: area.id, case_id: test[0] })} />)}
           </section>
         ))}
-        <Decision status={status} editable={editable}
-          onSave={(payload) => save("acceptance_sign", { ...payload, area: area.id, basis: status.basis })}
-          onRefresh={refresh} />
+        <Decision status={status} editable={editable} owner={owner}
+          onSave={(payload) => save("acceptance_sign", {
+            ...payload, area: area.id, basis: status.basis, owner_updated_at: owner?.updated_at,
+          })}
+          onRefresh={async () => { await Promise.all([refresh(), onRefreshOwners()]); }} />
         {before !== null && <div>
           <button className="td-btn td-btn-ghost" type="button" disabled={loadingHistory} onClick={loadHistory}>ძველი შედეგების ჩატვირთვა</button>
           {historyError && <p className="td-err" role="alert">ძველი შედეგები ვერ ჩაიტვირთა.</p>}
@@ -204,9 +242,10 @@ function Workspace({ scope, token, name, onLogout, area, href }: {
       <ul className="td-accept-directory">
         {[...ACCEPTANCE_AREAS.filter((item) => item.groups), ...ACCEPTANCE_AREAS.filter((item) => !item.groups)].map((item) => {
           const { cases, completed, approved } = statusOf(item, events);
+          const owner = owners.find((value) => value.area === item.id);
           return <li key={item.id}>
             <Link to={`${BASE}/${item.id}${href}`}>
-              <span><strong>{item.title}</strong><span className="td-sub">{item.owner}</span></span>
+              <span><strong>{item.title}</strong><span className={owner ? "td-sub td-accept-owner-name" : "td-sub"}>{owner?.name ?? item.owner}</span></span>
               <span className={`td-accept-pill ${approved ? "is-pass" : ""}`}>
                 {approved ? LABEL.approved : cases.length ? (scope.build && loaded && !error ? `${completed} / ${cases.length}` : `${cases.length} შემოწმება`) : "დაგეგმილია"}
               </span>
@@ -253,6 +292,44 @@ function useSave(onSave: (payload: Record<string, unknown>) => Promise<void>) {
   }
 
   return { edited, submit, saving, message, failed };
+}
+
+function OwnerEditor({ owner, onSave, onRefresh }: {
+  owner?: AcceptanceOwner; onSave: (payload: Record<string, unknown>) => Promise<void>; onRefresh: () => Promise<void>;
+}) {
+  const action = useSave(onSave);
+  const [editing, setEditing] = useState(false);
+
+  function submit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const values = new FormData(event.currentTarget);
+    void action.submit({ owner: values.get("owner") }, () => setEditing(false));
+  }
+
+  return <section className="td-card td-accept-owner">
+    <div className="td-h2row">
+      <div><h2>პასუხისმგებელი პირი</h2>
+        {owner ? <p><strong>{owner.name}</strong> <span className="td-sub">მიუთითა {owner.recorded_by} · {testDate(owner.updated_at)}</span></p>
+          : <p className="td-sub">ჯერ არ არის მითითებული.</p>}
+      </div>
+      {!editing && <button className="td-btn td-btn-ghost" type="button" onClick={() => { action.edited(); setEditing(true); }}>
+        {owner ? "შეცვლა" : "პასუხისმგებელი პირის მითითება"}
+      </button>}
+    </div>
+    {editing && <form className="td-accept-form" onSubmit={submit} onChange={action.edited}>
+      <fieldset disabled={action.saving}>
+        <label className="td-label">სახელი და გვარი
+          <input className="td-input" name="owner" defaultValue={owner?.name} required maxLength={100} />
+        </label>
+        <div className="td-row">
+          <button className="td-btn td-btn-primary" type="submit">შენახვა</button>
+          <button className="td-btn td-btn-ghost" type="button" onClick={() => setEditing(false)}>გაუქმება</button>
+          {action.failed && <button className="td-btn td-btn-ghost" type="button" onClick={() => { setEditing(false); void onRefresh(); }}>სიის განახლება</button>}
+        </div>
+      </fieldset>
+    </form>}
+    {action.message && <p className={action.failed ? "td-err" : "td-hint"} role={action.failed ? "alert" : "status"}>{action.message}</p>}
+  </section>;
 }
 
 function CaseRow({ test, current, history, editable, onSave }: {
@@ -323,7 +400,8 @@ function EventList({ events }: { events: AcceptanceEvent[] }) {
   return (
     <ul className="td-accept-events">
       {events.map((item) => <li key={item.id}>
-        <strong>{LABEL[item.outcome]}</strong> <span className="td-sub">{item.actor} · {testDate(item.created_at)}</span>
+        <strong>{LABEL[item.outcome]}</strong> <span className="td-sub">{item.department_owner ? "ჩაწერა " : ""}{item.actor} · {testDate(item.created_at)}</span>
+        {item.department_owner && <div className="td-sub">პასუხისმგებელი პირი: {item.department_owner}</div>}
         {item.trainee && <div className="td-sub">თავად შეასრულა: {item.trainee}</div>}
         {item.issue_id && <div className="td-sub">ხარვეზი №{item.issue_id}</div>}
         <p>{item.evidence}</p>
@@ -332,8 +410,8 @@ function EventList({ events }: { events: AcceptanceEvent[] }) {
   );
 }
 
-function Decision({ status, editable, onSave, onRefresh }: {
-  status: ReturnType<typeof statusOf>; editable: boolean;
+function Decision({ status, editable, owner, onSave, onRefresh }: {
+  status: ReturnType<typeof statusOf>; editable: boolean; owner?: AcceptanceOwner;
   onSave: (payload: Record<string, unknown>) => Promise<void>; onRefresh: () => Promise<void>;
 }) {
   const action = useSave(onSave);
@@ -345,7 +423,7 @@ function Decision({ status, editable, onSave, onRefresh }: {
     const form = event.currentTarget;
     const values = new FormData(form);
     if (outcome === "approved" && !ready) return;
-    void action.submit({ outcome, code: values.get("code"), evidence: values.get("evidence") }, () => form.reset());
+    void action.submit({ outcome, evidence: values.get("evidence") }, () => form.reset());
   }
 
   return <section className="td-accept-decision td-card">
@@ -354,17 +432,15 @@ function Decision({ status, editable, onSave, onRefresh }: {
     {status.decision?.outcome === "approved" && !status.approved && <p className="td-warn">დამტკიცების შემდეგ შედეგები შეიცვალა. საჭიროა ხელახლა დამტკიცება.</p>}
     {!ready && <p className="td-hint">დამტკიცებამდე დაასრულეთ დარჩენილი შემოწმებები და პრაქტიკული დავალებები.</p>}
     {status.decision && <EventList events={status.records.filter((item) => !item.case_id)} />}
-    {editable && (!status.approved || outcome === "changes_requested") && <form className="td-accept-form" onSubmit={submit} onChange={action.edited}>
+    {!owner && <p className="td-hint">გადაწყვეტილების ჩასაწერად მიუთითეთ პასუხისმგებელი პირი.</p>}
+    {editable && owner && (!status.approved || outcome === "changes_requested") && <form className="td-accept-form" onSubmit={submit} onChange={action.edited}>
       <fieldset disabled={action.saving}>
-        <legend>ავსებს განყოფილების უფლებამოსილი ხელმძღვანელი</legend>
+        <legend>ჩაწერეთ პასუხისმგებელ პირთან შეთანხმებული გადაწყვეტილება</legend>
         <label className="td-label">გადაწყვეტილება
           <select className="td-input" value={outcome} onChange={(event) => setOutcome(event.target.value === "changes_requested" ? "changes_requested" : "approved")}>
             <option value="approved">დამტკიცება</option>
             <option value="changes_requested">შესწორების მოთხოვნა</option>
           </select>
-        </label>
-        <label className="td-label">ხელმძღვანელის პირადი კოდი
-          <input className="td-input" name="code" type="password" minLength={64} maxLength={64} required autoComplete="off" />
         </label>
         <label className="td-label">გადაწყვეტილების ჩანაწერი
           <textarea className="td-input" name="evidence" maxLength={2000} required rows={2} />
@@ -376,7 +452,7 @@ function Decision({ status, editable, onSave, onRefresh }: {
       {action.message && <p className={action.failed ? "td-err" : "td-hint"} role={action.failed ? "alert" : "status"}>{action.message}</p>}
       {action.failed && <button className="td-btn td-btn-ghost" type="button" onClick={onRefresh}>შედეგების განახლება</button>}
     </form>}
-    {editable && status.approved && outcome === "approved" && <button className="td-btn td-btn-ghost" type="button"
+    {editable && owner && status.approved && outcome === "approved" && <button className="td-btn td-btn-ghost" type="button"
       onClick={() => setOutcome("changes_requested")}>შესწორების მოთხოვნა</button>}
   </section>;
 }

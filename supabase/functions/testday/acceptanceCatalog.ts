@@ -120,6 +120,7 @@ export const ACCEPTANCE_AREAS: readonly AcceptanceArea[] = [
 export type CaseOutcome = "pass" | "fail" | "blocked" | "not_applicable";
 export type DecisionOutcome = "approved" | "changes_requested";
 export type AcceptanceEnvironment = "shadow" | "foundation";
+export type AcceptanceOwner = { area: string; name: string; recorded_by: string; updated_at: string };
 export type AcceptanceEvent = {
   id: number;
   area: string;
@@ -130,5 +131,6 @@ export type AcceptanceEvent = {
   evidence: string;
   issue_id: number | null;
   basis: number | null;
+  department_owner: string | null;
   created_at: string;
 };

@@ -37,7 +37,7 @@
 .td-accept-form label { margin: 0 0 11px; }
 .td-accept-form .td-hint { display: block; margin-top: 4px; }
 .td-accept-form > p { margin-top: 8px; }
-.td-accept-decision { display: grid; gap: 9px; padding: 16px; }
+.td-accept-owner, .td-accept-decision { display: grid; gap: 9px; padding: 16px; }
 .td-accept-decision > p { margin: 0; }
 .td-accept-decision > button, .td-accept-form > button { justify-self: start; }
 .td-accept-events { list-style: none; padding: 0; margin: 8px 0 0; }
@@ -49,3 +49,5 @@
 }
 
 .td-redact .td-accept-events { filter: blur(6px); }
+.td-accept-owner p { margin: 4px 0 0; }
+.td-redact .td-accept-owner-name, .td-redact .td-accept-owner strong, .td-redact .td-accept-owner .td-sub { filter: blur(6px); }

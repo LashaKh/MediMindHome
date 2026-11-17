@@ -196,7 +196,8 @@ export async function handleTestday(req: Request): Promise<Response> {
     if (body?.action === "login") return await login(req, body.password);
     if (!(await authorized(req))) return json({ error: "unauthorized" }, 401);
     if (body?.action === "state") return await state();
-    if (body?.action === "acceptance_state" || body?.action === "acceptance_run" || body?.action === "acceptance_sign") {
+    if (body?.action === "acceptance_state" || body?.action === "acceptance_run" || body?.action === "acceptance_sign"
+      || body?.action === "acceptance_owners" || body?.action === "acceptance_owner") {
       return await acceptanceAction(body, db(), json);
     }
     return await write(body);

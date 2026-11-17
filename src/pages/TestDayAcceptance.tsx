@@ -7,6 +7,9 @@ import {
 } from "../../supabase/functions/testday/acceptanceCatalog";
 import { TdError, tdWrite } from "../lib/testdayApi";
 import "./TestDayAcceptance.css";
+import { CASE_GROUP } from "../../supabase/functions/testday/caseWalkthrough";
+import { CaseWalkthrough } from "./CaseWalkthrough";
+import type { State } from "../lib/testdayApi";
 import { BillingPilot } from "./BillingPilot";
 import { PILOT_GROUP } from "../../supabase/functions/testday/billingPilot";
 import { TestDayBilling } from "./TestDayBilling";
@@ -69,8 +72,8 @@ function statusOf(area: AcceptanceArea, events: AcceptanceEvent[]) {
   return { cases, records, latest, completed, basis, decision, approved };
 }
 
-export function TestDayAcceptance({ slug, token, name, onLogout, onReport }: {
-  slug?: string; token: string; name: string; onLogout: () => void; onReport?: ReportAction;
+export function TestDayAcceptance({ roster, slug, token, name, onLogout, onReport }: {
+  roster: State | null; slug?: string; token: string; name: string; onLogout: () => void; onReport?: ReportAction;
 }) {
   const [params, setParams] = useSearchParams();
   const build = params.get("build") ?? "";
@@ -78,9 +81,11 @@ export function TestDayAcceptance({ slug, token, name, onLogout, onReport }: {
   const currentArea = ACCEPTANCE_AREAS.find(({ id }) => id === slug);
   const archive = slug === "billing" && params.get("list") === "previous";
   const billing = slug === "billing" && !archive;
-  const pilot = billing && environment === "shadow" && !params.has("action") && params.get("list") !== "actions";
+  const isExercise = billing && environment === "shadow" && !params.has("action") && params.get("list") !== "actions";
+  const original = params.get("case") === "original" || /^ER-0[1-8]$/.test(params.get("step") ?? "");
+  const pilot = isExercise && (original || "walkthrough");
   const [lastBuild, setLastBuild] = useState(() => localStorage.getItem("mts-billing-pilot-build") ?? "");
-  const area = pilot && currentArea ? { ...currentArea, groups: [PILOT_GROUP] } : archive && currentArea ? { ...currentArea, groups: PREVIOUS_BILLING_GROUPS } : currentArea;
+  const area = pilot && currentArea ? { ...currentArea, groups: [original ? PILOT_GROUP : CASE_GROUP] } : archive && currentArea ? { ...currentArea, groups: PREVIOUS_BILLING_GROUPS } : currentArea;
   const settings = useRef<HTMLDetailsElement>(null);
   const [owners, setOwners] = useState<AcceptanceOwner[] | null>(null);
   const [ownerError, setOwnerError] = useState(false);
@@ -114,10 +119,12 @@ export function TestDayAcceptance({ slug, token, name, onLogout, onReport }: {
   const directory = new URLSearchParams(params);
   directory.delete("list");
   directory.delete("action");
-  for (const key of ["step", "from", "issue"]) directory.delete(key);
+  for (const key of ["step", "from", "issue", "case", "view"]) directory.delete(key);
   const pilotParams = new URLSearchParams(directory);
   if (environment === "foundation") pilotParams.delete("build");
   pilotParams.set("env", "shadow");
+  const originalParams = new URLSearchParams(pilotParams);
+  originalParams.set("case", "original");
   const actions = new URLSearchParams(directory);
   actions.set("list", "actions");
   const resumeParams = new URLSearchParams(pilotParams);
@@ -172,7 +179,7 @@ export function TestDayAcceptance({ slug, token, name, onLogout, onReport }: {
     </div>
   );
   const workspace = (
-    <Workspace key={`${environment}/${build}/${slug ?? ""}/${archive}/${pilot}`} pilot={pilot} scope={{ environment, build }}
+    <Workspace roster={roster} key={`${environment}/${build}/${slug ?? ""}/${archive}/${pilot}`} pilot={pilot} scope={{ environment, build }}
       token={token} name={name} onLogout={onLogout} area={area} href={href} archive={archive}
       owners={ownerError ? [] : owners ?? []} onRefreshOwners={refreshOwners} onSettings={showSettings} onReport={onReport} />
   );
@@ -183,7 +190,7 @@ export function TestDayAcceptance({ slug, token, name, onLogout, onReport }: {
         <header className="td-billing-page-top">
           <div>
             <Link className="td-link" to={BASE + href}>ყველა მიმართულება</Link>
-            <h1>ბილინგის შემოწმება</h1>
+            {pilot === "walkthrough" ? <span className="td-sub"> · ბილინგი</span> : <h1>ბილინგის შემოწმება</h1>}
             <div className="td-sub">მცხეთის საავადმყოფო{build ? ` · ${ENV[environment]} · ${build}` : ""}</div>
           </div>
         </header>
@@ -194,11 +201,12 @@ export function TestDayAcceptance({ slug, token, name, onLogout, onReport }: {
           <div className="td-row td-billing-settings-links">
             <a className="td-link" href={EMR_HOST.shadow + "/version.json"} target="_blank" rel="noreferrer">სატესტო ვერსიის კოდი</a>
             <a className="td-link" href={EMR_HOST.foundation + "/version.json"} target="_blank" rel="noreferrer">სამუშაო ვერსიის კოდი</a>
+            <Link className="td-link" to={`?${originalParams}`}>წინა სასწავლო შემთხვევა (8 ნაბიჯი)</Link>
             <Link className="td-link" to={`${BASE}/billing?${previous}`}>წინა სია და შედეგები</Link>
           </div>
         </details>
         <nav className="td-row" aria-label="ბილინგის სამუშაო სივრცე">
-          <Link className={pilot ? "td-btn td-btn-primary" : "td-btn td-btn-ghost"} aria-current={pilot ? "page" : undefined} to={`?${pilotParams}`}>სასწავლო შემთხვევა</Link>
+          <Link className={pilot === "walkthrough" ? "td-btn td-btn-primary" : "td-btn td-btn-ghost"} aria-current={pilot === "walkthrough" ? "page" : undefined} to={`?${pilotParams}`}>შემთხვევის გეგმა</Link>
           <Link className={!pilot ? "td-btn td-btn-primary" : "td-btn td-btn-ghost"} aria-current={!pilot ? "page" : undefined} to={`?${actions}`}>ქმედებების სრული სია</Link>
           {pilot && !build && !params.has("issue") && lastBuild && <Link className="td-link" to={`?${resumeParams}`}>შემოწმების გაგრძელება · {lastBuild}</Link>}
         </nav>
@@ -226,15 +234,15 @@ export function TestDayAcceptance({ slug, token, name, onLogout, onReport }: {
 
 type StatePage = { events: AcceptanceEvent[]; before: number | null };
 
-function Workspace({ pilot, scope, token, name, onLogout, area, href, owners, onRefreshOwners, archive, onSettings, onReport }: {
+function Workspace({ roster, pilot, scope, token, name, onLogout, area, href, owners, onRefreshOwners, archive, onSettings, onReport }: {
   scope: Scope; token: string; name: string; onLogout: () => void; area?: AcceptanceArea; href: string;
   owners: AcceptanceOwner[]; onRefreshOwners: () => Promise<void>;
-  pilot: boolean; archive: boolean; onSettings: () => void; onReport?: ReportAction;
+  roster: State | null; pilot: boolean | "walkthrough"; archive: boolean; onSettings: () => void; onReport?: ReportAction;
 }) {
   const { build, environment } = scope;
   const areaId = area?.id;
   const readScope = useMemo(() => ({
-    build, environment, ...(areaId && { area: areaId }), ...(archive && { archive: true }), ...(pilot && { pilot: true }),
+    build, environment, ...(areaId && { area: areaId }), ...(archive && { archive: true }), ...(pilot && { pilot }),
   }), [build, environment, areaId, archive, pilot]);
   const [events, setEvents] = useState<AcceptanceEvent[]>([]);
   const [loaded, setLoaded] = useState(!scope.build);
@@ -252,9 +260,12 @@ function Workspace({ pilot, scope, token, name, onLogout, area, href, owners, on
         ...(!areaId ? [tdWrite<StatePage>(token, "acceptance_state", { build, environment, area: "billing" })] : []),
       ]);
       const [result, billingResult] = results;
-      setEvents(billingResult
+      const rows = billingResult
         ? [...result.events.filter((row) => row.area !== "billing"), ...billingResult.events].sort((a, b) => b.id - a.id)
-        : result.events);
+        : result.events;
+      if (pilot === "walkthrough") {
+        setEvents((current) => [...new Map([...current, ...rows].map((e) => [e.id, e])).values()].sort((a, b) => b.id - a.id));
+      } else setEvents(rows);
       setBefore(result.before);
     } catch (e) {
       if (e instanceof TdError && e.status === 401) onLogout();
@@ -262,13 +273,20 @@ function Workspace({ pilot, scope, token, name, onLogout, area, href, owners, on
     } finally {
       setLoaded(true);
     }
-  }, [areaId, build, environment, onLogout, readScope, token]);
+  }, [areaId, build, environment, onLogout, pilot, readScope, token]);
 
-  useEffect(() => { if (build) void refresh(); }, [build, refresh]);
+  useEffect(() => {
+    if (!build) return;
+    void refresh();
+    if (pilot !== "walkthrough") return;
+    const resume = () => { void refresh(); };
+    window.addEventListener("focus", resume);
+    return () => window.removeEventListener("focus", resume);
+  }, [build, pilot, refresh]);
 
   const save: Save = async (action, payload) => {
     try {
-      const saved = await tdWrite<AcceptanceEvent>(token, action, { ...scope, ...payload, ...(pilot && { pilot: true }), by: name });
+      const saved = await tdWrite<AcceptanceEvent>(token, action, { ...scope, ...payload, ...(pilot && { pilot }), by: name });
       setEvents((current) => [...current.filter((item) => item.id !== saved.id), saved].sort((a, b) => b.id - a.id));
     } catch (e) {
       if (e instanceof TdError && e.status === 401) onLogout();
@@ -321,8 +339,9 @@ function Workspace({ pilot, scope, token, name, onLogout, area, href, owners, on
     );
     const onSaveCase = (id: string, payload: Record<string, unknown>) => save("acceptance_run", { ...payload, area: area.id, case_id: id });
 
+    const Exercise = pilot === "walkthrough" ? CaseWalkthrough : BillingPilot;
     if (pilot) return <>{loading}{loadError}
-      <BillingPilot events={status.records} build={build} target={EMR_HOST.shadow} editable={editable} ownerName={owner?.name}
+      <Exercise roster={roster} events={status.records} build={build} target={EMR_HOST.shadow} editable={editable} ownerName={owner?.name}
         onSettings={onSettings} onSave={onSaveCase} decision={<>
           <p>აქ ბილინგის განყოფილება ადასტურებს ამ სასწავლო შემთხვევის შედეგს არჩეულ ვერსიაზე.</p>
           {!owner && <button className="td-btn td-btn-ghost" type="button" onClick={onSettings}>პასუხისმგებელი პირის მითითება</button>}

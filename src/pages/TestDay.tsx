@@ -273,7 +273,7 @@ function Portal({ token, name, onLogout, onRename }: { token: string; name: stri
         ) : view === "issues" ? (
           <IssuesPage state={state} write={write} />
         ) : view === "acceptance" ? (
-          <TestDayAcceptance slug={parts[1]} token={token} name={name} onLogout={onLogout}
+          <TestDayAcceptance roster={state} slug={parts[1]} token={token} name={name} onLogout={onLogout}
             onReport={(test) => setReport({ dept: "billing", screen: `${test[0]} · ${test[1]}`, expected: test[4] })} />
         ) : view === "overview" ? (
           <Overview state={state} />
@@ -542,7 +542,7 @@ function DeptPage({ state, slug, write }: { state: State; slug: string; write: W
   useEffect(() => {
     if (!hash.startsWith("#u")) {
       const sec = hash.slice(1);
-      if ((SECTION_IDS as readonly string[]).includes(sec)) setTimeout(() => jump(sec), 60); else window.scrollTo(0, 0);
+      if (sec === "accounts" || (SECTION_IDS as readonly string[]).includes(sec)) setTimeout(() => jump(sec), 60); else window.scrollTo(0, 0);
       return;
     }
     const id = hash.slice(1);
@@ -589,6 +589,11 @@ function DeptPage({ state, slug, write }: { state: State; slug: string; write: W
             <Link to={BASE} className="td-back">← ყველა განყოფილება</Link>
             <h1>{dept.title}</h1>
           </div>
+          {["billing", "registration", "er"].includes(slug) && <section className="td-card">
+            <h2>გადაუდებელი ვიზიტი: ერთი ეკგ, ორი დარიცხვა</h2>
+            <p>მცხეთის გუნდთან ერთად გაიარეთ ერთი შემთხვევა ტრიაჟიდან გაწერამდე და შეაჯერეთ პაციენტის ანგარიში სალაროსთან.</p>
+            <Link className="td-btn td-btn-primary" to={`${BASE}/acceptance/billing`}>შემთხვევის გეგმის გახსნა</Link>
+          </section>}
           {dept.warn && <p className="td-warn">{dept.warn}</p>}
           <Flows dept={dept} flows={stats.flows} write={write} />
           <People users={users} checks={stats.checks} write={write} dept={dept} flash={flash} issues={issues} state={state} />
@@ -773,7 +778,7 @@ function Seats({ dept, state }: { dept: Department; state: State }) {
   const [show, setShow] = useState(false);
   const seats = dept.seats.map((e) => state.seats.find((s) => s.email === e)).filter(Boolean) as State["seats"];
   return (
-    <div className="td-card td-seats">
+    <div id="accounts" className="td-card td-seats">
       <h3>სატესტო ანგარიშები <span className="td-tag td-tag-red">მხოლოდ გუნდისთვის</span></h3>
       <p className="td-hint">მხოლოდ სათადარიგოდ: როცა რეალური ადამიანი ვერ შედის, არ არის ან უფლება აკლია. მიზეზი ჩაწერეთ შენიშვნაში.</p>
       {dept.seat_note && <p className="td-warn">{dept.seat_note}</p>}
@@ -1023,7 +1028,7 @@ function IssueItem({ i, dept, update, team, compact }: { i: Issue; dept: string 
   useEffect(() => setPr(i.pr_url ?? ""), [i.pr_url]);
   useEffect(() => { if (!answerOpen) setAnswer(i.answer ?? ""); }, [i.answer, answerOpen]);
   const st = stage(i.status);
-  const pilotRef = i.source === "billing-er-v1" && i.ref?.match(/^billing-er-v1:(shadow):([a-z0-9._-]{7,80}):(ER-0[1-8])$/);
+  const pilotRef = i.source === "billing-er-v1" && i.ref?.match(/^billing-er-v1:(shadow):([a-z0-9._-]{7,80}):(ER-0[1-8]|MTS-(?:0[1-9]|1[0-9]|2[0-2]))$/);
   const pilotPath = pilotRef && `${BASE}/acceptance/billing?env=${pilotRef[1]}&step=${pilotRef[3]}&build=${pilotRef[2]}`;
   return (
     <li id={`issue-${i.id}`} className={`td-card td-issue sg-${st}`}>

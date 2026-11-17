@@ -16,6 +16,7 @@
 import { create, getNumericDate, verify } from "https://deno.land/x/djwt@v3.0.2/mod.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.39.3";
 import { corsHeaders, getClientIp, hashIp } from "../_shared/cors.ts";
+import { acceptanceAction } from "./acceptance.ts";
 
 const enc = new TextEncoder();
 const MAX_FAILURES = 10;
@@ -195,6 +196,9 @@ export async function handleTestday(req: Request): Promise<Response> {
     if (body?.action === "login") return await login(req, body.password);
     if (!(await authorized(req))) return json({ error: "unauthorized" }, 401);
     if (body?.action === "state") return await state();
+    if (body?.action === "acceptance_state" || body?.action === "acceptance_run" || body?.action === "acceptance_sign") {
+      return await acceptanceAction(body, db(), json);
+    }
     return await write(body);
   } catch (err) {
     console.error("testday error:", err);

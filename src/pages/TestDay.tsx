@@ -11,6 +11,7 @@ import {
   type Department, type FlowCheck, type Issue, type IssueStatus, type Note, type State, type User, type UserCheck,
 } from "../lib/testdayApi";
 import "./TestDay.css";
+import { TestDayAcceptance } from "./TestDayAcceptance";
 
 const SHADOW = "https://emr-shadow.gh.ge:8443";
 const BASE = "/admin/testday";
@@ -249,6 +250,7 @@ function Portal({ token, name, onLogout, onRename }: { token: string; name: stri
           <Link to={BASE} className="td-brand"><img src="/favicon.svg" alt="" width={24} height={24} /><span>სატესტო დღე</span></Link>
           <nav className="td-nav">
             <Link to={BASE} className={view === "" || view === "d" ? "on" : ""}>განყოფილებები</Link>
+            <Link to={`${BASE}/acceptance`} className={view === "acceptance" ? "on" : ""}>მიღება</Link>
             <Link to={`${BASE}/issues`} className={view === "issues" ? "on" : ""}>ხარვეზები{openCount ? <b>{openCount}</b> : null}</Link>
             <Link to={`${BASE}/overview`} className={view === "overview" ? "on" : ""}>მიმოხილვა</Link>
           </nav>
@@ -270,6 +272,8 @@ function Portal({ token, name, onLogout, onRename }: { token: string; name: stri
           <DeptPage state={state} slug={slug} write={write} />
         ) : view === "issues" ? (
           <IssuesPage state={state} write={write} />
+        ) : view === "acceptance" ? (
+          <TestDayAcceptance slug={parts[1]} token={token} name={name} onLogout={onLogout} />
         ) : view === "overview" ? (
           <Overview state={state} />
         ) : (

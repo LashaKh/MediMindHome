@@ -88,7 +88,7 @@
   var clicks = 0;
   var paused = false;      // tab hidden
   var locked = false;      // data-gated="1": password gate still up, so no reading time counts yet
-  if (script && script.dataset.gated === '1') {
+  if (script && script.dataset.gated === '1' && params.get('preview') !== '1') { // ?preview=1 skips the gate
     try { locked = sessionStorage.getItem('mmh_access') !== '1'; } catch (_) {}
   }
   var closed = false;

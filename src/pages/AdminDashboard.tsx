@@ -735,11 +735,19 @@ function formatDwell(seconds: number): string {
 function eventMeta(e: InvestorEvent): string {
   if (!e.metadata) return "";
   const m = e.metadata as Record<string, unknown>;
+  // Open decks (public/deck-tracking.js) tag each event with a per-browser visitor id.
+  const who = m.visitor ? ` · visitor ${m.visitor}` : "";
   if (e.event_type === "slide_view") {
-    return `${m.slide_label ?? `slide ${m.slide_index}`} · ${m.dwell_seconds ?? 0}s`;
+    return `${m.slide_label ?? `slide ${m.slide_index}`} · ${m.dwell_seconds ?? 0}s${who}`;
   }
   if (e.event_type === "deck_closed") {
-    return `total ${m.total_dwell_seconds ?? 0}s`;
+    return `total ${m.total_dwell_seconds ?? 0}s${who}`;
+  }
+  if (e.event_type === "click") {
+    return `${m.label ?? "click"} · slide ${m.slide_index ?? "?"}${who}`;
+  }
+  if (e.event_type === "deck_opened" || e.event_type === "gate_unlocked") {
+    return `${m.deck ?? ""}${who}`.replace(/^ · /, "");
   }
   if (e.event_type === "password_fail") {
     return String(m.reason ?? "");

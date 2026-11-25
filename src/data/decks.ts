@@ -35,6 +35,20 @@ export const DECKS: Deck[] = [
     gate: null,
   },
   {
+    id: "pitch-v4",
+    label: "Pitch v4 (Demo Day)",
+    blurb: "Follows pitch script Version 14 — visits tracked under \"deck-pitch-v4\" below; add ?t=<invite token> for a personal link",
+    path: "/pitch-v4.html",
+    gate: null,
+  },
+  {
+    id: "pitch-v3",
+    label: "Pitch v3",
+    blurb: "Previous Demo Day deck, follows pitch script V2",
+    path: "/pitch-v3.html",
+    gate: null,
+  },
+  {
     id: "story",
     label: "Story",
     blurb: "Scrolling investor narrative, EN / KA",

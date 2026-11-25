@@ -51,6 +51,7 @@
             try { sessionStorage.setItem('mmh_access', '1'); } catch (_) {}
             gate.remove();
             hideStyle.remove();
+            window.dispatchEvent(new Event('mm:unlocked')); // picked up by /deck-tracking.js
           } else {
             err.textContent = window.mmHospitalI18n.text('Incorrect password. Please try again.');
             input.value = '';
@@ -11219,5 +11220,7 @@ Editorial basis: Justina's 20 October feedback, 04:51–05:18 (problem-led story
       import('/deck-assets/hospitals-outcome-journeys.js?v=ac77597017');
     }
   </script>
+  <!-- Visit, slide-time and click tracking → /admin/dashboard. Personal link: add ?t=<invite token>. -->
+  <script src="/deck-tracking.js?v=1" data-deck="hospitals" data-fallback-token="deck-hospitals" data-gated="1"></script>
 </body>
 </html>

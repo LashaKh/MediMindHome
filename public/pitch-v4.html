@@ -555,6 +555,29 @@
     }
     .cover .brand-footer { display: none; }
     .csx-slide .csb-stage { grid-template-columns: 1fr; }
+    @media (min-width: 769px) {
+      .reveal .csx-slide .csx-headline { font-size: 2.6em; line-height: 1.08; }
+      .csx-slide .csb-stage { margin-top: 0; padding: 0 8px 30px; }
+      .csx-slide .csb-nodes::before { left: 30px; right: 30px; top: 28px; height: 4px; }
+      .csx-slide .csb-ic { width: 60px; height: 60px; border-width: 3px; box-shadow: 0 0 0 8px rgba(49,130,206,.08), 0 10px 24px rgba(26,54,93,.12); }
+      .csx-slide .csb-ic svg { width: 28px; height: 28px; }
+      .csx-slide .csb-node--grey .csb-ic::after { width: 14px; height: 14px; }
+      .csx-slide .csb-node--warm .csb-ic::after { width: 16px; height: 16px; }
+      .csx-slide .csb-node--warm .csb-ic { box-shadow: 0 0 0 8px var(--csb-red-bg), 0 10px 24px rgba(178,36,36,.16); }
+      .csx-slide .csb-node--end .csb-ic { width: 72px; height: 72px; margin-top: -6px; background: var(--csb-red); border-color: var(--csb-red); }
+      .csx-slide .csb-node--end.csb-node--warm .csb-ic::after { width: 20px; height: 20px; background: #fff; }
+      .csx-slide.present .csb-node--end .csb-ic { animation: csbEndPulse 2.2s ease-out infinite; }
+      .csx-slide .csb-ttl { margin-top: 22px; font-size: 1.15em; letter-spacing: -.025em; }
+      .csx-slide .csb-node--end .csb-ttl { margin-top: 16px; font-size: 1.4em; font-weight: 900; }
+      .csx-slide .csb-node { opacity: 0; transform: translateY(10px); }
+      .csx-slide.present .csb-node { animation: csbNodeIn .5s cubic-bezier(.2,.8,.2,1) both; }
+      .csx-slide.present .csb-node:nth-child(2) { animation-delay: .25s; }
+      .csx-slide.present .csb-node:nth-child(3) { animation-delay: .5s; }
+      .csx-slide.present .csb-node:nth-child(4) { animation-delay: .75s; }
+    }
+    @keyframes csbNodeIn { to { opacity: 1; transform: none; } }
+    @keyframes csbEndPulse { 0% { box-shadow: 0 0 0 0 rgba(216,58,58,.45), 0 10px 24px rgba(178,36,36,.2); } 70%,100% { box-shadow: 0 0 0 18px rgba(216,58,58,0), 0 10px 24px rgba(178,36,36,.2); } }
+    @media (prefers-reduced-motion: reduce) { .csx-slide .csb-node { opacity: 1 !important; transform: none !important; animation: none !important; } .csx-slide .csb-node--end .csb-ic { animation: none !important; } }
     .reveal .s18-slide { background: #b22424; color: #fff; }
     .reveal .s18-slide .slide-inner { justify-content: center; align-items: center; text-align: center; height: 100%; }
     .reveal .s18-slide .s18-n { font-size: 9em; font-weight: 900; letter-spacing: -.05em; line-height: .95; color: #fff; }
@@ -9954,7 +9977,7 @@
         <div class="slide-inner">
           <div class="slide-label"><span class="label-num">01</span>THE CASE</div>
 
-          <h2 class="headline-big csx-headline">At 2&nbsp;a.m., tired people<br><em>miss things.</em></h2>
+          <h2 class="headline-big csx-headline">At 2&nbsp;a.m., tired people miss things.<br><em>MediMind does not.</em></h2>
           <div class="csx-credline"><span class="csx-realtag"><span class="csx-realdot"></span>Real case from my practice</span></div>
           <div class="csb-stage">
             <div class="csb-lanes">
@@ -10456,6 +10479,7 @@
         </style>
         <div class="slide-inner">
           <div class="slide-label"><span class="label-num">08</span>BUSINESS MODEL</div>
+          <h2 class="headline-big">Hospital IT: a <em>$120B</em> market by 2034.</h2>
           <div class="mkq-row">
             <div class="mkq-card"><div class="mkq-label">Today</div><div class="mkq-big"><b>Per seat</b></div><div class="mkq-note">Every client pays a <b>monthly subscription</b>.</div></div>
             <div class="mkq-card mkq-card--next"><div class="mkq-label">Next</div><div class="mkq-big"><b>Value share</b></div><div class="mkq-note"><b>A share of the value</b> the brain creates.</div></div>
@@ -10469,7 +10493,7 @@
         </div>
         <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
         <aside class="notes">
-          Today clients pay per seat. Next, we take a share of the value we create.
+          Hospital IT will be a 120 billion dollar market by 2034. Today clients pay per seat. Next, we take a share of the value we create.
         </aside>
       </section>
 

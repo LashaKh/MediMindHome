@@ -554,6 +554,17 @@
       color: rgba(255,255,255,0.6);
     }
     .cover .brand-footer { display: none; }
+    .csx-slide .csb-stage { grid-template-columns: 1fr; }
+    .reveal .s18-slide { background: #b22424; color: #fff; }
+    .reveal .s18-slide .slide-inner { justify-content: center; align-items: center; text-align: center; height: 100%; }
+    .reveal .s18-slide .s18-n { font-size: 9em; font-weight: 900; letter-spacing: -.05em; line-height: .95; color: #fff; }
+    .reveal .s18-slide .s18-t { margin-top: 24px; font-size: 1.9em; font-weight: 800; letter-spacing: -.02em; line-height: 1.2; color: #fff; }
+    .reveal .s18-slide .s18-c { display: block; margin-top: 18px; font-style: normal; font-size: .8em; font-weight: 700; letter-spacing: .06em; color: rgba(255,255,255,.72); }
+    .reveal .s18-slide .deck-pageno { color: rgba(255,255,255,.7); }
+    @media (max-width: 768px) { .reveal .s18-slide .s18-n { font-size: 4.6em; } .reveal .s18-slide .s18-t { font-size: 1.25em; } }
+    .reveal .wwa-slide .headline-big { text-align: center; }
+    .gwx-slide .v2geo-now { font-size: 1.15em; font-weight: 700; letter-spacing: -.02em; color: #7b8aa0; }
+    .gwx-slide .v2geo-now b { font-weight: 800; color: #2b6cb0; }
     .reveal .deck-pageno { position: absolute; right: 40px; bottom: 26px; z-index: 100; font-size: 14px; font-weight: 700; letter-spacing: .06em; color: #94a3b8; font-variant-numeric: tabular-nums; }
 
     /* ─── SLIDE 2: HOOK / CRISIS (premium redesign) ───── */
@@ -9946,10 +9957,6 @@
           <h2 class="headline-big csx-headline">At 2&nbsp;a.m., tired people<br><em>miss things.</em></h2>
           <div class="csx-credline"><span class="csx-realtag"><span class="csx-realdot"></span>Real case from my practice</span></div>
           <div class="csb-stage">
-            <div class="csb-origin">
-              <div class="csb-clock">2:00<span class="csb-am">a.m.</span></div>
-              <div class="csb-osub">Epigastric pain · ER</div>
-            </div>
             <div class="csb-lanes">
               <div class="csb-lane csb-lane--bad">
                 <div class="csb-nodes">
@@ -9962,10 +9969,6 @@
                   <div class="csb-node csb-node--warm csb-node--end"><div class="csb-ic"></div><div class="csb-ttl">20 days in ICU</div></div>
                 </div>
               </div>
-              <div class="v2-stat">
-                <span class="v2-stat-n">1 in 18</span>
-                <span class="v2-stat-t">U.S. ER visits involve a diagnostic error.<cite>AHRQ, 2022</cite></span>
-              </div>
             </div>
           </div>
 
@@ -9973,7 +9976,19 @@
         </div>
 
         <aside class="notes">
-          At 2 a.m., a patient came back to our emergency room with stomach pain, days after a heart procedure. We were focused on his heart. We missed his pancreas. The clues were in his medical history, scattered across different systems. He spent 20 days in intensive care and barely survived. I'm Lasha, a cardiologist, and he was my patient. This is not rare. 1 in 18 U.S. ER visits involves a diagnostic error. At 2 a.m., tired people miss things. An AI that has read the whole history does not.
+          At 2 a.m., a patient came back to our emergency room with stomach pain, days after a heart procedure. We were focused on his heart. We missed his pancreas. The clues were in his medical history, scattered across different systems. He spent 20 days in intensive care and barely survived. I'm Lasha, a cardiologist, and he was my patient.
+        </aside>
+      </section>
+
+      <!-- SLIDE 01b: ONE NUMBER — 1 in 18 on red, nothing else (Horacio 2026-11-26) -->
+      <section class="s18-slide" data-background-color="#b22424">
+        <div class="slide-inner">
+          <div class="s18-n">1 in 18</div>
+          <div class="s18-t">U.S. ER visits involve a diagnostic error.</div>
+          <cite class="s18-c">AHRQ, 2022</cite>
+        </div>
+        <aside class="notes">
+          This is not rare. 1 in 18 U.S. ER visits involves a diagnostic error. At 2 a.m., tired people miss things. An AI that has read the whole history does not.
         </aside>
       </section>
 
@@ -10231,12 +10246,11 @@
                   <circle cx="75%" cy="25%" r="190" stroke-opacity="0.42"/><circle cx="75%" cy="25%" r="300" stroke-opacity="0.34"/><circle cx="75%" cy="25%" r="410" stroke-opacity="0.27"/><circle cx="75%" cy="25%" r="520" stroke-opacity="0.2"/><circle cx="75%" cy="25%" r="630" stroke-opacity="0.14"/><circle cx="75%" cy="25%" r="740" stroke-opacity="0.1"/><circle cx="75%" cy="25%" r="850" stroke-opacity="0.07"/>
                 </svg>
               </div>
-              <div class="cmpq-q cmpq-q--tl"><div class="cmpq-card"><div class="cmpq-name">Old record systems</div><div class="cmpq-chips"><span>Epic</span><span>Oracle Health</span><span>Dedalus</span><span>InterSystems</span><span>MV</span></div></div></div>
+              <div class="cmpq-q cmpq-q--tl"><div class="cmpq-card"><div class="cmpq-name">Record systems</div><div class="cmpq-chips"><span>Epic</span><span>Oracle Health</span><span>Dedalus</span><span>InterSystems</span><span>MV</span></div></div></div>
               <div class="cmpq-q cmpq-q--us">
                 <div class="cmpq-us">
                   <img class="cmpq-logo" src="/deck-assets/logo-horizontal-dark.svg" alt="MediMind">
-                  <div class="cmpq-big">One OS replaces the whole legacy stack.</div>
-                  <div class="cmpq-us-say">A proactive AI brain runs the whole hospital on top.</div>
+                  <div class="cmpq-big">One OS with an AI brain replaces the whole legacy stack.</div>
                 </div>
               </div>
               <div class="cmpq-q cmpq-q--bl"><div class="cmpq-card"><div class="cmpq-name">AI add-ons</div><div class="cmpq-chips"><span>Corti</span><span>IntelliCare</span><span>Oracle AI agents</span></div></div></div>
@@ -10245,11 +10259,10 @@
             <div class="cmpq-axis cmpq-x"><span>Waits for people</span><i></i><b>Proactive</b></div>
           </div>
 
-          <div class="cmpq-closer">In the U.S., that takes years. <b>We are doing it now.</b></div>
         </div>
         <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
         <aside class="notes">
-          Our competitors add AI on top of old record systems, usually one module at a time. We replace the whole system, so the brain sees and runs everything. In the U.S., swapping out an entire system takes years, if it happens at all. In our region, we are doing it now, with real patients.
+          Our competitors add AI on top of old record systems, usually one module at a time. We replace the whole system, so the brain sees and runs everything.
         </aside>
       </section>
 
@@ -10317,13 +10330,14 @@
                 <div class="v2geo-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></div>
                 <div class="v2geo-tile v2geo-tile--go"><b>1 week</b><span>Georgia: to build and validate</span></div>
               </div>
+              <div class="v2geo-now">The U.S. takes years. <b>We do it now.</b></div>
             </div>
           </div>
 
         </div>
         <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
         <aside class="notes">
-          That's why we build in Georgia on purpose. It is a world hub for first-in-human trials, so evidence from here carries weight in the West. We start in Georgia. Central Asia is next.
+          That's why we build in Georgia on purpose. It is a world hub for first-in-human trials, so evidence from here carries weight in the West. Swapping a whole hospital system takes years in the U.S. We do it now. We start in Georgia. Central Asia is next.
         </aside>
       </section>
 
@@ -10401,7 +10415,7 @@
            ═══════════════════════════════════════════════ -->
       <section class="mkq-slide">
         <style>
-          .mkq-slide .mkq-route { position: relative; margin-top: 44px; display: grid; grid-template-columns: 1fr 1fr 1fr; }
+          .mkq-slide .mkq-route { position: relative; margin-top: 52px; display: grid; grid-template-columns: 1fr 1fr 1fr; }
           .mkq-slide .mkq-route::before { content: ""; position: absolute; left: 9px; right: 0; top: 8px; height: 2px; border-radius: 2px;
             background: linear-gradient(to right, #9fc0e4 0%, #2b6cb0 66.6%, rgba(43,108,176,0) 100%); }
           .mkq-slide .mkq-stop { position: relative; display: flex; flex-direction: column; padding-right: 20px; }
@@ -10412,7 +10426,7 @@
           .mkq-slide .mkq-stop--hi i { background: #1a365d; border-color: #1a365d; box-shadow: 0 0 0 6px rgba(43,108,176,.20); }
           .mkq-slide .mkq-stop--hi b { color: #2b6cb0; }
 
-          .mkq-slide .mkq-row { flex: 1; min-height: 0; margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+          .mkq-slide .mkq-row { flex: 1; min-height: 0; margin-top: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
           .mkq-slide .mkq-card { display: flex; flex-direction: column; justify-content: center; padding: 30px 38px; border-radius: 24px;
             background: linear-gradient(28deg, #f7f9fc 30%, #e9f2fc 100%); border: 1px solid #e6edf5; min-height: 0; }
           .mkq-slide .mkq-label { font-size: .78em; font-weight: 700; color: #74839a; }
@@ -10423,6 +10437,7 @@
           .mkq-slide .mkq-big svg { flex: 0 0 auto; width: 26px; height: 26px; color: #2b6cb0; }
           .mkq-slide .mkq-note { margin-top: 16px; font-size: .8em; line-height: 1.4; font-weight: 500; color: #5a6a83; }
           .mkq-slide .mkq-note b { font-weight: 800; color: #2b6cb0; }
+          .mkq-slide .mkq-card--next .mkq-big b { color: #2b6cb0; }
 
           @media (max-width: 768px) {
             .mkq-slide .mkq-route { display: block; margin-top: 16px; padding-left: 2px; }
@@ -10441,17 +10456,15 @@
         </style>
         <div class="slide-inner">
           <div class="slide-label"><span class="label-num">08</span>BUSINESS MODEL</div>
-          <h2 class="headline-big">Per seat. <em>Then a share of the value.</em></h2>
+          <div class="mkq-row">
+            <div class="mkq-card"><div class="mkq-label">Today</div><div class="mkq-big"><b>Per seat</b></div><div class="mkq-note">Every client pays a <b>monthly subscription</b>.</div></div>
+            <div class="mkq-card mkq-card--next"><div class="mkq-label">Next</div><div class="mkq-big"><b>Value share</b></div><div class="mkq-note"><b>A share of the value</b> the brain creates.</div></div>
+          </div>
 
           <div class="mkq-route">
             <div class="mkq-stop"><i></i><span class="mkq-when">Today</span><b>Georgia</b><span class="mkq-sub">~250 providers, mapped</span></div>
             <div class="mkq-stop"><i></i><span class="mkq-when">Next</span><b>Central Asia</b><span class="mkq-sub">Uzbekistan + Kazakhstan</span></div>
             <div class="mkq-stop mkq-stop--hi"><i></i><span class="mkq-when">Then</span><b>The West</b><span class="mkq-sub">with evidence from here</span></div>
-          </div>
-
-          <div class="mkq-row">
-            <div class="mkq-card"><div class="mkq-label">How we earn</div><div class="mkq-big"><b>Per seat</b></div><div class="mkq-note">Every client pays <b>per seat</b>, today.</div></div>
-            <div class="mkq-card"><div class="mkq-label">How we grow</div><div class="mkq-big"><div class="mkq-from"><span>Per seat</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></div><b>Value share</b></div><div class="mkq-note">A subscription per seat today. Next, <b>a share of the value we create.</b></div></div>
           </div>
         </div>
         <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>

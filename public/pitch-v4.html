@@ -554,6 +554,7 @@
       color: rgba(255,255,255,0.6);
     }
     .cover .brand-footer { display: none; }
+    .reveal .deck-pageno { position: absolute; right: 40px; bottom: 26px; z-index: 100; font-size: 14px; font-weight: 700; letter-spacing: .06em; color: #94a3b8; font-variant-numeric: tabular-nums; }
 
     /* ─── SLIDE 2: HOOK / CRISIS (premium redesign) ───── */
     .hook-slide {
@@ -9606,7 +9607,11 @@
 
       /* 01 VALIDATION — two equal wins, then the total */
       .prog-slide .pk-board.v2-board { grid-template-columns: 1fr 1fr; gap: 22px; }
-      .prog-slide .v2-board .pk-hero { min-height: 268px; padding: 24px 28px; }
+      .prog-slide .v2-board .pk-hero { min-height: 268px; padding: 24px 28px; justify-content: flex-start; }
+      .prog-slide .v2-board .pk-hero-num { margin: auto; padding-top: 10px; align-items: center; gap: 18px; }
+      .prog-slide .v2-board .pk-hero-num b { font-size: 6.2em; }
+      .prog-slide .v2-board .pk-hero-unit { padding-bottom: 0; }
+      .prog-slide .v2-board .pk-hero-unit .u { font-size: 1.55em; }
       .prog-slide .v2-hero2 { background: linear-gradient(135deg, #2b6cb0 0%, #3182ce 55%, #4a9be3 100%); box-shadow: 0 20px 44px rgba(43,108,176,.30), 0 1px 0 rgba(255,255,255,.14) inset; }
       .prog-slide .v2-hero2 .pk-hero-sub { color: #eaf4fe; }
       .prog-slide .v2-hero2 .pk-hero-sub b { font-weight: 800; color: #fff; }
@@ -10142,11 +10147,13 @@
           .cmpd-slide .cmpq-closer { margin-top: 14px; font-size: 1.25em; line-height: 1.15; font-weight: 600; letter-spacing: -.02em; color: #7b8aa0; }
           .cmpd-slide .cmpq-closer b { font-weight: 800; color: #2b6cb0; }
 
-          .cmpd-slide .cmpq-map { flex: 1; min-height: 0; margin-top: 34px; display: grid; grid-template-columns: 24px 1fr; grid-template-rows: 1fr 24px; gap: 10px 12px; }
+          .cmpd-slide .cmpq-map { flex: 1; min-height: 0; margin-top: 34px; display: grid; grid-template-columns: 40px 1fr; grid-template-rows: 1fr 40px; gap: 10px 12px; }
           .cmpd-slide .cmpq-axis { display: flex; align-items: center; gap: 12px; font-size: .68em; font-weight: 600; color: #94a3b8; white-space: nowrap; }
           .cmpd-slide .cmpq-axis i { flex: 1; align-self: center; position: relative; border-radius: 2px; }
           .cmpd-slide .cmpq-axis i::after { content: ""; position: absolute; border: 5px solid transparent; }
-          .cmpd-slide .cmpq-axis b { font-weight: 800; color: #1a365d; }
+          .cmpd-slide .cmpq-axis { font-size: .9em; font-weight: 700; color: #64748b; }
+          .cmpd-slide .cmpq-axis b { font-weight: 800; color: #fff; background: #2b6cb0; padding: 7px 16px; border-radius: 999px; letter-spacing: .01em; box-shadow: 0 6px 16px rgba(43,108,176,.28); }
+          .cmpd-slide .cmpq-y b { padding: 16px 7px; }
           .cmpd-slide .cmpq-y { grid-column: 1; grid-row: 1; writing-mode: vertical-rl; transform: rotate(180deg); padding: 6px 0; }
           .cmpd-slide .cmpq-y i { width: 2px; background: linear-gradient(to bottom, #dbe3ee, #2b6cb0); }
           .cmpd-slide .cmpq-y i::after { bottom: -7px; left: 50%; transform: translateX(-50%); border-top: 8px solid #2b6cb0; border-bottom: 0; }
@@ -10180,7 +10187,7 @@
             box-shadow: 0 0 0 8px rgba(99,179,237,.16), 0 30px 56px rgba(26,54,93,.34); }
           .reveal .cmpd-slide img.cmpq-logo { display: block; height: 46px; width: auto; max-width: none; max-height: none; margin: 0 0 14px -5px; border: 0; background: none; box-shadow: none; }
           .cmpd-slide .cmpq-big { font-size: 1.5em; line-height: 1.1; font-weight: 800; letter-spacing: -.03em; }
-          .cmpd-slide .cmpq-us-say { margin-top: 10px; font-size: .76em; line-height: 1.35; font-weight: 600; color: #bee3f8; }
+          .cmpd-slide .cmpq-us-say { margin-top: 12px; font-size: .9em; line-height: 1.3; font-weight: 700; color: #bee3f8; }
 
           .cmpd-slide.present .cmpq-us { animation: cmpqIn .7s cubic-bezier(.2,.8,.2,1) .2s both; }
           @keyframes cmpqIn { from { opacity: 0; transform: scale(.94); } to { opacity: 1; transform: none; } }
@@ -10224,16 +10231,16 @@
                   <circle cx="75%" cy="25%" r="190" stroke-opacity="0.42"/><circle cx="75%" cy="25%" r="300" stroke-opacity="0.34"/><circle cx="75%" cy="25%" r="410" stroke-opacity="0.27"/><circle cx="75%" cy="25%" r="520" stroke-opacity="0.2"/><circle cx="75%" cy="25%" r="630" stroke-opacity="0.14"/><circle cx="75%" cy="25%" r="740" stroke-opacity="0.1"/><circle cx="75%" cy="25%" r="850" stroke-opacity="0.07"/>
                 </svg>
               </div>
-              <div class="cmpq-q cmpq-q--tl"><div class="cmpq-card"><div class="cmpq-name">Old record systems</div><div class="cmpq-say">Cover the whole hospital, but <b>wait for people</b>.</div><div class="cmpq-chips"><span>Epic</span><span>Oracle Health</span><span>Dedalus</span><span>InterSystems</span><span>MV</span></div></div></div>
+              <div class="cmpq-q cmpq-q--tl"><div class="cmpq-card"><div class="cmpq-name">Old record systems</div><div class="cmpq-chips"><span>Epic</span><span>Oracle Health</span><span>Dedalus</span><span>InterSystems</span><span>MV</span></div></div></div>
               <div class="cmpq-q cmpq-q--us">
                 <div class="cmpq-us">
                   <img class="cmpq-logo" src="/deck-assets/logo-horizontal-dark.svg" alt="MediMind">
-                  <div class="cmpq-big">Replaces the whole system.</div>
-                  <div class="cmpq-us-say">So the brain sees and runs everything.</div>
+                  <div class="cmpq-big">The proactive AI brain for the hospital.</div>
+                  <div class="cmpq-us-say">Runs the whole hospital, proactively.</div>
                 </div>
               </div>
-              <div class="cmpq-q cmpq-q--bl"><div class="cmpq-card"><div class="cmpq-name">AI add-ons</div><div class="cmpq-say">Only suggest. <b>A person still acts.</b></div><div class="cmpq-chips"><span>Corti</span><span>IntelliCare</span><span>Oracle AI agents</span></div></div></div>
-              <div class="cmpq-q cmpq-q--br"><div class="cmpq-card"><div class="cmpq-name">AI tools</div><div class="cmpq-say">Act on their own, but in <b>one narrow job</b>.</div><div class="cmpq-chips"><span>Skin Analytics</span><span>IDx-DR</span><span>Qventus</span><span>Hippocratic AI</span></div></div></div>
+              <div class="cmpq-q cmpq-q--bl"><div class="cmpq-card"><div class="cmpq-name">AI add-ons</div><div class="cmpq-chips"><span>Corti</span><span>IntelliCare</span><span>Oracle AI agents</span></div></div></div>
+              <div class="cmpq-q cmpq-q--br"><div class="cmpq-card"><div class="cmpq-name">AI tools</div><div class="cmpq-chips"><span>Skin Analytics</span><span>IDx-DR</span><span>Qventus</span><span>Hippocratic AI</span></div></div></div>
             </div>
             <div class="cmpq-axis cmpq-x"><span>Waits for people</span><i></i><b>Proactive</b></div>
           </div>
@@ -10559,7 +10566,6 @@
             <div class="pclose-text">
               <p class="v2-close-pre">As one cardiologist, I can look after a few thousand patients.</p>
               <h2 class="pclose-head"><em>MediMind can look<br>after millions.</em></h2>
-              <a class="v2-close-url" href="https://medimind.md" target="_blank" rel="noopener noreferrer">medimind.md</a>
             </div>
             <div class="pclose-photo">
               <img src="/deck-assets/team/lasha-scrubs.png" alt="Dr. Lasha Khoshtaria, MediMind founder">
@@ -12746,6 +12752,21 @@
     });
 
     // Brand footer is now inlined directly in each section's HTML — see <a class="brand-footer"> tags.
+
+    // Page numbers "n/9" on the main deck (slide after the cover through the close slide).
+    function addPageNumbers() {
+      document.querySelectorAll('.deck-pageno').forEach(function (el) { el.remove(); });
+      var slides = Reveal.getSlides();
+      var last = slides.findIndex(function (el) { return el.classList.contains('pclose-slide'); });
+      if (last < 1) return;
+      for (var i = 1; i <= last; i++) {
+        var tag = document.createElement('div');
+        tag.className = 'deck-pageno';
+        tag.textContent = i + '/' + last;
+        slides[i].appendChild(tag);
+      }
+    }
+    if (Reveal.isReady()) addPageNumbers(); else Reveal.on('ready', addPageNumbers);
 
     // Cover slide — pull recipient name from sessionStorage (set by BriefingGate on unlock).
     // Degrades silently when accessed directly without going through the gate.

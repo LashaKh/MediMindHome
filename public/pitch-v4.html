@@ -10214,6 +10214,9 @@
           .cmpd-slide .cmpq-q--us { align-items: flex-start; justify-content: flex-end; padding: 0; }
 
           .cmpd-slide .cmpq-card { width: 440px; max-width: 100%; box-sizing: border-box; padding: 18px 22px 18px; border-radius: 18px; background: #fff; border: 1px solid #e3eaf2; box-shadow: 0 8px 22px rgba(26,54,93,.07); }
+          .cmpd-slide .cmpq-card { position: relative; }
+          .cmpd-slide .cmpq-in { position: absolute; top: 16px; right: 18px; display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px 5px 8px; border-radius: 999px; background: #e6f4ec; color: #276749; font-size: .58em; font-weight: 800; letter-spacing: .01em; }
+          .cmpd-slide .cmpq-in svg { width: 14px; height: 14px; }
           .cmpd-slide .cmpq-name { font-size: 1.08em; line-height: 1.15; font-weight: 800; letter-spacing: -.02em; color: #33435c; }
           .cmpd-slide .cmpq-say { margin-top: 5px; font-size: .78em; line-height: 1.35; font-weight: 500; color: #74839a; }
           .cmpd-slide .cmpq-say b { font-weight: 700; color: #4a5a73; }
@@ -10269,15 +10272,15 @@
                   <circle cx="75%" cy="25%" r="190" stroke-opacity="0.42"/><circle cx="75%" cy="25%" r="300" stroke-opacity="0.34"/><circle cx="75%" cy="25%" r="410" stroke-opacity="0.27"/><circle cx="75%" cy="25%" r="520" stroke-opacity="0.2"/><circle cx="75%" cy="25%" r="630" stroke-opacity="0.14"/><circle cx="75%" cy="25%" r="740" stroke-opacity="0.1"/><circle cx="75%" cy="25%" r="850" stroke-opacity="0.07"/>
                 </svg>
               </div>
-              <div class="cmpq-q cmpq-q--tl"><div class="cmpq-card"><div class="cmpq-name">Record systems</div><div class="cmpq-chips"><span>Epic</span><span>Oracle Health</span><span>Dedalus</span><span>InterSystems</span><span>MV</span></div></div></div>
+              <div class="cmpq-q cmpq-q--tl"><div class="cmpq-card"><span class="cmpq-in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>In MediMind</span><div class="cmpq-name">Record systems</div><div class="cmpq-chips"><span>Epic</span><span>Oracle Health</span><span>Dedalus</span><span>InterSystems</span><span>MV</span></div></div></div>
               <div class="cmpq-q cmpq-q--us">
                 <div class="cmpq-us">
                   <img class="cmpq-logo" src="/deck-assets/logo-horizontal-dark.svg" alt="MediMind">
                   <div class="cmpq-big">One OS with an AI brain replaces the whole legacy stack.</div>
                 </div>
               </div>
-              <div class="cmpq-q cmpq-q--bl"><div class="cmpq-card"><div class="cmpq-name">AI add-ons</div><div class="cmpq-chips"><span>Corti</span><span>IntelliCare</span><span>Oracle AI agents</span></div></div></div>
-              <div class="cmpq-q cmpq-q--br"><div class="cmpq-card"><div class="cmpq-name">AI tools</div><div class="cmpq-chips"><span>Skin Analytics</span><span>IDx-DR</span><span>Qventus</span><span>Hippocratic AI</span></div></div></div>
+              <div class="cmpq-q cmpq-q--bl"><div class="cmpq-card"><span class="cmpq-in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>In MediMind</span><div class="cmpq-name">AI add-ons</div><div class="cmpq-chips"><span>Corti</span><span>IntelliCare</span><span>Oracle AI agents</span></div></div></div>
+              <div class="cmpq-q cmpq-q--br"><div class="cmpq-card"><span class="cmpq-in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>In MediMind</span><div class="cmpq-name">AI tools</div><div class="cmpq-chips"><span>Skin Analytics</span><span>IDx-DR</span><span>Qventus</span><span>Hippocratic AI</span></div></div></div>
             </div>
             <div class="cmpq-axis cmpq-x"><span>Waits for people</span><i></i><b>Proactive</b></div>
           </div>
@@ -10461,6 +10464,16 @@
           .mkq-slide .mkq-note { margin-top: 16px; font-size: .8em; line-height: 1.4; font-weight: 500; color: #5a6a83; }
           .mkq-slide .mkq-note b { font-weight: 800; color: #2b6cb0; }
           .mkq-slide .mkq-card--next .mkq-big b { color: #2b6cb0; }
+          @media (min-width: 769px) {
+            .mkq-slide .mkq-row { grid-template-columns: 1.1fr 1fr 1fr; gap: 20px; }
+            .mkq-slide .mkq-card { padding: 26px 30px; }
+            .mkq-slide .mkq-big b { font-size: 2.3em; }
+          }
+          .mkq-slide .mkq-card--market { background: linear-gradient(135deg, #14294a 0%, #1a365d 48%, #2b6cb0 100%); border: 0; box-shadow: 0 20px 44px rgba(26,54,93,.28); }
+          .mkq-slide .mkq-card--market .mkq-label { color: #bee3f8; }
+          .mkq-slide .mkq-card--market .mkq-big b { color: #fff; }
+          .mkq-slide .mkq-card--market .mkq-note { color: #d6e6f7; }
+          .mkq-slide .mkq-card--market .mkq-note b { color: #fff; }
 
           @media (max-width: 768px) {
             .mkq-slide .mkq-route { display: block; margin-top: 16px; padding-left: 2px; }
@@ -10479,8 +10492,9 @@
         </style>
         <div class="slide-inner">
           <div class="slide-label"><span class="label-num">08</span>BUSINESS MODEL</div>
-          <h2 class="headline-big">Hospital IT: a <em>$120B</em> market by 2034.</h2>
+          <h2 class="headline-big">Paid like software today. <em>Like a partner next.</em></h2>
           <div class="mkq-row">
+            <div class="mkq-card mkq-card--market"><div class="mkq-label">The market</div><div class="mkq-big"><b>$120B</b></div><div class="mkq-note">Hospital IT spend a year by 2034. <b>1% of it is $1.2B a year.</b></div></div>
             <div class="mkq-card"><div class="mkq-label">Today</div><div class="mkq-big"><b>Per seat</b></div><div class="mkq-note">Every client pays a <b>monthly subscription</b>.</div></div>
             <div class="mkq-card mkq-card--next"><div class="mkq-label">Next</div><div class="mkq-big"><b>Value share</b></div><div class="mkq-note"><b>A share of the value</b> the brain creates.</div></div>
           </div>
@@ -10493,7 +10507,7 @@
         </div>
         <a class="brand-footer" href="https://medimind.md" target="_blank" rel="noopener noreferrer"><img src="/deck-assets/logo-icon-dark.svg" alt=""><span>medimind.md</span></a>
         <aside class="notes">
-          Hospital IT will be a 120 billion dollar market by 2034. Today clients pay per seat. Next, we take a share of the value we create.
+          Hospitals will spend 120 billion dollars a year on IT by 2034. One percent of that is 1.2 billion a year. Today clients pay per seat. Next, we take a share of the value we create.
         </aside>
       </section>
 
